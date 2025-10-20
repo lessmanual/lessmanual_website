@@ -10,10 +10,6 @@
     --tekhelet: #5716A2;
   }
 
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-night text-white font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
