@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "home": {
+      "title": "LessManual.ai - AI + Automation for Polish businesses",
+      "description": "7-day implementation. ROI in a month. ChatBot, VoiceAgent, Content Automation for e-commerce, dealers, developers."
+    }
+  },
+  "nav": {
+    "products": "Products",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "headline": "Make Your Business LESSMANUAL",
+    "subheadline": "AI + Automation for Polish businesses. 7-day implementation. ROI in a month.",
+    "ctaPrimary": "Book a demo (15 min)",
+    "ctaSecondary": "See case studies"
+  },
+  "footer": {
+    "company": "Company",
+    "products": "Products",
+    "resources": "Resources",
+    "legal": "Legal",
+    "contact": "Contact",
+    "copyright": "© 2025 LessManual Bartłomiej Chudzik. All rights reserved.",
+    "nip": "Tax ID: 1231589909",
+    "regon": "REGON: 542947850"
+  }
+}

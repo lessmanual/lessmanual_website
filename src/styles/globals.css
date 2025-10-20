@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --night: #0C0D0A;
+    --white: #FEFEFE;
+    --pear: #DDE000;
+    --tekhelet: #5716A2;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-night text-white font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

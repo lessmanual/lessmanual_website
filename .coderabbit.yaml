@@ -1,0 +1,78 @@
+# CodeRabbit Configuration for LessManual Website
+# AI-powered code review for performance, accessibility, security, and quality
+
+language: "pl"
+early_access: false
+enable_free_tier: true
+
+reviews:
+  profile: "assertive"
+  request_changes_workflow: true
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+      - develop
+
+  # Focus areas for LessManual
+  path_filters:
+    - "!**/*.md"
+    - "!**/*.json"
+    - "!**/CLAUDE.md"
+    - "!**/lessmanual-website-PRD.md"
+
+  # Check these specific areas
+  path_instructions:
+    - path: "src/app/**/*.tsx"
+      instructions: |
+        - Verify Server Component by default (no 'use client' unless needed)
+        - Check i18n implementation (useTranslations usage)
+        - Ensure metadata API is used for SEO
+        - Verify WCAG AAA accessibility (ARIA labels, semantic HTML)
+
+    - path: "src/components/**/*.tsx"
+      instructions: |
+        - Check if 'use client' is needed (animations, state, events only)
+        - Verify design tokens are used (no hardcoded colors)
+        - Check Framer Motion variants are from lib/animations.ts
+        - Ensure responsive design (mobile-first)
+
+    - path: "src/lib/**/*.ts"
+      instructions: |
+        - Verify TypeScript strict mode (no 'any' types)
+        - Check function return types are explicit
+        - Ensure utility functions have JSDoc comments
+
+    - path: "src/styles/**/*.css"
+      instructions: |
+        - Prefer Tailwind utilities over custom CSS
+        - Check for performance issues (large selectors, deep nesting)
+
+chat:
+  auto_reply: true
+
+# Performance thresholds
+performance:
+  bundle_size_limit: 204800  # 200KB
+  lighthouse_performance_threshold: 90
+  lighthouse_accessibility_threshold: 100
+
+# Security checks
+security:
+  check_secrets: true
+  check_dependencies: true
+  check_xss: true
+  check_sql_injection: true
+
+# Code quality
+code_quality:
+  max_complexity: 10
+  max_lines_per_file: 300
+  check_duplicates: true
+  check_unused_code: true

@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "home": {
+      "title": "LessManual.ai - AI + Automatyzacja dla polskich firm",
+      "description": "Wdrożenie w 7 dni. ROI w miesiąc. ChatBot, VoiceAgent, Content Automation dla e-commerce, dealerów, deweloperów."
+    }
+  },
+  "nav": {
+    "products": "Produkty",
+    "pricing": "Cennik",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "blog": "Blog"
+  },
+  "hero": {
+    "headline": "Make Your Business LESSMANUAL",
+    "subheadline": "AI + Automatyzacja dla polskich firm. Wdrożenie w 7 dni. ROI w miesiąc.",
+    "ctaPrimary": "Umów demo (15 min)",
+    "ctaSecondary": "Zobacz case studies"
+  },
+  "footer": {
+    "company": "Firma",
+    "products": "Produkty",
+    "resources": "Zasoby",
+    "legal": "Prawne",
+    "contact": "Kontakt",
+    "copyright": "© 2025 LessManual Bartłomiej Chudzik. Wszelkie prawa zastrzeżone.",
+    "nip": "NIP: 1231589909",
+    "regon": "REGON: 542947850"
+  }
+}
