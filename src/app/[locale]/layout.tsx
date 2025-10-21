@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { Inter } from 'next/font/google'
 import { locales } from '@/i18n/config'
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 import '@/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' })
@@ -46,6 +47,9 @@ export default async function LocaleLayout({
     <html lang={locale} className={inter.variable}>
       <body className="bg-night text-white antialiased">
         <NextIntlClientProvider messages={messages}>
+          <div className="fixed top-4 right-4 z-50">
+            <LanguageSwitcher />
+          </div>
           {children}
         </NextIntlClientProvider>
       </body>

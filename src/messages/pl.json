@@ -10,13 +10,125 @@
     "pricing": "Cennik",
     "about": "O nas",
     "contact": "Kontakt",
-    "blog": "Blog"
+    "blog": "Blog",
+    "demo": "Umów demo"
   },
   "hero": {
     "headline": "Make Your Business LESSMANUAL",
     "subheadline": "AI + Automatyzacja dla polskich firm. Wdrożenie w 7 dni. ROI w miesiąc.",
     "ctaPrimary": "Umów demo (15 min)",
-    "ctaSecondary": "Zobacz case studies"
+    "ctaSecondary": "Zobacz case studies",
+    "trustBadge": "Zaufało nam 50+ firm"
+  },
+  "specjalizacje": {
+    "title": "Specjalizacje AI dla Twojego biznesu",
+    "subtitle": "Wybierz obszar, w którym AI może zaoszczędzić Ci setki godzin miesięcznie",
+    "obsługaKlienta": {
+      "title": "Obsługa Klienta",
+      "description": "ChatBot + VoiceAgent automatyzujące 80% zapytań 24/7",
+      "before": "Przed: 200h/mies na odpowiadanie na pytania",
+      "after": "Po: 40h/mies tylko na trudne przypadki",
+      "savings": "Oszczędność: 160h/mies (70% czasu)",
+      "features": [
+        "Odpowiedzi w <30 sekund",
+        "Integracja z CRM i bazą wiedzy",
+        "Automatyczne przekierowanie do człowieka gdy potrzeba"
+      ]
+    },
+    "leadGen": {
+      "title": "Lead Generation",
+      "description": "Kwalifikacja leadów przez AI + automatyczny follow-up",
+      "before": "Przed: 30% leadów zimnych, 70% bez follow-up",
+      "after": "Po: 90% leadów pre-kwalifikowanych, 100% follow-up",
+      "savings": "3x więcej konwersji z tych samych źródeł",
+      "features": [
+        "Automatyczna kwalifikacja BANT",
+        "Natychmiastowy kontakt (Voice/Email)",
+        "Integracja z ClickUp/Pipedrive"
+      ]
+    },
+    "content": {
+      "title": "Content Creation",
+      "description": "Automatyczne tworzenie treści dla e-commerce i social media",
+      "before": "Przed: 100h/mies na opisy produktów i posty",
+      "after": "Po: 20h/mies tylko na finalną weryfikację",
+      "savings": "Oszczędność: 80h/mies (80% czasu)",
+      "features": [
+        "Generowanie opisów produktów",
+        "Posty na social media (PL/EN)",
+        "SEO-optimized content"
+      ]
+    }
+  },
+  "jakToDziała": {
+    "title": "Jak to działa?",
+    "subtitle": "Od pomysłu do działającego rozwiązania w 7 dni",
+    "step1": {
+      "title": "Analiza",
+      "description": "15-minutowy call. Identyfikujemy największe bottle-necks w Twoim biznesie.",
+      "duration": "Dzień 1"
+    },
+    "step2": {
+      "title": "Wdrożenie",
+      "description": "Konfigurujemy AI pod Twoje potrzeby. Integracja z Twoimi systemami (CRM, email, telefon).",
+      "duration": "Dzień 2-5"
+    },
+    "step3": {
+      "title": "Testowanie",
+      "description": "Wspólnie testujemy wszystkie scenariusze. Poprawki i optymalizacja.",
+      "duration": "Dzień 6"
+    },
+    "step4": {
+      "title": "Launch",
+      "description": "Go-live! Monitorujemy pierwsze tygodnie i dostrajamy pod rzeczywiste dane.",
+      "duration": "Dzień 7"
+    }
+  },
+  "klienci": {
+    "title": "Zaufało nam 50+ firm",
+    "subtitle": "Od e-commerce po deweloperów - AI działa w każdej branży",
+    "testimonial1": {
+      "quote": "ChatBot odpowiada na 90% pytań klientów. Zespół ma czas na sprzedaż zamiast na FAQ.",
+      "author": "Michał Nowak",
+      "company": "Dealer samochodowy, Warszawa",
+      "metric": "160h/mies oszczędności"
+    },
+    "testimonial2": {
+      "quote": "VoiceAgent dzwoni do leadów w 2 minuty. Konwersja wzrosła z 5% do 18%.",
+      "author": "Anna Kowalska",
+      "company": "E-commerce, Kraków",
+      "metric": "3.6x więcej konwersji"
+    },
+    "testimonial3": {
+      "quote": "Content dla 500+ produktów generowany automatycznie. SEO score wzrósł o 40%.",
+      "author": "Piotr Wiśniewski",
+      "company": "Sklep internetowy, Gdańsk",
+      "metric": "80h/mies oszczędności"
+    }
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "subtitle": "Masz inne pytanie? Napisz do nas",
+    "question1": {
+      "q": "Ile kosztuje wdrożenie?",
+      "a": "Od 3000 PLN jednorazowo + od 1500 PLN/mies abonament (w zależności od ilości zapytań). Dokładną wycenę dostajesz po 15-min demo call."
+    },
+    "question2": {
+      "q": "Jak długo trwa wdrożenie?",
+      "a": "7 dni roboczych od podpisania umowy do go-live. W pilnych przypadkach możemy przyspieszyć do 3 dni."
+    },
+    "question3": {
+      "q": "Czy potrzebuję programisty?",
+      "a": "Nie. Wszystko robimy my. Jedyne co potrzebujesz to 1-2h na call + dostęp do systemów (CRM, email)."
+    },
+    "question4": {
+      "q": "Co jeśli AI nie poradzi sobie z pytaniem?",
+      "a": "AI automatycznie przekierowuje trudne przypadki do człowieka. Ty decydujesz jakie pytania idą do AI, a jakie zawsze do zespołu."
+    },
+    "question5": {
+      "q": "Czy dane są bezpieczne (RODO)?",
+      "a": "Tak. Serwery w UE, pełna zgodność z RODO, umowa powierzenia danych. Twoje dane nigdy nie są używane do treningu AI."
+    }
   },
   "footer": {
     "company": "Firma",
@@ -24,8 +136,20 @@
     "resources": "Zasoby",
     "legal": "Prawne",
     "contact": "Kontakt",
+    "about": "O nas",
+    "pricing": "Cennik",
+    "blog": "Blog",
+    "caseStudies": "Case studies",
+    "chatbot": "ChatBot",
+    "voiceAgent": "VoiceAgent",
+    "contentAutomation": "Content Automation",
+    "privacyPolicy": "Polityka prywatności",
+    "termsOfService": "Regulamin",
     "copyright": "© 2025 LessManual Bartłomiej Chudzik. Wszelkie prawa zastrzeżone.",
     "nip": "NIP: 1231589909",
-    "regon": "REGON: 542947850"
+    "regon": "REGON: 542947850",
+    "address": "Kraków, Polska",
+    "email": "kontakt@lessmanual.ai",
+    "phone": "+48 123 456 789"
   }
 }

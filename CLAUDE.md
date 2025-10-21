@@ -179,25 +179,48 @@ export function LanguageSwitcher() {
 
 ## FIGMA INTEGRATION (MCP)
 
-**Figma = Source of Truth** - Design tokens, component specs, assets extracted via MCP
+**⚠️ IMPORTANT: UI Kit = Template/Inspiration Only**
+
+The Figma file (AI Startup Website UI Kit) is a **design template** that serves as inspiration for **layout and structure**. It is NOT the final design for LessManual.ai.
+
+**What to use from UI Kit:**
+- ✅ **Layout structure** - Hero, Bento Grid, Features, Pricing sections arrangement
+- ✅ **Component patterns** - Navigation, Cards, CTAs, Footer structure
+- ✅ **Spacing & proportions** - Section padding, component sizes, gaps
+- ✅ **Animation concepts** - Parallax, fade-ins, hover effects
+
+**What to REPLACE with LessManual brand:**
+- ❌ **Colors** - Replace purple theme with LessManual colors:
+  - Background: `#0C0D0A` (night) instead of `#000000`
+  - Accent: `#DDE000` (pear) instead of `#9855ff` (purple)
+  - Decorative: `#5716A2` (tekhelet) instead of purple gradient
+- ❌ **Typography** - Adapt sizing but keep Inter font
+- ❌ **Content** - Replace all "AI Startup" text with LessManual messaging
+- ❌ **Imagery** - Replace generic mockups with LessManual product screenshots
 
 ### Design Token Sync
 1. **Read Figma file** via MCP before coding components
-2. **Extract tokens:**
-   - Colors → `src/lib/design-tokens.ts` (hex values)
+2. **Extract structure (NOT colors):**
+   - Layout patterns → Component structure
    - Spacing → Tailwind config (`tailwind.config.js`)
-   - Typography → Font weights, sizes, line heights
-3. **Use tokens in code:**
+   - Typography → Font weights, sizes, line heights (but adjust for LessManual)
+3. **Override with LessManual brand:**
    ```tsx
+   // ❌ DON'T use Figma colors directly
+   <div className="bg-purple-500">
+
+   // ✅ DO use LessManual design tokens
    import { colors } from '@/lib/design-tokens'
-   <div className="bg-primary"> // Tailwind custom color
+   <div className="bg-night text-white">
+   <Button className="bg-pear text-night">Umów demo</Button>
    ```
 
 ### Component Extraction
-- **1-to-1 mapping** - Figma component = React component
+- **Structure mapping** - Figma layout → React component structure
 - **Naming convention** - Figma "Hero Section" → `<HeroSection />`
 - **Props from variants** - Figma variants → React props
-- **Assets export** - Images from Figma → `public/images/` (optimized)
+- **Brand adaptation** - Colors/content replaced with LessManual brand
+- **Assets export** - Use LessManual assets, not Figma template images
 
 ---
 
@@ -892,9 +915,10 @@ Before marking component as "done":
 
 ---
 
-**Version:** 1.2
-**Last Updated:** 2025-10-20
+**Version:** 1.3
+**Last Updated:** 2025-10-21
 **Changelog:**
+- **v1.3:** CRITICAL - Added Figma UI Kit clarification: template is INSPIRATION ONLY for layout/structure. Colors, content, and branding MUST be replaced with LessManual brand (night, pear, tekhelet). UI Kit provides structure, we provide brand.
 - **v1.2:** Added i18n support (PL/EN with next-intl), comprehensive development workflow with 15 AI agents, Figma MCP + TaskMaster + CodeRabbit integration
 - **v1.1:** Updated to Next.js 15.5 (from 14) with React 19, Turbopack, PPR; Added ClickUp & n8n integration; Added monitoring & analytics (Vercel + GA4); Added testing strategy
 - **v1.0:** Initial version with Next.js 14, basic tech stack, code quality standards

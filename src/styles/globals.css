@@ -21,3 +21,20 @@
     text-wrap: balance;
   }
 }
+
+/* Spline 3D Robot customization */
+/* Hide Spline watermark */
+.spline-robot-wrapper a[href*="spline.design"],
+.spline-robot-wrapper [data-spline-watermark],
+.spline-robot-wrapper #spline-watermark,
+.spline-robot-wrapper .spline-watermark {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Color shift: purple to pear (#dde000) - disabled for custom scene */
+.spline-robot-wrapper canvas {
+  /* filter: hue-rotate(150deg) saturate(1.5) brightness(1.2); */
+}
