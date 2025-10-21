@@ -1,4 +1,15 @@
 import type { Config } from 'tailwindcss'
+import {
+  colors,
+  typography,
+  spacing,
+  borderRadius,
+  shadows,
+  animations,
+  breakpoints,
+  zIndex,
+  container,
+} from './src/lib/design-tokens'
 
 const config: Config = {
   content: [
@@ -8,14 +19,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        night: '#0C0D0A',      // Primary background (dark mode)
-        white: '#FEFEFE',      // Primary text (dark mode)
-        pear: '#DDE000',       // CTA, accents, logo
-        tekhelet: '#5716A2',   // Decorative only (icons, borders)
-      },
-      fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      colors,
+      fontFamily: typography.fontFamily,
+      fontSize: typography.fontSize,
+      fontWeight: typography.fontWeight,
+      lineHeight: typography.lineHeight,
+      spacing,
+      borderRadius,
+      boxShadow: shadows,
+      transitionDuration: animations.duration,
+      transitionTimingFunction: animations.easing,
+      screens: breakpoints,
+      zIndex,
+      container: {
+        center: true,
+        padding: '1rem',
+        screens: container,
       },
     },
   },

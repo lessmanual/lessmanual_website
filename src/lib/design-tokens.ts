@@ -29,15 +29,15 @@ export const typography = {
     '7xl': '4.5rem',   // 72px
   },
   fontWeight: {
-    normal: 400,
-    medium: 500,
-    semibold: 600,
-    bold: 700,
+    normal: '400',
+    medium: '500',
+    semibold: '600',
+    bold: '700',
   },
   lineHeight: {
-    tight: 1.25,
-    normal: 1.5,
-    relaxed: 1.75,
+    tight: '1.25',
+    normal: '1.5',
+    relaxed: '1.75',
   },
 } as const
 
@@ -80,4 +80,48 @@ export const shadows = {
   '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
   inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
   none: '0 0 #0000',
+} as const
+
+export const animations = {
+  duration: {
+    instant: '0ms',
+    fast: '150ms',
+    normal: '300ms',
+    slow: '500ms',
+    slower: '800ms',
+  },
+  easing: {
+    linear: 'linear',
+    easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
+    easeOut: 'cubic-bezier(0, 0, 0.2, 1)',
+    easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    spring: 'cubic-bezier(0.34, 1.56, 0.64, 1)', // Bouncy spring effect
+  },
+} as const
+
+export const breakpoints = {
+  sm: '640px',   // Mobile landscape
+  md: '768px',   // Tablet portrait
+  lg: '1024px',  // Tablet landscape / Desktop
+  xl: '1280px',  // Desktop
+  '2xl': '1536px', // Large desktop
+} as const
+
+export const zIndex = {
+  base: '0',
+  dropdown: '10',
+  sticky: '20',
+  overlay: '30',
+  modal: '40',
+  popover: '50',
+  toast: '60',
+  tooltip: '70',
+} as const
+
+export const container = {
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
 } as const
