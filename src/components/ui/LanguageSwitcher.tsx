@@ -5,6 +5,13 @@ import { useLocale } from 'next-intl'
 import { locales, localeNames, localeFlags, type Locale } from '@/i18n/config'
 import { motion } from 'framer-motion'
 
+/**
+ * Render a horizontal language switcher that displays available locales and lets the user change the current locale.
+ *
+ * The active locale is visually indicated and animated; selecting a different locale updates the current pathname to the chosen locale.
+ *
+ * @returns A React element containing the language switcher UI.
+ */
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale
   const router = useRouter()

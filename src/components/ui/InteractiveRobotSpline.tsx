@@ -8,6 +8,15 @@ interface InteractiveRobotSplineProps {
   className?: string
 }
 
+/**
+ * Renders a lazily-loaded Spline scene with a loading fallback and removes known Spline watermark elements after mount.
+ *
+ * This component mounts a container for the Spline canvas, shows a centered spinner while the Spline module loads, and repeatedly attempts to remove common watermark elements inserted by the Spline runtime.
+ *
+ * @param scene - The Spline scene URL or scene identifier to load
+ * @param className - Optional additional CSS classes applied to the inner scene container and fallback
+ * @returns A JSX element containing the Spline scene and its loading fallback
+ */
 export function InteractiveRobotSpline({
   scene,
   className,

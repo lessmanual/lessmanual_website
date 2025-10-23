@@ -31,6 +31,15 @@ const imgEllipse2 = "https://www.figma.com/api/mcp/asset/3a76a502-9cf5-4ad4-b75c
 const imgEllipse3 = "https://www.figma.com/api/mcp/asset/fe387972-b453-4c39-8d4a-26170d470f92"
 const imgEllipse4 = "https://www.figma.com/api/mcp/asset/caab3a02-9aab-41da-8e04-5b40ddeb3fb9"
 
+/**
+ * Render the hero section with animated headline, parallax background, 3D robot mockup, and CTA buttons.
+ *
+ * The section includes scroll-driven parallax and opacity transforms, entrance animations triggered when
+ * the section enters the viewport, decorative glow layers, and a delayed sliding animation for the
+ * highlighted word in the headline.
+ *
+ * @returns A JSX element containing the hero section with parallax and entrance animations.
+ */
 export function HeroSection() {
   const t = useTranslations('hero')
   const containerRef = useRef<HTMLDivElement>(null)
