@@ -14,7 +14,12 @@
     "name": "Bartłomiej Chudzik",
     "title": "Founder & CTO | 10 years of experience in automation",
     "bio1": "I've been automating businesses for a decade. I've helped 50+ companies save thousands of hours of manual work through intelligent AI solutions and process automation.",
-    "bio2": "I specialize in AI, business process automation, and system integrations. LessManual is the culmination of my knowledge and passion - the mission is to make Polish companies work smarter, not harder."
+    "bio2": "I specialize in AI, business process automation, and system integrations. LessManual is the culmination of my knowledge and passion - the mission is to make Polish companies work smarter, not harder.",
+    "stats": {
+      "experience": "Years of experience",
+      "clients": "Satisfied clients",
+      "hours": "Hours saved"
+    }
   },
   "metadata": {
     "home": {

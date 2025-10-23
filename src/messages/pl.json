@@ -14,7 +14,12 @@
     "name": "Bartłomiej Chudzik",
     "title": "Founder & CTO | 10 lat doświadczenia w automatyzacji",
     "bio1": "Automatyzuję biznesy od dekady. Pomogłem 50+ firmom oszczędzić tysiące godzin ręcznej pracy dzięki inteligentnym rozwiązaniom AI i automatyzacji procesów.",
-    "bio2": "Specjalizuję się w AI, automatyzacji procesów biznesowych i integracjach systemów. LessManual to kulminacja mojej wiedzy i pasji - misją jest sprawienie, by polskie firmy działały mądrzej, nie ciężej."
+    "bio2": "Specjalizuję się w AI, automatyzacji procesów biznesowych i integracjach systemów. LessManual to kulminacja mojej wiedzy i pasji - misją jest sprawienie, by polskie firmy działały mądrzej, nie ciężej.",
+    "stats": {
+      "experience": "Lat doświadczenia",
+      "clients": "Zadowolonych klientów",
+      "hours": "Zaoszczędzonych godzin"
+    }
   },
   "metadata": {
     "home": {

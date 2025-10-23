@@ -35,7 +35,7 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
  *
  * i18n:
  * - Supports PL/EN via next-intl
- * - Translation keys: about.name, about.title, about.bio1, about.bio2
+ * - Translation keys: about.name, about.title, about.bio1, about.bio2, about.stats.*
  *
  * @example
  * ```tsx
@@ -139,6 +139,8 @@ export function AboutSection(): JSX.Element {
               {/* Image container with 3D transform */}
               <motion.div
                 className="relative h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-full border-4 border-pear/50 shadow-2xl shadow-pear/20"
+                role="img"
+                aria-label="Interaktywne zdjęcie profilowe z efektem 3D"
                 style={{
                   transformStyle: 'preserve-3d',
                   perspective: 1000,
@@ -201,15 +203,15 @@ export function AboutSection(): JSX.Element {
               >
                 <div className="text-center lg:text-left">
                   <div className="text-3xl font-bold text-pear">10+</div>
-                  <div className="text-sm text-white/50">Lat doświadczenia</div>
+                  <div className="text-sm text-white/50">{t('stats.experience')}</div>
                 </div>
                 <div className="text-center lg:text-left">
                   <div className="text-3xl font-bold text-pear">50+</div>
-                  <div className="text-sm text-white/50">Zadowolonych klientów</div>
+                  <div className="text-sm text-white/50">{t('stats.clients')}</div>
                 </div>
                 <div className="text-center lg:text-left">
                   <div className="text-3xl font-bold text-pear">10k+</div>
-                  <div className="text-sm text-white/50">Zaoszczędzonych godzin</div>
+                  <div className="text-sm text-white/50">{t('stats.hours')}</div>
                 </div>
               </motion.div>
             </motion.div>
