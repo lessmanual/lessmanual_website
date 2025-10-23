@@ -33,6 +33,13 @@ export async function generateMetadata({
   }
 }
 
+/**
+ * Provides a locale-aware root layout that sets the document language, supplies translations to children, and renders a top-right language switcher.
+ *
+ * @param children - The page or application content to render inside the layout.
+ * @param params - A promise resolving to an object with a `locale` string used to set the HTML `lang` attribute and select translations.
+ * @returns The HTML layout element containing the internationalization provider, language switcher, and supplied children.
+ */
 export default async function LocaleLayout({
   children,
   params,
