@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "subheadline": "AI + Automation for Polish businesses. From idea to implementation in 2 weeks.",
+    "ctaPrimary": "Book a demo (15 min)",
+    "ctaSecondary": "View case studies"
+  },
+  "specjalizacje": {
+    "title": "Specializations",
+    "subtitle": "We automate the areas that consume the most time",
+    "obsługaKlienta": {
+      "title": "Customer Service",
+      "description": "ChatBot and Voice Agent handle 80% of customer inquiries 24/7. Your team focuses only on complex cases.",
+      "metric1": "80% automation",
+      "metric2": "24/7 availability",
+      "metric3": "< 1s response time"
+    },
+    "leadGeneration": {
+      "title": "Lead Generation",
+      "description": "Automatic lead qualification, personalized follow-ups, and intelligent routing to the right team members.",
+      "metric1": "3x more leads",
+      "metric2": "Automatic qualification",
+      "metric3": "Zero missed opportunities"
+    },
+    "contentMarketing": {
+      "title": "Content & Marketing",
+      "description": "AI creates social media posts, blog articles, and product descriptions tailored to your brand and target audience.",
+      "metric1": "10x faster production",
+      "metric2": "Consistent brand voice",
+      "metric3": "SEO-optimized"
+    }
+  },
+  "jakToDziala": {
+    "title": "How It Works?",
+    "subtitle": "Simple 4-step implementation process",
+    "step1": {
+      "title": "1. Consultation",
+      "description": "15-minute call to understand your needs and business goals"
+    },
+    "step2": {
+      "title": "2. Analysis",
+      "description": "We map processes and identify areas with the highest automation potential"
+    },
+    "step3": {
+      "title": "3. Implementation",
+      "description": "We build and configure your AI solution in 2 weeks"
+    },
+    "step4": {
+      "title": "4. Growth",
+      "description": "Continuous optimization and adding new features according to your needs"
+    }
+  },
+  "nasiKlienci": {
+    "title": "Our Clients",
+    "subtitle": "Companies already saving time through automation"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "How much does implementation cost?",
+      "answer": "Cost depends on project complexity and specialization. After a free consultation, we provide a detailed quote. A typical ChatBot project costs 5-15k PLN, Voice Agent 10-20k PLN."
+    },
+    "q2": {
+      "question": "How long does implementation take?",
+      "answer": "Standard implementation takes 2 weeks from accepting the offer. This includes configuration, testing, and training your team."
+    },
+    "q3": {
+      "question": "Do I need a technical team?",
+      "answer": "No. We handle everything from A to Z. You just provide us with knowledge about your company and processes."
+    },
+    "q4": {
+      "question": "Can I test before buying?",
+      "answer": "Yes! We prepare a demo tailored to your industry that you can test for 7 days for free."
+    },
+    "q5": {
+      "question": "What if something stops working?",
+      "answer": "We provide full technical support. We monitor systems 24/7 and respond to problems in real-time."
+    }
+  },
+  "footer": {
+    "company": "LessManual",
+    "tagline": "AI + Automation for Polish businesses",
+    "products": "Products",
+    "chatbot": "ChatBot",
+    "voiceAgent": "Voice Agent",
+    "customAI": "Custom AI",
+    "company_section": "Company",
+    "about": "About us",
+    "blog": "Blog",
+    "faq_link": "FAQ",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "allRightsReserved": "All rights reserved."
+  }
+}

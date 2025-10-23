@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "subheadline": "AI + Automatyzacja dla polskich firm. Od pomysłu do wdrożenia w 2 tygodnie.",
+    "ctaPrimary": "Umów demo (15 min)",
+    "ctaSecondary": "Zobacz case studies"
+  },
+  "specjalizacje": {
+    "title": "Specjalizacje",
+    "subtitle": "Automatyzujemy te obszary, które pochłaniają najwięcej czasu",
+    "obsługaKlienta": {
+      "title": "Obsługa Klienta",
+      "description": "ChatBot i Voice Agent odpowiadają na 80% zapytań klientów 24/7. Twój zespół skupia się tylko na złożonych przypadkach.",
+      "metric1": "80% automatyzacji",
+      "metric2": "24/7 dostępność",
+      "metric3": "< 1s czas odpowiedzi"
+    },
+    "leadGeneration": {
+      "title": "Lead Generation",
+      "description": "Automatyczna kwalifikacja leadów, personalizowane follow-upy i inteligentne przekierowanie do odpowiednich osób w zespole.",
+      "metric1": "3x więcej leadów",
+      "metric2": "Automatyczna kwalifikacja",
+      "metric3": "Zero missed opportunities"
+    },
+    "contentMarketing": {
+      "title": "Content & Marketing",
+      "description": "AI tworzy posty na social media, artykuły blogowe i opisy produktów dopasowane do Twojej marki i grupy docelowej.",
+      "metric1": "10x szybsza produkcja",
+      "metric2": "Spójny brand voice",
+      "metric3": "SEO-optimized"
+    }
+  },
+  "jakToDziala": {
+    "title": "Jak to działa?",
+    "subtitle": "Prosty proces wdrożenia w 4 krokach",
+    "step1": {
+      "title": "1. Konsultacja",
+      "description": "15-minutowa rozmowa, żeby zrozumieć Twoje potrzeby i cele biznesowe"
+    },
+    "step2": {
+      "title": "2. Analiza",
+      "description": "Mapujemy procesy i identyfikujemy obszary największego potencjału automatyzacji"
+    },
+    "step3": {
+      "title": "3. Wdrożenie",
+      "description": "Budujemy i konfigurujemy Twoje rozwiązanie AI w 2 tygodnie"
+    },
+    "step4": {
+      "title": "4. Rozwój",
+      "description": "Ciągła optymalizacja i dodawanie nowych funkcji zgodnie z Twoimi potrzebami"
+    }
+  },
+  "nasiKlienci": {
+    "title": "Nasi Klienci",
+    "subtitle": "Firmy, które już oszczędzają czas dzięki automatyzacji"
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "q1": {
+      "question": "Ile kosztuje wdrożenie?",
+      "answer": "Koszt zależy od złożoności projektu i specjalizacji. Po darmowej konsultacji przedstawiamy szczegółową wycenę. Typowy projekt ChatBota to 5-15k PLN, Voice Agent 10-20k PLN."
+    },
+    "q2": {
+      "question": "Jak długo trwa wdrożenie?",
+      "answer": "Standardowe wdrożenie trwa 2 tygodnie od zaakceptowania oferty. Obejmuje to konfigurację, testy i szkolenie Twojego zespołu."
+    },
+    "q3": {
+      "question": "Czy potrzebuję zespołu technicznego?",
+      "answer": "Nie. Zajmujemy się wszystkim od A do Z. Ty tylko przekazujesz nam wiedzę o swojej firmie i procesach."
+    },
+    "q4": {
+      "question": "Czy mogę przetestować przed zakupem?",
+      "answer": "Tak! Przygotowujemy demo dopasowane do Twojej branży, które możesz przetestować przez 7 dni za darmo."
+    },
+    "q5": {
+      "question": "Co jeśli coś przestanie działać?",
+      "answer": "Zapewniamy pełne wsparcie techniczne. Monitorujemy systemy 24/7 i reagujemy na problemy w czasie rzeczywistym."
+    }
+  },
+  "footer": {
+    "company": "LessManual",
+    "tagline": "AI + Automatyzacja dla polskich firm",
+    "products": "Produkty",
+    "chatbot": "ChatBot",
+    "voiceAgent": "Voice Agent",
+    "customAI": "Custom AI",
+    "company_section": "Firma",
+    "about": "O nas",
+    "blog": "Blog",
+    "faq_link": "FAQ",
+    "contact": "Kontakt",
+    "legal": "Prawne",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "allRightsReserved": "Wszystkie prawa zastrzeżone."
+  }
+}
