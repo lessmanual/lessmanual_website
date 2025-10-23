@@ -307,6 +307,64 @@ src/
 
 ## DEVELOPMENT WORKFLOW
 
+### ⚠️ OBOWIĄZKOWY GIT WORKFLOW (ZAWSZE STOSUJ)
+
+**KAŻDA zmiana w kodzie MUSI przejść przez CodeRabbit przed merge do main.**
+
+**Workflow (8 kroków):**
+
+1. **Utwórz feature branch**
+   ```bash
+   git checkout -b feat/nazwa-feature
+   ```
+
+2. **Napisz kod lokalnie**
+   - Edytuj pliki
+   - Testuj w dev mode (`npm run dev`)
+
+3. **Commit zmian**
+   ```bash
+   git add .
+   git commit -m "feat: opis zmian"
+   ```
+
+4. **Push do GitHub**
+   ```bash
+   git push origin feat/nazwa-feature
+   ```
+
+5. **Utwórz Pull Request**
+   ```bash
+   gh pr create --title "Tytuł PR" --body "Opis zmian"
+   ```
+
+6. **CodeRabbit AUTO-REVIEW** (2-3 min)
+   - Sprawdza kod automatycznie
+   - Zostawia komentarze na GitHub PR
+   - Sugeruje poprawki (dokumentacja, security, performance)
+
+7. **Popraw kod jeśli trzeba**
+   ```bash
+   git add .
+   git commit -m "fix: poprawki z CodeRabbit"
+   git push
+   ```
+   CodeRabbit ponownie sprawdzi zmiany automatycznie.
+
+8. **Merge do main**
+   ```bash
+   gh pr merge --squash
+   ```
+   Vercel automatycznie deployuje na production (lessmanual.ai).
+
+**ZASADY:**
+- ❌ NIGDY nie pushuj bezpośrednio do main (tylko przez PR + CodeRabbit)
+- ✅ ZAWSZE czekaj na CodeRabbit review przed merge
+- ✅ Poprawiaj krytyczne i wysokie severity issues
+- ✅ Branch naming: `feat/`, `fix/`, `docs/`, `refactor/`
+
+---
+
 ### Overview
 **Claude Code + AI Agents = High-velocity development**
 
