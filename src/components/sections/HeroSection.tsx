@@ -7,20 +7,40 @@ import { Button } from '@/components/ui/Button'
 import { InteractiveRobotSpline } from '@/components/ui/InteractiveRobotSpline'
 
 /**
- * Hero Section - LessManual
+ * Hero Section - LessManual Homepage
  *
- * Design based on Figma AI Startup UI Kit, converted to LessManual brand:
- * - Purple (#b372cf) → Pear (#dde000)
- * - Black → Night (#0c0d0a)
- * - White → #fefefe
+ * Full-screen hero section with interactive 3D robot and animated content.
+ * Implements parallax scrolling, blur effects, and Framer Motion animations.
  *
- * Features:
- * - Animated headline with sliding "LESSMANUAL" text
- * - Gradient backgrounds with pear glow effects
- * - Concentric circles background pattern
- * - Blur glass-morphism effects
- * - Badge with NEW tag
- * - Dashboard mockup (placeholder for 3D robot later)
+ * Design System:
+ * - Brand colors: Night (#0C0D0A), Pear (#DDE000), Tekhelet (#5716A2)
+ * - Layout: Two-column grid (robot left, content right)
+ * - Animations: Parallax scroll, fade-in, sliding text
+ * - 3D Asset: Spline robot with interactive hover effects
+ *
+ * Performance:
+ * - Lazy loads Spline 3D component with Suspense
+ * - Uses Framer Motion for GPU-accelerated animations
+ * - Parallax effects triggered by scroll position
+ * - Background blur layers for depth effect
+ *
+ * Accessibility:
+ * - Semantic HTML5 structure
+ * - Proper heading hierarchy (h1)
+ * - Keyboard-accessible CTAs
+ * - WCAG AAA contrast ratios (12.6:1)
+ *
+ * i18n:
+ * - Supports PL/EN via next-intl
+ * - Translation keys: hero.subheadline, hero.ctaPrimary, hero.ctaSecondary
+ *
+ * @example
+ * ```tsx
+ * <HeroSection />
+ * ```
+ *
+ * @see {@link https://figma.com/file/...} - Original design reference
+ * @see {@link InteractiveRobotSpline} - 3D robot component
  */
 
 // Figma asset URLs
@@ -31,7 +51,15 @@ const imgEllipse2 = "https://www.figma.com/api/mcp/asset/3a76a502-9cf5-4ad4-b75c
 const imgEllipse3 = "https://www.figma.com/api/mcp/asset/fe387972-b453-4c39-8d4a-26170d470f92"
 const imgEllipse4 = "https://www.figma.com/api/mcp/asset/caab3a02-9aab-41da-8e04-5b40ddeb3fb9"
 
-export function HeroSection() {
+/**
+ * HeroSection Component
+ *
+ * Renders the main hero section with 3D robot and animated content.
+ * Manages parallax scrolling, text animations, and viewport detection.
+ *
+ * @returns {JSX.Element} Hero section with 3D robot, headline, and CTAs
+ */
+export function HeroSection(): JSX.Element {
   const t = useTranslations('hero')
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: '-100px' })

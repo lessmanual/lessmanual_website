@@ -1,10 +1,33 @@
 /**
- * Reusable Framer Motion animation variants
- * Use these instead of inline animations for consistency
+ * Reusable Framer Motion Animation Variants
+ *
+ * Standardized animation presets for consistent motion across the app.
+ * All animations are GPU-accelerated using transform properties.
+ *
+ * Performance Tips:
+ * - Import only needed variants to reduce bundle size
+ * - Animations respect prefers-reduced-motion media query
+ * - Use with motion.div variants prop for best performance
+ *
+ * @example
+ * ```tsx
+ * import { fadeInUp, staggerContainer } from '@/lib/animations'
+ *
+ * <motion.div variants={staggerContainer} initial="hidden" animate="visible">
+ *   <motion.div variants={fadeInUp}>Child 1</motion.div>
+ *   <motion.div variants={fadeInUp}>Child 2</motion.div>
+ * </motion.div>
+ * ```
+ *
+ * @see {@link https://www.framer.com/motion} - Framer Motion docs
  */
 
 import { Variants } from 'framer-motion'
 
+/**
+ * Fade in with upward movement (0.6s)
+ * Common for content reveals, card entries
+ */
 export const fadeInUp: Variants = {
   hidden: {
     opacity: 0,
@@ -20,6 +43,10 @@ export const fadeInUp: Variants = {
   },
 }
 
+/**
+ * Simple fade in animation (0.5s)
+ * Use for subtle reveals without movement
+ */
 export const fadeIn: Variants = {
   hidden: {
     opacity: 0,
@@ -33,6 +60,10 @@ export const fadeIn: Variants = {
   },
 }
 
+/**
+ * Slide in from left with fade (0.6s)
+ * Common for side navigation, mobile menus
+ */
 export const slideInLeft: Variants = {
   hidden: {
     opacity: 0,
@@ -48,6 +79,10 @@ export const slideInLeft: Variants = {
   },
 }
 
+/**
+ * Slide in from right with fade (0.6s)
+ * Common for side panels, notifications
+ */
 export const slideInRight: Variants = {
   hidden: {
     opacity: 0,
@@ -63,6 +98,10 @@ export const slideInRight: Variants = {
   },
 }
 
+/**
+ * Scale up from 0.8 with fade (0.5s)
+ * Common for modals, popups, cards
+ */
 export const scaleIn: Variants = {
   hidden: {
     opacity: 0,
@@ -78,6 +117,18 @@ export const scaleIn: Variants = {
   },
 }
 
+/**
+ * Container variant for staggered children animations
+ * Children animate with 0.1s delay between each
+ *
+ * @example
+ * ```tsx
+ * <motion.div variants={staggerContainer} initial="hidden" animate="visible">
+ *   <motion.div variants={fadeInUp}>Item 1</motion.div>
+ *   <motion.div variants={fadeInUp}>Item 2</motion.div>
+ * </motion.div>
+ * ```
+ */
 export const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -88,7 +139,17 @@ export const staggerContainer: Variants = {
   },
 }
 
-// 3D card tilt effect with GPU acceleration
+/**
+ * 3D card tilt effect with scale on hover
+ * GPU-accelerated using transform properties
+ *
+ * @example
+ * ```tsx
+ * <motion.div initial="rest" whileHover="hover" variants={cardTilt}>
+ *   Card content
+ * </motion.div>
+ * ```
+ */
 export const cardTilt = {
   rest: {
     scale: 1,
@@ -104,7 +165,28 @@ export const cardTilt = {
   },
 }
 
-// Advanced 3D Product Showcase Animation (GPU-optimized)
+/**
+ * Advanced 3D product showcase animation (0.8s)
+ * GPU-optimized with perspective and rotation
+ *
+ * Includes:
+ * - Scale up from 0.8
+ * - Y-axis rotation from -30° to 0°
+ * - Z-depth movement for parallax effect
+ * - Custom cubic-bezier easing for smooth 3D motion
+ *
+ * @example
+ * ```tsx
+ * <motion.div
+ *   variants={product3D}
+ *   initial="hidden"
+ *   whileInView="visible"
+ *   style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+ * >
+ *   <ProductCard />
+ * </motion.div>
+ * ```
+ */
 export const product3D: Variants = {
   hidden: {
     opacity: 0,
@@ -126,7 +208,25 @@ export const product3D: Variants = {
   },
 }
 
-// Parallax scroll animation hook variant
+/**
+ * Parallax scroll animation variant (instant)
+ * Use with useScroll and useTransform for smooth parallax effects
+ *
+ * @param {number} custom - Y offset calculated from scroll progress
+ *
+ * @example
+ * ```tsx
+ * const y = useTransform(scrollYProgress, [0, 1], [0, -100])
+ *
+ * <motion.div
+ *   variants={parallaxVariant}
+ *   animate="animate"
+ *   custom={y}
+ * >
+ *   Parallax content
+ * </motion.div>
+ * ```
+ */
 export const parallaxVariant = {
   initial: { y: 0 },
   animate: (custom: number) => ({
@@ -137,7 +237,12 @@ export const parallaxVariant = {
   }),
 }
 
-// Stagger animation for multiple 3D cards
+/**
+ * Stagger container for 3D cards
+ * Children animate with 0.15s delay, starts after 0.3s
+ *
+ * Use with product3D or cardTilt variants
+ */
 export const stagger3DCards: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -149,7 +254,12 @@ export const stagger3DCards: Variants = {
   },
 }
 
-// Expandable card animation (for Specjalizacje section)
+/**
+ * Expandable card animation (0.4s)
+ * Smooth height expansion with custom easing
+ *
+ * Common for accordion items, expandable sections
+ */
 export const expandableCard: Variants = {
   collapsed: {
     height: 'auto',
@@ -165,7 +275,12 @@ export const expandableCard: Variants = {
   },
 }
 
-// Timeline reveal animation (for Jak to działa section)
+/**
+ * Timeline item reveal animation (0.6s)
+ * Slide in from left with scale effect
+ *
+ * Common for step-by-step sections, process timelines
+ */
 export const timelineItem: Variants = {
   hidden: {
     opacity: 0,
@@ -183,7 +298,30 @@ export const timelineItem: Variants = {
   },
 }
 
-// Respect prefers-reduced-motion
+/**
+ * Get animation configuration respecting user motion preferences
+ *
+ * Disables animations if user has prefers-reduced-motion enabled (accessibility).
+ * Recommended to call at app root to globally respect motion preferences.
+ *
+ * @returns {Object} Animation config with instant transitions if reduced motion is preferred
+ *
+ * @example
+ * ```tsx
+ * const animConfig = getAnimationConfig()
+ *
+ * <motion.div
+ *   variants={fadeInUp}
+ *   initial="hidden"
+ *   animate="visible"
+ *   {...animConfig}
+ * >
+ *   Content
+ * </motion.div>
+ * ```
+ *
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion} - prefers-reduced-motion docs
+ */
 export const getAnimationConfig = () => {
   if (typeof window !== 'undefined') {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
