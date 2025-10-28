@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
@@ -47,8 +47,11 @@ import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
  */
 export function Header(): React.ReactElement {
   const t = useTranslations('nav')
+  const locale = useLocale()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const toggleButtonRef = useRef<HTMLButtonElement>(null)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   const { scrollY } = useScroll()
 
@@ -73,10 +76,32 @@ export function Header(): React.ReactElement {
 
   // Prevent scroll when mobile menu open
   useEffect(() => {
+    // Store original overflow value
+    const originalOverflow = window.getComputedStyle(document.body).overflow
+
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup: restore original overflow value
+    return () => {
+      document.body.style.overflow = originalOverflow
+    }
+  }, [mobileMenuOpen])
+
+  // Focus management for mobile menu (accessibility)
+  useEffect(() => {
+    if (mobileMenuOpen && mobileMenuRef.current) {
+      // When menu opens, focus first focusable element
+      const focusableElements = mobileMenuRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled])'
+      )
+      if (focusableElements.length > 0) {
+        focusableElements[0].focus()
+      }
+    } else if (!mobileMenuOpen && toggleButtonRef.current) {
+      // When menu closes, return focus to toggle button
+      toggleButtonRef.current.focus()
     }
   }, [mobileMenuOpen])
 
@@ -103,7 +128,7 @@ export function Header(): React.ReactElement {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-pear focus:text-night focus:rounded-md"
       >
-        Skip to content
+        {t('skipToContent')}
       </a>
 
       <nav
@@ -113,7 +138,7 @@ export function Header(): React.ReactElement {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link
-            href="/"
+            href={`/${locale}`}
             className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pear focus:ring-offset-2 focus:ring-offset-night rounded-md"
           >
             <Image
@@ -144,10 +169,11 @@ export function Header(): React.ReactElement {
 
           {/* Mobile Menu Button */}
           <button
+            ref={toggleButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-pear"
-            aria-label="Toggle mobile menu"
+            aria-label={t('toggleMenu')}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -181,6 +207,7 @@ export function Header(): React.ReactElement {
 
         {/* Mobile Menu */}
         <motion.div
+          ref={mobileMenuRef}
           id="mobile-menu"
           className="lg:hidden overflow-hidden"
           initial={false}

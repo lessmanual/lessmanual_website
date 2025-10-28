@@ -11,7 +11,9 @@
     "about": "O nas",
     "specializations": "Specjalizacje",
     "roi": "Kalkulator ROI",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "skipToContent": "Przejdź do treści",
+    "toggleMenu": "Otwórz/zamknij menu"
   },
   "about": {
     "name": "Bartłomiej Chudzik",
@@ -22,6 +24,9 @@
       "experience": "Lat doświadczenia",
       "clients": "Zadowolonych klientów",
       "hours": "Zaoszczędzonych godzin"
+    },
+    "aria": {
+      "profileImageAlt": "Bartłomiej Chudzik - Founder & CTO LessManual, specjalista ds. automatyzacji biznesu i AI"
     }
   },
   "metadata": {

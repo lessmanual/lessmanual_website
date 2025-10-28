@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, lazy, useEffect, useRef } from 'react'
+import { Suspense, lazy } from 'react'
 const Spline = lazy(() => import('@splinetool/react-spline'))
 
 /**
@@ -21,26 +21,25 @@ interface InteractiveRobotSplineProps {
 /**
  * Interactive Robot Spline Component
  *
- * Lazy-loaded 3D Spline viewer with automatic watermark removal.
- * Used in Hero section for interactive robot animation.
+ * Lazy-loaded 3D Spline viewer for interactive robot animation.
+ * Used in Hero section. Watermark visible (Free plan compliance).
  *
  * Features:
  * - Lazy loads Spline library (code splitting)
  * - React Suspense for loading states
- * - Automatic watermark removal (multiple attempts)
  * - Responsive container with custom styling
  * - Loading spinner with pear color (#DDE000)
+ * - Spline watermark visible (license compliance)
  *
  * Performance:
  * - Lazy imports Spline library (reduces initial bundle)
  * - Only loads when component renders
  * - Suspense fallback prevents layout shift
  *
- * Watermark Removal:
- * - Tries multiple selectors to find Spline watermark
- * - Runs at intervals (100ms, 500ms, 1s, 2s, 3s)
- * - Handles dynamically added watermarks
- * - Cleans up timeouts on unmount
+ * License Compliance:
+ * - Spline Free plan requires visible watermark
+ * - To hide watermark: upgrade to Spline paid plan
+ * - See: https://spline.design/pricing
  *
  * @example
  * ```tsx
@@ -60,50 +59,16 @@ export function InteractiveRobotSpline({
   scene,
   className,
 }: InteractiveRobotSplineProps): React.ReactElement {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    // Remove watermark after component loads
-    const removeWatermark = () => {
-      if (containerRef.current) {
-        // Try multiple selectors to find and remove watermark
-        const selectors = [
-          'a[href*="spline.design"]',
-          '[data-spline-watermark]',
-          '#spline-watermark',
-          '.spline-watermark',
-        ]
-
-        selectors.forEach((selector) => {
-          const elements = containerRef.current?.querySelectorAll(selector)
-          elements?.forEach((el) => {
-            ;(el as HTMLElement).style.display = 'none'
-            el.remove()
-          })
-        })
-      }
-    }
-
-    // Run multiple times to catch dynamically added watermarks
-    const intervals = [100, 500, 1000, 2000, 3000]
-    const timeouts = intervals.map((delay) =>
-      setTimeout(removeWatermark, delay)
-    )
-
-    return () => {
-      timeouts.forEach((timeout) => clearTimeout(timeout))
-    }
-  }, [])
-
   return (
     <div
-      ref={containerRef}
       className="relative w-full h-full spline-robot-wrapper"
+      role="img"
+      aria-label="Interactive 3D robot animation"
     >
       <Suspense
         fallback={
           <div
-            className={`w-full h-full flex items-center justify-center bg-night/40 text-white ${className}`}
+            className={`w-full h-full flex items-center justify-center bg-night/40 text-white ${className || ''}`}
           >
             <svg
               className="animate-spin h-12 w-12 text-pear"
@@ -128,7 +93,7 @@ export function InteractiveRobotSpline({
           </div>
         }
       >
-        <div className={className}>
+        <div className={className || 'w-full h-full'}>
           <Spline scene={scene} />
         </div>
       </Suspense>

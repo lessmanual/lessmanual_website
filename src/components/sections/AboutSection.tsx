@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import React, { useRef, useState } from 'react'
+import { motion, useInView, useMotionValue, useTransform } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
@@ -51,28 +51,26 @@ export function AboutSection(): React.ReactElement {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: '-100px' })
 
-  // Track mouse position for dynamic 3D tilt
-  const [tiltStyle, setTiltStyle] = useState({
-    rotateX: 0,
-    rotateY: 0,
-  })
+  // Track mouse position for dynamic 3D tilt (optimized with useMotionValue)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  // Transform mouse position to rotation values (max 8°)
+  const rotateY = useTransform(mouseX, [-0.5, 0.5], [-8, 8])
+  const rotateX = useTransform(mouseY, [-0.5, 0.5], [8, -8])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const centerX = rect.width / 2
-    const centerY = rect.height / 2
+    const x = (e.clientX - rect.left) / rect.width - 0.5 // Normalize to [-0.5, 0.5]
+    const y = (e.clientY - rect.top) / rect.height - 0.5 // Normalize to [-0.5, 0.5]
 
-    // Calculate tilt (max 8°)
-    const rotateY = ((x - centerX) / centerX) * 8
-    const rotateX = -((y - centerY) / centerY) * 8
-
-    setTiltStyle({ rotateX, rotateY })
+    mouseX.set(x)
+    mouseY.set(y)
   }
 
   const handleMouseLeave = () => {
-    setTiltStyle({ rotateX: 0, rotateY: 0 })
+    mouseX.set(0)
+    mouseY.set(0)
   }
 
   return (
@@ -83,7 +81,7 @@ export function AboutSection(): React.ReactElement {
       aria-labelledby="about-heading"
     >
       {/* Background decorative elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {/* Floating stars with fixed positions */}
         {[
           { top: 15, left: 20 },
@@ -144,17 +142,13 @@ export function AboutSection(): React.ReactElement {
                 style={{
                   transformStyle: 'preserve-3d',
                   perspective: 1000,
-                }}
-                animate={tiltStyle}
-                transition={{
-                  type: 'spring',
-                  stiffness: 300,
-                  damping: 20,
+                  rotateX,
+                  rotateY,
                 }}
               >
                 <Image
                   src="/images/team/bartlomiej.jpg"
-                  alt="Bartłomiej Chudzik - Founder & CTO of LessManual, specialist in business automation and AI"
+                  alt={t('aria.profileImageAlt')}
                   width={320}
                   height={320}
                   className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-110"

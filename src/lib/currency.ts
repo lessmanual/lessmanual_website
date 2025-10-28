@@ -14,17 +14,39 @@ export type Locale = 'pl' | 'en'
 const PLN_TO_EUR_RATE = 4.3
 
 /**
+ * Validates currency amount input
+ * @param amount - Amount to validate
+ * @throws {Error} If amount is invalid
+ */
+function validateAmount(amount: number): void {
+  if (!Number.isFinite(amount)) {
+    throw new Error(`Invalid amount: ${amount}. Must be a finite number.`)
+  }
+  if (amount < 0) {
+    throw new Error(`Invalid amount: ${amount}. Must be non-negative.`)
+  }
+}
+
+/**
  * Convert PLN to EUR
+ * @param amountPLN - Amount in PLN (Polish złoty)
+ * @returns Amount in EUR (preserves precision)
+ * @throws {Error} If amountPLN is invalid
  */
 export function convertPLNtoEUR(amountPLN: number): number {
-  return Math.round(amountPLN / PLN_TO_EUR_RATE)
+  validateAmount(amountPLN)
+  return amountPLN / PLN_TO_EUR_RATE
 }
 
 /**
  * Convert EUR to PLN
+ * @param amountEUR - Amount in EUR (euro)
+ * @returns Amount in PLN (preserves precision)
+ * @throws {Error} If amountEUR is invalid
  */
 export function convertEURtoPLN(amountEUR: number): number {
-  return Math.round(amountEUR * PLN_TO_EUR_RATE)
+  validateAmount(amountEUR)
+  return amountEUR * PLN_TO_EUR_RATE
 }
 
 /**
@@ -34,6 +56,7 @@ export function convertEURtoPLN(amountEUR: number): number {
  * @param locale - Current user locale ('pl' | 'en')
  * @param options - Additional formatting options
  * @returns Formatted currency string
+ * @throws {Error} If amount is invalid
  *
  * @example
  * formatCurrency(12000, 'pl') // "12 000 PLN"
@@ -47,6 +70,8 @@ export function formatCurrency(
     decimals?: boolean // Default: false
   }
 ): string {
+  validateAmount(amount)
+
   const showCurrency = options?.showCurrency ?? true
   const decimals = options?.decimals ?? false
 
@@ -96,8 +121,14 @@ export function getCurrencyCode(locale: Locale): 'PLN' | 'EUR' {
 
 /**
  * Format number without currency (for hours, counts, etc.)
+ * @param value - Number value to format
+ * @param locale - Current user locale
+ * @returns Formatted number string
+ * @throws {Error} If value is invalid
  */
 export function formatNumber(value: number, locale: Locale): string {
+  validateAmount(value)
+
   if (locale === 'en') {
     return value.toLocaleString('en-US')
   }

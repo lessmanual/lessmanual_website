@@ -10,7 +10,7 @@ import { AboutSection } from '@/components/sections/AboutSection'
 
 /**
  * Generate metadata for homepage
- * Supports both PL and EN locales
+ * Supports both PL and EN locales with Open Graph and Twitter Card metadata
  */
 export async function generateMetadata({
   params,
@@ -20,15 +20,40 @@ export async function generateMetadata({
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lessmanual.ai'
+  const ogImage = `${siteUrl}/images/logo.png` // TODO: Create proper 1200x630px OG image
+
   return {
     title: t('home.title'),
     description: t('home.description'),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `${siteUrl}/${locale}`,
       languages: {
-        pl: '/pl',
-        en: '/en',
+        pl: `${siteUrl}/pl`,
+        en: `${siteUrl}/en`,
       },
+    },
+    openGraph: {
+      title: t('home.title'),
+      description: t('home.description'),
+      url: `${siteUrl}/${locale}`,
+      siteName: 'LessManual',
+      locale: locale === 'pl' ? 'pl_PL' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: t('home.title'),
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('home.title'),
+      description: t('home.description'),
+      images: [ogImage],
     },
   }
 }

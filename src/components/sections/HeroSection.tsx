@@ -50,14 +50,6 @@ import { InteractiveRobotSpline } from '@/components/ui/InteractiveRobotSpline'
  * @see {@link InteractiveRobotSpline} - 3D robot component
  */
 
-// Figma asset URLs
-const imgBlur = "https://www.figma.com/api/mcp/asset/5292d880-e414-48b4-8505-9ffc649591cc"
-const imgBlur2 = "https://www.figma.com/api/mcp/asset/b9b51c0f-0913-4fac-b02d-9ee139086386"
-const imgBlur3 = "https://www.figma.com/api/mcp/asset/facd9df8-79d4-4c7c-9b5e-6688146a01cf"
-const imgEllipse2 = "https://www.figma.com/api/mcp/asset/3a76a502-9cf5-4ad4-b75c-f43e55de83d1"
-const imgEllipse3 = "https://www.figma.com/api/mcp/asset/fe387972-b453-4c39-8d4a-26170d470f92"
-const imgEllipse4 = "https://www.figma.com/api/mcp/asset/caab3a02-9aab-41da-8e04-5b40ddeb3fb9"
-
 /**
  * HeroSection Component
  *
@@ -109,25 +101,27 @@ export function HeroSection(): React.ReactElement {
       />
 
       {/* Blur Effects - Behind everything */}
+      {/* Note: RGBA values from design-tokens.ts (pear #DDE000, tekhelet #5716A2) */}
+      {/* Inline styles required for radial-gradient - Tailwind doesn't support this pattern */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] opacity-40"
           style={{
-            background: `radial-gradient(circle, rgba(221, 224, 0, 0.3) 0%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(221, 224, 0, 0.3) 0%, transparent 70%)`, // pear with opacity
             filter: 'blur(100px)',
           }}
         />
         <div
           className="absolute top-1/4 right-1/4 w-[600px] h-[600px] opacity-30"
           style={{
-            background: `radial-gradient(circle, rgba(87, 22, 162, 0.4) 0%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(87, 22, 162, 0.4) 0%, transparent 70%)`, // tekhelet with opacity
             filter: 'blur(120px)',
           }}
         />
         <div
           className="absolute bottom-1/4 left-1/4 w-[700px] h-[700px] opacity-25"
           style={{
-            background: `radial-gradient(circle, rgba(221, 224, 0, 0.2) 0%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(221, 224, 0, 0.2) 0%, transparent 70%)`, // pear with opacity
             filter: 'blur(140px)',
           }}
         />
@@ -152,14 +146,14 @@ export function HeroSection(): React.ReactElement {
               <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60"
                 style={{
-                  background: `radial-gradient(circle, rgba(221, 224, 0, 0.4) 0%, transparent 70%)`,
+                  background: `radial-gradient(circle, rgba(221, 224, 0, 0.4) 0%, transparent 70%)`, // pear with opacity
                   filter: 'blur(80px)',
                 }}
               />
               <div
                 className="absolute bottom-0 left-1/4 w-[400px] h-[400px] opacity-40"
                 style={{
-                  background: `radial-gradient(circle, rgba(87, 22, 162, 0.3) 0%, transparent 70%)`,
+                  background: `radial-gradient(circle, rgba(87, 22, 162, 0.3) 0%, transparent 70%)`, // tekhelet with opacity
                   filter: 'blur(100px)',
                 }}
               />
@@ -199,7 +193,7 @@ export function HeroSection(): React.ReactElement {
                   damping: 20
                 }}
                 style={{
-                  textShadow: '0 0 80px rgba(221, 224, 0, 0.5)',
+                  textShadow: '0 0 80px rgba(221, 224, 0, 0.5)', // pear glow effect
                 }}
               >
                 {t('mainHeadlineAccent')}

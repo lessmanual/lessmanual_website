@@ -87,36 +87,6 @@ export function RangeSlider({
 
       </div>
 
-      {/* Custom thumb styling via global CSS */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          input[type='range']::-webkit-slider-thumb {
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            background: #DDE000;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.2s;
-          }
-          input[type='range']::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-          }
-          input[type='range']::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            background: #DDE000;
-            border-radius: 50%;
-            cursor: pointer;
-            border: none;
-            transition: transform 0.2s;
-          }
-          input[type='range']::-moz-range-thumb:hover {
-            transform: scale(1.2);
-          }
-        `
-      }} />
-
       {/* Min/Max Labels */}
       <div className="flex justify-between text-xs text-white/50 mt-2">
         <span>{min.toLocaleString('pl-PL')}</span>

@@ -54,8 +54,8 @@ export function LanguageSwitcher(): React.ReactElement {
   const switchLanguage = (newLocale: Locale) => {
     if (newLocale === locale) return
 
-    // Replace locale in pathname
-    const newPathname = pathname.replace(`/${locale}`, `/${newLocale}`)
+    // Replace locale in pathname (regex ensures only path prefix is replaced)
+    const newPathname = pathname.replace(/^\/(pl|en)/, `/${newLocale}`)
     router.push(newPathname)
   }
 
@@ -74,7 +74,7 @@ export function LanguageSwitcher(): React.ReactElement {
               focus:outline-none focus:ring-2 focus:ring-pear/50
             `}
             aria-label={`Switch to ${localeNames[loc]}`}
-            aria-current={isActive ? 'true' : undefined}
+            aria-pressed={isActive}
           >
             {/* Active background */}
             {isActive && (
