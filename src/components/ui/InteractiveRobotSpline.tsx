@@ -59,7 +59,7 @@ interface InteractiveRobotSplineProps {
 export function InteractiveRobotSpline({
   scene,
   className,
-}: InteractiveRobotSplineProps): JSX.Element {
+}: InteractiveRobotSplineProps): React.ReactElement {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

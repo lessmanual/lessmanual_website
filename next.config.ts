@@ -34,6 +34,15 @@ const nextConfig: NextConfig = {
   compress: true,
   // Production optimizations
   productionBrowserSourceMaps: false,
+  // Rewrites for clean URLs
+  async rewrites() {
+    return [
+      {
+        source: '/logo.png',
+        destination: '/images/logo.png',
+      },
+    ]
+  },
 }
 
 export default withNextIntl(nextConfig)

@@ -46,7 +46,7 @@ import { motion } from 'framer-motion'
  * @see {@link https://next-intl-docs.vercel.app} - next-intl documentation
  * @see {@link @/i18n/config} - Locale configuration
  */
-export function LanguageSwitcher(): JSX.Element {
+export function LanguageSwitcher(): React.ReactElement {
   const locale = useLocale() as Locale
   const router = useRouter()
   const pathname = usePathname()

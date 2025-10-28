@@ -7,6 +7,31 @@
 
 ---
 
+## HOMEPAGE STRUCTURE (lessmanual.ai)
+
+**Main sections (in order):**
+1. **Header** - Fixed navigation with logo, menu links, language switcher ✅ DONE
+2. **Hero** - Full-screen with 3D robot, headline, subheadline, body, 2 CTAs ✅ DONE
+3. **Problem/Solution** - 3 reasons why clients are lost (Customer Service, Sales, Marketing) ✅ DONE
+4. **Nasze Specjalizacje** - 6 AI products with alternating image-text layout ✅ DONE
+5. **Jak to działa** - 4-step timeline with scattered zig-zag layout, accordion, curved arrows ✅ DONE
+6. **Kalkulator ROI** - Interactive ROI calculator 🔄 TODO
+7. **CTA Button** - Final call-to-action section 🔄 TODO
+8. **O nas** - About section with founder profile ✅ DONE
+9. **Formularz kontaktowy** - Contact form (Supabase + n8n + ClickUp) 🔄 TODO
+10. **FAQ** - 5 most important questions 🔄 TODO
+11. **Footer** - Links, social media, legal 🔄 TODO
+
+**Separate pages:**
+- `/blog` - Blog listing + individual posts 🔄 TODO
+- `/faq` - Full FAQ page (~20 questions total) 🔄 TODO
+
+**CTA Button behavior:**
+- **"Umów bezpłatną konsultację"** → Scroll to contact form (#contact)
+- **"Oblicz ROI"** → Scroll to ROI calculator (#roi-calculator)
+
+---
+
 ## ROLE
 
 You are a CTO building a high-performance marketing website with professional 3D animations. Your code must be production-ready, performant (Lighthouse 90+), and pixel-perfect to Figma design.

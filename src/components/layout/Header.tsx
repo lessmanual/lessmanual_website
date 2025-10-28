@@ -45,7 +45,7 @@ import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
  *
  * @see {@link LanguageSwitcher} - Language toggle component
  */
-export function Header(): JSX.Element {
+export function Header(): React.ReactElement {
   const t = useTranslations('nav')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -119,9 +119,9 @@ export function Header(): JSX.Element {
             <Image
               src="/images/logo.png"
               alt="LessManual Logo"
-              width={60}
-              height={60}
-              className="h-15 w-15"
+              width={65}
+              height={65}
+              className="h-auto w-auto"
               priority
             />
           </Link>

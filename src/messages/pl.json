@@ -1,8 +1,11 @@
 {
   "hero": {
-    "subheadline": "AI + Automatyzacja dla polskich firm. Wdrożenie w 7 dni. ROI w miesiąc.",
-    "ctaPrimary": "Umów demo (15 min)",
-    "ctaSecondary": "Zobacz case studies"
+    "mainHeadline": "Make your business",
+    "mainHeadlineAccent": "LESSMANUAL",
+    "subheadline": "Automatyzacja AI dla Firm",
+    "body": "Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.\nWdrożenie od 7 dni | ROI już od 2 miesięcy",
+    "ctaPrimary": "Umów bezpłatną konsultację",
+    "ctaSecondary": "Oblicz ROI"
   },
   "nav": {
     "about": "O nas",
@@ -25,6 +28,510 @@
     "home": {
       "title": "LessManual.ai - AI + Automatyzacja dla polskich firm",
       "description": "Wdrożenie w 7 dni. ROI w miesiąc. Automatyzacja procesów biznesowych i inteligentne rozwiązania AI dla firm w Polsce."
+    }
+  },
+  "problemSolution": {
+    "headline": "3 powody dlaczego tracisz klientów",
+    "subheadline": "(A Twoja konkurencja ich zbiera)",
+    "customerService": {
+      "title": "Obsługa Klienta",
+      "problem": {
+        "headline": "Sobota 21:37. Klient: \"Czy masz rozmiar 42?\" Nikt nie odpowiada. Niedziela 14:22. Kupił gdzie indziej.",
+        "stats": "20,000 PLN miesięcznie tracisz • 40% zapytań po godzinach • 0% odpowiedzi"
+      },
+      "solution": {
+        "headline": "Odpowiedź w 2 sekundy. 24/7. Nawet sobota o 23:00.",
+        "description": "Chatbot tekstowy lub agent głosowy automatycznie odpowiada klientom. O każdej porze. Bez urlopów, bez weekendów, bez \"przepraszam, nieczynne\"."
+      },
+      "cta": "Zażegnaj ten problem"
+    },
+    "sales": {
+      "title": "Sprzedaż",
+      "problem": {
+        "headline": "200 wiadomości wysłanych. 48 godzin pracy. 0 umówionych spotkań. Czy sprzedaż w ogóle ma sens?",
+        "stats": "7,200 PLN zmarnowane • 3% czyta • 97% usuwa bez czytania"
+      },
+      "solution": {
+        "headline": "5 umówionych spotkań w weekend. Średnio 10% więcej odpowiedzi.",
+        "description": "Personalizacja, która rzeczywiście działa. Klienci sami chcą rozmawiać, bo wiadomość trafia w ich potrzeby."
+      },
+      "cta": "Przestań tracić czas"
+    },
+    "marketing": {
+      "title": "Marketing",
+      "problem": {
+        "headline": "3 posty tygodniowo. 6 godzin pracy. 47 wyświetleń (mama + kolega). Konkurencja: 5,000 wyświetleń.",
+        "stats": "3,600 PLN zmarnowane • 0 zapytań ofertowych • Algorytm Cię ignoruje"
+      },
+      "solution": {
+        "headline": "1,240 wyświetleń na post. Klienci piszą pierwsi.",
+        "description": "Zero godzin na \"o czym napisać\". Treści, które algorytm lubi. Zapytania ofertowe wprost z LinkedIn i mediów społecznościowych."
+      },
+      "cta": "Przestań być niewidzialny"
+    }
+  },
+  "specializations": {
+    "headline": "Nasze Specjalizacje",
+    "subheadline": "Rozwiązania AI szyte na miarę Twojego biznesu",
+    "compliance": {
+      "aiAct": "Zgodność z AI Act",
+      "rodo": "Certyfikat RODO",
+      "dataLocation": "Dane w Polsce/UE",
+      "encryption": "Szyfrowanie end-to-end"
+    },
+    "customerSupport": {
+      "title": "Obsługa Klienta AI",
+      "subtitle": "Chatbot + Agent głosowy",
+      "outcome": "Nigdy więcej nie stracisz klienta o 22:00 w sobotę.",
+      "description": "Inteligentny system odpowiada na pytania klientów w czasie rzeczywistym - 24/7, w każdym kanale (chat, email, telefon, WhatsApp). Trenowany na Twojej dokumentacji, cennikach, produktach, najczęściej zadawanych pytaniach. Automatycznie obsługuje 80% zapytań, eskalując tylko skomplikowane przypadki (5-10%) do człowieka.",
+      "applications": "E-commerce: Status zamówienia, zwroty, dostępność produktu • Oprogramowanie/IT: Wdrażanie użytkowników, rozwiązywanie problemów, resetowanie haseł • Usługi/HoReCa: Rezerwacje, cenniki, godziny otwarcia",
+      "cta": "Umów bezpłatną konsultację"
+    },
+    "contentCreation": {
+      "title": "Tworzenie Treści AI",
+      "subtitle": "Blog + Media społecznościowe na autopilocie",
+      "outcome": "1,240 wyświetleń na post. Klienci piszą pierwsi. Zero godzin na o czym napisać.",
+      "description": "Agent AI generuje, optymalizuje i publikuje treści dopasowane do algorytmów LinkedIn, Google, TikTok i innych platform. Analizuje 1,000+ najlepszych postów w Twojej branży, identyfikuje popularne tematy, tworzy treści które algorytm promuje. Jeden klik = 5 platform jednocześnie (LinkedIn, Instagram, TikTok, YouTube, Facebook). Blogi pisane są pod SEO/AEO dla pozycjonowania firmy w wyszukiwarkach (Google, Bing) oraz chatbotach AI (ChatGPT, Claude, Gemini, DeepSeek, Perplexity, Qwen, Kimi).",
+      "applications": "B2B/LinkedIn: Merytoryczne posty, studia przypadków, analizy branżowe (3-5 postów/tydzień) • E-commerce/Media społecznościowe: Prezentacje produktów, treści użytkowników, kampanie sezonowe • Personal Branding: Ekspert/założyciel budujący autorytet w branży",
+      "cta": "Umów bezpłatną konsultację"
+    },
+    "salesAutomation": {
+      "title": "Automatyzacja Sprzedaży AI",
+      "subtitle": "Zimna sprzedaż + Pozyskiwanie klientów",
+      "outcome": "5 umówionych spotkań w weekend. Średnio 10% więcej odpowiedzi niż konkurencja.",
+      "description": "Kompleksowy system zimnej sprzedaży: zbieranie kontaktów z LinkedIn/Google Maps/Stron internetowych → personalizacja przez AI (analiza profilu, postów, firmy) → automatyczne sekwencje email/LinkedIn/WhatsApp → wiadomości przypominające → umawianie prezentacji. Personalizacja która rzeczywiście działa: AI analizuje ostatnie 10 postów potencjalnego klienta, technologie używane w firmie, newsy branżowe - i pisze wiadomość jakby wysłał ją człowiek poświęcający 3h na research.",
+      "applications": "B2B/Oprogramowanie: Dotarcie do osób decyzyjnych (VP Sprzedaży, Dyrektor Marketingu, CTO) • Agencje: Pozyskiwanie klientów dla odbiorców (automatyzacja white-label) • Doradztwo/Usługi profesjonalne: Poszukiwanie wartościowych projektów (10k+ PLN)",
+      "cta": "Umów bezpłatną konsultację"
+    },
+    "knowledgeAssistant": {
+      "title": "Asystent Wiedzy",
+      "subtitle": "RAG - AI dla Twojego zespołu",
+      "outcome": "Nowy pracownik produktywny w 2 dni, nie 2 tygodnie. Zero godzin na szukanie dokumentów.",
+      "description": "Prywatny ChatGPT trenowany TYLKO na Twoich danych: procedury, oferty, dokumentacja techniczna, najczęściej zadawane pytania wewnętrzne, kontrakty, regulaminy. Pracownicy zadają pytania po polsku (Jaka jest procedura reklamacji dla klienta Premium?) → AI odpowiada w 2 sekundy, cytując źródła (które procedury, paragraf, ostatnia aktualizacja). Dane nie opuszczają firmy - odizolowane środowisko, zero ryzyka wycieku.",
+      "applications": "Wdrażanie: Nowi pracownicy pytają AI zamiast kolegów (90% pytań obsłużone automatycznie) • Obsługa klienta poziom 2: Agenci pytają AI o skomplikowane sprawy (dokumentacja techniczna natychmiast) • Wsparcie sprzedaży: Handlowcy pytają o cenniki, warunki, konkurencję (precyzyjne odpowiedzi w 5 sekund)",
+      "cta": "Umów bezpłatną konsultację"
+    },
+    "voiceAgent": {
+      "title": "Agent Głosowy Wielozadaniowy",
+      "subtitle": "AI który rozmawia",
+      "outcome": "200 połączeń dziennie. Zero zatrudnienia recepcji. 12 języków, włącznie z gwarami.",
+      "description": "Agent głosowy który brzmi jak człowiek, rozumie kontekst, reaguje naturalnie (nie Naciśnij 1). Trzy główne zastosowania: Recepcja (przekierowywanie połączeń, rezerwacje, najczęściej zadawane pytania), Zimne połączenia (250 połączeń/dzień, personalizacja, zostawia wiadomości głosowe), Obsługa klienta (rozwiązywanie problemów poziom 1, sprawdzanie statusu, eskalacja do człowieka). Rozmawia po polsku (również regionalne akcenty: śląski, kaszubski), angielsku, niemiecku + 9 innych języków.",
+      "applications": "Recepcja: Hotele, kliniki medyczne, salony beauty, restauracje, gabinety stomatologiczne, salony samochodowe, auto detailing, fizjoterapeuci, psycholodzy/psychoterapeuci (rezerwacje 24/7, bez zatrudniania recepcjonistki) • Zimne połączenia B2B: Agencje, Oprogramowanie (kwalifikacja potencjalnych klientów, umówienie prezentacji, przypomnienia) • Obsługa klienta: E-commerce, usługi (status zamówienia, zwroty, podstawowe pytania techniczne)",
+      "cta": "Umów bezpłatną konsultację"
+    },
+    "customSolutions": {
+      "title": "Rozwiązania AI na Zamówienie",
+      "subtitle": "Rozwiązania na miarę",
+      "outcome": "Zautomatyzowaliśmy procesy które nie dało się zautomatyzować. Fabryki, logistyka, finanse.",
+      "description": "Dedykowane rozwiązania AI dla złożonych procesów biznesowych: Produkcja (planowanie produkcji, przewidywanie zagrożenia braku surowców z alertami o konieczności zamówienia), Logistyka (optymalizacja tras, prognozowanie popytu), Finanse (przetwarzanie dokumentów, wykrywanie oszustw), Administracja publiczna (automatyzacja obsługi obywateli, kontrola zgodności). Architektura szyta na miarę, dedykowana infrastruktura, SLA 99.9%, wsparcie 24/7.",
+      "applications": "Produkcja: Planowanie produkcji i przewidywanie zagrożenia braku surowców z automatycznymi alertami o konieczności zamówienia (redukcja przestojów o 40%, oszczędność kapitału 25%) • Logistyka: Optymalizacja tras dla 200 pojazdów (15% oszczędności paliwa, -20% czasu dostawy) • Finanse/Bankowość: Automatyczne przetwarzanie dokumentów kredytowych (weryfikacja tożsamości) - 5 dni → 2 godziny • Administracja publiczna: Chatbot dla urzędu miasta (100,000 mieszkańców, 70% zapytań automatycznie)",
+      "cta": "Umów bezpłatną konsultację"
+    }
+  },
+  "howItWorks": {
+    "headline": "Jak to działa",
+    "subheadline": "Od konsultacji do działającego systemu",
+    "step1": {
+      "title": "Bezpłatna Konsultacja",
+      "subtitle": "20 minut • Zero zobowiązań",
+      "icon": "💬",
+      "items": [
+        "Omawiamy Twój problem i cel biznesowy",
+        "Szacujemy ile godzin i pieniędzy zaoszczędzisz miesięcznie",
+        "Policzymy ROI na żywo podczas rozmowy",
+        "Dowiesz się czy automatyzacja ma sens w Twojej firmie"
+      ],
+      "timeline": "Dzisiaj lub jutro"
+    },
+    "step2": {
+      "title": "Propozycja i Umowa",
+      "subtitle": "48 godzin od konsultacji",
+      "icon": "📄",
+      "items": [
+        "Szczegółowy zakres prac (co dokładnie dostarczamy)",
+        "Transparentne ceny: Wdrożenie (jednorazowo) + Utrzymanie (miesięcznie)",
+        "Realny harmonogram (ile dni do uruchomienia)",
+        "Projekcja ROI (konkretne kwoty oszczędności rocznie)",
+        "Podpisanie umowy elektronicznie + 50% zaliczka"
+      ],
+      "timeline": "2 dni po konsultacji"
+    },
+    "step3": {
+      "title": "Wdrożenie Systemu",
+      "subtitle": "Od 7 dni do uruchomienia",
+      "icon": "⚙️",
+      "items": [
+        "Dni 1-2: Zbieramy dane techniczne (systemy, integracje, dostępy, branding)",
+        "Dni 3-5: Budujemy rozwiązanie (wykorzystujemy 5,000+ gotowych komponentów)",
+        "Dzień 6: Testujesz - pokazujemy Ci działający system",
+        "Dzień 7: Poprawki zgodnie z Twoim feedbackiem",
+        "Finał: Uruchomienie + szkolenie (2h sesja na żywo + dokumentacja + nagrania)"
+      ],
+      "timeline": "Od tygodnia (w zależności od złożoności projektu)"
+    },
+    "step4": {
+      "title": "Wsparcie 24/7",
+      "subtitle": "Ciągłe utrzymanie i rozwój",
+      "icon": "🛡️",
+      "items": [
+        "Monitoring 24/7: Uptime 99.9%, alerty w czasie rzeczywistym",
+        "Wsparcie techniczne: Email <24h, krytyczne błędy <24h naprawa",
+        "My opłacamy: Serwery, AI (Claude/GPT), integracje (Twilio, etc.)",
+        "Ty płacisz: Stałą miesięczną opłatę za utrzymanie (wszystko wliczone)",
+        "Rozwój: Ankiety zadowolenia → kolejne automatyzacje → optymalizacje"
+      ],
+      "timeline": "Długoterminowa współpraca"
+    },
+    "callout": {
+      "icon": "💰",
+      "title": "MY PŁACIMY ZA INFRASTRUKTURĘ",
+      "description": "Serwery, AI (Claude, GPT), integracje - wszystko wliczone.",
+      "highlight": "Ty płacisz stałą miesięczną opłatę. Zero niespodzianek."
+    }
+  },
+  "roiCalculator": {
+    "headline": "Oblicz ROI swojej automatyzacji",
+    "subheadline": "Wyniki w 60 sekund",
+    "step1": {
+      "title": "Co chcesz zautomatyzować?",
+      "subtitle": "Wybierz produkt najbliższy Twoim potrzebom",
+      "helpButton": "❓ Nie wiesz? Pomóż mi wybrać",
+      "products": {
+        "chatbot": {
+          "icon": "💬",
+          "name": "ChatBot 24/7",
+          "description": "Obsługa klienta",
+          "avgSavings": "Śr. oszczędność: 12 000 PLN/mies",
+          "tags": ["E-commerce", "SaaS", "Usługi"]
+        },
+        "voiceAgent": {
+          "icon": "📞",
+          "name": "Agent Głosowy",
+          "description": "Recepcja i umawianie wizyt",
+          "avgSavings": "Śr. oszczędność: 10 000 PLN/mies",
+          "tags": ["Klinika", "Restauracja", "Salon"]
+        },
+        "contentAgent": {
+          "icon": "✍️",
+          "name": "Tworzenie Treści AI",
+          "description": "Posty w social media",
+          "avgSavings": "Śr. oszczędność: 5 000 PLN/mies",
+          "tags": ["Agencja", "E-commerce", "Marka osobista"]
+        },
+        "salesAutomation": {
+          "icon": "📊",
+          "name": "Automatyzacja Sprzedaży",
+          "description": "Leady i follow-up",
+          "avgSavings": "Śr. oszczędność: 8 000 PLN/mies",
+          "tags": ["B2B", "SaaS", "Konsulting"]
+        },
+        "ragChatbot": {
+          "icon": "🧠",
+          "name": "Asystent Wiedzy",
+          "description": "Wyszukiwanie w dokumentach",
+          "avgSavings": "Śr. oszczędność: 12 000 PLN/mies",
+          "tags": ["Księgowość", "Prawo", "HR"]
+        },
+        "custom": {
+          "icon": "⚙️",
+          "name": "Dedykowane Rozwiązania",
+          "description": "Automatyzacja na miarę",
+          "avgSavings": "Śr. oszczędność: 18 000 PLN/mies",
+          "tags": ["Produkcja", "Logistyka", "Finanse"]
+        }
+      }
+    },
+    "step2": {
+      "title": "Twoje dane",
+      "subtitle": "Odpowiedz na {count} pytań",
+      "presetLabel": "💡 Szybkie wypełnienie:",
+      "backButton": "← Zmień produkt",
+      "calculateButton": "Oblicz ROI →",
+      "chatbot": {
+        "q1": {
+          "label": "Ile zapytań klientów dziennie?",
+          "unit": "zapytań"
+        },
+        "q2": {
+          "label": "Ile minut zajmuje odpowiedź?",
+          "unit": "min"
+        },
+        "q3": {
+          "label": "Jaka jest stawka godzinowa pracownika?",
+          "unit": "PLN/h"
+        },
+        "q4": {
+          "label": "Jaki % zapytań można zautomatyzować?",
+          "unit": "%"
+        }
+      },
+      "voiceAgent": {
+        "q1": {
+          "label": "Ile połączeń przychodzących dziennie?",
+          "unit": "połączeń"
+        },
+        "q2": {
+          "label": "Ile minut trwa średnie połączenie?",
+          "unit": "min"
+        },
+        "q3": {
+          "label": "Jaka jest stawka godzinowa recepcji?",
+          "unit": "PLN/h"
+        },
+        "q4": {
+          "label": "Ile wizyt można umówić dodatkowo dzięki 24/7?",
+          "unit": "%"
+        },
+        "q5": {
+          "label": "Jaka jest wartość średniej wizyty?",
+          "unit": "PLN"
+        }
+      },
+      "contentAgent": {
+        "q1": {
+          "label": "Ile postów social media tygodniowo?",
+          "unit": "postów"
+        },
+        "q2": {
+          "label": "Ile godzin zajmuje 1 post?",
+          "unit": "h"
+        },
+        "q3": {
+          "label": "Jaka jest stawka content creatora?",
+          "unit": "PLN/h"
+        },
+        "q4": {
+          "label": "Ile platform obsługujesz?",
+          "unit": "platform",
+          "options": ["LinkedIn", "Facebook", "Instagram", "TikTok", "YouTube"]
+        }
+      },
+      "salesAutomation": {
+        "q1": {
+          "label": "Ile leadów miesięcznie generujesz?",
+          "unit": "leadów"
+        },
+        "q2": {
+          "label": "Ile czasu zajmuje obsługa 1 leada?",
+          "unit": "min"
+        },
+        "q3": {
+          "label": "Jaki % leadów można zautomatyzować?",
+          "unit": "%"
+        },
+        "q4": {
+          "label": "Jaka jest stawka handlowca?",
+          "unit": "PLN/h"
+        },
+        "q5": {
+          "label": "Jaka jest wartość średniego deala?",
+          "unit": "PLN"
+        },
+        "q6": {
+          "label": "O ile % wzrośnie konwersja dzięki automatyzacji?",
+          "unit": "%"
+        }
+      },
+      "ragChatbot": {
+        "q1": {
+          "label": "Ile dokumentów/stron ma baza wiedzy?",
+          "unit": "dokumentów"
+        },
+        "q2": {
+          "label": "Ile zapytań o dokumenty dziennie?",
+          "unit": "zapytań"
+        },
+        "q3": {
+          "label": "Ile minut zajmuje wyszukanie odpowiedzi?",
+          "unit": "min"
+        },
+        "q4": {
+          "label": "Jaka jest stawka pracownika?",
+          "unit": "PLN/h"
+        }
+      },
+      "customSolutions": {
+        "q1": {
+          "label": "Ile godzin miesięcznie proces do automatyzacji?",
+          "unit": "h/mies"
+        },
+        "q2": {
+          "label": "Ile osób zaangażowanych w proces?",
+          "unit": "osób"
+        },
+        "q3": {
+          "label": "Jaka jest średnia stawka zespołu?",
+          "unit": "PLN/h"
+        },
+        "q4": {
+          "label": "Czy proces generuje przychody?"
+        },
+        "q5": {
+          "label": "O ile % może wzrosnąć przychód?",
+          "unit": "%"
+        },
+        "q6": {
+          "label": "Obecne przychody miesięczne?",
+          "unit": "PLN"
+        }
+      }
+    },
+    "step3": {
+      "title": "🎉 Twoje wyniki",
+      "subtitle": "Potencjalne oszczędności dla Twojej firmy",
+      "metrics": {
+        "savingsMonth": "Oszczędności miesięczne",
+        "savingsYear": "Oszczędności roczne",
+        "roiPercent": "ROI po 12 miesiącach",
+        "breakEven": "Zwrot inwestycji",
+        "breakEvenUnit": "mies.",
+        "savedHours": "Zaoszczędzone godziny",
+        "additionalRevenue": "Dodatkowy przychód",
+        "additionalBookings": "Dodatkowe wizyty",
+        "automatedPosts": "Postów miesięcznie",
+        "leverageRatio": "Zasięg platform",
+        "additionalDeals": "Dodatkowe deale",
+        "queriesAnswered": "Instant answers"
+      },
+      "chartTitles": {
+        "beforeAfter": "Porównanie: Przed vs Po",
+        "cumulative": "Skumulowane oszczędności (3 lata)",
+        "breakdown": "Podział oszczędności"
+      },
+      "chartLabels": {
+        "before": "Przed automatyzacją",
+        "after": "Po automatyzacji",
+        "hours": "Godziny",
+        "cost": "Koszt",
+        "month": "Miesiąc",
+        "year": "Rok",
+        "savings": "Oszczędności"
+      },
+      "downloadButton": "📄 Pobierz szczegółowy raport PDF"
+    },
+    "step4": {
+      "title": "📄 Wyślij raport na email",
+      "subtitle": "Otrzymasz pełny raport PDF + link do konsultacji",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "twoj@email.pl"
+        },
+        "name": {
+          "label": "Imię (opcjonalnie)",
+          "placeholder": "Jan"
+        },
+        "phone": {
+          "label": "Telefon (opcjonalnie)",
+          "placeholder": "+48 123 456 789"
+        },
+        "consent": {
+          "label": "Zgoda RODO",
+          "text": "Akceptuję politykę prywatności i wyrażam zgodę na przetwarzanie moich danych osobowych."
+        }
+      },
+      "submitButton": "📩 Wyślij raport + umów konsultację",
+      "securityNote": "🔒 Twoje dane są bezpieczne (RODO)",
+      "successMessage": "✅ Raport wysłany! Sprawdź skrzynkę email.",
+      "errorMessage": "❌ Wystąpił błąd. Spróbuj ponownie."
+    },
+    "progress": {
+      "step": "Krok",
+      "of": "z"
+    }
+  },
+  "productQuiz": {
+    "question1": {
+      "title": "Jaka jest Twoja branża?",
+      "options": {
+        "ecommerce": {
+          "label": "E-commerce / Sklep online",
+          "description": "Sprzedaż produktów przez internet"
+        },
+        "medical": {
+          "label": "Usługi medyczne / Klinika / Gabinet",
+          "description": "Opieka zdrowotna, stomatologia, fizjoterapia"
+        },
+        "dealer": {
+          "label": "Dealerstwo / Salon samochodowy",
+          "description": "Sprzedaż i serwis pojazdów"
+        },
+        "b2b": {
+          "label": "B2B / SaaS / Konsulting",
+          "description": "Usługi dla innych firm"
+        },
+        "agency": {
+          "label": "Agencja marketingowa",
+          "description": "Marketing, social media, reklama"
+        },
+        "accounting": {
+          "label": "Księgowość / Prawo / HR",
+          "description": "Usługi profesjonalne z dużą ilością dokumentów"
+        },
+        "manufacturing": {
+          "label": "Produkcja / Logistyka",
+          "description": "Wytwarzanie i dystrybucja produktów"
+        },
+        "other": {
+          "label": "Inna branża",
+          "description": "Dopasujemy rozwiązanie do Twoich potrzeb"
+        }
+      }
+    },
+    "question2": {
+      "title": "Jaki jest Twój główny problem?",
+      "options": {
+        "repetitive_inquiries": {
+          "label": "Za dużo powtarzalnych zapytań od klientów",
+          "description": "Email, chat, telefon - ciągle te same pytania"
+        },
+        "after_hours": {
+          "label": "Tracę klientów bo nie odbieram po godzinach",
+          "description": "Wieczory, weekendy - brak obsługi = utracone szanse"
+        },
+        "social_media": {
+          "label": "Zespół spędza godziny na social media",
+          "description": "Tworzenie i publikacja postów zajmuje za dużo czasu"
+        },
+        "sales_pipeline": {
+          "label": "Ręczne zarządzanie pipeline sprzedaży",
+          "description": "Leady gubią się, follow-upy nie docierają"
+        },
+        "documents": {
+          "label": "Trudno znaleźć informacje w dokumentach",
+          "description": "Tysiące plików, zero porządku, długie wyszukiwanie"
+        },
+        "custom_process": {
+          "label": "Chcę zautomatyzować unikalny proces",
+          "description": "Mam konkretny workflow do automatyzacji"
+        }
+      }
+    },
+    "question3": {
+      "title": "Jak duża jest Twoja firma?",
+      "options": {
+        "solo": {
+          "label": "Solo / 1-2 osoby",
+          "description": "Jednoosobowa działalność lub mikrofirma"
+        },
+        "small": {
+          "label": "Mały biznes (3-10 osób)",
+          "description": "Mały zespół, duże ambicje"
+        },
+        "medium": {
+          "label": "Średnia firma (11-50 osób)",
+          "description": "Rozbudowana struktura, potrzeba procesów"
+        },
+        "large": {
+          "label": "Duża firma (50+ osób)",
+          "description": "Enterprise, potrzeba skalowalności"
+        }
+      }
+    },
+    "navigation": {
+      "back": "Wstecz",
+      "next": "Dalej",
+      "finish": "Zobacz rekomendację"
     }
   }
 }

@@ -15,8 +15,15 @@ import { InteractiveRobotSpline } from '@/components/ui/InteractiveRobotSpline'
  * Design System:
  * - Brand colors: Night (#0C0D0A), Pear (#DDE000), Tekhelet (#5716A2)
  * - Layout: Two-column grid (robot left, content right)
- * - Animations: Parallax scroll, fade-in, sliding text
+ * - Animations: Parallax scroll, fade-in, sliding text, subtle float (mobile)
  * - 3D Asset: Spline robot with interactive hover effects
+ *
+ * Mobile Optimizations:
+ * - Robot takes full available height on all devices
+ * - Interactive head animation works on touch (native Spline behavior)
+ * - Responsive typography scaling (text-3xl → text-7xl)
+ * - Full-width buttons on mobile with proper spacing
+ * - Reduced padding to fit all content in viewport
  *
  * Performance:
  * - Lazy loads Spline 3D component with Suspense
@@ -59,7 +66,7 @@ const imgEllipse4 = "https://www.figma.com/api/mcp/asset/caab3a02-9aab-41da-8e04
  *
  * @returns {JSX.Element} Hero section with 3D robot, headline, and CTAs
  */
-export function HeroSection(): JSX.Element {
+export function HeroSection(): React.ReactElement {
   const t = useTranslations('hero')
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: '-100px' })
@@ -128,14 +135,14 @@ export function HeroSection(): JSX.Element {
 
       {/* Main container */}
       <motion.div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-between py-12 md:py-16"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center py-6 md:py-12 lg:py-16 gap-6 md:gap-8"
         style={{ y, opacity }}
       >
         {/* Top section: Robot (left) + Headlines & Description (right) */}
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
           {/* Left: 3D Robot */}
           <motion.div
-            className="relative h-[400px] lg:h-full flex items-center justify-center"
+            className="relative h-full flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, delay: 0.3 }}
@@ -166,18 +173,19 @@ export function HeroSection(): JSX.Element {
 
           {/* Right: Headlines + Description */}
           <motion.div
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center space-y-3 md:space-y-6"
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
+            {/* Main Headline */}
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold drop-shadow-2xl mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold drop-shadow-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="block text-white">
-                Make your business
+                {t('mainHeadline')}
               </span>
               <motion.span
                 className="block text-pear"
@@ -194,39 +202,50 @@ export function HeroSection(): JSX.Element {
                   textShadow: '0 0 80px rgba(221, 224, 0, 0.5)',
                 }}
               >
-                LESSMANUAL
+                {t('mainHeadlineAccent')}
               </motion.span>
             </motion.h1>
 
+            {/* Subheadline */}
             <motion.p
-              className="text-lg md:text-xl lg:text-2xl text-white/90 drop-shadow-lg"
+              className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 drop-shadow-lg font-semibold"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              {t('subheadline')}
+            </motion.p>
+
+            {/* Body */}
+            <motion.p
+              className="text-base md:text-lg lg:text-xl text-white/80 drop-shadow-lg whitespace-pre-line"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              {t('subheadline')}
+              {t('body')}
             </motion.p>
           </motion.div>
         </div>
 
         {/* Bottom section: Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mt-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
           <Button
             variant="primary"
-            size="xl"
-            className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30"
+            size="lg"
+            className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full sm:w-auto text-sm md:text-base"
           >
             {t('ctaPrimary')}
           </Button>
           <Button
             variant="secondary"
-            size="xl"
-            className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm"
+            size="lg"
+            className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full sm:w-auto text-sm md:text-base"
           >
             {t('ctaSecondary')}
           </Button>

@@ -14,6 +14,7 @@ export const colors = {
 export const typography = {
   fontFamily: {
     sans: 'var(--font-inter), system-ui, sans-serif',
+    heading: 'var(--font-sora), system-ui, sans-serif',
   },
   fontSize: {
     xs: '0.75rem',    // 12px
@@ -29,6 +30,7 @@ export const typography = {
     '7xl': '4.5rem',   // 72px
   },
   fontWeight: {
+    light: '300',
     normal: '400',
     medium: '500',
     semibold: '600',
