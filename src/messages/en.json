@@ -783,6 +783,11 @@
         "question": "Can AI handle sensitive data (health, finance)?",
         "answer": "Only if you have proper GDPR consents and security procedures. For sensitive data (Art. 9 GDPR: health, racial origin, biometric data) we require: (1) GDPR compliance audit before implementation, (2) end-to-end encryption (not just in-transit), (3) data isolation per client (zero sharing), (4) additional security measures (depending on industry), (5) data processing agreement. It's possible, but requires additional steps and close legal cooperation.",
         "category": "compliance"
+      },
+      "q31": {
+        "question": "What do you do?",
+        "answer": "We implement AI solutions for businesses to automate repetitive operational processes. Our products (ChatBots, Voice Agents, sales automation, content creation) save an average of 20-40 hours per week and increase revenue through 24/7 customer service.",
+        "category": "top5"
       }
     }
   }

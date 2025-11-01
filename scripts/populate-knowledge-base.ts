@@ -220,20 +220,46 @@ async function main() {
 
         const embedding = await generateEmbedding(textToEmbed)
 
+        // Debug: Log first item to see what we're sending
+        if (index === 0) {
+          console.log(`\n🔍 Debug - First item data:`)
+          console.log(`   Embedding length: ${embedding.length}`)
+          console.log(`   Embedding type: ${typeof embedding}`)
+          console.log(`   Embedding sample: [${embedding.slice(0, 3).join(', ')}...]`)
+          console.log(`   Content type: ${item.content_type}`)
+          console.log(`   Locale: ${item.locale}`)
+          console.log(`   Title: ${item.title?.substring(0, 50)}`)
+          console.log()
+        }
+
         // Insert to database
-        const { error } = await supabase.from('knowledge_base').insert({
+        const { data, error } = await supabase.from('knowledge_base').insert({
           content_type: item.content_type,
           locale: item.locale,
           source: item.source,
           title: item.title,
           content: item.content,
-          embedding: embedding,
+          embedding: embedding, // Pass as number array - Supabase should handle conversion
           priority: item.priority,
           tags: item.tags
-        })
+        }).select()
 
         if (error) {
-          console.error(`❌ Error inserting item ${index + 1}:`, error)
+          console.error(`\n❌ Error inserting item ${index + 1}:`)
+          console.error(`   Code: ${error.code}`)
+          console.error(`   Message: ${error.message}`)
+          console.error(`   Details:`, error.details)
+          console.error(`   Hint:`, error.hint)
+          errorCount++
+        } else if (!data || data.length === 0) {
+          console.error(`\n⚠️  Insert silently failed for item ${index + 1} (no error, but no data returned)`)
+          console.error(`   This usually means RLS policy is blocking the insert`)
+          console.error(`   Item:`, {
+            content_type: item.content_type,
+            locale: item.locale,
+            source: item.source,
+            title: item.title?.substring(0, 50)
+          })
           errorCount++
         } else {
           successCount++
@@ -257,19 +283,19 @@ async function main() {
 
     // Step 4: Verify data
     console.log('\n🔍 Verifying data...')
-    const { data: count } = await supabase
+    const { count } = await supabase
       .from('knowledge_base')
       .select('*', { count: 'exact', head: true })
 
     console.log(`✅ Total rows in knowledge_base: ${count || 0}`)
 
     // Show sample by locale
-    const { data: plCount } = await supabase
+    const { count: plCount } = await supabase
       .from('knowledge_base')
       .select('*', { count: 'exact', head: true })
       .eq('locale', 'pl')
 
-    const { data: enCount } = await supabase
+    const { count: enCount } = await supabase
       .from('knowledge_base')
       .select('*', { count: 'exact', head: true })
       .eq('locale', 'en')

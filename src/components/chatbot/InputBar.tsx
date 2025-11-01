@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, KeyboardEvent } from 'react'
+import React, { useState, useRef, KeyboardEvent, useEffect } from 'react'
 import { useChatContext } from '@/contexts/ChatContext'
 import { Send } from 'lucide-react'
 
@@ -12,11 +12,19 @@ import { Send } from 'lucide-react'
  * - Enter to send, Shift+Enter for new line
  * - Max 1000 characters
  * - Disabled while bot is typing
+ * - Auto-focus after bot response
  */
 export function InputBar(): React.ReactElement {
   const { sendMessage, isLoading } = useChatContext()
   const [message, setMessage] = useState('')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+  // Auto-focus input after bot finishes responding
+  useEffect(() => {
+    if (!isLoading && textareaRef.current) {
+      textareaRef.current.focus()
+    }
+  }, [isLoading])
 
   const handleSend = async () => {
     if (!message.trim() || isLoading) return

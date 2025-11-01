@@ -35,6 +35,10 @@ async function testSemanticSearch(query: string, locale: 'pl' | 'en' = 'pl') {
     })
 
     // Step 2: Search knowledge base using pgvector cosine similarity
+    console.log(`   Query embedding length: ${queryEmbedding.length}`)
+    console.log(`   Query embedding type: ${typeof queryEmbedding}`)
+    console.log(`   Query embedding sample: [${queryEmbedding.slice(0, 3).join(', ')}...]`)
+
     const { data: matches, error } = await supabase.rpc('match_knowledge', {
       query_embedding: queryEmbedding,
       match_threshold: 0.7,
@@ -45,7 +49,15 @@ async function testSemanticSearch(query: string, locale: 'pl' | 'en' = 'pl') {
 
     if (error) {
       console.error('❌ Error:', error)
+      console.error('   Code:', error.code)
+      console.error('   Message:', error.message)
+      console.error('   Details:', error.details)
       return
+    }
+
+    console.log(`   RPC returned ${matches?.length || 0} results (raw data)`)
+    if (matches && matches.length > 0) {
+      console.log(`   First result similarity: ${matches[0].similarity}`)
     }
 
     if (!matches || matches.length === 0) {

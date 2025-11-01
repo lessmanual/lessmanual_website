@@ -144,9 +144,10 @@ export async function POST(request: NextRequest) {
       })
 
       // Search knowledge base using pgvector cosine similarity
+      // Threshold 0.4 (40%) - lower than ideal but FAQ doesn't have exact match for "czym się zajmujecie"
       const { data: matches, error: searchError } = await supabase.rpc('match_knowledge', {
         query_embedding: queryEmbedding,
-        match_threshold: 0.7,
+        match_threshold: 0.4,
         match_count: 1,
         filter_locale: locale as 'pl' | 'en',
         filter_content_type: null // Search both FAQ and sections

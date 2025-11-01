@@ -783,6 +783,11 @@
         "question": "Czy AI może obsługiwać dane wrażliwe (zdrowie, finanse)?",
         "answer": "Tylko jeśli masz odpowiednie zgody RODO i procedury bezpieczeństwa. Dla danych wrażliwych (Art. 9 RODO: zdrowie, pochodzenie rasowe, dane biometryczne) wymagamy: (1) RODO compliance audit przed wdrożeniem, (2) szyfrowanie end-to-end (nie tylko in-transit), (3) izolacja danych per klient (zero współdzielenia), (4) dodatkowe środki bezpieczeństwa (w zależności od branży), (5) umowa powierzenia przetwarzania danych. To możliwe, ale wymaga dodatkowych kroków i ścisłej współpracy prawnej.",
         "category": "compliance"
+      },
+      "q31": {
+        "question": "Czym się zajmujecie?",
+        "answer": "Wdrażamy rozwiązania AI w firmach, aby zautomatyzować powtarzalne procesy operacyjne. Nasze produkty (ChatBoty, Voice Agenci, automatyzacja sprzedaży i tworzenia treści) oszczędzają średnio 20-40 godzin pracy tygodniowo i zwiększają przychody poprzez obsługę klientów 24/7.",
+        "category": "top5"
       }
     }
   }
