@@ -39,7 +39,7 @@ function loadFAQContext(locale: 'pl' | 'en'): string {
 
   if (!faq || !faq.items) return ''
 
-  // Format FAQ as text for GPT-5-mini system prompt
+  // Format FAQ as text for GPT-4o-mini system prompt
   const faqText = faq.items
     .map((item: any) => `Q: ${item.question}\nA: ${item.answer}`)
     .join('\n\n')
@@ -77,7 +77,7 @@ REMEMBER: Refuse all off-topic questions immediately. No exceptions.
 
 /**
  * POST /api/chatbot
- * Main GPT-5-mini integration endpoint
+ * Main GPT-4o-mini integration endpoint
  */
 export async function POST(request: NextRequest) {
   const startTime = Date.now()
@@ -185,11 +185,11 @@ export async function POST(request: NextRequest) {
 
     try {
       const { text } = await generateText({
-        model: openai('gpt-5-mini'), // Use GPT-5-mini model
+        model: openai('gpt-4o-mini'), // Use GPT-4o-mini model
         system: systemPrompt,
         prompt: message,
         temperature: 0.2,
-        maxOutputTokens: 1500,
+        maxTokens: 1500,
         abortSignal: controller.signal
       })
 
