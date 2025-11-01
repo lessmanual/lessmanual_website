@@ -49,9 +49,10 @@ CREATE INDEX IF NOT EXISTS knowledge_base_content_type_idx
 ON knowledge_base (content_type);
 
 -- Create full-text search index for hybrid search (optional enhancement)
+-- Using 'simple' config (universal) instead of 'polish' (not available in Supabase by default)
 CREATE INDEX IF NOT EXISTS knowledge_base_content_search_idx
 ON knowledge_base
-USING gin(to_tsvector('polish', content));
+USING gin(to_tsvector('simple', content));
 
 -- Function: Semantic search with cosine similarity
 -- Returns most similar content to query embedding
