@@ -37,10 +37,11 @@ function loadFAQContext(locale: 'pl' | 'en'): string {
   const messages = locale === 'pl' ? plMessages : enMessages
   const faq = (messages as any).faq
 
-  if (!faq || !faq.items) return ''
+  if (!faq || !faq.questions) return ''
 
   // Format FAQ as text for GPT-4o-mini system prompt
-  const faqText = faq.items
+  // Convert object to array using Object.values()
+  const faqText = Object.values(faq.questions)
     .map((item: any) => `Q: ${item.question}\nA: ${item.answer}`)
     .join('\n\n')
 
