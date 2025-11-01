@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { openai } from '@ai-sdk/openai'
-import { generateText } from 'ai'
+import { generateText, embed } from 'ai'
 import { createClient } from '@supabase/supabase-js'
 import plMessages from '@/messages/pl.json'
 import enMessages from '@/messages/en.json'
@@ -133,7 +133,48 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Load FAQ context
+    // ✅ PHASE 2: Semantic Search - Find exact FAQ match using OpenAI embeddings
+    // If similarity >= 0.7, return direct answer from knowledge base (~150-300ms, 0.00002$ cost)
+    try {
+      // Generate embedding for user query
+      const { embedding: queryEmbedding } = await embed({
+        model: openai.embedding('text-embedding-3-small'),
+        value: message
+      })
+
+      // Search knowledge base using pgvector cosine similarity
+      const { data: matches, error: searchError } = await supabase.rpc('match_knowledge', {
+        query_embedding: queryEmbedding,
+        match_threshold: 0.7,
+        match_count: 1,
+        filter_locale: locale as 'pl' | 'en',
+        filter_content_type: null // Search both FAQ and sections
+      })
+
+      if (searchError) {
+        console.error('Semantic search error:', searchError)
+        // Continue to GPT fallback
+      } else if (matches && matches.length > 0) {
+        const bestMatch = matches[0]
+        console.log(`✅ Semantic match found: "${bestMatch.title}" (similarity: ${bestMatch.similarity.toFixed(3)})`)
+
+        // Return direct answer from knowledge base
+        return NextResponse.json({
+          response: bestMatch.content,
+          responseTime: Date.now() - startTime,
+          source: 'knowledge_base',
+          similarity: bestMatch.similarity
+        })
+      }
+
+      console.log('⚠️ No good semantic match found (similarity < 0.7), falling back to GPT')
+    } catch (embeddingError) {
+      console.error('Embedding generation error:', embeddingError)
+      // Continue to GPT fallback
+    }
+
+    // ✅ PHASE 3: GPT Fallback - Only used when no good semantic match found
+    // Load FAQ context for GPT system prompt
     const systemPrompt = loadFAQContext(locale as 'pl' | 'en')
 
     // Call OpenAI GPT-5-mini with timeout (30 seconds)
