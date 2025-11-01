@@ -41,7 +41,7 @@ import { motion } from 'framer-motion'
  * <LanguageSwitcher />
  * ```
  *
- * @returns {JSX.Element} Language switcher with animated flag buttons
+ * @returns {React.ReactElement} Language switcher with animated flag buttons
  *
  * @see {@link https://next-intl-docs.vercel.app} - next-intl documentation
  * @see {@link @/i18n/config} - Locale configuration

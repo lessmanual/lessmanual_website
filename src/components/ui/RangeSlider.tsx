@@ -21,7 +21,7 @@ import { motion } from 'framer-motion'
  * @param {number} props.max - Maximum value
  * @param {number} props.step - Step increment
  * @param {string} props.unit - Unit label (e.g., "PLN", "h", "%")
- * @returns {JSX.Element}
+ * @returns {React.ReactElement}
  */
 
 interface RangeSliderProps {

@@ -42,7 +42,7 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
  * <AboutSection />
  * ```
  *
- * @returns {JSX.Element} About section with founder profile
+ * @returns {React.ReactElement} About section with founder profile
  *
  * @see {@link @/lib/animations} - Animation variants
  */

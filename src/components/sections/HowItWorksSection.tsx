@@ -29,7 +29,7 @@ import { useState } from 'react'
  * - Dotted timeline line (background, subtle)
  * - Hover: lift up, scale 1.03, stronger shadow
  *
- * @returns {JSX.Element} Process timeline section
+ * @returns {React.ReactElement} Process timeline section
  */
 export function HowItWorksSection(): React.ReactElement {
   const t = useTranslations('howItWorks')

@@ -64,7 +64,7 @@ import { z } from 'zod'
  * - Hash navigation (#kalkulator-chatbot)
  * - URL preset support (?preset=ecommerce)
  *
- * @returns {JSX.Element} ROI Calculator section
+ * @returns {React.ReactElement} ROI Calculator section
  */
 
 type ProductId = 'chatbot' | 'voiceAgent' | 'contentAgent' | 'salesAutomation' | 'ragChatbot' | 'custom'

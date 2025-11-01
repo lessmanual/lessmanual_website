@@ -39,7 +39,7 @@ import { ChevronDown } from 'lucide-react'
  * <FAQSection />
  * ```
  *
- * @returns {JSX.Element} FAQ section with top 5 questions
+ * @returns {React.ReactElement} FAQ section with top 5 questions
  *
  * @see {@link @/messages/pl.json} - Polish translations
  * @see {@link @/messages/en.json} - English translations

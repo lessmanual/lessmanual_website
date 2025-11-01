@@ -16,7 +16,7 @@
  * @param {function} props.onChange - Change handler
  * @param {string} props.unit - Unit suffix (e.g., "PLN/h")
  * @param {string} props.placeholder - Placeholder text
- * @returns {JSX.Element}
+ * @returns {React.ReactElement}
  */
 
 interface NumberInputProps {

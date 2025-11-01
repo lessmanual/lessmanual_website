@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
  *
  * Three animated dots with fade in/out sequence
  */
-export function TypingIndicator(): JSX.Element {
+export function TypingIndicator(): React.ReactElement {
   return (
     <div className="flex justify-start mb-4" data-testid="typing-indicator">
       <div className="bg-gray-800 px-4 py-3 rounded-2xl flex items-center gap-1">

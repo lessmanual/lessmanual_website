@@ -42,7 +42,7 @@ import { ChevronDown } from 'lucide-react'
  * // Accessible at /pl/faq and /en/faq
  * ```
  *
- * @returns {JSX.Element} Complete FAQ page
+ * @returns {React.ReactElement} Complete FAQ page
  */
 export default function FAQPage(): React.ReactElement {
   const t = useTranslations('faq')

@@ -16,7 +16,7 @@ import ReactMarkdown from 'react-markdown'
  * - User: align right, pear background, night text
  * - Bot: align left, dark gray background, white text
  */
-export function MessageBubble({ role, content, timestamp }: ChatMessage): JSX.Element {
+export function MessageBubble({ role, content, timestamp }: ChatMessage): React.ReactElement {
   const isUser = role === 'user'
 
   return (

@@ -50,7 +50,7 @@ interface InteractiveRobotSplineProps {
  * ```
  *
  * @param {InteractiveRobotSplineProps} props - Component props
- * @returns {JSX.Element} Spline 3D viewer with loading state
+ * @returns {React.ReactElement} Spline 3D viewer with loading state
  *
  * @see {@link https://spline.design} - Spline 3D design tool
  * @see {@link https://www.npmjs.com/package/@splinetool/react-spline} - Spline React package

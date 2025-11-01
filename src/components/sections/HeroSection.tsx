@@ -56,7 +56,7 @@ import { InteractiveRobotSpline } from '@/components/ui/InteractiveRobotSpline'
  * Renders the main hero section with 3D robot and animated content.
  * Manages parallax scrolling, text animations, and viewport detection.
  *
- * @returns {JSX.Element} Hero section with 3D robot, headline, and CTAs
+ * @returns {React.ReactElement} Hero section with 3D robot, headline, and CTAs
  */
 export function HeroSection(): React.ReactElement {
   const t = useTranslations('hero')

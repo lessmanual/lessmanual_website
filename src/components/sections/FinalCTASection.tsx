@@ -39,7 +39,7 @@ import { fadeInUp } from '@/lib/animations'
  * <FinalCTASection />
  * ```
  *
- * @returns {JSX.Element} Final CTA section with consultation button
+ * @returns {React.ReactElement} Final CTA section with consultation button
  *
  * @see {@link @/lib/animations} - Animation variants
  */

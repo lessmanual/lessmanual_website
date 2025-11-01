@@ -36,7 +36,7 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
  * <ContactFormSection />
  * ```
  *
- * @returns {JSX.Element} Contact form section with n8n iframe
+ * @returns {React.ReactElement} Contact form section with n8n iframe
  *
  * @see {@link @/lib/animations} - Animation variants
  */

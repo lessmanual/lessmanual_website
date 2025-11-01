@@ -30,7 +30,7 @@ const ChatContext = createContext<ChatContextState | undefined>(undefined)
 /**
  * ChatProvider component - wraps the app to provide chatbot state
  */
-export function ChatProvider({ children }: { children: React.ReactNode }): JSX.Element {
+export function ChatProvider({ children }: { children: React.ReactNode }): React.ReactElement {
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)

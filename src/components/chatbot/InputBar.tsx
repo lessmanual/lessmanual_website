@@ -13,7 +13,7 @@ import { Send } from 'lucide-react'
  * - Max 1000 characters
  * - Disabled while bot is typing
  */
-export function InputBar(): JSX.Element {
+export function InputBar(): React.ReactElement {
   const { sendMessage, isLoading } = useChatContext()
   const [message, setMessage] = useState('')
   const textareaRef = useRef<HTMLTextAreaElement>(null)

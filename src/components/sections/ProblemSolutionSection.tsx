@@ -45,7 +45,7 @@ import { staggerContainer } from '@/lib/animations'
  * <ProblemSolutionSection />
  * ```
  *
- * @returns {JSX.Element} Problem/Solution section with 3 cards
+ * @returns {React.ReactElement} Problem/Solution section with 3 cards
  */
 export function ProblemSolutionSection(): React.ReactElement {
   const t = useTranslations('problemSolution')

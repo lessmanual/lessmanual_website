@@ -148,7 +148,7 @@ export async function POST(request: NextRequest) {
         system: systemPrompt,
         prompt: message,
         temperature: 0.2,
-        maxTokens: 1500,
+        maxOutputTokens: 1500,
         abortSignal: controller.signal
       })
 

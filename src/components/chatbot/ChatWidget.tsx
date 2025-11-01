@@ -16,7 +16,7 @@ import { MessageCircle } from 'lucide-react'
  * - Desktop: 400px × 600px window
  * - Animated open/close with Framer Motion
  */
-export function ChatWidget(): JSX.Element {
+export function ChatWidget(): React.ReactElement {
   const { isOpen, toggleChat } = useChatContext()
 
   return (

@@ -32,7 +32,7 @@ import { SpecializationCard } from '@/components/ui/SpecializationCard'
  * - White text (#fefefe)
  * - Large spacing between items
  *
- * @returns {JSX.Element} Specializations section with alternating layout
+ * @returns {React.ReactElement} Specializations section with alternating layout
  */
 export function SpecializationsSection(): React.ReactElement {
   const t = useTranslations('specializations')

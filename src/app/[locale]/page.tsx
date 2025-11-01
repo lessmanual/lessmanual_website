@@ -77,7 +77,7 @@ export async function generateMetadata({
  * - ContactForm (n8n form with automation)
  * - FAQ (top 5 most important questions)
  *
- * @returns {JSX.Element} Complete homepage
+ * @returns {React.ReactElement} Complete homepage
  */
 export default function HomePage(): React.ReactElement {
   return (

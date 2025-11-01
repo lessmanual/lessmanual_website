@@ -41,7 +41,7 @@ import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
  * <Header />
  * ```
  *
- * @returns {JSX.Element} Fixed navigation header
+ * @returns {React.ReactElement} Fixed navigation header
  *
  * @see {@link LanguageSwitcher} - Language toggle component
  */

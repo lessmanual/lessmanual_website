@@ -13,7 +13,7 @@ import { TypingIndicator } from './TypingIndicator'
  * - Shows TypingIndicator when bot is thinking
  * - Displays MessageBubble components for each message
  */
-export function MessageList(): JSX.Element {
+export function MessageList(): React.ReactElement {
   const { messages, isLoading } = useChatContext()
   const messagesEndRef = useRef<HTMLDivElement>(null)
 

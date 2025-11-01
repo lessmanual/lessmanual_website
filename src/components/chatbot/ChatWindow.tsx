@@ -13,7 +13,7 @@ import { InputBar } from './InputBar'
  * Desktop: 400px width × 600px height window with border radius
  * Mobile: Full-screen (100vw × 100vh) with no border radius
  */
-export function ChatWindow(): JSX.Element {
+export function ChatWindow(): React.ReactElement {
   const { toggleChat } = useChatContext()
 
   return (

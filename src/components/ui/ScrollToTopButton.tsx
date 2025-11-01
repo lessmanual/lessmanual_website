@@ -30,7 +30,7 @@ import { motion, AnimatePresence } from 'framer-motion'
  * <ScrollToTopButton />
  * ```
  *
- * @returns {JSX.Element} Scroll to top button
+ * @returns {React.ReactElement} Scroll to top button
  */
 export function ScrollToTopButton(): React.ReactElement {
   const [isVisible, setIsVisible] = useState(false)
