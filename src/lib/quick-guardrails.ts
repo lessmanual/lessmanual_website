@@ -10,6 +10,53 @@
  */
 
 /**
+ * Follow-up/continuation phrases that should NEVER be blocked
+ * These are natural conversation continuations that need context from previous messages
+ */
+const FOLLOW_UP_PHRASES = {
+  pl: [
+    'to co',           // "to co mam robić"
+    'co dalej',        // "co dalej?"
+    'jak dalej',       // "jak dalej?"
+    'gdzie się',       // "gdzie się mogę umówić"
+    'jak się',         // "jak się skontaktować"
+    'co mam',          // "co mam zrobić"
+    'gdzie mogę',      // "gdzie mogę"
+    'jak mogę',        // "jak mogę"
+    'a co z',          // "a co z..."
+    'a jak',           // "a jak to działa"
+    'ok ale',          // "ok ale jak"
+    'dobra ale',       // "dobra ale gdzie"
+    'no to',           // "no to co"
+    'a gdzie',         // "a gdzie to jest"
+    'i gdzie',         // "i gdzie to znaleźć"
+    'i jak',           // "i jak to zrobić"
+    'no i',            // "no i co teraz"
+    'okej ale',        // "okej ale jak"
+    'a co',            // "a co mam"
+    'to gdzie',        // "to gdzie"
+  ],
+  en: [
+    'what should',     // "what should i do"
+    'what next',       // "what next?"
+    'how do i',        // "how do i proceed"
+    'where can',       // "where can i"
+    'where do',        // "where do i"
+    'how can',         // "how can i"
+    'so what',         // "so what do i do"
+    'then what',       // "then what"
+    'ok but',          // "ok but how"
+    'alright but',     // "alright but where"
+    'and where',       // "and where is"
+    'and how',         // "and how do"
+    'so where',        // "so where"
+    'then where',      // "then where"
+    'okay but',        // "okay but where"
+    'and what',        // "and what about"
+  ]
+}
+
+/**
  * Off-topic keywords database
  * Organized by category for easy maintenance
  */
@@ -294,6 +341,27 @@ function normalizeText(text: string): string {
 }
 
 /**
+ * Check if message is a follow-up/continuation question
+ *
+ * @param message - User message to check
+ * @param locale - Language locale ('pl' | 'en')
+ * @returns true if message is a follow-up question
+ */
+function isFollowUpQuestion(message: string, locale: 'pl' | 'en' = 'pl'): boolean {
+  const normalized = normalizeText(message)
+  const followUpPhrases = FOLLOW_UP_PHRASES[locale]
+
+  // Check if message contains any follow-up phrase
+  for (const phrase of followUpPhrases) {
+    if (normalized.includes(normalizeText(phrase))) {
+      return true // This is a follow-up question, needs context
+    }
+  }
+
+  return false
+}
+
+/**
  * Check if message is off-topic using keyword matching
  *
  * Performance: ~1-5ms (extremely fast, no API calls)
@@ -305,6 +373,13 @@ function normalizeText(text: string): string {
  */
 export function isOffTopic(message: string, locale: 'pl' | 'en' = 'pl'): boolean {
   const normalized = normalizeText(message)
+
+  // FIRST: Check if this is a follow-up question
+  // Follow-up questions should NEVER be blocked, even if they contain ambiguous keywords
+  if (isFollowUpQuestion(message, locale)) {
+    return false // NOT off-topic - it's a conversation continuation
+  }
+
   const keywords = OFF_TOPIC_KEYWORDS[locale]
 
   // Check each category

@@ -6,6 +6,15 @@ import plMessages from '@/messages/pl.json'
 import enMessages from '@/messages/en.json'
 import { checkGuardrails } from '@/lib/quick-guardrails'
 
+/**
+ * Single message in the conversation history
+ */
+interface ChatMessage {
+  role: 'user' | 'assistant'
+  content: string
+  timestamp?: string
+}
+
 // Initialize Supabase client (server-side only)
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -52,6 +61,23 @@ Your primary goal is to HELP users understand our services and answer their ques
 
 FAQ Knowledge Base:
 ${faqText}
+
+CONVERSATION CONTEXT:
+- You have access to previous messages in this conversation
+- Use context to understand follow-up questions:
+  * "to co mam robić" after pricing question = asking about next steps
+  * "gdzie się mogę umówić" = asking where the contact form is
+  * "a co z..." = follow-up about previous topic
+  * "ile to kosztuje" after asking about KSeF = asking about KSeF pricing
+- When user asks follow-up question, reference what was discussed before
+- Be natural - "Jak wspomniałem wcześniej..." or "W kontekście KSeF, o którym rozmawialiśmy..."
+
+FOLLOW-UP QUESTIONS (always answer these based on context):
+- "to co mam robić" → "Wypełnij formularz kontaktowy poniżej w sekcji Kontakt. W kontekście [previous topic], po wypełnieniu formularza nasz zespół skontaktuje się z Tobą, aby omówić szczegóły."
+- "gdzie się mogę umówić" → "Formularz kontaktowy znajduje się poniżej na tej stronie. Wypełnij go, a nasz zespół skontaktuje się z Tobą w ciągu 24 godzin."
+- "co dalej" / "jak dalej" → Explain next steps based on previous conversation
+- "jak się skontaktować" → "Formularz kontaktowy jest poniżej w sekcji Kontakt."
+- "a gdzie" / "i gdzie" / "to gdzie" → Indicate location/next action based on context
 
 CONVERSATION GUIDELINES:
 
@@ -124,7 +150,12 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json()
-    const { message, sessionId, locale = 'pl' } = body
+    const { message, sessionId, locale = 'pl', history = [] } = body as {
+      message: string
+      sessionId: string
+      locale?: 'pl' | 'en'
+      history?: ChatMessage[]
+    }
 
     // Validation
     if (!message || typeof message !== 'string') {
@@ -161,10 +192,21 @@ export async function POST(request: NextRequest) {
     // ✅ PHASE 2: Semantic Search - Find exact FAQ match using OpenAI embeddings
     // If similarity >= 0.7, return direct answer from knowledge base (~150-300ms, 0.00002$ cost)
     try {
-      // Generate embedding for user query
+      // Include last user message for better semantic matching
+      const lastUserMessage = history
+        .filter(m => m.role === 'user')
+        .slice(-1)[0]?.content || ''
+
+      // Combine last message with current for contextual understanding
+      // Example: "chcę zautomatyzować ksef" + "ile to kosztuje" = better match for pricing
+      const contextualQuery = lastUserMessage
+        ? `${lastUserMessage}\n${message}`
+        : message
+
+      // Generate embedding for contextual query
       const { embedding: queryEmbedding } = await embed({
         model: openai.embedding('text-embedding-3-small'),
-        value: message
+        value: contextualQuery
       })
 
       // Search knowledge base using pgvector cosine similarity
@@ -204,6 +246,19 @@ export async function POST(request: NextRequest) {
     // Load FAQ context for GPT system prompt
     const systemPrompt = loadFAQContext(locale as 'pl' | 'en')
 
+    // Build messages array with conversation history (last 5 messages = ~3 turns)
+    // This provides context for follow-up questions
+    const conversationMessages = [
+      ...history.slice(-5).map(m => ({
+        role: m.role,
+        content: m.content
+      })),
+      {
+        role: 'user' as const,
+        content: message
+      }
+    ]
+
     // Call OpenAI GPT-5-mini with timeout (30 seconds)
     const controller = new AbortController()
     const timeout = setTimeout(() => controller.abort(), 30000)
@@ -214,9 +269,8 @@ export async function POST(request: NextRequest) {
       const { text } = await generateText({
         model: openai('gpt-4o-mini'), // Use GPT-4o-mini model
         system: systemPrompt,
-        prompt: message,
+        messages: conversationMessages,
         temperature: 0.2,
-        maxTokens: 1500,
         abortSignal: controller.signal
       })
 

@@ -58,14 +58,22 @@ export function ChatProvider({ children }: { children: React.ReactNode }): React
       setIsLoading(true)
 
       try {
-        // Call chatbot API
+        // Build conversation history (last 5 messages, excluding current one)
+        const history = messages.slice(-5).map(m => ({
+          role: m.role,
+          content: m.content,
+          timestamp: m.timestamp.toISOString()
+        }))
+
+        // Call chatbot API with conversation history
         const response = await fetch('/api/chatbot', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message,
             sessionId,
-            locale: document.documentElement.lang || 'pl' // Detect current locale
+            locale: document.documentElement.lang || 'pl', // Detect current locale
+            history // NEW: Include conversation history for context
           })
         })
 
@@ -99,7 +107,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }): React
         setIsLoading(false)
       }
     },
-    [isLoading, sessionId]
+    [isLoading, sessionId, messages]
   )
 
   /**
