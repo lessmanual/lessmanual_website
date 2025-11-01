@@ -788,6 +788,16 @@
         "question": "Czym się zajmujecie?",
         "answer": "Wdrażamy rozwiązania AI w firmach, aby zautomatyzować powtarzalne procesy operacyjne. Nasze produkty (ChatBoty, Voice Agenci, automatyzacja sprzedaży i tworzenia treści) oszczędzają średnio 20-40 godzin pracy tygodniowo i zwiększają przychody poprzez obsługę klientów 24/7.",
         "category": "top5"
+      },
+      "q32": {
+        "question": "Czy możecie zautomatyzować wysyłkę faktur do KSeF (Krajowy System e-Faktur)?",
+        "answer": "Tak, możemy zautomatyzować pełny proces integracji z KSeF. Workflow: generowanie faktury w Twoim systemie → automatyczna wysyłka do KSeF przez API → potwierdzenie odbioru → archiwizacja UPO (Urzędowego Poświadczenia Odbioru) → zapis do systemu księgowego. Obsługujemy popularne systemy (Wfirma, Fakturownia, inFakt, iFirma) oraz custom integracje dla systemów ERP (Comarch, InsERT, SAP). Dokładna wycena zależy od systemu źródłowego i skali operacji. Wypełnij formularz kontaktowy poniżej, a przygotujemy indywidualną ofertę.",
+        "category": "tech"
+      },
+      "q33": {
+        "question": "Czy przy zakupie kilku automatyzacji dostanę rabat?",
+        "answer": "Tak, oferujemy korzystne warunki dla większych projektów i pakietów usług. Dokładne warunki rabatowe ustalamy indywidualnie w zależności od zakresu wdrożenia, liczby produktów i długości współpracy. Wypełnij formularz kontaktowy poniżej, a omówimy szczegóły i przygotujemy ofertę dopasowaną do Twoich potrzeb.",
+        "category": "business"
       }
     }
   }

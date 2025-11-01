@@ -17,22 +17,24 @@ const OFF_TOPIC_KEYWORDS = {
   pl: {
     // Recipes & Food
     recipes: [
-      'przepis',
+      'przepis na',
       'szarlotka',
       'szarlotk',
       'ugotuj',
       'ugotować',
       'upiecz',
       'upiec',
-      'składniki',
-      'skladnik',
+      'składniki do',
+      'skladnik do',
       'ciasto',
       'pizza',
       'makaron',
       'zupa',
-      'jak zrobić',
+      'jak zrobić szarlotkę',
+      'jak zrobić ciasto',
       'jak przyrządzić',
-      'jak przygotować',
+      'jak przygotować obiad',
+      'jak przygotować kolację',
       'receptura',
       'gotowanie',
       'pieczenie'
@@ -72,22 +74,32 @@ const OFF_TOPIC_KEYWORDS = {
       'czy jesteś człowiek'
     ],
 
-    // General knowledge
+    // General knowledge (NOT business-related)
+    // NOTE: Be careful with "jak" - "jak chcę" and "jak mogę" are business questions!
     generalKnowledge: [
       'kto wynalazł',
       'kto wynalazl',
       'kiedy powstał',
       'kiedy powstal',
-      'co to jest',
-      'jak działa',
-      'jak dziala',
-      'definicja',
-      'znaczenie',
-      'historia',
-      'opowiedz mi o',
-      'powiedz mi o',
-      'wyjaśnij mi',
-      'wyjasni'
+      'jak działa fotosynteza',
+      'jak dziala fotosynteza',
+      'jak działa komputer',
+      'jak dziala komputer',
+      'jak działa silnik',
+      'jak dziala silnik',
+      'definicja słowa',
+      'definicja slowa',
+      'znaczenie słowa',
+      'znaczenie slowa',
+      'historia polski',
+      'historia świata',
+      'historia swiata',
+      'opowiedz mi o historii',
+      'powiedz mi o historii',
+      'wyjaśnij czym jest',
+      'wyjasni czym jest',
+      'encyklopedia',
+      'wikipedia'
     ],
 
     // Entertainment

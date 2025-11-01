@@ -788,6 +788,16 @@
         "question": "What do you do?",
         "answer": "We implement AI solutions for businesses to automate repetitive operational processes. Our products (ChatBots, Voice Agents, sales automation, content creation) save an average of 20-40 hours per week and increase revenue through 24/7 customer service.",
         "category": "top5"
+      },
+      "q32": {
+        "question": "Can you automate invoice sending to KSeF (Polish National e-Invoice System)?",
+        "answer": "Yes, we can automate the full KSeF integration process. Workflow: invoice generation in your system → automatic submission to KSeF via API → receipt confirmation → UPO archiving (Official Receipt Confirmation) → saving to accounting system. We support popular systems (Wfirma, Fakturownia, inFakt, iFirma) and custom integrations for ERP systems (Comarch, InsERT, SAP). Exact pricing depends on the source system and scale of operations. Fill out the contact form below and we'll prepare a custom quote.",
+        "category": "tech"
+      },
+      "q33": {
+        "question": "Will I get a discount when purchasing multiple automations?",
+        "answer": "Yes, we offer favorable terms for larger projects and service packages. Exact discount terms are arranged individually depending on implementation scope, number of products, and collaboration duration. Fill out the contact form below and we'll discuss details and prepare an offer tailored to your needs.",
+        "category": "business"
       }
     }
   }
