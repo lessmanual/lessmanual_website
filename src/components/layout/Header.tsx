@@ -105,11 +105,39 @@ export function Header(): React.ReactElement {
     }
   }, [mobileMenuOpen])
 
+  // Smooth scroll handler for anchor links
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href')
+
+    // Only handle anchor links (starting with #)
+    if (href && href.startsWith('#')) {
+      e.preventDefault()
+      const target = document.querySelector(href)
+
+      if (target) {
+        const headerOffset = 80 // Height of fixed header
+        const elementPosition = target.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.scrollY - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+
+        // Close mobile menu if open
+        setMobileMenuOpen(false)
+      }
+    }
+  }
+
   const navLinks = [
-    { href: '#about', label: t('about') },
-    { href: '#specializations', label: t('specializations') },
-    { href: '#roi', label: t('roi') },
-    { href: '#contact', label: t('contact') },
+    { href: '#specializations', label: t('specializations'), isAnchor: true },
+    { href: '#how-it-works', label: t('howItWorks'), isAnchor: true },
+    { href: '#kalkulator', label: t('roi'), isAnchor: true },
+    { href: '#about', label: t('about'), isAnchor: true },
+    { href: `/${locale}/blog`, label: t('blog'), isAnchor: false },
+    { href: `/${locale}/faq`, label: t('faq'), isAnchor: false },
+    { href: '#contact', label: t('contact'), isAnchor: true },
   ]
 
   return (
@@ -157,6 +185,7 @@ export function Header(): React.ReactElement {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={handleSmoothScroll}
                 className="relative text-sm font-medium text-white/70 transition-colors duration-200 hover:text-pear focus:outline-none focus:text-pear after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-pear after:transition-all hover:after:w-full"
               >
                 {link.label}
@@ -222,7 +251,7 @@ export function Header(): React.ReactElement {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={handleSmoothScroll}
                 className="block py-2 text-base font-medium text-white/70 hover:text-pear transition-colors focus:outline-none focus:text-pear"
               >
                 {link.label}

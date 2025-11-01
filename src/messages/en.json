@@ -10,24 +10,41 @@
   "nav": {
     "about": "About",
     "specializations": "Specializations",
+    "howItWorks": "How it works",
     "roi": "ROI Calculator",
+    "blog": "Blog",
+    "faq": "FAQ",
     "contact": "Contact",
     "skipToContent": "Skip to content",
     "toggleMenu": "Toggle menu"
   },
   "about": {
     "name": "Bartłomiej Chudzik",
-    "title": "Founder & CTO | 10 years of experience in automation",
-    "bio1": "I've been automating businesses for a decade. I've helped 50+ companies save thousands of hours of manual work through intelligent AI solutions and process automation.",
-    "bio2": "I specialize in AI, business process automation, and system integrations. LessManual is the culmination of my knowledge and passion - the mission is to make Polish companies work smarter, not harder.",
+    "title": "Founder & CTO | From TSL processes to AI automation",
+    "bio1": "After nearly a decade of work in TSL, I can say with full confidence: every company has processes that consume time and money. And most of them can be automated.",
+    "bio2": "That's why LessManual was born.",
+    "bio3": "I build AI systems (ChatBots, VoiceAgent, Content Automation) that reduce manual work by 80% and pay for themselves in 60 days.",
+    "bio4": "For me, automation isn't technology - it's saving your time and money. With full data security (GDPR, AI Act, compliance).",
+    "bio5": "Mission: Polish companies should work smarter, not harder.",
     "stats": {
-      "experience": "Years of experience",
-      "clients": "Satisfied clients",
-      "hours": "Hours saved"
+      "manualReduction": "Manual work reduction",
+      "roi": "In the first year",
+      "implementation": "Implementation start"
     },
     "aria": {
       "profileImageAlt": "Bartłomiej Chudzik - Founder & CTO of LessManual, specialist in business automation and AI"
     }
+  },
+  "finalCta": {
+    "button": "Book a free consultation",
+    "aria": {
+      "buttonLabel": "Click to scroll to the contact form and book a free consultation"
+    }
+  },
+  "contact": {
+    "headline": "Ready for automation?",
+    "subheadline": "Fill out the form. You can choose an immediate call from our AI Agent (Szymon) or email contact.",
+    "iframeTitle": "Contact form - LessManual"
   },
   "metadata": {
     "home": {
@@ -146,7 +163,7 @@
         "Calculate ROI live during the call",
         "Learn if automation makes sense for your company"
       ],
-      "timeline": "Today or tomorrow"
+      "timeline": "Fill out the contact form and choose a convenient time for yourself"
     },
     "step2": {
       "title": "Proposal & Contract",
@@ -157,19 +174,19 @@
         "Transparent pricing: Implementation (one-time) + Maintenance (monthly)",
         "Realistic timeline (how many days until launch)",
         "ROI projection (specific savings amounts annually)",
-        "Electronic contract signing + 50% deposit"
+        "Electronic contract signing"
       ],
       "timeline": "2 days after consultation"
     },
     "step3": {
       "title": "System Implementation",
-      "subtitle": "From 7 days to launch",
+      "subtitle": "From 7 days",
       "icon": "⚙️",
       "items": [
         "Days 1-2: Gather technical data (systems, integrations, access, branding)",
-        "Days 3-5: Build solution (using 5,000+ ready components)",
-        "Day 6: You test - we show you working system",
-        "Day 7: Fixes based on your feedback",
+        "We build the solution",
+        "You test - we show you working system",
+        "We apply fixes based on your feedback",
         "Final: Launch + training (2h live session + documentation + recordings)"
       ],
       "timeline": "From a week (depending on project complexity)"
@@ -179,7 +196,7 @@
       "subtitle": "Continuous maintenance and development",
       "icon": "🛡️",
       "items": [
-        "24/7 Monitoring: 99.9% uptime, real-time alerts",
+        "24/7 Monitoring: 99% uptime, real-time alerts",
         "Technical support: Email <24h, critical bugs <24h fix",
         "We pay for: Servers, AI (Claude/GPT), integrations (Twilio, etc.)",
         "You pay: Fixed monthly maintenance fee (everything included)",
@@ -537,6 +554,236 @@
       "back": "Back",
       "next": "Next",
       "finish": "See recommendation"
+    }
+  },
+  "footer": {
+    "tagline": "Make Your Business LESSMANUAL",
+    "description": "AI Automation for Businesses",
+    "specializations": {
+      "title": "Specializations",
+      "customerSupport": "AI Customer Support",
+      "contentCreation": "AI Content Creation",
+      "salesAutomation": "AI Sales Automation",
+      "knowledgeAssistant": "Knowledge Assistant",
+      "voiceAgent": "Multitasking Voice Agent",
+      "customSolutions": "Custom AI Solutions"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "roi": "ROI Calculator"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "kontakt@lessmanual.ai",
+      "nip": "TAX ID",
+      "regon": "REGON"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "All rights reserved."
+  },
+  "legal": {
+    "backToHome": "Back to home",
+    "lastUpdated": "Last updated"
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use cookies to provide you with the best experience on our website. Some cookies are essential for the site to function, while others help us understand how you use it.",
+    "moreInfo": "Learn more in our",
+    "cookiePolicy": "Cookie Policy",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "customize": "Customize",
+    "customizeTitle": "Customize cookie preferences",
+    "customizeDescription": "Choose which types of cookies you want to accept. You can change your preferences at any time.",
+    "essential": "Essential",
+    "essentialDesc": "These cookies are necessary for the website to function properly and cannot be disabled. They include basic functions such as security, network management, and accessibility.",
+    "alwaysActive": "Always active",
+    "analytics": "Analytics",
+    "analyticsDesc": "These cookies help us understand how visitors use our website by collecting anonymous statistical data. This information helps us improve our website.",
+    "marketing": "Marketing",
+    "marketingDesc": "These cookies are used to display ads tailored to your interests. They can also be used to measure the effectiveness of advertising campaigns.",
+    "savePreferences": "Save preferences",
+    "back": "Back"
+  },
+  "blog": {
+    "headline": "Blog",
+    "subheadline": "Expert insights on automation and AI",
+    "comingSoon": "Articles about AI and business automation coming soon"
+  },
+  "faq": {
+    "landingHeadline": "Got questions? We have answers",
+    "headline": "Frequently Asked Questions",
+    "subheadline": "Find answers to common questions about AI automation",
+    "viewAllQuestions": "View all questions",
+    "stillHaveQuestions": "Didn't find your answer?",
+    "contactUs": "Contact us - we'll answer all your questions",
+    "contactCTA": "Contact us",
+    "categories": {
+      "top5": "Most Important Questions",
+      "business": "Business & Strategy (CEO)",
+      "marketing": "Marketing & Content (CMO)",
+      "sales": "Sales & Leads (CSO)",
+      "tech": "Technology & Security (CTO)",
+      "compliance": "Compliance & Legal"
+    },
+    "questions": {
+      "q1": {
+        "question": "How long does implementation take?",
+        "answer": "From 7 business days - depending on project complexity. We can launch a FAQ ChatBot in one week, while a VoiceAgent with ERP integrations might need two weeks. Your implementation includes a ready-to-use system, team training, and complete documentation. You start saving time and generating ROI immediately after deployment.",
+        "category": "top5"
+      },
+      "q2": {
+        "question": "Do I need to be an AI expert to use this?",
+        "answer": "You don't need to be. We create solutions that work on \"autopilot\". You just tell us your goals (e.g., \"I want to automate order processing\"), and we build a system that does it for you. After deployment, you get a simple dashboard to check statistics - AI handles the rest. If something needs changing, just send one email.",
+        "category": "top5"
+      },
+      "q3": {
+        "question": "Do customers know they're talking to AI?",
+        "answer": "Yes, we always inform transparently. AI introduces itself at the start of the conversation (e.g., \"Hi, I'm the virtual assistant for company X\"). This is a legal requirement (AI Act, GDPR) and an ethical matter - we don't hide it. Our experience: 95% of customers don't mind, as long as the agent solves their problem quickly and effectively. They often prefer AI available 24/7 over waiting until morning for a consultant.",
+        "category": "top5"
+      },
+      "q4": {
+        "question": "Will my company's and customers' data be secure?",
+        "answer": "Yes. All data is encrypted, hosting only in EU (Frankfurt, Stockholm, Helsinki, Warsaw), full GDPR and AI Act compliance. Your customers and your company's data are protected at the highest level.",
+        "category": "top5"
+      },
+      "q5": {
+        "question": "How much does implementation cost and will it pay off?",
+        "answer": "Implementation cost depends on project complexity and the value the system will bring to your company. Subscription depends on tools used (API, hosting) and support level. We always calculate ROI before starting the project - we aim for minimum 200% return within 12 months. If calculation shows lower ROI, we'll honestly tell you the project might not be worthwhile.",
+        "category": "top5"
+      },
+      "q6": {
+        "question": "How do you calculate return on investment (ROI)?",
+        "answer": "We use a simple formula: (Annual savings - Annual cost) / Annual cost × 100%. Annual savings = hours saved × employee rate × 12 months. Annual cost = implementation + subscription × 12. We always show this in 3 scenarios: pessimistic, realistic, optimistic. Of course final ROI also depends on how you organize processes and use the system - but if pessimistic scenario doesn't give sensible return, we'll tell you honestly.",
+        "category": "business"
+      },
+      "q7": {
+        "question": "What if the project doesn't work out?",
+        "answer": "You can cancel before Day 3 (receive 70% refund of deposit - Terms § 4.4). After Day 3 there's no money-back, but you have a **30-day technical guarantee** (Terms § 6.1) - if the system has bugs or doesn't work according to contract, we fix them at no additional cost. We guarantee 99.9% uptime and <4h response on critical bugs. Additionally: every project goes through 3 stages together (Discovery Call → Demo → Implementation), so you see exactly what you're getting BEFORE you pay the full amount.",
+        "category": "business"
+      },
+      "q8": {
+        "question": "Can I pay in installments?",
+        "answer": "Yes, for larger projects we offer installment payments. Standard: 50% deposit before starting work, 50% after implementation. For more complex deployments we can split into 3-4 installments. Subscription always paid monthly in advance. For long-term clients bonuses and discounts are possible - details arranged individually.",
+        "category": "business"
+      },
+      "q9": {
+        "question": "What metrics can I track after implementation?",
+        "answer": "In the management panel you see: number of conversations/queries handled by AI, average handling time, % of questions resolved without escalation to human, satisfaction score (customer ratings), hours saved in PLN, current vs projected ROI. Reports can be exported to Excel/PDF. Additionally: email alerts when something requires attention (e.g., satisfaction drop below 8/10, system errors, API limits).",
+        "category": "business"
+      },
+      "q10": {
+        "question": "Do I need a large budget to start?",
+        "answer": "No. You can start with a simple project (e.g., FAQ ChatBot) and test how automation works in your company. Even small businesses can feel measurable time and money savings. If the system works, you can scale - add more features, integrations, or expand to other departments. We build solutions modularly, so you don't have to invest in the full package right away.",
+        "category": "business"
+      },
+      "q11": {
+        "question": "Can the AI Content Agent write in my style?",
+        "answer": "Yes. We train AI on your best posts, articles and materials (minimum 10-15 examples). The agent learns your tone, vocabulary, sentence structure, even emojis you use. You always review first versions and give feedback (\"too formal\", \"add more emotion\", \"shorten intro\"). After 2-3 iterations agent writes like you. Clients often can't tell the difference.",
+        "category": "marketing"
+      },
+      "q12": {
+        "question": "How much content can AI generate per month?",
+        "answer": "Example monthly production (for standard Content Agent package): 20 LinkedIn posts (mix educational/case study/announcements), 8 blog posts (800-1200 words), 4 newsletters (500-700 words), 10 Instagram/Facebook posts with captions. All personalized, with CTA, hashtags, SEO metadata. Time savings: ~40-60h/month of copywriter work.",
+        "category": "marketing"
+      },
+      "q13": {
+        "question": "Does AI understand SEO and positioning?",
+        "answer": "Yes. Best SEO practices 2025 are built-in: keyword research (integration with Ahrefs/SEMrush), metadata (title, description, alt texts), heading structure (H1-H6), internal linking, schema markup, optimization for Google Featured Snippets. Agent analyzes competition and suggests topics that have a chance to rank in search engines.",
+        "category": "marketing"
+      },
+      "q14": {
+        "question": "How does AI handle lead generation?",
+        "answer": "Content Agent publishes content regularly (LinkedIn/Facebook/Instagram/Blog) and tracks engagement (likes/comments/shares/CTA clicks). It identifies people who frequently return to your content, read multiple articles or click links. Such data can be sent to CRM and marked as \"hot leads\" for your sales team to contact. AI builds brand awareness through content, team closes sales.",
+        "category": "marketing"
+      },
+      "q15": {
+        "question": "Can I edit content before publication?",
+        "answer": "Of course. You have 3 work modes: (1) **Auto-pilot** - AI writes and publishes without your intervention (for routine posts), (2) **Review** - AI writes, you get draft for approval before publication (default mode), (3) **Co-creation** - AI proposes 3 versions, you choose and edit as you want. We recommend (2) to start, then (1) when you trust the system. Editing via simple web panel or email.",
+        "category": "marketing"
+      },
+      "q16": {
+        "question": "Does AI also generate graphics for posts?",
+        "answer": "Yes. Content Agent can create graphics for posts (integration with DALL-E, Midjourney or Canva). You can provide branding guidelines (colors, fonts, style) and AI will follow your visual identity. For more complex graphic projects (e.g., infographics, presentations) AI can prepare a draft, but final version is better polished with a designer.",
+        "category": "marketing"
+      },
+      "q17": {
+        "question": "How quickly does AI respond to customer inquiries?",
+        "answer": "ChatBot: instantly (0-2 seconds). VoiceAgent: ~300ms (0.3 seconds) for simple response, and if it needs to use tools (check calendar, database) then 1-4 seconds. No queues, no waiting. 24/7/365 availability, even on holidays and at night. For customer this means instant help instead of waiting for available consultant.",
+        "category": "sales"
+      },
+      "q18": {
+        "question": "Can VoiceAgent schedule meetings and add to calendar?",
+        "answer": "Yes. VoiceAgent integrates with Calendly, Google Calendar, Outlook. Workflow: (1) customer calls or answers call from agent, (2) agent asks about time preferences, (3) checks availability in calendar in real-time, (4) proposes 2-3 free slots, (5) customer chooses, (6) agent confirms and sends email/SMS reminder. Zero manual work - ideal for clinics, salons, customer service offices.",
+        "category": "sales"
+      },
+      "q19": {
+        "question": "What if AI doesn't know the answer to a customer's question?",
+        "answer": "We have 2-level escalation: (1) **Fallback to knowledge base** - AI searches documents/FAQ/articles and tries to find answer (85% success rate), (2) **Escalation to human** - if it doesn't find answer, transfers conversation to consultant (email/Slack/call transfer) and logs question to knowledge base for future. Customer is never left without answer. In practice: 92% of questions solved by AI, 8% require human.",
+        "category": "sales"
+      },
+      "q20": {
+        "question": "Can AI do cold calling and schedule sales meetings?",
+        "answer": "Yes, but with legal limitations. VoiceAgent can: call B2B companies (without GDPR consent if there's legitimate interest), qualify leads (BANT questions), schedule demo calls, send follow-up email. Cannot: call B2C private individuals without consent, do aggressive cold calls (AI Act prohibits), record conversations without consent. VoiceAgent works best combined with other channels (cold email → AI call follow-up).",
+        "category": "sales"
+      },
+      "q21": {
+        "question": "How does AI handle sales objections?",
+        "answer": "We train AI on your best objection handling scripts. Examples: \"Too expensive\" → AI shows ROI calculation and case study, \"I need to think\" → AI asks about specific doubts and addresses them, \"No time now\" → AI schedules callback for specific date. Agent learns from every conversation - if objection repeats and AI doesn't handle it, we log it and add new script. In practice: AI converts 60-70% of standard objections, escalates difficult cases to you.",
+        "category": "sales"
+      },
+      "q22": {
+        "question": "Can I see transcripts of AI conversations with customers?",
+        "answer": "Yes. Every conversation (chat or call) is logged in management panel. You see: full conversation transcript, timestamp, customer data (if provided), sentiment analysis (positive/neutral/negative), outcome (resolved/escalated/scheduled), duration, flagged issues (if AI detected problem). You can filter by date, outcome, sentiment. Additionally: option to record audio calls (requires customer consent, enabled optionally).",
+        "category": "sales"
+      },
+      "q23": {
+        "question": "How quickly can AI learn the specifics of my industry?",
+        "answer": "Depends on complexity and material availability. Typical timeline: (1) **Week 1** - we upload basic data (FAQ, products, pricing, procedures), AI works at 60-70% level, (2) **Week 2-3** - AI learns from real conversations, we analyze errors, add missing information, level 80-85%, (3) **Month 2** - fine-tuning, AI reaches 90-95% accuracy. Specialized industries (medicine, law, finance) may need 8-12 weeks. Simple e-commerce or support - 2-3 weeks is enough.",
+        "category": "sales"
+      },
+      "q24": {
+        "question": "What systems can AI integrate with?",
+        "answer": "Standard integrations (ready in 1-2 days): Shopify, WooCommerce, PrestaShop (e-commerce), HubSpot, Salesforce, Pipedrive (CRM), Slack, MS Teams, WhatsApp Business (communication), Google Calendar, Outlook (calendar), Stripe, PayU (payments). Advanced integrations (custom API, 5-7 days): ERP (Comarch, InsERT, SAP), warehouses (WMS), booking systems, legacy systems. If your system has API or SQL database - we can connect it.",
+        "category": "tech"
+      },
+      "q25": {
+        "question": "What happens if AI \"goes down\" in the middle of the night?",
+        "answer": "We have protections within maintenance packages: (1) **Monitoring** - automatic system availability checks (monthly in Standard, weekly proactive in Premium), (2) **SLA guarantees** depending on package: Standard 97% uptime (up to 21.6h downtime/month), Premium 99% uptime (up to 7.2h downtime/month). Premium package has financial compensations for SLA breach (up to 50% refund). Support: Standard email <24h (business hours), Premium email <12h + phone <2h (business hours 9-18).",
+        "category": "tech"
+      },
+      "q26": {
+        "question": "Can I have AI running only on my servers (on-premise)?",
+        "answer": "Yes, but it's a premium option (more expensive implementation +30-50% and higher subscription). Requires: your infrastructure (Linux server, minimum 16GB RAM, GPU for VoiceAgent), Docker/Kubernetes installation, VPN to our management tools. Advantages: full data control, zero external transfer. Disadvantages: higher cost, slower updates, you're responsible for infrastructure. Most clients choose EU cloud (Frankfurt/Warsaw) - same GDPR security, lower cost.",
+        "category": "tech"
+      },
+      "q27": {
+        "question": "How often is AI updated and does it cost extra?",
+        "answer": "AI models (GPT, Claude, Gemini, ElevenLabs) are automatically updated by providers - you get newest versions without additional costs. Our platform (n8n workflows, integrations, dashboard): every 2-4 weeks minor updates (bug fixes, small improvements), every 3-6 months major updates (new features). All updates included in subscription for free. Only extra cost: if you want custom feature we don't have in roadmap (individual pricing).",
+        "category": "tech"
+      },
+      "q28": {
+        "question": "What if I want to change or add features after implementation?",
+        "answer": "You have 3 options: (1) **Small changes** (update FAQ, add 1-2 integrations, change texts) - free within subscription, 1-3 days delivery, (2) **Medium changes** (new module, additional language, logic expansion) - individual pricing, 5-10 days, (3) **Large changes** (completely new functionality, legacy system integration) - individual pricing, 2-4 weeks. All changes versioned (you can rollback if something doesn't work).",
+        "category": "tech"
+      },
+      "q29": {
+        "question": "Does AI comply with AI Act (EU Regulation 2024/1689)?",
+        "answer": "Yes. According to AI Act our systems are classified as **\"Limited Risk AI\"** - requires transparency but doesn't require full certification like high-risk systems. We meet requirements: (1) AI informs it's AI (doesn't hide identity), (2) we document system operation, (3) we monitor bias and discrimination, (4) we enable human oversight (escalation to human). All compliance procedures are in documentation and audits.",
+        "category": "compliance"
+      },
+      "q30": {
+        "question": "Can AI handle sensitive data (health, finance)?",
+        "answer": "Only if you have proper GDPR consents and security procedures. For sensitive data (Art. 9 GDPR: health, racial origin, biometric data) we require: (1) GDPR compliance audit before implementation, (2) end-to-end encryption (not just in-transit), (3) data isolation per client (zero sharing), (4) additional security measures (depending on industry), (5) data processing agreement. It's possible, but requires additional steps and close legal cooperation.",
+        "category": "compliance"
+      }
     }
   }
 }

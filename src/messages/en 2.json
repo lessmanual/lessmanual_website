@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "home": {
+      "title": "LessManual.ai - AI + Automation for Polish businesses",
+      "description": "7-day implementation. ROI in a month. ChatBot, VoiceAgent, Content Automation for e-commerce, dealers, developers."
+    }
+  },
+  "nav": {
+    "products": "Products",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "demo": "Book a demo"
+  },
+  "hero": {
+    "headline": "Make Your Business LESSMANUAL",
+    "subheadline": "AI + Automation for Polish businesses. 7-day implementation. ROI in a month.",
+    "ctaPrimary": "Book a demo (15 min)",
+    "ctaSecondary": "See case studies",
+    "trustBadge": "Trusted by 50+ companies"
+  },
+  "specjalizacje": {
+    "title": "AI Specializations for Your Business",
+    "subtitle": "Choose the area where AI can save you hundreds of hours monthly",
+    "obsługaKlienta": {
+      "title": "Customer Service",
+      "description": "ChatBot + VoiceAgent automating 80% of inquiries 24/7",
+      "before": "Before: 200h/month answering questions",
+      "after": "After: 40h/month only on complex cases",
+      "savings": "Savings: 160h/month (70% time)",
+      "features": [
+        "Responses in <30 seconds",
+        "Integration with CRM and knowledge base",
+        "Automatic escalation to human when needed"
+      ]
+    },
+    "leadGen": {
+      "title": "Lead Generation",
+      "description": "AI lead qualification + automated follow-up",
+      "before": "Before: 30% cold leads, 70% no follow-up",
+      "after": "After: 90% pre-qualified leads, 100% follow-up",
+      "savings": "3x more conversions from same sources",
+      "features": [
+        "Automatic BANT qualification",
+        "Instant contact (Voice/Email)",
+        "Integration with ClickUp/Pipedrive"
+      ]
+    },
+    "content": {
+      "title": "Content Creation",
+      "description": "Automated content creation for e-commerce and social media",
+      "before": "Before: 100h/month on product descriptions and posts",
+      "after": "After: 20h/month only on final verification",
+      "savings": "Savings: 80h/month (80% time)",
+      "features": [
+        "Product description generation",
+        "Social media posts (PL/EN)",
+        "SEO-optimized content"
+      ]
+    }
+  },
+  "jakToDziała": {
+    "title": "How it works?",
+    "subtitle": "From idea to working solution in 7 days",
+    "step1": {
+      "title": "Analysis",
+      "description": "15-minute call. We identify the biggest bottlenecks in your business.",
+      "duration": "Day 1"
+    },
+    "step2": {
+      "title": "Implementation",
+      "description": "We configure AI for your needs. Integration with your systems (CRM, email, phone).",
+      "duration": "Day 2-5"
+    },
+    "step3": {
+      "title": "Testing",
+      "description": "We test all scenarios together. Fixes and optimization.",
+      "duration": "Day 6"
+    },
+    "step4": {
+      "title": "Launch",
+      "description": "Go-live! We monitor the first weeks and fine-tune based on real data.",
+      "duration": "Day 7"
+    }
+  },
+  "klienci": {
+    "title": "Trusted by 50+ companies",
+    "subtitle": "From e-commerce to developers - AI works in every industry",
+    "testimonial1": {
+      "quote": "ChatBot answers 90% of customer questions. The team has time for sales instead of FAQ.",
+      "author": "Michał Nowak",
+      "company": "Car dealer, Warsaw",
+      "metric": "160h/month savings"
+    },
+    "testimonial2": {
+      "quote": "VoiceAgent calls leads in 2 minutes. Conversion increased from 5% to 18%.",
+      "author": "Anna Kowalska",
+      "company": "E-commerce, Kraków",
+      "metric": "3.6x more conversions"
+    },
+    "testimonial3": {
+      "quote": "Content for 500+ products generated automatically. SEO score increased by 40%.",
+      "author": "Piotr Wiśniewski",
+      "company": "Online store, Gdańsk",
+      "metric": "80h/month savings"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Have another question? Contact us",
+    "question1": {
+      "q": "How much does implementation cost?",
+      "a": "From 3000 PLN one-time + from 1500 PLN/month subscription (depending on query volume). You get exact pricing after a 15-min demo call."
+    },
+    "question2": {
+      "q": "How long does implementation take?",
+      "a": "7 business days from contract signing to go-live. In urgent cases we can accelerate to 3 days."
+    },
+    "question3": {
+      "q": "Do I need a programmer?",
+      "a": "No. We do everything. All you need is 1-2h for a call + access to systems (CRM, email)."
+    },
+    "question4": {
+      "q": "What if AI can't handle a question?",
+      "a": "AI automatically escalates difficult cases to a human. You decide which questions go to AI and which always go to the team."
+    },
+    "question5": {
+      "q": "Is data secure (GDPR)?",
+      "a": "Yes. Servers in EU, full GDPR compliance, data processing agreement. Your data is never used for AI training."
+    }
+  },
+  "footer": {
+    "company": "Company",
+    "products": "Products",
+    "resources": "Resources",
+    "legal": "Legal",
+    "contact": "Contact",
+    "about": "About",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "caseStudies": "Case studies",
+    "chatbot": "ChatBot",
+    "voiceAgent": "VoiceAgent",
+    "contentAutomation": "Content Automation",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© 2025 LessManual Bartłomiej Chudzik. All rights reserved.",
+    "nip": "Tax ID: 1231589909",
+    "regon": "REGON: 542947850",
+    "address": "Kraków, Poland",
+    "email": "contact@lessmanual.ai",
+    "phone": "+48 123 456 789"
+  }
+}

@@ -66,3 +66,116 @@ input[type='range']::-moz-range-thumb {
 input[type='range']::-moz-range-thumb:hover {
   transform: scale(1.2);
 }
+
+/* Legal Pages Prose Styling */
+.prose h1 {
+  color: #DDE000;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 40px rgba(221, 224, 0, 0.3);
+}
+
+.prose h2 {
+  color: #FEFEFE;
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(221, 224, 0, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+  color: #FEFEFE;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  color: rgba(254, 254, 254, 0.9);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.prose ul,
+.prose ol {
+  color: rgba(254, 254, 254, 0.9);
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.prose strong {
+  color: #DDE000;
+  font-weight: 600;
+}
+
+.prose a {
+  color: #DDE000;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.prose a:hover {
+  opacity: 0.8;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.prose th {
+  background-color: rgba(221, 224, 0, 0.1);
+  color: #DDE000;
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid rgba(221, 224, 0, 0.2);
+}
+
+.prose td {
+  color: rgba(254, 254, 254, 0.9);
+  padding: 0.75rem;
+  border: 1px solid rgba(254, 254, 254, 0.1);
+}
+
+.prose code {
+  background-color: rgba(221, 224, 0, 0.1);
+  color: #DDE000;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.prose blockquote {
+  border-left: 4px solid #DDE000;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  color: rgba(254, 254, 254, 0.8);
+  font-style: italic;
+}
+
+/* Print styles for legal pages */
+@media print {
+  .prose {
+    color: #000000;
+  }
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    color: #000000;
+    text-shadow: none;
+  }
+  .prose a {
+    color: #000000;
+    text-decoration: underline;
+  }
+}

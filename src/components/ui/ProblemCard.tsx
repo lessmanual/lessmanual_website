@@ -204,13 +204,15 @@ export function ProblemCard({
 
           {/* CTA Button */}
           <div className="flex justify-center">
-            <Button
-              variant="primary"
-              size="md"
-              className="bg-pear text-night hover:bg-pear/90 w-full md:w-auto"
-            >
-              {ctaText} →
-            </Button>
+            <a href="#contact" className="w-full md:w-auto">
+              <Button
+                variant="primary"
+                size="md"
+                className="bg-pear text-night hover:bg-pear/90 w-full"
+              >
+                {ctaText} →
+              </Button>
+            </a>
           </div>
         </div>
       </motion.div>

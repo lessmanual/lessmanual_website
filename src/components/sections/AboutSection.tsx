@@ -186,26 +186,38 @@ export function AboutSection(): React.ReactElement {
                 {t('bio1')}
               </motion.p>
 
-              <motion.p variants={fadeInUp}>
+              <motion.p variants={fadeInUp} className="font-semibold text-white">
                 {t('bio2')}
               </motion.p>
 
-              {/* Stats (optional - can remove if not needed) */}
+              <motion.p variants={fadeInUp}>
+                {t('bio3')}
+              </motion.p>
+
+              <motion.p variants={fadeInUp}>
+                {t('bio4')}
+              </motion.p>
+
+              <motion.p variants={fadeInUp} className="font-semibold text-pear">
+                {t('bio5')}
+              </motion.p>
+
+              {/* Stats */}
               <motion.div
                 variants={fadeInUp}
                 className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10"
               >
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-pear">10+</div>
-                  <div className="text-sm text-white/50">{t('stats.experience')}</div>
+                  <div className="text-3xl font-bold text-pear">75%</div>
+                  <div className="text-sm text-white/50">{t('stats.manualReduction')}</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-pear">50+</div>
-                  <div className="text-sm text-white/50">{t('stats.clients')}</div>
+                  <div className="text-3xl font-bold text-pear">ROI &gt; 350%</div>
+                  <div className="text-sm text-white/50">{t('stats.roi')}</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-pear">10k+</div>
-                  <div className="text-sm text-white/50">{t('stats.hours')}</div>
+                  <div className="text-3xl font-bold text-pear">7 dni</div>
+                  <div className="text-sm text-white/50">{t('stats.implementation')}</div>
                 </div>
               </motion.div>
             </motion.div>

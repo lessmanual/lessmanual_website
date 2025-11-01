@@ -229,20 +229,24 @@ export function HeroSection(): React.ReactElement {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          <Button
-            variant="primary"
-            size="lg"
-            className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full sm:w-auto text-sm md:text-base"
-          >
-            {t('ctaPrimary')}
-          </Button>
-          <Button
-            variant="secondary"
-            size="lg"
-            className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full sm:w-auto text-sm md:text-base"
-          >
-            {t('ctaSecondary')}
-          </Button>
+          <a href="#contact" className="w-full sm:w-auto">
+            <Button
+              variant="primary"
+              size="lg"
+              className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full text-sm md:text-base"
+            >
+              {t('ctaPrimary')}
+            </Button>
+          </a>
+          <a href="#kalkulator" className="w-full sm:w-auto">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full text-sm md:text-base"
+            >
+              {t('ctaSecondary')}
+            </Button>
+          </a>
         </motion.div>
       </motion.div>
     </section>

@@ -1,0 +1,516 @@
+{
+  "name": "Formularz kontaktowy lessmanual.ai - PL",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "basicAuth",
+        "formTitle": "Umów bezpłatną konsultację",
+        "formDescription": "Wypełnij formularz. Wybierz telefon od naszego Agenta AI (Szymona) jeśli chcesz rozmowę w mniej niż 1 minutę.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Imię",
+              "placeholder": "Jan",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Nazwisko",
+              "placeholder": "Kowalski",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email",
+              "placeholder": "jan.kowalski@firma.pl",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Telefon",
+              "fieldType": "number",
+              "placeholder": "+48 123 456 789",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Firma",
+              "placeholder": "Nazwa firmy",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Co Cię interesuje?",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "ChatBot - Obsługa klienta 24/7"
+                  },
+                  {
+                    "option": "Voice Agent - Automatyzacja telefoniczna"
+                  },
+                  {
+                    "option": "Content Agent - Automatyzacja contentu"
+                  },
+                  {
+                    "option": "Sales Automation - Lead gen + kampania mailowa"
+                  },
+                  {
+                    "option": "RAG Chatbot - Baza wiedzy"
+                  },
+                  {
+                    "option": "Custom - Nie wiem, potrzebuję konsultacji"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Wiadomość",
+              "fieldType": "textarea",
+              "placeholder": "Opisz krótko swój problem lub pytanie",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Czy chcesz żeby nasz agent głosowy (Szymon) zadzwonił do Ciebie teraz (~20s po wysłaniu formularza), omówił szczegóły i umówił od razu termin na bezpłatną konsultację?",
+              "fieldType": "checkbox",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Chcę"
+                  },
+                  {
+                    "option": "Wolę kontakt mailowy"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false,
+          "buttonLabel": "Wyślij zapytanie",
+          "respondWithOptions": {
+            "values": {
+              "formSubmittedText": "Dziękujemy! Skontaktujemy się wkrótce."
+            }
+          },
+          "ignoreBots": true,
+          "useWorkflowTimezone": true,
+          "customCss": ":root {\n  --primary-dark: #0C0D0A;\n  --primary-yellow: #DDE000;\n  --primary-green: #22C55E;\n  --text-white: #FFFFFF;\n  --text-gray: #A0A0A0;\n  --border-yellow: rgba(247, 223, 30, 0.2);\n  --border-yellow-hover: #F7DF1E;\n}\n\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: var(--primary-dark);\n  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n  color: var(--text-white);\n}\n\n.form-container {\n  max-width: 600px;\n  margin: 40px auto;\n  padding: 32px;\n  background: var(--primary-dark);\n  border: 2px solid var(--border-yellow);\n  border-radius: 12px;\n}\n\n.form-title {\n  font-size: 32px;\n  font-weight: 700;\n  color: var(--primary-yellow);\n  margin-bottom: 16px;\n}\n\n.form-description {\n  font-size: 16px;\n  color: var(--text-gray);\n  margin-bottom: 32px;\n}\n\nlabel {\n  display: block;\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--text-white);\n  margin-bottom: 8px;\n}\n\ninput[type=\"text\"],\ninput[type=\"email\"],\ninput[type=\"tel\"],\nselect,\ntextarea {\n  width: 100%;\n  padding: 12px;\n  background: var(--primary-dark);\n  border: 2px solid var(--border-yellow);\n  border-radius: 8px;\n  color: var(--text-white);\n  font-size: 16px;\n  font-family: inherit;\n  margin-bottom: 20px;\n  transition: all 0.3s ease;\n}\n\ninput:focus,\nselect:focus,\ntextarea:focus {\n  outline: none;\n  border-color: var(--border-yellow-hover);\n  box-shadow: 0 0 0 3px rgba(247, 223, 30, 0.1);\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  color: var(--text-gray);\n  opacity: 0.6;\n}\n\nbutton[type=\"submit\"] {\n  width: 100%;\n  padding: 16px 32px;\n  background: var(--primary-yellow);\n  color: var(--primary-dark);\n  border: none;\n  border-radius: 8px;\n  font-size: 18px;\n  font-weight: 700;\n  cursor: pointer;\n  transition: all 0.3s ease;\n}\n\nbutton[type=\"submit\"]:hover {\n  transform: scale(1.02);\n  box-shadow: 0 4px 12px rgba(247, 223, 30, 0.3);\n}\n\n.checkbox-container {\n  margin: 24px 0;\n  padding: 20px;\n  background: rgba(247, 223, 30, 0.05);\n  border: 2px solid var(--primary-yellow);\n  border-radius: 12px;\n}\n\n.checkbox-container label {\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--primary-yellow);\n}\n\n.checkbox-info {\n  font-size: 12px;\n  color: var(--text-gray);\n  margin-top: 8px;\n  line-height: 1.5;\n}\n\n.checkbox-benefit {\n  font-size: 14px;\n  color: var(--primary-green);\n  font-weight: 600;\n  margin-top: 8px;\n}"
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        -896,
+        96
+      ],
+      "id": "a941dadd-4c1e-40de-a442-5c088f987a28",
+      "name": "On form submission",
+      "webhookId": "129a3a05-e0ac-40b6-8743-9d4d01732aff",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "kaaYEJxKewkOEPjd",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const formData = $input.item.json;\n\n// Email validation\nconst email = formData.email || '';\nconst emailRegex = /.+@.+\\..+/;\nformData.emailIsValid = !!email && emailRegex.test(email);\nif (!formData.emailIsValid) {\n  formData.emailValidationMessage = 'Invalid or missing email format';\n}\n\n// Phone cleanup and validation\nlet phone = formData.telefon || formData.phone || '';\nphone = phone.replace(/[\\s-]/g, '');\n\nreturn { json: formData };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        96
+      ],
+      "id": "46e3697b-b8d0-42bd-aa5f-a9642cc0efd4",
+      "name": "Parse Form Data"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ai-consent-check",
+              "leftValue": "={{ $json.properties['AI Call Consent'].rich_text[0].text.content }}",
+              "rightValue": "Chcę",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -16,
+        96
+      ],
+      "id": "2b05c763-fa18-4c04-b22f-692fe224b141",
+      "name": "Check AI Consent"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/convai/twilio/outbound-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "xi-api-key",
+              "value": "sk_a50b6c9ba1b132a477c1f9c1db4e21967620923aa308a39d"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"agent_id\": \"{{ $json.agent_id }}\",\n    \"agent_phone_number_id\": \"{{ $json.phone_number_id }}\",\n    \"to_number\": \"{{ $json.numer }}\",\n    \"conversation_initiation_client_data\": {\n      \"dynamic_variables\": {\n        \"lead_name\": \"{{ $json['imię'] }}\",\n        \"lead_interest\": \"{{ $json.interest }}\",\n        \"lead_email\": \"{{ $json.email }}\",\n        \"lead_message\": \"{{ $json.message }}\",\n        \"lead_company\": \"{{ $json.company }}\",\n        \"lead_phone\": \"{{ $json.numer }}\",\n        \"lead_lastname\": \"{{ $json.nazwisko }}\"\n      }\n    }\n  }",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        432,
+        0
+      ],
+      "id": "30807c39-e32c-4048-8973-a17fe00453ae",
+      "name": "📞 ElevenLabs Outbound Call"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.properties.Email.email }}",
+        "subject": "Link do kalendarza - LessManual",
+        "message": "=<!DOCTYPE html>\n<html lang=\"pl\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>LessManual - Umów konsultację</title>\n</head>\n<body style=\"margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #f5f5f5;\">\n\n  <!-- Email Container -->\n  <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color: #f5f5f5; padding: 40px 20px;\">\n    <tr>\n      <td align=\"center\">\n\n        <!-- Main Content Card -->\n        <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;\">\n\n          <!-- Header with Logo -->\n          <tr>\n            <td align=\"center\" style=\"background: linear-gradient(135deg, #5716A2 0%, #DDE000 100%); padding: 40px 20px;\">\n              <img src=\"https://lessmanual.ai/logo.png\" alt=\"LessManual Logo\" width=\"120\" height=\"120\" style=\"display: block; border-radius: 8px; margin: 0 auto;\">\n              <h1 style=\"margin: 20px 0 0 0; font-size: 28px; font-weight: 700; color: #0C0D0A; letter-spacing: -0.5px;\">LessManual</h1>\n            </td>\n          </tr>\n\n          <!-- Body Content -->\n          <tr>\n            <td style=\"padding: 40px 40px 30px 40px;\">\n\n              <!-- Main Message -->\n              <p style=\"margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #0C0D0A; line-height: 1.6;\">\n                Cześć {{ $json.name }}!\n              </p>\n\n              <p style=\"margin: 0 0 20px 0; font-size: 16px; font-weight: 400; color: #333333; line-height: 1.6;\">\n                Dziękujemy za zainteresowanie <strong style=\"color: #5716A2;\">LessManual</strong>!\n              </p>\n\n              <p style=\"margin: 0 0 30px 0; font-size: 16px; font-weight: 400; color: #333333; line-height: 1.6;\">\n                Umów się na <strong style=\"color: #5716A2;\">bezpłatną konsultację</strong> (20 minut) i dowiedz się, jak możemy zautomatyzować Twój biznes.\n              </p>\n\n              <!-- CTA Button -->\n              <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin: 0 0 30px 0;\">\n                <tr>\n                  <td align=\"center\" style=\"background-color: #DDE000; border-radius: 8px; padding: 0;\">\n                    <a href=\"https://cal.com/bartłomiej-chudzik-2en6pt\" style=\"display: inline-block; padding: 16px 40px; font-size: 16px; font-weight: 700; color: #0C0D0A; text-decoration: none; border-radius: 8px;\">\n                      📅 Umów bezpłatną konsultację\n                    </a>\n                  </td>\n                </tr>\n              </table>\n\n              <!-- Additional Info Box -->\n              <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background-color: #f9f9f9; border-radius: 8px; border-left: 4px solid #5716A2; margin: 0 0 30px 0;\">\n                <tr>\n                  <td style=\"padding: 20px;\">\n                    <p style=\"margin: 0 0 10px 0; font-size: 14px; font-weight: 600; color: #5716A2;\">\n                      💡 Co zyskasz na konsultacji:\n                    </p>\n                    <ul style=\"margin: 0; padding-left: 20px; font-size: 14px; color: #666666; line-height: 1.8;\">\n                      <li>Analiza procesów, które można zautomatyzować</li>\n                      <li>Wycenę oszczędności (godziny i PLN)</li>\n                      <li>Plan wdrożenia w 7 dni</li>\n                    </ul>\n                  </td>\n                </tr>\n              </table>\n\n              <p style=\"margin: 0; font-size: 16px; font-weight: 400; color: #333333; line-height: 1.6;\">\n                Do zobaczenia! 👋\n              </p>\n\n            </td>\n          </tr>\n\n          <!-- Footer -->\n          <tr>\n            <td style=\"background-color: #f9f9f9; padding: 30px 40px; border-top: 1px solid #e5e5e5;\">\n\n              <p style=\"margin: 0 0 8px 0; font-size: 16px; font-weight: 700; color: #0C0D0A;\">\n                LessManual\n              </p>\n\n              <p style=\"margin: 0 0 4px 0; font-size: 14px; font-weight: 400; color: #666666;\">\n                <a href=\"mailto:kontakt@lessmanual.ai\" style=\"color: #5716A2; text-decoration: none;\">kontakt@lessmanual.ai</a>\n              </p>\n\n              <p style=\"margin: 0 0 15px 0; font-size: 14px; font-weight: 400; color: #666666;\">\n                <a href=\"https://lessmanual.ai\" style=\"color: #5716A2; text-decoration: none;\">lessmanual.ai</a>\n              </p>\n\n              <p style=\"margin: 0; font-size: 12px; font-weight: 400; color: #999999; font-style: italic;\">\n                Make Your Business LESSMANUAL\n              </p>\n\n            </td>\n          </tr>\n\n        </table>\n\n        <!-- Unsubscribe Footer -->\n        <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin-top: 20px;\">\n          <tr>\n            <td align=\"center\" style=\"padding: 0 20px;\">\n              <p style=\"margin: 0; font-size: 12px; font-weight: 400; color: #999999; line-height: 1.5;\">\n                Otrzymujesz tego maila, ponieważ wypełniłeś formularz kontaktowy na <a href=\"https://lessmanual.ai\" style=\"color: #999999; text-decoration: underline;\">lessmanual.ai</a>.\n              </p>\n            </td>\n          </tr>\n        </table>\n\n      </td>\n    </tr>\n  </table>\n\n</body>\n</html>",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Bartek - LessManual"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        192
+      ],
+      "id": "ac71d65b-1abe-4bc9-8d29-8f41aefb0b33",
+      "name": "Send Calendar Link Email",
+      "webhookId": "0c1cae6a-b5d9-4d44-9cdf-484e5d364772",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "FbppPVE5ooDQCLnv",
+          "name": "lessmanual"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "2988f637-e4a5-81eb-857e-e49c6d29e561",
+          "mode": "list",
+          "cachedResultName": "📋 LessManual Leads PL",
+          "cachedResultUrl": "https://www.notion.so/2988f637e4a581eb857ee49c6d29e561"
+        },
+        "title": "📋 LessManual Leads PL",
+        "simple": false,
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Name|title",
+              "title": "={{ $('Parse Form Data').item.json['Imię'] }}"
+            },
+            {
+              "key": "AI Call Consent|rich_text",
+              "textContent": "={{ $('Parse Form Data').item.json['Chcę żeby Agent AI zadzwonił i umówił spotkanie w ciągu 1 minuty'][0] }}"
+            },
+            {
+              "key": "Assigned To|people",
+              "peopleValue": [
+                "297d872b-594c-8138-afdb-00027a54dcee"
+              ]
+            },
+            {
+              "key": "Company|rich_text",
+              "textContent": "={{ $('Parse Form Data').item.json.Firma }}"
+            },
+            {
+              "key": "Email|email",
+              "emailValue": "={{ $('Parse Form Data').item.json.Email }}"
+            },
+            {
+              "key": "Interest|select",
+              "selectValue": "={{ $('Parse Form Data').item.json['Co Cię interesuje?'] }}"
+            },
+            {
+              "key": "Message|rich_text",
+              "textContent": "={{ $('Parse Form Data').item.json['Wiadomość'] }}"
+            },
+            {
+              "key": "Phone|rich_text",
+              "textContent": "=+{{ $('Parse Form Data').item.json.Telefon }}"
+            },
+            {
+              "key": "Source|select",
+              "selectValue": "Website PL"
+            },
+            {
+              "key": "Status|select",
+              "selectValue": "New Lead"
+            },
+            {
+              "key": "Timestamp|date",
+              "date": "={{ $now }}",
+              "timezone": "Europe/Warsaw"
+            },
+            {
+              "key": "Lastname|rich_text",
+              "textContent": "={{ $('Parse Form Data').item.json.Nazwisko }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        -240,
+        96
+      ],
+      "id": "45a936f5-b450-4f69-a27b-60475003a1a7",
+      "name": "Create a database page",
+      "credentials": {
+        "notionApi": {
+          "id": "hoPaYa5ey5VPtHng",
+          "name": "lessmanual"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "86d9e0b3-b423-4468-9837-80e6ab85b332",
+              "name": "agent_id",
+              "value": "agent_8301k8jnkzfbetybqdty2trv3v29",
+              "type": "string"
+            },
+            {
+              "id": "167400ec-c362-4f7e-89ce-8fb4c7d0c8f8",
+              "name": "phone_number_id",
+              "value": "phnum_8101k8p5e7adfzmrkw8efbr1q5v2",
+              "type": "string"
+            },
+            {
+              "id": "5ab54e36-e8b8-4486-8586-17650df6d666",
+              "name": "numer",
+              "value": "={{ $json.properties.Phone.rich_text[0].text.content }}",
+              "type": "string"
+            },
+            {
+              "id": "ca0d3ba4-b153-46fb-a976-c54c743d6332",
+              "name": "interest",
+              "value": "={{ $json.properties.Interest.select.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f1947f70-6e78-4e00-b13c-876f4fce8158",
+              "name": "email",
+              "value": "={{ $json.properties.Email.email }}",
+              "type": "string"
+            },
+            {
+              "id": "a0e4ca1d-1077-4b2e-b612-2d5c59097ac7",
+              "name": "message",
+              "value": "={{ $json.properties.Message.rich_text[0].text.content }}",
+              "type": "string"
+            },
+            {
+              "id": "7bc5bc7e-f380-4d69-91a0-b42b4b9d1042",
+              "name": "company",
+              "value": "={{ $json.properties.Company.rich_text[0].text.content }}",
+              "type": "string"
+            },
+            {
+              "id": "d9772632-1acb-4689-9e1d-208cf6c34347",
+              "name": "imię",
+              "value": "={{ $json.properties.Name.title[0].text.content }}",
+              "type": "string"
+            },
+            {
+              "id": "ab657ec4-5e56-4c2d-a2a8-2db96feb1ce7",
+              "name": "nazwisko",
+              "value": "={{ $json.properties.Lastname.rich_text[0].text.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "51af3473-053b-4b5f-bfc8-f7eae689cb3b",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "tableId": "contacts",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $json['Imię'] }} {{ $json.Nazwisko }}"
+            },
+            {
+              "fieldId": "email",
+              "fieldValue": "={{ $json.Email }}"
+            },
+            {
+              "fieldId": "phone",
+              "fieldValue": "=+{{ $json.Telefon }}"
+            },
+            {
+              "fieldId": "company",
+              "fieldValue": "={{ $json.Firma }}"
+            },
+            {
+              "fieldId": "message",
+              "fieldValue": "={{ $json['Wiadomość'] }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        96
+      ],
+      "id": "7dd7f480-8a59-40a6-9ddd-abc5a5e36182",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "f0Ewu7yHpBYFviML",
+          "name": "lessmanual"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Parse Form Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Form Data": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check AI Consent": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Calendar Link Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a database page": {
+      "main": [
+        [
+          {
+            "node": "Check AI Consent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "📞 ElevenLabs Outbound Call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📞 ElevenLabs Outbound Call": {
+      "main": [
+        []
+      ]
+    },
+    "Create a row": {
+      "main": [
+        [
+          {
+            "node": "Create a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": -1,
+    "availableInMCP": false,
+    "errorWorkflow": "IKr6cKiuVrfNb3QX"
+  },
+  "versionId": "9d4e9567-e02c-4ed2-b3d9-383bc592c353",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ebb32c3ddf496baa1e77be5356ff0169e480883f704682ce798c3da53c819ad9"
+  },
+  "id": "mTyEj670o4EDojZA",
+  "tags": []
+}

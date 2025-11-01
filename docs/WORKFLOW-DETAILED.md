@@ -1,4 +1,8 @@
-# LessManual Website - Claude Code Instructions
+# LessManual Website - Detailed Workflow Documentation
+
+> 📌 **Quick Reference:** See `CLAUDE.md` for ultra-concise workflow, agent→skills mapping, and critical rules.
+>
+> This document contains full explanations, examples, and detailed context for all development workflows.
 
 **Project:** lessmanual.ai marketing website
 **Tech Stack:** Next.js 15.5 (App Router) + TypeScript + Tailwind CSS + Framer Motion + next-intl
@@ -87,31 +91,13 @@ src/
 │   │   ├── about/page.tsx  # About page
 │   │   └── produkty/       # Products
 │   └── layout.tsx          # Root layout (redirect to locale)
-├── messages/               # ✅ CORRECT LOCATION (inside src/)
+├── messages/
 │   ├── pl.json             # Polish translations (default)
 │   └── en.json             # English translations
 └── i18n/
     ├── config.ts           # Locale configuration
     └── request.ts          # Server-side locale detection
 ```
-
-**⚠️ CRITICAL: Translation Files Location**
-
-- ✅ **CORRECT:** `src/messages/pl.json` and `src/messages/en.json`
-- ❌ **WRONG:** `./messages/` (root level) - THIS FOLDER SHOULD NOT EXIST
-
-**Why:** The app uses `@/messages/${locale}.json` which resolves to `src/messages/` via tsconfig.json alias.
-
-**Configuration check:**
-- `src/i18n/request.ts` line 15: `import(\`@/messages/${locale}.json\`)`
-- `tsconfig.json` line 22: `"@/*": ["./src/*"]`
-- Therefore: `@/messages/` = `src/messages/` ✅
-
-**If you see MISSING_MESSAGE errors:**
-1. Verify you edited `src/messages/pl.json` (NOT `./messages/pl.json`)
-2. Kill ALL node processes: `killall -9 node npm`
-3. Clear cache: `rm -rf .next node_modules/.cache .turbopack`
-4. Restart server: `npm run dev`
 
 **Routing:**
 - **Polish (default):** `lessmanual.ai/` → auto-redirect to `/pl`
@@ -929,19 +915,6 @@ export function Hero({ title, subtitle }: HeroProps): JSX.Element {
 ❌ **TODO comments** - fix immediately or create TaskMaster task
 ❌ **console.log** - remove before commit (use proper logging if needed)
 ❌ **Any type** - use proper TypeScript types
-❌ **NEW TRANSLATION NAMESPACES IN SERVER COMPONENTS** - When adding NEW translation keys to messages/*.json:
-  - ❌ DON'T use `getTranslations()` with NEW namespace in Server Components (causes MISSING_MESSAGE error due to Turbopack caching)
-  - ✅ DO use `'use client'` + `useTranslations()` for pages with NEW namespaces
-  - ✅ DO restart dev server manually AFTER adding new translations (kill all node processes, clear .next cache)
-  - **Why:** Next.js/Turbopack aggressively caches message modules at build time. New namespaces require full server restart to reload.
-  - **Solution:** Convert page to Client Component (`'use client'` + `useTranslations()`) OR manually restart server after adding translations
-
-❌ **HEADER COMPONENT IN INDIVIDUAL PAGES** - Causes chunk loading errors when navigating between pages
-  - ❌ DON'T add `<Header />` to individual page.tsx files (causes inconsistent client/server boundaries)
-  - ✅ DO keep `<Header />` in `src/app/[locale]/layout.tsx` ONLY (consistent across all pages)
-  - **Why:** When Header is on some pages but not others, Next.js has trouble loading the Header chunk during navigation
-  - **Symptom:** "Failed to load chunk" errors when navigating back to pages with Header from pages without it
-  - **Solution:** Header belongs in layout.tsx (line 90), NOT in individual pages
 
 ---
 

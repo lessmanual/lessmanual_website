@@ -155,13 +155,15 @@ export function SpecializationCard({
         </div>
 
         {/* CTA Button */}
-        <motion.button
-          className="px-8 py-4 bg-pear text-night font-semibold rounded-lg shadow-lg hover:shadow-pear/50 transition-all duration-200"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {cta}
-        </motion.button>
+        <a href="#contact">
+          <motion.button
+            className="px-8 py-4 bg-pear text-night font-semibold rounded-lg shadow-lg hover:shadow-pear/50 transition-all duration-200"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {cta}
+          </motion.button>
+        </a>
       </motion.div>
     </div>
   )

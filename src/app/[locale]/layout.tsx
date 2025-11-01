@@ -5,6 +5,12 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { locales } from '@/i18n/config'
 import { GoogleTagManager } from '@/components/GoogleTagManager'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+import { CookieBanner } from '@/components/CookieBanner'
+import { ScrollToTopButton } from '@/components/ui/ScrollToTopButton'
+import { ChatProvider } from '@/contexts/ChatContext'
+import { ChatWidget } from '@/components/chatbot/ChatWidget'
 import '@/styles/globals.css'
 
 /**
@@ -83,7 +89,14 @@ export default async function LocaleLayout({
       <body className="bg-night text-white antialiased font-sans">
         <GoogleTagManager />
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <ChatProvider>
+            <Header />
+            {children}
+            <Footer />
+            <CookieBanner />
+            <ScrollToTopButton />
+            <ChatWidget />
+          </ChatProvider>
         </NextIntlClientProvider>
       </body>
     </html>
