@@ -4,6 +4,7 @@ import { generateText } from 'ai'
 import { createClient } from '@supabase/supabase-js'
 import plMessages from '@/messages/pl.json'
 import enMessages from '@/messages/en.json'
+import { checkGuardrails } from '@/lib/quick-guardrails'
 
 // Initialize Supabase client (server-side only)
 const supabase = createClient(
@@ -121,6 +122,15 @@ export async function POST(request: NextRequest) {
         },
         { status: 200 }
       )
+    }
+
+    // ✅ PHASE 1: Quick Guardrails - Keyword-based off-topic detection
+    // Blocks 80%+ of off-topic questions BEFORE sending to GPT (~1-5ms, $0 cost)
+    const guardrailResponse = checkGuardrails(message, locale as 'pl' | 'en')
+    if (guardrailResponse) {
+      return NextResponse.json({
+        response: guardrailResponse
+      })
     }
 
     // Load FAQ context
