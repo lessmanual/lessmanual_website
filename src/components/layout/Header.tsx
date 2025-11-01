@@ -170,7 +170,7 @@ export function Header(): React.ReactElement {
             className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pear focus:ring-offset-2 focus:ring-offset-night rounded-md"
           >
             <Image
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="LessManual Logo"
               width={65}
               height={65}

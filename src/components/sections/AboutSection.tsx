@@ -147,7 +147,7 @@ export function AboutSection(): React.ReactElement {
                 }}
               >
                 <Image
-                  src="/images/team/bartlomiej.jpg"
+                  src="/images/team/bartlomiej.webp"
                   alt={t('aria.profileImageAlt')}
                   width={320}
                   height={320}

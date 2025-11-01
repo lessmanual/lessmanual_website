@@ -221,7 +221,7 @@ export function Footer(): React.ReactElement {
               {/* Logo */}
               <li className="pt-4">
                 <img
-                  src="/images/logo.png"
+                  src="/images/logo.webp"
                   alt="LessManual Logo"
                   className="h-12 w-auto"
                 />
