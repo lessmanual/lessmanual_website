@@ -1,6 +1,7 @@
 'use client'
 
 import { Suspense, lazy } from 'react'
+import Image from 'next/image'
 const Spline = lazy(() => import('@splinetool/react-spline'))
 
 /**
@@ -26,9 +27,9 @@ interface InteractiveRobotSplineProps {
  *
  * Features:
  * - Lazy loads Spline library (code splitting)
- * - React Suspense for loading states
+ * - React Suspense with static preview image fallback
  * - Responsive container with custom styling
- * - Loading spinner with pear color (#DDE000)
+ * - Static robot preview (26KB WebP) for fast LCP
  * - Spline watermark visible (license compliance)
  *
  * Performance:
@@ -67,29 +68,15 @@ export function InteractiveRobotSpline({
     >
       <Suspense
         fallback={
-          <div
-            className={`w-full h-full flex items-center justify-center bg-night/40 text-white ${className || ''}`}
-          >
-            <svg
-              className="animate-spin h-12 w-12 text-pear"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l2-2.647z"
-              ></path>
-            </svg>
+          <div className={`relative w-full h-full ${className || ''}`}>
+            <Image
+              src="/images/robot-preview.webp"
+              alt="Loading 3D Robot"
+              fill
+              priority
+              className="object-contain animate-pulse"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         }
       >
