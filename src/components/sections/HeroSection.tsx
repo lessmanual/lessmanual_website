@@ -127,7 +127,7 @@ export function HeroSection(): React.ReactElement {
         >
           <InteractiveRobotSpline
             scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-            className="h-[350px] sm:h-[400px] md:h-[500px] scale-90 sm:scale-100 pointer-events-auto"
+            className="h-[350px] sm:h-[400px] md:h-[500px] scale-[0.85] sm:scale-95 md:scale-100 pointer-events-auto"
           />
         </motion.div>
       </div>
