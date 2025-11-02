@@ -75,7 +75,7 @@ export function HeroSection(): React.ReactElement {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen flex items-center justify-center bg-night lg:overflow-hidden"
+      className="relative h-screen flex items-center justify-center bg-night overflow-hidden"
       style={{
         perspective: '1000px',
         transformStyle: 'preserve-3d',
