@@ -118,21 +118,34 @@ export function HeroSection(): React.ReactElement {
         />
       </div>
 
+      {/* Mobile: Robot as centered background */}
+      <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none z-5">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.3 }}
+        >
+          <InteractiveRobotSpline
+            scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
+            className="h-[350px] sm:h-[400px] md:h-[500px] scale-90 sm:scale-100 pointer-events-auto"
+          />
+        </motion.div>
+      </div>
+
       {/* Main container */}
       <motion.div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-center"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col lg:flex-row lg:items-center"
         style={{ y, opacity }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
-          {/* Left: 3D Robot (Desktop) / Background layer (Mobile) */}
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center lg:w-full flex flex-col h-full lg:h-auto">
+          {/* Desktop: Robot in grid */}
           <motion.div
-            className="relative flex items-center justify-center"
+            className="hidden lg:flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, delay: 0.3 }}
           >
-            {/* Desktop: Robot in grid */}
-            <div className="hidden lg:block relative w-full">
+            <div className="relative w-full">
               {/* Local blur effects around robot */}
               <div className="absolute inset-0 pointer-events-none">
                 <div
@@ -149,19 +162,14 @@ export function HeroSection(): React.ReactElement {
                 className="w-full h-[600px] lg:h-[700px]"
               />
             </div>
-
-            {/* Mobile: Robot as absolute background */}
-            <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
-              <InteractiveRobotSpline
-                scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-                className="w-full h-[350px] sm:h-[400px] md:h-[500px] scale-75 sm:scale-90 md:scale-100 opacity-50 pointer-events-auto"
-              />
-            </div>
           </motion.div>
 
-          {/* Right: Headlines + Description */}
+          {/* Mobile: Spacer for robot */}
+          <div className="lg:hidden flex-1" />
+
+          {/* Headlines + Description */}
           <motion.div
-            className="flex flex-col justify-center space-y-4 md:space-y-6 lg:space-y-8 relative z-10"
+            className="flex flex-col justify-center lg:justify-center space-y-4 md:space-y-6 lg:space-y-8 relative z-10 pb-8 lg:pb-0"
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
@@ -207,7 +215,7 @@ export function HeroSection(): React.ReactElement {
 
             {/* Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4"
+              className="flex flex-col sm:flex-row gap-4 pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.9 }}
@@ -224,11 +232,11 @@ export function HeroSection(): React.ReactElement {
                     behavior: 'smooth'
                   });
                 }
-              }} className="w-full sm:w-auto">
+              }} className="block">
                 <Button
                   variant="primary"
                   size="lg"
-                  className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full text-base md:text-lg font-semibold min-h-[44px]"
+                  className="bg-pear text-night hover:bg-pear/90 px-8 py-4 text-base font-semibold rounded-lg min-w-[217px] shadow-lg shadow-pear/20"
                 >
                   {t('ctaPrimary')}
                 </Button>
@@ -245,11 +253,11 @@ export function HeroSection(): React.ReactElement {
                     behavior: 'smooth'
                   });
                 }
-              }} className="w-full sm:w-auto">
+              }} className="block">
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full text-base md:text-lg font-semibold min-h-[44px]"
+                  className="border border-white/30 bg-transparent text-white hover:bg-white/10 px-8 py-4 text-base font-semibold rounded-lg min-w-[135px]"
                 >
                   {t('ctaSecondary')}
                 </Button>

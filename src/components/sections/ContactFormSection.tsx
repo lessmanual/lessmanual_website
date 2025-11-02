@@ -122,7 +122,7 @@ export function ContactFormSection(): React.ReactElement {
             <iframe
               src={formUrl}
               title={t('iframeTitle')}
-              className="w-full h-[1450px] md:h-[1300px] border-0 rounded-xl overflow-hidden"
+              className="w-full h-[1500px] md:h-[1300px] border-0 rounded-xl overflow-hidden"
               style={{
                 background: 'transparent',
               }}
