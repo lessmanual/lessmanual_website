@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useState, useEffect } from 'react'
 import Image from 'next/image'
 const Spline = lazy(() => import('@splinetool/react-spline'))
 
@@ -22,20 +22,23 @@ interface InteractiveRobotSplineProps {
 /**
  * Interactive Robot Spline Component
  *
- * Lazy-loaded 3D Spline viewer for interactive robot animation.
+ * Deferred-loading 3D Spline viewer for interactive robot animation.
  * Used in Hero section. Watermark visible (Free plan compliance).
  *
  * Features:
+ * - Deferred loading (1.5s delay) to prioritize LCP text rendering
  * - Lazy loads Spline library (code splitting)
  * - React Suspense with static preview image fallback
  * - Responsive container with custom styling
- * - Static robot preview (26KB WebP) for fast LCP
+ * - Static robot preview (26KB WebP) shown first for fast render
  * - Spline watermark visible (license compliance)
  *
- * Performance:
- * - Lazy imports Spline library (reduces initial bundle)
- * - Only loads when component renders
- * - Suspense fallback prevents layout shift
+ * Performance Optimization (CRITICAL #1.2):
+ * - Delays Spline chunk (1.9MB) loading by 1.5s
+ * - Prevents Spline from blocking React hydration of LCP text
+ * - Shows static preview instantly, 3D loads as progressive enhancement
+ * - Reduces TBT (Total Blocking Time) on mobile
+ * - Expected impact: LCP text renders in <1s instead of 20s
  *
  * License Compliance:
  * - Spline Free plan requires visible watermark
@@ -51,7 +54,7 @@ interface InteractiveRobotSplineProps {
  * ```
  *
  * @param {InteractiveRobotSplineProps} props - Component props
- * @returns {React.ReactElement} Spline 3D viewer with loading state
+ * @returns {React.ReactElement} Spline 3D viewer with deferred loading
  *
  * @see {@link https://spline.design} - Spline 3D design tool
  * @see {@link https://www.npmjs.com/package/@splinetool/react-spline} - Spline React package
@@ -60,30 +63,55 @@ export function InteractiveRobotSpline({
   scene,
   className,
 }: InteractiveRobotSplineProps): React.ReactElement {
+  const [shouldLoadSpline, setShouldLoadSpline] = useState(false)
+
+  useEffect(() => {
+    // Defer Spline loading to prevent blocking LCP text rendering
+    // Wait 1.5s to allow critical content (text) to render first
+    const timer = setTimeout(() => {
+      setShouldLoadSpline(true)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <div
       className="relative w-full h-full spline-robot-wrapper"
       role="img"
       aria-label="Interactive 3D robot animation"
     >
-      <Suspense
-        fallback={
-          <div className={`relative w-full h-full ${className || ''}`}>
-            <Image
-              src="/images/robot-preview.webp"
-              alt="Loading 3D Robot"
-              fill
-              priority
-              className="object-contain animate-pulse"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-        }
-      >
-        <div className={className || 'w-full h-full'}>
-          <Spline scene={scene} />
+      {!shouldLoadSpline ? (
+        // Show static preview until Spline is ready to load
+        <div className={`relative w-full h-full ${className || ''}`}>
+          <Image
+            src="/images/robot-preview.webp"
+            alt="Interactive 3D Robot"
+            fill
+            priority
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
-      </Suspense>
+      ) : (
+        <Suspense
+          fallback={
+            <div className={`relative w-full h-full ${className || ''}`}>
+              <Image
+                src="/images/robot-preview.webp"
+                alt="Loading 3D Robot"
+                fill
+                className="object-contain animate-pulse"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          }
+        >
+          <div className={className || 'w-full h-full'}>
+            <Spline scene={scene} />
+          </div>
+        </Suspense>
+      )}
     </div>
   )
 }
