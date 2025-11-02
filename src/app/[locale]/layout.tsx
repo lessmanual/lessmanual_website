@@ -38,10 +38,10 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL('https://lessmanual.ai'),
   title: {
-    default: 'LessManual - AI + Automatyzacja dla polskich firm',
+    default: 'LessManual - Make your business LESSMANUAL',
     template: '%s | LessManual',
   },
-  description: 'Zautomatyzuj swoją firmę z AI. ChatBoty, Voice Agents, Automatyzacja procesów.',
+  description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
   keywords: ['AI', 'automatyzacja', 'chatbot', 'voice agent', 'polska firma', 'SaaS'],
   authors: [{ name: 'LessManual' }],
   openGraph: {
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     locale: 'pl_PL',
     url: 'https://lessmanual.ai',
     siteName: 'LessManual',
-    title: 'LessManual - AI + Automatyzacja dla polskich firm',
-    description: 'Wdrożenie w 7 dni. ROI w miesiąc. ChatBoty, Voice Agents i automatyzacja procesów.',
+    title: 'LessManual - Make your business LESSMANUAL',
+    description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
     images: [
       {
         url: '/images/og-image.png',
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LessManual - AI + Automatyzacja dla polskich firm',
-    description: 'Wdrożenie w 7 dni. ROI w miesiąc.',
+    title: 'LessManual - Make your business LESSMANUAL',
+    description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
     images: ['/images/og-image.png'],
   },
 }
