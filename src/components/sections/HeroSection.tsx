@@ -75,7 +75,7 @@ export function HeroSection(): React.ReactElement {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen flex items-center justify-center bg-night overflow-visible"
+      className="relative h-screen flex items-center justify-center bg-night overflow-hidden"
       style={{
         perspective: '1000px',
         transformStyle: 'preserve-3d',
@@ -118,43 +118,46 @@ export function HeroSection(): React.ReactElement {
         />
       </div>
 
-      {/* Main container */}
+      {/* 3D Robot - Absolute positioned BEHIND content */}
+      <motion.div
+        className="absolute top-0 left-0 lg:left-0 w-full lg:w-1/2 h-screen flex items-center justify-center pointer-events-none z-5"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 1.2, delay: 0.3 }}
+      >
+        {/* Local blur effects around robot */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60"
+            style={{
+              background: `radial-gradient(circle, rgba(221, 224, 0, 0.4) 0%, transparent 70%)`,
+              filter: 'blur(80px)',
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-1/4 w-[400px] h-[400px] opacity-40"
+            style={{
+              background: `radial-gradient(circle, rgba(87, 22, 162, 0.3) 0%, transparent 70%)`,
+              filter: 'blur(100px)',
+            }}
+          />
+        </div>
+
+        <InteractiveRobotSpline
+          scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
+          className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] scale-[0.7] sm:scale-[0.8] md:scale-90 lg:scale-100 pointer-events-auto"
+        />
+      </motion.div>
+
+      {/* Main container - Content ABOVE robot */}
       <motion.div
         className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center py-6 md:py-12 lg:py-16 gap-6 md:gap-8"
         style={{ y, opacity }}
       >
-        {/* Top section: Robot (left) + Headlines & Description (right) */}
+        {/* Top section: Headlines & Description */}
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
-          {/* Left: 3D Robot */}
-          <motion.div
-            className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-full flex items-center justify-center overflow-visible -mt-8 sm:-mt-12 md:-mt-16"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1.2, delay: 0.3 }}
-          >
-            {/* Local blur effects around robot */}
-            <div className="absolute inset-0 pointer-events-none overflow-visible">
-              <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60"
-                style={{
-                  background: `radial-gradient(circle, rgba(221, 224, 0, 0.4) 0%, transparent 70%)`, // pear with opacity
-                  filter: 'blur(80px)',
-                }}
-              />
-              <div
-                className="absolute bottom-0 left-1/4 w-[400px] h-[400px] opacity-40"
-                style={{
-                  background: `radial-gradient(circle, rgba(87, 22, 162, 0.3) 0%, transparent 70%)`, // tekhelet with opacity
-                  filter: 'blur(100px)',
-                }}
-              />
-            </div>
-
-            <InteractiveRobotSpline
-              scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-              className="w-full h-full relative z-10 scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100"
-            />
-          </motion.div>
+          {/* Left: Empty space for robot (on desktop) */}
+          <div className="hidden lg:block" />
 
           {/* Right: Headlines + Description */}
           <motion.div
