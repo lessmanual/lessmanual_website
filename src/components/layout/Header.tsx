@@ -174,7 +174,7 @@ export function Header(): React.ReactElement {
               alt="LessManual Logo"
               width={65}
               height={65}
-              className="h-auto w-auto"
+              className="h-11 w-11 md:h-14 md:w-14 lg:h-16 lg:w-16"
               priority
             />
           </Link>

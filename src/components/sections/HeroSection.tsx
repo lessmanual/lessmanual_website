@@ -224,7 +224,7 @@ export function HeroSection(): React.ReactElement {
 
         {/* Bottom section: Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mt-auto"
+          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mt-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
@@ -233,7 +233,7 @@ export function HeroSection(): React.ReactElement {
             <Button
               variant="primary"
               size="lg"
-              className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full text-sm md:text-base"
+              className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full text-base md:text-lg font-semibold min-h-[44px]"
             >
               {t('ctaPrimary')}
             </Button>
@@ -242,7 +242,7 @@ export function HeroSection(): React.ReactElement {
             <Button
               variant="secondary"
               size="lg"
-              className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full text-sm md:text-base"
+              className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full text-base md:text-lg font-semibold min-h-[44px]"
             >
               {t('ctaSecondary')}
             </Button>
