@@ -136,7 +136,7 @@ export function HeroSection(): React.ReactElement {
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
           {/* Left: 3D Robot */}
           <motion.div
-            className="relative h-full flex items-center justify-center"
+            className="relative h-[280px] sm:h-[350px] md:h-[450px] lg:h-full flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, delay: 0.3 }}
@@ -161,19 +161,19 @@ export function HeroSection(): React.ReactElement {
 
             <InteractiveRobotSpline
               scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-              className="w-full h-full relative z-10"
+              className="w-full h-full relative z-10 scale-90 md:scale-100"
             />
           </motion.div>
 
           {/* Right: Headlines + Description */}
           <motion.div
-            className="flex flex-col justify-center space-y-3 md:space-y-6"
+            className="flex flex-col justify-center space-y-4 md:space-y-6 leading-relaxed"
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
             {/* Main Headline */}
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold drop-shadow-2xl"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold drop-shadow-2xl leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
