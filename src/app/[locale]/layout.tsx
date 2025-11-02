@@ -100,6 +100,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
       <head>
+        {/* Favicon configuration */}
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="LessManual" />
+        <link rel="manifest" href="/site.webmanifest" />
+
         {/* Preload critical images for faster LCP */}
         <link
           rel="preload"
