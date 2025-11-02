@@ -100,6 +100,15 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
       <head>
+        {/* Preconnect to external domains for faster resource loading */}
+        {/* Lighthouse recommendation: reduces DNS lookup + TLS handshake time */}
+        <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://prod.spline.design" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
         {/* Favicon configuration */}
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

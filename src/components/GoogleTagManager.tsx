@@ -37,7 +37,9 @@ export function GoogleTagManager() {
   return (
     <>
       {/* Google Tag Manager - Head */}
-      <Script id="gtm-script" strategy="afterInteractive">
+      {/* Changed from afterInteractive to lazyOnload for better performance */}
+      {/* GTM will load after page is fully interactive, not blocking initial render */}
+      <Script id="gtm-script" strategy="lazyOnload">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
