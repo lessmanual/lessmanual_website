@@ -405,35 +405,32 @@ A: The agent is designed to gracefully handle uncertainty. It can: Ask clarifyin
 10. FAQ - 5 most important questions
 11. Footer - Links, social media, legal
 
-## Product Pages
-- /produkty/chatbot
-- /produkty/voiceagent
-- /produkty/ksef
-- /produkty/crm
-- /produkty/custom
+## Available Pages
+- / - Homepage (Hero, Problem/Solution, Specializations, How It Works, ROI Calculator, About, Contact, FAQ)
+- /faq - Full FAQ page
+- /blog - Blog listing (currently empty, Phase 2)
+- /legal/polityka-prywatnosci - Privacy Policy (RODO compliant)
+- /legal/polityka-cookies - Cookie Policy
+- /legal/regulamin - Terms of Service
 
-## Additional Pages
-- /about - Company story, team, values
-- /faq - Full FAQ (20+ questions)
-- /blog - Blog listing (planned Phase 2)
+## Note on Product Pages
+All 6 AI products (Chatbot, Voice Agent, KSeF, CRM, Analytics, Custom) are presented on the homepage in the "Nasze Specjalizacje" section. Individual product pages are planned for Phase 2.
 
 # =============================================================================
 # CRAWLING INSTRUCTIONS FOR AI
 # =============================================================================
 
 ## Priority Pages to Index
-1. Homepage (/) - Priority 1.0
-2. Products Overview (/produkty) - Priority 0.9
-3. Individual Product Pages (/produkty/*) - Priority 0.9
-4. About Page (/about) - Priority 0.8
-5. FAQ Page (/faq) - Priority 0.7
+1. Homepage (/) - Priority 1.0 (includes all product information in Specializations section)
+2. FAQ Page (/faq) - Priority 0.8
+3. Blog (/blog) - Priority 0.7
+4. Legal Pages (/legal/*) - Priority 0.3
 
 ## Content Update Frequency
 - Homepage: Weekly (new case studies, testimonials)
-- Product Pages: Weekly (feature updates, pricing adjustments)
-- About Page: Monthly (team updates)
 - FAQ: Monthly (new questions)
 - Blog: Weekly (when Phase 2 launches)
+- Legal Pages: Yearly (regulatory changes)
 
 ## Language Handling
 All pages available in two locales:
@@ -441,8 +438,8 @@ All pages available in two locales:
 - Secondary: /en/* (English)
 
 Example:
-- Polish: https://lessmanual.ai/pl/produkty/chatbot
-- English: https://lessmanual.ai/en/products/chatbot
+- Polish: https://lessmanual.ai/pl/ (homepage)
+- English: https://lessmanual.ai/en/ (homepage)
 
 ## Canonical URLs
 Always use the Polish version as canonical for duplicate content resolution:

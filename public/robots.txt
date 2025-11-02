@@ -27,8 +27,6 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://lessmanual.ai/sitemap.xml
-Sitemap: https://lessmanual.ai/pl/sitemap.xml
-Sitemap: https://lessmanual.ai/en/sitemap.xml
 
 # Crawl rate - be gentle with our servers
 Crawl-delay: 1

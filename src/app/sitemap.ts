@@ -18,44 +18,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
     },
     {
-      url: '/about',
+      url: '/faq',
       priority: 0.8,
       changeFrequency: 'monthly' as const,
     },
     {
-      url: '/produkty',
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    {
-      url: '/produkty/chatbot',
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    {
-      url: '/produkty/voiceagent',
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    {
-      url: '/produkty/ksef',
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    {
-      url: '/produkty/crm',
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    {
-      url: '/produkty/custom',
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    {
-      url: '/faq',
+      url: '/blog',
       priority: 0.7,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: '/legal/polityka-prywatnosci',
+      priority: 0.3,
+      changeFrequency: 'yearly' as const,
+    },
+    {
+      url: '/legal/polityka-cookies',
+      priority: 0.3,
+      changeFrequency: 'yearly' as const,
+    },
+    {
+      url: '/legal/regulamin',
+      priority: 0.3,
+      changeFrequency: 'yearly' as const,
     },
   ]
 
