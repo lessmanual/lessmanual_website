@@ -23,7 +23,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lessmanual.ai'
-  const ogImage = `${siteUrl}/images/logo.png` // TODO: Create proper 1200x630px OG image
+  const ogImage = `${siteUrl}/images/og-image.png` // Professional 1200x630px OG image
 
   return {
     title: t('home.title'),
