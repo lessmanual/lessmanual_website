@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Sora } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -69,6 +69,17 @@ export const metadata: Metadata = {
 }
 
 /**
+ * Viewport configuration for mobile responsiveness
+ * Required for SEO 100 score in Lighthouse
+ */
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+}
+
+/**
  * Root Layout for [locale] route
  *
  * Features:
@@ -129,6 +140,42 @@ export default async function LocaleLayout({
           href="/images/robot-preview.webp"
           as="image"
           type="image/webp"
+        />
+
+        {/* Structured Data (JSON-LD) for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'LessManual',
+              url: 'https://lessmanual.ai',
+              logo: 'https://lessmanual.ai/logo.png',
+              description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+              foundingDate: '2024',
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'PL',
+              },
+              sameAs: [
+                // Add social media links here when available
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'LessManual',
+              url: 'https://lessmanual.ai',
+              description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+              inLanguage: ['pl', 'en'],
+            }),
+          }}
         />
       </head>
       <body className="bg-night text-white antialiased font-sans">
