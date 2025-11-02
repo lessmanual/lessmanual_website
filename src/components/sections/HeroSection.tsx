@@ -75,7 +75,7 @@ export function HeroSection(): React.ReactElement {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen flex items-center justify-center bg-night overflow-hidden"
+      className="relative h-screen flex items-center justify-center bg-night overflow-visible"
       style={{
         perspective: '1000px',
         transformStyle: 'preserve-3d',
@@ -127,7 +127,7 @@ export function HeroSection(): React.ReactElement {
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
           {/* Left: 3D Robot */}
           <motion.div
-            className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-full flex items-center justify-center"
+            className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-full flex items-center justify-center overflow-visible -mt-8 sm:-mt-12 md:-mt-16"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, delay: 0.3 }}
