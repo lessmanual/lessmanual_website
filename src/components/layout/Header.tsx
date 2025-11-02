@@ -248,30 +248,15 @@ export function Header(): React.ReactElement {
           </button>
         </div>
 
-        {/* Mobile Menu - FIXED VERSION */}
-        <motion.div
-          ref={mobileMenuRef}
-          id="mobile-menu"
-          className="lg:hidden"
-          initial={false}
-          animate={{
-            height: mobileMenuOpen ? 'auto' : 0,
-            opacity: mobileMenuOpen ? 1 : 0,
-            display: mobileMenuOpen ? 'block' : 'none',
-          }}
-          transition={{
-            duration: 0.3,
-            ease: 'easeInOut',
-            opacity: { duration: 0.2 }, // Fade faster than height change
-            display: { duration: 0 } // Instant display change
-          }}
-          style={{
-            overflow: mobileMenuOpen ? 'visible' : 'hidden',
-          }}
-          aria-hidden={!mobileMenuOpen}
-          role="navigation"
-          aria-label="Mobile navigation menu"
-        >
+        {/* Mobile Menu - SIMPLIFIED VERSION */}
+        {mobileMenuOpen && (
+          <div
+            ref={mobileMenuRef}
+            id="mobile-menu"
+            className="lg:hidden"
+            role="navigation"
+            aria-label="Mobile navigation menu"
+          >
           <div className="border-t border-pear/30 bg-night/95 backdrop-blur-lg px-6 py-6 space-y-4 relative z-50">
             {navLinks.map((link) => (
               link.isAnchor ? (
@@ -302,7 +287,8 @@ export function Header(): React.ReactElement {
               <LanguageSwitcher />
             </div>
           </div>
-        </motion.div>
+          </div>
+        )}
       </nav>
     </motion.header>
   )
