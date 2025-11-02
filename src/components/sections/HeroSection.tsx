@@ -151,11 +151,11 @@ export function HeroSection(): React.ReactElement {
 
       {/* Main container - Content ABOVE robot */}
       <motion.div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center py-6 md:py-12 lg:py-16 gap-6 md:gap-8"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-end pb-20 md:pb-24 lg:justify-center lg:pb-0"
         style={{ y, opacity }}
       >
         {/* Top section: Headlines & Description */}
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-end lg:items-center">
           {/* Left: Empty space for robot (on desktop) */}
           <div className="hidden lg:block" />
 

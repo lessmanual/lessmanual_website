@@ -117,15 +117,15 @@ export function Header(): React.ReactElement {
       const target = document.querySelector(href)
 
       if (target) {
-        // Get target's absolute position from top of document
+        // Scroll to element with proper offset
         const header = document.querySelector('header')
-        const headerOffset = header?.offsetHeight || 64
-        const extraPadding = 20 // Additional padding below header
-        const targetPosition = (target as HTMLElement).offsetTop
-        const scrollPosition = targetPosition - headerOffset - extraPadding
+        const headerHeight = header?.offsetHeight || 64
+        const targetRect = target.getBoundingClientRect()
+        const absoluteTop = targetRect.top + window.pageYOffset
+        const scrollTo = absoluteTop - headerHeight - 20
 
         window.scrollTo({
-          top: scrollPosition,
+          top: scrollTo,
           behavior: 'smooth'
         })
 
