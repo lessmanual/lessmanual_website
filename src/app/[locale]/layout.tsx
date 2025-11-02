@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
     images: [
       {
-        url: '/images/og-image.png',
+        url: 'https://lessmanual.ai/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'LessManual - Make Your Business LESSMANUAL',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LessManual - Make your business LESSMANUAL',
     description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
-    images: ['/images/og-image.png'],
+    images: ['https://lessmanual.ai/images/og-image.png'],
   },
 }
 
