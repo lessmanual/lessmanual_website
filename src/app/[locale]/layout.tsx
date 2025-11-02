@@ -49,9 +49,22 @@ export const metadata: Metadata = {
     locale: 'pl_PL',
     url: 'https://lessmanual.ai',
     siteName: 'LessManual',
+    title: 'LessManual - AI + Automatyzacja dla polskich firm',
+    description: 'Wdrożenie w 7 dni. ROI w miesiąc. ChatBoty, Voice Agents i automatyzacja procesów.',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'LessManual - Make Your Business LESSMANUAL',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'LessManual - AI + Automatyzacja dla polskich firm',
+    description: 'Wdrożenie w 7 dni. ROI w miesiąc.',
+    images: ['/images/og-image.png'],
   },
 }
 
@@ -86,6 +99,21 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
+      <head>
+        {/* Preload critical images for faster LCP */}
+        <link
+          rel="preload"
+          href="/images/logo.webp"
+          as="image"
+          type="image/webp"
+        />
+        <link
+          rel="preload"
+          href="/images/robot-preview.webp"
+          as="image"
+          type="image/webp"
+        />
+      </head>
       <body className="bg-night text-white antialiased font-sans">
         <GoogleTagManager />
         <NextIntlClientProvider messages={messages}>
