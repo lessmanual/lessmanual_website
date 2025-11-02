@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, lazy, useState, useEffect } from 'react'
+import { Suspense, lazy, useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 const Spline = lazy(() => import('@splinetool/react-spline'))
 
@@ -64,19 +64,46 @@ export function InteractiveRobotSpline({
   className,
 }: InteractiveRobotSplineProps): React.ReactElement {
   const [shouldLoadSpline, setShouldLoadSpline] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Defer Spline loading to prevent blocking LCP text rendering
-    // Wait 1.5s to allow critical content (text) to render first
-    const timer = setTimeout(() => {
-      setShouldLoadSpline(true)
-    }, 1500)
+    // Smart loading: Load Spline when browser is idle AND component is visible
+    // This prevents blocking LCP while maintaining good UX (no visible delay)
 
-    return () => clearTimeout(timer)
+    const loadSplineWhenReady = () => {
+      // Use requestIdleCallback to load during browser idle time
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          setShouldLoadSpline(true)
+        }, { timeout: 2000 }) // Fallback after 2s if never idle
+      } else {
+        // Fallback for browsers without requestIdleCallback
+        setTimeout(() => setShouldLoadSpline(true), 100)
+      }
+    }
+
+    // Check if component is in viewport before loading
+    if (containerRef.current && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            loadSplineWhenReady()
+            observer.disconnect()
+          }
+        },
+        { threshold: 0.1 } // Load when 10% visible
+      )
+      observer.observe(containerRef.current)
+      return () => observer.disconnect()
+    } else {
+      // Fallback if no IntersectionObserver
+      loadSplineWhenReady()
+    }
   }, [])
 
   return (
     <div
+      ref={containerRef}
       className="relative w-full h-full spline-robot-wrapper"
       role="img"
       aria-label="Interactive 3D robot animation"

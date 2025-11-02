@@ -26,13 +26,11 @@ import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
  * - Keyboard navigation support
  * - Focus indicators (pear ring)
  * - Skip to content link for screen readers
- * - Proper tabindex management for mobile menu
  *
  * Performance:
  * - GPU-accelerated animations (transform, opacity)
  * - Scroll listener with useScroll hook
  * - Lazy load mobile menu (AnimatePresence)
- * - Pointer-events optimization (disabled when menu closed)
  *
  * i18n:
  * - Supports PL/EN via next-intl
@@ -117,9 +115,7 @@ export function Header(): React.ReactElement {
       const target = document.querySelector(href)
 
       if (target) {
-        // Use actual header height dynamically
-        const header = document.querySelector('header')
-        const headerOffset = header?.offsetHeight || 64
+        const headerOffset = 80 // Height of fixed header
         const elementPosition = target.getBoundingClientRect().top
         const offsetPosition = elementPosition + window.scrollY - headerOffset
 
@@ -186,24 +182,14 @@ export function Header(): React.ReactElement {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-8">
             {navLinks.map((link) => (
-              link.isAnchor ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleSmoothScroll}
-                  className="relative text-sm font-medium text-white/70 transition-colors duration-200 hover:text-pear focus:outline-none focus:text-pear after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-pear after:transition-all hover:after:w-full"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="relative text-sm font-medium text-white/70 transition-colors duration-200 hover:text-pear focus:outline-none focus:text-pear after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-pear after:transition-all hover:after:w-full"
-                >
-                  {link.label}
-                </Link>
-              )
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={handleSmoothScroll}
+                className="relative text-sm font-medium text-white/70 transition-colors duration-200 hover:text-pear focus:outline-none focus:text-pear after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-pear after:transition-all hover:after:w-full"
+              >
+                {link.label}
+              </a>
             ))}
 
             {/* Language Switcher */}
@@ -248,52 +234,28 @@ export function Header(): React.ReactElement {
           </button>
         </div>
 
-        {/* Mobile Menu - FIXED VERSION */}
+        {/* Mobile Menu */}
         <motion.div
           ref={mobileMenuRef}
           id="mobile-menu"
-          className="lg:hidden"
+          className="lg:hidden overflow-hidden"
           initial={false}
           animate={{
             height: mobileMenuOpen ? 'auto' : 0,
             opacity: mobileMenuOpen ? 1 : 0,
           }}
-          transition={{
-            duration: 0.3,
-            ease: 'easeInOut',
-            opacity: { duration: 0.2 } // Fade faster than height change
-          }}
-          style={{
-            overflow: 'hidden',
-            pointerEvents: mobileMenuOpen ? 'auto' : 'none', // Disable clicks when closed
-          }}
-          aria-hidden={!mobileMenuOpen}
-          role="navigation"
-          aria-label="Mobile navigation menu"
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
-          <div className="border-t border-pear/30 bg-night/95 backdrop-blur-lg px-6 py-6 space-y-4 relative z-50">
+          <div className="border-t border-pear/30 bg-night/95 backdrop-blur-lg px-6 py-6 space-y-4">
             {navLinks.map((link) => (
-              link.isAnchor ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleSmoothScroll}
-                  className="block py-2 text-base font-medium text-white/70 hover:text-pear transition-colors focus:outline-none focus:text-pear"
-                  tabIndex={mobileMenuOpen ? 0 : -1}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block py-2 text-base font-medium text-white/70 hover:text-pear transition-colors focus:outline-none focus:text-pear"
-                  tabIndex={mobileMenuOpen ? 0 : -1}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              )
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={handleSmoothScroll}
+                className="block py-2 text-base font-medium text-white/70 hover:text-pear transition-colors focus:outline-none focus:text-pear"
+              >
+                {link.label}
+              </a>
             ))}
 
             {/* Language Switcher (mobile) */}

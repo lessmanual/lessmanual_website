@@ -152,7 +152,7 @@ export function HeroSection(): React.ReactElement {
 
             <InteractiveRobotSpline
               scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-              className="w-full h-full relative z-10 scale-90 md:scale-100"
+              className="w-full h-full relative z-10 scale-75 sm:scale-85 md:scale-95 lg:scale-100"
             />
           </motion.div>
 

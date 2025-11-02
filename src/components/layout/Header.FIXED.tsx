@@ -271,7 +271,7 @@ export function Header(): React.ReactElement {
           role="navigation"
           aria-label="Mobile navigation menu"
         >
-          <div className="border-t border-pear/30 bg-night/95 backdrop-blur-lg px-6 py-6 space-y-4 relative z-50">
+          <div className="border-t border-pear/30 bg-night/95 backdrop-blur-lg px-6 py-6 space-y-4">
             {navLinks.map((link) => (
               link.isAnchor ? (
                 <a
