@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState, useEffect } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/Button'
@@ -62,7 +62,6 @@ export function HeroSection(): React.ReactElement {
   const t = useTranslations('hero')
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: '-100px' })
-  const [slidingText, setSlidingText] = useState(false)
 
   // Parallax scroll effect
   const { scrollYProgress } = useScroll({
@@ -72,14 +71,6 @@ export function HeroSection(): React.ReactElement {
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-
-  // Trigger sliding text animation after component loads
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSlidingText(true)
-    }, 500)
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <section
@@ -181,23 +172,14 @@ export function HeroSection(): React.ReactElement {
               <span className="block text-white">
                 {t('mainHeadline')}
               </span>
-              <motion.span
-                className="block text-pear"
-                initial={{ opacity: 0, x: -100 }}
-                animate={slidingText ? { opacity: 1, x: 0 } : {}}
-                transition={{
-                  duration: 1.2,
-                  delay: 0.8,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 20
-                }}
+              <span
+                className="block text-pear animate-fade-in-slide"
                 style={{
                   textShadow: '0 0 80px rgba(221, 224, 0, 0.5)', // pear glow effect
                 }}
               >
                 {t('mainHeadlineAccent')}
-              </motion.span>
+              </span>
             </motion.h1>
 
             {/* Subheadline */}
