@@ -257,15 +257,16 @@ export function Header(): React.ReactElement {
           animate={{
             height: mobileMenuOpen ? 'auto' : 0,
             opacity: mobileMenuOpen ? 1 : 0,
+            display: mobileMenuOpen ? 'block' : 'none',
           }}
           transition={{
             duration: 0.3,
             ease: 'easeInOut',
-            opacity: { duration: 0.2 } // Fade faster than height change
+            opacity: { duration: 0.2 }, // Fade faster than height change
+            display: { duration: 0 } // Instant display change
           }}
           style={{
-            overflow: 'hidden',
-            pointerEvents: mobileMenuOpen ? 'auto' : 'none', // Disable clicks when closed
+            overflow: mobileMenuOpen ? 'visible' : 'hidden',
           }}
           aria-hidden={!mobileMenuOpen}
           role="navigation"
