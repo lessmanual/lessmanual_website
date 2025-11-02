@@ -119,7 +119,7 @@ export function HeroSection(): React.ReactElement {
       </div>
 
       {/* Mobile: Robot positioned at top */}
-      <div className="lg:hidden absolute inset-0 flex items-start justify-center pt-20 pointer-events-none z-5">
+      <div className="lg:hidden absolute inset-0 flex items-start justify-center pt-16 pointer-events-none z-5">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -127,7 +127,7 @@ export function HeroSection(): React.ReactElement {
         >
           <InteractiveRobotSpline
             scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-            className="h-[350px] sm:h-[400px] md:h-[500px] scale-[0.85] sm:scale-95 md:scale-100 pointer-events-auto"
+            className="h-[320px] sm:h-[380px] md:h-[450px] scale-[0.85] sm:scale-95 md:scale-100 pointer-events-auto"
           />
         </motion.div>
       </div>
