@@ -3,842 +3,148 @@
     "tasks": [
       {
         "id": "1",
-        "title": "Complete Homepage Sections Implementation",
-        "description": "Build all 8 homepage sections according to PRD specifications with responsive design and animations using Next.js 15.5 best practices, next-intl i18n, Framer Motion 3D animations, and WCAG AAA accessibility compliance",
-        "status": "in-progress",
-        "dependencies": [],
+        "title": "Establish Foundational SEO Files",
+        "description": "Create critical SEO and bot instruction files (robots.txt, sitemap.ts, llms.txt) to ensure proper indexing by search engines and AI crawlers, aiming for a perfect SEO score.",
+        "details": "Create three files as specified in the PRD. For `sitemap.ts`, use Next.js's file-based metadata API. For `robots.txt`, place it in the `/public` directory. Create `llms.txt` in `/public` as well to provide instructions for AI crawlers.\n\n1.  **Create `/public/robots.txt`** with the following content:\n    ```txt\n    User-agent: *\n    Allow: /\n    Disallow: /api/\n    Disallow: /_next/\n    Sitemap: https://lessmanual.ai/sitemap.xml\n    ```\n2.  **Create `/src/app/sitemap.ts`** using the content from the SEO agent report (Section 5). This will dynamically generate the sitemap.\n3.  **Create `/public/llms.txt`** and populate it with the 1800 lines of content from the SEO agent report (Section 3).",
+        "testStrategy": "Verify that `https://lessmanual.ai/robots.txt`, `https://lessmanual.ai/sitemap.xml`, and `https://lessmanual.ai/llms.txt` are publicly accessible after deployment and contain the correct content. Run a Lighthouse audit and confirm the SEO score has increased to 100.",
         "priority": "high",
-        "details": "Implement Hero section with 3D animated product cards, Specjalizacje section with 3 expandable cards (Obsługa Klienta, Lead Gen, Content), Jak to działa section with timeline, Nasi klienci section with logos and testimonials, FAQ accordion with 5 questions, and Footer. Use Next.js 15.5 App Router with Server Components by default, React 19 features, and Turbopack optimization. Integrate existing design tokens (night, pear, tekhelet) with Figma structure extraction. Implement proper i18n with next-intl for PL/EN support. Follow 2025 performance patterns: Partial Prerendering, code splitting with next/dynamic, image optimization with next/image, and Lighthouse 90+ optimization strategies. Ensure WCAG AAA compliance with proper semantic HTML, ARIA labels, keyboard navigation, and color contrast ratios.",
-        "testStrategy": "Test responsiveness on mobile/tablet/desktop breakpoints using Chrome DevTools device simulation, verify 3D animations maintain 60fps performance through Performance tab profiling, ensure WCAG AAA accessibility compliance with automated and manual testing (keyboard navigation, screen reader compatibility with VoiceOver/NVDA), validate Lighthouse Performance 90+ with local build testing, test i18n locale switching and translation completeness, verify Framer Motion animations respect prefers-reduced-motion media query",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Research and establish Next.js 15.5 modern patterns foundation",
-            "description": "Research and implement Next.js 15.5 best practices including i18n setup with next-intl, performance optimization patterns, and modern development workflow",
-            "dependencies": [],
-            "details": "Research Next.js 15.5 App Router patterns, React 19 features (useFormState, useOptimistic), Turbopack configuration, and Partial Prerendering setup. Study next-intl implementation for PL/EN routing (/pl, /en). Research Framer Motion 3D animation performance optimization techniques including GPU acceleration, transform properties vs position changes, and will-change usage. Research WCAG AAA compliance requirements for 2025 including color contrast ratios (7:1), semantic HTML patterns, ARIA best practices, and keyboard navigation patterns. Study Lighthouse 90+ optimization strategies including code splitting with next/dynamic, image optimization techniques, bundle analysis, and Core Web Vitals optimization.",
-            "status": "done",
-            "testStrategy": "Verify research findings through practical implementation tests, validate performance claims through Chrome DevTools profiling, test accessibility patterns with real screen readers and keyboard navigation",
-            "parentId": "undefined",
-            "updatedAt": "2025-10-21T10:55:51.146Z"
-          },
-          {
-            "id": 2,
-            "title": "Set up comprehensive i18n foundation with next-intl",
-            "description": "Implement complete i18n infrastructure using next-intl for Polish (default) and English with proper routing, translation files, and component integration",
-            "dependencies": [
-              1
-            ],
-            "details": "Create messages/pl.json and messages/en.json with comprehensive homepage content translations. Set up next-intl configuration in src/i18n/ directory with proper locale detection, routing middleware for /pl and /en paths. Configure app/[locale] structure with proper layout.tsx containing NextIntlClientProvider. Implement LanguageSwitcher component with smooth locale transitions. Create translation keys for all 8 homepage sections: hero (headline, subheadline, CTAs), specjalizacje (titles, descriptions, metrics), jak-to-dziala (steps, descriptions), klienci (testimonials, company names), FAQ (questions, answers), footer (links, legal text). Set up proper TypeScript integration for translation keys validation and autocomplete.",
-            "status": "done",
-            "testStrategy": "Test locale switching preserves current page state, verify all translation keys resolve correctly, validate routing works for both languages, test SSR rendering with proper lang attributes, verify no hydration mismatches between server and client rendering",
-            "parentId": "undefined",
-            "updatedAt": "2025-10-21T11:02:21.719Z"
-          },
-          {
-            "id": 3,
-            "title": "Build enhanced component library with accessibility focus",
-            "description": "Create comprehensive component library using existing design tokens with WCAG AAA compliance and modern patterns",
-            "dependencies": [
-              2
-            ],
-            "details": "Extend existing component structure in src/components/ui/ with Button component supporting primary/secondary/outline variants using pear/night/tekhelet colors with 7:1 contrast ratios. Create Card component with proper focus management, tekhelet borders, and hover states. Implement Input/Textarea with proper labeling, error states, and focus indicators. Build Section wrapper component with consistent spacing using design tokens. Create accessible Navigation component with proper ARIA roles, keyboard navigation, and mobile menu. Implement reusable animation components wrapping Framer Motion with performance optimizations and prefers-reduced-motion support. Use forwardRef pattern for proper ref forwarding and integrate with existing tailwind.config.ts design token configuration.",
-            "status": "done",
-            "testStrategy": "Test all component variants with automated accessibility testing tools, verify keyboard navigation flows, validate color contrast ratios exceed WCAG AAA requirements, test component performance with React DevTools Profiler, verify proper focus management and ARIA implementation",
-            "parentId": "undefined",
-            "updatedAt": "2025-10-21T11:27:54.979Z"
-          },
-          {
-            "id": 4,
-            "title": "Implement Hero section with advanced 3D product showcase",
-            "description": "Build responsive Hero section with 3D animated product cards using Framer Motion performance-optimized techniques",
-            "dependencies": [
-              3
-            ],
-            "details": "Replace current basic hero in src/app/[locale]/page.tsx with comprehensive Hero section. Implement 3D product cards for ChatBot, Voice Agent, and Content Creator using Framer Motion's transform properties for GPU acceleration. Create parallax scrolling effects with useScroll and useTransform hooks. Implement perspective-based 3D transforms with proper perspective values (1000px) and preserve-3d styling. Add intersection observer-based animations triggering at proper viewport positions. Use next/image for optimized product mockup images with proper aspect ratios and lazy loading. Implement mobile-first responsive design with proper grid layouts using CSS Grid and Flexbox. Add hover effects with smooth scale and rotation transforms, ensuring 60fps performance through transform usage instead of layout-affecting properties.",
-            "status": "done",
-            "testStrategy": "Profile 3D animations with Chrome DevTools Performance tab to verify 60fps maintenance, test responsive behavior across breakpoints, validate image optimization and loading performance, test animation performance on lower-end devices, verify accessibility of interactive elements",
-            "parentId": "undefined",
-            "updatedAt": "2025-10-21T11:31:06.995Z"
-          },
-          {
-            "id": 5,
-            "title": "Complete remaining sections with performance and accessibility optimization",
-            "description": "Implement Specjalizacje, Jak to działa, Nasi klienci, FAQ, and Footer sections with modern patterns and comprehensive optimization",
-            "dependencies": [
-              4
-            ],
-            "details": "Build Specjalizacje section with three expandable cards using Framer Motion's AnimatePresence for smooth expand/collapse animations. Implement Jak to działa timeline with scroll-triggered reveal animations using Intersection Observer API. Create Nasi klienci section with client logo carousel using Swiper.js or custom implementation with proper touch gesture support. Build FAQ accordion with proper ARIA attributes (aria-expanded, aria-controls) and keyboard navigation support. Implement comprehensive Footer with organized link structure, social media links, and legal compliance information. Use next/dynamic for code splitting of below-the-fold sections to improve initial load performance. Implement proper semantic HTML structure with section, article, aside elements. Add structured data (JSON-LD) for Organization and WebSite schemas to improve SEO. Optimize all sections for Core Web Vitals including LCP optimization through image optimization and critical CSS inlining.",
-            "status": "pending",
-            "testStrategy": "Conduct comprehensive Lighthouse audit achieving 90+ Performance score, validate WCAG AAA compliance with automated tools and manual testing, test touch gestures on mobile devices, verify semantic HTML structure with browser DevTools, validate structured data with Google's Rich Results Test, test code splitting effectiveness with bundle analyzer",
-            "parentId": "undefined"
-          }
-        ],
-        "updatedAt": "2025-10-21T11:31:06.995Z"
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-01T21:31:09.165Z"
       },
       {
         "id": "2",
-        "title": "Build Interactive ROI Calculator",
-        "description": "Create functional ROI calculator with backend integration to Supabase for lead qualification, following 2025 best practices for performance, form validation, and user experience",
-        "status": "pending",
-        "dependencies": [
-          "1"
-        ],
+        "title": "Optimize 3D Spline Robot Model",
+        "description": "Re-export the main 3D Spline scene to drastically reduce its file size and self-host it to remove the third-party network request from the critical rendering path. This is the highest-impact performance task.",
+        "details": "The current 1.6MB Spline file is the primary performance bottleneck. \n\n1.  **Open Scene in Spline Editor:** Access the project's Spline scene.\n2.  **Apply Optimizations:**\n    *   Reduce polygon count where high detail is unnecessary.\n    *   Remove any unused materials, textures, or lighting.\n    *   Compress textures to 50% of their original resolution.\n3.  **Export Scene:** Export as `.splinecode`, targeting a file size under 300KB.\n4.  **Host Locally:** Save the new file as `/public/spline/robot-optimized.splinecode`.\n5.  **Update Component:** In `src/components/ui/InteractiveRobotSpline.tsx`, change the `scene` prop to point to the new local path:\n    ```typescript\n    <Spline scene=\"/spline/robot-optimized.splinecode\" />\n    ```",
+        "testStrategy": "After implementation, build and start the application. Use browser developer tools to check the Network tab. Verify that `robot-optimized.splinecode` is loaded from the local server and its size is under 300KB. Run a Lighthouse report; expect a significant LCP improvement of over 10 seconds and a performance score increase of approximately +35 points.",
         "priority": "high",
-        "details": "Build interactive calculator with specialization selection (Obsługa Klienta/Lead Gen/Content), hours slider, hourly rate input, calculation logic, results display with bar chart visualization, and email capture form. Use 2025 best practices: React Hook Form + Zod for validation, Recharts for visualization, useReducer for complex state management, and optimized real-time calculations. Integrate with existing Supabase roi_calculations table schema from src/lib/supabase.ts. Implement automatic hot lead scoring (>=5000 PLN = score 9-10) using database triggers. Include smooth 60fps animations with Framer Motion and accessible email capture UX patterns.",
-        "testStrategy": "Test calculation accuracy across different input ranges using automated unit tests, verify Supabase integration with existing schema, validate React Hook Form + Zod validation patterns, test bar chart performance with large datasets, ensure 60fps animation performance in Chrome DevTools, verify email capture UX on mobile devices, and test lead scoring algorithm accuracy",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Create ROI Calculator UI Components with Modern Form Validation",
-            "description": "Build reusable UI components using React Hook Form and Zod for robust form validation and state management.",
-            "dependencies": [],
-            "details": "Create Button, Card, Input, Select, and Slider components in src/components/ui/ using existing design tokens (night, pear, tekhelet colors) from src/lib/design-tokens.ts. Implement React Hook Form for form state management and Zod schemas for validation. Components should support disabled states, focus indicators, and mobile-responsive design. Follow existing design-tokens.ts for consistent styling and animations.ts for smooth interactions. Implement proper TypeScript interfaces for form data and validation schemas.",
-            "status": "pending",
-            "testStrategy": "Test component variants with React Hook Form integration, validate Zod schemas with edge cases, test keyboard navigation and screen reader compatibility, verify responsive design across mobile/tablet/desktop breakpoints",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Implement Calculator Logic with useReducer State Management",
-            "description": "Build calculation engine using useReducer for complex state management with real-time performance optimization.",
-            "dependencies": [
-              1
-            ],
-            "details": "Create calculator logic in src/lib/calculatorLogic.ts with useReducer for state management. Implement functions for: 1) Specialization-based savings calculation (Obsługa Klienta: 70% savings, Lead Gen: 60%, Content: 50%), 2) Monthly savings = hours_per_month * hourly_rate * savings_percentage, 3) Annual ROI calculation, 4) Hot lead scoring (>=5000 PLN = score 9-10). Use debounced calculations for real-time updates without performance impact. Implement memoization with useMemo and useCallback for expensive calculations. Include proper TypeScript types for state and actions.",
-            "status": "pending",
-            "testStrategy": "Test calculation accuracy with automated unit tests across different input ranges, verify useReducer state transitions, test debounced real-time updates performance, validate hot lead scoring algorithm with boundary conditions",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Create Bar Chart Visualization with Recharts",
-            "description": "Build interactive bar chart component using Recharts library with optimized performance for real-time data updates.",
-            "dependencies": [
-              1,
-              2
-            ],
-            "details": "Install and implement Recharts library in src/components/ui/BarChart.tsx following 2025 best practices. Display responsive bar chart with two bars: 'Obecne koszty' (current costs) and 'Potencjalne oszczędności' (potential savings). Use LessManual colors from design-tokens.ts (pear for savings, tekhelet for current costs). Implement smooth animations on data changes using Recharts built-in animations, responsive design with ResponsiveContainer, and accessibility features with proper ARIA labels. Chart should update in real-time with debounced performance optimization. Include tooltip with detailed information and proper number formatting for Polish locale.",
-            "status": "pending",
-            "testStrategy": "Test chart responsiveness across different screen sizes, verify animation performance at 60fps using Chrome DevTools, test accessibility with screen readers, validate accurate data visualization with various input ranges, test tooltip functionality and Polish number formatting",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Build Email Capture Form with Enhanced UX Patterns",
-            "description": "Create email capture form using React Hook Form and Zod validation with 2025 UX best practices for lead conversion.",
-            "dependencies": [
-              2,
-              3
-            ],
-            "details": "Build form component in src/components/calculator/EmailCaptureForm.tsx using React Hook Form for state management and Zod for email validation schema. Implement progressive disclosure UX pattern - show email form after calculation with smooth transition. Include results summary showing annual savings, ROI percentage, and recommended next steps. Add demo booking CTA button. Implement smooth state transitions between calculator and results view using existing Framer Motion animations from src/lib/animations.ts. Form should include proper error handling, loading states, success feedback, and mobile-optimized design. Follow email capture best practices: minimal fields, clear value proposition, privacy assurance.",
-            "status": "pending",
-            "testStrategy": "Test React Hook Form validation with various email formats, verify Zod schema edge cases, test smooth transitions between states using Performance tab, validate mobile usability and touch interactions, test progressive disclosure UX flow",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Integrate with Supabase Backend using Modern API Patterns",
-            "description": "Create optimized API endpoint for storing ROI calculations with proper error handling and validation using existing Supabase schema.",
-            "dependencies": [
-              4
-            ],
-            "details": "Create Next.js 15.5 API route in src/app/api/roi-calculation/route.ts using existing supabase.ts client and roi_calculations table schema from supabase/migrations/001_initial_schema.sql. Handle POST requests with Zod validation middleware, calculation data storage, and automatic hot_lead_score calculation using database triggers. Implement proper error handling with typed responses, request validation, and success feedback. Update frontend to call API endpoint after email capture with proper loading states and error handling. Store specialization, hours_per_month, hourly_rate, potential_savings, and calculated hot_lead_score using existing database functions. Follow Next.js 15.5 API route best practices with proper TypeScript types and error boundaries.",
-            "status": "pending",
-            "testStrategy": "Test API endpoint with comprehensive input validation using automated tests, verify Supabase data storage with existing schema, test error handling scenarios and edge cases, validate hot lead scoring calculation accuracy, test API response performance and proper TypeScript typing",
-            "parentId": "undefined"
-          },
-          {
-            "id": 6,
-            "title": "Add Performance Optimization and Bundle Analysis",
-            "description": "Implement performance optimizations for 60fps animations and efficient bundle size management.",
-            "dependencies": [
-              5
-            ],
-            "details": "Optimize calculator performance using React.memo for component memoization, useMemo for expensive calculations, and useCallback for event handlers. Implement lazy loading for Recharts components using React.lazy and Suspense. Add bundle size analysis to ensure chart library doesn't bloat the application. Use dynamic imports for calculator logic to enable code splitting. Implement prefers-reduced-motion CSS media query respect for accessibility. Monitor and optimize Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS) metrics. Add performance monitoring hooks for real-time calculation speed tracking.",
-            "status": "pending",
-            "testStrategy": "Test animation performance at 60fps using Chrome DevTools Performance tab, verify bundle size impact with webpack-bundle-analyzer, test lazy loading behavior, validate prefers-reduced-motion implementation, measure LCP and CLS metrics with Lighthouse",
-            "parentId": "undefined"
-          }
-        ]
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T06:28:11.896Z"
       },
       {
         "id": "3",
-        "title": "Implement Contact Form with Backend Integration",
-        "description": "Build contact form with comprehensive validation, Supabase integration, and automated workflows using Next.js 15 best practices including React Hook Form, Zod validation, proper RLS policies, rate limiting, RODO compliance, and n8n automation triggers",
-        "status": "pending",
-        "dependencies": [
-          "1"
-        ],
+        "title": "Optimize and Convert Static Images to WebP",
+        "description": "Convert large PNG and JPG images to the modern, efficient WebP format and reduce their quality slightly to significantly decrease the network payload without a noticeable loss in visual fidelity.",
+        "details": "Use the `@squoosh/cli` tool to process key images. If not installed globally, run `npm install -g @squoosh/cli`.\n\n1.  **Optimize Founder's Image:**\n    ```bash\n    npx @squoosh/cli --webp '{\"quality\":85}' public/images/team/bartlomiej.jpg\n    ```\n    Rename the output file to `bartlomiej.webp` and replace the original.\n2.  **Optimize Logo Image:**\n    ```bash\n    npx @squoosh/cli --webp '{\"quality\":95}' public/images/logo.png\n    ```\n    Rename the output file to `logo.webp` and replace the original.\n3.  **Update Code References:**\n    *   In `src/components/layout/Header.tsx`, change `<Image src=\"/images/logo.png\" ... />` to `<Image src=\"/images/logo.webp\" ... />`.\n    *   In `src/components/sections/AboutSection.tsx`, change `<Image src=\"/images/team/bartlomiej.jpg\" ... />` to `<Image src=\"/images/team/bartlomiej.webp\" ... />`.",
+        "testStrategy": "After deployment, inspect the header logo and about section image on the live site. Verify they are served as WebP files using the browser's developer tools (Network tab). The total page weight should be reduced by approximately 615KB.",
         "priority": "high",
-        "details": "Create production-ready contact form with fields: name, email, phone, company, industry dropdown, message. Implement robust validation using React Hook Form + Zod schema validation following 2025 best practices. Integrate with existing Supabase contacts table (src/types/supabase.ts) using proper RLS policies for public inserts. Implement comprehensive security measures including rate limiting, CORS configuration, and RODO/GDPR compliance. Set up n8n webhook integration for Voice Agent triggering during business hours (9-18) with proper error handling. Include email automation with Resend/Mailgun and prepare for CRM integration with proper logging and monitoring.",
-        "testStrategy": "Implement comprehensive testing strategy: unit tests for form validation with React Hook Form + Zod, integration tests for Supabase RLS policies and data insertion, security testing for rate limiting and input sanitization, end-to-end testing for complete workflow (form → Supabase → n8n → email), performance testing to ensure Lighthouse scores remain 90+, accessibility testing for WCAG compliance, and RODO compliance verification for data handling",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Set up Contact Form Dependencies and Schema Validation",
-            "description": "Install and configure React Hook Form, Zod, and email service dependencies. Create comprehensive Zod schema for contact form validation matching Supabase contacts table structure.",
-            "dependencies": [],
-            "details": "Install react-hook-form, zod, @hookform/resolvers/zod, and email service (Resend or Mailgun) via npm. Create comprehensive Zod validation schema in src/lib/validations/contact.ts matching the existing contacts table schema from src/types/supabase.ts. Include validation for email format, phone number format (Polish), industry enum validation (e-commerce, gabinet, agencja, uslugi_b2b, inne), required field validation, and message length limits. Set up proper TypeScript types extending existing Database types.",
-            "status": "pending",
-            "testStrategy": "Test Zod schema with valid/invalid inputs, verify TypeScript type safety, test edge cases for email/phone validation, ensure schema matches Supabase table constraints",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Create Contact Form Component with React Hook Form Integration",
-            "description": "Build responsive contact form component using React Hook Form, Zod validation, proper error handling, loading states, and internationalization support using existing next-intl setup.",
-            "dependencies": [
-              1
-            ],
-            "details": "Create ContactForm component in src/components/sections/ using React Hook Form with Zod resolver. Implement all form fields: name (required), email (required with validation), phone (optional, Polish format), company (optional), industry (dropdown with options from schema), message (optional, max length). Add proper error states with internationalized messages using existing next-intl setup from src/i18n/. Include loading states, success animation using Framer Motion, and proper ARIA attributes for accessibility. Style using existing design tokens from src/lib/design-tokens.ts with mobile-first responsive design.",
-            "status": "pending",
-            "testStrategy": "Test form validation with valid/invalid inputs, verify real-time validation feedback, test responsive design across breakpoints, test keyboard navigation and screen reader compatibility, verify internationalization for both PL/EN languages",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Implement Secure Contact Form API Route with Rate Limiting",
-            "description": "Create robust Next.js 15 API route with server-side validation, Supabase integration using existing supabaseAdmin client, rate limiting, CORS configuration, and proper error handling.",
-            "dependencies": [
-              1
-            ],
-            "details": "Create src/app/api/contact/route.ts using Next.js 15 App Router API routes. Implement server-side validation using the same Zod schema, integrate with existing supabaseAdmin client from src/lib/supabase.ts for secure database insertions. Add rate limiting (5 requests per minute per IP), CORS configuration for security, input sanitization to prevent XSS/injection attacks, and comprehensive error handling with proper HTTP status codes. Include request logging for monitoring and debugging. Verify RLS policies allow public inserts as defined in supabase/migrations/001_initial_schema.sql.",
-            "status": "pending",
-            "testStrategy": "Test API route with valid/invalid payloads, verify rate limiting functionality, test CORS configuration, ensure proper error responses, verify Supabase data insertion and RLS policy compliance, test input sanitization against XSS/injection attempts",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Integrate n8n Webhook with Business Hours Logic and Error Handling",
-            "description": "Extend contact form API to trigger n8n webhook for Voice Agent automation when phone number is provided during business hours, with comprehensive error handling and fallback mechanisms.",
-            "dependencies": [
-              3
-            ],
-            "details": "Extend src/app/api/contact/route.ts to include n8n webhook integration. Implement business hours validation (9-18, Monday-Friday, Warsaw timezone) using date-fns or similar library. Create webhook payload structure including contact data, timestamp, and source information. Add environment variable N8N_WEBHOOK_URL configuration with validation. Implement proper error handling where webhook failures don't break form submission - log errors but continue processing. Add webhook timeout (5s) and retry logic (2 attempts). Include comprehensive logging for webhook calls and responses for monitoring.",
-            "status": "pending",
-            "testStrategy": "Test business hours logic with various timestamps, verify webhook payload structure and delivery, test error handling when webhook fails, ensure form submission continues despite webhook failures, test timeout and retry mechanisms, verify logging functionality",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Set up Email Automation with RODO Compliance",
-            "description": "Implement automated email confirmation system with proper RODO/GDPR compliance, email templates for both languages, and integration with email service provider.",
-            "dependencies": [
-              3
-            ],
-            "details": "Set up email automation using Resend or Mailgun with API key configuration. Create email templates for confirmation emails in both Polish and English using existing next-intl structure. Include RODO compliance elements: data processing information, contact details for data controller, opt-out mechanisms. Implement email service integration in API route with proper error handling and fallback mechanisms. Add email delivery status tracking and logging. Create email template with LessManual branding matching design tokens from src/lib/design-tokens.ts.",
-            "status": "pending",
-            "testStrategy": "Test email delivery for both PL/EN languages, verify template rendering and branding, test RODO compliance elements inclusion, verify error handling for email service failures, test opt-out mechanisms functionality",
-            "parentId": "undefined"
-          },
-          {
-            "id": 6,
-            "title": "Integrate Contact Form into Homepage and Comprehensive Testing",
-            "description": "Add contact form to homepage layout with proper positioning, animations, and conduct end-to-end testing of complete workflow including performance optimization.",
-            "dependencies": [
-              2,
-              4,
-              5
-            ],
-            "details": "Integrate ContactForm component into homepage (src/app/[locale]/page.tsx) with proper section placement and spacing. Add Framer Motion animations for form appearance and success states. Implement proper internationalization for all form labels, placeholders, and messages using existing next-intl setup. Conduct comprehensive end-to-end testing: form submission → Supabase storage → n8n webhook → email confirmation. Optimize performance to maintain Lighthouse scores 90+, verify WCAG accessibility compliance, and test responsive design across devices. Add monitoring and analytics for form conversion tracking.",
-            "status": "pending",
-            "testStrategy": "Test complete end-to-end workflow from form submission to email delivery, verify Lighthouse performance scores remain 90+, test responsive design on mobile/tablet/desktop, ensure WCAG accessibility compliance, verify internationalization for both languages, test form analytics and conversion tracking",
-            "parentId": "undefined"
-          }
-        ]
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-01T22:39:31.553Z"
       },
       {
         "id": "4",
-        "title": "Build Custom Chatbot with Claude API Integration",
-        "description": "Create custom chatbot component with conversation flow for lead qualification using modern 2025 patterns including response streaming, error recovery, and advanced UX features",
-        "status": "pending",
-        "dependencies": [
-          "3"
-        ],
+        "title": "Implement Deferred Loading for 3D Robot with Static Preview",
+        "description": "Improve perceived performance by showing a static, optimized preview image of the robot while the interactive 3D component loads in the background. This will fix the LCP issue.",
+        "details": "First, create a static preview image. Take a screenshot of the 3D robot (approx. 1200x1200px), optimize it using Squoosh, and save it as `/public/images/robot-preview.webp` (<80KB). Then, wrap the Spline component in a React Suspense boundary.\n\nIn `src/components/ui/InteractiveRobotSpline.tsx`, modify the component to include a fallback:\n```typescript\nimport { Suspense } from 'react';\nimport Image from 'next/image';\n// ... other imports\n\n// Inside the component's return statement:\n<Suspense fallback={\n  <Image\n    src=\"/images/robot-preview.webp\"\n    fill\n    priority\n    className=\"object-contain animate-pulse\"\n    alt=\"Loading 3D Robot\"\n  />\n}>\n  <Spline scene={scene} />\n</Suspense>\n```\nEnsure the `next/image` component has the `priority` prop to ensure it loads quickly and is considered for LCP.",
+        "testStrategy": "Load the page on a throttled connection (e.g., 'Fast 3G' in Chrome DevTools). Verify that the `robot-preview.webp` image appears almost instantly with a pulse animation, and is then replaced by the interactive 3D model. The Lighthouse LCP metric should now be based on the preview image, resulting in a much lower time.",
         "priority": "high",
-        "details": "Implement chatbot UI with bubble trigger, conversation window, and message flow. Integrate with Claude API via backend route using conversation flow from PRD (specialization -> problem scale -> budget -> demo booking). Store conversations in Supabase chatbot_conversations table with automatic lead scoring. Include response streaming for real-time responses, typing indicators, error recovery mechanisms, smooth animations, and mobile-responsive design. Implement auto-open after 10s for first-time visitors with localStorage persistence. Follow 2025 best practices for conversational AI including context management, graceful fallbacks, and accessibility for chat interfaces.",
-        "testStrategy": "Test conversation flow logic and state transitions, verify Claude API integration with response streaming and error handling, test Supabase data storage and lead scoring accuracy, ensure mobile responsiveness and 60fps animations, test auto-open timing and manual trigger functionality, verify accessibility with keyboard navigation and screen readers, test error recovery and fallback mechanisms",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Create chatbot UI components with modern 2025 patterns and accessibility",
-            "description": "Build the floating chatbot bubble, conversation window, and core UI components with responsive design, Framer Motion animations, and WCAG accessibility compliance",
-            "dependencies": [],
-            "details": "Create ChatbotBubble component with floating position (bottom-right), ChatbotWindow with header/messages/input areas, and ChatbotTrigger with 10-second auto-open logic for first-time visitors using localStorage. Implement proper semantic HTML with ARIA labels, keyboard navigation support, and focus management. Use Framer Motion for smooth open/close animations with spring easing, ensure mobile-responsive design following existing design tokens from src/lib/design-tokens.ts. Include proper z-index management and portal rendering for overlay positioning.",
-            "status": "pending",
-            "testStrategy": "Test auto-open timing on fresh browser sessions, verify responsive behavior on mobile/tablet/desktop, test smooth animations at 60fps, ensure WCAG AAA accessibility compliance with keyboard navigation and screen reader compatibility",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Implement conversation flow state management with 2025 React patterns",
-            "description": "Create conversation flow state machine for lead qualification with step-by-step progress using modern React state management and TypeScript strict typing",
-            "dependencies": [
-              1
-            ],
-            "details": "Build ConversationFlow hook using useReducer for complex state management with TypeScript discriminated unions for conversation states: welcome → specialization selection → problem scale assessment → budget inquiry → demo booking. Include typing indicators with realistic delays, message history management with proper TypeScript interfaces, and progress tracking. Implement conversation logic matching PRD flow with Zod validation for each step. Use React 19 features where applicable and ensure state persistence across window close/reopen using sessionStorage.",
-            "status": "pending",
-            "testStrategy": "Test each conversation step transition with proper state validation, verify input validation using Zod schemas, test conversation state persistence during window close/reopen, ensure typing indicators work smoothly with realistic delays",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Build Claude API backend integration with streaming and error recovery",
-            "description": "Create Next.js API route for Claude AI integration with real-time response streaming, conversation context management, and robust error handling",
-            "dependencies": [
-              2
-            ],
-            "details": "Implement /api/chatbot/chat API route using Claude API with streaming support for real-time responses. Include conversation context management using chat history, response formatting with proper sanitization, and comprehensive error handling with fallback responses. Configure Claude with system prompt for LessManual brand voice and lead qualification objectives. Handle rate limiting with exponential backoff, request validation using Zod, and proper error responses. Store API keys in environment variables with validation. Implement graceful degradation when API is unavailable.",
-            "status": "pending",
-            "testStrategy": "Test Claude API integration with streaming responses, verify conversation context preservation across multiple exchanges, test rate limiting and error recovery mechanisms, ensure proper security of API keys and request validation",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Integrate Supabase conversation storage with TypeScript safety and lead scoring",
-            "description": "Connect chatbot to Supabase chatbot_conversations table using existing schema with automatic lead scoring and TypeScript type safety",
-            "dependencies": [
-              3
-            ],
-            "details": "Implement Supabase integration using existing chatbot_conversations table schema from src/types/supabase.ts. Store conversation messages as JSONB array with proper TypeScript typing, extract specialization/queries_per_day/budget data with validation, and trigger automatic lead scoring using existing calculate_chatbot_hot_lead_score function. Include session tracking with UUID generation, comprehensive error handling for database operations with retry logic, and data validation before insertion using Zod schemas. Implement optimistic updates for better UX.",
-            "status": "pending",
-            "testStrategy": "Test Supabase data storage and retrieval with TypeScript safety, verify automatic lead scoring calculation accuracy, test error handling for database failures with retry mechanisms, ensure proper data validation and session tracking",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Add advanced UX features: streaming indicators, animations, mobile optimization",
-            "description": "Enhance chatbot UX with streaming response indicators, smooth animations, optimal mobile experience, and accessibility improvements",
-            "dependencies": [
-              4
-            ],
-            "details": "Implement streaming response indicators showing real-time message building during Claude API responses. Add realistic typing indicators with configurable delays, smooth message appearance animations using Framer Motion spring physics, and optimized mobile touch interactions. Include auto-scroll to bottom behavior for new messages, proper focus management for accessibility, loading states with skeleton components, and 60fps animations optimized for mobile devices. Implement error boundary for graceful error handling and retry mechanisms for failed requests.",
-            "status": "pending",
-            "testStrategy": "Test streaming response indicators with real Claude API responses, verify mobile touch interactions and scrolling behavior, test animation performance ensuring 60fps on various devices, verify accessibility with screen readers and keyboard navigation, test error boundaries and retry mechanisms",
-            "parentId": "undefined"
-          },
-          {
-            "id": 6,
-            "title": "Implement conversation context persistence and smart restart functionality",
-            "description": "Add intelligent conversation context management with ability to resume conversations and handle page refreshes gracefully",
-            "dependencies": [
-              5
-            ],
-            "details": "Build conversation persistence using sessionStorage for temporary context and Supabase for long-term storage. Implement smart conversation restart that can resume from last meaningful interaction point. Add conversation history retrieval for returning users with proper data cleanup policies. Include conversation export functionality and admin tools for conversation monitoring. Implement conversation analytics tracking for optimization insights.",
-            "status": "pending",
-            "testStrategy": "Test conversation persistence across page refreshes and browser sessions, verify smart restart functionality with various conversation states, test conversation history retrieval and data cleanup, ensure conversation analytics accuracy",
-            "parentId": "undefined"
-          }
-        ]
+        "dependencies": [
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T06:33:44.699Z"
       },
       {
         "id": "5",
-        "title": "Create Component Library and UI System",
-        "description": "Build enterprise-grade reusable component library based on design tokens with modern 2025 architecture patterns including CSS-in-JS alternatives, TypeScript-first design, and comprehensive accessibility features",
-        "status": "pending",
-        "dependencies": [
-          "1"
-        ],
+        "title": "Preload Critical Assets (Fonts and Spline)",
+        "description": "Add resource hints to the document `<head>` to instruct the browser to start fetching critical assets like fonts and the Spline scene/runtime earlier in the page load process, reducing render-blocking time.",
+        "details": "Edit the root layout file `src/app/[locale]/layout.tsx` to add `<link>` tags inside the `<head>` section.\n\n1.  **Preload Font:** Add a preload link for the main font file to prevent text flashing and improve FCP.\n    ```html\n    <link rel=\"preload\" href=\"/fonts/1bffadaabf893a1e-s.p.7cd81963.woff2\" as=\"font\" type=\"font/woff2\" crossOrigin=\"anonymous\" />\n    ```\n2.  **Preload Spline Scene:** Since the scene is now self-hosted, preload it as a fetch request.\n    ```html\n    <link rel=\"preload\" href=\"/spline/robot-optimized.splinecode\" as=\"fetch\" crossOrigin=\"anonymous\" />\n    ```\n3.  **Preload Spline Runtime:** Find the exact chunk name for the Spline runtime after running `npm run build` and add a `modulepreload` link. The name will be similar to `/_next/static/chunks/node_modules_@splinetool_runtime.js`.\n    ```html\n    <link rel=\"modulepreload\" href=\"/_next/static/chunks/node_modules_@splinetool_runtime.js\" />\n    ```",
+        "testStrategy": "Inspect the page source to confirm the `<link>` tags are present in the `<head>`. In the Network tab of browser developer tools, check the 'Waterfall' view to see that the font and spline assets start downloading earlier. Lighthouse should report improvements in FCP and TBT.",
         "priority": "medium",
-        "details": "Create production-ready component library using modern 2025 patterns: design token plugin architecture for Tailwind CSS, compound component patterns with TypeScript discriminated unions, headless component architecture with unstyled hooks, comprehensive accessibility (WCAG 2.1 AA+), and documentation-driven development without Storybook. Implement components: Button (primary/secondary/ghost variants), Card (elevated/flat/bordered), Input/Textarea/Select (controlled/uncontrolled), Navigation (responsive with mobile), Footer, Section containers. Use existing design tokens from src/lib/design-tokens.ts with LessManual brand colors (night, pear, tekhelet). Follow Next.js 15.5 Server Component patterns with selective client-side interactivity.",
-        "testStrategy": "Implement comprehensive testing strategy: TypeScript type checking for design token integration, visual regression testing with component variants, accessibility testing with axe-core automation, responsive design testing across breakpoints, performance testing for bundle size impact, and maintainability testing through refactoring scenarios",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Create Design Token Plugin Architecture with Modern 2025 Patterns",
-            "description": "Build advanced design token system using Tailwind CSS plugin architecture, CSS custom properties for theme switching, and TypeScript-first token definitions with semantic naming conventions",
-            "dependencies": [],
-            "details": "Extend existing src/lib/design-tokens.ts to create Tailwind CSS plugin architecture for dynamic token injection. Implement CSS custom properties system for runtime theme switching, semantic token naming (color.background.primary vs night), design token validation with TypeScript literal types, and component-specific token categories (button.primary.background). Create token transformation utilities for different output formats (CSS, JS, JSON) and establish token versioning strategy for breaking change management. Follow 2025 best practices for design token architecture with automated token sync workflows.",
-            "status": "pending",
-            "testStrategy": "Test token plugin integration with Tailwind build process, verify CSS custom property generation, validate TypeScript type safety for token usage, test theme switching performance",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Implement Headless Component Architecture with TypeScript Compound Patterns",
-            "description": "Create unstyled component hooks and compound component patterns with TypeScript discriminated unions for maximum flexibility and type safety",
-            "dependencies": [
-              1
-            ],
-            "details": "Build headless component architecture following React 19 patterns: unstyled hooks (useButton, useCard, useInput) with behavior logic separation, compound component patterns for complex UI (Card.Header, Card.Body, Card.Footer), TypeScript discriminated unions for variant props, and polymorphic component patterns with 'as' prop support. Implement slot-based composition for flexible layouts, controlled/uncontrolled component patterns, and forward ref patterns for DOM access. Use existing clsx + tailwind-merge utilities from src/lib/utils.ts for class composition.",
-            "status": "pending",
-            "testStrategy": "Test component composition flexibility, verify TypeScript inference for discriminated unions, test polymorphic component type safety, validate ref forwarding and DOM access patterns",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Build Core UI Components with LessManual Brand Integration",
-            "description": "Implement Button, Card, and Input components using established design token system with LessManual brand colors and accessibility-first approach",
-            "dependencies": [
-              1,
-              2
-            ],
-            "details": "Create production-ready components using design tokens from src/lib/design-tokens.ts: Button component with primary (pear #DDE000 background), secondary (tekhelet #5716A2 border), and ghost variants, proper focus management and ARIA attributes. Build Card component with tekhelet borders, night background (#0C0D0A), and elevation variants using existing shadow tokens. Implement Input/Textarea components with pear focus states, validation styling, and comprehensive form integration. Follow Next.js 15.5 Server Component patterns with selective 'use client' directives only for interactive states.",
-            "status": "pending",
-            "testStrategy": "Test all component variants with design token integration, verify WCAG 2.1 AA contrast ratios with night/pear/tekhelet colors, test keyboard navigation and focus management, validate Server Component compatibility",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Create Navigation and Layout Components with Mobile-First Responsive Design",
-            "description": "Build Navigation and Footer components with advanced responsive patterns, mobile menu interactions, and next-intl language switching integration",
-            "dependencies": [
-              1,
-              2,
-              3
-            ],
-            "details": "Develop Navigation component with mobile-first responsive design using existing breakpoint tokens from design-tokens.ts, hamburger menu with smooth animations using Framer Motion patterns from src/lib/animations.ts, next-intl language switcher integration (PL/EN), and logo placement with proper semantic HTML. Create Footer component with responsive grid layout, social media links, and company information sections. Implement advanced patterns: sticky header behavior, scroll-based animations, mobile menu accessibility with focus trapping, and SEO-optimized semantic markup (nav, header, footer elements).",
-            "status": "pending",
-            "testStrategy": "Test responsive breakpoints using existing design tokens, verify mobile menu animations at 60fps, test language switcher integration with next-intl, validate navigation accessibility with screen readers and keyboard navigation",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Implement Documentation-Driven Development with TypeScript Integration",
-            "description": "Create comprehensive component documentation system using modern alternatives to Storybook with live examples and TypeScript integration",
-            "dependencies": [
-              1,
-              2,
-              3,
-              4
-            ],
-            "details": "Build documentation system using Next.js 15.5 App Router for live component examples, TypeScript-generated prop documentation with automatic interface extraction, component playground with real-time preview, and interactive examples showing all variants and states. Create documentation pages structure: /docs/components/button, /docs/design-tokens, /docs/patterns with proper SEO optimization. Implement code highlighting for usage examples, copy-to-clipboard functionality, and responsive documentation layout. Follow 2025 best practices for component documentation without external dependencies like Storybook.",
-            "status": "pending",
-            "testStrategy": "Test documentation page performance and responsiveness, verify TypeScript prop extraction accuracy, test interactive examples functionality, validate SEO optimization for documentation pages",
-            "parentId": "undefined"
-          }
-        ]
+        "dependencies": [
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T06:37:46.965Z"
       },
       {
         "id": "6",
-        "title": "Implement Voice Agent Integration",
-        "description": "Set up Voice Agent webhook integration with ElevenLabs for automated phone calls",
-        "status": "pending",
-        "dependencies": [
-          "3"
-        ],
-        "priority": "medium",
-        "details": "Create API route for Voice Agent webhook integration with ElevenLabs Conversational AI. Implement BANT qualification script (Budget, Authority, Need, Timeline) as specified in PRD. Set up automatic triggering after contact form submission when phone number is provided during business hours (9-18). Include conversation transcript parsing and CRM update functionality. Integrate with n8n workflow for call orchestration and follow-up automation. Based on 2025 best practices research: implement webhook signature verification for security, use structured BANT scoring with AI-powered transcript analysis, implement cost optimization with call batching and timeout controls, add comprehensive error handling with fallback to manual calling, and include real-time conversation monitoring with Supabase integration using existing contacts table schema from src/types/supabase.ts.",
-        "testStrategy": "Test webhook integration with ElevenLabs using signature verification, verify business hours logic and E.164 phone number validation, test conversation transcript parsing with AI for BANT qualification extraction, test CRM updates to Supabase contacts table with hot_lead_score calculation, ensure proper error handling for failed calls with fallback mechanisms, test cost optimization features including call timeout and batching logic, verify rate limiting and webhook security patterns",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Create Voice Agent API route structure with 2025 security patterns",
-            "description": "Set up the foundation API route for ElevenLabs webhook integration with proper TypeScript types, webhook signature verification, and comprehensive error handling following 2025 security best practices",
-            "dependencies": [],
-            "details": "Create src/app/api/voice-agent/call/route.ts with POST method handler implementing 2025 webhook security patterns. Set up TypeScript interfaces for ElevenLabs webhook payloads, implement webhook signature verification using HMAC-SHA256, add rate limiting (10 requests per minute), and comprehensive error handling middleware. Include request validation for required fields (phone in E.164 format, name, industry) using Zod schema validation. Add environment variable validation for ELEVENLABS_API_KEY and ELEVENLABS_WEBHOOK_SECRET with proper error messages. Implement request logging for monitoring and debugging.",
-            "status": "pending",
-            "testStrategy": "Test API route with mock ElevenLabs webhook requests, verify signature verification rejects invalid signatures, test rate limiting functionality, verify proper error responses for missing/invalid fields, test environment variable validation and error handling",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Implement AI-powered BANT qualification script with structured scoring",
-            "description": "Create the conversation script for Budget, Authority, Need, Timeline qualification as specified in PRD with AI-powered transcript analysis and structured scoring system",
-            "dependencies": [
-              1
-            ],
-            "details": "Implement the BANT qualification script according to PRD specifications with 2025 AI enhancements. Create conversation flow that asks about Budget (spending capacity), Authority (decision maker), Need (current pain points), and Timeline (urgency). Design structured BANT scoring system (0-100 scale) with weighted criteria. Implement AI-powered transcript analysis using Claude API to extract BANT data from conversation transcripts. Store script as reusable configuration that can be passed to ElevenLabs API with dynamic variables for personalization based on contact form data (name, industry, specialization).",
-            "status": "pending",
-            "testStrategy": "Test script flow logic with ElevenLabs API, verify all BANT questions are covered with proper conversation branching, test AI transcript analysis accuracy for BANT data extraction, validate structured scoring system produces consistent results across different conversation styles",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Add business hours validation logic with timezone handling and cost optimization",
-            "description": "Implement business hours check (9-18, Mon-Fri) with Poland timezone handling to determine if Voice Agent call should be triggered automatically, including cost optimization features",
-            "dependencies": [
-              1
-            ],
-            "details": "Create utility function to check if current time falls within business hours (9-18, Monday-Friday, Europe/Warsaw timezone) using modern date-time libraries. Integrate this check into the contact form submission flow with proper timezone conversion. If outside business hours, queue call for next business day using scheduled job pattern. Implement cost optimization features: call batching (max 5 concurrent calls), timeout controls (3-minute max per call), and budget tracking with monthly spend limits. Add fallback to email sequence when Voice Agent is unavailable or budget exceeded.",
-            "status": "pending",
-            "testStrategy": "Test timezone handling for Europe/Warsaw across different seasons (DST changes), verify business hours logic across different days and times including edge cases like holidays, test call batching and timeout controls, verify budget tracking and spending limits functionality",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Build AI-powered conversation transcript parsing and CRM integration",
-            "description": "Create system to parse ElevenLabs conversation transcripts using AI and update Supabase contacts table with BANT qualification results and structured lead scoring",
-            "dependencies": [
-              1,
-              2
-            ],
-            "details": "Implement webhook endpoint to receive conversation transcripts from ElevenLabs with proper signature verification. Use Claude API for AI-powered transcript analysis to extract structured BANT qualification results (budget range, authority level, needs identified, timeline urgency). Calculate hot_lead_score (0-100) based on BANT criteria using weighted scoring algorithm. Update existing contact record in Supabase contacts table using supabaseAdmin client from src/lib/supabase.ts with proper error handling. Store conversation transcript and metadata in new voice_agent_calls table for audit trail and continuous improvement.",
-            "status": "pending",
-            "testStrategy": "Test transcript parsing accuracy with various conversation styles and lengths, verify proper BANT data extraction and scoring consistency, test Supabase contact updates using existing schema from src/types/supabase.ts, validate hot_lead_score calculation accuracy, ensure proper error handling for failed API calls",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Integrate Voice Agent with n8n workflow and contact form with monitoring",
-            "description": "Connect Voice Agent triggering to contact form submission and set up n8n workflow for call orchestration, follow-up automation, and real-time monitoring with comprehensive fallback mechanisms",
-            "dependencies": [
-              1,
-              3,
-              4
-            ],
-            "details": "Modify contact form submission API route to trigger Voice Agent call when phone number is provided during business hours using the webhook pattern. Set up n8n workflow to handle call orchestration, follow-up scheduling, and CRM updates with proper error handling. Implement comprehensive fallback mechanisms: manual calling if webhook fails, email sequence for outside business hours, and Slack notifications for successful/failed calls. Add real-time monitoring dashboard using Supabase for call status tracking, conversation outcomes, and cost monitoring. Integrate with existing contact form validation and security patterns from task 3.",
-            "status": "pending",
-            "testStrategy": "Test end-to-end flow from contact form to Voice Agent call including business hours logic, verify n8n workflow integration with proper error handling, test manual fallback scenarios and email sequences, ensure proper monitoring and notification systems work correctly, validate integration with existing contact form security measures",
-            "parentId": "undefined"
-          },
-          {
-            "id": 6,
-            "title": "Implement voice call analytics and cost optimization monitoring",
-            "description": "Create comprehensive analytics system for voice call performance, BANT qualification effectiveness, and cost optimization with automated alerts and reporting",
-            "dependencies": [
-              4,
-              5
-            ],
-            "details": "Build analytics dashboard to track voice call metrics: conversion rates, BANT qualification success rates, average call duration, cost per qualified lead, and monthly spending trends. Implement automated cost monitoring with alerts when approaching budget limits (80% and 95% thresholds). Create reporting system for call outcomes, conversation quality scores, and lead qualification effectiveness. Add automated optimization suggestions based on performance data using statistical analysis. Integrate with existing Supabase schema and create new analytics tables for historical tracking and trend analysis.",
-            "status": "pending",
-            "testStrategy": "Test analytics data collection accuracy across multiple call scenarios, verify cost monitoring alerts trigger at correct thresholds, validate reporting system produces accurate metrics, test automated optimization suggestions with historical data, ensure proper data retention and privacy compliance",
-            "parentId": "undefined"
-          }
-        ]
+        "title": "Update Homepage Metadata and Create Open Graph Image",
+        "description": "Correct the page title and description for SEO and social sharing, and create a corresponding Open Graph image to ensure professional-looking link previews.",
+        "details": "This task has two parts: code and design.\n\n1.  **Update `generateMetadata` function:** In `src/app/[locale]/page.tsx`, replace the existing `generateMetadata` function with the one provided in the PRD. This will set the correct title, description, and Open Graph data, including a reference to `/images/og-image.png`.\n2.  **Create OG Image:** Design a 1200x630px image. The design should use the brand colors (#0C0D0A background, #DDE000 accent), include the LessManual logo, and the taglines \"Make your business LessManual\" and \"Wdrażamy technologię, która zarabia pieniądze i oszczędza czas\". Save this file as `/public/images/og-image.png`.",
+        "testStrategy": "After deployment, use the Facebook Sharing Debugger and Twitter Card Validator to test the homepage URL. Verify that the preview shows the new `og-image.png` along with the correct title and description for both English and Polish locales.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T05:22:10.052Z"
       },
       {
         "id": "7",
-        "title": "Build O-nas and FAQ Pages",
-        "description": "Create secondary pages with founder story, mission, values, and comprehensive FAQ using Next.js 15.5 best practices including advanced accordion patterns, FAQ schema markup, mobile-first content design, and readability optimization",
-        "status": "pending",
-        "dependencies": [
-          "1",
-          "5"
-        ],
+        "title": "Refine Mobile UX for Hero Section",
+        "description": "Adjust the layout and scaling of the Hero section for mobile devices to ensure the entire section, including the call-to-action, is visible above the fold and text is legible.",
+        "details": "Apply responsive Tailwind CSS classes in `src/components/sections/HeroSection.tsx`.\n\n1.  **Set Fixed Heights:** Modify the main `motion.div` wrapper (line 139) to have responsive heights, preventing it from taking up the full screen on mobile.\n    ```typescript\n    className=\"relative h-[280px] sm:h-[350px] md:h-[450px] lg:h-full flex items-center justify-center\"\n    ```\n2.  **Scale Down Robot:** Add a `scale-90` class for mobile to the `InteractiveRobotSpline` component (line 162).\n    ```typescript\n    <InteractiveRobotSpline ... className=\"w-full h-full relative z-10 scale-90 md:scale-100\" />\n    ```\n3.  **Improve Text Spacing:** Adjust `space-y`, `leading`, and font sizes for the headline and subheadline as per PRD Section 3.3 to improve readability.",
+        "testStrategy": "Using a mobile viewport (e.g., iPhone 12/13 Pro in Chrome DevTools), verify that the entire hero section (robot, headline, and CTA buttons) is visible without scrolling. Check that the text has improved spacing and is not cramped.",
         "priority": "medium",
-        "details": "Build /o-nas and /faq pages using Next.js App Router with proper i18n support via next-intl. Implement accordion components with modern 2025 patterns including progressive disclosure, search functionality, and FAQ schema markup for SEO. Create founder story with compelling narrative structure, mission/values presentation with visual hierarchy, and SaaS comparison tables with interactive elements. Use existing design tokens (night, pear, tekhelet) from src/lib/design-tokens.ts and maintain consistency with homepage styling. Implement proper SEO metadata, breadcrumb navigation, and WCAG AAA accessibility compliance. Include Polish/English translations using existing i18n structure from src/messages/ files.",
-        "testStrategy": "Test page navigation and routing with next-intl locale switching, verify content readability with automated readability testing tools, ensure responsive design across all breakpoints using Chrome DevTools device simulation, test accordion functionality with keyboard navigation and screen readers, validate FAQ schema markup with Google Rich Results testing tool, and verify mobile-first content design with performance profiling",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Create O-nas page with founder story and storytelling techniques",
-            "description": "Build the About Us page with compelling founder biography using proven storytelling patterns, company mission, and values section with visual hierarchy and emotional connection",
-            "dependencies": [],
-            "details": "Create src/app/[locale]/o-nas/page.tsx with hero section featuring founder photo and compelling headline. Implement founder story using storytelling best practices: hook (challenge/problem), struggle (journey), solution (founding LessManual), transformation (client success). Include mission statement with clear value proposition and core values section using card-based layout with icons. Use existing design tokens from src/lib/design-tokens.ts and maintain consistency with homepage styling. Implement proper i18n using existing structure from src/messages/pl.json and src/messages/en.json.",
-            "status": "pending",
-            "testStrategy": "Test content readability using readability scoring tools (Flesch-Kincaid), verify emotional engagement through user feedback, test responsive design across breakpoints, and validate SEO metadata with proper schema markup",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Implement SaaS comparison table with interactive elements",
-            "description": "Create modern comparison table component showing LessManual advantages over competitors using 2025 best practices for data presentation and interactivity",
-            "dependencies": [
-              1
-            ],
-            "details": "Build responsive comparison table component comparing LessManual vs competitors across key metrics (implementation time, cost, support quality, technology transparency, Polish market focus). Use modern table patterns: sticky headers for mobile, progressive disclosure for detailed comparisons, hover effects for better UX. Implement interactive elements like filter buttons and sorting capabilities. Use tekhelet borders for table structure and pear accents for highlighting advantages. Include tooltips for technical terms and mobile-optimized horizontal scrolling.",
-            "status": "pending",
-            "testStrategy": "Test table responsiveness on mobile devices with horizontal scrolling, verify interactive elements work with keyboard navigation, test sorting and filtering functionality, and ensure accessibility with screen readers",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Build tech stack transparency section with modern presentation",
-            "description": "Create technology showcase section using card-based layout with logos, descriptions, and reasoning for each technology choice to build trust and transparency",
-            "dependencies": [
-              1
-            ],
-            "details": "Implement tech stack showcase highlighting key technologies: Next.js 15.5, TypeScript, Tailwind CSS, Framer Motion, Supabase, n8n, Claude API. Create card-based layout with technology logos, brief descriptions, and clear explanations of why each technology was chosen and how it benefits clients. Include interactive elements like hover effects revealing additional details. Use existing design tokens and implement subtle animations using Framer Motion patterns. Focus on building trust through transparency about technology choices.",
-            "status": "pending",
-            "testStrategy": "Test logo loading performance and optimization, verify responsive card layout across breakpoints, test hover interactions and animations maintain 60fps, and validate content accessibility",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Create FAQ page with advanced accordion patterns and schema markup",
-            "description": "Build comprehensive FAQ page using modern accordion patterns with search functionality, progressive disclosure, and proper FAQ schema markup for enhanced SEO",
-            "dependencies": [],
-            "details": "Create src/app/[locale]/faq/page.tsx with advanced accordion component organizing 20+ questions into categories: Cennik, Wdrożenie, Technologia, Wsparcie. Implement modern accordion patterns: smooth expand/collapse with Framer Motion, search functionality with fuzzy matching, deep linking to specific FAQ items, keyboard navigation support. Add FAQ schema markup (JSON-LD) for rich snippets in search results. Include progressive disclosure for complex answers with 'Show more' functionality. Use existing design tokens and maintain consistency with site styling.",
-            "status": "pending",
-            "testStrategy": "Test accordion functionality with keyboard navigation (Enter/Space to toggle, Tab to navigate), verify smooth animations at 60fps in Chrome DevTools, test search feature with various query types, validate FAQ schema markup with Google Rich Results testing tool, and ensure mobile usability",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Implement navigation updates and comprehensive SEO optimization",
-            "description": "Update navigation system to include new pages and implement comprehensive SEO strategy with metadata, schema markup, and internal linking optimization",
-            "dependencies": [
-              1,
-              4
-            ],
-            "details": "Update main navigation component to include O-nas and FAQ links in both Polish and English. Implement comprehensive SEO metadata for both pages including title tags, meta descriptions, Open Graph tags, and Twitter Cards. Add FAQ schema markup (JSON-LD) and Organization schema for O-nas page. Create breadcrumb navigation component using structured data. Implement proper internal linking structure and ensure hreflang tags for both languages. Update src/messages/pl.json and src/messages/en.json with navigation and metadata translations.",
-            "status": "pending",
-            "testStrategy": "Test navigation functionality across both languages, verify SEO metadata with Google Search Console and testing tools, validate schema markup with Google Rich Results tester, test breadcrumb navigation functionality, and ensure proper internal link structure",
-            "parentId": "undefined"
-          },
-          {
-            "id": 6,
-            "title": "Implement mobile-first content design and readability optimization",
-            "description": "Optimize content presentation for mobile devices and implement readability best practices including typography hierarchy, content chunking, and accessibility features",
-            "dependencies": [
-              1,
-              4
-            ],
-            "details": "Implement mobile-first content design patterns: content chunking for better scanability, optimal line lengths (45-75 characters), proper typography hierarchy using existing design tokens, and progressive disclosure for long content sections. Add readability optimizations: clear headings with semantic HTML (h1-h6), bulleted lists for easy scanning, short paragraphs (2-3 sentences), and sufficient white space using spacing tokens. Include accessibility features: focus indicators, sufficient color contrast (WCAG AAA), and proper heading structure for screen readers.",
-            "status": "pending",
-            "testStrategy": "Test content readability using automated tools (Hemingway Editor, Flesch-Kincaid), verify mobile usability with real device testing, test typography scaling across breakpoints, validate accessibility with axe-core and manual screen reader testing, and measure content engagement metrics",
-            "parentId": "undefined"
-          }
-        ]
+        "dependencies": [
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T06:39:22.180Z"
       },
       {
         "id": "8",
-        "title": "Set up Email Automation and n8n Workflows",
-        "description": "Configure automated email sequences and lead nurturing workflows with modern 2025 email automation best practices including MJML templates, advanced analytics tracking, and comprehensive RODO compliance",
-        "status": "pending",
-        "dependencies": [
-          "2",
-          "3",
-          "6"
-        ],
+        "title": "Enhance Mobile Usability of UI Elements",
+        "description": "Increase the size and spacing of key interactive elements like the header logo and CTA buttons to meet mobile accessibility standards and improve user experience.",
+        "details": "1.  **Resize Header Logo:** In `src/components/layout/Header.tsx`, update the `Image` component for the logo with responsive size classes to make it smaller on mobile.\n    ```typescript\n    <Image ... className=\"h-10 w-10 md:h-12 md:w-12 lg:h-16 lg:w-16\" />\n    ```\n2.  **Enlarge CTA Buttons:** In `src/components/sections/HeroSection.tsx`, modify the CTA `Button` components to use a larger base font size (`text-base`) and increase the gap between them.\n    ```typescript\n    <motion.div className=\"flex flex-col sm:flex-row gap-4 md:gap-6 ... mt-4 px-4 md:px-0\">\n      <Button ... className=\"... w-full text-base md:text-lg font-semibold\">\n    ```",
+        "testStrategy": "On a mobile viewport, verify the logo is smaller (40x40px). Tap the CTA buttons to ensure they have a large enough touch target (should meet Web Content Accessibility Guidelines of at least 44x44 CSS pixels). Confirm the visual spacing looks correct.",
         "priority": "medium",
-        "details": "Implement modern email automation infrastructure using n8n for workflow orchestration and MJML for responsive email templates. Set up workflows for: 1) Contact form handler (Supabase insert -> ClickUp task -> Slack notification -> confirmation email), 2) Advanced ROI calculator lead nurturing with personalized sequences based on hot_lead_score and industry, 3) Voice Agent call orchestration with SMS integration, 4) Cal.com demo booking integration with automated preparation materials. Implement email deliverability optimization (SPF, DKIM, DMARC), comprehensive analytics tracking (open rates, click rates, conversion tracking), and full RODO compliance with consent management and data retention policies. Follow 2025 best practices for drip campaigns, behavioral triggers, and email personalization.",
-        "testStrategy": "Test all workflow triggers and data flow end-to-end, verify email deliverability and template rendering across devices/clients, test lead scoring automation and behavioral triggers, validate analytics tracking and conversion attribution, ensure RODO compliance with consent workflows and data retention automation, test email performance optimization (load times, inbox placement), and verify SMS integration for Voice Agent workflows",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Create n8n Contact Form Workflow with Advanced Analytics Tracking",
-            "description": "Set up the primary n8n workflow to handle contact form submissions with comprehensive data flow automation and email deliverability optimization",
-            "dependencies": [],
-            "details": "Create production-ready n8n workflow that receives webhook from contact form submission (src/app/api/contact/route.ts), inserts data into Supabase contacts table using existing schema (src/types/supabase.ts), creates ClickUp task in Sales Pipeline with proper field mapping (industry, budget_estimate, urgency), sends Slack notification to #leads channel with lead details, and sends MJML-templated confirmation email with tracking pixels. Implement email deliverability optimization with SPF/DKIM/DMARC configuration, bounce handling, and comprehensive analytics tracking (delivery, open, click, conversion rates). Configure webhook authentication using N8N_WEBHOOK_SECRET from .env.example.",
-            "status": "pending",
-            "testStrategy": "Test webhook reception with proper authentication, verify Supabase data insertion with correct hot_lead_score calculation, confirm ClickUp task creation with all custom fields populated, test Slack notification delivery with proper formatting, verify MJML email rendering across clients (Gmail, Outlook, Apple Mail), test analytics tracking pixel functionality, and validate email deliverability metrics",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Build Advanced ROI Calculator Lead Nurturing with MJML Templates",
-            "description": "Create sophisticated email sequences based on ROI calculation results, industry specialization, and behavioral triggers using modern email template design",
-            "dependencies": [
-              1
-            ],
-            "details": "Design responsive MJML email templates for different hot_lead_score ranges and industry specializations: High score (8-10) gets immediate demo booking invitation with personalized calendar link and industry-specific case studies, Medium score (5-7) gets 5-email drip sequence with educational content, product videos, and social proof, Low score (1-4) gets 7-email nurture sequence focusing on automation benefits and ROI education. Implement behavioral triggers based on email engagement (opens, clicks), website activity tracking, and roi_calculations table data. Include dynamic content personalization based on specialization field and calculated potential_savings. Set up A/B testing framework for subject lines and email content.",
-            "status": "pending",
-            "testStrategy": "Test email sequence triggering for different score ranges and industries, verify MJML template rendering with dynamic content across email clients, test behavioral trigger accuracy (engagement tracking), validate A/B testing framework functionality, test unsubscribe and preference center functionality, ensure personalization accuracy with roi_calculations data, and verify delivery timing optimization",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Configure Voice Agent Call Orchestration with SMS Integration",
-            "description": "Set up comprehensive n8n workflow for Voice Agent demo requests with multi-channel communication and advanced preparation automation",
-            "dependencies": [
-              1
-            ],
-            "details": "Create advanced workflow that triggers when Voice Agent product interest is detected (from chatbot_conversations table or contact forms with Voice Agent mentions), automatically schedules follow-up call using Cal.com API integration, sends SMS confirmation via Twilio/SMS provider with call details and preparation checklist, creates detailed preparation notes in ClickUp with user's business context from all previous interactions (contacts, roi_calculations, chatbot_conversations), and sets up multi-channel reminder sequence (SMS 24h before, email 4h before, SMS 1h before call) with personalized agenda based on detected pain points and industry specialization.",
-            "status": "pending",
-            "testStrategy": "Test workflow triggering from multiple sources (chatbot, contact form, direct Voice Agent interest), verify Cal.com API integration and call scheduling accuracy, test SMS delivery and formatting across carriers, confirm ClickUp task creation with comprehensive context notes, validate multi-channel reminder sequence timing and content personalization, and test preparation materials generation based on user interaction history",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Implement Cal.com Demo Booking Integration with Automated Preparation",
-            "description": "Connect Cal.com webhooks with n8n for comprehensive demo booking workflow with personalized preparation materials and advanced follow-up automation",
-            "dependencies": [
-              2
-            ],
-            "details": "Set up Cal.com webhook integration using NEXT_PUBLIC_CALCOM_USERNAME from .env.example to trigger n8n workflow when demo is booked, update corresponding lead record in ClickUp (move to 'Demo Scheduled' status), send calendar invite with meeting preparation materials (industry-specific agenda, relevant case studies, ROI projection based on their calculations), create automated reminder sequence (MJML-templated emails at 24h and 2h before demo), and generate personalized demo notes in ClickUp based on user's industry, identified pain points from previous interactions, and hot_lead_score. Implement post-demo automation to send follow-up emails, proposal templates, and next steps based on demo outcome.",
-            "status": "pending",
-            "testStrategy": "Test Cal.com webhook delivery and authentication, verify ClickUp status updates and field mappings, confirm calendar invite creation with proper attachments, test reminder email sequence timing and personalization, validate demo notes generation with accurate context from all user touchpoints, test post-demo automation triggers, and verify proposal template customization based on demo discussions",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Implement Comprehensive RODO Compliance and Email Analytics Dashboard",
-            "description": "Create full RODO compliance system with consent management, data retention automation, and advanced email performance analytics",
-            "dependencies": [
-              1,
-              2,
-              3,
-              4
-            ],
-            "details": "Create email consent tracking system in Supabase with consent_preferences table including granular permissions (marketing emails, product updates, SMS notifications), implement double opt-in process with MJML confirmation templates, add comprehensive unsubscribe functionality with preference center allowing selective opt-outs, create RODO-compliant privacy notices for all email processing activities, set up automated data retention policies (automatic deletion after 24 months with pre-deletion notification), and implement GDPR data export/deletion requests through automated n8n workflow. Build email analytics dashboard tracking deliverability metrics, engagement rates, conversion attribution, A/B testing results, and ROI per email campaign. Integrate with Google Analytics for comprehensive attribution tracking.",
-            "status": "pending",
-            "testStrategy": "Test consent tracking throughout complete user journey from first interaction to conversion, verify double opt-in process with email confirmation flow, test unsubscribe functionality and preference center across all email types, validate privacy notice inclusion and legal compliance, test automated data retention with deletion notifications, verify GDPR data export accuracy and deletion completeness, test analytics dashboard data accuracy and real-time updates, and validate conversion attribution across email campaigns and website interactions",
-            "parentId": "undefined"
-          }
-        ]
+        "dependencies": [
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T06:02:25.787Z"
       },
       {
         "id": "9",
-        "title": "Performance Optimization and Lighthouse Audit",
-        "description": "Optimize website performance to achieve Lighthouse score 90+ across all metrics using Next.js 15.5 advanced features and 2025 performance strategies",
-        "status": "pending",
+        "title": "Adjust Contact Form Iframe Height on Mobile",
+        "description": "Increase the height of the embedded contact form iframe on mobile devices to prevent it from being cut off, which forces an internal scrollbar and provides a poor user experience.",
+        "details": "In `src/components/sections/ContactFormSection.tsx`, update the `className` prop of the `<iframe>` tag to set a larger height specifically for mobile screens.\n\n```typescript\n<iframe\n  ...\n  className=\"w-full h-[1450px] md:h-[1300px] border-0 rounded-xl overflow-hidden\"\n/>\n```\nThis change increases the mobile height from 1300px to 1450px while keeping the desktop height the same.",
+        "testStrategy": "View the contact form section on a small mobile viewport. Scroll down and verify that the entire form is visible without an internal scrollbar appearing within the iframe itself. The user should be able to scroll the page normally to see the full form.",
+        "priority": "low",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T06:18:30.566Z"
+      },
+      {
+        "id": "10",
+        "title": "Perform Dependency Cleanup and Final Production Build Test",
+        "description": "Remove specified unused npm packages to reduce bundle size and run a final Lighthouse audit on a local production build to confirm all performance targets have been met.",
+        "details": "1.  **Uninstall Dependencies:** Run the following command to remove packages that are no longer needed:\n    ```bash\n    npm uninstall recharts tslib tsx\n    ```\n2.  **Refresh Lockfile:** Run `npm install` to ensure the `package-lock.json` file is updated and consistent.\n3.  **Run Final Audit:** Execute a full production build and test cycle:\n    ```bash\n    cd \"/Users/bartlomiejchudzik/Documents/LessManual/Strona internetowa\"\n    npm run build\n    npm run start\n    # In a new terminal:\n    lighthouse http://localhost:3000/pl --output=json --form-factor=mobile --view\n    lighthouse http://localhost:3000/pl --output=json --form-factor=desktop --view\n    ```\nThis final check ensures that `next-devtools` and other dev-only code have been stripped from the production bundle.",
+        "testStrategy": "Analyze the final Lighthouse reports. The primary success metric is achieving a Performance score of 90+ for both mobile and desktop. Also, check the build output summary in the terminal to confirm a reduction in bundle size.",
+        "priority": "medium",
         "dependencies": [
           "1",
           "2",
           "3",
           "4",
-          "7"
-        ],
-        "priority": "high",
-        "details": "Implement comprehensive performance optimizations leveraging Next.js 15.5 features: enable Partial Prerendering (PPR) for instant page loads, optimize next.config.ts with advanced image settings (WebP/AVIF already configured), implement code splitting with next/dynamic for heavy components, bundle analysis with webpack-bundle-analyzer, optimize Framer Motion animations in src/lib/animations.ts for 60fps GPU acceleration. Target Core Web Vitals: LCP <1.5s, FID minimal, CLS <0.1. Implement monitoring with Vercel Analytics and real-time performance tracking.",
-        "testStrategy": "Run Lighthouse CI audits on production build targeting Performance ≥90, Accessibility 100, Best Practices ≥95, SEO 100. Use Chrome DevTools Performance profiling for 60fps animation verification, webpack-bundle-analyzer for bundle size analysis (<200KB first load), real-world testing with slow 3G simulation, and Vercel Analytics monitoring for Core Web Vitals tracking",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Optimize next.config.ts with advanced performance settings and enable PPR",
-            "description": "Configure Next.js 15.5 experimental features for maximum performance including Partial Prerendering",
-            "dependencies": [],
-            "details": "Enable Partial Prerendering (PPR) in next.config.ts experimental section, configure advanced image optimization settings beyond current WebP/AVIF setup (add deviceSizes, imageSizes, quality settings), enable experimental optimizePackageImports for better tree shaking, configure Turbopack optimizations, and implement experimental after for background tasks. Update existing next.config.ts at /Users/bartlomiejchudzik/Documents/LessManual/Strona internetowa/next.config.ts which already has basic image optimization and Turbopack enabled.",
-            "status": "pending",
-            "testStrategy": "Test PPR functionality with production build, measure TTFB improvement, verify image optimization settings work across different devices, test Turbopack build performance vs webpack",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Implement advanced code splitting and bundle optimization",
-            "description": "Set up sophisticated code splitting patterns and bundle analysis tools for optimal loading performance",
-            "dependencies": [
-              1
-            ],
-            "details": "Install and configure webpack-bundle-analyzer for package.json, implement next/dynamic for heavy components (Framer Motion animations, calculators), create loading skeletons for dynamic imports, split vendor libraries using Next.js 15 automatic optimizations, implement route-based chunking, and create bundle size monitoring script. Analyze current dependencies in package.json including framer-motion, @supabase/supabase-js for optimization opportunities.",
-            "status": "pending",
-            "testStrategy": "Analyze bundle with webpack-bundle-analyzer, verify First Load JS <200KB, test dynamic import loading behavior, measure chunk loading performance on slow networks",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Optimize Framer Motion animations for 60fps GPU acceleration",
-            "description": "Enhance existing animation variants in src/lib/animations.ts for maximum performance",
-            "dependencies": [],
-            "details": "Audit and optimize existing animations in src/lib/animations.ts (fadeInUp, slideInLeft, scaleIn, cardTilt variants), implement GPU acceleration with transform3d, add will-change CSS properties strategically, implement animation performance monitoring, optimize staggerContainer for better performance, add prefers-reduced-motion support, and create performance-optimized 3D card effects. Current file has basic variants that need 60fps optimization.",
-            "status": "pending",
-            "testStrategy": "Use Chrome DevTools Performance tab to record 6-second interactions, verify consistent 60fps during animations, test on low-end devices, measure CLS impact of animations",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Implement advanced image optimization and lazy loading strategies",
-            "description": "Set up comprehensive image optimization beyond basic WebP/AVIF conversion",
-            "dependencies": [
-              1
-            ],
-            "details": "Enhance Next.js Image component usage with priority loading for above-fold images, implement responsive image sizing with custom loader, create image optimization utility functions, set up blur placeholder generation, implement intersection observer based lazy loading for below-fold content, and optimize any existing images in public directory. Build upon existing image format configuration in next.config.ts.",
-            "status": "pending",
-            "testStrategy": "Test image loading performance with Network tab, verify lazy loading behavior, measure LCP improvement with optimized images, test on various connection speeds",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Set up Lighthouse CI and comprehensive performance monitoring",
-            "description": "Implement automated Lighthouse auditing and real-time performance monitoring infrastructure",
-            "dependencies": [
-              1,
-              2,
-              3,
-              4
-            ],
-            "details": "Install @lhci/cli for automated Lighthouse testing, create lighthouserc.json configuration file, set up Vercel Analytics integration for real-time Core Web Vitals monitoring, implement performance budget alerts, create custom performance monitoring dashboard, set up automated performance regression detection, and configure production performance tracking. Target minimum scores: Performance ≥90, Accessibility 100, Best Practices ≥95, SEO 100.",
-            "status": "pending",
-            "testStrategy": "Run Lighthouse CI on production builds, verify all target scores are met, test automated performance monitoring, validate Core Web Vitals tracking in real-world conditions",
-            "parentId": "undefined"
-          },
-          {
-            "id": 6,
-            "title": "Implement Core Web Vitals optimization and monitoring tools",
-            "description": "Set up advanced Core Web Vitals optimization and real-time monitoring for production",
-            "dependencies": [
-              5
-            ],
-            "details": "Implement web-vitals library for real-time CWV tracking, create custom analytics events for performance monitoring, set up performance regression alerts, implement resource hints (dns-prefetch, preconnect) for external resources, optimize Critical Rendering Path, implement service worker for advanced caching strategies, and create performance dashboard for ongoing monitoring. Integrate with Vercel Analytics for comprehensive performance tracking.",
-            "status": "pending",
-            "testStrategy": "Monitor real-world Core Web Vitals data, test performance alerts functionality, verify service worker caching effectiveness, validate resource hint improvements",
-            "parentId": "undefined"
-          }
-        ]
-      },
-      {
-        "id": "10",
-        "title": "SEO Setup and Production Deployment",
-        "description": "Configure comprehensive SEO metadata, automated sitemap generation, Schema.org structured data, and deploy to production with modern 2025 monitoring including Sentry error tracking, Vercel Analytics, and rollback procedures",
-        "status": "pending",
-        "dependencies": [
+          "5",
+          "6",
+          "7",
+          "8",
           "9"
         ],
-        "priority": "high",
-        "details": "Implement 2025 best practices for Next.js 15.5 SEO: automated meta tags with next-intl i18n support (existing pl.json/en.json), sitemap.ts with hreflang annotations, robots.ts configuration, Schema.org JSON-LD (Organization, WebSite, BreadcrumbList). Deploy to Vercel with lessmanual.ai domain, SSL auto-config, environment variables from .env.example. Integrate Sentry for error monitoring, Vercel Analytics for performance tracking, implement automated rollback procedures. Use existing Supabase integration from src/lib/supabase.ts for form monitoring. Follow CLAUDE.md Lighthouse 90+ performance targets.",
-        "testStrategy": "Automated Lighthouse CI/CD pipeline targeting 90+ performance score, meta tag validation with Rich Results Test, sitemap XML validation, Sentry error tracking verification, Vercel Analytics data collection testing, rollback procedure validation, production smoke tests across all i18n routes (/pl, /en)",
-        "subtasks": [
-          {
-            "id": 1,
-            "title": "Implement automated SEO metadata system with next-intl integration",
-            "description": "Enhance existing metadata configuration in src/app/[locale]/layout.tsx with comprehensive SEO automation using established i18n structure",
-            "dependencies": [],
-            "details": "Extend current generateMetadata function in layout.tsx to include Open Graph tags, Twitter cards, theme-color, viewport meta tags. Add metadata entries to existing src/messages/pl.json and en.json for all pages. Implement dynamic metadata generation for product routes. Configure canonical URLs and hreflang tags using existing locale configuration from src/i18n/config.ts. Add robots meta tag configuration and JSON-LD Schema.org structured data in layout component.",
-            "status": "pending",
-            "testStrategy": "Verify meta tags in page source using browser dev tools, validate Open Graph with Facebook/LinkedIn debuggers, test hreflang implementation with SEO testing tools, ensure canonical URLs are correct for both /pl and /en routes, validate JSON-LD schema with Google Rich Results Test",
-            "parentId": "undefined"
-          },
-          {
-            "id": 2,
-            "title": "Create automated sitemap.ts with internationalization and dynamic generation",
-            "description": "Implement Next.js 15.5 App Router sitemap generation with automatic i18n route discovery and hreflang annotations",
-            "dependencies": [
-              1
-            ],
-            "details": "Create src/app/sitemap.ts using Next.js MetadataRoute.Sitemap type. Auto-discover routes from app directory structure, include all static routes (/pl, /en, /pl/produkty, /en/products). Implement dynamic lastModified dates based on file modification times or build timestamps. Add proper changeFrequency and priority values based on page types. Include hreflang alternate URLs using existing locales from src/i18n/config.ts. Ensure sitemap validates against XML sitemap protocol and follows 2025 SEO best practices.",
-            "status": "pending",
-            "testStrategy": "Verify sitemap.xml accessibility at domain/sitemap.xml, validate XML format with sitemap validators, test with Google Search Console sitemap submission, ensure all i18n routes are included with correct hreflang annotations, verify lastModified dates and priority values are appropriate",
-            "parentId": "undefined"
-          },
-          {
-            "id": 3,
-            "title": "Configure robots.ts and implement comprehensive Schema.org structured data",
-            "description": "Set up automated robots.txt generation and implement JSON-LD structured data for enhanced search engine understanding",
-            "dependencies": [
-              2
-            ],
-            "details": "Create src/app/robots.ts using Next.js MetadataRoute.Robots type for dynamic robots.txt generation. Allow all crawlers and reference sitemap.xml location. Implement comprehensive JSON-LD structured data in layout.tsx: Organization schema (LessManual company info, logo, contact details, social media), WebSite schema with search action, BreadcrumbList schema for navigation. Add LocalBusiness schema with Polish business registration (NIP, REGON from messages). Ensure all structured data validates with Schema.org standards.",
-            "status": "pending",
-            "testStrategy": "Verify robots.txt accessibility and proper format, validate all JSON-LD structured data with Google Rich Results Test and Schema Markup Validator, ensure Organization schema includes correct business details, test BreadcrumbList schema reflects actual site navigation, verify LocalBusiness schema compliance with Polish business requirements",
-            "parentId": "undefined"
-          },
-          {
-            "id": 4,
-            "title": "Deploy to Vercel production with automated SSL and environment configuration",
-            "description": "Set up production deployment on Vercel with lessmanual.ai domain, automated SSL, and secure environment variable management",
-            "dependencies": [
-              3
-            ],
-            "details": "Deploy to Vercel with custom domain configuration for lessmanual.ai. Configure automatic SSL certificate provisioning and renewal. Set up production environment variables from .env.example including Supabase keys (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY), n8n webhooks, ClickUp integration, and Google Analytics. Configure proper redirects (www to non-www, locale routing). Enable Vercel Analytics integration. Set up preview deployments for feature branches with environment parity. Configure build optimization settings and performance monitoring.",
-            "status": "pending",
-            "testStrategy": "Test domain accessibility and SSL certificate validity with SSL Labs, verify all environment variables function correctly in production, test redirect configurations, validate Vercel Analytics data collection, ensure preview deployments work with same environment setup, verify build optimization and performance settings are active",
-            "parentId": "undefined"
-          },
-          {
-            "id": 5,
-            "title": "Integrate Sentry error monitoring and implement automated rollback procedures",
-            "description": "Set up comprehensive error monitoring with Sentry and implement automated rollback procedures following 2025 production deployment best practices",
-            "dependencies": [
-              4
-            ],
-            "details": "Install and configure @sentry/nextjs for comprehensive error tracking including client-side errors, server-side errors, and performance monitoring. Set up Sentry error alerts and dashboard. Implement automated rollback procedures using Vercel deployments API. Create monitoring dashboards combining Vercel Analytics and Sentry data. Set up alerts for critical performance thresholds (Core Web Vitals, API response times). Implement health check endpoints for monitoring. Create incident response documentation and automated notification systems.",
-            "status": "pending",
-            "testStrategy": "Test Sentry error capture with intentional errors, verify error alerting and notification systems, validate rollback procedures work correctly, ensure monitoring dashboards display accurate data, test automated alerts trigger at correct thresholds, verify health check endpoints respond correctly, validate incident response workflows",
-            "parentId": "undefined"
-          },
-          {
-            "id": 6,
-            "title": "Perform comprehensive production testing and Lighthouse CI integration",
-            "description": "Execute final production validation with automated Lighthouse CI pipeline and comprehensive smoke testing across all user flows",
-            "dependencies": [
-              5
-            ],
-            "details": "Set up Lighthouse CI in GitHub Actions for automated performance auditing on every deployment. Target Lighthouse scores: Performance 90+, Accessibility 100, Best Practices 95+, SEO 100 as specified in CLAUDE.md. Implement comprehensive smoke tests covering all user flows: homepage navigation, product pages, contact forms with Supabase integration, i18n language switching (/pl ↔ /en), mobile responsiveness testing. Validate all integrations work in production: Supabase database connections, n8n webhooks, Cal.com booking, analytics tracking. Create production monitoring checklist and automated testing workflows.",
-            "status": "pending",
-            "testStrategy": "Run automated Lighthouse CI on every deployment ensuring 90+ performance scores, execute smoke tests across all critical user journeys, verify Supabase integration and data persistence in production, test form submissions trigger correct n8n workflows, validate analytics data collection accuracy, ensure mobile experience meets performance targets, confirm all monitoring and alerting systems are functional",
-            "parentId": "undefined"
-          }
-        ]
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-11-02T06:41:26.444Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2025-10-21T11:31:06.995Z",
+      "lastModified": "2025-11-02T06:41:26.445Z",
       "taskCount": 10,
-      "completedCount": 0,
+      "completedCount": 10,
       "tags": [
         "master"
       ]
