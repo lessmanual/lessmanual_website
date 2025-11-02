@@ -117,11 +117,12 @@ export function Header(): React.ReactElement {
       const target = document.querySelector(href)
 
       if (target) {
-        // Use actual header height dynamically
+        // Use actual header height dynamically + extra padding for better UX
         const header = document.querySelector('header')
         const headerOffset = header?.offsetHeight || 64
+        const extraPadding = 20 // Additional padding below header
         const elementPosition = target.getBoundingClientRect().top
-        const offsetPosition = elementPosition + window.scrollY - headerOffset
+        const offsetPosition = elementPosition + window.scrollY - headerOffset - extraPadding
 
         window.scrollTo({
           top: offsetPosition,

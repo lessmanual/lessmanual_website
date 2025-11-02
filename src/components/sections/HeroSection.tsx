@@ -127,7 +127,7 @@ export function HeroSection(): React.ReactElement {
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
           {/* Left: 3D Robot */}
           <motion.div
-            className="relative min-h-[280px] sm:min-h-[350px] md:min-h-[450px] lg:h-full flex items-center justify-center overflow-visible"
+            className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-full flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, delay: 0.3 }}
