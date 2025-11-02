@@ -118,8 +118,8 @@ export function HeroSection(): React.ReactElement {
         />
       </div>
 
-      {/* Mobile: Robot as centered background */}
-      <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none z-5">
+      {/* Mobile: Robot positioned at top */}
+      <div className="lg:hidden absolute inset-0 flex items-start justify-center pt-20 pointer-events-none z-5">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -232,11 +232,11 @@ export function HeroSection(): React.ReactElement {
                     behavior: 'smooth'
                   });
                 }
-              }} className="block">
+              }} className="w-full sm:w-auto">
                 <Button
                   variant="primary"
                   size="lg"
-                  className="bg-pear text-night hover:bg-pear/90 px-8 py-4 text-base font-semibold rounded-lg min-w-[217px] shadow-lg shadow-pear/20"
+                  className="bg-pear text-night hover:bg-pear/90 w-full sm:w-auto px-6 py-3 text-base font-semibold rounded-lg shadow-lg shadow-pear/20"
                 >
                   {t('ctaPrimary')}
                 </Button>
@@ -253,11 +253,11 @@ export function HeroSection(): React.ReactElement {
                     behavior: 'smooth'
                   });
                 }
-              }} className="block">
+              }} className="w-full sm:w-auto">
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border border-white/30 bg-transparent text-white hover:bg-white/10 px-8 py-4 text-base font-semibold rounded-lg min-w-[135px]"
+                  className="border border-white/30 bg-transparent text-white hover:bg-white/10 w-full sm:w-auto px-6 py-3 text-base font-semibold rounded-lg"
                 >
                   {t('ctaSecondary')}
                 </Button>

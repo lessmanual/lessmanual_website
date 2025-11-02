@@ -501,7 +501,7 @@ export function ROICalculatorSection(): React.ReactElement {
               <div key={step} className="flex items-center">
                 <div
                   className={`
-                    w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0
+                    w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold
                     ${step <= currentStep
                       ? 'bg-pear text-night'
                       : 'bg-white/10 text-white/50'
