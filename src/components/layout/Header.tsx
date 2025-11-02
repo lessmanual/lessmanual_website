@@ -117,15 +117,15 @@ export function Header(): React.ReactElement {
       const target = document.querySelector(href)
 
       if (target) {
-        // Scroll to element with proper offset
-        const header = document.querySelector('header')
-        const headerHeight = header?.offsetHeight || 64
-        const targetRect = target.getBoundingClientRect()
-        const absoluteTop = targetRect.top + window.pageYOffset
-        const scrollTo = absoluteTop - headerHeight - 20
+        // Get header height for offset
+        const headerHeight = 64 // Fixed header height
+
+        // Calculate position - we want the element at the top of viewport minus header
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY
+        const offsetPosition = targetPosition - headerHeight - 16 // 16px extra padding
 
         window.scrollTo({
-          top: scrollTo,
+          top: offsetPosition,
           behavior: 'smooth'
         })
 

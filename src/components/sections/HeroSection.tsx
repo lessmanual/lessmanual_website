@@ -118,50 +118,50 @@ export function HeroSection(): React.ReactElement {
         />
       </div>
 
-      {/* 3D Robot - Absolute positioned BEHIND content */}
+      {/* Main container */}
       <motion.div
-        className="absolute top-0 left-0 lg:left-0 w-full lg:w-1/2 h-screen flex items-center justify-center pointer-events-none z-5"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 1.2, delay: 0.3 }}
-      >
-        {/* Local blur effects around robot */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60"
-            style={{
-              background: `radial-gradient(circle, rgba(221, 224, 0, 0.4) 0%, transparent 70%)`,
-              filter: 'blur(80px)',
-            }}
-          />
-          <div
-            className="absolute bottom-0 left-1/4 w-[400px] h-[400px] opacity-40"
-            style={{
-              background: `radial-gradient(circle, rgba(87, 22, 162, 0.3) 0%, transparent 70%)`,
-              filter: 'blur(100px)',
-            }}
-          />
-        </div>
-
-        <InteractiveRobotSpline
-          scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-          className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] scale-[0.7] sm:scale-[0.8] md:scale-90 lg:scale-100 pointer-events-auto"
-        />
-      </motion.div>
-
-      {/* Main container - Content ABOVE robot */}
-      <motion.div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-end pb-20 md:pb-24 lg:justify-center lg:pb-0"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-center"
         style={{ y, opacity }}
       >
-        {/* Top section: Headlines & Description */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-end lg:items-center">
-          {/* Left: Empty space for robot (on desktop) */}
-          <div className="hidden lg:block" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
+          {/* Left: 3D Robot (Desktop) / Background layer (Mobile) */}
+          <motion.div
+            className="relative flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.3 }}
+          >
+            {/* Desktop: Robot in grid */}
+            <div className="hidden lg:block relative w-full">
+              {/* Local blur effects around robot */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-60"
+                  style={{
+                    background: `radial-gradient(circle, rgba(221, 224, 0, 0.4) 0%, transparent 70%)`,
+                    filter: 'blur(80px)',
+                  }}
+                />
+              </div>
+
+              <InteractiveRobotSpline
+                scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
+                className="w-full h-[600px] lg:h-[700px]"
+              />
+            </div>
+
+            {/* Mobile: Robot as absolute background */}
+            <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
+              <InteractiveRobotSpline
+                scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
+                className="w-full h-[350px] sm:h-[400px] md:h-[500px] scale-75 sm:scale-90 md:scale-100 opacity-50 pointer-events-auto"
+              />
+            </div>
+          </motion.div>
 
           {/* Right: Headlines + Description */}
           <motion.div
-            className="flex flex-col justify-center space-y-4 md:space-y-6 leading-relaxed"
+            className="flex flex-col justify-center space-y-4 md:space-y-6 lg:space-y-8 relative z-10"
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
@@ -178,7 +178,7 @@ export function HeroSection(): React.ReactElement {
               <span
                 className="block text-pear animate-fade-in-slide"
                 style={{
-                  textShadow: '0 0 80px rgba(221, 224, 0, 0.5)', // pear glow effect
+                  textShadow: '0 0 80px rgba(221, 224, 0, 0.5)',
                 }}
               >
                 {t('mainHeadlineAccent')}
@@ -204,35 +204,59 @@ export function HeroSection(): React.ReactElement {
             >
               {t('body')}
             </motion.p>
+
+            {/* Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <a href="#contact" onClick={(e) => {
+                e.preventDefault();
+                const target = document.querySelector('#contact');
+                if (target) {
+                  const headerHeight = 64;
+                  const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+                  const offsetPosition = targetPosition - headerHeight - 16;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }} className="w-full sm:w-auto">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full text-base md:text-lg font-semibold min-h-[44px]"
+                >
+                  {t('ctaPrimary')}
+                </Button>
+              </a>
+              <a href="#kalkulator" onClick={(e) => {
+                e.preventDefault();
+                const target = document.querySelector('#kalkulator');
+                if (target) {
+                  const headerHeight = 64;
+                  const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+                  const offsetPosition = targetPosition - headerHeight - 16;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }} className="w-full sm:w-auto">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full text-base md:text-lg font-semibold min-h-[44px]"
+                >
+                  {t('ctaSecondary')}
+                </Button>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
-
-        {/* Bottom section: Buttons */}
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mt-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.9 }}
-        >
-          <a href="#contact" className="w-full sm:w-auto">
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-pear text-night hover:bg-pear/90 shadow-lg shadow-pear/30 w-full text-base md:text-lg font-semibold min-h-[44px]"
-            >
-              {t('ctaPrimary')}
-            </Button>
-          </a>
-          <a href="#kalkulator" className="w-full sm:w-auto">
-            <Button
-              variant="secondary"
-              size="lg"
-              className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm w-full text-base md:text-lg font-semibold min-h-[44px]"
-            >
-              {t('ctaSecondary')}
-            </Button>
-          </a>
-        </motion.div>
       </motion.div>
     </section>
   )
