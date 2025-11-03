@@ -1,5 +1,3 @@
-import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
 import dynamic from 'next/dynamic'
 import { HeroSection } from '@/components/sections/HeroSection'
 
@@ -13,56 +11,6 @@ const FinalCTASection = dynamic(() => import('@/components/sections/FinalCTASect
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection').then(mod => ({ default: mod.AboutSection })))
 const ContactFormSection = dynamic(() => import('@/components/sections/ContactFormSection').then(mod => ({ default: mod.ContactFormSection })))
 const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })))
-
-/**
- * Generate metadata for homepage
- * Supports both PL and EN locales with Open Graph and Twitter Card metadata
- */
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}): Promise<Metadata> {
-  const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lessmanual.ai'
-  const ogImage = `${siteUrl}/images/og-image.png` // Professional 1200x630px OG image
-
-  return {
-    title: t('home.title'),
-    description: t('home.description'),
-    alternates: {
-      canonical: `${siteUrl}/${locale}`,
-      languages: {
-        pl: `${siteUrl}/pl`,
-        en: `${siteUrl}/en`,
-      },
-    },
-    openGraph: {
-      title: t('home.title'),
-      description: t('home.description'),
-      url: `${siteUrl}/${locale}`,
-      siteName: 'LessManual',
-      locale: locale === 'pl' ? 'pl_PL' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: t('home.title'),
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: t('home.title'),
-      description: t('home.description'),
-      images: [ogImage],
-    },
-  }
-}
 
 /**
  * Homepage - LessManual.ai

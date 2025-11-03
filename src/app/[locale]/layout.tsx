@@ -32,40 +32,55 @@ const sora = Sora({
 })
 
 /**
- * Root metadata
- * Page-specific metadata should override these in page.tsx
+ * Generate root metadata with locale support
+ * Includes canonical URLs and language alternates for proper SEO
  */
-export const metadata: Metadata = {
-  metadataBase: new URL('https://lessmanual.ai'),
-  title: {
-    default: 'LessManual - Make your business LESSMANUAL',
-    template: '%s | LessManual',
-  },
-  description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
-  keywords: ['AI', 'automatyzacja', 'chatbot', 'voice agent', 'polska firma', 'SaaS'],
-  authors: [{ name: 'LessManual' }],
-  openGraph: {
-    type: 'website',
-    locale: 'pl_PL',
-    url: 'https://lessmanual.ai',
-    siteName: 'LessManual',
-    title: 'LessManual - Make your business LESSMANUAL',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+
+  return {
+    metadataBase: new URL('https://www.lessmanual.ai'),
+    title: {
+      default: 'LessManual - Make your business LESSMANUAL',
+      template: '%s | LessManual',
+    },
     description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
-    images: [
-      {
-        url: 'https://lessmanual.ai/images/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'LessManual - Make Your Business LESSMANUAL',
+    keywords: ['AI', 'automatyzacja', 'chatbot', 'voice agent', 'polska firma', 'SaaS'],
+    authors: [{ name: 'LessManual' }],
+    alternates: {
+      canonical: `https://www.lessmanual.ai/${locale}`,
+      languages: {
+        pl: 'https://www.lessmanual.ai/pl',
+        en: 'https://www.lessmanual.ai/en',
       },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'LessManual - Make your business LESSMANUAL',
-    description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
-    images: ['https://lessmanual.ai/images/og-image.png'],
-  },
+    },
+    openGraph: {
+      type: 'website',
+      locale: locale === 'pl' ? 'pl_PL' : 'en_US',
+      url: `https://www.lessmanual.ai/${locale}`,
+      siteName: 'LessManual',
+      title: 'LessManual - Make your business LESSMANUAL',
+      description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+      images: [
+        {
+          url: 'https://www.lessmanual.ai/images/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'LessManual - Make Your Business LESSMANUAL',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'LessManual - Make your business LESSMANUAL',
+      description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+      images: ['https://www.lessmanual.ai/images/og-image.png'],
+    },
+  }
 }
 
 /**
