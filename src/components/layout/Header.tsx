@@ -142,7 +142,7 @@ export function Header(): React.ReactElement {
     { href: '#about', label: t('about'), isAnchor: true },
     { href: `/${locale}/blog`, label: t('blog'), isAnchor: false },
     { href: `/${locale}/faq`, label: t('faq'), isAnchor: false },
-    { href: '#contact', label: t('contact'), isAnchor: true },
+    { href: `#${locale === 'en' ? 'contact' : 'kontakt'}`, label: t('contact'), isAnchor: true },
   ]
 
   return (
