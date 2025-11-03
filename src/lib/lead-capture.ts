@@ -53,9 +53,7 @@ export const leadCaptureSchema = z.object({
     .boolean()
     .refine((val) => val === true, {
       message: 'Zgoda na przetwarzanie danych jest wymagana'
-    }),
-
-  newsletterConsent: z.boolean().optional().default(false)
+    })
 })
 
 export type LeadCaptureFormData = z.infer<typeof leadCaptureSchema>
@@ -83,7 +81,6 @@ export interface CalculatorLead {
 
   // Consent
   rodo_consent: boolean
-  newsletter_consent: boolean
 
   // Metadata
   inputs?: Record<string, any> | null // JSON with all calculator inputs
@@ -139,7 +136,6 @@ export async function submitCalculatorLead(params: SubmitLeadParams): Promise<{ 
 
       // Consent
       rodo_consent: formData.rodoConsent,
-      newsletter_consent: formData.newsletterConsent || false,
 
       // Metadata
       inputs: inputs || null,

@@ -139,8 +139,7 @@ export function ROICalculatorSection(): React.ReactElement {
     email: '',
     phone: '',
     companyName: '',
-    rodoConsent: false,
-    newsletterConsent: false
+    rodoConsent: false
   })
   const [formErrors, setFormErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -417,7 +416,6 @@ export function ROICalculatorSection(): React.ReactElement {
 
         // Consent (RODO compliance)
         rodoConsent: formData.rodoConsent,
-        newsletterConsent: formData.newsletterConsent || false,
 
         // Metadata
         locale: locale, // Language version for webhook routing (PL vs EN)
@@ -1470,8 +1468,7 @@ export function ROICalculatorSection(): React.ReactElement {
                         email: '',
                         phone: '',
                         companyName: '',
-                        rodoConsent: false,
-                        newsletterConsent: false
+                        rodoConsent: false
                       })
                     }}
                     className="px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-white/40 rounded-lg font-semibold transition-all duration-300"
@@ -1611,22 +1608,6 @@ export function ROICalculatorSection(): React.ReactElement {
                     {formErrors.rodoConsent && (
                       <p className="mt-1 text-sm text-red-400">{formErrors.rodoConsent}</p>
                     )}
-                  </div>
-
-                  {/* Newsletter Consent */}
-                  <div>
-                    <label className="flex items-start gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={formData.newsletterConsent}
-                        onChange={(e) => handleFormChange('newsletterConsent', e.target.checked)}
-                        className="mt-1 w-5 h-5 rounded border border-white/30 bg-white/5 checked:bg-pear checked:border-pear focus:ring-2 focus:ring-pear/30 transition-all"
-                        disabled={isSubmitting}
-                      />
-                      <span className="text-sm text-white/80">
-                        Chcę otrzymywać newsletter z case studies i tips automatyzacji
-                      </span>
-                    </label>
                   </div>
 
                   {/* Submit Button */}
