@@ -126,6 +126,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
       <head>
+        {/* CRITICAL: Static meta description for Lighthouse (before metadata streaming) */}
+        <meta name="description" content="Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas." />
+
         {/* Preconnect to external domains for faster resource loading */}
         {/* Lighthouse recommendation: reduces DNS lookup + TLS handshake time */}
         <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
