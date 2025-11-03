@@ -455,7 +455,9 @@
       "submitButton": "📩 Send report + book consultation",
       "securityNote": "🔒 Your data is secure (GDPR)",
       "successMessage": "✅ Report sent! Check your inbox.",
-      "errorMessage": "❌ An error occurred. Please try again."
+      "errorMessage": "❌ An error occurred. Please try again.",
+      "consultationButton": "📅 Book free consultation (20 min)",
+      "calculateAnotherButton": "Calculate for another product"
     },
     "progress": {
       "step": "Step",

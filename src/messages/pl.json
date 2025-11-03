@@ -455,7 +455,9 @@
       "submitButton": "📩 Wyślij raport + umów konsultację",
       "securityNote": "🔒 Twoje dane są bezpieczne (RODO)",
       "successMessage": "✅ Raport wysłany! Sprawdź skrzynkę email.",
-      "errorMessage": "❌ Wystąpił błąd. Spróbuj ponownie."
+      "errorMessage": "❌ Wystąpił błąd. Spróbuj ponownie.",
+      "consultationButton": "📅 Umów bezpłatną konsultację (20 min)",
+      "calculateAnotherButton": "Oblicz dla innego produktu"
     },
     "progress": {
       "step": "Krok",

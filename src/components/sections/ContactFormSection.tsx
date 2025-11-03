@@ -53,7 +53,7 @@ export function ContactFormSection(): React.ReactElement {
 
   return (
     <section
-      id="contact"
+      id={locale === 'en' ? 'contact' : 'kontakt'}
       ref={ref}
       className="relative overflow-hidden bg-night py-12 lg:py-16"
       aria-labelledby="contact-heading"

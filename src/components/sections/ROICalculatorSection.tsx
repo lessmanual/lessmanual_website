@@ -1473,15 +1473,13 @@ export function ROICalculatorSection(): React.ReactElement {
                     }}
                     className="px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-white/40 rounded-lg font-semibold transition-all duration-300"
                   >
-                    Oblicz dla innego produktu
+                    {t('step4.calculateAnotherButton')}
                   </button>
                   <a
-                    href="https://cal.com/lessmanual/demo"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`#${locale === 'en' ? 'contact' : 'kontakt'}`}
                     className="px-6 py-3 bg-pear hover:bg-pear/90 text-night rounded-lg font-bold transition-all duration-300 shadow-lg shadow-pear/30 hover:shadow-pear/50"
                   >
-                    📅 Umów demo (15 min)
+                    {t('step4.consultationButton')}
                   </a>
                 </div>
               </div>
