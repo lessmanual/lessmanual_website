@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/Button'
 import { InteractiveRobotSpline } from '@/components/ui/InteractiveRobotSpline'
 
@@ -60,6 +60,7 @@ import { InteractiveRobotSpline } from '@/components/ui/InteractiveRobotSpline'
  */
 export function HeroSection(): React.ReactElement {
   const t = useTranslations('hero')
+  const locale = useLocale()
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: '-100px' })
 
@@ -220,9 +221,10 @@ export function HeroSection(): React.ReactElement {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.9 }}
             >
-              <a href="#contact" onClick={(e) => {
+              <a href={`#${locale === 'en' ? 'contact' : 'kontakt'}`} onClick={(e) => {
                 e.preventDefault();
-                const target = document.querySelector('#contact');
+                const contactId = locale === 'en' ? 'contact' : 'kontakt';
+                const target = document.querySelector(`#${contactId}`);
                 if (target) {
                   const headerHeight = 64;
                   const targetPosition = target.getBoundingClientRect().top + window.scrollY;
