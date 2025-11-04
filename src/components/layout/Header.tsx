@@ -66,6 +66,7 @@ export function Header(): React.ReactElement {
       setScrolled(window.scrollY > 50)
     }
 
+    handleScroll() // Initialize on mount
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])

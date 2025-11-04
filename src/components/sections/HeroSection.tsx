@@ -78,6 +78,7 @@ export function HeroSection(): React.ReactElement {
       }
     }
 
+    handleScroll() // Initialize on mount
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])

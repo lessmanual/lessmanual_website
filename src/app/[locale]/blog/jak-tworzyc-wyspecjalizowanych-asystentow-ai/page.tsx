@@ -2,24 +2,43 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'Jak tworzyć wyspecjalizowanych asystentów AI? | LessManual Blog',
-  description: 'Dowiedz się jak działają Projekty/Gemy w ChatGPT/Claude/Gemini i stwórz swojego pierwszego asystenta AI krok po kroku.',
-  openGraph: {
-    title: 'Jak tworzyć wyspecjalizowanych asystentów AI?',
-    description: 'Praktyczny przewodnik po tworzeniu wyspecjalizowanych asystentów AI używając projektów w Claude, ChatGPT i Gemini.',
-    images: ['/images/blog/jak-tworzyc-asystentow-ai/Zrzut_ekranu_2025-11-4_o_17.41.46.png'],
-  },
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+
+  return {
+    title: 'Jak tworzyć wyspecjalizowanych asystentów AI? | LessManual Blog',
+    description: 'Dowiedz się jak działają Projekty/Gemy w ChatGPT/Claude/Gemini i stwórz swojego pierwszego asystenta AI krok po kroku.',
+    openGraph: {
+      title: 'Jak tworzyć wyspecjalizowanych asystentów AI?',
+      description: 'Praktyczny przewodnik po tworzeniu wyspecjalizowanych asystentów AI używając projektów w Claude, ChatGPT i Gemini.',
+      images: [{
+        url: '/images/blog/jak-tworzyc-asystentow-ai/Zrzut_ekranu_2025-11-4_o_17.41.46.png',
+        width: 1200,
+        height: 630,
+        alt: 'Jak tworzyć wyspecjalizowanych asystentów AI',
+      }],
+    },
+  }
 }
 
-export default function BlogPost(): React.ReactElement {
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<React.ReactElement> {
+  const { locale } = await params
+
   return (
     <div className="min-h-screen bg-night">
       <article className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto">
           {/* Back to Blog */}
           <Link
-            href="/pl/blog"
+            href={`/${locale}/blog`}
             className="inline-flex items-center text-pear hover:text-pear/80 transition-colors mb-8"
           >
             ← Powrót do bloga
@@ -93,6 +112,8 @@ export default function BlogPost(): React.ReactElement {
                 width={800}
                 height={600}
                 className="w-full h-auto"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
 
@@ -105,6 +126,8 @@ export default function BlogPost(): React.ReactElement {
                 width={400}
                 height={300}
                 className="rounded-lg border border-white/10"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 400px"
               />
               <Image
                 src="/images/blog/jak-tworzyc-asystentow-ai/Zrzut_ekranu_2025-11-4_o_17.39.12.png"
@@ -112,6 +135,8 @@ export default function BlogPost(): React.ReactElement {
                 width={400}
                 height={300}
                 className="rounded-lg border border-white/10"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
 
@@ -124,6 +149,8 @@ export default function BlogPost(): React.ReactElement {
                 width={400}
                 height={300}
                 className="rounded-lg border border-white/10"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 400px"
               />
               <Image
                 src="/images/blog/jak-tworzyc-asystentow-ai/Zrzut_ekranu_2025-11-4_o_17.44.22.png"
@@ -131,6 +158,8 @@ export default function BlogPost(): React.ReactElement {
                 width={400}
                 height={300}
                 className="rounded-lg border border-white/10"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
 
@@ -154,6 +183,8 @@ export default function BlogPost(): React.ReactElement {
                 width={800}
                 height={600}
                 className="w-full h-auto"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
 
@@ -195,7 +226,7 @@ export default function BlogPost(): React.ReactElement {
                 <span className="text-2xl">✅</span>
                 <div>
                   <p className="text-white font-semibold">Update projektu regularnie</p>
-                  <p className="text-white/70">dopisuj nowe przykłady, usuń nieaktualne pliki (raz w miesiąc)</p>
+                  <p className="text-white/70">dopisuj nowe przykłady, usuń nieaktualne pliki (raz w miesiącu)</p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -262,7 +293,7 @@ export default function BlogPost(): React.ReactElement {
               </p>
               <p className="text-white/80 mb-4">Chcesz więcej treści o AI automation?</p>
               <Link
-                href="/"
+                href={`/${locale}`}
                 className="inline-block bg-pear hover:bg-pear/90 text-night font-bold px-6 py-3 rounded-lg transition-colors"
               >
                 → lessmanual.ai
