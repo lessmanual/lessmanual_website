@@ -1,8 +1,6 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
 /**
  * Blog Page
@@ -24,9 +22,13 @@ import { useTranslations, useLocale } from 'next-intl'
  * ```
  */
 
-export default function BlogPage(): React.ReactElement {
-  const t = useTranslations('blog')
-  const locale = useLocale()
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<React.ReactElement> {
+  const { locale } = await params
+  const t = await getTranslations('blog')
 
   // Blog posts data - in the future, this could come from a CMS or database
   const blogPosts = [
@@ -92,7 +94,7 @@ export default function BlogPage(): React.ReactElement {
                     <p className="text-white/70 mb-4">{post.description}</p>
 
                     <span className="inline-flex items-center text-pear font-semibold group-hover:gap-2 transition-all">
-                      Czytaj więcej
+                      {t('readMore')}
                       <span className="inline-block group-hover:translate-x-1 transition-transform">
                         →
                       </span>

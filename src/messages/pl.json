@@ -617,7 +617,8 @@
   "blog": {
     "headline": "Blog",
     "subheadline": "Ekspert wiedza o automatyzacji i AI",
-    "comingSoon": "Wkrótce pojawią się tutaj artykuły o AI i automatyzacji biznesu"
+    "comingSoon": "Wkrótce pojawią się tutaj artykuły o AI i automatyzacji biznesu",
+    "readMore": "Czytaj więcej"
   },
   "faq": {
     "landingHeadline": "Masz pytania? Mamy odpowiedzi",
