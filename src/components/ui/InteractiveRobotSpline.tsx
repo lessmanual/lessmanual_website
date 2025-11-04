@@ -17,28 +17,33 @@ interface InteractiveRobotSplineProps {
    * Optional Tailwind CSS classes for styling
    */
   className?: string
+  /**
+   * Enable interactive 3D Spline loading (default: true for desktop)
+   * Set to false for mobile to show only static image (performance optimization)
+   */
+  enableInteractive?: boolean
 }
 
 /**
  * Interactive Robot Spline Component
  *
- * Deferred-loading 3D Spline viewer for interactive robot animation.
+ * Time-delayed 3D Spline viewer for interactive robot animation.
  * Used in Hero section. Watermark visible (Free plan compliance).
  *
  * Features:
- * - Deferred loading (1.5s delay) to prioritize LCP text rendering
+ * - Conditional rendering: Desktop (3D) vs Mobile (static only)
+ * - Time-delayed loading (3s) to prioritize LCP text rendering
  * - Lazy loads Spline library (code splitting)
  * - React Suspense with static preview image fallback
- * - Responsive container with custom styling
  * - Static robot preview (26KB WebP) shown first for fast render
  * - Spline watermark visible (license compliance)
  *
- * Performance Optimization (CRITICAL #1.2):
- * - Delays Spline chunk (1.9MB) loading by 1.5s
- * - Prevents Spline from blocking React hydration of LCP text
+ * Performance Optimization (CRITICAL Task 1.1):
+ * - Mobile: ZERO Spline load (only static 26KB image)
+ * - Desktop: Delays Spline chunk (1.77MB) loading by 3 seconds
+ * - Prevents Spline from blocking LCP (headline renders <1s)
  * - Shows static preview instantly, 3D loads as progressive enhancement
- * - Reduces TBT (Total Blocking Time) on mobile
- * - Expected impact: LCP text renders in <1s instead of 20s
+ * - Expected impact: LCP improves from 4170ms to <1500ms (mobile), <2000ms (desktop)
  *
  * License Compliance:
  * - Spline Free plan requires visible watermark
@@ -47,14 +52,23 @@ interface InteractiveRobotSplineProps {
  *
  * @example
  * ```tsx
+ * // Mobile: static only
  * <InteractiveRobotSpline
  *   scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
  *   className="w-full h-full"
+ *   enableInteractive={false}
+ * />
+ *
+ * // Desktop: 3s delay, then interactive 3D
+ * <InteractiveRobotSpline
+ *   scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
+ *   className="w-full h-full"
+ *   enableInteractive={true}
  * />
  * ```
  *
  * @param {InteractiveRobotSplineProps} props - Component props
- * @returns {React.ReactElement} Spline 3D viewer with deferred loading
+ * @returns {React.ReactElement} Spline 3D viewer with conditional/time-delayed loading
  *
  * @see {@link https://spline.design} - Spline 3D design tool
  * @see {@link https://www.npmjs.com/package/@splinetool/react-spline} - Spline React package
@@ -62,65 +76,60 @@ interface InteractiveRobotSplineProps {
 export function InteractiveRobotSpline({
   scene,
   className,
+  enableInteractive = true, // Default true for backward compatibility
 }: InteractiveRobotSplineProps): React.ReactElement {
   const [shouldLoadSpline, setShouldLoadSpline] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Smart loading: Load Spline when browser is idle AND component is visible
-    // This prevents blocking LCP while maintaining good UX (no visible delay)
+    // Mobile: Don't load Spline at all (performance optimization)
+    if (!enableInteractive) return
 
-    const loadSplineWhenReady = () => {
-      // Use requestIdleCallback to load during browser idle time
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => {
-          setShouldLoadSpline(true)
-        }, { timeout: 2000 }) // Fallback after 2s if never idle
-      } else {
-        // Fallback for browsers without requestIdleCallback
-        setTimeout(() => setShouldLoadSpline(true), 100)
-      }
-    }
+    // Desktop: Wait 3 seconds AFTER initial load
+    // This gives time for LCP (headline) to render without blocking
+    const delayTimer = setTimeout(() => {
+      setShouldLoadSpline(true)
+    }, 3000) // 3 seconds delay for desktop
 
-    // Check if component is in viewport before loading
-    if (containerRef.current && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            loadSplineWhenReady()
-            observer.disconnect()
-          }
-        },
-        { threshold: 0.1 } // Load when 10% visible
-      )
-      observer.observe(containerRef.current)
-      return () => observer.disconnect()
-    } else {
-      // Fallback if no IntersectionObserver
-      loadSplineWhenReady()
-    }
-  }, [])
+    return () => clearTimeout(delayTimer)
+  }, [enableInteractive])
 
+  // Mobile: Show only static image (no 3D)
+  if (!enableInteractive) {
+    return (
+      <div className={`relative w-full h-full ${className || ''}`}>
+        <Image
+          src="/images/robot-preview.webp"
+          alt="3D Robot"
+          fill
+          priority
+          className="object-contain"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
+      </div>
+    )
+  }
+
+  // Desktop: Static → 3D after 3 seconds
   return (
     <div
-      ref={containerRef}
       className="relative w-full h-full spline-robot-wrapper"
       role="img"
       aria-label="Interactive 3D robot animation"
     >
       {!shouldLoadSpline ? (
-        // Show static preview until Spline is ready to load
+        // Show static preview for first 3 seconds (doesn't block LCP)
         <div className={`relative w-full h-full ${className || ''}`}>
           <Image
             src="/images/robot-preview.webp"
-            alt="Interactive 3D Robot"
+            alt="3D Robot (loading...)"
             fill
             priority
             className="object-contain"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="50vw"
           />
         </div>
       ) : (
+        // After 3s: Load interactive 3D Spline
         <Suspense
           fallback={
             <div className={`relative w-full h-full ${className || ''}`}>
@@ -129,7 +138,7 @@ export function InteractiveRobotSpline({
                 alt="Loading 3D Robot"
                 fill
                 className="object-contain animate-pulse"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="50vw"
               />
             </div>
           }
