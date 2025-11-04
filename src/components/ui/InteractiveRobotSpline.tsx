@@ -96,13 +96,14 @@ export function InteractiveRobotSpline({
   // Mobile: Show only static image (no 3D)
   if (!enableInteractive) {
     return (
-      <div className={`relative w-full h-full ${className || ''}`}>
+      <div className={className}>
         <Image
           src="/images/robot-preview.webp"
           alt="3D Robot"
-          fill
+          width={800}
+          height={800}
           priority
-          className="object-contain"
+          className="object-contain w-full h-full"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
@@ -112,40 +113,36 @@ export function InteractiveRobotSpline({
   // Desktop: Static → 3D after 3 seconds
   return (
     <div
-      className="relative w-full h-full spline-robot-wrapper"
+      className={className}
       role="img"
       aria-label="Interactive 3D robot animation"
     >
       {!shouldLoadSpline ? (
         // Show static preview for first 3 seconds (doesn't block LCP)
-        <div className={`relative w-full h-full ${className || ''}`}>
-          <Image
-            src="/images/robot-preview.webp"
-            alt="3D Robot (loading...)"
-            fill
-            priority
-            className="object-contain"
-            sizes="50vw"
-          />
-        </div>
+        <Image
+          src="/images/robot-preview.webp"
+          alt="3D Robot (loading...)"
+          width={800}
+          height={800}
+          priority
+          className="object-contain w-full h-full"
+          sizes="50vw"
+        />
       ) : (
         // After 3s: Load interactive 3D Spline
         <Suspense
           fallback={
-            <div className={`relative w-full h-full ${className || ''}`}>
-              <Image
-                src="/images/robot-preview.webp"
-                alt="Loading 3D Robot"
-                fill
-                className="object-contain animate-pulse"
-                sizes="50vw"
-              />
-            </div>
+            <Image
+              src="/images/robot-preview.webp"
+              alt="Loading 3D Robot"
+              width={800}
+              height={800}
+              className="object-contain w-full h-full animate-pulse"
+              sizes="50vw"
+            />
           }
         >
-          <div className={className || 'w-full h-full'}>
-            <Spline scene={scene} />
-          </div>
+          <Spline scene={scene} />
         </Suspense>
       )}
     </div>
