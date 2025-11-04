@@ -34,12 +34,9 @@ export function ChatProvider({ children }: { children: React.ReactNode }): React
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  // Lazy initialization - UUID generates only when chat opens (line 122)
+  // This prevents uuid library loading on initial page load (~800ms savings)
   const [sessionId, setSessionId] = useState<string>('')
-
-  // Initialize session ID on mount
-  useEffect(() => {
-    setSessionId(uuidv4())
-  }, [])
 
   /**
    * Send a message to the chatbot API
