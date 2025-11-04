@@ -4,20 +4,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/Button'
-import dynamic from 'next/dynamic'
-
-// Dynamic import for Spline component (client-side only, no SSR)
-const InteractiveRobotSpline = dynamic(
-  () => import('@/components/ui/InteractiveRobotSpline').then(mod => ({ default: mod.InteractiveRobotSpline })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="text-white/50 text-sm">Loading 3D...</div>
-      </div>
-    )
-  }
-)
+import Image from 'next/image'
 
 /**
  * Hero Section - LessManual Homepage
@@ -60,7 +47,6 @@ const InteractiveRobotSpline = dynamic(
  * ```
  *
  * @see {@link https://figma.com/file/...} - Original design reference
- * @see {@link InteractiveRobotSpline} - 3D robot component
  */
 
 /**
@@ -132,16 +118,21 @@ export function HeroSection(): React.ReactElement {
         />
       </div>
 
-      {/* Mobile: Robot positioned at top */}
+      {/* Mobile: Robot composition image at top */}
       <div className="lg:hidden absolute inset-0 flex items-start justify-center pt-20 pointer-events-none z-5">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1.2, delay: 0.3 }}
+          className="relative h-[350px] sm:h-[400px] md:h-[500px] w-[350px] sm:w-[400px] md:w-[500px]"
         >
-          <InteractiveRobotSpline
-            scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-            className="h-[350px] sm:h-[400px] md:h-[500px] scale-[0.85] sm:scale-95 md:scale-100 pointer-events-auto"
+          <Image
+            src="/images/robot-composition.webp"
+            alt="Purple 3D composition"
+            fill
+            priority
+            className="object-contain scale-[0.85] sm:scale-95 md:scale-100"
+            sizes="(max-width: 640px) 350px, (max-width: 768px) 400px, 500px"
           />
         </motion.div>
       </div>
@@ -171,10 +162,16 @@ export function HeroSection(): React.ReactElement {
                 />
               </div>
 
-              <InteractiveRobotSpline
-                scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
-                className="w-full h-[600px] lg:h-[700px]"
-              />
+              <div className="relative w-full h-[600px] lg:h-[700px]">
+                <Image
+                  src="/images/robot-composition.webp"
+                  alt="Purple 3D composition"
+                  fill
+                  priority
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </motion.div>
 

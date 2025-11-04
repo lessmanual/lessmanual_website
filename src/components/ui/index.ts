@@ -37,6 +37,3 @@ export {
 
 // Language Switcher
 export { LanguageSwitcher } from './LanguageSwitcher'
-
-// Interactive 3D Robot
-export { InteractiveRobotSpline } from './InteractiveRobotSpline'
