@@ -71,6 +71,7 @@ export function SpecializationCard({
             alt={title}
             width={1024}
             height={1024}
+            loading="lazy"
             className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, 50vw"
           />

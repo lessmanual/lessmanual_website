@@ -117,6 +117,7 @@ export function ProblemCard({
             src={problemImage}
             alt=""
             fill
+            loading="lazy"
             className="object-cover opacity-30"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
@@ -185,6 +186,7 @@ export function ProblemCard({
             src={solutionImage}
             alt=""
             fill
+            loading="lazy"
             className="object-cover opacity-30"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />

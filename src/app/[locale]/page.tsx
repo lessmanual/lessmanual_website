@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/sections/HeroSection'
 
 // Code-split below-fold sections for better performance
 // These components will be loaded on-demand as user scrolls
+// Dynamic imports provide code splitting and lazy loading
 const ProblemSolutionSection = dynamic(() => import('@/components/sections/ProblemSolutionSection').then(mod => ({ default: mod.ProblemSolutionSection })))
 const SpecializationsSection = dynamic(() => import('@/components/sections/SpecializationsSection').then(mod => ({ default: mod.SpecializationsSection })))
 const HowItWorksSection = dynamic(() => import('@/components/sections/HowItWorksSection').then(mod => ({ default: mod.HowItWorksSection })))

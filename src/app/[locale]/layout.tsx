@@ -132,12 +132,8 @@ export default async function LocaleLayout({
 
         {/* Preconnect to external domains for faster resource loading */}
         {/* Lighthouse recommendation: reduces DNS lookup + TLS handshake time */}
-        <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://prod.spline.design" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* GTM preconnect removed - lazyOnload strategy loads GTM after page interactive */}
+        {/* Unpkg preconnect removed - not used by browser, wastes ~150ms */}
 
         {/* Favicon configuration - PNG sizes first for Google Search */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -153,12 +149,6 @@ export default async function LocaleLayout({
         <link
           rel="preload"
           href="/images/logo.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/images/robot-preview.webp"
           as="image"
           type="image/webp"
         />
