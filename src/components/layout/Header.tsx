@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, useScroll } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -52,17 +51,24 @@ export function Header(): React.ReactElement {
   const locale = useLocale()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const toggleButtonRef = useRef<HTMLButtonElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
-  const { scrollY } = useScroll()
+  // Initial mount animation
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Detect scroll for background opacity change
   useEffect(() => {
-    return scrollY.on('change', (latest) => {
-      setScrolled(latest > 50)
-    })
-  }, [scrollY])
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Close mobile menu on escape key
   useEffect(() => {
@@ -146,15 +152,15 @@ export function Header(): React.ReactElement {
   ]
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300 ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 ${
         scrolled
           ? 'bg-night/95 border-pear/50 shadow-lg shadow-pear/10'
           : 'bg-night/80 border-pear/30'
-      } backdrop-blur-md`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      } backdrop-blur-md ${
+        mounted ? 'translate-y-0' : '-translate-y-full'
+      }`}
+      style={{ transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' }}
     >
       {/* Skip to content link (accessibility) */}
       <a
@@ -291,6 +297,6 @@ export function Header(): React.ReactElement {
           </div>
         )}
       </nav>
-    </motion.header>
+    </header>
   )
 }

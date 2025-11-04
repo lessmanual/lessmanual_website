@@ -151,8 +151,8 @@ export function AboutSection(): React.ReactElement {
                   alt={t('aria.profileImageAlt')}
                   width={320}
                   height={320}
+                  loading="lazy"
                   className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-110"
-                  priority
                 />
               </motion.div>
             </div>
