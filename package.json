@@ -13,6 +13,7 @@
     "@ai-sdk/openai": "^2.0.59",
     "@splinetool/react-spline": "^4.1.0",
     "@supabase/supabase-js": "^2.45.4",
+    "@vercel/speed-insights": "^1.2.0",
     "ai": "^5.0.86",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

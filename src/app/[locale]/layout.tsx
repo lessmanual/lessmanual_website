@@ -11,6 +11,7 @@ import { CookieBanner } from '@/components/CookieBanner'
 import { ScrollToTopButton } from '@/components/ui/ScrollToTopButton'
 import { ChatProvider } from '@/contexts/ChatContext'
 import { ChatWidget } from '@/components/chatbot/ChatWidget'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import '@/styles/globals.css'
 
 /**
@@ -208,6 +209,7 @@ export default async function LocaleLayout({
             <ChatWidget />
           </ChatProvider>
         </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
