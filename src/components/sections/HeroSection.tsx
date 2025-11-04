@@ -4,7 +4,20 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/Button'
-import { InteractiveRobotSpline } from '@/components/ui/InteractiveRobotSpline'
+import dynamic from 'next/dynamic'
+
+// Dynamic import for Spline component (client-side only, no SSR)
+const InteractiveRobotSpline = dynamic(
+  () => import('@/components/ui/InteractiveRobotSpline').then(mod => ({ default: mod.InteractiveRobotSpline })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="text-white/50 text-sm">Loading 3D...</div>
+      </div>
+    )
+  }
+)
 
 /**
  * Hero Section - LessManual Homepage
@@ -119,7 +132,7 @@ export function HeroSection(): React.ReactElement {
         />
       </div>
 
-      {/* Mobile: Robot positioned at top (STATIC ONLY - no 3D load) */}
+      {/* Mobile: Robot positioned at top */}
       <div className="lg:hidden absolute inset-0 flex items-start justify-center pt-20 pointer-events-none z-5">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -129,7 +142,6 @@ export function HeroSection(): React.ReactElement {
           <InteractiveRobotSpline
             scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
             className="h-[350px] sm:h-[400px] md:h-[500px] scale-[0.85] sm:scale-95 md:scale-100 pointer-events-auto"
-            enableInteractive={false}
           />
         </motion.div>
       </div>
@@ -140,7 +152,7 @@ export function HeroSection(): React.ReactElement {
         style={{ y, opacity }}
       >
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center lg:w-full flex flex-col h-full lg:h-auto">
-          {/* Desktop: Robot in grid (3s delay → interactive 3D) */}
+          {/* Desktop: Robot in grid */}
           <motion.div
             className="hidden lg:flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -162,7 +174,6 @@ export function HeroSection(): React.ReactElement {
               <InteractiveRobotSpline
                 scene="https://prod.spline.design/3ktnK8grjpkv8aQt/scene.splinecode"
                 className="w-full h-[600px] lg:h-[700px]"
-                enableInteractive={true}
               />
             </div>
           </motion.div>
