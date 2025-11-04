@@ -14,17 +14,25 @@ export async function POST(request: NextRequest) {
 
     // Select webhook based on language
     const locale = payload.locale || 'pl' // Default to Polish
+
+    // ✅ SECURITY FIX: Use environment variables for webhook URLs
     const webhookUrl = locale === 'en'
-      ? 'https://n8n.lessmanual.cloud/webhook/913e682a-e11c-42d5-af2c-3e066ed46e0d-en'
-      : 'https://n8n.lessmanual.cloud/webhook/913e682a-e11c-42d5-af2c-3e066ed46e0d'
+      ? process.env.N8N_WEBHOOK_URL_EN
+      : process.env.N8N_WEBHOOK_URL_PL
 
-    const webhookUsername = process.env.NEXT_PUBLIC_N8N_WEBHOOK_USERNAME
-    const webhookPassword = process.env.NEXT_PUBLIC_N8N_WEBHOOK_PASSWORD
+    // ✅ SECURITY FIX: Server-side only credentials (no NEXT_PUBLIC_ prefix)
+    const webhookUsername = process.env.N8N_WEBHOOK_USERNAME
+    const webhookPassword = process.env.N8N_WEBHOOK_PASSWORD
 
-    if (!webhookUsername || !webhookPassword) {
-      console.error('❌ Missing webhook credentials')
+    if (!webhookUrl || !webhookUsername || !webhookPassword) {
+      console.error('❌ Missing webhook configuration:', {
+        hasUrl: !!webhookUrl,
+        hasUsername: !!webhookUsername,
+        hasPassword: !!webhookPassword,
+        locale
+      })
       return NextResponse.json(
-        { error: 'Webhook credentials not configured' },
+        { error: 'Webhook not configured' },
         { status: 500 }
       )
     }
