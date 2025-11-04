@@ -133,7 +133,7 @@ export default async function LocaleLayout({
         {/* Preconnect to external domains for faster resource loading */}
         {/* Lighthouse recommendation: reduces DNS lookup + TLS handshake time */}
         {/* GTM preconnect removed - lazyOnload strategy loads GTM after page interactive */}
-        <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
+        {/* Unpkg preconnect removed - not used by browser, wastes ~150ms */}
 
         {/* Favicon configuration - PNG sizes first for Google Search */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -3,14 +3,39 @@ import { HeroSection } from '@/components/sections/HeroSection'
 
 // Code-split below-fold sections for better performance
 // These components will be loaded on-demand as user scrolls
-const ProblemSolutionSection = dynamic(() => import('@/components/sections/ProblemSolutionSection').then(mod => ({ default: mod.ProblemSolutionSection })))
-const SpecializationsSection = dynamic(() => import('@/components/sections/SpecializationsSection').then(mod => ({ default: mod.SpecializationsSection })))
-const HowItWorksSection = dynamic(() => import('@/components/sections/HowItWorksSection').then(mod => ({ default: mod.HowItWorksSection })))
-const ROICalculatorSection = dynamic(() => import('@/components/sections/ROICalculatorSection').then(mod => ({ default: mod.ROICalculatorSection })))
-const FinalCTASection = dynamic(() => import('@/components/sections/FinalCTASection').then(mod => ({ default: mod.FinalCTASection })))
-const AboutSection = dynamic(() => import('@/components/sections/AboutSection').then(mod => ({ default: mod.AboutSection })))
-const ContactFormSection = dynamic(() => import('@/components/sections/ContactFormSection').then(mod => ({ default: mod.ContactFormSection })))
-const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })))
+// ssr: false prevents server-side rendering, reducing initial bundle size
+const ProblemSolutionSection = dynamic(
+  () => import('@/components/sections/ProblemSolutionSection').then(mod => ({ default: mod.ProblemSolutionSection })),
+  { ssr: false }
+)
+const SpecializationsSection = dynamic(
+  () => import('@/components/sections/SpecializationsSection').then(mod => ({ default: mod.SpecializationsSection })),
+  { ssr: false }
+)
+const HowItWorksSection = dynamic(
+  () => import('@/components/sections/HowItWorksSection').then(mod => ({ default: mod.HowItWorksSection })),
+  { ssr: false }
+)
+const ROICalculatorSection = dynamic(
+  () => import('@/components/sections/ROICalculatorSection').then(mod => ({ default: mod.ROICalculatorSection })),
+  { ssr: false }
+)
+const FinalCTASection = dynamic(
+  () => import('@/components/sections/FinalCTASection').then(mod => ({ default: mod.FinalCTASection })),
+  { ssr: false }
+)
+const AboutSection = dynamic(
+  () => import('@/components/sections/AboutSection').then(mod => ({ default: mod.AboutSection })),
+  { ssr: false }
+)
+const ContactFormSection = dynamic(
+  () => import('@/components/sections/ContactFormSection').then(mod => ({ default: mod.ContactFormSection })),
+  { ssr: false }
+)
+const FAQSection = dynamic(
+  () => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })),
+  { ssr: false }
+)
 
 /**
  * Homepage - LessManual.ai
