@@ -68,7 +68,7 @@ export async function generateMetadata({
       description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
       images: [
         {
-          url: 'https://www.lessmanual.ai/images/og-image.png',
+          url: 'https://www.lessmanual.ai/images/og-image.png?v=2',
           width: 1200,
           height: 630,
           alt: 'LessManual - Make Your Business LESSMANUAL',
@@ -79,7 +79,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: 'LessManual - Make your business LESSMANUAL',
       description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
-      images: ['https://www.lessmanual.ai/images/og-image.png'],
+      images: ['https://www.lessmanual.ai/images/og-image.png?v=2'],
     },
   }
 }
