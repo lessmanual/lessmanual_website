@@ -1,0 +1,63 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "lessmanual.ai"
+        }
+      ],
+      "destination": "https://www.lessmanual.ai/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lessmanual.ai"
+        }
+      ],
+      "destination": "https://www.lessmanual.ai/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/legal/:slug",
+      "destination": "/pl/legal/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/pl/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/pl/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/pl/faq",
+      "permanent": true
+    },
+    {
+      "source": "/$",
+      "destination": "/pl",
+      "permanent": true
+    }
+  ]
+}
