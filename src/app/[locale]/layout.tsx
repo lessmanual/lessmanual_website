@@ -49,7 +49,7 @@ export async function generateMetadata({
       default: 'LessManual - Make your business LESSMANUAL',
       template: '%s | LessManual',
     },
-    description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+    description: 'Make your business LessManual. Wdrażamy automatyzacje AI, technologię która zarabia pieniądze i oszczędza czas.',
     keywords: ['AI', 'automatyzacja', 'chatbot', 'voice agent', 'polska firma', 'SaaS'],
     authors: [{ name: 'LessManual' }],
     alternates: {
@@ -65,7 +65,7 @@ export async function generateMetadata({
       url: `https://www.lessmanual.ai/${locale}`,
       siteName: 'LessManual',
       title: 'LessManual - Make your business LESSMANUAL',
-      description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+      description: 'Make your business LessManual. Wdrażamy automatyzacje AI, technologię która zarabia pieniądze i oszczędza czas.',
       images: [
         {
           url: 'https://www.lessmanual.ai/images/og-image.png?v=2',
@@ -78,7 +78,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: 'LessManual - Make your business LESSMANUAL',
-      description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+      description: 'Make your business LessManual. Wdrażamy automatyzacje AI, technologię która zarabia pieniądze i oszczędza czas.',
       images: ['https://www.lessmanual.ai/images/og-image.png?v=2'],
     },
   }
@@ -128,7 +128,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
       <head>
         {/* CRITICAL: Static meta description for Lighthouse (before metadata streaming) */}
-        <meta name="description" content="Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas." />
+        <meta name="description" content="Make your business LessManual. Wdrażamy automatyzacje AI, technologię która zarabia pieniądze i oszczędza czas." />
 
         {/* Preconnect to external domains for faster resource loading */}
         {/* Lighthouse recommendation: reduces DNS lookup + TLS handshake time */}
@@ -163,7 +163,7 @@ export default async function LocaleLayout({
               name: 'LessManual',
               url: 'https://lessmanual.ai',
               logo: 'https://lessmanual.ai/logo.png',
-              description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+              description: 'Make your business LessManual. Wdrażamy automatyzacje AI, technologię która zarabia pieniądze i oszczędza czas.',
               foundingDate: '2024',
               address: {
                 '@type': 'PostalAddress',
@@ -183,7 +183,7 @@ export default async function LocaleLayout({
               '@type': 'WebSite',
               name: 'LessManual',
               url: 'https://lessmanual.ai',
-              description: 'Automatyzacja AI dla firm. Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.',
+              description: 'Make your business LessManual. Wdrażamy automatyzacje AI, technologię która zarabia pieniądze i oszczędza czas.',
               inLanguage: ['pl', 'en'],
             }),
           }}
