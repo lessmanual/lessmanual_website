@@ -8,11 +8,13 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale,
 
-  // Always use locale prefix (e.g., /pl, /en)
-  localePrefix: 'always',
+  // Only add locale prefix for non-default locale (pl = no prefix, en = /en prefix)
+  localePrefix: 'as-needed',
 })
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(pl|en)/:path*'],
+  // Match all pathnames except for api routes, Next.js internals, and static files
+  matcher: [
+    '/((?!api|_next|_vercel|.*\\..*).*)'
+  ],
 }

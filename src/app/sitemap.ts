@@ -44,18 +44,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Generate sitemap entries for both locales (pl, en)
-  const locales = ['pl', 'en']
+  // Generate sitemap entries for both locales
+  // pl (default) = no prefix, en = /en prefix
   const sitemapEntries: MetadataRoute.Sitemap = []
 
-  locales.forEach((locale) => {
-    routes.forEach((route) => {
-      sitemapEntries.push({
-        url: `${baseUrl}/${locale}${route.url}`,
-        lastModified: currentDate,
-        changeFrequency: route.changeFrequency,
-        priority: route.priority,
-      })
+  // Polish (default locale) - no prefix
+  routes.forEach((route) => {
+    sitemapEntries.push({
+      url: `${baseUrl}${route.url}`,
+      lastModified: currentDate,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
+    })
+  })
+
+  // English (non-default locale) - /en prefix
+  routes.forEach((route) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/en${route.url}`,
+      lastModified: currentDate,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
     })
   })
 

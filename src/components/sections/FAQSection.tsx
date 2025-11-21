@@ -56,12 +56,32 @@ export function FAQSection(): React.ReactElement {
     setActiveIndex(activeIndex === index ? null : index)
   }
 
+  // Generate FAQPage structured data for SEO/AEO
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: top5Questions.map((questionId) => ({
+      '@type': 'Question',
+      name: t(`questions.${questionId}.question`),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: t(`questions.${questionId}.answer`),
+      },
+    })),
+  }
+
   return (
     <section
       id="faq"
       className="relative overflow-hidden bg-night py-24 lg:py-32"
       aria-labelledby="faq-heading"
     >
+      {/* FAQPage Structured Data for SEO/AEO (Featured Snippets) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {/* Subtle grid pattern */}
