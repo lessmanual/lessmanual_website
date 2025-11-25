@@ -43,16 +43,6 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  // 301 redirects from old /pl/* URLs to new /* URLs
-  async redirects() {
-    return [
-      {
-        source: '/pl/:path*',
-        destination: '/:path*',
-        permanent: true,
-      },
-    ]
-  },
 }
 
 export default withNextIntl(nextConfig)

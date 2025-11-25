@@ -33,31 +33,6 @@
       ],
       "destination": "https://www.lessmanual.ai/:path*",
       "permanent": true
-    },
-    {
-      "source": "/legal/:slug",
-      "destination": "/pl/legal/:slug",
-      "permanent": true
-    },
-    {
-      "source": "/blog",
-      "destination": "/pl/blog",
-      "permanent": true
-    },
-    {
-      "source": "/blog/:slug",
-      "destination": "/pl/blog/:slug",
-      "permanent": true
-    },
-    {
-      "source": "/faq",
-      "destination": "/pl/faq",
-      "permanent": true
-    },
-    {
-      "source": "/$",
-      "destination": "/pl",
-      "permanent": true
     }
   ]
 }
