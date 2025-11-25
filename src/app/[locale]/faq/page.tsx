@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { ChevronDown } from 'lucide-react'
+import { BackButton } from '@/components/ui/BackButton'
 
 /**
  * FAQ Page - Complete FAQ List (30 Questions)
@@ -66,6 +67,11 @@ export default function FAQPage(): React.ReactElement {
     <div className="min-h-screen bg-night">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto">
+          {/* Back Button */}
+          <div className="mb-8">
+            <BackButton />
+          </div>
+
           {/* Header */}
           <div className="text-center mb-16">
             <motion.h1

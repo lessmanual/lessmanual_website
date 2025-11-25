@@ -803,5 +803,8 @@
         "category": "business"
       }
     }
+  },
+  "common": {
+    "back": "Wróć"
   }
 }

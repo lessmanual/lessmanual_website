@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
+import { BackButton } from '@/components/ui/BackButton'
 
 /**
  * Blog Page
@@ -47,6 +48,11 @@ export default async function BlogPage({
     <div className="min-h-screen bg-night">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto">
+          {/* Back Button */}
+          <div className="mb-8">
+            <BackButton />
+          </div>
+
           {/* Header */}
           <div className="text-center mb-16">
             <h1

@@ -1,6 +1,5 @@
-import { Link } from '@/i18n/navigation'
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
+import { BackButton } from '@/components/ui/BackButton'
 
 /**
  * Legal Pages Layout Component
@@ -40,25 +39,7 @@ export default async function LegalLayout({
       {/* Header with navigation */}
       <header className="border-b border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-pear transition-colors duration-200"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            {t('backToHome')}
-          </Link>
+          <BackButton label={t('backToHome')} />
         </div>
       </header>
 
