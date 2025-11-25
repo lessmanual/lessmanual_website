@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
   params,
@@ -38,7 +38,7 @@ export default async function BlogPost({
         <div className="max-w-4xl mx-auto">
           {/* Back to Blog */}
           <Link
-            href={`/${locale}/blog`}
+            href="/blog"
             className="inline-flex items-center text-pear hover:text-pear/80 transition-colors mb-8"
           >
             ← Powrót do bloga
@@ -293,7 +293,7 @@ export default async function BlogPost({
               </p>
               <p className="text-white/80 mb-4">Chcesz więcej treści o AI automation?</p>
               <Link
-                href={`/${locale}`}
+                href="/"
                 className="inline-block bg-pear hover:bg-pear/90 text-night font-bold px-6 py-3 rounded-lg transition-colors"
               >
                 → lessmanual.ai

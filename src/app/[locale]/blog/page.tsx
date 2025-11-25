@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 
 /**
@@ -65,7 +65,7 @@ export default async function BlogPage({
             {blogPosts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/${locale}/blog/${post.slug}`}
+                href={`/blog/${post.slug}`}
                 className="block group"
               >
                 <article className="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-pear/30 transition-all duration-300">

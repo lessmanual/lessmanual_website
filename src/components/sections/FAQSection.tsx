@@ -3,8 +3,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import { useLocale } from 'next-intl'
 import { ChevronDown } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 /**
  * FAQ Section - Top 5 Most Important Questions (Landing Page)
@@ -46,7 +46,6 @@ import { ChevronDown } from 'lucide-react'
  */
 export function FAQSection(): React.ReactElement {
   const t = useTranslations('faq')
-  const locale = useLocale()
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   // Top 5 FAQ IDs
@@ -198,13 +197,13 @@ export function FAQSection(): React.ReactElement {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <a
-            href={`/${locale}/faq`}
+          <Link
+            href="/faq"
             className="inline-flex items-center gap-2 text-pear font-semibold hover:underline transition-all hover:gap-3"
           >
             {t('viewAllQuestions', { default: 'Zobacz wszystkie pytania' })}
             <ChevronDown className="w-5 h-5 -rotate-90" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

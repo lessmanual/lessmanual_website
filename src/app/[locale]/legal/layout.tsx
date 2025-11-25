@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
@@ -41,7 +41,7 @@ export default async function LegalLayout({
       <header className="border-b border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <Link
-            href={`/${locale}`}
+            href="/"
             className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-pear transition-colors duration-200"
           >
             <svg

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 
 /**
@@ -147,8 +147,8 @@ export function Header(): React.ReactElement {
     { href: '#how-it-works', label: t('howItWorks'), isAnchor: true },
     { href: '#kalkulator', label: t('roi'), isAnchor: true },
     { href: '#about', label: t('about'), isAnchor: true },
-    { href: `/${locale}/blog`, label: t('blog'), isAnchor: false },
-    { href: `/${locale}/faq`, label: t('faq'), isAnchor: false },
+    { href: '/blog', label: t('blog'), isAnchor: false },
+    { href: '/faq', label: t('faq'), isAnchor: false },
     { href: `#${locale === 'en' ? 'contact' : 'kontakt'}`, label: t('contact'), isAnchor: true },
   ]
 
@@ -178,7 +178,7 @@ export function Header(): React.ReactElement {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link
-            href={`/${locale}`}
+            href="/"
             className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pear focus:ring-offset-2 focus:ring-offset-night rounded-md"
           >
             <Image

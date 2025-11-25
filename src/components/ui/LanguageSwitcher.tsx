@@ -1,6 +1,7 @@
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter } from '@/i18n/navigation'
+import { useParams } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { locales, localeNames, localeFlags, type Locale } from '@/i18n/config'
 import { motion } from 'framer-motion'
@@ -20,8 +21,9 @@ import { motion } from 'framer-motion'
  * - Spring animation with layoutId for smooth transitions
  *
  * i18n Integration:
- * - Uses next-intl hooks (useLocale, usePathname)
- * - Replaces locale prefix in pathname (e.g., /pl/about → /en/about)
+ * - Uses next-intl navigation API (useRouter, usePathname, useParams)
+ * - Automatically handles localePrefix: 'as-needed' (PL without prefix, EN with /en)
+ * - Preserves pathname and query params when switching locale
  * - Configured locales: PL (default), EN
  *
  * Accessibility:
@@ -50,13 +52,18 @@ export function LanguageSwitcher(): React.ReactElement {
   const locale = useLocale() as Locale
   const router = useRouter()
   const pathname = usePathname()
+  const params = useParams()
 
   const switchLanguage = (newLocale: Locale) => {
     if (newLocale === locale) return
 
-    // Replace locale in pathname (regex ensures only path prefix is replaced)
-    const newPathname = pathname.replace(/^\/(pl|en)/, `/${newLocale}`)
-    router.push(newPathname)
+    // Use next-intl router with locale parameter
+    // This automatically handles localePrefix: 'as-needed'
+    router.replace(
+      // @ts-expect-error - params is typed as Record<string, string | string[]>
+      { pathname, params },
+      { locale: newLocale }
+    )
   }
 
   return (

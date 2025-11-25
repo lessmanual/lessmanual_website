@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -160,7 +160,7 @@ export function CookieBanner(): React.ReactElement | null {
                     <p className="text-sm text-white/60">
                       {t('moreInfo')}{' '}
                       <Link
-                        href={`/${locale}/legal/polityka-cookies`}
+                        href="/legal/polityka-cookies"
                         className="text-pear hover:underline"
                       >
                         {t('cookiePolicy')}

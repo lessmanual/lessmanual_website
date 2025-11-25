@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 
@@ -153,8 +153,8 @@ export function Footer(): React.ReactElement {
             <ul className="space-y-3">
               {[
                 { key: 'about', href: '#about' },
-                { key: 'blog', href: `/${locale}/blog` },
-                { key: 'faq', href: `/${locale}/faq` },
+                { key: 'blog', href: '/blog' },
+                { key: 'faq', href: '/faq' },
                 { key: 'roi', href: '#kalkulator' },
               ].map((item) => (
                 <li key={item.key}>
@@ -237,21 +237,21 @@ export function Footer(): React.ReactElement {
         >
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             <Link
-              href={`/${locale}/legal/polityka-prywatnosci`}
+              href="/legal/polityka-prywatnosci"
               className="text-sm text-white/60 hover:text-pear transition-colors duration-200"
             >
               🔒 {t('legal.privacy')}
             </Link>
             <span className="text-white/20">|</span>
             <Link
-              href={`/${locale}/legal/polityka-cookies`}
+              href="/legal/polityka-cookies"
               className="text-sm text-white/60 hover:text-pear transition-colors duration-200"
             >
               🍪 {t('legal.cookies')}
             </Link>
             <span className="text-white/20">|</span>
             <Link
-              href={`/${locale}/legal/regulamin`}
+              href="/legal/regulamin"
               className="text-sm text-white/60 hover:text-pear transition-colors duration-200"
             >
               📜 {t('legal.terms')}
