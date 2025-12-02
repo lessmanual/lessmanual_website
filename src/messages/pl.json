@@ -804,6 +804,13 @@
       }
     }
   },
+  "thankYou": {
+    "title": "Dziękujemy!",
+    "subtitle": "Twoja wiadomość została wysłana",
+    "description": "Skontaktujemy się z Tobą wkrótce. Sprawdź swoją skrzynkę email - powinieneś otrzymać potwierdzenie wysłania formularza.",
+    "cta": "Wróć do strony głównej",
+    "footer": "Do usłyszenia! 🚀"
+  },
   "common": {
     "back": "Wróć"
   }

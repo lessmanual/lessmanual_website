@@ -804,6 +804,13 @@
       }
     }
   },
+  "thankYou": {
+    "title": "Thank You!",
+    "subtitle": "Your message has been sent",
+    "description": "We'll get back to you shortly. Check your email inbox - you should receive a confirmation of the form submission.",
+    "cta": "Back to Homepage",
+    "footer": "See you soon! 🚀"
+  },
   "common": {
     "back": "Go back"
   }
