@@ -90,6 +90,17 @@ export function CookieBanner(): React.ReactElement | null {
         ad_storage: prefs.marketing ? 'granted' : 'denied',
       })
     }
+
+    // Update Facebook Pixel consent
+    if (typeof window !== 'undefined' && window.fbq) {
+      if (prefs.marketing) {
+        // Grant consent - enable tracking
+        window.fbq('consent', 'grant')
+      } else {
+        // Revoke consent - disable tracking
+        window.fbq('consent', 'revoke')
+      }
+    }
   }
 
   const savePreferences = (prefs: CookiePreferences) => {
@@ -307,7 +318,7 @@ export function CookieBanner(): React.ReactElement | null {
   )
 }
 
-// TypeScript declaration for gtag
+// TypeScript declaration for gtag and fbq
 declare global {
   interface Window {
     gtag?: (
@@ -315,5 +326,6 @@ declare global {
       action: string,
       params: Record<string, string>
     ) => void
+    fbq?: (action: string, event: string, params?: Record<string, any>) => void
   }
 }

@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { locales } from '@/i18n/config'
 import { GoogleTagManager } from '@/components/GoogleTagManager'
+import { FacebookPixel } from '@/components/FacebookPixel'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { CookieBanner } from '@/components/CookieBanner'
@@ -387,6 +388,7 @@ export default async function LocaleLayout({
       </head>
       <body className="bg-night text-white antialiased font-sans">
         <GoogleTagManager />
+        <FacebookPixel />
         <NextIntlClientProvider messages={messages}>
           <ChatProvider>
             <Header />

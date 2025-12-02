@@ -10,27 +10,43 @@
  * - lead_captured: User submits contact form
  */
 
-// Extend Window interface for GTM dataLayer
+// Extend Window interface for GTM dataLayer and Facebook Pixel
 declare global {
   interface Window {
     dataLayer?: any[]
+    fbq?: (action: string, event: string, params?: Record<string, any>) => void
   }
 }
 
 /**
- * Push event to GTM dataLayer
+ * Push event to GTM dataLayer and Facebook Pixel
  */
 export function trackEvent(eventName: string, eventParams?: Record<string, any>) {
   if (typeof window === 'undefined') return
 
-  // Initialize dataLayer if doesn't exist
+  // Push to GTM dataLayer
   window.dataLayer = window.dataLayer || []
-
-  // Push event to dataLayer
   window.dataLayer.push({
     event: eventName,
     ...eventParams
   })
+
+  // Push to Facebook Pixel (if loaded)
+  if (window.fbq) {
+    // Map event names to Facebook standard events where possible
+    const fbEventMap: Record<string, string> = {
+      'lead_captured': 'Lead',
+      'demo_booking_started': 'InitiateCheckout',
+      'demo_booking_completed': 'Schedule',
+      'contact_form_submitted': 'Contact',
+      'product_selected': 'ViewContent',
+      'results_viewed': 'ViewContent',
+      'quiz_completed': 'CompleteRegistration',
+    }
+
+    const fbEventName = fbEventMap[eventName] || eventName
+    window.fbq('track', fbEventName, eventParams)
+  }
 
   // Log in development
   if (process.env.NODE_ENV === 'development') {
