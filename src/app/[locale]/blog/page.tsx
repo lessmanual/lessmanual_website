@@ -34,6 +34,15 @@ export default async function BlogPage({
   // Blog posts data - in the future, this could come from a CMS or database
   const blogPosts = [
     {
+      slug: 'jak-wybrac-procesy-do-automatyzacji-framework-80-20',
+      title: 'Jak wybrać procesy do automatyzacji? Framework 80/20',
+      description: '73% projektów automatyzacji kończy się porażką. Poznaj framework, który oszczędził mi 120 godzin miesięcznie.',
+      date: '2026-01-04',
+      dateDisplay: '4 stycznia 2026',
+      readTime: '12 min czytania',
+      image: '/images/blog/framework-80-20-automatyzacja.webp',
+    },
+    {
       slug: 'jak-tworzyc-wyspecjalizowanych-asystentow-ai',
       title: 'Jak tworzyć wyspecjalizowanych asystentów AI?',
       description: 'Czyli parę słów o tym jak działają Projekty/Gemy w ChatGPT/Claude/Gemini.',
