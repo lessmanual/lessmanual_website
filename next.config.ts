@@ -41,16 +41,13 @@ const nextConfig: NextConfig = {
         source: '/logo.png',
         destination: '/images/logo.png',
       },
-      // Polish thank-you page URL
-      {
-        source: '/dziekujemy',
-        destination: '/thank-you',
-      },
     ]
   },
   // Redirects for section URLs (SEO-friendly)
   async redirects() {
     return [
+      // Polish thank-you page URL (dziekujemy -> thank-you)
+      { source: '/dziekujemy', destination: '/thank-you', permanent: true },
       // Polish section URLs
       { source: '/kontakt', destination: '/#kontakt', permanent: true },
       { source: '/kalkulator-roi-automatyzacji', destination: '/#kalkulator', permanent: true },
