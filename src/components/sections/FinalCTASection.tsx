@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion, useInView } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { fadeInUp } from '@/lib/animations'
 
 /**
@@ -45,11 +45,14 @@ import { fadeInUp } from '@/lib/animations'
  */
 export function FinalCTASection(): React.ReactElement {
   const t = useTranslations('finalCta')
+  const locale = useLocale()
   const ref = React.useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   const handleScrollToContact = () => {
-    const contactSection = document.getElementById('contact')
+    // Use locale-aware section ID: 'kontakt' for PL, 'contact' for EN
+    const contactId = locale === 'en' ? 'contact' : 'kontakt'
+    const contactSection = document.getElementById(contactId)
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }

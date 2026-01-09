@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useLocale } from 'next-intl'
 
 /**
  * SpecializationCard Component
@@ -49,7 +50,10 @@ export function SpecializationCard({
   image,
   imagePosition,
 }: SpecializationCardProps): React.ReactElement {
+  const locale = useLocale()
   const isImageLeft = imagePosition === 'left'
+  // Use locale-aware section ID: 'kontakt' for PL, 'contact' for EN
+  const contactHref = locale === 'en' ? '#contact' : '#kontakt'
 
   return (
     <div
@@ -156,7 +160,7 @@ export function SpecializationCard({
         </div>
 
         {/* CTA Button */}
-        <a href="#contact">
+        <a href={contactHref}>
           <motion.button
             className="px-8 py-4 bg-pear text-night font-semibold rounded-lg shadow-lg hover:shadow-pear/50 transition-all duration-200"
             whileHover={{ scale: 1.05 }}

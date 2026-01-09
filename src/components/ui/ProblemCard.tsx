@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useLocale } from 'next-intl'
 import { Button } from '@/components/ui/Button'
 import { fadeInUp } from '@/lib/animations'
 
@@ -85,6 +86,10 @@ export function ProblemCard({
   problemImage,
   solutionImage,
 }: ProblemCardProps): React.ReactElement {
+  const locale = useLocale()
+  // Use locale-aware section ID: 'kontakt' for PL, 'contact' for EN
+  const contactHref = locale === 'en' ? '#contact' : '#kontakt'
+
   return (
     <motion.article
       variants={fadeInUp}
@@ -206,7 +211,7 @@ export function ProblemCard({
 
           {/* CTA Button */}
           <div className="flex justify-center">
-            <a href="#contact" className="w-full md:w-auto">
+            <a href={contactHref} className="w-full md:w-auto">
               <Button
                 variant="primary"
                 size="md"

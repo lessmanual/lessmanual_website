@@ -42,8 +42,7 @@ export function ContactFormSection(): React.ReactElement {
     company: '',
     interest: '',
     message: '',
-    wantCall: false,
-    preferEmail: false,
+    contactPreference: '' as '' | 'call' | 'email',
   })
 
   // Webhook URLs per language
@@ -64,13 +63,16 @@ export function ContactFormSection(): React.ReactElement {
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value, type } = e.target
-    if (type === 'checkbox') {
-      const checked = (e.target as HTMLInputElement).checked
-      setFormData(prev => ({ ...prev, [name]: checked }))
-    } else {
-      setFormData(prev => ({ ...prev, [name]: value }))
-    }
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  // Handler for contact preference radio buttons (mutually exclusive)
+  const handleContactPreferenceChange = (preference: 'call' | 'email') => {
+    setFormData(prev => ({
+      ...prev,
+      contactPreference: prev.contactPreference === preference ? '' : preference
+    }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -78,10 +80,11 @@ export function ContactFormSection(): React.ReactElement {
     setIsSubmitting(true)
     setError(null)
 
-    // Build checkbox array (same format as n8n form)
+    // Build contact preference array (same format as n8n form)
+    // Only one option can be selected at a time (radio button behavior)
     const callPreference: string[] = []
-    if (formData.wantCall) callPreference.push('Chcę')
-    if (formData.preferEmail) callPreference.push('Wolę kontakt mailowy')
+    if (formData.contactPreference === 'call') callPreference.push('Chcę')
+    if (formData.contactPreference === 'email') callPreference.push('Wolę kontakt mailowy')
 
     // Build payload with exact n8n field names
     const payload = {
@@ -341,32 +344,48 @@ export function ContactFormSection(): React.ReactElement {
                 />
               </div>
 
-              {/* Row 6: Checkboxes */}
+              {/* Row 6: Contact Preference (Radio buttons - only 1 selectable) */}
               <div className="space-y-3">
-                <label className="flex items-start gap-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    name="wantCall"
-                    checked={formData.wantCall}
-                    onChange={handleInputChange}
-                    className="mt-1 w-5 h-5 rounded border-white/20 bg-white/5 text-pear focus:ring-pear focus:ring-offset-0 cursor-pointer"
-                  />
+                <button
+                  type="button"
+                  onClick={() => handleContactPreferenceChange('call')}
+                  className="flex items-start gap-3 cursor-pointer group w-full text-left"
+                >
+                  <div
+                    className={`mt-0.5 w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
+                      formData.contactPreference === 'call'
+                        ? 'border-pear bg-pear'
+                        : 'border-white/20 bg-white/5'
+                    }`}
+                  >
+                    {formData.contactPreference === 'call' && (
+                      <div className="w-2 h-2 rounded-full bg-night" />
+                    )}
+                  </div>
                   <span className="text-white/70 text-sm group-hover:text-white/90 transition-colors">
                     {t('form.wantCall')}
                   </span>
-                </label>
-                <label className="flex items-start gap-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    name="preferEmail"
-                    checked={formData.preferEmail}
-                    onChange={handleInputChange}
-                    className="mt-1 w-5 h-5 rounded border-white/20 bg-white/5 text-pear focus:ring-pear focus:ring-offset-0 cursor-pointer"
-                  />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleContactPreferenceChange('email')}
+                  className="flex items-start gap-3 cursor-pointer group w-full text-left"
+                >
+                  <div
+                    className={`mt-0.5 w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
+                      formData.contactPreference === 'email'
+                        ? 'border-pear bg-pear'
+                        : 'border-white/20 bg-white/5'
+                    }`}
+                  >
+                    {formData.contactPreference === 'email' && (
+                      <div className="w-2 h-2 rounded-full bg-night" />
+                    )}
+                  </div>
                   <span className="text-white/70 text-sm group-hover:text-white/90 transition-colors">
                     {t('form.preferEmail')}
                   </span>
-                </label>
+                </button>
               </div>
 
               {/* Error Message */}

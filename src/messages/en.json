@@ -164,7 +164,7 @@
       "title": "Knowledge Assistant",
       "subtitle": "RAG - AI for your team",
       "outcome": "New employee productive in 2 days, not 2 weeks. Zero hours searching for documents.",
-      "description": "Private ChatGPT trained ONLY on your data: procedures, offers, technical documentation, internal FAQ, contracts, regulations. Employees ask questions in Polish (What is the return procedure for Premium customer?) → AI answers in 2 seconds, citing sources (which procedures, paragraph, last update). Data never leaves the company - isolated environment, zero leak risk.",
+      "description": "Private ChatGPT trained ONLY on your data: procedures, offers, technical documentation, internal FAQ, contracts, regulations. Employees ask questions in Polish (What is the return procedure for Premium customer?) → AI answers in 2 seconds, citing sources (which procedures, paragraph, last update). Data never leaves the company - isolated environment, zero leak risk. Perfect for creating complex quotes - a sales rep needs 2 days to prepare an offer, AI Agent does it in 3 minutes, with full personalization and accuracy.",
       "applications": "Onboarding: New employees ask AI instead of colleagues (90% questions handled automatically) • Customer Support Tier 2: Agents ask AI about complex cases (technical documentation instant) • Sales Enablement: Sales reps ask about pricing, terms, competitors (precise answers in 5 seconds)",
       "cta": "Book free consultation"
     },
