@@ -49,7 +49,7 @@ function loadFAQContext(locale: 'pl' | 'en'): string {
 
   if (!faq || !faq.questions) return ''
 
-  // Format FAQ as text for Gemini 2.0 Flash system prompt
+  // Format FAQ as text for Gemini 3.0 Flash system prompt
   // Convert object to array using Object.values()
   const faqText = Object.values(faq.questions)
     .map((item: any) => `Q: ${item.question}\nA: ${item.answer}`)
@@ -146,7 +146,7 @@ REMEMBER: You are here to HELP potential clients. Be friendly, specific, and use
 
 /**
  * POST /api/chatbot
- * Main Gemini 2.0 Flash integration endpoint
+ * Main Gemini 3.0 Flash integration endpoint
  */
 export async function POST(request: NextRequest) {
   const startTime = Date.now()
@@ -277,7 +277,7 @@ export async function POST(request: NextRequest) {
       }
     ]
 
-    // Call Gemini 2.0 Flash with timeout (30 seconds)
+    // Call Gemini 3.0 Flash with timeout (30 seconds)
     const controller = new AbortController()
     const timeout = setTimeout(() => controller.abort(), 30000)
 
@@ -285,7 +285,7 @@ export async function POST(request: NextRequest) {
 
     try {
       const { text } = await generateText({
-        model: google('gemini-2.0-flash-001'), // Use Gemini 2.0 Flash model
+        model: google('gemini-3-flash-preview'), // Use Gemini 3.0 Flash model
         system: systemPrompt,
         messages: conversationMessages,
         temperature: 0.2,
