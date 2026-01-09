@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { pluralize } from '@/lib/polish-plural'
 
 /**
  * Range Slider Component
@@ -12,6 +13,7 @@ import { motion } from 'framer-motion'
  * - Min/max labels
  * - Pear-colored thumb and track
  * - Responsive design
+ * - Polish pluralization support
  *
  * @param {Object} props
  * @param {string} props.label - Question label
@@ -20,7 +22,9 @@ import { motion } from 'framer-motion'
  * @param {number} props.min - Minimum value
  * @param {number} props.max - Maximum value
  * @param {number} props.step - Step increment
- * @param {string} props.unit - Unit label (e.g., "PLN", "h", "%")
+ * @param {string} props.unit - Unit label (e.g., "PLN", "h", "%") - used when pluralForms not provided
+ * @param {[string, string, string]} props.pluralForms - Polish plural forms [singular, paucal, plural] (e.g., ["post", "posty", "postów"])
+ * @param {string} props.locale - Current locale ('pl' or 'en')
  * @returns {React.ReactElement}
  */
 
@@ -32,6 +36,8 @@ interface RangeSliderProps {
   max: number
   step?: number
   unit?: string
+  pluralForms?: [string, string, string]
+  locale?: 'pl' | 'en'
 }
 
 export function RangeSlider({
@@ -41,9 +47,26 @@ export function RangeSlider({
   min,
   max,
   step = 1,
-  unit = ''
+  unit = '',
+  pluralForms,
+  locale = 'pl'
 }: RangeSliderProps): React.ReactElement {
   const percentage = ((value - min) / (max - min)) * 100
+
+  // Get the correct unit form based on value
+  const getUnitDisplay = (): string => {
+    // If pluralForms provided, use pluralization
+    if (pluralForms) {
+      if (locale === 'pl') {
+        return pluralize(value, pluralForms)
+      } else {
+        // English: simple singular/plural
+        return value === 1 ? pluralForms[0] : pluralForms[2]
+      }
+    }
+    // Otherwise use static unit
+    return unit
+  }
 
   return (
     <div className="w-full">
@@ -60,7 +83,7 @@ export function RangeSlider({
         animate={{ scale: 1 }}
         transition={{ duration: 0.2 }}
       >
-        {value.toLocaleString('pl-PL')} {unit}
+        {value.toLocaleString('pl-PL')} {getUnitDisplay()}
       </motion.div>
 
       {/* Slider */}

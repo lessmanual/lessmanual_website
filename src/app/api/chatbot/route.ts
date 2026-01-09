@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { openai } from '@ai-sdk/openai'
+import { google } from '@ai-sdk/google'
 import { generateText, embed } from 'ai'
 import { createClient } from '@supabase/supabase-js'
 import plMessages from '@/messages/pl.json'
@@ -48,7 +49,7 @@ function loadFAQContext(locale: 'pl' | 'en'): string {
 
   if (!faq || !faq.questions) return ''
 
-  // Format FAQ as text for GPT-4o-mini system prompt
+  // Format FAQ as text for Gemini 2.0 Flash system prompt
   // Convert object to array using Object.values()
   const faqText = Object.values(faq.questions)
     .map((item: any) => `Q: ${item.question}\nA: ${item.answer}`)
@@ -73,12 +74,12 @@ CONVERSATION CONTEXT:
 - Be natural - "Jak wspomniałem wcześniej..." or "W kontekście KSeF, o którym rozmawialiśmy..."
 
 FOLLOW-UP QUESTIONS (always answer these based on context):
-- "to co mam robić" → "Wypełnij formularz kontaktowy: https://lessmanual.ai/#kontakt. W kontekście [previous topic], po wypełnieniu formularza nasz zespół skontaktuje się z Tobą, aby omówić szczegóły."
-- "gdzie się mogę umówić" → "Możesz umówić się na konsultację poprzez formularz kontaktowy: https://lessmanual.ai/#kontakt. Nasz zespół skontaktuje się z Tobą w ciągu 24 godzin."
+- "to co mam robić" → "Wypełnij formularz kontaktowy: https://lessmanual.ai/kontakt. W kontekście [previous topic], po wypełnieniu formularza nasz zespół skontaktuje się z Tobą, aby omówić szczegóły."
+- "gdzie się mogę umówić" → "Możesz umówić się na konsultację poprzez formularz kontaktowy: https://lessmanual.ai/kontakt. Nasz zespół skontaktuje się z Tobą w ciągu 24 godzin."
 - "co dalej" / "jak dalej" → Explain next steps based on previous conversation + provide contact form link if relevant
-- "jak się skontaktować" → "Formularz kontaktowy znajduje się tutaj: https://lessmanual.ai/#kontakt"
+- "jak się skontaktować" → "Formularz kontaktowy znajduje się tutaj: https://lessmanual.ai/kontakt"
 - "a gdzie" / "i gdzie" / "to gdzie" → Indicate location/next action based on context
-- "link do formularza" / "podaj link" / "wyślij link" → "Oto link do formularza kontaktowego: https://lessmanual.ai/#kontakt"
+- "link do formularza" / "podaj link" / "wyślij link" → "Oto link do formularza kontaktowego: https://lessmanual.ai/kontakt"
 
 CONVERSATION GUIDELINES:
 
@@ -97,7 +98,7 @@ CONVERSATION GUIDELINES:
    - NEVER say "3000-8000 PLN" or any concrete amounts
    - When asked about pricing ("ile kosztuje", "widełki", "ceny"):
      * Explain that prices depend on project scope and individual needs
-     * Direct to contact form: "Wypełnij formularz kontaktowy: https://lessmanual.ai/#kontakt, a przygotujemy indywidualną wycenę dopasowaną do Twoich potrzeb"
+     * Direct to contact form: "Wypełnij formularz kontaktowy: https://lessmanual.ai/kontakt, a przygotujemy indywidualną wycenę dopasowaną do Twoich potrzeb"
      * Mention ROI calculation if relevant
 
 4. **Provide specific, helpful answers for non-pricing questions**
@@ -110,7 +111,7 @@ CONVERSATION GUIDELINES:
    - Can be longer for complex technical questions
 
 6. **For specific details not in FAQ**
-   - Direct to contact form: https://lessmanual.ai/#kontakt
+   - Direct to contact form: https://lessmanual.ai/kontakt
    - But FIRST try to answer based on what you know
 
 7. **ALWAYS include contact form link when:**
@@ -119,6 +120,15 @@ CONVERSATION GUIDELINES:
    - User asks how to get in touch ("jak się skontaktować")
    - User asks about pricing (direct to contact form for custom quote)
    - User asks "what should I do next" after discussing services
+
+INTELLIGENT LINKING TO /kontakt:
+- When user asks about pricing → link to https://lessmanual.ai/kontakt
+- When user asks "jak zacząć" / "how to start" → link to https://lessmanual.ai/kontakt
+- When user describes a need and asks "co dalej" / "what next" → link to https://lessmanual.ai/kontakt
+- When user asks about KSeF or specific integrations → suggest "custom - nie wiem, potrzebuję konsultacji" in ROI calculator (https://lessmanual.ai/kalkulator-roi-automatyzacji), then link to https://lessmanual.ai/kontakt
+- DO NOT give link when user is just asking for technical details, FAQ info, or general questions
+
+Link format: "Wypełnij formularz kontaktowy: https://lessmanual.ai/kontakt"
 
 8. **ONLY refuse obvious off-topic questions**
    - Recipes, cooking instructions
@@ -136,7 +146,7 @@ REMEMBER: You are here to HELP potential clients. Be friendly, specific, and use
 
 /**
  * POST /api/chatbot
- * Main GPT-4o-mini integration endpoint
+ * Main Gemini 2.0 Flash integration endpoint
  */
 export async function POST(request: NextRequest) {
   const startTime = Date.now()
@@ -244,14 +254,14 @@ export async function POST(request: NextRequest) {
         })
       }
 
-      console.log('⚠️ No good semantic match found (similarity < 0.55), falling back to GPT')
+      console.log('⚠️ No good semantic match found (similarity < 0.55), falling back to Gemini')
     } catch (embeddingError) {
       console.error('Embedding generation error:', embeddingError)
-      // Continue to GPT fallback
+      // Continue to Gemini fallback
     }
 
-    // ✅ PHASE 3: GPT Fallback - Only used when no good semantic match found
-    // Load FAQ context for GPT system prompt
+    // ✅ PHASE 3: Gemini Fallback - Only used when no good semantic match found
+    // Load FAQ context for Gemini system prompt
     const systemPrompt = loadFAQContext(locale as 'pl' | 'en')
 
     // Build messages array with conversation history (last 5 messages = ~3 turns)
@@ -267,7 +277,7 @@ export async function POST(request: NextRequest) {
       }
     ]
 
-    // Call OpenAI GPT-5-mini with timeout (30 seconds)
+    // Call Gemini 2.0 Flash with timeout (30 seconds)
     const controller = new AbortController()
     const timeout = setTimeout(() => controller.abort(), 30000)
 
@@ -275,7 +285,7 @@ export async function POST(request: NextRequest) {
 
     try {
       const { text } = await generateText({
-        model: openai('gpt-4o-mini'), // Use GPT-4o-mini model
+        model: google('gemini-2.0-flash-001'), // Use Gemini 2.0 Flash model
         system: systemPrompt,
         messages: conversationMessages,
         temperature: 0.2,

@@ -23,7 +23,7 @@
     "title": "Founder & CTO | From TSL processes to AI automation",
     "bio1": "After nearly a decade of work in TSL, I can say with full confidence: every company has processes that consume time and money. And most of them can be automated.",
     "bio2": "That's why LessManual was born.",
-    "bio3": "I build AI systems (ChatBots, VoiceAgent, Content Automation) that reduce manual work by 80% and pay for themselves in 60 days.",
+    "bio3": "I build AI systems that reduce manual work by 80% and pay for themselves in 60 days.",
     "bio4": "For me, automation isn't technology - it's saving your time and money. With full data security (GDPR, AI Act, compliance).",
     "bio5": "Mission: Polish companies should work smarter, not harder.",
     "stats": {
@@ -223,42 +223,42 @@
           "icon": "💬",
           "name": "ChatBot 24/7",
           "description": "Customer Support",
-          "avgSavings": "Avg savings: €3,200/month",
+          "avgSavings": "Avg savings: €2-4k/month",
           "tags": ["E-commerce", "SaaS", "Services"]
         },
         "voiceAgent": {
           "icon": "📞",
           "name": "Voice Agent",
           "description": "Reception + booking",
-          "avgSavings": "Avg savings: €2,400/month",
+          "avgSavings": "Avg savings: €2.5-5k/month",
           "tags": ["Clinic", "Restaurant", "Salon"]
         },
         "contentAgent": {
           "icon": "✍️",
           "name": "Content Agent",
           "description": "Social Media",
-          "avgSavings": "Avg savings: €2,800/month",
+          "avgSavings": "Avg savings: €0.7-1.5k/month",
           "tags": ["Agency", "E-commerce", "Personal brand"]
         },
         "salesAutomation": {
           "icon": "📊",
           "name": "Sales Automation",
           "description": "Leads + Follow-ups",
-          "avgSavings": "Avg savings: €3,500/month",
+          "avgSavings": "Avg savings: €1-2.5k/month",
           "tags": ["B2B", "SaaS", "Consulting"]
         },
         "ragChatbot": {
           "icon": "🧠",
           "name": "RAG Chatbot",
           "description": "Knowledge Base",
-          "avgSavings": "Avg savings: €3,500/month",
+          "avgSavings": "Avg savings: €2-4k/month",
           "tags": ["Accounting", "Legal", "HR"]
         },
         "custom": {
           "icon": "⚙️",
           "name": "Custom Solutions",
           "description": "Your process",
-          "avgSavings": "Avg savings: €4,200/month",
+          "avgSavings": "Avg savings: €3.5-7k/month",
           "tags": ["Manufacturing", "Logistics", "Finance"]
         }
       }
@@ -639,7 +639,7 @@
     "questions": {
       "q1": {
         "question": "How long does implementation take?",
-        "answer": "From 7 business days - depending on project complexity. We can launch a FAQ ChatBot in one week, while a VoiceAgent with ERP integrations might need two weeks. Your implementation includes a ready-to-use system, team training, and complete documentation. You start saving time and generating ROI immediately after deployment.",
+        "answer": "Simple solutions (ChatBot FAQ, Content Agent) are launched in 5-10 business days. Projects with complex integrations (VoiceAgent + calendar/ERP, custom automation) take 2-4 weeks. The timeline also depends on you - the faster you provide materials (FAQ, access credentials, brand guidelines), the faster we implement. Your implementation includes a ready-to-use system, team training, and complete documentation.",
         "category": "top5"
       },
       "q2": {
@@ -653,8 +653,8 @@
         "category": "top5"
       },
       "q4": {
-        "question": "Will my company's and customers' data be secure?",
-        "answer": "Yes. All data is encrypted, hosting only in EU (Frankfurt, Stockholm, Helsinki, Warsaw), full GDPR and AI Act compliance. Your customers and your company's data are protected at the highest level.",
+        "question": "Will data be secure?",
+        "answer": "Yes. All data is encrypted (AES-256), hosting exclusively in EU (Frankfurt, Stockholm), full GDPR and AI Act compliance. We don't store data longer than necessary. Upon request, we sign a Data Processing Agreement (DPA). Your customers and your company's data are protected at the highest level.",
         "category": "top5"
       },
       "q5": {

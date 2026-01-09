@@ -11,10 +11,11 @@
     "generate:og": "node scripts/generate-og-image.js"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.6",
     "@ai-sdk/openai": "^2.0.59",
     "@supabase/supabase-js": "^2.45.4",
     "@vercel/speed-insights": "^1.2.0",
-    "ai": "^5.0.86",
+    "ai": "^6.0.23",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",

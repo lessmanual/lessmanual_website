@@ -23,7 +23,7 @@
     "title": "Founder & CTO | Od procesów TSL do automatyzacji AI",
     "bio1": "Przez niespełna dekadę pracy w TSL mogę z pełną stanowczością stwierdzić: każda firma ma procesy, które zjadają czas i pieniądze. I większość da się zautomatyzować.",
     "bio2": "Dlatego powstało LessManual.",
-    "bio3": "Buduję systemy AI (ChatBoty, VoiceAgent, Content Automation), które redukują pracę manualną o 80% i zwracają się w 60 dni.",
+    "bio3": "Buduję systemy AI, które redukują pracę manualną o 80% i zwracają się w 60 dni.",
     "bio4": "Dla mnie automatyzacja to nie technologia - to oszczędność Twojego czasu i pieniędzy. Z pełnym bezpieczeństwem danych (RODO, AI Act, compliance).",
     "bio5": "Misja: Polskie firmy mają działać mądrzej, nie ciężej.",
     "stats": {
@@ -223,42 +223,42 @@
           "icon": "💬",
           "name": "ChatBot 24/7",
           "description": "Obsługa klienta",
-          "avgSavings": "Śr. oszczędność: 12 000 PLN/mies",
+          "avgSavings": "Śr. oszczędność: 8-15 tys. PLN/mies",
           "tags": ["E-commerce", "SaaS", "Usługi"]
         },
         "voiceAgent": {
           "icon": "📞",
           "name": "Agent Głosowy",
           "description": "Recepcja i umawianie wizyt",
-          "avgSavings": "Śr. oszczędność: 10 000 PLN/mies",
+          "avgSavings": "Śr. oszczędność: 10-20 tys. PLN/mies",
           "tags": ["Klinika", "Restauracja", "Salon"]
         },
         "contentAgent": {
           "icon": "✍️",
           "name": "Tworzenie Treści AI",
           "description": "Posty w social media",
-          "avgSavings": "Śr. oszczędność: 5 000 PLN/mies",
+          "avgSavings": "Śr. oszczędność: 3-6 tys. PLN/mies",
           "tags": ["Agencja", "E-commerce", "Marka osobista"]
         },
         "salesAutomation": {
           "icon": "📊",
           "name": "Automatyzacja Sprzedaży",
           "description": "Leady i follow-up",
-          "avgSavings": "Śr. oszczędność: 8 000 PLN/mies",
+          "avgSavings": "Śr. oszczędność: 5-10 tys. PLN/mies",
           "tags": ["B2B", "SaaS", "Konsulting"]
         },
         "ragChatbot": {
           "icon": "🧠",
           "name": "Asystent Wiedzy",
           "description": "Wyszukiwanie w dokumentach",
-          "avgSavings": "Śr. oszczędność: 12 000 PLN/mies",
+          "avgSavings": "Śr. oszczędność: 8-15 tys. PLN/mies",
           "tags": ["Księgowość", "Prawo", "HR"]
         },
         "custom": {
           "icon": "⚙️",
           "name": "Dedykowane Rozwiązania",
           "description": "Automatyzacja na miarę",
-          "avgSavings": "Śr. oszczędność: 18 000 PLN/mies",
+          "avgSavings": "Śr. oszczędność: 15-30 tys. PLN/mies",
           "tags": ["Produkcja", "Logistyka", "Finanse"]
         }
       }
@@ -639,7 +639,7 @@
     "questions": {
       "q1": {
         "question": "Jak długo trwa wdrożenie?",
-        "answer": "Od 7 dni roboczych - w zależności od złożoności projektu. ChatBot FAQ możemy uruchomić w tydzień, VoiceAgent z integracjami ERP może potrzebować trzech tygodni. W ramach wdrożenia dostajesz gotowy system, szkolenie dla zespołu i pełną dokumentację. Zaraz po wdrożeniu zaczynasz oszczędzać czas i generować zwrot z inwestycji.",
+        "answer": "Najprostsze rozwiązania (ChatBot FAQ, Content Agent) uruchamiamy w 5-10 dni roboczych. Projekty ze złożonymi integracjami (VoiceAgent + kalendarz/ERP, dedykowane automatyzacje) to 2-4 tygodnie. Czas zależy też od Ciebie - im szybciej dostarczysz materiały (FAQ, dostępy, wytyczne marki), tym szybciej wdrożymy. W ramach wdrożenia dostajesz gotowy system, szkolenie dla zespołu i pełną dokumentację.",
         "category": "top5"
       },
       "q2": {
@@ -653,8 +653,8 @@
         "category": "top5"
       },
       "q4": {
-        "question": "Czy dane mojej firmy i moich klientów będą bezpieczne?",
-        "answer": "Tak. Wszystkie dane są szyfrowane, hosting tylko w UE (Frankfurt, Sztokholm, Helsinki, Warszawa), pełna zgodność z RODO i AI Act. Twoi klienci oraz dane Twojej firmy są chronione na najwyższym poziomie.",
+        "question": "Czy dane będą bezpieczne?",
+        "answer": "Tak. Wszystkie dane są szyfrowane (AES-256), hosting wyłącznie w UE (Frankfurt, Sztokholm), pełna zgodność z RODO i AI Act. Nie przechowujemy danych dłużej niż to konieczne. Na życzenie podpisujemy umowę powierzenia danych (DPA). Twoi klienci oraz dane Twojej firmy są chronione na najwyższym poziomie.",
         "category": "top5"
       },
       "q5": {

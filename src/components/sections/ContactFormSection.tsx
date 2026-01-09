@@ -127,7 +127,7 @@ export function ContactFormSection(): React.ReactElement {
                 background: 'transparent',
               }}
               loading="lazy"
-              sandbox="allow-scripts allow-forms allow-same-origin"
+              sandbox="allow-scripts allow-forms allow-same-origin allow-top-navigation"
             />
           </motion.div>
         </motion.div>

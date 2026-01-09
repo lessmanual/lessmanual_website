@@ -45,6 +45,7 @@ import {
   trackPresetUsed
 } from '@/lib/analytics'
 import { z } from 'zod'
+import { POLISH_FORMS } from '@/lib/polish-plural'
 
 /**
  * ROI Calculator Section
@@ -876,7 +877,8 @@ export function ROICalculatorSection(): React.ReactElement {
                 min={3}
                 max={20}
                 step={1}
-                unit={t('step2.contentAgent.q1.unit')}
+                pluralForms={locale === 'pl' ? POLISH_FORMS.post : ['post', 'posts', 'posts']}
+                locale={locale as 'pl' | 'en'}
               />
 
               <RangeSlider
@@ -904,7 +906,8 @@ export function ROICalculatorSection(): React.ReactElement {
                 min={1}
                 max={5}
                 step={1}
-                unit={t('step2.contentAgent.q4.unit')}
+                pluralForms={locale === 'pl' ? POLISH_FORMS.platforma : ['platform', 'platforms', 'platforms']}
+                locale={locale as 'pl' | 'en'}
               />
             </div>
 
