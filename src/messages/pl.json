@@ -44,7 +44,42 @@
   "contact": {
     "headline": "Gotowy na automatyzację?",
     "subheadline": "Wypełnij formularz. Możesz wybrać natychmiastowy telefon od naszego Agenta AI (Szymona) lub kontakt mailowy.",
-    "iframeTitle": "Formularz kontaktowy - LessManual"
+    "iframeTitle": "Formularz kontaktowy - LessManual",
+    "form": {
+      "trust1": "Bezpłatna konsultacja 20 min",
+      "trust2": "Odpowiedź w ciągu 24 godzin",
+      "trust3": "Bez zobowiązań",
+      "voiceAgentTitle": "Chcesz szybką rozmowę?",
+      "voiceAgentDesc": "Nasz Agent AI (Szymon) może do Ciebie zadzwonić w ciągu 20 sekund po wysłaniu formularza. Zaznacz opcję poniżej.",
+      "firstName": "Imię",
+      "firstNamePlaceholder": "Jan",
+      "lastName": "Nazwisko",
+      "lastNamePlaceholder": "Kowalski",
+      "email": "Email",
+      "emailPlaceholder": "jan@firma.pl",
+      "phone": "Telefon",
+      "phonePlaceholder": "600 123 456",
+      "company": "Firma",
+      "companyPlaceholder": "Nazwa Twojej firmy",
+      "interest": "Co Cię interesuje?",
+      "interestPlaceholder": "Wybierz rozwiązanie...",
+      "interests": {
+        "chatbot": "ChatBot - Obsługa klienta 24/7",
+        "voiceAgent": "Agent Głosowy - Automatyzacja telefoniczna",
+        "contentAgent": "Content Agent - Automatyzacja contentu",
+        "salesAutomation": "Sales Automation - Lead gen + kampania mailo",
+        "ragChatbot": "RAG Chatbot - Baza wiedzy",
+        "custom": "Custom - Nie wiem, potrzebuję konsultacji"
+      },
+      "message": "Wiadomość",
+      "messagePlaceholder": "Opisz krótko swój problem lub cel biznesowy...",
+      "wantCall": "Chcę żeby Agent AI (Szymon) zadzwonił do mnie teraz (~20s po wysłaniu formularza)",
+      "preferEmail": "Wolę kontakt mailowy",
+      "submit": "Wyślij wiadomość",
+      "submitting": "Wysyłanie...",
+      "error": "Wystąpił błąd. Spróbuj ponownie lub napisz bezpośrednio na kontakt@lessmanual.ai",
+      "privacy": "Wysyłając formularz akceptujesz Politykę Prywatności. Twoje dane są bezpieczne (RODO)."
+    }
   },
   "metadata": {
     "home": {

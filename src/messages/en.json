@@ -44,7 +44,42 @@
   "contact": {
     "headline": "Ready for automation?",
     "subheadline": "Fill out the form. You can choose an immediate call from our AI Agent (Szymon) or email contact.",
-    "iframeTitle": "Contact form - LessManual"
+    "iframeTitle": "Contact form - LessManual",
+    "form": {
+      "trust1": "Free 20 min consultation",
+      "trust2": "Response within 24 hours",
+      "trust3": "No commitment",
+      "voiceAgentTitle": "Want a quick call?",
+      "voiceAgentDesc": "Our AI Agent (Szymon) can call you within 20 seconds after submitting the form. Check the option below.",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "John",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Smith",
+      "email": "Email",
+      "emailPlaceholder": "john@company.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+48 600 123 456",
+      "company": "Company",
+      "companyPlaceholder": "Your company name",
+      "interest": "What are you interested in?",
+      "interestPlaceholder": "Select a solution...",
+      "interests": {
+        "chatbot": "ChatBot - 24/7 Customer Support",
+        "voiceAgent": "Voice Agent - Phone Automation",
+        "contentAgent": "Content Agent - Content Automation",
+        "salesAutomation": "Sales Automation - Lead Gen + Email Campaigns",
+        "ragChatbot": "RAG Chatbot - Knowledge Base",
+        "custom": "Custom - I don't know, I need a consultation"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Briefly describe your problem or business goal...",
+      "wantCall": "I want the AI Agent (Szymon) to call me now (~20s after submitting the form)",
+      "preferEmail": "I prefer email contact",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "error": "An error occurred. Please try again or write directly to kontakt@lessmanual.ai",
+      "privacy": "By submitting this form you accept our Privacy Policy. Your data is secure (GDPR compliant)."
+    }
   },
   "metadata": {
     "home": {
