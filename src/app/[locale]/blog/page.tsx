@@ -3,6 +3,9 @@ import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import { BackButton } from '@/components/ui/BackButton'
 import { supabase } from '@/lib/supabase'
+import type { Database } from '@/types/supabase'
+
+type BlogPost = Database['public']['Tables']['blog_posts']['Row']
 
 /**
  * Blog Page
@@ -44,11 +47,13 @@ export default async function BlogPage({
   const t = await getTranslations('blog')
 
   // Fetch blog posts from Supabase
-  const { data: posts, error } = await supabase
+  const { data, error } = await supabase
     .from('blog_posts')
     .select('slug, title_pl, title_en, description_pl, description_en, featured_image, published_at, reading_time_minutes')
     .eq('status', 'published')
     .order('published_at', { ascending: false })
+
+  const posts = data as BlogPost[] | null
 
   if (error) {
     console.error('Error fetching blog posts:', error)
