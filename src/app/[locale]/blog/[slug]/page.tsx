@@ -3,6 +3,9 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { notFound } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import type { Database } from '@/types/supabase'
+
+type BlogPost = Database['public']['Tables']['blog_posts']['Row']
 
 /**
  * Dynamic Blog Post Page
@@ -31,12 +34,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params
 
-  const { data: post } = await supabase
+  const { data } = await supabase
     .from('blog_posts')
     .select('title_pl, title_en, description_pl, description_en, meta_description_pl, meta_description_en, featured_image')
     .eq('slug', slug)
     .eq('status', 'published')
     .single()
+
+  const post = data as BlogPost | null
 
   if (!post) {
     return {
@@ -73,12 +78,14 @@ export default async function BlogPost({
   const { locale, slug } = await params
 
   // Fetch article from Supabase
-  const { data: post, error } = await supabase
+  const { data, error } = await supabase
     .from('blog_posts')
     .select('*')
     .eq('slug', slug)
     .eq('status', 'published')
     .single()
+
+  const post = data as BlogPost | null
 
   if (error || !post) {
     notFound()
