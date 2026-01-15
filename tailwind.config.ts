@@ -17,6 +17,23 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  // Safelist classes used in dynamic content from Supabase (blog posts)
+  safelist: [
+    'text-night',
+    'bg-pear',
+    'bg-pear/90',
+    'text-pear',
+    'text-white',
+    'text-white/80',
+    'text-white/70',
+    'text-white/50',
+    'bg-gradient-to-r',
+    'from-pear/10',
+    'to-tekhelet/10',
+    'border-pear/30',
+    'hover:underline',
+    'hover:bg-pear/90',
+  ],
   theme: {
     extend: {
       colors,
