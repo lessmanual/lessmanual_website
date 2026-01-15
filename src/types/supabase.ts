@@ -128,6 +128,97 @@ export interface Database {
           hot_lead_score?: number | null
         }
       }
+      blog_posts: {
+        Row: {
+          id: string
+          slug: string
+          title_pl: string
+          description_pl: string | null
+          content_pl: string
+          meta_description_pl: string | null
+          title_en: string | null
+          description_en: string | null
+          content_en: string | null
+          meta_description_en: string | null
+          featured_image: string | null
+          primary_keyword: string | null
+          secondary_keywords: string[] | null
+          reading_time_minutes: number
+          word_count: number | null
+          status: 'draft' | 'published' | 'archived'
+          published_at: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          title_pl: string
+          description_pl?: string | null
+          content_pl: string
+          meta_description_pl?: string | null
+          title_en?: string | null
+          description_en?: string | null
+          content_en?: string | null
+          meta_description_en?: string | null
+          featured_image?: string | null
+          primary_keyword?: string | null
+          secondary_keywords?: string[] | null
+          reading_time_minutes?: number
+          word_count?: number | null
+          status?: 'draft' | 'published' | 'archived'
+          published_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          title_pl?: string
+          description_pl?: string | null
+          content_pl?: string
+          meta_description_pl?: string | null
+          title_en?: string | null
+          description_en?: string | null
+          content_en?: string | null
+          meta_description_en?: string | null
+          featured_image?: string | null
+          primary_keyword?: string | null
+          secondary_keywords?: string[] | null
+          reading_time_minutes?: number
+          word_count?: number | null
+          status?: 'draft' | 'published' | 'archived'
+          published_at?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      blog_images: {
+        Row: {
+          id: string
+          post_id: string
+          image_url: string
+          alt_text: string | null
+          position: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          post_id: string
+          image_url: string
+          alt_text?: string | null
+          position: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          post_id?: string
+          image_url?: string
+          alt_text?: string | null
+          position?: number
+          created_at?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never
