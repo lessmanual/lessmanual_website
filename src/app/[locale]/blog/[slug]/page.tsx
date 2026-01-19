@@ -100,8 +100,72 @@ export default async function BlogPost({
   const readTimeText = locale === 'pl' ? 'min czytania' : 'min read'
   const backText = locale === 'pl' ? '← Powrót do bloga' : '← Back to blog'
 
+  // Breadcrumb Schema for SEO
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: locale === 'pl' ? 'Strona główna' : 'Home',
+        item: `https://www.lessmanual.ai/${locale}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `https://www.lessmanual.ai/${locale}/blog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: title,
+        item: `https://www.lessmanual.ai/${locale}/blog/${slug}`,
+      },
+    ],
+  }
+
+  // Article Schema for SEO
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: description || '',
+    image: post.featured_image || 'https://www.lessmanual.ai/images/og-image.png',
+    datePublished: post.published_at || post.created_at,
+    dateModified: post.updated_at || post.published_at || post.created_at,
+    author: {
+      '@type': 'Person',
+      name: 'Bartłomiej Chudzik',
+      url: 'https://www.lessmanual.ai',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'LessManual',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.lessmanual.ai/images/logo.webp',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.lessmanual.ai/${locale}/blog/${slug}`,
+    },
+  }
+
   return (
     <div className="min-h-screen bg-night">
+      {/* Breadcrumb Schema JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {/* Article Schema JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <article className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto">
           {/* Back to Blog */}

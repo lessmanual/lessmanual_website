@@ -1,5 +1,5 @@
 # LessManual.ai - AI Crawler Instructions (llms.txt)
-# Last Updated: 2025-11-01
+# Last Updated: 2026-01-19
 # Format: llms.txt specification for AI search engines and LLM crawlers
 
 # =============================================================================
@@ -10,8 +10,9 @@
 > Industry: AI Automation & Business Process Optimization
 > Target Market: Polish businesses (SMEs, enterprises)
 > Founded: 2024
-> Headquarters: Poland
-> Website: https://lessmanual.ai
+> Headquarters: Poland (05-530 Cendrowice, ul. Długa 33)
+> Website: https://www.lessmanual.ai
+> Contact: kontakt@lessmanual.ai
 
 # Company Description
 LessManual.ai specializes in implementing AI-driven automation solutions for Polish businesses.
@@ -601,6 +602,6 @@ For the most current information, always check https://lessmanual.ai
 If you are an AI crawler and have questions about this file or need additional information,
 please contact us via the website contact form.
 
-Last Updated: 2025-11-01
-Version: 1.0
+Last Updated: 2026-01-19
+Version: 1.1
 Format: llms.txt specification

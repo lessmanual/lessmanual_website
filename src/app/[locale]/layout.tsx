@@ -357,15 +357,19 @@ export default async function LocaleLayout({
               image: 'https://www.lessmanual.ai/images/logo.webp',
               '@id': 'https://www.lessmanual.ai',
               url: 'https://www.lessmanual.ai',
-              telephone: '+48 XXX XXX XXX', // Replace with actual phone when available
+              email: 'kontakt@lessmanual.ai',
               priceRange: '$$',
               address: {
                 '@type': 'PostalAddress',
+                streetAddress: 'ul. Długa 33',
+                addressLocality: 'Cendrowice',
+                postalCode: '05-530',
                 addressCountry: 'PL',
               },
               geo: {
                 '@type': 'GeoCoordinates',
-                addressCountry: 'PL',
+                latitude: 51.9194,
+                longitude: 20.8714,
               },
               openingHoursSpecification: {
                 '@type': 'OpeningHoursSpecification',
