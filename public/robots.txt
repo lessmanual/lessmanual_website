@@ -1,5 +1,5 @@
 # LessManual.ai - Robots.txt
-# Updated: 2025-11-01
+# Updated: 2026-01-19
 
 # Allow all crawlers to index all content
 User-agent: *
@@ -26,7 +26,7 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap location
-Sitemap: https://lessmanual.ai/sitemap.xml
+Sitemap: https://www.lessmanual.ai/sitemap.xml
 
 # Crawl rate - be gentle with our servers
 Crawl-delay: 1

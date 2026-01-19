@@ -1,16 +1,31 @@
 import { MetadataRoute } from 'next'
+import { createClient } from '@supabase/supabase-js'
 
 /**
  * Dynamic sitemap generation for LessManual.ai
  * Supports both Polish (pl) and English (en) locales
+ * Includes dynamic blog posts from Supabase
  *
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
  */
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lessmanual.ai'
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = 'https://www.lessmanual.ai'
   const currentDate = new Date()
 
-  // Define all routes with their priorities and update frequencies
+  // Initialize Supabase client for fetching blog posts
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+
+  // Fetch published blog posts
+  const { data: blogPosts } = await supabase
+    .from('blog_posts')
+    .select('slug, published_at')
+    .eq('status', 'published')
+    .order('published_at', { ascending: false })
+
+  // Define static routes with their priorities and update frequencies
   const routes = [
     {
       url: '',
@@ -67,6 +82,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: route.priority,
     })
   })
+
+  // Add blog posts to sitemap (both PL and EN)
+  if (blogPosts && blogPosts.length > 0) {
+    blogPosts.forEach((post) => {
+      // Polish version
+      sitemapEntries.push({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: post.published_at ? new Date(post.published_at) : currentDate,
+        changeFrequency: 'weekly',
+        priority: 0.6,
+      })
+      // English version
+      sitemapEntries.push({
+        url: `${baseUrl}/en/blog/${post.slug}`,
+        lastModified: post.published_at ? new Date(post.published_at) : currentDate,
+        changeFrequency: 'weekly',
+        priority: 0.6,
+      })
+    })
+  }
 
   return sitemapEntries
 }
