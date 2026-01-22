@@ -10,6 +10,7 @@ const HowItWorksSection = dynamic(() => import('@/components/sections/HowItWorks
 const ROICalculatorSection = dynamic(() => import('@/components/sections/ROICalculatorSection').then(mod => ({ default: mod.ROICalculatorSection })))
 const FinalCTASection = dynamic(() => import('@/components/sections/FinalCTASection').then(mod => ({ default: mod.FinalCTASection })))
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection').then(mod => ({ default: mod.AboutSection })))
+const GoogleReviewsSection = dynamic(() => import('@/components/sections/GoogleReviewsSection').then(mod => ({ default: mod.GoogleReviewsSection })))
 const ContactFormSection = dynamic(() => import('@/components/sections/ContactFormSection').then(mod => ({ default: mod.ContactFormSection })))
 const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })))
 
@@ -47,6 +48,7 @@ export default function HomePage(): React.ReactElement {
       <ROICalculatorSection />
       <FinalCTASection />
       <AboutSection />
+      <GoogleReviewsSection />
       <ContactFormSection />
       <FAQSection />
     </main>

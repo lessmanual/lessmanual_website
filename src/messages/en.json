@@ -12,6 +12,7 @@
     "specializations": "Specializations",
     "howItWorks": "How it works",
     "roi": "ROI Calculator",
+    "reviews": "Reviews",
     "blog": "Blog",
     "faq": "FAQ",
     "contact": "Contact",
@@ -848,5 +849,15 @@
   },
   "common": {
     "back": "Go back"
+  },
+  "reviews": {
+    "headline": "What Our Clients Say",
+    "subheadline": "Google reviews about working with LessManual",
+    "totalReviews": "reviews",
+    "prevReview": "Previous review",
+    "nextReview": "Next review",
+    "goToReview": "Go to review",
+    "writeReview": "Write a review on Google",
+    "noReviews": "No reviews to display"
   }
 }

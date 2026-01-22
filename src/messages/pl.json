@@ -12,6 +12,7 @@
     "specializations": "Specjalizacje",
     "howItWorks": "Jak to działa",
     "roi": "Kalkulator ROI",
+    "reviews": "Opinie",
     "blog": "Blog",
     "faq": "FAQ",
     "contact": "Kontakt",
@@ -848,5 +849,15 @@
   },
   "common": {
     "back": "Wróć"
+  },
+  "reviews": {
+    "headline": "Co mówią nasi klienci",
+    "subheadline": "Opinie z Google o współpracy z LessManual",
+    "totalReviews": "opinii",
+    "prevReview": "Poprzednia opinia",
+    "nextReview": "Następna opinia",
+    "goToReview": "Przejdź do opinii",
+    "writeReview": "Dodaj swoją opinię na Google",
+    "noReviews": "Brak opinii do wyświetlenia"
   }
 }
