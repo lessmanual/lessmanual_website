@@ -9,8 +9,13 @@ const SpecializationsSection = dynamic(() => import('@/components/sections/Speci
 const HowItWorksSection = dynamic(() => import('@/components/sections/HowItWorksSection').then(mod => ({ default: mod.HowItWorksSection })))
 const ROICalculatorSection = dynamic(() => import('@/components/sections/ROICalculatorSection').then(mod => ({ default: mod.ROICalculatorSection })))
 const FinalCTASection = dynamic(() => import('@/components/sections/FinalCTASection').then(mod => ({ default: mod.FinalCTASection })))
+const ComparisonSection = dynamic(() => import('@/components/sections/ComparisonSection').then(mod => ({ default: mod.ComparisonSection })))
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection').then(mod => ({ default: mod.AboutSection })))
+const CaseStudiesSection = dynamic(() => import('@/components/sections/CaseStudiesSection').then(mod => ({ default: mod.CaseStudiesSection })))
 const GoogleReviewsSection = dynamic(() => import('@/components/sections/GoogleReviewsSection').then(mod => ({ default: mod.GoogleReviewsSection })))
+const GuaranteeSection = dynamic(() => import('@/components/sections/GuaranteeSection').then(mod => ({ default: mod.GuaranteeSection })))
+const WhyNowSection = dynamic(() => import('@/components/sections/WhyNowSection').then(mod => ({ default: mod.WhyNowSection })))
+const PSSection = dynamic(() => import('@/components/sections/PSSection').then(mod => ({ default: mod.PSSection })))
 const ContactFormSection = dynamic(() => import('@/components/sections/ContactFormSection').then(mod => ({ default: mod.ContactFormSection })))
 const FAQSection = dynamic(() => import('@/components/sections/FAQSection').then(mod => ({ default: mod.FAQSection })))
 
@@ -47,9 +52,14 @@ export default function HomePage(): React.ReactElement {
       <HowItWorksSection />
       <ROICalculatorSection />
       <FinalCTASection />
+      <ComparisonSection />
       <AboutSection />
+      <CaseStudiesSection />
       <GoogleReviewsSection />
+      <GuaranteeSection />
+      <WhyNowSection />
       <ContactFormSection />
+      <PSSection />
       <FAQSection />
     </main>
   )

@@ -208,7 +208,7 @@ export function AboutSection(): React.ReactElement {
                 className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10"
               >
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-pear">75%</div>
+                  <div className="text-3xl font-bold text-pear">80%</div>
                   <div className="text-sm text-white/50">{t('stats.manualReduction')}</div>
                 </div>
                 <div className="text-center lg:text-left">

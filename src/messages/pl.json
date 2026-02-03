@@ -1,8 +1,8 @@
 {
   "hero": {
-    "mainHeadline": "Make your business",
-    "mainHeadlineAccent": "LESSMANUAL",
-    "subheadline": "Automatyzacja AI dla Firm",
+    "mainHeadline": "2026: -200 tys. PLN",
+    "mainHeadlineAccent": "2027: -300 tys. PLN",
+    "subheadline": "Tyle kosztuje brak automatyzacji. Działaj.",
     "body": "Wdrażamy technologię, która zarabia pieniądze i oszczędza czas.\nWdrożenie od 7 dni | ROI już od 2 miesięcy",
     "ctaPrimary": "Umów bezpłatną konsultację",
     "ctaSecondary": "Oblicz ROI"
@@ -21,12 +21,12 @@
   },
   "about": {
     "name": "Bartłomiej Chudzik",
-    "title": "Founder & CTO | Od procesów TSL do automatyzacji AI",
-    "bio1": "Przez niespełna dekadę pracy w TSL mogę z pełną stanowczością stwierdzić: każda firma ma procesy, które zjadają czas i pieniądze. I większość da się zautomatyzować.",
-    "bio2": "Dlatego powstało LessManual.",
-    "bio3": "Buduję systemy AI, które redukują pracę manualną o 80% i zwracają się w 60 dni.",
-    "bio4": "Dla mnie automatyzacja to nie technologia - to oszczędność Twojego czasu i pieniędzy. Z pełnym bezpieczeństwem danych (RODO, AI Act, compliance).",
-    "bio5": "Misja: Polskie firmy mają działać mądrzej, nie ciężej.",
+    "title": "Founder LessManual",
+    "bio1": "Wiem jak to jest. 12 godzin w robocie. 300 maili. Te same pytania 30 razy dziennie.",
+    "bio2": "Przez 8 lat robiłem to w logistyce. Aż zrozumiałem: większość tej roboty może robić system.",
+    "bio3": "Dziś buduję takie systemy dla firm jak Twoja.",
+    "bio4": "5.0 na Google. Gwarancja wyników. Nie działa? Zwracam pieniądze.",
+    "bio5": "",
     "stats": {
       "manualReduction": "Redukcja pracy manualnej",
       "roi": "W pierwszym roku",
@@ -35,6 +35,140 @@
     "aria": {
       "profileImageAlt": "Bartłomiej Chudzik - Founder & CTO LessManual, specjalista ds. automatyzacji biznesu i AI"
     }
+  },
+  "caseStudies": {
+    "headline": "Wyniki naszych klientów",
+    "subheadline": "Nie obiecujemy. Pokazujemy liczby.",
+    "cases": {
+      "recyklingKarat": {
+        "company": "Recykling Karat",
+        "industry": "Recykling metali",
+        "solution": "Lead Generation + Email Marketing",
+        "metric": "~15",
+        "metricLabel": "leadów dziennie",
+        "description": "Codziennie ~15 wyselekcjonowanych leadów, 100% zgodnych z ICP. Do tego automatyczny email marketing."
+      },
+      "smdLed": {
+        "company": "SMD-LED",
+        "industry": "Oświetlenie LED",
+        "solution": "Content Agent",
+        "metric": "4h → 5 min",
+        "metricLabel": "czas pisania posta",
+        "description": "3 posty tygodniowo na automacie. Klient sprawdza i klika 'opublikuj'. Bonus: TOP 1-2 Google po tygodniu na długie frazy."
+      },
+      "szkolaTanca": {
+        "company": "Szkoła tańca",
+        "industry": "Edukacja / Usługi",
+        "solution": "Voice Agent",
+        "metric": "24/7",
+        "metricLabel": "odbiór telefonów",
+        "description": "Inteligentna recepcjonistka AI. Odbiera telefony poza godzinami pracy i wysyła maila z danymi klienta."
+      },
+      "stolarkabudowlana": {
+        "company": "Firma z branży stolarki budowlanej",
+        "industry": "Bramy, okna, drzwi",
+        "solution": "Automatyzacja raportów",
+        "metric": "4-8h → 0",
+        "metricLabel": "pracy tygodniowo",
+        "description": "Cotygodniowy raport rynkowy generowany automatycznie. Zainteresowani dostają go na maila w poniedziałek o 8:00."
+      },
+      "oze": {
+        "company": "Firma z branży OZE",
+        "industry": "Odnawialne źródła energii",
+        "solution": "Agent wycen PDF",
+        "metric": "3h → 0",
+        "metricLabel": "czas generowania oferty",
+        "description": "Klient pisze z chatbotem, podaje dane, dostaje spersonalizowaną wycenę PDF na maila. Automatycznie."
+      }
+    }
+  },
+  "comparison": {
+    "headline": "Dlaczego LessManual?",
+    "subheadline": "Porównaj opcje. Wybierz mądrze.",
+    "options": {
+      "inhouse": {
+        "name": "Zatrudnienie in-house",
+        "cost": "Wysokie koszty stałe",
+        "time": "3-6 mies. rekrutacja",
+        "cons": ["Ryzyko odejścia", "Jeden skill set", "Urlopy, L4", "Onboarding 3+ mies."]
+      },
+      "agency": {
+        "name": "Software House",
+        "cost": "Drogie + ukryte opłaty",
+        "time": "Tygodnie negocjacji",
+        "cons": ["Jesteś jednym z wielu", "Rotacja ludzi", "Ukryte koszty", "Długie umowy"]
+      },
+      "diy": {
+        "name": "Zrobię sam (no-code)",
+        "cost": "Darmowe narzędzia",
+        "time": "Miesiące nauki",
+        "cons": ["Krzywa uczenia się", "Twój czas = koszt", "Brak wsparcia", "Ryzyko błędów"]
+      },
+      "lessmanual": {
+        "name": "LessManual",
+        "cost": "Przejrzyste, bez niespodzianek",
+        "time": "7 dni do startu",
+        "pros": ["Gwarancja ROI 200%", "Wsparcie bez limitu", "Jeden punkt kontaktu", "Zwrot jeśli nie działa"]
+      }
+    },
+    "cta": "Umów bezpłatną konsultację",
+    "labels": {
+      "cost": "Inwestycja",
+      "time": "Czas startu",
+      "bestChoice": "NAJLEPSZY WYBÓR"
+    }
+  },
+  "guarantee": {
+    "headline": "Gwarancja wyników",
+    "subheadline": "Zero ryzyka. Albo działa, albo zwracam pieniądze.",
+    "items": {
+      "roi": {
+        "title": "ROI 200% lub zwrot",
+        "description": "Jeśli w ciągu 6 miesięcy nie osiągniesz minimum 200% ROI - zwracam całą kwotę."
+      },
+      "trial": {
+        "title": "30 dni na test",
+        "description": "Nie podoba się? W ciągu 30 dni możesz zrezygnować bez podawania przyczyny."
+      },
+      "support": {
+        "title": "Wsparcie bez limitu",
+        "description": "Przez cały okres współpracy masz dostęp do mnie. Bez ticketów, bez czekania."
+      }
+    },
+    "badges": {
+      "rodo": "RODO Compliant",
+      "aiAct": "AI Act Ready",
+      "ssl": "Szyfrowane połączenie"
+    }
+  },
+  "urgency": {
+    "badge": "Wolne miejsca: 1 w lutym • 2 w marcu",
+    "tooltip": "Pracuję z max. 3 klientami miesięcznie, żeby zapewnić jakość."
+  },
+  "whyNow": {
+    "headline": "Dlaczego teraz?",
+    "subheadline": "Każdy miesiąc zwłoki to realne straty.",
+    "reasons": {
+      "competition": {
+        "stat": "73%",
+        "title": "firm B2B już wdraża AI",
+        "description": "Twoja konkurencja nie czeka. Automatyzują sprzedaż, obsługę, marketing."
+      },
+      "costs": {
+        "stat": "-17k PLN",
+        "title": "miesięcznie tracisz",
+        "description": "Średni koszt braku automatyzacji w firmie 10-50 osób. Ile u Ciebie?"
+      },
+      "capacity": {
+        "stat": "3",
+        "title": "wolne miejsca",
+        "description": "Pracuję z max. 3 klientami miesięcznie. Luty prawie pełny."
+      }
+    }
+  },
+  "ps": {
+    "message": "Przez 10 lat na etacie widziałem jak firmy toną w powtarzalnej, irytującej robocie. Codziennie te same problemy, oferty, raporty, maile, pytania. Założyłem LessManual żeby to zmienić. Jeśli masz wątpliwości czy automatyzacja ma sens u Ciebie - zadzwoń, pogadamy. Bez zobowiązań, bez presji. 20 minut wystarczy.",
+    "signature": "Bartek, Founder LessManual"
   },
   "finalCta": {
     "button": "Umów bezpłatną konsultację",

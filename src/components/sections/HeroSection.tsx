@@ -58,6 +58,7 @@ import Image from 'next/image'
  */
 export function HeroSection(): React.ReactElement {
   const t = useTranslations('hero')
+  const tUrgency = useTranslations('urgency')
   const locale = useLocale()
   const containerRef = useRef<HTMLDivElement>(null)
   const [mounted, setMounted] = useState(false)
@@ -284,6 +285,23 @@ export function HeroSection(): React.ReactElement {
                   {t('ctaSecondary')}
                 </Button>
               </a>
+            </div>
+
+            {/* Urgency Badge */}
+            <div
+              className={`mt-6 transition-all duration-800 ease-out delay-1000 ${
+                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`}
+            >
+              <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/40 rounded-full px-4 py-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                </span>
+                <span className="text-sm text-red-300 font-medium">
+                  {tUrgency('badge')}
+                </span>
+              </div>
             </div>
           </div>
         </div>
