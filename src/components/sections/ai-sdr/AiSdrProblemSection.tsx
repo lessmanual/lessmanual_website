@@ -27,7 +27,7 @@ const painPoints = [
       'Szukasz firm na LinkedIn, Google, bazach. Sprawdzasz kto decyduje. Szukasz maila. Piszesz wiadomość. I tak w kółko. Zamiast sprzedawać - szukasz komu sprzedawać.',
   },
   {
-    bold: 'Płaciłaś za leady i dostawałaś ciszę.',
+    bold: 'Płaciłeś za leady i dostawałeś ciszę.',
     detail:
       'Agencja obiecała 50 leadów miesięcznie. Dostajesz arkusz z mailami. Piszesz. Nikt nie odpowiada. Bo to nie były leady - to była lista mailingowa.',
   },
