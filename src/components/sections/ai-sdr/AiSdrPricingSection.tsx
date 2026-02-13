@@ -7,10 +7,12 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
 /**
  * AI SDR Pricing Section
  *
- * Two-step pricing flow:
- *   Step 1 — Setup tiers (one-time): Starter / Growth / Scale
- *   Step 2 — Per-meeting pricing (ongoing, by ACV bracket)
- * Followed by a concrete example scenario and meeting definition criteria.
+ * Fair pricing model:
+ *   Step 1 — Setup (one-time): 2,000–4,000 PLN depending on channels & scale
+ *   Step 2 — Per-meeting: 500–2,000 PLN (set together during consultation)
+ *
+ * No ACV-based tiered table. Price depends on client value + market size,
+ * discussed transparently during consultation.
  *
  * @returns {React.ReactElement} Pricing section
  */
@@ -34,67 +36,68 @@ const SETUP_TIERS: SetupTier[] = [
     name: 'STARTER',
     title: 'STARTER — Email',
     price: '2 000 PLN',
-    subtitle: 'Dla firm, kt\u00F3re chc\u0105 przetestowa\u0107 system.',
+    subtitle: 'Chcesz przetestować cold email na jednym kanale.',
     features: [
-      'Dedykowana domena email + warmup 14\u201321 dni',
-      'Konfiguracja dostarczalno\u015Bci (deliverability)',
-      'Badanie ICP + lista prospect\u00F3w z AI scoringiem',
-      'Sekwencja 3\u20135 maili (copywriting AI)',
+      'Dedykowana domena + rozgrzewanie 14–21 dni',
+      'Badanie ICP + lista sprawdzonych kontaktów',
+      'Sekwencja 3–5 spersonalizowanych maili',
+      'Pilnujemy żeby maile trafiały do skrzynek',
       'Raportowanie w czasie rzeczywistym',
     ],
   },
   {
     name: 'GROWTH',
     title: 'GROWTH — Email + LinkedIn',
-    price: '3 500 PLN',
-    subtitle: 'Dla firm, kt\u00F3re chc\u0105 pe\u0142n\u0105 moc systemu.',
+    price: '3 000 PLN',
+    subtitle: 'Docierasz do ludzi tam gdzie są: mail i LinkedIn.',
     highlighted: true,
-    badge: 'Popularny wyb\u00F3r',
+    badge: 'Popularny wybór',
     features: [
       'Wszystko z planu STARTER',
-      'LinkedIn outreach (zaproszenia + wiadomo\u015Bci)',
-      'Sekwencje wielokana\u0142owe (email + LinkedIn)',
-      'Testy A/B temat\u00F3w i tre\u015Bci',
-      'Personalizacja AI per prospect',
+      'LinkedIn outreach (zaproszenia + wiadomości)',
+      'Docieramy mailem i na LinkedIn jednocześnie',
+      'Testujemy co działa lepiej (tematy, treści)',
+      'AI personalizuje każdą wiadomość',
       'Cotygodniowe rozmowy optymalizacyjne',
-      'Dedykowany kana\u0142 Slack',
+      'Dedykowany kanał Slack',
     ],
   },
   {
     name: 'SCALE',
-    title: 'SCALE — Wielokana\u0142owy',
-    price: '5 000 PLN',
-    subtitle: 'Dla firm z du\u017Cym rynkiem do zagospodarowania.',
+    title: 'SCALE — Pełna moc',
+    price: '4 000 PLN',
+    subtitle: 'Duży rynek, duża skala, więcej kanałów.',
     features: [
       'Wszystko z planu GROWTH',
-      'Zwi\u0119kszona skala (wi\u0119cej prospect\u00F3w)',
-      'Zaawansowane dane o intencjach + triggery',
-      'Dedykowany proces wzbogacania danych',
-      'Priorytetowe wsparcie + SLA',
-      'Miesi\u0119czny przegl\u0105d strategiczny',
+      'Większa skala (więcej kontaktów miesięcznie)',
+      'Wiemy kto szuka rozwiązania TERAZ (dane o intencjach)',
+      'Zbieramy więcej info o Twoich leadach',
+      'Priorytetowe wsparcie + gwarantowany czas reakcji',
+      'Miesięczny przegląd strategiczny',
     ],
   },
 ]
 
-interface MeetingPrice {
-  acv: string
-  price: string
-  priceNum: number
-  roi: string
-}
-
-const MEETING_PRICES: MeetingPrice[] = [
-  { acv: '5\u201320 tys. PLN', price: '750 PLN', priceNum: 750, roi: 'ROI 233%' },
-  { acv: '20\u201350 tys. PLN', price: '1 000 PLN', priceNum: 1000, roi: 'ROI 600%' },
-  { acv: '50\u2013150 tys. PLN', price: '1 500 PLN', priceNum: 1500, roi: 'ROI 1 233%' },
-  { acv: '150 tys.+ PLN', price: '2 000 PLN', priceNum: 2000, roi: 'ROI 1 400%' },
-]
-
 const MEETING_CRITERIA = [
   'Osoba decyzyjna (C-level, VP, dyrektor, kierownik)',
-  'Firma pasuje do Twojego ICP (bran\u017Ca, wielko\u015B\u0107, lokalizacja)',
-  'Wyra\u017Ca zainteresowanie rozmow\u0105 w odpowiedzi na wiadomo\u015B\u0107',
+  'Firma pasuje do Twojego ICP (branża, wielkość, lokalizacja)',
+  'Wyraża zainteresowanie rozmową w odpowiedzi na wiadomość',
   'Spotkanie zrealizowane (min. 15 minut)',
+]
+
+const PRICE_FACTORS = [
+  {
+    factor: 'Wartość Twojego klienta',
+    description: 'Spotkanie warte 50k PLN to co innego niż spotkanie warte 5k PLN — wkładamy więcej pracy w targetowanie i personalizację.',
+  },
+  {
+    factor: 'Wielkość rynku',
+    description: 'Niszowy rynek z 200 firmami wymaga innego podejścia niż rynek z 10 000 firm — większa precyzja = więcej pracy.',
+  },
+  {
+    factor: 'Kanały',
+    description: 'Sam email to jedno. Email + LinkedIn + dane o intencjach = więcej punktów styku, więcej konfiguracji.',
+  },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -162,12 +165,11 @@ export function AiSdrPricingSection(): React.ReactElement {
               id="pricing-heading"
               className="text-4xl md:text-5xl font-bold text-white mb-4"
             >
-              Jak wygl&#261;da rozliczenie?
+              Transparentny model rozliczenia
             </h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              Dwa proste kroki. Jednorazowe uruchomienie&nbsp;+ p&#322;atno&#347;&#263; tylko
-              za zrealizowane spotkania z&nbsp;osobami decyzyjnymi. &#379;adnych
-              sta&#322;ych op&#322;at miesi&#281;cznych.
+              Jednorazowe uruchomienie + p&#322;atno&#347;&#263; za spotkania.
+              Zero sta&#322;ych op&#322;at miesi&#281;cznych. P&#322;acisz za wynik, nie za obietnice.
             </p>
           </motion.div>
 
@@ -244,78 +246,51 @@ export function AiSdrPricingSection(): React.ReactElement {
           </motion.p>
 
           {/* -------------------------------------------------------- */}
-          {/*  STEP 2 — Per-meeting pricing                             */}
+          {/*  STEP 2 — Per-meeting pricing (FAIR)                      */}
           {/* -------------------------------------------------------- */}
           <motion.div variants={fadeInUp} className="mb-16">
             <StepBadge step={2} label="P&#322;atno&#347;&#263; za spotkania (bie&#380;&#261;co)" />
 
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              P&#322;acisz tylko za zrealizowane spotkania
+              500&ndash;2&nbsp;000 PLN za potwierdzone spotkanie
             </h3>
-            <p className="text-white/60 max-w-2xl mb-8">
-              Kwota zale&#380;y od &#347;redniej warto&#347;ci Twojego kontraktu (ACV).
-              Im wi&#281;kszy deal, tym wi&#281;ksza warto&#347;&#263;
-              spotkania&nbsp;&mdash; i&nbsp;proporcjonalnie wy&#380;sza cena.
-              Nie p&#322;acisz za maile, leady ani &bdquo;MQL&rdquo;.
+            <p className="text-white/60 max-w-2xl mb-4">
+              Dok&#322;adn&#261; kwot&#281; ustalamy razem na konsultacji. Nie p&#322;acisz
+              za maile, leady ani &bdquo;MQL&rdquo; &mdash; tylko za realne spotkania z decision
+              makerami z Twojego ICP.
+            </p>
+            <p className="text-white/50 text-sm max-w-2xl mb-10">
+              &#379;adnych ukrytych op&#322;at. &#379;adnych sta&#322;ych abonament&#243;w.
+              Nie ma spotka&#324; = nie p&#322;acisz.
             </p>
 
-            {/* Desktop Table */}
-            <div className="hidden md:block overflow-hidden rounded-2xl border border-white/10">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-white/5">
-                    <th className="text-left px-6 py-4 text-sm font-semibold text-white/70">
-                      Tw&#243;j &#347;redni kontrakt
-                    </th>
-                    <th className="text-left px-6 py-4 text-sm font-semibold text-white/70">
-                      Cena za spotkanie
-                    </th>
-                    <th className="text-left px-6 py-4 text-sm font-semibold text-white/70">
-                      Przyk&#322;adowy ROI
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {MEETING_PRICES.map((row, index) => (
-                    <tr
-                      key={index}
-                      className={`border-t border-white/5 ${
-                        index % 2 === 0 ? 'bg-white/[0.02]' : ''
-                      }`}
-                    >
-                      <td className="px-6 py-4 text-sm text-white/80">
-                        {row.acv}
-                      </td>
-                      <td className="px-6 py-4 text-sm font-bold text-pear">
-                        {row.price}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-green-400 font-semibold">
-                        {row.roi}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            {/* Fair pricing explanation */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+              {PRICE_FACTORS.map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="bg-white/5 border border-white/10 rounded-xl p-5"
+                >
+                  <div className="text-sm font-bold text-pear mb-2">
+                    {item.factor}
+                  </div>
+                  <div className="text-sm text-white/60 leading-relaxed">
+                    {item.description}
+                  </div>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Mobile Cards */}
-            <div className="md:hidden space-y-3">
-              {MEETING_PRICES.map((row, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 border border-white/10 rounded-xl p-4"
-                >
-                  <div className="text-xs text-white/50 mb-2">{row.acv}</div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-pear">
-                      {row.price}
-                    </span>
-                    <span className="text-sm text-green-400 font-semibold">
-                      {row.roi}
-                    </span>
-                  </div>
-                </div>
-              ))}
+            {/* What price depends on — summary */}
+            <div className="bg-white/5 border border-pear/20 rounded-xl p-5 max-w-2xl mx-auto text-center">
+              <p className="text-sm text-white/70 leading-relaxed">
+                <span className="font-bold text-white">Dlaczego zakres, a nie jedna cena?</span>{' '}
+                Ka&#380;dy biznes jest inny. Spotkanie z CEO firmy z ACV 150k PLN wymaga wi&#281;cej
+                pracy ni&#380; spotkanie z kierownikiem w firmie z ACV 10k PLN &mdash;
+                inne targetowanie, inna personalizacja, inna skala. Cen&#281; ustalamy tak,
+                &#380;eby by&#322;a fair dla obu stron. Zawsze poznasz j&#261; PRZED startem.
+              </p>
             </div>
           </motion.div>
 
@@ -327,10 +302,10 @@ export function AiSdrPricingSection(): React.ReactElement {
             className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto mb-16"
           >
             <h4 className="text-lg font-bold text-white mb-1">
-              Przyk&#322;ad: software house, &#347;redni kontrakt 50&nbsp;tys.&nbsp;PLN
+              Przyk&#322;ad: software house, kontrakt ok. 50&nbsp;tys.&nbsp;PLN
             </h4>
             <p className="text-sm text-white/50 mb-6">
-              Wybierasz plan GROWTH (email + LinkedIn).
+              Plan GROWTH (email + LinkedIn), cena za spotkanie: 1&nbsp;200 PLN.
             </p>
 
             {/* Cost side */}
@@ -342,15 +317,15 @@ export function AiSdrPricingSection(): React.ReactElement {
                 <ul className="space-y-2 text-sm text-white/80">
                   <li className="flex justify-between">
                     <span>Uruchomienie (jednorazowo)</span>
-                    <span className="font-semibold text-white">3 500 PLN</span>
+                    <span className="font-semibold text-white">3 000 PLN</span>
                   </li>
                   <li className="flex justify-between">
-                    <span>4 spotkania &times; 1 500 PLN</span>
-                    <span className="font-semibold text-white">6 000 PLN</span>
+                    <span>4 spotkania &times; 1 200 PLN</span>
+                    <span className="font-semibold text-white">4 800 PLN</span>
                   </li>
                   <li className="flex justify-between border-t border-white/10 pt-2 mt-2">
                     <span className="font-semibold text-white">Razem (1. miesi&#261;c)</span>
-                    <span className="font-bold text-pear">9 500 PLN</span>
+                    <span className="font-bold text-pear">7 800 PLN</span>
                   </li>
                 </ul>
               </div>
@@ -362,7 +337,7 @@ export function AiSdrPricingSection(): React.ReactElement {
                 </p>
                 <ul className="space-y-2 text-sm text-white/80">
                   <li className="flex justify-between">
-                    <span>4 spotkania &times; 25% wsp. zamknięcia</span>
+                    <span>4 spotkania &times; 25% wsp. zamkni&#281;cia</span>
                     <span className="font-semibold text-white">1 klient</span>
                   </li>
                   <li className="flex justify-between">
@@ -371,7 +346,7 @@ export function AiSdrPricingSection(): React.ReactElement {
                   </li>
                   <li className="flex justify-between border-t border-white/10 pt-2 mt-2">
                     <span className="font-semibold text-white">ROI</span>
-                    <span className="font-bold text-green-400">5,3x</span>
+                    <span className="font-bold text-green-400">6,4x</span>
                   </li>
                 </ul>
               </div>

@@ -7,8 +7,8 @@ import { ChevronDown } from 'lucide-react'
 /**
  * AI SDR FAQ Section
  *
- * Accordion FAQ with 10 questions, AnimatePresence for smooth transitions,
- * and FAQPage schema.org structured data for SEO.
+ * Accordion FAQ with 10 questions.
+ * Answers shortened per feedback — concise, no jargon.
  *
  * @returns {React.ReactElement} FAQ section
  */
@@ -21,43 +21,43 @@ interface FaqItem {
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'Ile trwa uruchomienie?',
-    answer: '3 tygodnie. Tydzień 1: Research ICP, budowa list prospektów, konfiguracja domen i skrzynek. Tydzień 2: Warmup domen email (budowanie reputacji). Tydzień 3: Copywriting sekwencji, testy A/B, start kampanii. Po 3 tygodniach system jest gotowy i zaczyna wysyłać maile.',
+    answer: '3 tygodnie. Tydzień 1: research + budowa list. Tydzień 2: rozgrzewanie domen. Tydzień 3: copywriting + start kampanii.',
   },
   {
     question: 'Kiedy pierwsze spotkania?',
-    answer: 'Tydzień 3-4 po starcie kampanii. Pierwszy mail trafia do skrzynek w tygodniu 3. Odpowiedzi przychodzą zwykle w ciągu 1-3 dni. Spotkania umawiamy na bieżąco, jak tylko prospect wyrazi zainteresowanie. W naszej ostatniej kampanii pierwszy deal został zamknięty w 6 dni od pierwszego maila.',
+    answer: 'Tydzień 3–4 po starcie. Odpowiedzi przychodzią w ciągu 1–3 dni od wysłania maili. W naszej ostatniej kampanii pierwszy deal został zamknięty w 6 dni.',
   },
   {
     question: 'Co jeśli lead nie pasuje?',
-    answer: 'Nie płacisz. Kwalifikowane spotkanie ma jasną definicję: osoba decyzyjna, firma z Twojego ICP, wyraziła zainteresowanie, spotkanie trwało min. 15 minut. Jeśli lead nie spełnia tych kryteriów — nie liczy się jako kwalifikowane spotkanie i nie pobieramy opłaty.',
+    answer: 'Nie płacisz. Kwalifikowane spotkanie = osoba decyzyjna, firma z Twojego ICP, zainteresowanie, min. 15 minut rozmowy. Nie spełnia kryteriów = nie płacisz.',
   },
   {
     question: 'Co jeśli no-show?',
-    answer: 'Umawiamy ponownie. No-show się zdarzają (branżowo 15-25%). Jeśli prospect nie pojawi się na spotkaniu, wysyłamy follow-up i proponujemy nowy termin. Nie liczymy no-show jako kwalifikowane spotkanie — płacisz tylko za zrealizowane spotkania.',
+    answer: 'Umawiamy ponownie. No-show to ok. 15–25% branżowo. Wysyłamy follow-up i proponujemy nowy termin. No-show nie liczy się jako spotkanie — nie płacisz.',
   },
   {
     question: 'Mogę zobaczyć treści maili?',
-    answer: 'Tak, oczywiście. Przed startem kampanii dostajesz do akceptacji całą sekwencję maili (3-5 maili w sekwencji). Możesz wprowadzać poprawki, zmienić ton, dodać szczegóły. Nic nie wychodzi bez Twojej zgody. W trakcie kampanii masz też dostęp do dashboardu z wynikami w czasie rzeczywistym.',
+    answer: 'Tak. Cała sekwencja do akceptacji przed startem. Możesz zmieniać, poprawiać, dodawać. Nic nie wychodzi bez Twojej zgody.',
   },
   {
     question: 'A co z RODO?',
-    answer: 'Działamy w ramach B2B, gdzie obowiązuje uzasadniony interes prawny (Art. 6.1.f RODO). Kontaktujemy się z osobami w ich roli zawodowej (CTO, CEO, VP), na firmowe adresy email, w sprawie potencjalnej współpracy biznesowej. Każdy mail zawiera opcję rezygnacji (unsubscribe). To standardowa praktyka w B2B outreach w całej Europie.',
+    answer: 'B2B outreach na firmowe adresy, uzasadniony interes prawny (Art. 6.1.f RODO). Każdy mail ma opcję rezygnacji. Standardowa praktyka B2B w całej Europie.',
   },
   {
     question: 'Ile spotkań mogę oczekiwać?',
-    answer: 'Zależy od planu: STARTER (tylko email): 3-10 spotkań/miesiąc. GROWTH (email + LinkedIn): 5-15 spotkań/miesiąc. SCALE (wielokanałowy): 10-25 spotkań/miesiąc. Dokładne liczby zależą od Twojej branży, ICP i oferty. W naszej ostatniej kampanii wygenerowaliśmy 12 szans sprzedażowych z 463 maili (kampania ukończona w 32%).',
+    answer: 'STARTER: 3–10/mies. GROWTH: 5–15/mies. SCALE: 10–25/mies. Zależy od branży i ICP. W naszej kampanii: 12 szans sprzedażowych z 463 maili (kampania ukończona w 32%).',
   },
   {
     question: 'Czy maile nie trafią do spamu?',
-    answer: 'Nie, dzięki wieloetapowemu procesowi: 1) Dedykowane domeny (nie używamy Twojej głównej domeny). 2) Warmup 14 dni przed startem (budowanie reputacji). 3) Personalizacja AI (każdy mail jest unikalny). 4) Monitoring deliverability w czasie rzeczywistym. 5) Limity wysyłek per domen (max 30-40/dzień). Nasz wskaźnik otwarć 73% potwierdza, że maile trafiają do inbox.',
+    answer: 'Nie. Dedykowane domeny (nie Twoja główna), rozgrzewanie 14 dni, AI personalizacja, limity wysyłek. Nasz wskaźnik otwarć 73% potwierdza — maile trafiają do inbox.',
   },
   {
     question: 'Jaka różnica vs agencja lead gen?',
-    answer: '0 PLN retainera miesięcznego. Agencje pobierają 5-15k PLN/mies stale, niezależnie od wyników. U nas płacisz jednorazowe uruchomienie + opłaty za kwalifikowane spotkania. Nie ma stałych opłat. Nie ma umów na 6-12 miesięcy. Płacisz za wyniki, nie za obietnice.',
+    answer: '0 PLN miesięcznego retainera. Agencje pobierają 5–15k PLN/mies stale. U nas: jednorazowe uruchomienie + płatność za spotkania. Bez umowy na 6–12 miesięcy.',
   },
   {
     question: 'Co po 3 miesiącach?',
-    answer: 'Miesiąc do miesiąca. Nie wiążemy Cię umową na czas określony. Po każdym miesiącu decydujesz, czy kontynuujemy. Jeśli system przynosi spotkania i deale — kontynuujesz. Jeśli nie — kończysz. Nasz interes jest zbieżny z Twoim: zarabiamy tylko wtedy, gdy Ty dostajesz spotkania.',
+    answer: 'Miesiąc do miesiąca. Brak umowy na czas określony. System przynosi spotkania — kontynuujesz. Nie przynosi — kończysz. Nasz interes jest zbieżny z Twoim.',
   },
 ]
 

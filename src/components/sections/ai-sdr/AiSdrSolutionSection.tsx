@@ -9,14 +9,8 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
  * AI SDR Solution Section
  *
  * Presents the 5-step process of the AI SDR system.
- * Each step has an icon, number, title, and description.
- * Ends with a highlight box showing what the client receives.
- *
- * Design:
- * - Numbered steps with Lucide icons
- * - Pear-accented step numbers
- * - Highlight box with pear border at bottom
- * - Staggered animations on scroll
+ * Language simplified per CMO feedback — no jargon,
+ * results-oriented descriptions.
  *
  * @returns {React.ReactElement} Solution section
  */
@@ -27,35 +21,35 @@ const steps = [
     number: '01',
     title: 'Definiujemy Twojego idealnego klienta',
     description:
-      'Wspólnie określamy ICP: branża, wielkość firmy, stanowisko osoby decyzyjnej, lokalizacja. Precyzyjne targetowanie = wyższy wskaźnik odpowiedzi.',
+      'Wspólnie określamy kogo szukasz: branża, wielkość firmy, stanowisko osoby decyzyjnej, lokalizacja. Im precyzyjniej — tym więcej odpowiedzi.',
   },
   {
     icon: Database,
     number: '02',
-    title: 'Budujemy bazę i weryfikujemy',
+    title: 'Znajdujemy i sprawdzamy kontakty',
     description:
-      'Scrapujemy i weryfikujemy dane kontaktowe. Każdy lead jest sprawdzony: aktualny mail, prawdziwa osoba, pasuje do Twojego ICP.',
+      'Szukamy osób które powinny kupować od Ciebie. Każdy kontakt jest zweryfikowany: aktualny mail, prawdziwa osoba, pasuje do Twojego profilu idealnego klienta.',
   },
   {
     icon: MessageSquare,
     number: '03',
-    title: 'Personalizujemy komunikację',
+    title: 'Personalizujemy każdą wiadomość',
     description:
-      'AI analizuje firmę i osobę. Pisze spersonalizowaną wiadomość, która nie wygląda jak mass mailing. Dlatego wskaźnik otwarć przekracza 70%.',
+      'AI analizuje firmę i osobę, a potem pisze wiadomość która nie wygląda jak mass mailing. Dlatego wskaźnik otwarć przekracza 70%.',
   },
   {
     icon: Send,
     number: '04',
     title: 'Prowadzimy kampanię',
     description:
-      'Wysyłka z rozgrzanych domen, follow-upy, A/B testy tematów. Monitorujemy deliverability i optymalizujemy na bieżąco.',
+      'Wysyłamy z rozgrzanych domen, pilnujemy żeby maile trafiały do skrzynek (nie do spamu), testujemy co działa lepiej i optymalizujemy na bieżąco.',
   },
   {
     icon: Calendar,
     number: '05',
     title: 'Spotkanie ląduje w Twoim kalendarzu',
     description:
-      'Gdy ktoś odpowie pozytywnie - umawiamy spotkanie bezpośrednio w Twoim kalendarzu. Ty dostajesz powiadomienie i wchodzisz na call.',
+      'Gdy ktoś odpowie pozytywnie — umawiamy spotkanie w Twoim kalendarzu. Ty dostajesz powiadomienie i wchodzisz na call. Bez Twojego udziału.',
   },
 ]
 
@@ -93,7 +87,7 @@ export function AiSdrSolutionSection(): React.ReactElement {
             </h2>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
               Od zdefiniowania klienta do spotkania w kalendarzu. Cały proces
-              działa w tle - Ty skupiasz się na zamykaniu deali.
+              działa w tle — Ty skupiasz się na zamykaniu deali.
             </p>
           </motion.div>
 

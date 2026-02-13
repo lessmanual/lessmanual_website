@@ -33,29 +33,6 @@ const ANNOTATIONS = [
   },
 ]
 
-const CASE_STUDIES = [
-  {
-    company: 'WiperApp',
-    headline: 'Cold email \u2192 podpisana umowa w 6 dni',
-    details: [
-      'SaaS w branży automotive',
-      'Osoba decyzyjna odpowiedziała na 2. maila',
-      'Rozmowa wstępna + demo w tym samym tygodniu',
-      'Umowa podpisana na 6. dzień od pierwszego maila',
-    ],
-  },
-  {
-    company: 'Flying Dynamite',
-    headline: 'Software house. Rozmowa wstępna po cold emailu.',
-    details: [
-      'Software house szukający klientów B2B',
-      'Pozytywna odpowiedź na 1. maila w sekwencji',
-      'Umówiona rozmowa wstępna z CTO',
-      'Rozmowy o współpracy w toku',
-    ],
-  },
-]
-
 const COMPARISON_ROWS = [
   { metric: 'Wskaźnik otwarć', ours: '73%', benchmark: '20-30%' },
   { metric: 'Wskaźnik odpowiedzi', ours: '63%', benchmark: '~15-20%' },
@@ -131,39 +108,6 @@ export function AiSdrSocialProofSection(): React.ReactElement {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Case Study Cards */}
-          <motion.div variants={fadeInUp} className="mb-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              Przykłady wdrożeń
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {CASE_STUDIES.map((study, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="bg-white/5 border border-pear/20 rounded-2xl p-6 hover:border-pear/40 transition-colors"
-                >
-                  <div className="inline-flex items-center gap-2 bg-pear/10 border border-pear/30 rounded-full px-3 py-1 mb-4">
-                    <span className="text-xs font-semibold text-pear">{study.company}</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-4">
-                    {study.headline}
-                  </h4>
-                  <ul className="space-y-2">
-                    {study.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-white/70">
-                        <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-pear" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Metrics Comparison Table */}

@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
  * AI SDR Comparison Section
  *
  * Side-by-side comparison of traditional SDR vs AI SDR (LessManual).
- * Left column red-tinted (traditional), right column pear-tinted (AI SDR).
+ * Updated punchline with new price range (500-2,000 PLN).
  *
  * @returns {React.ReactElement} Comparison section
  */
@@ -22,13 +22,13 @@ interface ComparisonRow {
 const COMPARISON_ROWS: ComparisonRow[] = [
   {
     category: 'Koszt miesięczny',
-    sdr: '12-22k PLN (pensja + ZUS + narzędzia)',
+    sdr: '12–22k PLN (pensja + ZUS + narzędzia)',
     aiSdr: '0 PLN stałych. Płacisz za spotkania.',
   },
   {
     category: 'Czas do wyników',
-    sdr: '3-6 miesięcy (rekrutacja + onboarding + rozruch)',
-    aiSdr: '3 tygodnie (konfiguracja + warmup + start)',
+    sdr: '3–6 miesięcy (rekrutacja + onboarding + rozruch)',
+    aiSdr: '3 tygodnie (konfiguracja + rozgrzewanie + start)',
   },
   {
     category: 'Ryzyko',
@@ -38,7 +38,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   {
     category: 'Skalowanie',
     sdr: 'Kolejny SDR = kolejne 12k+ PLN/mies',
-    aiSdr: 'Zwiększ budżet. System skaluje się liniowo.',
+    aiSdr: 'Zwiększ kampanię. System skaluje się liniowo.',
   },
   {
     category: 'Dostępność',
@@ -89,7 +89,7 @@ export function AiSdrComparisonSection(): React.ReactElement {
               Zatrudnienie SDR-a vs. AI SDR
             </h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              Porównaj koszty, ryzyko i wyniki tradycyjnego SDR-a z systemem AI SDR.
+              Porównaj koszty, ryzyko i wyniki.
             </p>
           </motion.div>
 
@@ -191,8 +191,8 @@ export function AiSdrComparisonSection(): React.ReactElement {
           <motion.div variants={fadeInUp} className="text-center mt-12">
             <div className="inline-flex items-center gap-2 bg-pear/10 border border-pear/30 rounded-xl px-6 py-4">
               <p className="text-white/80 text-sm md:text-base">
-                <span className="font-bold text-red-400">SDR:</span> 12-22k PLN/mies stale, niezależnie od wyników.{' '}
-                <span className="font-bold text-pear">AI SDR:</span> 750-2,000 PLN za realne, kwalifikowane spotkanie.
+                <span className="font-bold text-red-400">SDR:</span> 12–22k PLN/mies stale, niezależnie od wyników.{' '}
+                <span className="font-bold text-pear">AI SDR:</span> 500–2 000 PLN za realne, kwalifikowane spotkanie.
               </p>
             </div>
           </motion.div>

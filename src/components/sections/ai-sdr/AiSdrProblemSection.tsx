@@ -7,39 +7,32 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
 /**
  * AI SDR Problem Section
  *
- * Highlights 4 pain points of manual B2B prospecting.
- * Each pain point uses bold highlights and supporting detail.
- * Ends with a punchline reframing the need: meetings, not leads.
- *
- * Design:
- * - Dark background with subtle pear glow
- * - Staggered fade-in animations on scroll
- * - Bold + detail pattern per pain point
- * - Pear-accented punchline
+ * 4 pain points of manual B2B prospecting.
+ * Uses WAL persona language — emotional, direct, concrete.
  *
  * @returns {React.ReactElement} Problem section
  */
 
 const painPoints = [
   {
-    bold: 'Ręczny prospecting zjada Ci 20-40 godzin miesięcznie.',
+    bold: 'Tracisz 20–40 godzin miesięcznie na szukanie klientów.',
     detail:
-      'Szukasz firm na LinkedIn, Google, bazach. Sprawdzasz kto decyduje. Szukasz maila. Piszesz wiadomość. I tak w kółko. Zamiast sprzedawać - szukasz komu sprzedawać.',
+      'LinkedIn, Google, bazy danych. Sprawdzasz kto decyduje. Szukasz maila. Piszesz wiadomość. I tak w kółko. Zamiast sprzedawać — szukasz komu sprzedawać. Każdy dzień to samo.',
   },
   {
-    bold: 'Płaciłeś za leady i dostawałeś ciszę.',
+    bold: 'Płaciłeś za „leady” i dostawałeś ciszę.',
     detail:
-      'Agencja obiecała 50 leadów miesięcznie. Dostajesz arkusz z mailami. Piszesz. Nikt nie odpowiada. Bo to nie były leady - to była lista mailingowa.',
+      'Agencja obiecała 50 leadów miesięcznie. Dostałeś arkusz z mailami. Piszesz. Nikt nie odpowiada. Bo to nie były leady — to była lista mailingowa. Wyrzucone pieniądze.',
   },
   {
-    bold: 'Zatrudnienie SDR-a to 8-12k PLN miesięcznie.',
+    bold: 'Zatrudnienie SDR-a? 8–12k PLN miesięcznie. I nadzieja.',
     detail:
-      'Plus narzędzia, onboarding, management. I nadzieja, że po 3 miesiącach zacznie dowozić. Jeśli nie odejdzie wcześniej.',
+      'Plus narzędzia, onboarding, management. 3 miesiące zanim zacznie dowozić — jeśli nie odejdzie wcześniej. 40% SDR-ów odchodzi w ciągu roku. Znów od zera.',
   },
   {
-    bold: 'Żyjesz z poleceń.',
+    bold: 'Żyjesz z poleceń i nie wiesz co będzie za miesiąc.',
     detail:
-      'Polecenia są super - dopóki są. Ale nie masz nad nimi kontroli. Nie wiesz ile przyjdzie w następnym miesiącu. Zero przewidywalności = zero spokoju.',
+      'Polecenia są super — dopóki są. Ale nie masz nad nimi kontroli. Nie wiesz ile klientów przyjdzie w przyszłym miesiącu. Zero przewidywalności = zero spokoju.',
   },
 ]
 
@@ -103,9 +96,9 @@ export function AiSdrProblemSection(): React.ReactElement {
                 className="text-pear"
                 style={{ textShadow: '0 0 40px rgba(221, 224, 0, 0.3)' }}
               >
-                spotkań
+                spotkań z decydentami
               </span>
-              , nie leadów.
+              , nie kolejnych leadów.
             </p>
           </motion.div>
         </motion.div>

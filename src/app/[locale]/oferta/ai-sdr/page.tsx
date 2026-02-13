@@ -16,12 +16,24 @@ const AiSdrPersonasSection = dynamic(() => import('@/components/sections/ai-sdr/
 const AiSdrFaqSection = dynamic(() => import('@/components/sections/ai-sdr/AiSdrFaqSection').then(mod => ({ default: mod.AiSdrFaqSection })))
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection').then(mod => ({ default: mod.AboutSection })))
 const AiSdrCtaSection = dynamic(() => import('@/components/sections/ai-sdr/AiSdrCtaSection').then(mod => ({ default: mod.AiSdrCtaSection })))
+const AiSdrMidCta = dynamic(() => import('@/components/sections/ai-sdr/AiSdrMidCta').then(mod => ({ default: mod.AiSdrMidCta })))
+const AiSdrStickyCtaButton = dynamic(() => import('@/components/sections/ai-sdr/AiSdrStickyCtaButton').then(mod => ({ default: mod.AiSdrStickyCtaButton })))
+const AiSdrAnchorNav = dynamic(() => import('@/components/sections/ai-sdr/AiSdrAnchorNav').then(mod => ({ default: mod.AiSdrAnchorNav })))
 
 /**
  * AI SDR Landing Page - LessManual
  *
  * Dedicated landing page for the AI SDR as a Service product.
  * Showcases the automated B2B meeting booking system.
+ *
+ * v2 updates:
+ * - Fair pricing model (no ACV-based tiers)
+ * - Simplified language (no jargon)
+ * - Mid-page CTA after social proof
+ * - Sticky floating CTA button
+ * - Anchor navigation (Jak działa | Wyniki | Cennik | FAQ)
+ * - Shorter FAQ answers
+ * - Emotional WAL persona language in problems
  *
  * Performance:
  * - Hero section loaded immediately (above the fold)
@@ -48,11 +60,13 @@ export default function AiSdrPage(): React.ReactElement {
   return (
     <main id="main-content">
       <AiSdrHeroSection />
+      <AiSdrAnchorNav />
       <AiSdrMetricsBar />
       <AiSdrProblemSection />
       <AiSdrSolutionSection />
       <AiSdrTimelineSection />
       <AiSdrSocialProofSection />
+      <AiSdrMidCta />
       <AiSdrPricingSection />
       <AiSdrComparisonSection />
       <AiSdrGuaranteeSection />
@@ -61,6 +75,7 @@ export default function AiSdrPage(): React.ReactElement {
       <AiSdrFaqSection />
       <AboutSection />
       <AiSdrCtaSection />
+      <AiSdrStickyCtaButton />
     </main>
   )
 }
