@@ -153,6 +153,7 @@ export function Footer(): React.ReactElement {
             <ul className="space-y-3">
               {[
                 { key: 'about', href: '#about' },
+                { key: 'oferta', href: '/oferta/ai-sdr' },
                 { key: 'blog', href: '/blog' },
                 { key: 'faq', href: '/faq' },
                 { key: 'roi', href: '#kalkulator' },

@@ -15,6 +15,7 @@
     "reviews": "Opinie",
     "blog": "Blog",
     "faq": "FAQ",
+    "oferta": "Oferta",
     "contact": "Kontakt",
     "skipToContent": "Przejdź do treści",
     "toggleMenu": "Otwórz/zamknij menu"
@@ -743,6 +744,7 @@
     "company": {
       "title": "Firma",
       "about": "O nas",
+      "oferta": "Oferta AI SDR",
       "blog": "Blog",
       "faq": "FAQ",
       "roi": "Kalkulator ROI"

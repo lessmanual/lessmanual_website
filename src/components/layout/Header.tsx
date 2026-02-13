@@ -148,6 +148,7 @@ export function Header(): React.ReactElement {
     { href: '#kalkulator', label: t('roi'), isAnchor: true },
     { href: '#about', label: t('about'), isAnchor: true },
     { href: '#opinie', label: t('reviews'), isAnchor: true },
+    { href: '/oferta/ai-sdr', label: t('oferta'), isAnchor: false },
     { href: '/blog', label: t('blog'), isAnchor: false },
     { href: '/faq', label: t('faq'), isAnchor: false },
     { href: `#${locale === 'en' ? 'contact' : 'kontakt'}`, label: t('contact'), isAnchor: true },

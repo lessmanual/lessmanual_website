@@ -43,6 +43,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
     },
     {
+      url: '/oferta/ai-sdr',
+      priority: 0.9,
+      changeFrequency: 'weekly' as const,
+    },
+    {
       url: '/legal/polityka-prywatnosci',
       priority: 0.3,
       changeFrequency: 'yearly' as const,
