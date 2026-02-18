@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="bg-bg border-t border-border py-16">
       <div className="max-w-[1240px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
             <span className="font-mono font-medium text-lg">
@@ -42,6 +42,39 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="font-sans font-semibold text-text text-sm mb-4">
+              Prawne
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/legal/polityka-prywatnosci"
+                  className="text-sm text-text-light hover:text-accent transition-colors duration-200"
+                >
+                  Polityka prywatnosci
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/legal/polityka-cookies"
+                  className="text-sm text-text-light hover:text-accent transition-colors duration-200"
+                >
+                  Polityka cookies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/legal/regulamin"
+                  className="text-sm text-text-light hover:text-accent transition-colors duration-200"
+                >
+                  Regulamin
+                </Link>
+              </li>
             </ul>
           </div>
 
