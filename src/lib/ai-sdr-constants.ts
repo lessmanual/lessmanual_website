@@ -1,4 +1,4 @@
-export const AI_SDR_CALENDLY_URL = "https://cal.com/bartlomiej-chudzik-2en6pt";
+export const AI_SDR_CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
 export const AI_SDR_EMAIL = "kontakt@lessmanual.ai";
 
 export const AI_SDR_ROTATOR_WORDS = ["spotkanie", "przewidywalność", "wynik"];

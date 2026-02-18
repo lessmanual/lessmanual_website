@@ -1,4 +1,4 @@
-export const GEN_OFERT_CALENDLY_URL = "https://cal.com/bartlomiej-chudzik-2en6pt";
+export const GEN_OFERT_CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
 export const GEN_OFERT_EMAIL = "kontakt@lessmanual.ai";
 
 export const GEN_OFERT_ROTATOR_WORDS = ["automatycznie", "bez Excela", "z Twoim logo"];
