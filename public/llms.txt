@@ -1,0 +1,58 @@
+# LessManual.ai
+
+> Agencja automatyzacji AI dla firm B2B. Budujemy systemy AI ktore oszczedzaja 20-40h miesiecznie. Gwarancja wynikow lub pelny zwrot kosztow.
+
+LessManual.ai to agencja zalozoona przez Bartlomieja Chudzika, specjalizujaca sie w automatyzacji sprzedazy, obslugi klienta, marketingu i ofertowania z uzyciem sztucznej inteligencji. Obslugujemy firmy B2B w Polsce i Europie.
+
+## Produkty
+
+- [AI SDR — Spotkania z decydentami](https://lessmanual.ai/oferta/ai-sdr): System ktory znajduje idealnych klientow, pisze spersonalizowane wiadomosci i umawia potwierdzone spotkania. 76% open rate. Model pay-per-meeting — zero stalych oplat.
+- [SEO Content — Blog ktory pisze sie sam](https://lessmanual.ai/oferta/seo-content): 10-30 artykulow SEO miesiecznie. Keyword research, klastry tematyczne, internal linking. Od 83 PLN za artykul. +150-400% ruchu organicznego w 6 miesiecy.
+- [Obsluga Klienta AI — Odpowiedz w 30 sekund 24/7](https://lessmanual.ai/oferta/obsluga-klienta): Chatbot i voiceagent wytrenowany na bazie wiedzy firmy. 60-80% zapytan obsluzonych automatycznie. Od 900 PLN/mies.
+- [Generator Ofert AI — Wycena w 5 minut](https://lessmanual.ai/oferta/generator-ofert): Klient sam wycenia na stronie lub w chacie. System generuje profesjonalny PDF i wysyla mailem. Oszczednosc 96% czasu.
+
+## Cennik
+
+- AI SDR: model pay-per-meeting, od 750 PLN za spotkanie, zero stalych oplat miesieccznych
+- SEO Content: od 1,000 PLN/mies (10-30 artykulow)
+- Obsluga Klienta AI: od 900 PLN/mies
+- Generator Ofert AI: setup jednorazowy + utrzymanie
+- Rabat 15% przy zakupie 2+ produktow
+- 50% zaliczki na start, reszta po wdrozeniu
+
+## Proces wdrozenia
+
+1. Rozmowa (15 min) — sprawdzamy gdzie tracisz czas, dostajesz propozycje z cena i terminem
+2. Budowa (7-14 dni) — system na Twoich danych, wersja testowa do zatwierdzenia
+3. Uruchomienie (od razu) — system na produkcji, monitorujemy i optymalizujemy
+
+## Gwarancje
+
+- 50% zaliczki, reszta po wdrozeniu
+- Nie wdrozymy na czas — zwrot setup
+- AI SDR: 0 spotkan w 45 dni — zwrot setup
+- Wyniki ponizej ustalen — zwrot kosztow
+- Rezygnacja: jeden mail, bez kar, bez okresu wypowiedzenia
+
+## Case studies
+
+- [Recykling Karat — Lead Generation](https://lessmanual.ai/#wyniki): 440 leadow miesiecznie, 100% zgodnych z ICP. Wartosc 300,000+ PLN/rok. Inwestycja: 7,500 PLN.
+- [SMD-LED — SEO Content](https://lessmanual.ai/#wyniki): 3 artykuly tygodniowo, wszystkie na 1-2 stronie Google. Wartosc ruchu: 10-50k PLN/mies.
+
+## O firmie
+
+- Zalozyciel: Bartlomiej Chudzik (Founder & CTO)
+- Siedziba: Polska
+- 10+ firm B2B obsluzonych
+- 5.0 na Google Reviews
+- Kontakt: kontakt@lessmanual.ai
+- Bezplatna rozmowa: https://cal.com/bartlomiej-chudzik-2en6pt
+
+## Strony
+
+- [Strona glowna](https://lessmanual.ai)
+- [Oferta](https://lessmanual.ai/oferta)
+- [Blog](https://lessmanual.ai/blog)
+- [Regulamin](https://lessmanual.ai/legal/regulamin)
+- [Polityka prywatnosci](https://lessmanual.ai/legal/polityka-prywatnosci)
+- [Polityka cookies](https://lessmanual.ai/legal/polityka-cookies)

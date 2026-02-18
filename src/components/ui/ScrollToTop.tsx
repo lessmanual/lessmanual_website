@@ -22,7 +22,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-20 right-4 md:bottom-8 md:right-8 z-40 w-10 h-10 rounded-full bg-white border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center text-text-secondary hover:text-accent cursor-pointer"
+          className="fixed bottom-36 right-5 md:bottom-24 md:right-10 z-40 w-10 h-10 rounded-full bg-white border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center text-text-secondary hover:text-accent cursor-pointer"
           aria-label="Przewin do gory"
         >
           <ChevronUp size={18} />
