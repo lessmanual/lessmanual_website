@@ -11,30 +11,21 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Blog | LessManual.ai",
   description:
-    "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrazania systemow AI w firmach B2B.",
+    "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrażania systemów AI w firmach B2B.",
   openGraph: {
     title: "Blog | LessManual.ai",
     description:
-      "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrazania systemow AI w firmach B2B.",
+      "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrażania systemów AI w firmach B2B.",
     url: "https://lessmanual.ai/blog",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Blog | LessManual.ai",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | LessManual.ai",
     description:
-      "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrazania systemow AI w firmach B2B.",
-    images: ["/og-image.png"],
+      "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrażania systemów AI w firmach B2B.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/blog",

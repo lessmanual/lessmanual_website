@@ -21,32 +21,23 @@ import { FinalCTA } from "@/components/sections/seo-content/FinalCTA";
 import { FAQ } from "@/components/sections/seo-content/FAQ";
 
 export const metadata: Metadata = {
-  title: "SEO Content System - 30 Artykułów Miesięcznie | LessManual.ai",
+  title: "SEO Content — 30 Artykułów Miesięcznie od 83 PLN | LessManual.ai",
   description:
-    "Blog, który pisze się sam. AI generuje 10-30 artykułów SEO miesięcznie, human review pilnuje jakości, system publikuje na Twoim blogu. Od 83 PLN za artykuł. +150-400% ruchu organicznego w 6 miesięcy.",
+    "Blog, który pisze się sam. AI generuje 10-30 artykułów SEO miesięcznie z human review. +150-400% ruchu organicznego w 6 miesięcy. Done-for-you.",
   openGraph: {
-    title: "SEO Content System - 30 Artykułów Miesięcznie | LessManual.ai",
+    title: "SEO Content — 30 Artykułów Miesięcznie | LessManual.ai",
     description:
-      "Blog, który pisze się sam. AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. +150-400% ruchu organicznego.",
+      "AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. +150-400% ruchu organicznego.",
     url: "https://lessmanual.ai/oferta/seo-content",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "SEO Content System - 30 Artykułów Miesięcznie | LessManual.ai",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO Content System - 30 Artykułów Miesięcznie | LessManual.ai",
+    title: "SEO Content — 30 Artykułów Miesięcznie | LessManual.ai",
     description:
-      "Blog, który pisze się sam. AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł.",
-    images: ["/og-image.png"],
+      "AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. +150-400% ruchu organicznego.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta/seo-content",

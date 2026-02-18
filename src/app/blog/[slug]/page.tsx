@@ -43,29 +43,24 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.published_at || undefined,
       authors: post.author ? [post.author] : undefined,
-      images: post.featured_image
-        ? [
-            {
-              url: post.featured_image,
-              width: 1200,
-              height: 630,
-              alt: post.title_pl,
-            },
-          ]
-        : [
-            {
-              url: "/og-image.png",
-              width: 1200,
-              height: 630,
-              alt: title,
-            },
-          ],
+      ...(post.featured_image
+        ? {
+            images: [
+              {
+                url: post.featured_image,
+                width: 1200,
+                height: 630,
+                alt: post.title_pl,
+              },
+            ],
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: post.featured_image ? [post.featured_image] : ["/og-image.png"],
+      ...(post.featured_image ? { images: [post.featured_image] } : {}),
     },
     alternates: {
       canonical: `https://lessmanual.ai/blog/${post.slug}`,

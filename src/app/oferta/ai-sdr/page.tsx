@@ -21,32 +21,23 @@ import { FinalCTA } from "@/components/sections/ai-sdr/FinalCTA";
 import { About } from "@/components/sections/ai-sdr/About";
 
 export const metadata: Metadata = {
-  title: "AI SDR - Spotkania z Decydentami B2B | Płacisz Tylko za Wynik | LessManual.ai",
+  title: "AI SDR — Spotkania z Decydentami B2B | LessManual.ai",
   description:
-    "System AI umawiający kwalifikowane spotkania B2B. 77% open rate. Deal w 6 dni. Zero stałych opłat. Płacisz per spotkanie z decydentem z Twojego profilu klienta. Pierwszy w Polsce AI SDR + Pay-Per-Meeting.",
+    "System AI umawiający spotkania B2B. 77% open rate. Deal w 6 dni. Płacisz per spotkanie — zero stałych opłat. Pierwszy w Polsce AI SDR Pay-Per-Meeting.",
   openGraph: {
-    title: "AI SDR - Spotkania z Decydentami B2B | LessManual.ai",
+    title: "AI SDR — Spotkania z Decydentami B2B | LessManual.ai",
     description:
-      "System AI umawiający kwalifikowane spotkania B2B. 77% open rate. Deal w 6 dni. Zero stałych opłat.",
+      "System AI umawiający spotkania B2B. 77% open rate. Deal w 6 dni. Zero stałych opłat.",
     url: "https://lessmanual.ai/oferta/ai-sdr",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AI SDR - Spotkania z Decydentami B2B | LessManual.ai",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI SDR - Spotkania z Decydentami B2B | LessManual.ai",
+    title: "AI SDR — Spotkania z Decydentami B2B | LessManual.ai",
     description:
-      "System AI umawiający kwalifikowane spotkania B2B. 77% open rate. Deal w 6 dni. Zero stałych opłat.",
-    images: ["/og-image.png"],
+      "System AI umawiający spotkania B2B. 77% open rate. Deal w 6 dni. Zero stałych opłat.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta/ai-sdr",

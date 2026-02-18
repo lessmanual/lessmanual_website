@@ -3,6 +3,7 @@ import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { CookieBanner } from "@/components/legal/CookieBanner";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -48,21 +49,12 @@ export const metadata: Metadata = {
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LessManual.ai — Systemy AI dla firm B2B",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "LessManual.ai — Systemy AI dla firm B2B",
     description:
       "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Gwarancja wyników lub pełny zwrot kosztów.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -70,6 +62,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://lessmanual.ai",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -86,6 +85,7 @@ export default function RootLayout({
         {children}
         <CookieBanner />
         <ScrollToTop />
+        <ChatWidget />
       </body>
     </html>
   );

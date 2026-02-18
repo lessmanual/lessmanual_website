@@ -21,32 +21,23 @@ import { FinalCTA } from "@/components/sections/generator-ofert/FinalCTA";
 import { FAQ } from "@/components/sections/generator-ofert/FAQ";
 
 export const metadata: Metadata = {
-  title: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
+  title: "Generator Ofert AI — Wycena w 5 Minut | LessManual.ai",
   description:
-    "Self-service konfigurator wycen. Klient sam wycenia na Twojej stronie, dostaje profesjonalny PDF automatycznie. Dla firm OZE, producentów mebli i firm remontowo-budowlanych. Done-for-you w 7-21 dni.",
+    "Klient sam wycenia na Twojej stronie, dostaje profesjonalny PDF automatycznie. 96% mniej czasu na wyceny. Dla OZE, mebli, budowlanki. Done-for-you w 7-21 dni.",
   openGraph: {
-    title: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
+    title: "Generator Ofert AI — Wycena w 5 Minut | LessManual.ai",
     description:
-      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny. Done-for-you w 7-21 dni.",
+      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny.",
     url: "https://lessmanual.ai/oferta/generator-ofert",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
+    title: "Generator Ofert AI — Wycena w 5 Minut | LessManual.ai",
     description:
-      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny. Done-for-you w 7-21 dni.",
-    images: ["/og-image.png"],
+      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta/generator-ofert",
