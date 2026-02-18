@@ -2,12 +2,25 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { NAVIGATION, CALENDLY_URL } from "@/lib/constants";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  function resolveHref(href: string): string {
+    // Absolute paths (like /oferta) stay as-is
+    if (href.startsWith("/")) return href;
+    // Hash links on homepage stay as anchors
+    if (href.startsWith("#") && isHome) return href;
+    // Hash links on subpages become absolute (e.g. #wyniki -> /#wyniki)
+    if (href.startsWith("#") && !isHome) return `/${href}`;
+    return href;
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border">
@@ -24,7 +37,7 @@ export function Header() {
           {NAVIGATION.map((item) => (
             <Link
               key={item.name}
-              href={item.href}
+              href={resolveHref(item.href)}
               className="text-sm font-sans font-medium text-text-secondary hover:text-text transition-colors duration-200"
             >
               {item.name}
@@ -66,7 +79,7 @@ export function Header() {
               {NAVIGATION.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={resolveHref(item.href)}
                   onClick={() => setMobileOpen(false)}
                   className="text-base font-sans font-medium text-text-secondary hover:text-text transition-colors"
                 >

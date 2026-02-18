@@ -6,9 +6,9 @@ import { ArrowLeft, Users, Star, Clock } from "lucide-react";
 import { TextRotator } from "@/components/animations/TextRotator";
 import { Button } from "@/components/ui/Button";
 import {
-  GEN_OFERT_CALENDLY_URL,
-  GEN_OFERT_ROTATOR_WORDS,
-} from "@/lib/generator-ofert-constants";
+  OBS_KLIENTA_CALENDLY_URL,
+  OBS_KLIENTA_ROTATOR_WORDS,
+} from "@/lib/obsluga-klienta-constants";
 
 const stagger = {
   hidden: {},
@@ -65,8 +65,10 @@ export function Hero() {
 
         {/* H1 */}
         <motion.h1 variants={fadeUp} className="font-serif leading-[1.05]">
-          Wyceny w 5 minut zamiast 2 godzin. Profesjonalna oferta PDF{" "}
-          <TextRotator words={GEN_OFERT_ROTATOR_WORDS} />
+          Twoi klienci dostaną odpowiedź w 30 sekund. 24/7.
+          <br />
+          Bez{" "}
+          <TextRotator words={OBS_KLIENTA_ROTATOR_WORDS} />
         </motion.h1>
 
         {/* Subtitle */}
@@ -74,23 +76,24 @@ export function Hero() {
           variants={fadeUp}
           className="mt-8 text-text-secondary max-w-[680px] mx-auto text-xl leading-relaxed"
         >
-          Klient sam wycenia na Twojej stronie — Ty dostajesz gotowe zapytanie z PDF.
-          Pod klucz, z gwarancją wyników. Koniec z Excelem do 23:00.
+          System wytrenowany na wiedzy Twojej firmy. Odpowiada jak Twój najlepszy
+          pracownik — tyle że nie choruje, nie bierze urlopu i nie śpi. Chat,
+          WhatsApp, email, telefon — jeden system na wszystko.
         </motion.p>
 
         {/* CTAs */}
         <motion.div variants={fadeUp} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
-          <Button href={GEN_OFERT_CALENDLY_URL} external>
-            Chcę oferty w 5 minut
+          <Button href={OBS_KLIENTA_CALENDLY_URL} external>
+            Chcę odpowiedzi w 30 sekund
           </Button>
           <Button href="#wyniki" variant="text">
-            Zobacz przykładową ofertę PDF
+            Zobacz jak działa na żywo
           </Button>
         </motion.div>
 
         {/* Microcopy */}
         <motion.p variants={fadeUp} className="mt-5 text-sm text-text-light">
-          Pokażemy Ci, jak to działa na przykładzie Twojej firmy. Zero zobowiązań.
+          Pokażemy jak system odpowiada na pytania Twoich klientów. Zero zobowiązań.
         </motion.p>
 
         {/* Tagline */}
@@ -98,7 +101,15 @@ export function Hero() {
           variants={fadeUp}
           className="mt-8 text-text-secondary text-sm"
         >
-          Firmy tracą średnio 40h miesięcznie na ręczne wyceny. To cały tydzień pracy. Każdego miesiąca.
+          62% klientów oczekuje odpowiedzi w ciągu 5 minut. Średni czas odpowiedzi w firmach B2B? 4 godziny.
+        </motion.p>
+
+        {/* Bottom mono line */}
+        <motion.p
+          variants={fadeUp}
+          className="mt-6 font-mono text-xs text-text-light tracking-wider uppercase"
+        >
+          Jeden system. Każdy kanał. Zero nieodebranych.
         </motion.p>
       </motion.div>
     </section>

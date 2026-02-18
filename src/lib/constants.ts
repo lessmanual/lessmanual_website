@@ -13,7 +13,7 @@ export const PROOF_METRICS = [
 export const PROOF_META = "10+ firm B2B · 5.0 na Google · Zostały 2 miejsca w marcu";
 
 export const NAVIGATION = [
-  { name: "Oferta", href: "#oferta" },
+  { name: "Oferta", href: "/oferta" },
   { name: "Wyniki", href: "#wyniki" },
   { name: "Jak działamy", href: "#proces" },
   { name: "FAQ", href: "#faq" },

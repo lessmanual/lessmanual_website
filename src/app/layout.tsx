@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -82,6 +83,7 @@ export default function RootLayout({
         className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );
