@@ -11,7 +11,7 @@ export function Problem() {
         <FadeUp>
           <SectionHeader
             eyebrow="Problem"
-            title={`„Każda oferta to 2 godziny mojego życia. A połowa i tak nie wróci.”`}
+            title={`'Każda oferta to 2 godziny mojego życia. A połowa i tak nie wróci.'`}
           />
         </FadeUp>
 

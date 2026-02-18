@@ -61,13 +61,13 @@ export const PRODUCTS = [
   {
     title: "Wycena w 5 minut zamiast 2 godzin",
     description:
-      "System który generuje profesjonalne oferty PDF. Z Twoją bazą produktów, kalkulatorem cen i automatycznym follow-upem kiedy klient otworzy ofertę.",
+      "Klient sam wycenia na Twojej stronie lub w chacie. System generuje profesjonalny PDF z Twoim logo i wysyła mailem. Z auto follow-upem i cotygodniowym raportem.",
     metrics: [
       "2h → 5 min (oszczędność 96% czasu)",
-      "+25-40% win rate dzięki trackingowi otwarć",
+      "+25-40% win rate dzięki szybkości odpowiedzi",
     ],
     bonus:
-      "Bonus: wiesz dokładnie kiedy klient otworzył ofertę — dzwonisz w idealnym momencie",
+      "Bonus: klient wycenia sam o 23:00, w weekend, w święta — Ty rano masz gotowe zapytanie",
     landingHref: "/oferta/generator-ofert",
   },
 ];

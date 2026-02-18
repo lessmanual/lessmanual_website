@@ -12,11 +12,11 @@ export function Solution() {
         <FadeUp>
           <SectionHeader
             eyebrow="Rozwiązanie"
-            title="System Generowania Ofert. Wycena w 5 minut. Profesjonalny PDF automatycznie."
+            title="Self-service konfigurator wycen. Klient sam wycenia. PDF automatycznie."
           />
           <p className="text-text-secondary text-center mb-12 leading-relaxed">
-            Budujemy system, który przejmuje cały proces tworzenia ofert. Od zapytania
-            klienta do profesjonalnego PDF z Twoim logo. Ty nie musisz konfigurować, uczyć się,
+            Budujemy konfigurator, w którym Twój klient sam wycenia usługę i dostaje
+            profesjonalny PDF z Twoim logo. Ty nie musisz konfigurować, uczyć się,
             utrzymywać &mdash; robimy to za Ciebie.
           </p>
         </FadeUp>
@@ -44,9 +44,9 @@ export function Solution() {
             <h3 className="font-serif text-lg mb-3">Rezultat:</h3>
             <div className="space-y-2 text-text-secondary leading-relaxed mb-4">
               <p><strong className="text-text">5 minut</strong> zamiast 2 godzin na ofertę</p>
-              <p><strong className="text-text">3 warianty cenowe</strong> generowane automatycznie (SCALE)</p>
-              <p><strong className="text-text">Wiesz, kiedy klient otworzył ofertę</strong> &mdash; i system sam wysyła follow-up (GROWTH+)</p>
-              <p><strong className="text-text">E-podpis Autenti</strong> &mdash; klient podpisuje online, bez drukowania (GROWTH+)</p>
+              <p><strong className="text-text">Klient sam wycenia</strong> &mdash; na Twojej stronie, w chacie lub dedykowanej aplikacji</p>
+              <p><strong className="text-text">3 warianty cenowe</strong> generowane automatycznie (od GROWTH)</p>
+              <p><strong className="text-text">Follow-up automatyczny</strong> &mdash; po 3 i 7 dniach, bez Twojego udziału (od GROWTH)</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 text-sm">
               <div className="bg-white/60 rounded-[6px] px-4 py-3">

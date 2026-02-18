@@ -45,10 +45,10 @@ const SOLUTIONS = [
     num: "04",
     title: "Wycena w 5 minut zamiast 2h",
     description:
-      "Generuje profesjonalne oferty PDF z Twoją bazą produktów, kalkulatorem cen i automatycznym follow-upem.",
+      "Klient sam wycenia na Twojej stronie. System generuje profesjonalny PDF z Twoim logo, wysyła mailem i pilnuje follow-upu.",
     metrics: [
       { value: "96%", label: "mniej czasu na tworzenie ofert" },
-      { value: "+25-40%", label: "win rate dzięki tracking otwarć" },
+      { value: "+25-40%", label: "win rate dzięki szybkości odpowiedzi" },
     ],
     href: "/oferta/generator-ofert",
   },

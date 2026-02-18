@@ -11,22 +11,22 @@ const imagineCards = [
   {
     icon: Calendar,
     title: "Piątek, 16:00",
-    desc: "Dzwoni klient — chce wycenę kuchni na wymiar. Klikasz link, wypełniasz 3 pola. System generuje ofertę PDF zanim odłożysz telefon.",
+    desc: "Klient wchodzi na Twoją stronę, wypełnia konfigurator. System generuje profesjonalny PDF i wysyła na maila. Ty nawet nie wiesz, że to się stało — do rana masz gotowe zapytanie.",
   },
   {
     icon: BarChart3,
-    title: "Handlowiec sprzedaje",
-    desc: "Nie siedzi nad Excelem. Spotkania z klientami, którzy dostali ofertę tego samego dnia. Sprzedaje, nie kalkuluje.",
+    title: "Ty sprzedajesz, nie kalkulujesz",
+    desc: "Klienci sami wyceniają na Twojej stronie. Ty skupiasz się na tych, którzy są gotowi kupić. Zero czasu na ręczne oferty.",
   },
   {
     icon: TrendingUp,
-    title: "Spotkanie z zespołem",
-    desc: "„W tym miesiącu wysłaliśmy 30 ofert. Średni czas: 5 minut. Win rate wzrósł o 35%.”",
+    title: "Cotygodniowy raport",
+    desc: "'W tym miesiącu klienci wygenerowali 30 wycen. Najczęściej wybierają wariant Standard. Win rate wzrósł o 35%.'",
   },
   {
     icon: Users,
     title: "21:00 — jesteś z rodziną",
-    desc: "Nie robisz kosztorysów. System wysłał follow-up do klienta, który otworzył ofertę 3 godziny temu. Rano masz odpowiedź: „Podpisujemy”.",
+    desc: "Klient właśnie wycenił instalację OZE na Twojej stronie. Dostał PDF. System wysłał follow-up. Rano masz odpowiedź: 'Podpisujemy'.",
   },
 ];
 

@@ -43,9 +43,9 @@ export function Hero() {
           variants={fadeUp}
           className="mt-8 text-text-secondary max-w-[680px] mx-auto text-xl leading-relaxed"
         >
-          Dla firm OZE, producentów mebli i firm remontowo-budowlanych. Budujemy system,
-          który przejmuje Twoje wyceny — pod klucz, z gwarancją wyników.
-          Koniec z Excelem do 23:00.
+          Klient sam wycenia na Twojej stronie — Ty dostajesz gotowe zapytanie z PDF.
+          Dla firm OZE, producentów mebli i firm remontowo-budowlanych. Pod klucz,
+          z gwarancją wyników. Koniec z Excelem do 23:00.
         </motion.p>
 
         {/* CTAs */}

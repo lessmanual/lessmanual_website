@@ -21,13 +21,13 @@ import { FinalCTA } from "@/components/sections/generator-ofert/FinalCTA";
 import { FAQ } from "@/components/sections/generator-ofert/FAQ";
 
 export const metadata: Metadata = {
-  title: "System Generowania Ofert - Wyceny w 5 Minut | LessManual.ai",
+  title: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
   description:
-    "System AI generujacy profesjonalne oferty PDF w 5 minut zamiast 2 godzin. Dla firm OZE, producent\u00f3w mebli i firm remontowo-budowlanych. Done-for-you. 7-21 dni do dzia\u0142aj\u0105cego systemu.",
+    "Self-service konfigurator wycen. Klient sam wycenia na Twojej stronie, dostaje profesjonalny PDF automatycznie. Dla firm OZE, producentów mebli i firm remontowo-budowlanych. Done-for-you w 7-21 dni.",
   openGraph: {
-    title: "System Generowania Ofert - Wyceny w 5 Minut | LessManual.ai",
+    title: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
     description:
-      "Profesjonalne oferty PDF w 5 minut zamiast 2 godzin. 96% mniej czasu na wyceny. Done-for-you w 7-21 dni.",
+      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny. Done-for-you w 7-21 dni.",
     url: "https://lessmanual.ai/oferta/generator-ofert",
     siteName: "LessManual.ai",
     locale: "pl_PL",
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "System Generowania Ofert - Wyceny w 5 Minut | LessManual.ai",
+        alt: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "System Generowania Ofert - Wyceny w 5 Minut | LessManual.ai",
+    title: "Konfigurator Wycen - Klient Sam Wycenia na Twojej Stronie | LessManual.ai",
     description:
-      "Profesjonalne oferty PDF w 5 minut zamiast 2 godzin. 96% mniej czasu na wyceny. Done-for-you w 7-21 dni.",
+      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny. Done-for-you w 7-21 dni.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "System Generowania Ofert",
+  name: "Konfigurator Wycen",
   description:
-    "System AI generuj\u0105cy profesjonalne oferty PDF w 5 minut zamiast 2 godzin. Done-for-you, pod klucz, z gwarancj\u0105 wynik\u00f3w.",
+    "Self-service konfigurator wycen. Klient sam wycenia na Twojej stronie i dostaje profesjonalny PDF automatycznie. Done-for-you, pod klucz.",
   provider: {
     "@type": "Organization",
     name: "LessManual.ai",
