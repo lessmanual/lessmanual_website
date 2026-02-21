@@ -1,7 +1,7 @@
 export const AI_SDR_CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
 export const AI_SDR_EMAIL = "kontakt@lessmanual.ai";
 
-export const AI_SDR_ROTATOR_WORDS = ["spotkanie", "przewidywalność", "wynik"];
+export const AI_SDR_ROTATOR_WORDS = ["brak", "zero", "nie ma"];
 
 export const AI_SDR_PROOF_METRICS = [
   { value: "77%", label: "open rate (3x standard)", countTo: 77, suffix: "%" },
@@ -9,11 +9,11 @@ export const AI_SDR_PROOF_METRICS = [
   { value: "0 PLN", label: "stałych kosztów", countTo: 0, suffix: " PLN" },
 ];
 
-export const AI_SDR_PROOF_META = "12 spotkań z 476 maili | 0 spotkań w 45 dni = zwrot setup | Zostały 2 miejsca w marcu";
+export const AI_SDR_PROOF_META = "12 spotkań z 476 maili | 0 spotkań w 45 dni = zwrot setup | Max 3 projekty miesięcznie";
 
 export const AI_SDR_COST_TABLE = [
   {
-    task: "In-house SDR (pensja + ZUS + narzędzia)",
+    task: "In-house handlowiec (pensja + ZUS + narzędzia)",
     currentCost: "12,000-22,000 PLN",
     ourCost: "0 PLN stałych",
   },
@@ -129,7 +129,7 @@ export const AI_SDR_TARGET_SEGMENTS = [
   {
     icon: "Megaphone" as const,
     title: "Agencje Marketingowe / Digital",
-    desc: "Pipeline oparty o polecenia i przetargi? Czas dodać aktywny kanał pozyskiwania klientów, który działa w tle. Bez zatrudniania SDR-a. Bez retainera w agencji lead gen.",
+    desc: "Pipeline oparty o polecenia i przetargi? Czas dodać aktywny kanał pozyskiwania klientów, który działa w tle. Bez zatrudniania handlowca. Bez retainera w agencji lead gen.",
   },
   {
     icon: "Cloud" as const,
@@ -188,7 +188,7 @@ export const AI_SDR_SETUP_PLANS = [
       "Cotygodniowe raporty",
     ],
     desc: "Dla firm, które chcą pełną moc systemu.",
-    valueNote: "Wartość setupu w przeliczeniu na usługi: ~12,000 PLN. Twoja inwestycja: 3,500 PLN.",
+    valueNote: "Najczęściej wybierany. Zero stałych opłat — płacisz tylko za spotkania.",
     popular: true,
     ctaVariant: "primary" as const,
   },
@@ -218,7 +218,7 @@ export const AI_SDR_MEETING_DEFINITION = [
 ];
 
 export const AI_SDR_COMPARISON_TABLE = {
-  headers: ["", "Twój SDR", "Agencja Lead Gen", "AI SDR (LessManual)"],
+  headers: ["", "Twój handlowiec", "Agencja Lead Gen", "AI SDR (LessManual)"],
   rows: [
     {
       label: "Koszt miesięczny",
@@ -246,7 +246,7 @@ export const AI_SDR_COMPARISON_TABLE = {
     },
     {
       label: "Skalowanie",
-      sdr: "Kolejny SDR = kolejne 12k+/mies",
+      sdr: "Kolejny handlowiec = kolejne 12k+/mies",
       agency: "Więcej = większy retainer",
       aiSdr: "Zwiększasz budżet = więcej spotkań",
     },

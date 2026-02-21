@@ -5,6 +5,7 @@ import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { GEN_OFERT_CALENDLY_URL } from "@/lib/generator-ofert-constants";
+import { getNextMonthPL } from "@/lib/constants";
 
 export function Urgency() {
   return (
@@ -18,7 +19,7 @@ export function Urgency() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="space-y-6 text-text-secondary leading-relaxed mb-10">
+          <div className="space-y-6 text-text-secondary leading-relaxed mb-10 text-lg">
             <p>
               Wdrażam max 3 systemy jednocześnie. Każde wdrożenie wymaga dedykowanej
               konfiguracji pod Twój biznes — Twoje ceny, materiały, logikę wycen.
@@ -40,12 +41,12 @@ export function Urgency() {
           <div className="bg-warning/10 border border-warning/30 rounded-[6px] p-6 text-center mb-10">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Clock size={18} className="text-warning" strokeWidth={2} />
-              <span className="font-mono text-sm font-semibold text-warning uppercase tracking-wider">
+              <span className="font-mono text-base font-semibold text-warning uppercase tracking-wider">
                 Ograniczona dostępność
               </span>
             </div>
             <p className="font-serif text-2xl text-text">
-              Zostały 2 miejsca na onboarding w marcu
+              Zostało 1 miejsce w {getNextMonthPL()}
             </p>
           </div>
         </FadeUp>

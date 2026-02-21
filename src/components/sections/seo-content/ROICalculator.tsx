@@ -79,8 +79,8 @@ export function ROICalculator() {
               {/* Articles per month */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Ile artykułów potrzebujesz miesięcznie</span>
-                  <span className="font-mono text-sm font-semibold text-text tabular-nums">
+                  <span className="text-base font-medium text-text">Ile artykułów potrzebujesz miesięcznie</span>
+                  <span className="font-mono text-base font-semibold text-text tabular-nums">
                     {articles}
                   </span>
                 </div>
@@ -109,8 +109,8 @@ export function ROICalculator() {
               {/* Copywriter cost per article */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Ile kosztuje Cię copywriter per artykuł</span>
-                  <span className="font-mono text-sm font-semibold text-text tabular-nums">
+                  <span className="text-base font-medium text-text">Ile kosztuje Cię copywriter per artykuł</span>
+                  <span className="font-mono text-base font-semibold text-text tabular-nums">
                     {formatPLN(copywriterCost)} PLN
                   </span>
                 </div>
@@ -142,24 +142,24 @@ export function ROICalculator() {
               {/* Results */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-warning/5 border border-warning/20 rounded-[6px] p-4 text-center">
-                  <div className="text-xs uppercase tracking-wider text-text-light mb-1">
+                  <div className="text-sm uppercase tracking-wider text-text-light mb-1">
                     Koszt copywritera / mies
                   </div>
                   <div className="font-mono text-2xl md:text-3xl font-bold text-warning">
                     {formatPLN(animCopywriter)}
                   </div>
-                  <div className="text-xs text-text-muted mt-1">
+                  <div className="text-sm text-text-muted mt-1">
                     {articles} x {formatPLN(copywriterCost)} PLN
                   </div>
                 </div>
                 <div className="bg-success/5 border border-success/20 rounded-[6px] p-4 text-center">
-                  <div className="text-xs uppercase tracking-wider text-text-light mb-1">
+                  <div className="text-sm uppercase tracking-wider text-text-light mb-1">
                     Koszt LessManual / mies
                   </div>
                   <div className="font-mono text-2xl md:text-3xl font-bold text-success">
                     {formatPLN(animLessmanual)}
                   </div>
-                  <div className="text-xs text-text-muted mt-1">
+                  <div className="text-sm text-text-muted mt-1">
                     {articles <= 10 ? "STARTER" : articles <= 20 ? "GROWTH" : "SCALE"}
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export function ROICalculator() {
 
               {/* Savings highlight */}
               <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-5 text-center mb-4">
-                <div className="text-xs uppercase tracking-wider text-text-muted mb-2">
+                <div className="text-sm uppercase tracking-wider text-text-muted mb-2">
                   Oszczędność miesięcznie
                 </div>
                 <div className="font-mono text-3xl md:text-4xl font-bold text-accent">
@@ -176,7 +176,7 @@ export function ROICalculator() {
               </div>
 
               <div className="bg-bg border border-border rounded-[6px] p-4 text-center mb-6">
-                <div className="text-xs uppercase tracking-wider text-text-light mb-1">
+                <div className="text-sm uppercase tracking-wider text-text-light mb-1">
                   Oszczędność rocznie
                 </div>
                 <div className="font-mono text-2xl font-bold text-text">
@@ -198,8 +198,8 @@ export function ROICalculator() {
         <FadeUp delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
             <div className="bg-white border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">Firma B2B usługowa, 20 artykułów/mies</h4>
-              <div className="space-y-2 text-sm text-text-secondary">
+              <h4 className="font-serif text-lg mb-3">Firma B2B usługowa, 20 artykułów/mies</h4>
+              <div className="space-y-2 text-base text-text-secondary">
                 <p><span className="text-text-muted">Copywriter:</span> 20 x 400 PLN = 8,000 PLN/mies</p>
                 <p><span className="text-text-muted">LessManual GROWTH:</span> 1,800 PLN/mies</p>
                 <p><span className="text-text-muted">Oszczędność:</span> 6,200 PLN/mies</p>
@@ -207,8 +207,8 @@ export function ROICalculator() {
               </div>
             </div>
             <div className="bg-white border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">E-commerce, 30 artykułów/mies</h4>
-              <div className="space-y-2 text-sm text-text-secondary">
+              <h4 className="font-serif text-lg mb-3">E-commerce, 30 artykułów/mies</h4>
+              <div className="space-y-2 text-base text-text-secondary">
                 <p><span className="text-text-muted">Copywriter:</span> 30 x 500 PLN = 15,000 PLN/mies</p>
                 <p><span className="text-text-muted">LessManual SCALE:</span> 2,500 PLN/mies</p>
                 <p><span className="text-text-muted">Oszczędność:</span> 12,500 PLN/mies</p>

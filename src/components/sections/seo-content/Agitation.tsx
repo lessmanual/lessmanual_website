@@ -20,7 +20,7 @@ export function Agitation() {
             eyebrow="Konsekwencje"
             title="Każdy miesiąc bez contentu to pozycje, które zabiera Twoja konkurencja"
           />
-          <p className="text-text-secondary text-center mb-12 leading-relaxed">
+          <p className="text-lg text-text-secondary text-center mb-12 leading-relaxed">
             SEO to nie reklama. Nie klikasz &ldquo;włącz&rdquo; i &ldquo;wyłącz&rdquo;.
             To aktywo, które buduje się miesiącami. Im później zaczniesz, tym później zobaczysz wyniki.
           </p>
@@ -30,10 +30,10 @@ export function Agitation() {
           {SEO_AGITATION_TIMEFRAMES.map((tf) => (
             <StaggerItem key={tf.time}>
               <div className="bg-white border border-border rounded-[6px] p-6 hover:border-accent transition-colors duration-200">
-                <div className="font-mono text-sm font-semibold text-warning mb-3">
+                <div className="font-mono text-base font-semibold text-warning mb-3">
                   {tf.time}
                 </div>
-                <p className="text-text-secondary leading-relaxed">{tf.text}</p>
+                <p className="text-lg text-text-secondary leading-relaxed">{tf.text}</p>
               </div>
             </StaggerItem>
           ))}
@@ -44,7 +44,7 @@ export function Agitation() {
             {SEO_AGITATION_STATS.map((stat) => (
               <div key={stat} className="flex items-start gap-3">
                 <AlertTriangle size={16} className="text-warning mt-1 shrink-0" strokeWidth={2} />
-                <span className="text-text-secondary leading-relaxed">
+                <span className="text-lg text-text-secondary leading-relaxed">
                   <strong className="text-text">{stat}</strong>
                 </span>
               </div>
@@ -52,7 +52,7 @@ export function Agitation() {
           </div>
 
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-10">
-            <p className="text-text font-medium">
+            <p className="text-lg text-text font-medium">
               Każdy dzień bez nowego contentu to pozycje, które zabiera konkurencja. Dosłownie.
             </p>
           </div>

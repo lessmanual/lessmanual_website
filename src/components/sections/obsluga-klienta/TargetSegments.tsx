@@ -31,8 +31,8 @@ export function TargetSegments() {
                   <div className="w-10 h-10 rounded-[6px] bg-accent/10 flex items-center justify-center mb-4">
                     <Icon size={20} className="text-accent" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-serif text-lg mb-2">{seg.title}</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">{seg.desc}</p>
+                  <h3 className="font-serif text-xl mb-2">{seg.title}</h3>
+                  <p className="text-base text-text-secondary leading-relaxed">{seg.desc}</p>
                 </div>
               </StaggerItem>
             );

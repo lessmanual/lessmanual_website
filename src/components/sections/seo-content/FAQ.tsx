@@ -18,7 +18,7 @@ function FAQItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
         className="w-full flex items-center justify-between py-5 text-left group"
         aria-expanded={open}
       >
-        <span className="font-sans font-medium text-text pr-4 group-hover:text-accent transition-colors">
+        <span className="font-sans font-medium text-lg text-text pr-4 group-hover:text-accent transition-colors">
           {q}
         </span>
         <ChevronDown
@@ -38,7 +38,7 @@ function FAQItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-text-secondary text-sm leading-relaxed">
+            <p className="pb-5 text-text-secondary text-base leading-relaxed">
               {a}
             </p>
           </motion.div>
@@ -59,7 +59,7 @@ export function FAQ() {
         <div className="space-y-10 mb-12">
           {SEO_FAQ_ITEMS.map((category, catIdx) => (
             <FadeUp key={category.category}>
-              <h3 className="font-sans font-semibold text-sm uppercase tracking-wider text-text-light mb-4">
+              <h3 className="font-sans font-semibold text-base uppercase tracking-wider text-text-light mb-4">
                 {category.category}
               </h3>
               <div>
@@ -78,7 +78,7 @@ export function FAQ() {
 
         <FadeUp>
           <div className="text-center space-y-3">
-            <p className="text-text-secondary text-sm">Masz inne pytanie?</p>
+            <p className="text-text-secondary text-base">Masz inne pytanie?</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={`mailto:${SEO_EMAIL}`} variant="text" external>
                 Napisz: {SEO_EMAIL}

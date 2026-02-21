@@ -36,7 +36,7 @@ export function SocialProof() {
                 <div className="font-mono text-3xl md:text-4xl font-bold text-accent mb-2">
                   {m.value}
                 </div>
-                <div className="text-xs text-text-light">{m.label}</div>
+                <div className="text-sm text-text-light">{m.label}</div>
               </div>
             </StaggerItem>
           ))}
@@ -49,7 +49,7 @@ export function SocialProof() {
               <span className="inline-block px-3 py-1 text-xs font-sans font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
                 Case Study
               </span>
-              <span className="font-serif text-lg">Szkoła tańca — Voice Agent</span>
+              <span className="font-serif text-xl">Szkoła tańca — Voice Agent</span>
             </div>
             <p className="text-text-secondary leading-relaxed mb-4">
               <strong className="text-text">Problem:</strong> Właścicielka na
@@ -71,7 +71,7 @@ export function SocialProof() {
         {/* Bottom text */}
         <FadeUp delay={0.2}>
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-12">
-            <p className="text-sm text-text-secondary leading-relaxed text-center">
+            <p className="text-base text-text-secondary leading-relaxed text-center">
               System jest lepszy w miesiącu 3 niż w miesiącu 1 — bo uczymy go
               na bieżąco.
             </p>
@@ -81,7 +81,7 @@ export function SocialProof() {
         {/* Marquee Reviews */}
         <FadeUp delay={0.25}>
           <div className="text-center mb-8">
-            <h3 className="font-serif text-xl mb-4">Co mówią nasi klienci</h3>
+            <h3 className="font-serif text-2xl mb-4">Co mówią nasi klienci</h3>
             <StarRating rating={5.0} count={6} className="justify-center" />
           </div>
         </FadeUp>
@@ -104,7 +104,7 @@ export function SocialProof() {
                     <div className="font-sans font-medium text-sm text-text">
                       {review.name}
                     </div>
-                    <div className="text-xs text-text-light">{review.meta}</div>
+                    <div className="text-sm text-text-light">{review.meta}</div>
                   </div>
                 </div>
 
@@ -118,7 +118,7 @@ export function SocialProof() {
                     />
                   ))}
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed line-clamp-4">
+                <p className="text-text-secondary text-base leading-relaxed line-clamp-4">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>

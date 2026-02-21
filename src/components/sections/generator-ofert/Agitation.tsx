@@ -20,7 +20,7 @@ export function Agitation() {
             eyebrow="Konsekwencje"
             title="Klient dostał 3 oferty. Wybrał tego, kto odpowiedział najszybciej."
           />
-          <p className="text-text-secondary text-center mb-12 leading-relaxed">
+          <p className="text-text-secondary text-center mb-12 leading-relaxed text-lg">
             Wyobraź sobie: dzwoni klient, pyta o wycenę instalacji fotowoltaicznej.
             Mówi &ldquo;wyślij ofertę&rdquo;. Ty masz jeszcze 4 inne do zrobienia.
             Wpisujesz sobie w notatki. Wracasz do tego następnego dnia. Tymczasem firma
@@ -34,10 +34,10 @@ export function Agitation() {
           {GEN_OFERT_AGITATION_TIMEFRAMES.map((tf) => (
             <StaggerItem key={tf.time}>
               <div className="bg-white border border-border rounded-[6px] p-6 hover:border-accent transition-colors duration-200">
-                <div className="font-mono text-sm font-semibold text-warning mb-3">
+                <div className="font-mono text-base font-semibold text-warning mb-3">
                   {tf.time}
                 </div>
-                <p className="text-text-secondary leading-relaxed">{tf.text}</p>
+                <p className="text-text-secondary leading-relaxed text-base">{tf.text}</p>
               </div>
             </StaggerItem>
           ))}

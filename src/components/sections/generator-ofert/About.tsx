@@ -30,9 +30,9 @@ export function About() {
           <FadeUp delay={0.15}>
             <div>
               <h3 className="font-serif text-2xl mb-1">Bartłomiej Chudzik</h3>
-              <p className="font-mono text-sm text-accent mb-6">Founder LessManual.ai</p>
+              <p className="font-mono text-base text-accent mb-6">Founder LessManual.ai</p>
 
-              <div className="space-y-4 text-text-secondary leading-relaxed">
+              <div className="space-y-4 text-text-secondary leading-relaxed text-lg">
                 <p>
                   Buduję systemy, które eliminują ręczną robotę z biznesu. Generator ofert powstał,
                   bo widziałem jak firmy OZE, producenci mebli i firmy budowlane tracą godziny

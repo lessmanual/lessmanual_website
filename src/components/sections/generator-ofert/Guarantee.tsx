@@ -20,14 +20,14 @@ export function Guarantee() {
               <div className="w-10 h-10 rounded-full bg-success/10 flex items-center justify-center shrink-0">
                 <Shield size={20} className="text-success" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif text-lg">Potrójna gwarancja wyników</h3>
+              <h3 className="font-serif text-xl">Potrójna gwarancja wyników</h3>
             </div>
 
             <div className="space-y-6">
               {GEN_OFERT_GUARANTEES.map((guarantee) => (
                 <div key={guarantee.title}>
                   <p className="font-medium text-text mb-1">{guarantee.title}</p>
-                  <p className="text-sm text-text-secondary leading-relaxed">{guarantee.desc}</p>
+                  <p className="text-base text-text-secondary leading-relaxed">{guarantee.desc}</p>
                 </div>
               ))}
             </div>

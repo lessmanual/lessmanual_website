@@ -23,7 +23,7 @@ export function Urgency() {
               Nie powiem Ci &quot;ostatnie miejsca!&quot;. To nie sklep z kurtkami.
             </p>
             <p>
-              Każde wdrożenie robimy porządnie. Dlatego biorę maksymalnie 3-4 nowe
+              Każde wdrożenie robimy porządnie. Dlatego biorę maksymalnie 3 nowe
               wdrożenia jednocześnie.
             </p>
           </div>
@@ -46,7 +46,7 @@ export function Urgency() {
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <span className="text-warning mt-0.5 shrink-0">&#x2022;</span>
-                  <span className="text-sm text-text-secondary">{item}</span>
+                  <span className="text-base text-text-secondary">{item}</span>
                 </div>
               ))}
             </div>

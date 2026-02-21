@@ -37,7 +37,7 @@ export function Imagine() {
           <p className="text-center text-text-light text-sm font-mono uppercase tracking-wider mb-4">
             Wyobraź sobie
           </p>
-          <h2 className="font-serif text-center text-2xl md:text-3xl mb-12">
+          <h2 className="font-serif text-center text-3xl md:text-4xl mb-12">
             Poniedziałek rano. Kawa w ręku.
           </h2>
         </FadeUp>
@@ -47,8 +47,8 @@ export function Imagine() {
             <StaggerItem key={item.title}>
               <div className="bg-white border border-border rounded-[6px] p-6 md:p-8 h-full hover:border-accent transition-colors duration-200">
                 <item.icon size={24} strokeWidth={1.5} className="text-accent mb-4" />
-                <h3 className="font-serif text-lg mb-2">{item.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed italic">
+                <h3 className="font-serif text-2xl mb-2">{item.title}</h3>
+                <p className="text-text-secondary text-lg leading-relaxed italic">
                   {item.text}
                 </p>
               </div>
@@ -58,16 +58,16 @@ export function Imagine() {
 
         <FadeUp>
           <div className="text-center">
-            <p className="text-text font-medium text-lg mb-2">
+            <p className="text-text font-medium text-xl mb-2">
               Brzmi jak science fiction?
             </p>
-            <p className="text-text-secondary mb-6">
+            <p className="text-text-secondary text-lg mb-6">
               Dla naszych klientów to poniedziałek.
             </p>
             <Button href={CALENDLY_URL} external>
               Chcę takie wyniki
             </Button>
-            <p className="mt-5 text-text-light text-sm">
+            <p className="mt-5 text-text-light text-base">
               Nie wierz mi na słowo. Zaraz pokażę Ci konkretne wyniki i opinie klientów.
             </p>
           </div>

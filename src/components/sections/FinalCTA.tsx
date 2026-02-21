@@ -21,16 +21,16 @@ export function FinalCTA() {
         <FadeUp>
           <SectionHeader
             eyebrow="Następny krok"
-            title="Gotowy odzyskać swój czas?"
+            title="Odzyskaj kontrolę nad wynikami."
           />
-          <p className="text-text-secondary text-center mb-10">
+          <p className="text-text-secondary text-lg text-center mb-10">
             Umów bezpłatną rozmowę. 15 minut. Bez zobowiązań.
           </p>
         </FadeUp>
 
         <FadeUp delay={0.1}>
           <div className="bg-bg border border-border rounded-[6px] p-6 md:p-8 mb-10">
-            <p className="text-text-light mb-5 text-center">Na rozmowie:</p>
+            <p className="text-text-light mb-5 text-center text-lg">Na rozmowie:</p>
             <StaggerContainer staggerDelay={0.1} className="space-y-4 max-w-[520px] mx-auto">
               {ctaPoints.map((point) => (
                 <StaggerItem key={point}>
@@ -46,7 +46,7 @@ export function FinalCTA() {
 
         <FadeUp delay={0.15}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-10">
-            <p className="text-text font-medium">
+            <p className="text-text font-medium text-lg">
               Jeśli nie pasujemy — powiem Ci to wprost. Ale jeśli Twoja firma ma dobry produkt
               i chce rosnąć szybciej — ta rozmowa może być najlepszą inwestycją 15 minut w tym kwartale.
             </p>
@@ -60,23 +60,23 @@ export function FinalCTA() {
             </Button>
 
             <div className="mt-10 space-y-2">
-              <p className="text-text-light text-sm">Nie jesteś gotowy na rozmowę?</p>
+              <p className="text-text-light text-base">Nie jesteś gotowy na rozmowę?</p>
               <Button href="/audyt" variant="text">
                 Pobierz audyt: &ldquo;5 procesów do automatyzacji w firmie B2B&rdquo;
               </Button>
             </div>
 
             <div className="mt-10 pt-8 border-t border-border">
-              <p className="text-text-light text-sm mb-1">Lub napisz bezpośrednio:</p>
+              <p className="text-text-light text-base mb-1">Lub napisz bezpośrednio:</p>
               <a
                 href={`mailto:${EMAIL}`}
-                className="font-mono text-sm text-text-secondary hover:text-accent transition-colors"
+                className="font-mono text-base text-text-secondary hover:text-accent transition-colors"
               >
                 {EMAIL}
               </a>
             </div>
 
-            <p className="mt-10 font-mono text-sm text-accent tracking-wide">
+            <p className="mt-10 font-mono text-base text-accent tracking-wide">
               Make your business LessManual.
             </p>
           </div>

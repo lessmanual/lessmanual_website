@@ -34,7 +34,7 @@ export function FinalCTA() {
             <Button href={GEN_OFERT_CALENDLY_URL} external>
               Chcę system, który robi oferty za mnie
             </Button>
-            <p className="mt-5 text-text-muted text-sm max-w-[520px] mx-auto">
+            <p className="mt-5 text-text-muted text-base max-w-[520px] mx-auto">
               Jeśli pasujemy — startujemy w 7-21 dni. Jeśli nie — wyjdziesz z darmową
               analizą Twojego procesu wycen i konkretnymi wskazówkami jak go usprawnić.
             </p>
@@ -48,7 +48,7 @@ export function FinalCTA() {
               <StaggerItem key={el.text}>
                 <div className="flex items-center gap-3 bg-bg border border-border rounded-[6px] p-4">
                   <el.icon size={18} className="text-accent shrink-0" strokeWidth={1.5} />
-                  <span className="text-text-secondary text-sm">{el.text}</span>
+                  <span className="text-text-secondary text-base">{el.text}</span>
                 </div>
               </StaggerItem>
             ))}
@@ -70,7 +70,7 @@ export function FinalCTA() {
 
         {/* P.S. */}
         <FadeUp delay={0.25}>
-          <div className="mt-10 text-text-muted text-sm leading-relaxed">
+          <div className="mt-10 text-text-muted text-base leading-relaxed">
             <p>
               <strong className="text-text-secondary">P.S.</strong> Sam konfiguruję każdy system.
               Max 3 wdrożenia jednocześnie. Miejsca jeszcze są — ale nie będą wiecznie.

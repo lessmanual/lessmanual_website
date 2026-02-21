@@ -30,9 +30,9 @@ export function About() {
           <FadeUp delay={0.15}>
             <div>
               <h3 className="font-serif text-2xl mb-1">Bartłomiej Chudzik</h3>
-              <p className="font-mono text-sm text-accent mb-6">Founder LessManual.ai</p>
+              <p className="font-mono text-lg text-accent mb-6">Founder LessManual.ai</p>
 
-              <div className="space-y-4 text-text-secondary leading-relaxed">
+              <div className="space-y-4 text-lg text-text-secondary leading-relaxed">
                 <p>
                   8 lat w logistyce B2B nauczyło mnie jednego: ręczna robota zabija biznes.
                   AI SDR powstał, bo sam potrzebowałem spotkań. Zamiast zatrudnić handlowca
@@ -50,7 +50,7 @@ export function About() {
                 {["77% open rate", "Deal w 6 dni", "Prowadzę osobiście"].map((badge) => (
                   <span
                     key={badge}
-                    className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-accent/10 text-accent border border-accent/20"
+                    className="inline-flex items-center px-3 py-1.5 rounded-full text-base font-medium bg-accent/10 text-accent border border-accent/20"
                   >
                     {badge}
                   </span>

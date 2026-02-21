@@ -14,7 +14,7 @@ export function WhatYouGet() {
             eyebrow="Co dostajesz"
             title="Nie kupujesz artykułów. Kupujesz ruch z Google i leady, które same Cię znajdują."
           />
-          <p className="text-text-secondary text-center mb-12">
+          <p className="text-lg text-text-secondary text-center mb-12">
             Każdy pakiet to pełny system — od keyword research po monitoring pozycji.
             Oto co dokładnie dostajesz:
           </p>
@@ -28,7 +28,7 @@ export function WhatYouGet() {
                   {SEO_DELIVERABLES_TABLE.headers.map((header, idx) => (
                     <th
                       key={header}
-                      className={`p-3 text-sm font-sans font-semibold border-b border-border ${
+                      className={`p-3 text-base font-sans font-semibold border-b border-border ${
                         idx === 0
                           ? "text-left text-text-light w-[34%]"
                           : "text-center text-text-light w-[22%]"
@@ -42,11 +42,11 @@ export function WhatYouGet() {
               <tbody>
                 {SEO_DELIVERABLES_TABLE.rows.map((row) => (
                   <tr key={row.label} className="border-b border-border">
-                    <td className="p-3 text-sm text-text">{row.label}</td>
+                    <td className="p-3 text-base text-text">{row.label}</td>
                     {(["starter", "growth", "scale"] as const).map((tier) => {
                       const val = row[tier];
                       return (
-                        <td key={tier} className="p-3 text-sm text-center">
+                        <td key={tier} className="p-3 text-base text-center">
                           {val === true ? (
                             <Check size={16} className="text-success mx-auto" strokeWidth={2} />
                           ) : val === false ? (
@@ -67,14 +67,14 @@ export function WhatYouGet() {
         {/* Bonus values */}
         <FadeUp delay={0.15}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6">
-            <p className="font-serif text-base mb-4">Wartość bonusów w cenie pakietu:</p>
+            <p className="font-serif text-lg mb-4">Wartość bonusów w cenie pakietu:</p>
             <div className="space-y-3">
               {SEO_BONUS_VALUES.map((bonus) => (
                 <div key={bonus.tier} className="flex items-start gap-3">
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-semibold bg-white/60 text-accent shrink-0">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-sm font-mono font-semibold bg-white/60 text-accent shrink-0">
                     {bonus.tier}
                   </span>
-                  <span className="text-sm text-text-secondary">
+                  <span className="text-base text-text-secondary">
                     {bonus.desc}{" "}
                     <span className="font-medium text-text">(wartość {bonus.value})</span>
                   </span>

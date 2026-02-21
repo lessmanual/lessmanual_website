@@ -26,12 +26,12 @@ export function WhatYouGet() {
           {OBS_KLIENTA_DELIVERABLES.map((block) => (
             <StaggerItem key={block.title}>
               <div className="bg-white border border-border rounded-[6px] p-6 h-full hover:border-accent transition-colors duration-200">
-                <h3 className="font-serif text-lg mb-4">{block.title}</h3>
+                <h3 className="font-serif text-xl mb-4">{block.title}</h3>
                 <div className="space-y-3">
                   {block.items.map((item) => (
                     <div key={item} className="flex items-start gap-2.5">
                       <Check size={16} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-text-secondary leading-relaxed">{item}</span>
+                      <span className="text-base text-text-secondary leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>

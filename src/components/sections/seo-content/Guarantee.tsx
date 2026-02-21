@@ -20,7 +20,7 @@ export function Guarantee() {
               <div className="w-10 h-10 rounded-full bg-success/10 flex items-center justify-center shrink-0">
                 <Shield size={20} className="text-success" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif text-lg">Gwarancja wyników</h3>
+              <h3 className="font-serif text-xl">Gwarancja wyników</h3>
             </div>
 
             <div className="space-y-5">
@@ -28,18 +28,18 @@ export function Guarantee() {
                 <div key={guarantee.title} className="flex items-start gap-3">
                   <Check size={18} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
                   <div>
-                    <p className="font-medium text-text mb-1">{guarantee.title}</p>
-                    <p className="text-text-secondary text-sm leading-relaxed">{guarantee.desc}</p>
+                    <p className="font-medium text-text text-lg mb-1">{guarantee.title}</p>
+                    <p className="text-text-secondary text-base leading-relaxed">{guarantee.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="mt-6 pt-5 border-t border-success/20">
-              <p className="text-text font-medium">
+              <p className="text-lg text-text font-medium">
                 Ryzyko jest po naszej stronie, nie Twojej.
               </p>
-              <p className="text-text-secondary text-sm mt-1">
+              <p className="text-text-secondary text-base mt-1">
                 Dlatego możemy sobie na to pozwolić — bo wiemy, co robimy.
               </p>
             </div>

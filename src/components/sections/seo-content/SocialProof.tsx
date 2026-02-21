@@ -31,13 +31,13 @@ export function SocialProof() {
           {billboardMetrics.map((m) => (
             <StaggerItem key={m.label}>
               <div className="bg-bg border border-border rounded-[6px] p-6 text-center">
-                <div className="text-xs uppercase tracking-wider text-text-muted mb-2">
+                <div className="text-sm uppercase tracking-wider text-text-muted mb-2">
                   {m.label}
                 </div>
                 <div className="font-mono text-3xl md:text-4xl font-bold text-accent mb-2">
                   {m.value}
                 </div>
-                <div className="text-xs text-text-light">{m.benchmark}</div>
+                <div className="text-sm text-text-light">{m.benchmark}</div>
               </div>
             </StaggerItem>
           ))}
@@ -46,14 +46,14 @@ export function SocialProof() {
         {/* Bonus values */}
         <FadeUp delay={0.15}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 mb-12">
-            <p className="font-serif text-base mb-4">Bonusy w cenie pakietu:</p>
+            <p className="font-serif text-lg mb-4">Bonusy w cenie pakietu:</p>
             <div className="space-y-3">
               {SEO_BONUS_VALUES.map((bonus) => (
                 <div key={bonus.tier} className="flex items-start gap-3">
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-semibold bg-white/60 text-accent shrink-0">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-sm font-mono font-semibold bg-white/60 text-accent shrink-0">
                     {bonus.tier}
                   </span>
-                  <span className="text-sm text-text-secondary">
+                  <span className="text-base text-text-secondary">
                     {bonus.desc}{" "}
                     <span className="font-medium text-text">(wartość {bonus.value})</span>
                   </span>
@@ -66,7 +66,7 @@ export function SocialProof() {
         {/* Google Reviews */}
         <FadeUp delay={0.2}>
           <div className="text-center mb-8">
-            <h3 className="font-serif text-xl mb-4">Co mówią nasi klienci</h3>
+            <h3 className="font-serif text-2xl mb-4">Co mówią nasi klienci</h3>
             <StarRating rating={5.0} count={6} className="justify-center" />
           </div>
         </FadeUp>
@@ -103,7 +103,7 @@ export function SocialProof() {
                     />
                   ))}
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed line-clamp-4">
+                <p className="text-text-secondary text-base leading-relaxed line-clamp-4">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
@@ -113,7 +113,7 @@ export function SocialProof() {
 
         <FadeUp delay={0.3}>
           <div className="text-center">
-            <p className="text-text-secondary mb-4">Chcesz takich wyników? Porozmawiajmy.</p>
+            <p className="text-lg text-text-secondary mb-4">Chcesz takich wyników? Porozmawiajmy.</p>
             <Button href={SEO_CALENDLY_URL} external>
               Chcę takie wyniki
             </Button>

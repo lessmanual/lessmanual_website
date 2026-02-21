@@ -20,7 +20,7 @@ export function Pricing() {
             eyebrow="Cennik"
             title="Prosto. Setup + abonament. Bez ukrytych kosztów."
           />
-          <p className="text-text-secondary text-center mb-12">
+          <p className="text-lg text-text-secondary text-center mb-12">
             Jednorazowy setup + miesięczny abonament. Wiesz z góry, ile płacisz.
             Żadnych niespodzianek.
           </p>
@@ -44,27 +44,27 @@ export function Pricing() {
                 )}
 
                 <div className="mb-4">
-                  <h3 className="font-serif text-xl">{plan.name}</h3>
-                  <p className="text-sm text-text-muted">{plan.subtitle}</p>
+                  <h3 className="font-serif text-2xl">{plan.name}</h3>
+                  <p className="text-base text-text-muted">{plan.subtitle}</p>
                 </div>
 
                 <div className="mb-2">
                   <span className="font-mono text-3xl font-bold text-text">{plan.setupPrice}</span>
-                  <span className="text-text-muted text-sm ml-1">PLN setup</span>
+                  <span className="text-text-muted text-base ml-1">PLN setup</span>
                 </div>
                 <div className="mb-2">
                   <span className="font-mono text-xl font-semibold text-text">{plan.monthlyPrice}</span>
-                  <span className="text-text-muted text-sm ml-1">PLN/mies</span>
+                  <span className="text-text-muted text-base ml-1">PLN/mies</span>
                 </div>
                 <div className="mb-6">
-                  <span className="font-mono text-sm font-medium text-accent">{plan.perArticle}</span>
+                  <span className="font-mono text-base font-medium text-accent">{plan.perArticle}</span>
                 </div>
 
                 <div className="space-y-2.5 mb-6 flex-1">
                   {plan.features.map((feat) => (
                     <div key={feat} className="flex items-start gap-2.5">
                       <Check size={16} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-text-secondary">{feat}</span>
+                      <span className="text-base text-text-secondary">{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -89,7 +89,7 @@ export function Pricing() {
 
         {/* Payment terms */}
         <FadeUp delay={0.15}>
-          <p className="text-center text-sm text-text-secondary mb-10">
+          <p className="text-center text-base text-text-secondary mb-10">
             <strong className="text-text">50% zaliczki przed startem. 50% na dzień uruchomienia systemu.</strong>
           </p>
         </FadeUp>
@@ -98,8 +98,8 @@ export function Pricing() {
         <FadeUp delay={0.2}>
           <div className="bg-white border border-border rounded-[6px] overflow-hidden mb-8">
             <div className="p-6 border-b border-border">
-              <h3 className="font-serif text-lg mb-1">Czas wdrożenia</h3>
-              <p className="text-sm text-text-secondary">
+              <h3 className="font-serif text-xl mb-1">Czas wdrożenia</h3>
+              <p className="text-base text-text-secondary">
                 Od podpisania umowy do pierwszych artykułów na Twoim blogu:
               </p>
             </div>
@@ -107,8 +107,8 @@ export function Pricing() {
               <div className="space-y-4">
                 {SEO_DELIVERY_TIMES.map((item) => (
                   <div key={item.plan} className="flex items-center justify-between">
-                    <span className="font-mono text-sm font-semibold text-text">{item.plan}</span>
-                    <span className="text-sm text-text-secondary">{item.time}</span>
+                    <span className="font-mono text-base font-semibold text-text">{item.plan}</span>
+                    <span className="text-base text-text-secondary">{item.time}</span>
                   </div>
                 ))}
               </div>

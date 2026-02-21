@@ -48,7 +48,7 @@ export function FinalCTA() {
               <StaggerItem key={el.text}>
                 <div className="flex items-center gap-3 bg-bg border border-border rounded-[6px] p-4">
                   <el.icon size={18} className="text-accent shrink-0" strokeWidth={1.5} />
-                  <span className="text-text-secondary text-sm">{el.text}</span>
+                  <span className="text-text-secondary text-base">{el.text}</span>
                 </div>
               </StaggerItem>
             ))}
@@ -70,7 +70,7 @@ export function FinalCTA() {
 
         {/* P.S. */}
         <FadeUp delay={0.25}>
-          <div className="mt-10 text-text-muted text-sm leading-relaxed space-y-3">
+          <div className="mt-10 text-text-muted text-base leading-relaxed space-y-3">
             <p>
               <strong className="text-text-secondary">P.S.</strong> Jeśli obsługujesz 30+ zapytań dziennie
               i odpowiadasz na te same pytania po raz setny — ten system jest dla Ciebie.

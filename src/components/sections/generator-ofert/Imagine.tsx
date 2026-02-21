@@ -45,8 +45,8 @@ export function Imagine() {
                 <div className="w-10 h-10 rounded-[6px] bg-accent/10 flex items-center justify-center mb-4">
                   <card.icon size={20} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-serif text-lg mb-2">{card.title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed">{card.desc}</p>
+                <h3 className="font-serif text-xl mb-2">{card.title}</h3>
+                <p className="text-base text-text-secondary leading-relaxed">{card.desc}</p>
               </div>
             </StaggerItem>
           ))}
@@ -54,7 +54,7 @@ export function Imagine() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 md:p-8 text-center mb-10">
-            <p className="font-serif text-xl text-text">
+            <p className="font-serif text-2xl text-text">
               Brzmi jak science fiction? Dla firm z naszym systemem to czwartek.
             </p>
           </div>

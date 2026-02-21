@@ -31,7 +31,7 @@ export function ValueStack() {
       <div className="max-w-[1000px] mx-auto px-6">
         <FadeUp>
           <SectionHeader eyebrow="Wartość" title="Nie kupujesz narzędzia. Kupujesz system który działa i partnera który go rozwija." />
-          <p className="text-center text-text-secondary mb-12">
+          <p className="text-center text-text-secondary text-lg mb-12">
             Ile razy kupiłeś narzędzie, które po miesiącu leżało nieużywane? U nas tak nie będzie.
           </p>
         </FadeUp>
@@ -44,8 +44,8 @@ export function ValueStack() {
                 <div className="w-10 h-10 rounded-[6px] bg-accent/10 flex items-center justify-center mb-4 mx-auto">
                   <block.icon size={20} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-serif text-lg mb-2">{block.title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed">{block.desc}</p>
+                <h3 className="font-serif text-2xl mb-2">{block.title}</h3>
+                <p className="text-lg text-text-secondary leading-relaxed">{block.desc}</p>
               </div>
             </StaggerItem>
           ))}
@@ -54,17 +54,17 @@ export function ValueStack() {
         {/* B: Savings full-width card */}
         <FadeUp delay={0.15}>
           <div className="bg-white border border-border rounded-[6px] p-6 md:p-8 mb-8">
-            <h3 className="font-serif text-lg mb-6 text-center">Tańsze niż pracownik. Szybsze niż agencja.</h3>
+            <h3 className="font-serif text-2xl mb-6 text-center">Tańsze niż pracownik. Szybsze niż agencja.</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {VALUE_STACK_SAVINGS.map((s) => (
                 <div key={s.area} className="bg-bg rounded-[6px] p-4">
-                  <div className="font-sans font-semibold text-sm text-text mb-2">{s.area}</div>
-                  <div className="flex items-start gap-2 text-sm mb-1">
+                  <div className="font-sans font-semibold text-base text-text mb-2">{s.area}</div>
+                  <div className="flex items-start gap-2 text-base mb-1">
                     <X size={14} className="text-warning mt-0.5 shrink-0" strokeWidth={2} />
                     <span className="text-text-secondary">{s.before}</span>
                   </div>
-                  <div className="flex items-start gap-2 text-sm">
+                  <div className="flex items-start gap-2 text-base">
                     <Check size={14} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
                     <span className="text-text-secondary">{s.after}</span>
                   </div>
@@ -74,7 +74,7 @@ export function ValueStack() {
 
             {/* Big savings highlight */}
             <div className="bg-text rounded-[6px] p-5 text-center">
-              <div className="text-xs uppercase tracking-wider text-white/50 mb-1">
+              <div className="text-sm uppercase tracking-wider text-white/50 mb-1">
                 Zostaje w Twojej firmie rocznie
               </div>
               <div className="font-mono text-2xl md:text-3xl font-bold text-accent">
@@ -94,7 +94,7 @@ export function ValueStack() {
             ].map((perk) => (
               <span
                 key={perk}
-                className="inline-flex items-center px-4 py-2 rounded-full text-sm bg-white border border-border text-text-secondary"
+                className="inline-flex items-center px-4 py-2 rounded-full text-base bg-white border border-border text-text-secondary"
               >
                 {perk}
               </span>
@@ -104,13 +104,13 @@ export function ValueStack() {
 
         <FadeUp>
           <div className="text-center">
-            <p className="text-text mb-6 font-medium">
+            <p className="text-text text-lg mb-6 font-medium">
               Jeden partner. Wszystkie systemy. Pełna odpowiedzialność za wyniki.
             </p>
             <Button href={CALENDLY_URL} external>
               Odzyskaj 20-40h miesięcznie
             </Button>
-            <p className="mt-5 text-text-light text-sm">
+            <p className="mt-5 text-text-light text-base">
               Brzmi dobrze, ale jak to wygląda w praktyce?
             </p>
           </div>

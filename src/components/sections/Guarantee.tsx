@@ -17,12 +17,12 @@ export function Guarantee() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <p className="text-text-secondary leading-relaxed mb-6 text-center">
+          <p className="text-text-secondary text-lg leading-relaxed mb-6 text-center">
             Płacisz komuś zaliczkę, czekasz tydzień, dostajesz coś co nie działa,
             a potem cisza. Znam te historie. Nie chcę być tym gościem.
           </p>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-10">
-            <p className="text-text font-medium">
+            <p className="text-text font-medium text-lg">
               Dlatego jedna zasada: Gwarancja wyników lub pełny zwrot kosztów.
             </p>
           </div>
@@ -30,11 +30,11 @@ export function Guarantee() {
 
         <FadeUp delay={0.15}>
           <Card className="p-6 md:p-8 mb-10">
-            <h3 className="font-serif text-lg mb-6">Jak to wygląda w praktyce:</h3>
+            <h3 className="font-serif text-2xl mb-6">Jak to wygląda w praktyce:</h3>
             <StaggerContainer staggerDelay={0.1} className="space-y-3">
               {GUARANTEE_POINTS.map((point) => (
                 <StaggerItem key={point}>
-                  <div className="flex items-start gap-3 text-sm text-text-secondary leading-relaxed">
+                  <div className="flex items-start gap-3 text-lg text-text-secondary leading-relaxed">
                     <Check size={16} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
                     <span>{point}</span>
                   </div>
@@ -45,12 +45,12 @@ export function Guarantee() {
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <p className="text-text-secondary leading-relaxed mb-8 text-center">
+          <p className="text-text-secondary text-lg leading-relaxed mb-8 text-center">
             <strong className="text-text">Nie musisz kupować wszystkiego na raz.</strong>{" "}
             Zaczynasz od jednego systemu pilotażowego. Widzisz wyniki — decydujesz o kolejnych.
           </p>
 
-          <h3 className="font-serif text-lg mb-6 text-center">Dlaczego mogę to obiecać?</h3>
+          <h3 className="font-serif text-2xl mb-6 text-center">Dlaczego mogę to obiecać?</h3>
           <StaggerContainer staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
               { num: "1", title: "Wybieram klientów", desc: "Nie biorę projektów gdzie nie widzę realnych wyników. Firma B2B z dobrym produktem/usługą — to mój klient." },
@@ -62,8 +62,8 @@ export function Guarantee() {
                   <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-mono text-base font-semibold mb-4 mx-auto">
                     {item.num}
                   </div>
-                  <h4 className="font-serif text-xl mb-3">{item.title}</h4>
-                  <p className="text-text-secondary leading-relaxed">{item.desc}</p>
+                  <h4 className="font-serif text-2xl mb-3">{item.title}</h4>
+                  <p className="text-lg text-text-secondary leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
             ))}

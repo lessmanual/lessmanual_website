@@ -32,13 +32,13 @@ export function SocialProof() {
           {billboardMetrics.map((m) => (
             <StaggerItem key={m.label}>
               <div className="bg-bg border border-border rounded-[6px] p-6 text-center">
-                <div className="text-xs uppercase tracking-wider text-text-muted mb-2">
+                <div className="text-base uppercase tracking-wider text-text-muted mb-2">
                   {m.label}
                 </div>
                 <div className="font-mono text-3xl md:text-4xl font-bold text-accent mb-2">
                   {m.value}
                 </div>
-                <div className="text-xs text-text-light">{m.benchmark}</div>
+                <div className="text-base text-text-light">{m.benchmark}</div>
               </div>
             </StaggerItem>
           ))}
@@ -61,14 +61,14 @@ export function SocialProof() {
         {/* Metrics table */}
         <FadeUp delay={0.15}>
           <div className="bg-bg border border-border rounded-[6px] overflow-hidden mb-4">
-            <div className="grid grid-cols-3 gap-0 text-sm">
-              <div className="p-4 font-sans font-semibold text-text-light bg-white border-b border-border">
+            <div className="grid grid-cols-3 gap-0 text-lg">
+              <div className="p-4 font-sans font-semibold text-text-light bg-white border-b border-border text-lg">
                 Metryka
               </div>
-              <div className="p-4 font-sans font-semibold text-accent bg-white border-b border-border text-center">
+              <div className="p-4 font-sans font-semibold text-accent bg-white border-b border-border text-center text-lg">
                 Nasz wynik
               </div>
-              <div className="p-4 font-sans font-semibold text-text-light bg-white border-b border-border text-center">
+              <div className="p-4 font-sans font-semibold text-text-light bg-white border-b border-border text-center text-lg">
                 Standard branży
               </div>
               {AI_SDR_SOCIAL_PROOF_METRICS.map((row) => (
@@ -86,8 +86,8 @@ export function SocialProof() {
               ))}
             </div>
           </div>
-          <p className="text-xs text-text-muted text-center mb-12">
-            Dane z kampanii LessManual AI SDR. Luty 2026. Kampania w toku (41% ukończona) — wyniki rosną z każdym tygodniem.
+          <p className="text-base text-text-muted text-center mb-12">
+            Dane z kampanii LessManual AI SDR. Kampania w toku — wyniki rosną z każdym tygodniem.
           </p>
         </FadeUp>
 
@@ -95,15 +95,15 @@ export function SocialProof() {
         <FadeUp delay={0.2}>
           <div className="bg-white border-l-[3px] border-l-accent border border-border rounded-r-[6px] rounded-l-none p-6 md:p-8 mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block px-3 py-1 text-xs font-sans font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
+              <span className="inline-block px-3 py-1 text-base font-sans font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
                 Case Study
               </span>
-              <span className="font-serif text-lg">WiperApp</span>
+              <span className="font-serif text-2xl">WiperApp</span>
             </div>
             <p className="font-serif text-2xl text-text mb-4">
               Cold email. Podpisana umowa. <span className="text-accent">6 dni.</span>
             </p>
-            <p className="text-text-secondary leading-relaxed mb-4">
+            <p className="text-lg text-text-secondary leading-relaxed mb-4">
               WiperApp (SaaS, data erasure) potrzebował spotkań z firmami ITAD i Enterprise
               na poziomie C-Level, globalnie. Wysłaliśmy cold email, umówiliśmy spotkanie
               i podpisaliśmy umowę na współpracę. Od pierwszego maila do podpisu: 6 dni.
@@ -117,7 +117,7 @@ export function SocialProof() {
         {/* Google Reviews */}
         <FadeUp delay={0.25}>
           <div className="text-center mb-8">
-            <h3 className="font-serif text-xl mb-4">Co mówią nasi klienci</h3>
+            <h3 className="font-serif text-2xl mb-4">Co mówią nasi klienci</h3>
             <StarRating rating={5.0} count={6} className="justify-center" />
           </div>
         </FadeUp>
@@ -133,14 +133,14 @@ export function SocialProof() {
                 className="shrink-0 w-[280px] md:w-[340px] bg-bg border border-border rounded-[6px] p-5"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center font-sans font-semibold text-sm text-text-secondary border border-border">
+                  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center font-sans font-semibold text-base text-text-secondary border border-border">
                     {review.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-sans font-medium text-sm text-text">
+                    <div className="font-sans font-medium text-lg text-text">
                       {review.name}
                     </div>
-                    <div className="text-xs text-text-light">{review.meta}</div>
+                    <div className="text-base text-text-light">{review.meta}</div>
                   </div>
                 </div>
 
@@ -154,7 +154,7 @@ export function SocialProof() {
                     />
                   ))}
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed line-clamp-4">
+                <p className="text-text-secondary text-lg leading-relaxed line-clamp-4">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
@@ -168,7 +168,7 @@ export function SocialProof() {
             <Button href={AI_SDR_CALENDLY_URL} external>
               Chcę takie wyniki
             </Button>
-            <p className="mt-6 text-text-secondary text-sm">
+            <p className="mt-6 text-text-secondary text-lg">
               OK, wyniki widzisz. Ale co dokładnie dostajesz za te pieniądze?
             </p>
           </div>

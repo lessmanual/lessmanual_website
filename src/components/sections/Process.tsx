@@ -24,18 +24,18 @@ export function Process() {
                   {step.step}
                 </div>
 
-                <h3 className="font-serif text-xl mb-1">{step.title}</h3>
-                <p className="font-mono text-sm text-accent mb-4">{step.duration}</p>
+                <h3 className="font-serif text-2xl mb-1">{step.title}</h3>
+                <p className="font-mono text-lg text-accent mb-4">{step.duration}</p>
 
                 <ul className="space-y-2">
                   {step.points.map((point) => (
-                    <li key={point} className="text-sm text-text-secondary leading-relaxed">
+                    <li key={point} className="text-lg text-text-secondary leading-relaxed">
                       {point}
                     </li>
                   ))}
                 </ul>
 
-                <p className="mt-4 font-mono text-xs text-text-light">
+                <p className="mt-4 font-mono text-sm text-text-light">
                   Twój czas: {step.yourTime}
                 </p>
               </div>
@@ -45,10 +45,10 @@ export function Process() {
 
         <FadeUp>
           <div className="text-center">
-            <p className="font-mono text-sm text-text mb-2">
+            <p className="font-mono text-lg text-text mb-2">
               Łącznie Twój czas: <strong>około 2 godziny</strong> przez cały proces.
             </p>
-            <p className="text-text-secondary text-sm mb-8">
+            <p className="text-text-secondary text-base mb-8">
               Masz 2 godziny żeby odzyskać 20-40 godzin miesięcznie?
               Nie działa? Nie płacisz — z gwarancją wyników.
             </p>

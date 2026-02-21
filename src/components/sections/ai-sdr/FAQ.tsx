@@ -38,7 +38,7 @@ function FAQItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-text-secondary text-sm leading-relaxed">
+            <p className="pb-5 text-text-secondary text-lg leading-relaxed">
               {a}
             </p>
           </motion.div>
@@ -59,7 +59,7 @@ export function FAQ() {
         <div className="space-y-10 mb-12">
           {AI_SDR_FAQ_ITEMS.map((category, catIdx) => (
             <FadeUp key={category.category}>
-              <h3 className="font-sans font-semibold text-sm uppercase tracking-wider text-text-light mb-4">
+              <h3 className="font-sans font-semibold text-lg uppercase tracking-wider text-text-light mb-4">
                 {category.category}
               </h3>
               <div>
@@ -78,7 +78,7 @@ export function FAQ() {
 
         <FadeUp>
           <div className="text-center space-y-3">
-            <p className="text-text-secondary text-sm">Masz inne pytanie?</p>
+            <p className="text-text-secondary text-lg">Masz inne pytanie?</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={`mailto:${AI_SDR_EMAIL}`} variant="text" external>
                 Napisz: {AI_SDR_EMAIL}

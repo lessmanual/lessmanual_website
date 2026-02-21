@@ -5,6 +5,7 @@ import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { SEO_CALENDLY_URL } from "@/lib/seo-content-constants";
+import { getNextMonthPL } from "@/lib/constants";
 
 export function Urgency() {
   return (
@@ -18,9 +19,9 @@ export function Urgency() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="space-y-6 text-text-secondary leading-relaxed mb-10">
+          <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-10">
             <p>
-              Przyjmuję max 3 onboardingi SEO Content miesięcznie. Każdy klient wymaga
+              Przyjmuję max 3 projekty SEO Content miesięcznie. Każdy klient wymaga
               dedykowanego keyword research, konfiguracji systemu i testów jakości.
               Nie chcę robić tego masowo — chcę robić to dobrze.
             </p>
@@ -41,12 +42,12 @@ export function Urgency() {
           <div className="bg-warning/10 border border-warning/30 rounded-[6px] p-6 text-center mb-10">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Clock size={18} className="text-warning" strokeWidth={2} />
-              <span className="font-mono text-sm font-semibold text-warning uppercase tracking-wider">
+              <span className="font-mono text-base font-semibold text-warning uppercase tracking-wider">
                 Ograniczona dostępność
               </span>
             </div>
-            <p className="font-serif text-2xl text-text">
-              Zostały 2 miejsca na onboarding w marcu
+            <p className="font-serif text-3xl text-text">
+              Zostało 1 miejsce w {getNextMonthPL()}
             </p>
           </div>
         </FadeUp>

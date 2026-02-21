@@ -9,7 +9,7 @@ export const OBS_KLIENTA_PROOF_METRICS = [
   { value: "500-1000%", label: "ROI w pierwszym roku", countTo: 1000, suffix: "%" },
 ];
 
-export const OBS_KLIENTA_PROOF_META = "10+ wdrożeń | 5.0 na Google | Zostały 2 miejsca w marcu";
+export const OBS_KLIENTA_PROOF_META = "10+ wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
 
 export const OBS_KLIENTA_COST_TABLE = [
   {
@@ -215,7 +215,7 @@ export const OBS_KLIENTA_SETUP_PLANS = [
     ],
     delivery: "10-14 dni",
     desc: "Dla firm obsługujących klientów na wielu kanałach. Jeden system na wszystko.",
-    valueNote: "Wartość zawartości planu: ~20,000 PLN. Twoja inwestycja: 10,000 PLN.",
+    valueNote: "Najczęściej wybierany. Pracownik obsługi kosztuje 8-9k/mies. System: 1,500 PLN.",
     popular: true,
     ctaVariant: "primary" as const,
   },

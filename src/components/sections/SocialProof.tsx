@@ -45,7 +45,7 @@ export function SocialProof() {
                 <CountUp to={m.countTo} suffix={m.suffix} decimals={m.decimals ?? 0} />
               </div>
               <div className="text-base text-text-secondary mb-1">{m.label}</div>
-              <div className="text-sm text-text-muted">standard: {m.benchmark}</div>
+              <div className="text-base text-text-muted">standard: {m.benchmark}</div>
             </StaggerItem>
           ))}
         </StaggerContainer>
@@ -55,18 +55,18 @@ export function SocialProof() {
           {SPOTLIGHT_CASES.map((c) => (
             <StaggerItem key={c.company}>
               <Card spotlight className="p-6 md:p-8">
-                <div className="text-xs font-sans font-semibold uppercase tracking-wider text-accent mb-3">
+                <div className="text-sm font-sans font-semibold uppercase tracking-wider text-accent mb-3">
                   {c.type}
                 </div>
-                <h3 className="font-serif text-xl mb-3">{c.company}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                <h3 className="font-serif text-2xl mb-3">{c.company}</h3>
+                <p className="text-text-secondary text-base leading-relaxed mb-4">
                   Inwestycja: <span className="font-mono font-medium text-text">{c.investment}</span>.
                   Wynik: <span className="font-mono font-medium text-text">{c.result}</span>.
                 </p>
-                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                <p className="text-text-secondary text-base leading-relaxed mb-4">
                   {c.detail}
                 </p>
-                <p className="font-mono text-sm font-medium text-success">
+                <p className="font-mono text-base font-medium text-success">
                   Szacunkowa wartość: {c.value}
                 </p>
               </Card>
@@ -79,11 +79,11 @@ export function SocialProof() {
           {MORE_CASES.map((c) => (
             <StaggerItem key={c.company}>
               <Card spotlight className="p-5">
-                <div className="text-xs font-sans font-semibold uppercase tracking-wider text-accent mb-2">
+                <div className="text-sm font-sans font-semibold uppercase tracking-wider text-accent mb-2">
                   {c.type}
                 </div>
-                <h4 className="font-serif text-base text-text mb-2">{c.company}</h4>
-                <p className="text-text-secondary text-sm leading-relaxed">{c.result}</p>
+                <h4 className="font-serif text-xl text-text mb-2">{c.company}</h4>
+                <p className="text-text-secondary text-base leading-relaxed">{c.result}</p>
               </Card>
             </StaggerItem>
           ))}
@@ -92,7 +92,7 @@ export function SocialProof() {
         {/* Google Reviews */}
         <FadeUp>
           <div className="text-center mb-8">
-            <h3 className="font-serif text-xl mb-4">Co mówią nasi klienci</h3>
+            <h3 className="font-serif text-2xl mb-4">Co mówią nasi klienci</h3>
             <StarRating rating={5.0} count={6} className="justify-center" />
           </div>
         </FadeUp>
@@ -131,7 +131,7 @@ export function SocialProof() {
                     />
                   ))}
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed line-clamp-4">
+                <p className="text-text-secondary text-base leading-relaxed line-clamp-4">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
@@ -141,7 +141,7 @@ export function SocialProof() {
 
         <FadeUp>
           <div className="text-center">
-            <p className="text-text-secondary mb-4">
+            <p className="text-text-secondary text-lg mb-4">
               Chcesz takich wyników? Porozmawiajmy.
             </p>
             <Button href={CALENDLY_URL} external>

@@ -38,7 +38,7 @@ export function Imagine() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 md:p-8 text-center mb-10">
-            <p className="font-serif text-xl text-text">
+            <p className="font-serif text-2xl text-text">
               Brzmi jak science fiction? Dla firm z naszym systemem to czwartek.
             </p>
           </div>

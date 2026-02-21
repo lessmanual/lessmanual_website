@@ -9,7 +9,7 @@ export const GEN_OFERT_PROOF_METRICS = [
   { value: "7-21 dni", label: "do działającego systemu", countTo: 21, suffix: " dni" },
 ];
 
-export const GEN_OFERT_PROOF_META = "10+ wdrożeń | 5.0 na Google | Zostały 2 miejsca w marcu";
+export const GEN_OFERT_PROOF_META = "10+ wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
 
 export const GEN_OFERT_COST_TABLE = [
   {
@@ -259,7 +259,7 @@ export const GEN_OFERT_SETUP_PLANS = [
     ],
     delivery: "10-14 dni",
     desc: "Dla firm, które chcą profesjonalny konfigurator na własnej domenie z auto follow-upem i CRM.",
-    valueNote: "Wartość zawartości planu: ~25,000 PLN. Twoja inwestycja: 9,000 PLN.",
+    valueNote: "Najczęściej wybierany. Setup zwraca się w niecałe 2 miesiące.",
     popular: true,
     ctaVariant: "primary" as const,
   },

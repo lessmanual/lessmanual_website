@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { Hero } from "@/components/sections/obsluga-klienta/Hero";
+import { HeroProof } from "@/components/sections/obsluga-klienta/HeroProof";
 import { Problem } from "@/components/sections/obsluga-klienta/Problem";
 import { Agitation } from "@/components/sections/obsluga-klienta/Agitation";
 import { Solution } from "@/components/sections/obsluga-klienta/Solution";
@@ -69,6 +70,7 @@ export default function ObslugaKlientaPage() {
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
+        <HeroProof />
         <Problem />
         <Agitation />
         <Solution />

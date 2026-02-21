@@ -26,10 +26,10 @@ export function Agitation() {
           {AI_SDR_AGITATION_TIMEFRAMES.map((tf) => (
             <StaggerItem key={tf.time}>
               <div className="bg-white border border-border rounded-[6px] p-6 hover:border-accent transition-colors duration-200">
-                <div className="font-mono text-sm font-semibold text-warning mb-3">
+                <div className="font-mono text-lg font-semibold text-warning mb-3">
                   {tf.time}
                 </div>
-                <p className="text-text-secondary leading-relaxed">{tf.text}</p>
+                <p className="text-xl text-text-secondary leading-relaxed">{tf.text}</p>
               </div>
             </StaggerItem>
           ))}

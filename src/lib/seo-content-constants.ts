@@ -9,7 +9,7 @@ export const SEO_PROOF_METRICS = [
   { value: "+150-400%", label: "wzrost ruchu organicznego w 6 mies", countTo: 400, suffix: "%" },
 ];
 
-export const SEO_PROOF_META = "5-14 dni do startu | 30 dni trial | Zostały 2 miejsca na onboarding";
+export const SEO_PROOF_META = "5-14 dni do startu | 30 dni trial | Max 3 projekty miesięcznie";
 
 export const SEO_PROBLEM_BULLETS = [
   {
@@ -223,7 +223,7 @@ export const SEO_SETUP_PLANS = [
       "Monthly SEO audit (wartość 1,500 PLN/mies — w cenie)",
     ],
     desc: "Poważnie biorę się za SEO. Chcę regularny ruch z Google.",
-    valueNote: "Wartość zawartości planu: ~11,000 PLN. Twoja inwestycja: 5,000 PLN.",
+    valueNote: "Najczęściej wybierany. 20 artykułów za 90 PLN/szt. Copywriter bierze 300-800 PLN.",
     popular: true,
     ctaVariant: "primary" as const,
   },

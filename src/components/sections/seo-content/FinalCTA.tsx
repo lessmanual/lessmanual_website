@@ -34,7 +34,7 @@ export function FinalCTA() {
             <Button href={SEO_CALENDLY_URL} external>
               Chcę blog, który pisze się sam
             </Button>
-            <p className="mt-5 text-text-muted text-sm max-w-[520px] mx-auto">
+            <p className="mt-5 text-text-muted text-base max-w-[520px] mx-auto">
               Jeśli pasujemy — startujemy w 5-14 dni. Jeśli nie — wyjdziesz z darmową
               analizą SEO Twojej branży i konkretnymi wskazówkami, co publikować.
             </p>
@@ -48,7 +48,7 @@ export function FinalCTA() {
               <StaggerItem key={el.text}>
                 <div className="flex items-center gap-3 bg-bg border border-border rounded-[6px] p-4">
                   <el.icon size={18} className="text-accent shrink-0" strokeWidth={1.5} />
-                  <span className="text-text-secondary text-sm">{el.text}</span>
+                  <span className="text-text-secondary text-base">{el.text}</span>
                 </div>
               </StaggerItem>
             ))}
@@ -58,7 +58,7 @@ export function FinalCTA() {
         {/* Alt contact */}
         <FadeUp delay={0.2}>
           <div className="text-center border-t border-border pt-8">
-            <p className="text-text-muted text-sm mb-2">Wolisz napisać?</p>
+            <p className="text-text-muted text-base mb-2">Wolisz napisać?</p>
             <a
               href={`mailto:${SEO_EMAIL}`}
               className="font-mono text-sm text-text-secondary hover:text-accent transition-colors"
@@ -70,7 +70,7 @@ export function FinalCTA() {
 
         {/* P.S. */}
         <FadeUp delay={0.25}>
-          <div className="mt-10 text-text-muted text-sm leading-relaxed">
+          <div className="mt-10 text-text-muted text-base leading-relaxed">
             <p>
               <strong className="text-text-secondary">P.S.</strong> Każdy dzień bez nowego artykułu
               to pozycje w Google, które zbiera Twoja konkurencja. Artykuł opublikowany dzisiaj

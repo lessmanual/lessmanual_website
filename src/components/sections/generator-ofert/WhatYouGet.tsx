@@ -15,7 +15,7 @@ export function WhatYouGet() {
             eyebrow="Co dostajesz"
             title="Nie kupujesz narzędzia. Kupujesz system, który robi oferty za Ciebie."
           />
-          <p className="text-text-secondary text-center mb-12">
+          <p className="text-text-secondary text-center mb-12 text-lg">
             Nie musisz nic konfigurować, uczyć się, ani utrzymywać. Dostajesz gotowy system
             pod klucz — my budujemy, Ty zatwierdzasz i korzystasz.
           </p>
@@ -25,12 +25,12 @@ export function WhatYouGet() {
           {GEN_OFERT_DELIVERABLES.map((block) => (
             <StaggerItem key={block.title}>
               <div className="bg-white border border-border rounded-[6px] p-6 h-full hover:border-accent transition-colors duration-200">
-                <h3 className="font-serif text-lg mb-4">{block.title}</h3>
+                <h3 className="font-serif text-xl mb-4">{block.title}</h3>
                 <div className="space-y-3">
                   {block.items.map((item) => (
                     <div key={item} className="flex items-start gap-2.5">
                       <Check size={16} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-text-secondary leading-relaxed">{item}</span>
+                      <span className="text-base text-text-secondary leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -42,7 +42,7 @@ export function WhatYouGet() {
         <FadeUp delay={0.2}>
           <div className="bg-white border border-border rounded-[6px] p-6 md:p-8 mb-8">
             <p className="text-text font-medium mb-3">Dlaczego done-for-you?</p>
-            <p className="text-text-secondary leading-relaxed">
+            <p className="text-text-secondary leading-relaxed text-base">
               Bo narzędzia SaaS dają Ci pusty dashboard i mówią &ldquo;konfiguruj&rdquo;. My budujemy
               cały system pod Twój biznes — z Twoimi cenami, materiałami, marżami. Ty nie musisz
               się uczyć nowego narzędzia. Dostajesz gotowe rozwiązanie, które działa od dnia 1.
@@ -51,7 +51,7 @@ export function WhatYouGet() {
 
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4">
             <p className="text-text font-medium mb-1">Ukryta korzyść:</p>
-            <p className="text-text-secondary text-sm leading-relaxed">
+            <p className="text-text-secondary text-base leading-relaxed">
               Każda wygenerowana oferta to dane. Po 3 miesiącach wiesz, które produkty klienci
               wybierają najczęściej, jaka jest średnia wartość oferty i gdzie tracisz deale.
               Masz wiedzę o swoim biznesie, której nie miałeś.

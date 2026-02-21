@@ -93,8 +93,8 @@ export function Solutions() {
 
                 {/* Content */}
                 <div className="relative flex-1">
-                  <h3 className="font-serif text-xl mb-3 pr-14">{product.title}</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-5">
+                  <h3 className="font-serif text-2xl mb-3 pr-14">{product.title}</h3>
+                  <p className="text-text-secondary text-lg leading-relaxed mb-5">
                     {product.description}
                   </p>
 
@@ -102,10 +102,10 @@ export function Solutions() {
                   <div className="space-y-2 mb-6">
                     {product.metrics.map((metric) => (
                       <div key={metric.label} className="flex items-baseline gap-2">
-                        <span className="font-mono text-sm font-semibold text-accent shrink-0">
+                        <span className="font-mono text-base font-semibold text-accent shrink-0">
                           {metric.value}
                         </span>
-                        <span className="text-xs text-text-muted">
+                        <span className="text-base text-text-muted">
                           {metric.label}
                         </span>
                       </div>
@@ -115,12 +115,12 @@ export function Solutions() {
 
                 {/* CTAs */}
                 <div className="mt-auto space-y-3">
-                  <Button href={CALENDLY_URL} variant={product.popular ? "primary" : "secondary"} external className="text-sm w-full">
+                  <Button href={CALENDLY_URL} variant={product.popular ? "primary" : "secondary"} external className="text-base w-full">
                     Chcę to wdrożyć
                   </Button>
                   <a
                     href={product.href}
-                    className="block text-center text-xs text-text-light hover:text-accent transition-colors"
+                    className="block text-center text-sm text-text-light hover:text-accent transition-colors"
                   >
                     Dowiedz się więcej →
                   </a>
@@ -132,7 +132,7 @@ export function Solutions() {
 
         <FadeUp>
           <div className="text-center">
-            <p className="text-text-secondary mb-4">
+            <p className="text-text-secondary text-lg mb-4">
               <strong className="text-text">Nie wiesz od czego zacząć?</strong>{" "}
               80% naszych klientów zaczyna od Spotkań z decydentami — bo najszybciej
               przekłada się na przychód.

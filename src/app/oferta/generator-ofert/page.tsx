@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { Hero } from "@/components/sections/generator-ofert/Hero";
+import { HeroProof } from "@/components/sections/generator-ofert/HeroProof";
 import { Problem } from "@/components/sections/generator-ofert/Problem";
 import { Agitation } from "@/components/sections/generator-ofert/Agitation";
 import { Solution } from "@/components/sections/generator-ofert/Solution";
@@ -69,6 +70,7 @@ export default function GeneratorOfertPage() {
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
+        <HeroProof />
         <Problem />
         <Agitation />
         <Solution />

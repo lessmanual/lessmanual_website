@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { Hero } from "@/components/sections/seo-content/Hero";
+import { HeroProof } from "@/components/sections/seo-content/HeroProof";
 import { Problem } from "@/components/sections/seo-content/Problem";
 import { Agitation } from "@/components/sections/seo-content/Agitation";
 import { Solution } from "@/components/sections/seo-content/Solution";
@@ -69,6 +70,7 @@ export default function SEOContentPage() {
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
+        <HeroProof />
         <Problem />
         <Agitation />
         <Solution />

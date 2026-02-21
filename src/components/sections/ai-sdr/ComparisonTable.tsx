@@ -12,9 +12,9 @@ export function ComparisonTable() {
         <FadeUp>
           <SectionHeader
             eyebrow="Porównanie"
-            title="Zatrudnienie SDR-a vs AI SDR. Jedno kosztuje 12k miesięcznie. Drugie — zero stałych."
+            title="Zatrudnienie handlowca vs AI SDR. Jedno kosztuje 12k miesięcznie. Drugie — zero stałych."
           />
-          <p className="text-text-secondary text-center mb-12">
+          <p className="text-lg text-text-secondary text-center mb-12">
             Pewnie porównujesz opcje. Ułatwiamy:
           </p>
         </FadeUp>
@@ -25,14 +25,14 @@ export function ComparisonTable() {
             <table className="w-full min-w-[700px] border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left p-3 text-sm font-sans font-semibold text-text-light w-[22%]" />
-                  <th className="text-center p-3 text-sm font-sans font-semibold text-text-light w-[26%] bg-warning/5">
-                    Twój SDR
+                  <th className="text-left p-3 text-lg font-sans font-semibold text-text-light w-[22%]" />
+                  <th className="text-center p-3 text-lg font-sans font-semibold text-text-light w-[26%] bg-warning/5">
+                    Twój handlowiec
                   </th>
-                  <th className="text-center p-3 text-sm font-sans font-semibold text-text-light w-[26%]">
+                  <th className="text-center p-3 text-lg font-sans font-semibold text-text-light w-[26%]">
                     Agencja Lead Gen
                   </th>
-                  <th className="text-center p-3 text-sm font-sans font-semibold text-accent w-[26%] bg-accent/5 border-t-2 border-x-2 border-accent/20 rounded-t-[6px]">
+                  <th className="text-center p-3 text-lg font-sans font-semibold text-accent w-[26%] bg-accent/5 border-t-2 border-x-2 border-accent/20 rounded-t-[6px]">
                     AI SDR (LessManual)
                   </th>
                 </tr>
@@ -42,16 +42,16 @@ export function ComparisonTable() {
                   const isLast = idx === AI_SDR_COMPARISON_TABLE.rows.length - 1;
                   return (
                     <tr key={row.label} className="border-t border-border">
-                      <td className="p-3 text-sm font-medium text-text">
+                      <td className="p-3 text-lg font-medium text-text">
                         {row.label}
                       </td>
-                      <td className="p-3 text-sm text-text-secondary text-center bg-warning/5">
+                      <td className="p-3 text-lg text-text-secondary text-center bg-warning/5">
                         {row.sdr}
                       </td>
-                      <td className="p-3 text-sm text-text-secondary text-center">
+                      <td className="p-3 text-lg text-text-secondary text-center">
                         {row.agency}
                       </td>
-                      <td className={`p-3 text-sm font-medium text-text text-center bg-accent/5 border-x-2 border-accent/20 ${isLast ? "border-b-2 rounded-b-[6px]" : ""}`}>
+                      <td className={`p-3 text-lg font-medium text-text text-center bg-accent/5 border-x-2 border-accent/20 ${isLast ? "border-b-2 rounded-b-[6px]" : ""}`}>
                         {row.aiSdr}
                       </td>
                     </tr>
@@ -64,8 +64,8 @@ export function ComparisonTable() {
 
         <FadeUp delay={0.15}>
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-8">
-            <p className="text-text-secondary leading-relaxed text-sm">
-              <strong className="text-text">Koszt jednego spotkania z in-house SDR-em:</strong>{" "}
+            <p className="text-text-secondary leading-relaxed text-lg">
+              <strong className="text-text">Koszt jednego spotkania z in-house handlowcem:</strong>{" "}
               1,000-1,830 PLN (przy 12 spotkaniach/mies — branżowy benchmark).{" "}
               <strong className="text-text">Koszt jednego spotkania z nami:</strong>{" "}
               750-2,000 PLN. Porównywalnie lub taniej. Bez stałych kosztów. Bez ryzyka.
@@ -74,7 +74,7 @@ export function ComparisonTable() {
           </div>
 
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-8">
-            <p className="text-text font-medium text-sm">
+            <p className="text-text font-medium text-lg">
               Agencja lead gen bierze 3-15k PLN retainer miesięcznie niezależnie od tego czy coś dowiezie.
               My bierzemy 0 PLN miesięcznie. Płacisz za spotkania, które się odbędą.
               Ryzyko jest po naszej stronie.

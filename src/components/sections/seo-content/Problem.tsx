@@ -16,7 +16,7 @@ export function Problem() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <p className="text-text-secondary leading-relaxed mb-8 text-center">
+          <p className="text-lg text-text-secondary leading-relaxed mb-8 text-center">
             Otwierasz WordPressa. Patrzysz na ostatni wpis sprzed 4 miesięcy.
             Myślisz: &ldquo;Trzeba coś wrzucić&rdquo;. Zamykasz. Masz 15 innych rzeczy do zrobienia.
           </p>
@@ -27,8 +27,8 @@ export function Problem() {
                 <span className="absolute top-4 right-5 font-mono text-7xl font-bold text-accent/10 leading-none select-none pointer-events-none group-hover:text-accent/15 transition-colors duration-200">
                   {item.num}
                 </span>
-                <p className="text-text font-medium mb-2 pr-14">{item.title}</p>
-                <p className="text-sm text-text-secondary leading-relaxed">
+                <p className="text-lg text-text font-medium mb-2 pr-14">{item.title}</p>
+                <p className="text-base text-text-secondary leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -38,11 +38,11 @@ export function Problem() {
 
         <FadeUp delay={0.15}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center">
-            <p className="text-text font-medium">
+            <p className="text-lg text-text font-medium">
               Zero artykułów = zero ruchu organicznego = cały budżet leci na reklamy.
             </p>
           </div>
-          <p className="mt-6 text-text-secondary text-center leading-relaxed">
+          <p className="mt-6 text-lg text-text-secondary text-center leading-relaxed">
             20 artykułów miesięcznie to ~600 artykułów w 2.5 roku. Przy średnio 200 odwiedzin
             miesięcznie per artykuł = 120,000 odwiedzin miesięcznie. Za darmo. Na zawsze.
             Ile kosztuje 120,000 kliknięć z Google Ads?

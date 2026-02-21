@@ -39,8 +39,8 @@ export function Urgency() {
             <StaggerItem key={point.title}>
               <div className="bg-white border border-border rounded-[6px] p-6 md:p-8 h-full hover:border-accent transition-colors duration-200">
                 <point.icon size={24} className="text-accent mb-4" strokeWidth={1.5} />
-                <h3 className="font-serif text-lg mb-2">{point.title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed">{point.desc}</p>
+                <h3 className="font-serif text-2xl mb-2">{point.title}</h3>
+                <p className="text-lg text-text-secondary leading-relaxed">{point.desc}</p>
               </div>
             </StaggerItem>
           ))}
@@ -57,7 +57,7 @@ export function Urgency() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-10">
-            <p className="text-text font-medium">
+            <p className="text-text font-medium text-lg">
               Pytanie nie brzmi &ldquo;czy automatyzować&rdquo; — tylko kiedy zaczniesz
               i ile Cię będzie kosztował każdy miesiąc zwłoki.
             </p>
@@ -65,7 +65,7 @@ export function Urgency() {
 
           <div className="text-center">
             <Button href={CALENDLY_URL} external>
-              Zarezerwuj jedno z 3 miejsc
+              Zarezerwuj ostatnie miejsce
             </Button>
           </div>
         </FadeUp>

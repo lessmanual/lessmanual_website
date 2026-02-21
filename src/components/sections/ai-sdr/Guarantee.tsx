@@ -20,10 +20,10 @@ export function Guarantee() {
               <div className="w-10 h-10 rounded-full bg-success/10 flex items-center justify-center shrink-0">
                 <Shield size={20} className="text-success" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif text-lg">Gwarancja wyników</h3>
+              <h3 className="font-serif text-2xl">Gwarancja wyników</h3>
             </div>
 
-            <div className="space-y-4 text-text-secondary leading-relaxed">
+            <div className="space-y-4 text-lg text-text-secondary leading-relaxed">
               <p>
                 Uruchamiamy kampanię. Jeśli w ciągu 45 dni od startu nie umówimy ANI JEDNEGO
                 spotkania spełniającego Twoje kryteria — zwracamy opłatę za setup. Bez pytań.

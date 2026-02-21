@@ -88,7 +88,7 @@ export function ROICalculator() {
               {/* Queries per day */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Ile zapytań dostajecie dziennie</span>
+                  <span className="text-base font-medium text-text">Ile zapytań dostajecie dziennie</span>
                   <span className="font-mono text-sm font-semibold text-text tabular-nums">
                     {queries}
                   </span>
@@ -118,7 +118,7 @@ export function ROICalculator() {
               {/* Response time */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Średni czas odpowiedzi (minuty)</span>
+                  <span className="text-base font-medium text-text">Średni czas odpowiedzi (minuty)</span>
                   <span className="font-mono text-sm font-semibold text-text tabular-nums">
                     {responseTime} min
                   </span>
@@ -148,7 +148,7 @@ export function ROICalculator() {
               {/* Hourly rate */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Stawka godzinowa osoby odpowiadającej</span>
+                  <span className="text-base font-medium text-text">Stawka godzinowa osoby odpowiadającej</span>
                   <span className="font-mono text-sm font-semibold text-text tabular-nums">
                     {formatPLN(hourlyRate)} PLN
                   </span>
@@ -212,7 +212,7 @@ export function ROICalculator() {
                 <div className="font-mono text-3xl md:text-4xl font-bold text-accent">
                   {formatPLN(animSavings)} PLN
                 </div>
-                <div className="text-text-secondary text-sm mt-2">
+                <div className="text-text-secondary text-base mt-2">
                   ROI: {(animROI / 10).toFixed(1)}x zwrot z abonamentu
                 </div>
               </div>
@@ -231,8 +231,8 @@ export function ROICalculator() {
         <FadeUp delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
             <div className="bg-white border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">E-commerce, 100 zapytań/dzień</h4>
-              <div className="space-y-2 text-sm text-text-secondary">
+              <h4 className="font-serif text-lg mb-3">E-commerce, 100 zapytań/dzień</h4>
+              <div className="space-y-2 text-base text-text-secondary">
                 <p><span className="text-text-muted">Ręcznie:</span> 100 x 10min x 20 dni = 333h x 45 PLN = 15,000 PLN</p>
                 <p><span className="text-text-muted">Z systemem:</span> 1,500 PLN</p>
                 <p><span className="text-text-muted">Oszczędność:</span> 13,500 PLN</p>
@@ -240,8 +240,8 @@ export function ROICalculator() {
               </div>
             </div>
             <div className="bg-white border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">Firma B2B, 30 zapytań/dzień</h4>
-              <div className="space-y-2 text-sm text-text-secondary">
+              <h4 className="font-serif text-lg mb-3">Firma B2B, 30 zapytań/dzień</h4>
+              <div className="space-y-2 text-base text-text-secondary">
                 <p><span className="text-text-muted">Ręcznie:</span> 30 x 15min x 20 dni = 150h x 60 PLN = 9,000 PLN</p>
                 <p><span className="text-text-muted">Z systemem:</span> 1,500 PLN</p>
                 <p><span className="text-text-muted">Oszczędność:</span> 7,500 PLN</p>

@@ -14,7 +14,7 @@ export function ComparisonTable() {
             eyebrow="Porównanie"
             title="Narzędzia SaaS vs LessManual. Jedno daje dashboard. Drugie — gotowy system."
           />
-          <p className="text-text-secondary text-center mb-12">
+          <p className="text-text-secondary text-center mb-12 text-lg">
             Pewnie porównujesz opcje. Ułatwiamy:
           </p>
         </FadeUp>
@@ -25,11 +25,11 @@ export function ComparisonTable() {
             <table className="w-full min-w-[600px] border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left p-3 text-sm font-sans font-semibold text-text-light w-[28%]" />
-                  <th className="text-center p-3 text-sm font-sans font-semibold text-text-light w-[36%] bg-warning/5">
+                  <th className="text-left p-3 text-base font-sans font-semibold text-text-light w-[28%]" />
+                  <th className="text-center p-3 text-base font-sans font-semibold text-text-light w-[36%] bg-warning/5">
                     {GEN_OFERT_COMPARISON_TABLE.headers[1]}
                   </th>
-                  <th className="text-center p-3 text-sm font-sans font-semibold text-accent w-[36%] bg-accent/5 border-t-2 border-x-2 border-accent/20 rounded-t-[6px]">
+                  <th className="text-center p-3 text-base font-sans font-semibold text-accent w-[36%] bg-accent/5 border-t-2 border-x-2 border-accent/20 rounded-t-[6px]">
                     {GEN_OFERT_COMPARISON_TABLE.headers[2]}
                   </th>
                 </tr>
@@ -39,13 +39,13 @@ export function ComparisonTable() {
                   const isLast = idx === GEN_OFERT_COMPARISON_TABLE.rows.length - 1;
                   return (
                     <tr key={row.label} className="border-t border-border">
-                      <td className="p-3 text-sm font-medium text-text">
+                      <td className="p-3 text-base font-medium text-text">
                         {row.label}
                       </td>
-                      <td className="p-3 text-sm text-text-secondary text-center bg-warning/5">
+                      <td className="p-3 text-base text-text-secondary text-center bg-warning/5">
                         {row.saas}
                       </td>
-                      <td className={`p-3 text-sm font-medium text-text text-center bg-accent/5 border-x-2 border-accent/20 ${isLast ? "border-b-2 rounded-b-[6px]" : ""}`}>
+                      <td className={`p-3 text-base font-medium text-text text-center bg-accent/5 border-x-2 border-accent/20 ${isLast ? "border-b-2 rounded-b-[6px]" : ""}`}>
                         {row.ours}
                       </td>
                     </tr>
@@ -58,7 +58,7 @@ export function ComparisonTable() {
 
         <FadeUp delay={0.15}>
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-8">
-            <p className="text-text-secondary leading-relaxed text-sm">
+            <p className="text-text-secondary leading-relaxed text-base">
               <strong className="text-text">Narzędzia SaaS</strong> dają Ci pusty dashboard i mówią
               &ldquo;konfiguruj sam&rdquo;. Tygodnie konfiguracji Twojego czasu, który mógłbyś
               poświęcić na zamykanie deali.{" "}
@@ -68,7 +68,7 @@ export function ComparisonTable() {
           </div>
 
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-8">
-            <p className="text-text font-medium text-sm">
+            <p className="text-text font-medium text-base">
               Narzędzie SaaS kosztuje 0 PLN za setup, ale tygodnie Twojego czasu na konfigurację.
               My bierzemy setup, ale 0 Twojego czasu na config. Który koszt jest wyższy?
             </p>

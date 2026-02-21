@@ -20,7 +20,7 @@ export function Pricing() {
             eyebrow="Cennik"
             title="Setup + abonament. Wszystko zawarte. Zero ukrytych kosztów."
           />
-          <p className="text-text-secondary text-center mb-12">
+          <p className="text-text-secondary text-center mb-12 text-lg">
             Płacisz za setup (jednorazowo) i abonament miesięczny za utrzymanie i rozwój systemu.
             Wybierz plan, który pasuje do Twojego biznesu.
           </p>
@@ -44,8 +44,8 @@ export function Pricing() {
                 )}
 
                 <div className="mb-4">
-                  <h3 className="font-serif text-xl">{plan.name}</h3>
-                  <p className="text-sm text-text-muted">{plan.subtitle}</p>
+                  <h3 className="font-serif text-2xl">{plan.name}</h3>
+                  <p className="text-base text-text-muted">{plan.subtitle}</p>
                 </div>
 
                 <div className="mb-2">
@@ -62,7 +62,7 @@ export function Pricing() {
                   {plan.features.map((feat) => (
                     <div key={feat} className="flex items-start gap-2.5">
                       <Check size={16} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-text-secondary">{feat}</span>
+                      <span className="text-base text-text-secondary">{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -73,9 +73,9 @@ export function Pricing() {
                   </span>
                 </div>
 
-                <p className="text-xs text-text-muted mb-4">{plan.desc}</p>
+                <p className="text-sm text-text-muted mb-4">{plan.desc}</p>
                 {plan.valueNote && (
-                  <p className="text-xs text-accent mb-4">{plan.valueNote}</p>
+                  <p className="text-sm text-accent mb-4">{plan.valueNote}</p>
                 )}
 
                 <Button
@@ -93,7 +93,7 @@ export function Pricing() {
 
         {/* Payment terms */}
         <FadeUp delay={0.15}>
-          <p className="text-center text-sm text-text-secondary mb-10">
+          <p className="text-center text-base text-text-secondary mb-10">
             <strong className="text-text">50% zaliczki przed startem. 50% po wdrożeniu i zatwierdzeniu.</strong>
           </p>
         </FadeUp>
@@ -102,8 +102,8 @@ export function Pricing() {
         <FadeUp delay={0.2}>
           <div className="bg-white border border-border rounded-[6px] overflow-hidden mb-8">
             <div className="p-6 border-b border-border">
-              <h3 className="font-serif text-lg mb-1">Warianty branżowe</h3>
-              <p className="text-sm text-text-secondary">
+              <h3 className="font-serif text-xl mb-1">Warianty branżowe</h3>
+              <p className="text-base text-text-secondary">
                 Każda branża ma swoją specyfikę. Dlatego oferujemy dedykowane warianty z precyzyjną
                 kalkulacją dostosowaną do Twojego biznesu.
               </p>
@@ -117,11 +117,11 @@ export function Pricing() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {variant.tiers.map((tier) => (
                       <div key={tier.name} className="bg-bg border border-border rounded-[6px] p-4">
-                        <p className="text-sm font-medium text-text mb-1">{tier.name}</p>
-                        <p className="font-mono text-sm text-accent mb-2">
+                        <p className="text-base font-medium text-text mb-1">{tier.name}</p>
+                        <p className="font-mono text-base text-accent mb-2">
                           {tier.setup} setup + {tier.mrr}
                         </p>
-                        <p className="text-xs text-text-muted">{tier.features}</p>
+                        <p className="text-sm text-text-muted">{tier.features}</p>
                       </div>
                     ))}
                   </div>

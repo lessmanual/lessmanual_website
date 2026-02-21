@@ -38,7 +38,7 @@ function FAQItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-text-secondary text-sm leading-relaxed">
+            <p className="pb-5 text-text-secondary text-base leading-relaxed">
               {a}
             </p>
           </motion.div>
@@ -59,7 +59,7 @@ export function FAQ() {
         <div className="space-y-10 mb-12">
           {OBS_KLIENTA_FAQ_ITEMS.map((category, catIdx) => (
             <FadeUp key={category.category}>
-              <h3 className="font-sans font-semibold text-sm uppercase tracking-wider text-text-light mb-4">
+              <h3 className="font-sans font-semibold text-base uppercase tracking-wider text-text-light mb-4">
                 {category.category}
               </h3>
               <div>
@@ -78,7 +78,7 @@ export function FAQ() {
 
         <FadeUp>
           <div className="text-center">
-            <p className="text-text-secondary text-sm mb-4">Masz inne pytanie?</p>
+            <p className="text-text-secondary text-base mb-4">Masz inne pytanie?</p>
             <Button href={OBS_KLIENTA_CALENDLY_URL} external>
               Masz inne pytanie? Porozmawiajmy
             </Button>

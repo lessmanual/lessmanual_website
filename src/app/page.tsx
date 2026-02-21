@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { Hero } from "@/components/sections/Hero";
+import { HeroProof } from "@/components/sections/HeroProof";
 import { Problem } from "@/components/sections/Problem";
 import { Agitation } from "@/components/sections/Agitation";
 import { Solutions } from "@/components/sections/Solutions";
@@ -47,6 +48,7 @@ export default function Home() {
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
+        <HeroProof />
         <Problem />
         <Agitation />
         <Solutions />

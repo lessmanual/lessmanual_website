@@ -16,7 +16,7 @@ export function Problem() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="text-text-secondary leading-relaxed mb-10 space-y-4">
+          <div className="text-text-secondary leading-relaxed mb-10 space-y-4 text-lg">
             <p>
               Kończysz rozmowę z klientem. Zapisujesz wymiary na kartce. Otwierasz Excela,
               szukasz cenników, przeliczasz materiały, formatujesz. Dwie godziny później masz PDF. Wysyłasz.
@@ -44,7 +44,7 @@ export function Problem() {
                   {item.num}
                 </span>
                 <p className="text-text font-medium mb-2 pr-14">{item.title}</p>
-                <p className="text-sm text-text-secondary leading-relaxed">
+                <p className="text-base text-text-secondary leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -53,12 +53,12 @@ export function Problem() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <h3 className="font-serif text-lg mb-6 text-center">Policz sam:</h3>
+          <h3 className="font-serif text-xl mb-6 text-center">Policz sam:</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {GEN_OFERT_COST_TABLE.map((row) => (
               <div key={row.task} className="bg-bg border border-border rounded-[6px] p-5">
-                <div className="text-sm font-medium text-text mb-3">{row.task}</div>
-                <div className="flex items-baseline gap-2 text-sm">
+                <div className="text-base font-medium text-text mb-3">{row.task}</div>
+                <div className="flex items-baseline gap-2 text-base">
                   <span className="font-mono text-warning font-semibold">{row.result}</span>
                 </div>
               </div>

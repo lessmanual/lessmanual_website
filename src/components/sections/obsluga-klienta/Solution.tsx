@@ -35,12 +35,12 @@ export function Solution() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="font-serif text-lg">{step.title}</h3>
+                      <h3 className="font-serif text-xl">{step.title}</h3>
                       <span className="inline-block px-2 py-0.5 text-[10px] font-sans font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
                         {step.tier}
                       </span>
                     </div>
-                    <p className="text-text-secondary text-sm leading-relaxed">{step.desc}</p>
+                    <p className="text-text-secondary text-base leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               </div>
@@ -50,7 +50,7 @@ export function Solution() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 md:p-8 mb-8">
-            <h3 className="font-serif text-lg mb-3">Technologia RAG</h3>
+            <h3 className="font-serif text-xl mb-3">Technologia RAG</h3>
             <p className="text-text-secondary leading-relaxed">
               System odpowiada <strong className="text-text">WYŁĄCZNIE</strong> na
               podstawie Twoich danych. Nie szuka w internecie. Nie wymyśla. Nie

@@ -21,7 +21,7 @@ export function Pricing() {
             eyebrow="Cennik"
             title="Prosto. Bez stałych opłat. Płacisz za wynik."
           />
-          <p className="text-text-secondary text-center mb-12">
+          <p className="text-lg text-text-secondary text-center mb-12">
             Płacisz za setup (jednorazowo) i za spotkania, które się odbędą.
             Zero miesięcznego abonamentu. Zero ukrytych kosztów. Zero retainera.
           </p>
@@ -45,35 +45,35 @@ export function Pricing() {
                 )}
 
                 <div className="mb-4">
-                  <h3 className="font-serif text-xl">{plan.name}</h3>
-                  <p className="text-sm text-text-muted">{plan.subtitle}</p>
+                  <h3 className="font-serif text-2xl">{plan.name}</h3>
+                  <p className="text-lg text-text-muted">{plan.subtitle}</p>
                 </div>
 
                 <div className="mb-6">
                   <span className="font-mono text-3xl font-bold text-text">{plan.price}</span>
-                  <span className="text-text-muted text-sm ml-1">PLN</span>
-                  <span className="text-text-light text-xs ml-2">(jednorazowo)</span>
+                  <span className="text-text-muted text-lg ml-1">PLN</span>
+                  <span className="text-text-light text-base ml-2">(jednorazowo)</span>
                 </div>
 
                 <div className="space-y-2.5 mb-6 flex-1">
                   {plan.features.map((feat) => (
                     <div key={feat} className="flex items-start gap-2.5">
                       <Check size={16} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-text-secondary">{feat}</span>
+                      <span className="text-lg text-text-secondary">{feat}</span>
                     </div>
                   ))}
                 </div>
 
-                <p className="text-xs text-text-muted mb-4">{plan.desc}</p>
+                <p className="text-base text-text-muted mb-4">{plan.desc}</p>
                 {plan.valueNote && (
-                  <p className="text-xs text-accent mb-4">{plan.valueNote}</p>
+                  <p className="text-base text-accent mb-4">{plan.valueNote}</p>
                 )}
 
                 <Button
                   href={AI_SDR_CALENDLY_URL}
                   variant={plan.ctaVariant}
                   external
-                  className="text-sm w-full"
+                  className="text-base w-full"
                 >
                   Wybieram {plan.name}
                 </Button>
@@ -84,7 +84,7 @@ export function Pricing() {
 
         {/* Payment terms */}
         <FadeUp delay={0.15}>
-          <p className="text-center text-sm text-text-secondary mb-10">
+          <p className="text-center text-lg text-text-secondary mb-10">
             <strong className="text-text">50% zaliczki przed startem. 50% na dzień uruchomienia kampanii.</strong>
           </p>
         </FadeUp>
@@ -93,29 +93,29 @@ export function Pricing() {
         <FadeUp delay={0.2}>
           <div className="bg-white border border-border rounded-[6px] overflow-hidden mb-8">
             <div className="p-6 border-b border-border">
-              <h3 className="font-serif text-lg mb-1">Płatność za spotkania (bieżąco)</h3>
+              <h3 className="font-serif text-2xl mb-1">Płatność za spotkania (bieżąco)</h3>
               <div className="flex items-baseline gap-2 mb-3">
                 <span className="font-mono text-2xl font-bold text-accent">500–2 000 PLN</span>
-                <span className="text-sm text-text-muted">za potwierdzone spotkanie</span>
+                <span className="text-lg text-text-muted">za potwierdzone spotkanie</span>
               </div>
-              <p className="text-sm text-text-secondary">
+              <p className="text-lg text-text-secondary">
                 Dokładną kwotę ustalamy razem na konsultacji. Nie płacisz za maile, leady ani &ldquo;MQL&rdquo; — tylko za realne spotkania z decision makerami z Twojego ICP.
               </p>
-              <p className="text-sm text-text font-medium mt-3">
+              <p className="text-lg text-text font-medium mt-3">
                 Żadnych ukrytych opłat. Żadnych stałych abonamentów. Nie ma spotkań = nie płacisz.
               </p>
             </div>
             <div className="p-6">
-              <p className="text-xs uppercase tracking-wider text-text-light font-semibold mb-4">Co wpływa na cenę</p>
+              <p className="text-base uppercase tracking-wider text-text-light font-semibold mb-4">Co wpływa na cenę</p>
               <div className="space-y-4">
                 {AI_SDR_PER_MEETING_PRICING_FACTORS.map((item) => (
                   <div key={item.factor}>
-                    <p className="text-sm font-medium text-text">{item.factor}</p>
-                    <p className="text-sm text-text-muted">{item.desc}</p>
+                    <p className="text-lg font-medium text-text">{item.factor}</p>
+                    <p className="text-lg text-text-muted">{item.desc}</p>
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-text-secondary mt-5 pt-4 border-t border-border">
+              <p className="text-lg text-text-secondary mt-5 pt-4 border-t border-border">
                 Dlaczego zakres, a nie jedna cena? Każdy biznes jest inny. Cenę ustalamy tak, żeby była fair dla obu stron. Zawsze poznasz ją <strong className="text-text">PRZED startem</strong>.
               </p>
             </div>
@@ -125,20 +125,20 @@ export function Pricing() {
         {/* Meeting definition */}
         <FadeUp delay={0.25}>
           <div className="bg-white border border-border rounded-[6px] p-6 mb-8">
-            <h4 className="font-serif text-base mb-4">
+            <h4 className="font-serif text-xl mb-4">
               Definicja &ldquo;spotkanie&rdquo; — płacisz TYLKO gdy spełnione są WSZYSTKIE warunki:
             </h4>
             <div className="space-y-3">
               {AI_SDR_MEETING_DEFINITION.map((item, idx) => (
                 <div key={item} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center font-mono text-xs font-semibold shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center font-mono text-sm font-semibold shrink-0">
                     {idx + 1}
                   </div>
-                  <span className="text-sm text-text-secondary leading-relaxed">{item}</span>
+                  <span className="text-lg text-text-secondary leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-sm text-text font-medium">
+            <p className="mt-4 text-lg text-text font-medium">
               Nie pojawił się? Nie płacisz. Nie pasuje do profilu? Nie płacisz. Anulował? Nie płacisz.
             </p>
           </div>

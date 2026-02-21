@@ -35,15 +35,15 @@ export function ProcessTimeline() {
                   {/* Content */}
                   <div className="bg-bg border border-border rounded-[6px] p-5 flex-1 hover:border-accent transition-colors duration-200">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <span className="font-mono text-xs font-semibold text-accent uppercase tracking-wider">
+                      <span className="font-mono text-base font-semibold text-accent uppercase tracking-wider">
                         {step.week}
                       </span>
-                      <h3 className="font-serif text-lg">{step.title}</h3>
+                      <h3 className="font-serif text-2xl">{step.title}</h3>
                     </div>
-                    <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                    <p className="text-lg text-text-secondary leading-relaxed mb-3">
                       {step.desc}
                     </p>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-base font-medium bg-success/10 text-success border border-success/20">
                       Twój czas: {step.yourTime}
                     </span>
                   </div>
@@ -58,7 +58,7 @@ export function ProcessTimeline() {
             <p className="text-text font-medium">
               Łączne zaangażowanie z Twojej strony: ~1 godzina na setup + 5 minut tygodniowo.
             </p>
-            <p className="text-text-secondary text-sm mt-1">
+            <p className="text-text-secondary text-lg mt-1">
               Resztę robimy my. Ty w tym czasie zamykasz deale ze spotkań które Ci umawiamy.
             </p>
           </div>

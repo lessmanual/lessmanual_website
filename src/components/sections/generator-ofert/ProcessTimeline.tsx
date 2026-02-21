@@ -38,9 +38,9 @@ export function ProcessTimeline() {
                       <span className="font-mono text-xs font-semibold text-accent uppercase tracking-wider">
                         {step.week}
                       </span>
-                      <h3 className="font-serif text-lg">{step.title}</h3>
+                      <h3 className="font-serif text-xl">{step.title}</h3>
                     </div>
-                    <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                    <p className="text-base text-text-secondary leading-relaxed mb-3">
                       {step.desc}
                     </p>
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20">
@@ -58,7 +58,7 @@ export function ProcessTimeline() {
             <p className="text-text font-medium">
               Łączne zaangażowanie z Twojej strony: ~5-7 godzin w ciągu całego wdrożenia.
             </p>
-            <p className="text-text-secondary text-sm mt-1">
+            <p className="text-text-secondary text-base mt-1">
               Resztę robimy my. Ty w tym czasie robisz to, co robisz najlepiej — prowadzisz firmę.
             </p>
           </div>

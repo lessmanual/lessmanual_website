@@ -8,24 +8,24 @@ import { ROICalculator } from "@/components/ui/ROICalculator";
 
 export function Problem() {
   return (
-    <section className="py-28 md:py-40 bg-white">
+    <section id="kalkulator" className="py-28 md:py-40 bg-white">
       <div className="max-w-[1000px] mx-auto px-6">
         <FadeUp>
-          <SectionHeader eyebrow="Problem" title="Rosną koszty. Nie idą za tym wyniki." />
+          <SectionHeader eyebrow="Problem" title="Gdzie tracisz pieniądze?" />
         </FadeUp>
 
         <FadeUp delay={0.1}>
           <QuoteBlock className="mb-10">
             <p>
-              &ldquo;Wydałem 6 tysięcy na reklamy w zeszłym miesiącu. Jeden klient
-              z tego. Jeden. Człowiek od outbound siedzi 4 miesiące — zero spotkań.
+              &ldquo;4 miesiące robimy outbound. Płacę 2-2.5 tysiące miesięcznie
+              — zero spotkań. Agencja obiecywała leady, dostałem puste kontakty w CRM.
               Coś musi się zmienić.&rdquo;
             </p>
           </QuoteBlock>
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="text-text-secondary mb-8 leading-relaxed">
+          <p className="text-text-secondary text-lg mb-8 leading-relaxed">
             Znasz to uczucie? Dobry produkt, dobry zespół — ale:
           </p>
         </FadeUp>
@@ -35,7 +35,7 @@ export function Problem() {
             {
               num: "01",
               title: "Nie wiesz skąd przyjdzie klient za miesiąc.",
-              text: "Pipeline to rollercoaster. Agencja bierze retainer bez gwarancji. SDR za 12-22 tysięcy — po 3 miesiącach zero spotkań z decydentami.",
+              text: "Pipeline to rollercoaster. Agencja bierze retainer bez gwarancji. Handlowiec za 12-22 tysięcy — po 3 miesiącach zero spotkań z decydentami.",
               cost: "Koszt: 12-22k PLN/mies",
             },
             {
@@ -63,11 +63,11 @@ export function Problem() {
                   {item.num}
                 </span>
                 <div className="relative">
-                  <h3 className="font-serif text-xl mb-3 pr-14">{item.title}</h3>
-                  <p className="text-text-secondary text-base leading-relaxed mb-4">
+                  <h3 className="font-serif text-2xl mb-3 pr-14">{item.title}</h3>
+                  <p className="text-text-secondary text-lg leading-relaxed mb-4">
                     {item.text}
                   </p>
-                  <p className="font-mono text-sm font-medium text-warning">
+                  <p className="font-mono text-base font-medium text-warning">
                     {item.cost}
                   </p>
                 </div>

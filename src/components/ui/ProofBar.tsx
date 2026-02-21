@@ -31,7 +31,7 @@ export function ProofBar({ metrics, badges, meta, className = "" }: ProofBarProp
       <div className="flex flex-wrap md:flex-nowrap justify-center items-start gap-10 md:gap-16">
         {metrics.map((m) => (
           <div key={m.label} className="text-center">
-            <div className="font-mono text-2xl md:text-3xl font-semibold text-text">
+            <div className="font-mono text-3xl md:text-4xl font-semibold text-text">
               {m.countTo !== undefined ? (
                 <CountUp
                   from={m.countFrom ?? 0}
@@ -43,7 +43,7 @@ export function ProofBar({ metrics, badges, meta, className = "" }: ProofBarProp
                 m.value
               )}
             </div>
-            <div className="text-sm text-text-muted mt-2">{m.label}</div>
+            <div className="text-base text-text-muted mt-2">{m.label}</div>
           </div>
         ))}
       </div>

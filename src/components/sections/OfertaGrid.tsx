@@ -13,7 +13,7 @@ export function OfertaGrid() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 pb-16 md:pt-36 md:pb-20 bg-bg">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-20 bg-bg">
         <div className="max-w-[1200px] mx-auto px-6">
           <FadeUp>
             <Link

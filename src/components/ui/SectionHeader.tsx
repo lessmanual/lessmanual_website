@@ -27,7 +27,7 @@ export function SectionHeader({
       )}
       <h2 className={`font-serif ${light ? "text-white" : ""}`}>{title}</h2>
       {subtitle && (
-        <p className={`mt-5 text-xl max-w-[680px] ${centered ? "mx-auto" : ""} leading-relaxed ${light ? "text-white/70" : "text-text-secondary"}`}>
+        <p className={`mt-5 text-2xl max-w-[720px] ${centered ? "mx-auto" : ""} leading-relaxed ${light ? "text-white/70" : "text-text-secondary"}`}>
           {subtitle}
         </p>
       )}

@@ -35,12 +35,12 @@ export function ProcessTimeline() {
                   {/* Content */}
                   <div className="bg-bg border border-border rounded-[6px] p-5 flex-1 hover:border-accent transition-colors duration-200">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <span className="font-mono text-xs font-semibold text-accent uppercase tracking-wider">
+                      <span className="font-mono text-sm font-semibold text-accent uppercase tracking-wider">
                         {step.week}
                       </span>
-                      <h3 className="font-serif text-lg">{step.title}</h3>
+                      <h3 className="font-serif text-xl">{step.title}</h3>
                     </div>
-                    <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                    <p className="text-base text-text-secondary leading-relaxed mb-3">
                       {step.desc}
                     </p>
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20">
@@ -55,10 +55,10 @@ export function ProcessTimeline() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-8">
-            <p className="text-text font-medium">
+            <p className="text-lg text-text font-medium">
               Łączne zaangażowanie z Twojej strony: ~1-2 godziny na setup + 0 minut miesięcznie.
             </p>
-            <p className="text-text-secondary text-sm mt-1">
+            <p className="text-text-secondary text-base mt-1">
               Resztę robimy my. Blog rośnie niezależnie od Twojego kalendarza.
             </p>
           </div>

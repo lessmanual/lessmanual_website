@@ -14,7 +14,7 @@ export function Solution() {
             eyebrow="Rozwiązanie"
             title="System, który umawia spotkania za Ciebie"
           />
-          <p className="text-text-secondary text-center mb-12 leading-relaxed">
+          <p className="text-lg text-text-secondary text-center mb-12 leading-relaxed">
             Nie dajesz nam pieniędzy i czekasz. Stawiamy system AI, który robi to, co SDR
             — ale szybciej, taniej i bez chorobowego. Ty dostajesz spotkania w kalendarzu
             z ludźmi, którzy mogą u Ciebie kupić.
@@ -30,8 +30,8 @@ export function Solution() {
                     {step.num}
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg mb-2">{step.title}</h3>
-                    <p className="text-text-secondary text-sm leading-relaxed">{step.desc}</p>
+                    <h3 className="font-serif text-2xl mb-2">{step.title}</h3>
+                    <p className="text-text-secondary text-lg leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               </div>
@@ -41,12 +41,12 @@ export function Solution() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 md:p-8">
-            <h3 className="font-serif text-lg mb-3">Co Ty dostajesz?</h3>
-            <p className="text-text-secondary leading-relaxed mb-4">
+            <h3 className="font-serif text-2xl mb-3">Co Ty dostajesz?</h3>
+            <p className="text-lg text-text-secondary leading-relaxed mb-4">
               Powiadomienie: &ldquo;Masz spotkanie z Anną, COO w FirmaTech.
               Temat: automatyzacja procesów. Czwartek, 14:00.&rdquo;
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 text-sm">
+            <div className="flex flex-col sm:flex-row gap-4 text-lg">
               <div className="bg-white/60 rounded-[6px] px-4 py-3">
                 <span className="text-text-muted">Twój udział:</span>{" "}
                 <span className="font-medium text-text">1 godzina na setup + 5 minut tygodniowo</span>

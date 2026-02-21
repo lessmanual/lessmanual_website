@@ -88,8 +88,8 @@ export function ROICalculator() {
               {/* Quotes per month */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Ile ofert robisz miesięcznie</span>
-                  <span className="font-mono text-sm font-semibold text-text tabular-nums">
+                  <span className="text-base font-medium text-text">Ile ofert robisz miesięcznie</span>
+                  <span className="font-mono text-base font-semibold text-text tabular-nums">
                     {quotes}
                   </span>
                 </div>
@@ -118,8 +118,8 @@ export function ROICalculator() {
               {/* Hours per quote */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Ile godzin trwa jedna oferta</span>
-                  <span className="font-mono text-sm font-semibold text-text tabular-nums">
+                  <span className="text-base font-medium text-text">Ile godzin trwa jedna oferta</span>
+                  <span className="font-mono text-base font-semibold text-text tabular-nums">
                     {hoursPerQuote}h
                   </span>
                 </div>
@@ -148,8 +148,8 @@ export function ROICalculator() {
               {/* Hourly rate */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-text">Twoja stawka godzinowa</span>
-                  <span className="font-mono text-sm font-semibold text-text tabular-nums">
+                  <span className="text-base font-medium text-text">Twoja stawka godzinowa</span>
+                  <span className="font-mono text-base font-semibold text-text tabular-nums">
                     {formatPLN(hourlyRate)} PLN
                   </span>
                 </div>
@@ -212,7 +212,7 @@ export function ROICalculator() {
                 <div className="font-mono text-3xl md:text-4xl font-bold text-accent">
                   {formatPLN(animSavings)} PLN
                 </div>
-                <div className="text-text-secondary text-sm mt-2">
+                <div className="text-text-secondary text-base mt-2">
                   ROI: {(animROI / 10).toFixed(1)}x zwrot z abonamentu
                 </div>
               </div>
@@ -231,8 +231,8 @@ export function ROICalculator() {
         <FadeUp delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
             <div className="bg-white border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">Firma OZE, 30 ofert/mies</h4>
-              <div className="space-y-2 text-sm text-text-secondary">
+              <h4 className="font-serif text-lg mb-3">Firma OZE, 30 ofert/mies</h4>
+              <div className="space-y-2 text-base text-text-secondary">
                 <p><span className="text-text-muted">Ręcznie:</span> 30 x 2h x 200 PLN = 12,000 PLN/mies</p>
                 <p><span className="text-text-muted">Z systemem:</span> 30 x 5 min + 1,500 PLN = 2,000 PLN/mies</p>
                 <p><span className="text-text-muted">Oszczędność:</span> 10,000 PLN/mies</p>
@@ -240,8 +240,8 @@ export function ROICalculator() {
               </div>
             </div>
             <div className="bg-white border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">Meble na wymiar, 15 ofert/mies</h4>
-              <div className="space-y-2 text-sm text-text-secondary">
+              <h4 className="font-serif text-lg mb-3">Meble na wymiar, 15 ofert/mies</h4>
+              <div className="space-y-2 text-base text-text-secondary">
                 <p><span className="text-text-muted">Ręcznie:</span> 15 x 3h x 150 PLN = 6,750 PLN/mies</p>
                 <p><span className="text-text-muted">Z systemem:</span> 15 x 5 min + 800 PLN = 988 PLN/mies</p>
                 <p><span className="text-text-muted">Oszczędność:</span> 5,762 PLN/mies</p>

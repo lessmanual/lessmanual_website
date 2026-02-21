@@ -43,8 +43,8 @@ export function Pricing() {
                 )}
 
                 <div className="mb-4">
-                  <h3 className="font-serif text-xl">{plan.name}</h3>
-                  <p className="text-sm text-text-muted">{plan.subtitle}</p>
+                  <h3 className="font-serif text-2xl">{plan.name}</h3>
+                  <p className="text-base text-text-muted">{plan.subtitle}</p>
                 </div>
 
                 <div className="mb-2">
@@ -61,7 +61,7 @@ export function Pricing() {
                   {plan.features.map((feat) => (
                     <div key={feat} className="flex items-start gap-2.5">
                       <Check size={16} className="text-success mt-0.5 shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-text-secondary">{feat}</span>
+                      <span className="text-base text-text-secondary">{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -92,7 +92,7 @@ export function Pricing() {
 
         {/* Payment terms */}
         <FadeUp delay={0.15}>
-          <p className="text-center text-sm text-text-secondary mb-10">
+          <p className="text-center text-base text-text-secondary mb-10">
             <strong className="text-text">50% zaliczki przed startem. 50% po wdrożeniu i zatwierdzeniu.</strong>
           </p>
         </FadeUp>

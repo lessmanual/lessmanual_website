@@ -14,7 +14,7 @@ export function Solution() {
             eyebrow="Rozwiązanie"
             title="Blog, który pisze się sam. Dosłownie."
           />
-          <p className="text-text-secondary text-center mb-12 leading-relaxed">
+          <p className="text-lg text-text-secondary text-center mb-12 leading-relaxed">
             Nie dajesz nam pieniędzy i czekasz. Stawiamy system, który robi keyword research,
             pisze artykuły SEO, optymalizuje i publikuje. Ty dostajesz ruch z Google
             i leady, które same Cię znajdują.
@@ -29,8 +29,8 @@ export function Solution() {
                   {step.num}
                 </span>
                 <div className="relative">
-                  <h3 className="font-serif text-lg mb-2">{step.title}</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="font-serif text-xl mb-2">{step.title}</h3>
+                  <p className="text-text-secondary text-base leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             </StaggerItem>
@@ -39,7 +39,7 @@ export function Solution() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 md:p-8 text-center">
-            <p className="font-serif text-xl text-text">
+            <p className="font-serif text-2xl text-text">
               3 kroki. 0 Twojego czasu po setupie. Blog rośnie sam.
             </p>
           </div>

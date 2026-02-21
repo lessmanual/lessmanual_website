@@ -31,13 +31,13 @@ export function SocialProof() {
           {billboardMetrics.map((m) => (
             <StaggerItem key={m.label}>
               <div className="bg-bg border border-border rounded-[6px] p-6 text-center">
-                <div className="text-xs uppercase tracking-wider text-text-muted mb-2">
+                <div className="text-sm uppercase tracking-wider text-text-muted mb-2">
                   {m.label}
                 </div>
                 <div className="font-mono text-3xl md:text-4xl font-bold text-accent mb-2">
                   {m.value}
                 </div>
-                <div className="text-xs text-text-light">{m.benchmark}</div>
+                <div className="text-sm text-text-light">{m.benchmark}</div>
               </div>
             </StaggerItem>
           ))}
@@ -50,13 +50,13 @@ export function SocialProof() {
               <span className="inline-block px-3 py-1 text-xs font-sans font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
                 Case Study
               </span>
-              <span className="font-serif text-lg">Branża OZE</span>
+              <span className="font-serif text-xl">Branża OZE</span>
             </div>
-            <p className="text-text-secondary leading-relaxed mb-4">
+            <p className="text-text-secondary leading-relaxed mb-4 text-base">
               <strong className="text-text">Problem:</strong> Generowanie jednej wyceny instalacji
               zajmowało 3 godziny. Handlowiec obsługuje 3-4 klientów dziennie. Reszta czeka.
             </p>
-            <p className="text-text-secondary leading-relaxed mb-4">
+            <p className="text-text-secondary leading-relaxed mb-4 text-base">
               <strong className="text-text">Co zrobiliśmy:</strong> Agent wycen PDF &mdash; klient
               podaje dane, system generuje profesjonalną ofertę automatycznie.
             </p>
@@ -72,22 +72,22 @@ export function SocialProof() {
         <FadeUp delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
             <div className="bg-bg border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">Producenci mebli</h4>
-              <p className="text-sm text-text-secondary leading-relaxed">
+              <h4 className="font-serif text-lg mb-3">Producenci mebli</h4>
+              <p className="text-base text-text-secondary leading-relaxed">
                 Każda wycena szafy to osobne obliczenia materiałów. Częste błędy w kalkulacji.
                 System eliminuje te błędy &mdash; baza materiałów, automatyczna kalkulacja, zero pomyłek.
               </p>
             </div>
             <div className="bg-bg border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">Firmy remontowe</h4>
-              <p className="text-sm text-text-secondary leading-relaxed">
+              <h4 className="font-serif text-lg mb-3">Firmy remontowe</h4>
+              <p className="text-base text-text-secondary leading-relaxed">
                 Kosztorys robi właściciel. Wieczorami. Bo tylko on zna ceny podwykonawców.
                 Z systemem &mdash; każdy w firmie może wygenerować kosztorys w 5 minut.
               </p>
             </div>
             <div className="bg-bg border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-base mb-3">Firmy instalacyjne</h4>
-              <p className="text-sm text-text-secondary leading-relaxed">
+              <h4 className="font-serif text-lg mb-3">Firmy instalacyjne</h4>
+              <p className="text-base text-text-secondary leading-relaxed">
                 Oferty wychodzą na drugi dzień. Klienci kupują u szybszej konkurencji.
                 Z systemem &mdash; oferta wychodzi w 5 minut od rozmowy.
               </p>
@@ -98,8 +98,8 @@ export function SocialProof() {
         {/* Metrics */}
         <FadeUp delay={0.22}>
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-12">
-            <p className="text-xs uppercase tracking-wider text-text-light font-semibold mb-4">Metryki branżowe</p>
-            <div className="space-y-2 text-sm text-text-secondary">
+            <p className="text-sm uppercase tracking-wider text-text-light font-semibold mb-4">Metryki branżowe</p>
+            <div className="space-y-2 text-base text-text-secondary">
               <p>Czas tworzenia oferty w branżach technicznych: <strong className="text-text font-mono">1.5-3 godziny</strong> (średnia)</p>
               <p>Win rate przy odpowiedzi w &lt; 2h: <strong className="text-text font-mono">25-40% wyższy</strong> niż przy odpowiedzi w &gt; 24h</p>
               <p>Firmy z automatycznym follow-upem zamykają <strong className="text-text font-mono">35% więcej dealów</strong></p>
@@ -110,7 +110,7 @@ export function SocialProof() {
         {/* Google Reviews */}
         <FadeUp delay={0.25}>
           <div className="text-center mb-8">
-            <h3 className="font-serif text-xl mb-4">Co mówią nasi klienci</h3>
+            <h3 className="font-serif text-2xl mb-4">Co mówią nasi klienci</h3>
             <StarRating rating={5.0} count={6} className="justify-center" />
           </div>
         </FadeUp>
@@ -147,7 +147,7 @@ export function SocialProof() {
                     />
                   ))}
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed line-clamp-4">
+                <p className="text-text-secondary text-base leading-relaxed line-clamp-4">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
@@ -157,7 +157,7 @@ export function SocialProof() {
 
         <FadeUp delay={0.3}>
           <div className="text-center">
-            <p className="text-text-secondary mb-4">Chcesz takich wyników? Porozmawiajmy.</p>
+            <p className="text-text-secondary mb-4 text-base">Chcesz takich wyników? Porozmawiajmy.</p>
             <Button href={GEN_OFERT_CALENDLY_URL} external>
               Chcę takie wyniki
             </Button>

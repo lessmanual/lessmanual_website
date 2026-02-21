@@ -1,8 +1,21 @@
+const POLISH_MONTHS = [
+  "styczniu", "lutym", "marcu", "kwietniu", "maju", "czerwcu",
+  "lipcu", "sierpniu", "wrześniu", "październiku", "listopadzie", "grudniu",
+] as const;
+
+export function getCurrentMonthPL() {
+  return POLISH_MONTHS[new Date().getMonth()];
+}
+
+export function getNextMonthPL() {
+  return POLISH_MONTHS[(new Date().getMonth() + 1) % 12];
+}
+
 export const CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
 export const EMAIL = "kontakt@lessmanual.ai";
 export const GOOGLE_REVIEWS_URL = "https://g.page/r/lessmanual/review";
 
-export const HERO_ROTATOR_WORDS = ["sprzedaż", "strategię", "rodzinę"];
+export const HERO_ROTATOR_WORDS = ["klienci", "wyniki", "zyski"];
 
 export const PROOF_METRICS = [
   { value: "20-40h", label: "tyle oszczędzają nasi klienci", countFrom: 0, countTo: 40, suffix: "h", prefix: "" },
@@ -10,7 +23,7 @@ export const PROOF_METRICS = [
   { value: "Gwarancja wyników", label: "lub pełny zwrot kosztów" },
 ];
 
-export const PROOF_META = "10+ firm B2B · 5.0 na Google · Zostały 2 miejsca w marcu";
+export const PROOF_META = "10+ firm B2B · 5.0 na Google · Max 3 projekty miesięcznie";
 
 export const NAVIGATION = [
   { name: "Oferta", href: "/oferta" },
@@ -75,7 +88,7 @@ export const PRODUCTS = [
 
 export const COST_TABLE = [
   {
-    task: "Szukanie klientów (SDR / agencja / ads)",
+    task: "Szukanie klientów (handlowiec / agencja / ads)",
     currentCost: "5,000-22,000 PLN",
     ourCost: "od 750 PLN/spotkanie",
   },
@@ -279,7 +292,7 @@ export const GUARANTEE_POINTS = [
 export const VALUE_STACK_SAVINGS = [
   {
     area: "Sprzedaż",
-    before: "SDR + agencja + ads = 100-300k PLN/rok",
+    before: "Handlowiec + agencja + ads = 100-300k PLN/rok",
     after: "AI SDR od 750 PLN/spotkanie, zero stałych opłat",
   },
   {
