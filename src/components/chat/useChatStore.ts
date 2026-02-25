@@ -2,6 +2,7 @@
 
 import { useReducer, useCallback, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
+import { trackEvent } from "@/lib/analytics";
 
 export interface ChatMessage {
   id: string;
@@ -95,6 +96,7 @@ export function useChatStore() {
       dispatch({ type: "ADD_MESSAGE", message: userMsg });
       dispatch({ type: "SET_LOADING", loading: true });
       dispatch({ type: "SET_ERROR", error: null });
+      trackEvent("chat_message_sent", { page_location: window.location.pathname });
 
       try {
         const { data, error } = await supabase.functions.invoke("chat", {

@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { CALENDLY_URL } from "@/lib/constants";
+import { trackEvent } from "@/lib/analytics";
 
 interface CostArea {
   id: string;
@@ -100,6 +101,7 @@ export function ROICalculator() {
 
   const toggleArea = (id: string) => {
     setEnabled((prev) => ({ ...prev, [id]: !prev[id] }));
+    trackEvent("roi_calculated", { page_location: window.location.pathname });
   };
 
   // Animated number hook

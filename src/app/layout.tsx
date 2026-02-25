@@ -5,6 +5,7 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { CookieBanner } from "@/components/legal/CookieBanner";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { ORGANIZATION_SCHEMA } from "@/lib/schema";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -83,6 +84,7 @@ export default function RootLayout({
       <body
         className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

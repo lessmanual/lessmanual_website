@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 type ButtonVariant = "primary" | "secondary" | "text";
 
@@ -18,6 +21,15 @@ const variants: Record<ButtonVariant, string> = {
   text: "inline-flex items-center gap-1.5 font-sans font-medium text-base text-text-secondary hover:text-accent transition-colors duration-200 group",
 };
 
+function getEventName(href: string): string | null {
+  if (href.includes("cal.com")) return "cta_book_meeting";
+  if (href.startsWith("mailto:")) return "cta_email";
+  if (href.includes("#kalkulator") || href.includes("#roi-calculator"))
+    return "cta_calculator";
+  if (href.includes("#wyniki")) return "cta_see_results";
+  return null;
+}
+
 export function Button({
   href,
   children,
@@ -27,9 +39,27 @@ export function Button({
 }: ButtonProps) {
   const cls = `${variants[variant]} ${className}`;
 
+  const handleClick = () => {
+    const eventName = getEventName(href);
+    if (eventName) {
+      trackEvent(eventName, {
+        button_variant: variant,
+        button_url: href,
+        page_location:
+          typeof window !== "undefined" ? window.location.pathname : "",
+      });
+    }
+  };
+
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cls}
+        onClick={handleClick}
+      >
         {children}
         {variant === "text" && (
           <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
@@ -41,7 +71,7 @@ export function Button({
   }
 
   return (
-    <Link href={href} className={cls}>
+    <Link href={href} className={cls} onClick={handleClick}>
       {children}
       {variant === "text" && (
         <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
