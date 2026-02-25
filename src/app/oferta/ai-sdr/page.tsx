@@ -114,6 +114,11 @@ export default function AISDRPage() {
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />
+        <div className="max-w-3xl mx-auto px-6 py-6">
+          <p className="text-sm text-text-muted leading-relaxed">
+            AI SDR od LessManual to system pay-per-meeting do umawiania spotkań B2B. AI znajduje idealnych klientów, pisze spersonalizowane cold maile i umawia potwierdzone spotkania z decydentami. 77% open rate, deal w 6 dni. Płacisz od 500 PLN za spotkanie — zero stałych opłat. Gwarancja: 0 spotkań w 45 dni = zwrot setup.
+          </p>
+        </div>
         <Problem />
         <Agitation />
         <Solution />

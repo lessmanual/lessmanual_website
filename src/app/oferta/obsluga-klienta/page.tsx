@@ -105,6 +105,11 @@ export default function ObslugaKlientaPage() {
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />
+        <div className="max-w-3xl mx-auto px-6 py-6">
+          <p className="text-sm text-text-muted leading-relaxed">
+            Obsługa Klienta AI od LessManual to chatbot i voiceagent wytrenowany na bazie wiedzy Twojej firmy. Odpowiada na 60-80% zapytań automatycznie w 30 sekund, 24/7. Integracja z CRM, auto-sortowanie maili, lead capture. Od 900 PLN/mies. Wdrożenie w 7 dni.
+          </p>
+        </div>
         <Problem />
         <Agitation />
         <Solution />

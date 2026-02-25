@@ -102,6 +102,11 @@ export default function SEOContentPage() {
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />
+        <div className="max-w-3xl mx-auto px-6 py-6">
+          <p className="text-sm text-text-muted leading-relaxed">
+            SEO Content od LessManual to done-for-you system produkcji artykułów SEO. AI generuje 10-30 artykułów miesięcznie z keyword research, klastry tematyczne i internal linking. Twoja akceptacja przed publikacją. Od 83 PLN za artykuł. Wzrost ruchu organicznego +150-400% w 6 miesięcy.
+          </p>
+        </div>
         <Problem />
         <Agitation />
         <Solution />

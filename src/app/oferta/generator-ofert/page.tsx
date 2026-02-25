@@ -105,6 +105,11 @@ export default function GeneratorOfertPage() {
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />
+        <div className="max-w-3xl mx-auto px-6 py-6">
+          <p className="text-sm text-text-muted leading-relaxed">
+            Generator Ofert AI od LessManual to system automatycznego tworzenia wycen i ofert. Klient sam wycenia na stronie lub w chacie wycenowym — system generuje profesjonalny PDF i wysyła mailem. Oszczędność 96% czasu na ofertowaniu. Wdrożenie w 7-14 dni.
+          </p>
+        </div>
         <Problem />
         <Agitation />
         <Solution />

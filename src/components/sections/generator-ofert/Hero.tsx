@@ -145,14 +145,6 @@ export function Hero() {
                   auto follow-upem.
                 </motion.p>
 
-                {/* Definition block — AI SEO */}
-                <motion.p
-                  variants={fadeUp}
-                  className="text-text-secondary/80 text-lg leading-relaxed max-w-[600px] mt-4"
-                >
-                  Generator Ofert AI od LessManual to system automatycznego tworzenia wycen i ofert. Klient sam wycenia na stronie lub w chacie wycenowym — system generuje profesjonalny PDF i wysyła mailem. Oszczędność 96% czasu na ofertowaniu. Wdrożenie w 7-14 dni.
-                </motion.p>
-
                 {/* CTA */}
                 <motion.div
                   variants={fadeUp}
