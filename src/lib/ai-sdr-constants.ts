@@ -162,6 +162,7 @@ export const AI_SDR_SETUP_PLANS = [
   {
     name: "STARTER",
     subtitle: "Email",
+    targetAudience: "Na start — testujesz AI w firmie",
     price: "2,500",
     features: [
       "2 domeny wysyłkowe",
@@ -177,6 +178,7 @@ export const AI_SDR_SETUP_PLANS = [
   {
     name: "GROWTH",
     subtitle: "Email + LinkedIn",
+    targetAudience: "Na poważnie — skalujesz sprzedaż/obsługę",
     price: "3,500",
     features: [
       "3 domeny wysyłkowe",
@@ -195,6 +197,7 @@ export const AI_SDR_SETUP_PLANS = [
   {
     name: "SCALE",
     subtitle: "Multi-channel",
+    targetAudience: "Full stack — automatyzacja całego procesu",
     price: "5,000",
     features: [
       "4+ domeny wysyłkowe",

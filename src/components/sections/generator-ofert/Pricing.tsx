@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { Check } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
+import { BillingToggle, getAnnualPrice } from "@/components/ui/BillingToggle";
 import {
   GEN_OFERT_SETUP_PLANS,
   GEN_OFERT_INDUSTRY_VARIANTS,
@@ -12,6 +14,9 @@ import {
 } from "@/lib/generator-ofert-constants";
 
 export function Pricing() {
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
+  const isAnnual = billingPeriod === "annual";
+
   return (
     <section id="pricing" className="py-28 md:py-40 bg-bg">
       <div className="max-w-[1000px] mx-auto px-6">
@@ -24,6 +29,10 @@ export function Pricing() {
             Płacisz za setup (jednorazowo) i abonament miesięczny za utrzymanie i rozwój systemu.
             Wybierz plan, który pasuje do Twojego biznesu.
           </p>
+        </FadeUp>
+
+        <FadeUp delay={0.05}>
+          <BillingToggle onChange={setBillingPeriod} />
         </FadeUp>
 
         {/* Setup cards — SCALE → GROWTH → STARTER (anchoring) */}
@@ -46,6 +55,9 @@ export function Pricing() {
                 <div className="mb-4">
                   <h3 className="font-serif text-2xl">{plan.name}</h3>
                   <p className="text-base text-text-muted">{plan.subtitle}</p>
+                  {plan.targetAudience && (
+                    <p className="text-sm text-text-light mt-1">{plan.targetAudience}</p>
+                  )}
                 </div>
 
                 <div className="mb-2">
@@ -54,8 +66,18 @@ export function Pricing() {
                   <span className="text-text-light text-xs ml-2">(jednorazowo)</span>
                 </div>
                 <div className="mb-6">
-                  <span className="font-mono text-lg font-semibold text-accent">+ {plan.mrr} PLN</span>
-                  <span className="text-text-muted text-sm ml-1">/ mies</span>
+                  {isAnnual ? (
+                    <>
+                      <span className="font-mono text-lg font-semibold text-accent">+ {getAnnualPrice(plan.mrr)} PLN</span>
+                      <span className="text-text-muted text-sm ml-1">/ mies</span>
+                      <span className="text-xs text-text-light ml-2 line-through">{plan.mrr} PLN</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="font-mono text-lg font-semibold text-accent">+ {plan.mrr} PLN</span>
+                      <span className="text-text-muted text-sm ml-1">/ mies</span>
+                    </>
+                  )}
                 </div>
 
                 <div className="space-y-2.5 mb-6 flex-1">
@@ -94,7 +116,10 @@ export function Pricing() {
         {/* Payment terms */}
         <FadeUp delay={0.15}>
           <p className="text-center text-base text-text-secondary mb-10">
-            <strong className="text-text">50% zaliczki przed startem. 50% po wdrożeniu i zatwierdzeniu.</strong>
+            <strong className="text-text">
+              50% zaliczki przed startem. 50% po wdrożeniu i zatwierdzeniu.
+              {isAnnual && " Płatność roczna z góry = 2 miesiące gratis."}
+            </strong>
           </p>
         </FadeUp>
 

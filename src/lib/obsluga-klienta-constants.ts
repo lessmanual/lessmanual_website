@@ -186,6 +186,7 @@ export const OBS_KLIENTA_SETUP_PLANS = [
   {
     name: "STARTER",
     subtitle: "Chat (1 kanał)",
+    targetAudience: "Na start — testujesz AI w firmie",
     setup: "5,000",
     mrr: "900",
     features: [
@@ -203,6 +204,7 @@ export const OBS_KLIENTA_SETUP_PLANS = [
   {
     name: "GROWTH",
     subtitle: "Multi-channel",
+    targetAudience: "Na poważnie — skalujesz sprzedaż/obsługę",
     setup: "10,000",
     mrr: "1,500",
     features: [
@@ -222,8 +224,9 @@ export const OBS_KLIENTA_SETUP_PLANS = [
   {
     name: "SCALE",
     subtitle: "Full Suite + Voice Agent",
-    setup: "18,000",
-    mrr: "2,500",
+    targetAudience: "Full stack — automatyzacja całego procesu",
+    setup: "15,000",
+    mrr: "2,200",
     features: [
       "Wszystko z GROWTH +",
       "Voice Agent — AI recepcjonistka 24/7",

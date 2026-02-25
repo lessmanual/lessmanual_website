@@ -228,6 +228,7 @@ export const GEN_OFERT_SETUP_PLANS = [
   {
     name: "STARTER",
     subtitle: "Chat wycenowy + PDF",
+    targetAudience: "Na start — testujesz AI w firmie",
     setup: "5,000",
     mrr: "800",
     features: [
@@ -246,6 +247,7 @@ export const GEN_OFERT_SETUP_PLANS = [
   {
     name: "GROWTH",
     subtitle: "Dedykowana aplikacja + CRM",
+    targetAudience: "Na poważnie — skalujesz sprzedaż/obsługę",
     setup: "9,000",
     mrr: "1,500",
     features: [
@@ -266,6 +268,7 @@ export const GEN_OFERT_SETUP_PLANS = [
   {
     name: "SCALE",
     subtitle: "Konfigurator wszędzie",
+    targetAudience: "Full stack — automatyzacja całego procesu",
     setup: "14,000",
     mrr: "2,000",
     features: [

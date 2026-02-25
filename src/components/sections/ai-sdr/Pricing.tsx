@@ -47,6 +47,9 @@ export function Pricing() {
                 <div className="mb-4">
                   <h3 className="font-serif text-2xl">{plan.name}</h3>
                   <p className="text-lg text-text-muted">{plan.subtitle}</p>
+                  {plan.targetAudience && (
+                    <p className="text-sm text-text-light mt-1">{plan.targetAudience}</p>
+                  )}
                 </div>
 
                 <div className="mb-6">

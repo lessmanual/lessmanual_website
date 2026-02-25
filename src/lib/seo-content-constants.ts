@@ -192,6 +192,7 @@ export const SEO_SETUP_PLANS = [
   {
     name: "STARTER",
     subtitle: "Pierwszy krok",
+    targetAudience: "Na start — testujesz AI w firmie",
     setupPrice: "3,000",
     monthlyPrice: "1,000",
     perArticle: "~100 PLN/artykuł",
@@ -209,6 +210,7 @@ export const SEO_SETUP_PLANS = [
   {
     name: "GROWTH",
     subtitle: "Poważne SEO",
+    targetAudience: "Na poważnie — skalujesz sprzedaż/obsługę",
     setupPrice: "5,000",
     monthlyPrice: "1,800",
     perArticle: "~90 PLN/artykuł",
@@ -230,6 +232,7 @@ export const SEO_SETUP_PLANS = [
   {
     name: "SCALE",
     subtitle: "Pełna dominacja",
+    targetAudience: "Full stack — automatyzacja całego procesu",
     setupPrice: "7,000",
     monthlyPrice: "2,500",
     perArticle: "~83 PLN/artykuł",
