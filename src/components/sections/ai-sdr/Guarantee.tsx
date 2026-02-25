@@ -46,6 +46,11 @@ export function Guarantee() {
                 <strong className="text-text">Ryzyko jest po naszej stronie, nie Twojej.</strong>{" "}
                 Dlatego możemy sobie na to pozwolić — bo wiemy, co robimy.
               </p>
+
+              <p>
+                <strong className="text-text">Rezygnacja bez kar.</strong>{" "}
+                Jeden mail — koniec współpracy. Zero okresu wypowiedzenia. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.
+              </p>
             </div>
           </div>
         </FadeUp>

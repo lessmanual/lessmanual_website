@@ -9,7 +9,7 @@ export const OBS_KLIENTA_PROOF_METRICS = [
   { value: "500-1000%", label: "ROI w pierwszym roku", countTo: 1000, suffix: "%" },
 ];
 
-export const OBS_KLIENTA_PROOF_META = "10+ wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
+export const OBS_KLIENTA_PROOF_META = "13 wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
 
 export const OBS_KLIENTA_COST_TABLE = [
   {
@@ -66,7 +66,7 @@ export const OBS_KLIENTA_SOLUTION_STEPS = [
   },
   {
     num: 3,
-    title: "Email Triage",
+    title: "Auto-sortowanie maili",
     desc: "System czyta maile, kategoryzuje, odpowiada na te powtarzalne. Te wymagające Twojej uwagi — przekazuje Ci posegregowane, z kontekstem. Koniec z przebijaniem się przez 200 maili rano.",
     tier: "Od GROWTH",
   },
@@ -94,7 +94,7 @@ export const OBS_KLIENTA_DELIVERABLES = [
     items: [
       "Wszystko ze STARTER +",
       "Chat na stronie + WhatsApp + Email",
-      "Email Triage (auto-kategoryzacja i odpowiedzi)",
+      "Auto-sortowanie maili (auto-kategoryzacja i odpowiedzi)",
       "2,000 konwersacji miesięcznie",
       "Integracja z CRM",
       "Miesięczny raport CSAT",
@@ -149,7 +149,7 @@ export const OBS_KLIENTA_COMPARISON_TABLE = {
     { label: "RAG (Twoje dane)", cols: ["Ograniczone", "Ograniczone", "Tak", "Zależy", "Full"] },
     { label: "Voice Agent", cols: ["Nie", "Nie", "Nie", "50,000-350,000 PLN", "W SCALE"] },
     { label: "WhatsApp", cols: ["Częściowo", "Ograniczone", "Ograniczone", "Zależy", "Od GROWTH"] },
-    { label: "Email Triage", cols: ["Nie", "Nie", "Nie", "Zależy", "Od GROWTH"] },
+    { label: "Auto-sortowanie maili", cols: ["Nie", "Nie", "Nie", "Zależy", "Od GROWTH"] },
     { label: "Kto konfiguruje", cols: ["Ty", "Ty", "Ty", "Developer", "My"] },
     { label: "Gwarancja ROI", cols: ["Nie", "Nie", "Nie", "Nie", "200% w 90 dni"] },
   ],
@@ -209,7 +209,7 @@ export const OBS_KLIENTA_SETUP_PLANS = [
     mrr: "1,500",
     features: [
       "Chat + WhatsApp + Email",
-      "Email Triage (auto-kategoryzacja)",
+      "Auto-sortowanie maili (auto-kategoryzacja)",
       "2,000 konwersacji/mies",
       "Integracja z CRM",
       "Raport CSAT miesięcznie",
@@ -367,5 +367,9 @@ export const OBS_KLIENTA_GUARANTEES = [
   {
     title: "ROI 200% w 90 dni",
     desc: "Jeśli system nie przyniesie Ci co najmniej dwukrotności tego, co płacisz — następny miesiąc gratis.",
+  },
+  {
+    title: "Rezygnacja bez kar",
+    desc: "Jeden mail — koniec współpracy. Zero okresu wypowiedzenia, zero kar. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.",
   },
 ];

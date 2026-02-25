@@ -9,7 +9,7 @@ export const GEN_OFERT_PROOF_METRICS = [
   { value: "7-21 dni", label: "do działającego systemu", countTo: 21, suffix: " dni" },
 ];
 
-export const GEN_OFERT_PROOF_META = "10+ wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
+export const GEN_OFERT_PROOF_META = "13 wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
 
 export const GEN_OFERT_COST_TABLE = [
   {
@@ -78,7 +78,7 @@ export const GEN_OFERT_DELIVERABLES = [
   {
     title: "STARTER — Chat wycenowy",
     items: [
-      "Chat n8n (link lub embed na stronie) — klient sam wprowadza dane",
+      "Chat wycenowy (link lub embed na stronie) — klient sam wprowadza dane",
       "Baza Twoich produktów i usług (RAG) — system zna Twoje ceny, materiały, warianty",
       "1 szablon PDF z logo Twojej firmy — Twój brand, Twoje kolory",
       "Automatyczna wysyłka wyceny mailem do klienta",
@@ -232,7 +232,7 @@ export const GEN_OFERT_SETUP_PLANS = [
     setup: "5,000",
     mrr: "800",
     features: [
-      "Chat n8n (link lub embed na stronie)",
+      "Chat wycenowy (link lub embed na stronie)",
       "1 szablon PDF z Twoim logo",
       "Baza produktów/usług (RAG)",
       "Wysyłka wyceny mailem",
@@ -411,5 +411,9 @@ export const GEN_OFERT_GUARANTEES = [
   {
     title: "ROI 200% w 90 dni",
     desc: "Jeśli system nie przyniesie Ci co najmniej dwukrotności tego, co płacisz — następny miesiąc gratis. Mierzymy razem. Liczymy razem. Dane są Twoje — widzisz wszystko.",
+  },
+  {
+    title: "Rezygnacja bez kar",
+    desc: "Jeden mail — koniec współpracy. Zero okresu wypowiedzenia, zero kar. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.",
   },
 ];

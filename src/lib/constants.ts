@@ -23,7 +23,7 @@ export const PROOF_METRICS = [
   { value: "Gwarancja wyników", label: "lub pełny zwrot kosztów" },
 ];
 
-export const PROOF_META = "10+ firm B2B · 5.0 na Google · Max 3 projekty miesięcznie";
+export const PROOF_META = "11 firm B2B · 13 wdrożeń · 5.0 na Google · Max 3 projekty miesięcznie";
 
 export const NAVIGATION = [
   { name: "Oferta", href: "/oferta" },
@@ -90,7 +90,7 @@ export const COST_TABLE = [
   {
     task: "Szukanie klientów (handlowiec / agencja / ads)",
     currentCost: "5,000-22,000 PLN",
-    ourCost: "od 750 PLN/spotkanie",
+    ourCost: "od 500 PLN/spotkanie",
   },
   {
     task: "Obsługa zapytań (pracownik / Ty sam)",
@@ -110,7 +110,7 @@ export const COST_TABLE = [
 ];
 
 export const SOCIAL_PROOF_METRICS = [
-  { label: "Open rate", value: "76%", countTo: 76, suffix: "%", benchmark: "20-30%" },
+  { label: "Open rate", value: "77%", countTo: 77, suffix: "%", benchmark: "20-30%" },
   { label: "Positive reply rate", value: "60%", countTo: 60, suffix: "%", decimals: 0, benchmark: "5-15%" },
   { label: "Od kontaktu do dealu", value: "6 dni", countTo: 6, suffix: " dni", benchmark: "30-90 dni" },
 ];
@@ -289,11 +289,13 @@ export const GUARANTEE_POINTS = [
   "Chcesz zrezygnować? Jeden mail — bez kar, bez okresu wypowiedzenia",
 ];
 
+export const COST_TABLE_SUMMARY = "Suma: 18,000-39,000 PLN miesięcznie na ręczną robotę. Z nami: od 2,400 PLN. Reszta zostaje w Twojej kieszeni.";
+
 export const VALUE_STACK_SAVINGS = [
   {
     area: "Sprzedaż",
     before: "Handlowiec + agencja + ads = 100-300k PLN/rok",
-    after: "AI SDR od 750 PLN/spotkanie, zero stałych opłat",
+    after: "AI SDR od 500 PLN/spotkanie, zero stałych opłat",
   },
   {
     area: "Obsługa klienta",

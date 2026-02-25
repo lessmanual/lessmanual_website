@@ -65,7 +65,7 @@ export const SEO_SOLUTION_STEPS = [
   {
     num: 2,
     title: "Produkcja contentu (AI + Human)",
-    desc: "System generuje 10-30 artykułów miesięcznie. Każdy zoptymalizowany pod SEO: meta tagi, nagłówki H1-H3, linkowanie wewnętrzne, odpowiednia długość. Human-in-the-loop — akceptujesz lub korygujesz. Nie chcesz? Full auto.",
+    desc: "System generuje 10-30 artykułów miesięcznie. Każdy zoptymalizowany pod SEO: meta tagi, nagłówki H1-H3, linkowanie wewnętrzne, odpowiednia długość. Akceptujesz każdy artykuł przed publikacją — albo dajesz full auto. Twoja decyzja.",
   },
   {
     num: 3,
@@ -81,7 +81,7 @@ export const SEO_DELIVERABLES_TABLE = {
     { label: "Artykuły SEO/mies", starter: "10", growth: "20", scale: "30 (full auto)" },
     { label: "Klastry tematyczne", starter: "1", growth: "3", scale: "Unlimited" },
     { label: "Optymalizacja on-page (meta, H1-H3, linki)", starter: true, growth: true, scale: true },
-    { label: "Human-in-the-loop review", starter: true, growth: true, scale: true },
+    { label: "Twoja akceptacja przed publikacją", starter: true, growth: true, scale: true },
     { label: "Publikacja na blogu", starter: false, growth: true, scale: true },
     { label: "Tracking pozycji w Google", starter: false, growth: true, scale: true },
     { label: "Monthly SEO report", starter: false, growth: true, scale: true },
@@ -201,7 +201,7 @@ export const SEO_SETUP_PLANS = [
       "1 klaster tematyczny",
       "Keyword research + strategia (wartość 2,000 PLN — w cenie)",
       "Optymalizacja on-page: meta tagi, H1-H3, linkowanie wewnętrzne",
-      "Human-in-the-loop review",
+      "Twoja akceptacja przed publikacją",
     ],
     desc: "Zaczynam blogować. Chcę przetestować, czy to działa.",
     popular: false,
@@ -265,7 +265,7 @@ export const SEO_FAQ_ITEMS = [
       },
       {
         q: "Mogę sprawdzić artykuły przed publikacją?",
-        a: "Tak. Human-in-the-loop to opcja w każdym pakiecie. Chcesz czytać i akceptować? Dostajesz artykuły do review. Nie chcesz się tym zajmować? Full auto. Twoja decyzja. Możesz zmienić zdanie w dowolnym momencie.",
+        a: "Tak. Twoja akceptacja artykułów to opcja w każdym pakiecie. Chcesz czytać i akceptować? Dostajesz artykuły do review. Nie chcesz się tym zajmować? Full auto. Twoja decyzja. Możesz zmienić zdanie w dowolnym momencie.",
       },
       {
         q: "A co z ChatGPT i Gemini? Ludzie pytają AI zamiast Google.",
@@ -321,5 +321,9 @@ export const SEO_GUARANTEES = [
   {
     title: "Wsparcie w cenie abonamentu",
     desc: "Nie zostawiamy Cię z systemem i \"radź sobie\". Opiekujemy się, optymalizujemy, odpowiadamy na pytania — przez cały okres współpracy. Bez dodatkowych opłat. Bez \"to nie wchodzi w pakiet\".",
+  },
+  {
+    title: "Rezygnacja bez kar",
+    desc: "Jeden mail — koniec współpracy. Zero okresu wypowiedzenia, zero kar. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.",
   },
 ];

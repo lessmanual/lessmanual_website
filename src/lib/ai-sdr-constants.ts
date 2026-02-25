@@ -9,7 +9,7 @@ export const AI_SDR_PROOF_METRICS = [
   { value: "0 PLN", label: "stałych kosztów", countTo: 0, suffix: " PLN" },
 ];
 
-export const AI_SDR_PROOF_META = "12 spotkań z 476 maili | 0 spotkań w 45 dni = zwrot setup | Max 3 projekty miesięcznie";
+export const AI_SDR_PROOF_META = "12 spotkań z 476 maili | 13 wdrożeń | 0 spotkań w 45 dni = zwrot setup | Max 3 projekty miesięcznie";
 
 export const AI_SDR_COST_TABLE = [
   {
