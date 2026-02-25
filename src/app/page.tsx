@@ -2,6 +2,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { Hero } from "@/components/sections/Hero";
+import { generateFAQSchema } from "@/lib/schema";
+import { FAQ_ITEMS } from "@/lib/constants";
 import { HeroProof } from "@/components/sections/HeroProof";
 import { Problem } from "@/components/sections/Problem";
 import { Agitation } from "@/components/sections/Agitation";
@@ -38,12 +40,18 @@ const jsonLd = {
   },
 };
 
+const faqSchema = generateFAQSchema(FAQ_ITEMS);
+
 export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
       <main className="pt-16 pb-16 md:pb-0">

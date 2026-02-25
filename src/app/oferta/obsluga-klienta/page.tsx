@@ -20,6 +20,8 @@ import { About } from "@/components/sections/obsluga-klienta/About";
 import { Urgency } from "@/components/sections/obsluga-klienta/Urgency";
 import { FinalCTA } from "@/components/sections/obsluga-klienta/FinalCTA";
 import { FAQ } from "@/components/sections/obsluga-klienta/FAQ";
+import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { OBS_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
 
 export const metadata: Metadata = {
   title: "Obsługa Klienta AI — Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
@@ -58,7 +60,31 @@ const jsonLd = {
   },
   areaServed: "PL",
   serviceType: "AI Customer Service System",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "PLN",
+    price: "900",
+    description:
+      "od 900 PLN/mies. Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań automatycznie.",
+    availability: "https://schema.org/InStock",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "6",
+    bestRating: "5",
+  },
 };
+
+const faqSchema = generateFAQSchema(OBS_KLIENTA_FAQ_ITEMS);
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Strona główna", url: "https://lessmanual.ai" },
+  { name: "Oferta", url: "https://lessmanual.ai/oferta" },
+  {
+    name: "Obsługa Klienta AI",
+    url: "https://lessmanual.ai/oferta/obsluga-klienta",
+  },
+]);
 
 export default function ObslugaKlientaPage() {
   return (
@@ -66,6 +92,14 @@ export default function ObslugaKlientaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
@@ -87,6 +121,9 @@ export default function ObslugaKlientaPage() {
         <Urgency />
         <FinalCTA />
         <FAQ />
+        <div className="text-center text-sm text-text-muted py-6">
+          Ostatnia aktualizacja: luty 2026
+        </div>
       </main>
       <Footer />
       <MobileCTABar />

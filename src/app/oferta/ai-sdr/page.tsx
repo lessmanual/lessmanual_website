@@ -20,6 +20,8 @@ import { Pricing } from "@/components/sections/ai-sdr/Pricing";
 import { Urgency } from "@/components/sections/ai-sdr/Urgency";
 import { FinalCTA } from "@/components/sections/ai-sdr/FinalCTA";
 import { About } from "@/components/sections/ai-sdr/About";
+import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { AI_SDR_FAQ_ITEMS } from "@/lib/ai-sdr-constants";
 
 export const metadata: Metadata = {
   title: "AI SDR — Spotkania z Decydentami B2B | LessManual.ai",
@@ -58,7 +60,40 @@ const jsonLd = {
   },
   areaServed: "PL",
   serviceType: "AI Sales Development",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "PLN",
+    price: "500",
+    description:
+      "od 500 PLN za spotkanie. Model pay-per-meeting — płacisz tylko za spotkania które się odbędą.",
+    availability: "https://schema.org/InStock",
+  },
+  review: {
+    "@type": "Review",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+    },
+    author: {
+      "@type": "Organization",
+      name: "Google Reviews",
+    },
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "6",
+    bestRating: "5",
+  },
 };
+
+const faqSchema = generateFAQSchema(AI_SDR_FAQ_ITEMS);
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Strona główna", url: "https://lessmanual.ai" },
+  { name: "Oferta", url: "https://lessmanual.ai/oferta" },
+  { name: "AI SDR", url: "https://lessmanual.ai/oferta/ai-sdr" },
+]);
 
 export default function AISDRPage() {
   return (
@@ -66,6 +101,14 @@ export default function AISDRPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
@@ -87,6 +130,9 @@ export default function AISDRPage() {
         <Urgency />
         <FinalCTA />
         <FAQ />
+        <div className="text-center text-sm text-text-muted py-6">
+          Ostatnia aktualizacja: luty 2026
+        </div>
       </main>
       <Footer />
       <MobileCTABar />

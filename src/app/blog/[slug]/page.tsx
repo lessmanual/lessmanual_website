@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { BlogContent } from "@/components/sections/blog/BlogContent";
 import { getPostBySlug, getAllSlugs } from "@/lib/supabase";
+import { generateBlogPostSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export const revalidate = 60;
 
@@ -89,8 +90,23 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const blogSchema = generateBlogPostSchema(post);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Strona główna", url: "https://lessmanual.ai" },
+    { name: "Blog", url: "https://lessmanual.ai/blog" },
+    { name: post.title_pl, url: `https://lessmanual.ai/blog/${post.slug}` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
         <article className="py-20 md:py-28">
@@ -112,14 +128,24 @@ export default async function BlogPostPage({
               <h1 className="font-serif text-text mb-6">{post.title_pl}</h1>
 
               <div className="flex flex-wrap items-center gap-3 text-sm text-text-muted">
-                {post.author && <span>{post.author}</span>}
-                {post.author && post.published_at && (
-                  <span aria-hidden="true">·</span>
-                )}
+                <span>Bartłomiej Chudzik</span>
+                <span aria-hidden="true">·</span>
+                <span className="text-text-muted/70">Founder & CTO, LessManual.ai</span>
                 {post.published_at && (
-                  <time dateTime={post.published_at}>
-                    {formatDate(post.published_at)}
-                  </time>
+                  <>
+                    <span aria-hidden="true">·</span>
+                    <time dateTime={post.published_at}>
+                      {formatDate(post.published_at)}
+                    </time>
+                  </>
+                )}
+                {post.updated_at && post.updated_at !== post.published_at && (
+                  <>
+                    <span aria-hidden="true">·</span>
+                    <span>
+                      Zaktualizowano: {formatDate(post.updated_at)}
+                    </span>
+                  </>
                 )}
                 {post.reading_time_minutes && (
                   <>

@@ -143,6 +143,14 @@ export function Hero() {
                   System pisze, wstawia Twoje produkty, linkuje do poprzednich wpisów. Ty akceptujesz i zbierasz leady.
                 </motion.p>
 
+                {/* Definition block — AI SEO */}
+                <motion.p
+                  variants={fadeUp}
+                  className="text-text-secondary/80 text-lg leading-relaxed max-w-[600px] mt-4"
+                >
+                  SEO Content od LessManual to done-for-you system produkcji artykułów SEO. AI generuje 10-30 artykułów miesięcznie z keyword research, klastry tematyczne i internal linking. Twoja akceptacja przed publikacją. Od 83 PLN za artykuł. Wzrost ruchu organicznego +150-400% w 6 miesięcy.
+                </motion.p>
+
                 {/* CTA */}
                 <motion.div
                   variants={fadeUp}

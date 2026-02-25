@@ -143,6 +143,14 @@ export function Hero() {
                   System znajduje decydentów, pisze spersonalizowane wiadomości, follow-upuje i umawia spotkania w Twoim kalendarzu. Ty tylko zamykasz.
                 </motion.p>
 
+                {/* Definition block — AI SEO */}
+                <motion.p
+                  variants={fadeUp}
+                  className="text-text-secondary/80 text-lg leading-relaxed max-w-[600px] mt-4"
+                >
+                  AI SDR od LessManual to system pay-per-meeting do umawiania spotkań B2B. AI znajduje idealnych klientów, pisze spersonalizowane cold maile i umawia potwierdzone spotkania z decydentami. 77% open rate, deal w 6 dni. Płacisz od 500 PLN za spotkanie — zero stałych opłat. Gwarancja: 0 spotkań w 45 dni = zwrot setup.
+                </motion.p>
+
                 {/* CTA */}
                 <motion.div
                   variants={fadeUp}

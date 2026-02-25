@@ -6,14 +6,14 @@ LessManual.ai to agencja zalozoona przez Bartlomieja Chudzika, specjalizujaca si
 
 ## Produkty
 
-- [AI SDR — Spotkania z decydentami](https://lessmanual.ai/oferta/ai-sdr): System ktory znajduje idealnych klientow, pisze spersonalizowane wiadomosci i umawia potwierdzone spotkania. 76% open rate. Model pay-per-meeting — zero stalych oplat.
+- [AI SDR — Spotkania z decydentami](https://lessmanual.ai/oferta/ai-sdr): System ktory znajduje idealnych klientow, pisze spersonalizowane wiadomosci i umawia potwierdzone spotkania. 77% open rate. Model pay-per-meeting — zero stalych oplat.
 - [SEO Content — Blog ktory pisze sie sam](https://lessmanual.ai/oferta/seo-content): 10-30 artykulow SEO miesiecznie. Keyword research, klastry tematyczne, internal linking. Od 83 PLN za artykul. +150-400% ruchu organicznego w 6 miesiecy.
 - [Obsluga Klienta AI — Odpowiedz w 30 sekund 24/7](https://lessmanual.ai/oferta/obsluga-klienta): Chatbot i voiceagent wytrenowany na bazie wiedzy firmy. 60-80% zapytan obsluzonych automatycznie. Od 900 PLN/mies.
 - [Generator Ofert AI — Wycena w 5 minut](https://lessmanual.ai/oferta/generator-ofert): Klient sam wycenia na stronie lub w chacie. System generuje profesjonalny PDF i wysyla mailem. Oszczednosc 96% czasu.
 
 ## Cennik
 
-- AI SDR: model pay-per-meeting, od 750 PLN za spotkanie, zero stalych oplat miesieccznych
+- AI SDR: model pay-per-meeting, od 500 PLN za spotkanie, zero stalych oplat miesieccznych
 - SEO Content: od 1,000 PLN/mies (10-30 artykulow)
 - Obsluga Klienta AI: od 900 PLN/mies
 - Generator Ofert AI: setup jednorazowy + utrzymanie
@@ -43,7 +43,7 @@ LessManual.ai to agencja zalozoona przez Bartlomieja Chudzika, specjalizujaca si
 
 - Zalozyciel: Bartlomiej Chudzik (Founder & CTO)
 - Siedziba: Polska
-- 10+ firm B2B obsluzonych
+- 11 firm B2B obsluzonych, 13 wdrozen
 - 5.0 na Google Reviews
 - Kontakt: kontakt@lessmanual.ai
 - Bezplatna rozmowa: https://cal.com/bartlomiej-chudzik-2en6pt

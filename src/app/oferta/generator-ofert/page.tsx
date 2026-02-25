@@ -20,6 +20,8 @@ import { About } from "@/components/sections/generator-ofert/About";
 import { Urgency } from "@/components/sections/generator-ofert/Urgency";
 import { FinalCTA } from "@/components/sections/generator-ofert/FinalCTA";
 import { FAQ } from "@/components/sections/generator-ofert/FAQ";
+import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { GEN_OFERT_FAQ_ITEMS } from "@/lib/generator-ofert-constants";
 
 export const metadata: Metadata = {
   title: "Generator Ofert AI — Wycena w 5 Minut | LessManual.ai",
@@ -58,7 +60,31 @@ const jsonLd = {
   },
   areaServed: "PL",
   serviceType: "AI Quote Generation System",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "PLN",
+    price: "4000",
+    description:
+      "setup od 4,000 PLN. Konfigurator wycen na stronie — klient sam wycenia, dostaje PDF automatycznie.",
+    availability: "https://schema.org/InStock",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "6",
+    bestRating: "5",
+  },
 };
+
+const faqSchema = generateFAQSchema(GEN_OFERT_FAQ_ITEMS);
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Strona główna", url: "https://lessmanual.ai" },
+  { name: "Oferta", url: "https://lessmanual.ai/oferta" },
+  {
+    name: "Generator Ofert AI",
+    url: "https://lessmanual.ai/oferta/generator-ofert",
+  },
+]);
 
 export default function GeneratorOfertPage() {
   return (
@@ -66,6 +92,14 @@ export default function GeneratorOfertPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
       <main className="pt-16 pb-16 md:pb-0">
@@ -87,6 +121,9 @@ export default function GeneratorOfertPage() {
         <Urgency />
         <FinalCTA />
         <FAQ />
+        <div className="text-center text-sm text-text-muted py-6">
+          Ostatnia aktualizacja: luty 2026
+        </div>
       </main>
       <Footer />
       <MobileCTABar />

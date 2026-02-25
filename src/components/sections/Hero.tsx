@@ -130,6 +130,14 @@ export function Hero() {
                   Nasze systemy przejmują 80% powtarzalnej pracy — pod Twoim nadzorem. Odzyskaj czas i głowę do tego, co realnie rozwija Twój biznes.
                 </motion.p>
 
+                {/* Definition block — AI SEO */}
+                <motion.p
+                  variants={fadeUp}
+                  className="text-text-secondary/80 text-lg leading-relaxed max-w-[600px] mt-4"
+                >
+                  LessManual.ai to polska agencja automatyzacji AI dla firm B2B. Budujemy done-for-you systemy: AI SDR (umawianie spotkań), SEO Content (blog na autopilocie), Obsługa Klienta AI (chatbot 24/7) i Generator Ofert (wycena w 5 minut). 11 firm obsłużonych, 13 wdrożeń, 5.0 na Google. Gwarancja wyników lub zwrot kosztów.
+                </motion.p>
+
                 {/* CTA */}
                 <motion.div
                   variants={fadeUp}

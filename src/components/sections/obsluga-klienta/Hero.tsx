@@ -145,6 +145,14 @@ export function Hero() {
                   Chat, WhatsApp, email — jeden system wytrenowany na Twojej bazie wiedzy. Ty dostajesz tylko sprawy, które wymagają człowieka.
                 </motion.p>
 
+                {/* Definition block — AI SEO */}
+                <motion.p
+                  variants={fadeUp}
+                  className="text-text-secondary/80 text-lg leading-relaxed max-w-[600px] mt-4"
+                >
+                  Obsługa Klienta AI od LessManual to chatbot i voiceagent wytrenowany na bazie wiedzy Twojej firmy. Odpowiada na 60-80% zapytań automatycznie w 30 sekund, 24/7. Integracja z CRM, auto-sortowanie maili, lead capture. Od 900 PLN/mies. Wdrożenie w 7 dni.
+                </motion.p>
+
                 {/* CTA */}
                 <motion.div
                   variants={fadeUp}

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { CookieBanner } from "@/components/legal/CookieBanner";
 import ChatWidget from "@/components/chat/ChatWidget";
+import { ORGANIZATION_SCHEMA } from "@/lib/schema";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -82,6 +83,12 @@ export default function RootLayout({
       <body
         className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(ORGANIZATION_SCHEMA),
+          }}
+        />
         {children}
         <CookieBanner />
         <ScrollToTop />
