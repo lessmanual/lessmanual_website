@@ -22,7 +22,7 @@ import { FinalCTA } from "@/components/sections/seo-content/FinalCTA";
 import { FAQ } from "@/components/sections/seo-content/FAQ";
 import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { SEO_CONTENT_FAQ_ITEMS } from "@/lib/seo-content-constants";
+import { SEO_FAQ_ITEMS } from "@/lib/seo-content-constants";
 
 export const metadata: Metadata = {
   title: "SEO Content — 30 Artykułów Miesięcznie od 83 PLN | LessManual.ai",
