@@ -12,9 +12,9 @@ const SOLUTIONS = [
     title: "Spotkania z decydentami",
     popular: true,
     description:
-      "System znajduje Twoich idealnych klientów, pisze spersonalizowane wiadomości i umawia spotkania w Twoim kalendarzu.",
+      "AI SDR to zautomatyzowany system do prospectingu B2B, który zastępuje pracę handlowca. Automatycznie profiluje decydentów, pisze spersonalizowane wiadomości cold email i prowadzi konwersację aż do umówienia spotkania w Twoim kalendarzu.",
     metrics: [
-      { value: "76%", label: "open rate (standard: 20-30%)" },
+      { value: "76%", label: "open rate (standard: 20-30%)*" },
       { value: "0 PLN", label: "stałych opłat — płacisz za spotkania" },
     ],
     href: "/oferta/ai-sdr",
@@ -23,10 +23,10 @@ const SOLUTIONS = [
     num: "02",
     title: "Blog który pisze się sam",
     description:
-      "10-30 artykułów SEO miesięcznie. Keyword research, klastry tematyczne, internal linking. Ruch rośnie — Ty nie robisz nic.",
+      "Nasz system SEO Content zamienia stronę w maszynę do generowania ruchu organicznego. Sztuczna inteligencja samodzielnie robi research słów kluczowych, układa klastry tematyczne i publikuje 10-30 gotowych artykułów miesięcznie.",
     metrics: [
       { value: "od 83 PLN", label: "za artykuł (vs 300-800 PLN)" },
-      { value: "+150-400%", label: "ruchu organicznego w 6 mies." },
+      { value: "+150-400%", label: "ruchu organicznego w 6 mies.*" },
     ],
     href: "/oferta/seo-content",
   },
@@ -34,9 +34,9 @@ const SOLUTIONS = [
     num: "03",
     title: "Odpowiedź w 30 sekund, 24/7",
     description:
-      "Odpowiada klientom na stronie, WhatsApp i mailu. Wytrenowany na Twojej bazie wiedzy. Czego nie wie — przekazuje do Ciebie.",
+      "Wdrażamy asystentów AI zasilanych Twoją wewnętrzną bazą wiedzy. System 24/7 obsługuje powtarzalne zapytania klientów na stronie, mailu i WhatsAppie, przekazując zespołowi tylko te najbardziej złożone.",
     metrics: [
-      { value: "60-80%", label: "zapytań obsłużonych automatycznie" },
+      { value: "60-80%", label: "zapytań obsłużonych automatycznie*" },
       { value: "od 900 PLN", label: "/mies vs pracownik 8-9k" },
     ],
     href: "/oferta/obsluga-klienta",
@@ -45,10 +45,10 @@ const SOLUTIONS = [
     num: "04",
     title: "Wycena w 5 minut zamiast 2h",
     description:
-      "Klient sam wycenia na Twojej stronie. System generuje profesjonalny PDF z Twoim logo, wysyła mailem i pilnuje follow-upu.",
+      "Generator Ofert AI to narzędzie skracające proces wyceny do minimum. Klient zostawia dane na stronie, a system natychmiast kalkuluje koszty, składa spersonalizowany plik PDF z Twoim logo i automatycznie wysyła ofertę na maila.",
     metrics: [
-      { value: "96%", label: "mniej czasu na tworzenie ofert" },
-      { value: "+25-40%", label: "win rate dzięki szybkości odpowiedzi" },
+      { value: "96%", label: "mniej czasu na tworzenie ofert*" },
+      { value: "+25-40%", label: "win rate dzięki szybkości odpowiedzi*" },
     ],
     href: "/oferta/generator-ofert",
   },
@@ -64,6 +64,9 @@ export function Solutions() {
             title="Jeden system. Konkretny problem rozwiązany."
             subtitle="Każdy system działa pod klucz — my budujemy, Ty widzisz wyniki."
           />
+          <p className="text-center text-sm text-text-light mt-[-2rem] mb-12">
+            *Metryki skuteczności opierają się na wynikach z naszych wewnętrznych kampanii.
+          </p>
         </FadeUp>
 
         <StaggerContainer
