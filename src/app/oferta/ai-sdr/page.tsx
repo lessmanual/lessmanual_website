@@ -20,6 +20,7 @@ import { Pricing } from "@/components/sections/ai-sdr/Pricing";
 import { Urgency } from "@/components/sections/ai-sdr/Urgency";
 import { FinalCTA } from "@/components/sections/ai-sdr/FinalCTA";
 import { About } from "@/components/sections/ai-sdr/About";
+import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { AI_SDR_FAQ_ITEMS } from "@/lib/ai-sdr-constants";
 
@@ -111,6 +112,13 @@ export default function AISDRPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
+      <StickyLocalNav items={[
+        { name: "Wyniki", href: "#wyniki" },
+        { name: "Cennik", href: "#pricing" },
+        { name: "Jak działamy", href: "#proces" },
+        { name: "Kalkulator", href: "#roi-calculator" },
+        { name: "FAQ", href: "#faq" }
+      ]} />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />

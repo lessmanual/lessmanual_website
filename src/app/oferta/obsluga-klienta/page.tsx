@@ -20,8 +20,9 @@ import { About } from "@/components/sections/obsluga-klienta/About";
 import { Urgency } from "@/components/sections/obsluga-klienta/Urgency";
 import { FinalCTA } from "@/components/sections/obsluga-klienta/FinalCTA";
 import { FAQ } from "@/components/sections/obsluga-klienta/FAQ";
+import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { OBS_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
+import { OBSLUGA_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
 
 export const metadata: Metadata = {
   title: "Obsługa Klienta AI — Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
@@ -102,6 +103,13 @@ export default function ObslugaKlientaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
+      <StickyLocalNav items={[
+        { name: "Wyniki", href: "#wyniki" },
+        { name: "Kalkulator", href: "#roi-calculator" },
+        { name: "Cennik", href: "#pricing" },
+        { name: "Jak działamy", href: "#proces" },
+        { name: "FAQ", href: "#faq" }
+      ]} />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />

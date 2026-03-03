@@ -17,6 +17,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { Guarantee } from "@/components/sections/Guarantee";
 import { Urgency } from "@/components/sections/Urgency";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -54,6 +55,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
+      <StickyLocalNav items={[
+        { name: "Rozwiązania", href: "#oferta" },
+        { name: "Wyniki", href: "#wyniki" },
+        { name: "Jak działamy", href: "#proces" },
+        { name: "FAQ", href: "#faq" }
+      ]} />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />

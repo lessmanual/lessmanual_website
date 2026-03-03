@@ -20,8 +20,9 @@ import { About } from "@/components/sections/seo-content/About";
 import { Urgency } from "@/components/sections/seo-content/Urgency";
 import { FinalCTA } from "@/components/sections/seo-content/FinalCTA";
 import { FAQ } from "@/components/sections/seo-content/FAQ";
+import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { SEO_FAQ_ITEMS } from "@/lib/seo-content-constants";
+import { SEO_CONTENT_FAQ_ITEMS } from "@/lib/seo-content-constants";
 
 export const metadata: Metadata = {
   title: "SEO Content — 30 Artykułów Miesięcznie od 83 PLN | LessManual.ai",
@@ -99,6 +100,13 @@ export default function SEOContentPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
+      <StickyLocalNav items={[
+        { name: "Wyniki", href: "#wyniki" },
+        { name: "Kalkulator", href: "#roi-calculator" },
+        { name: "Cennik", href: "#pricing" },
+        { name: "Jak działamy", href: "#proces" },
+        { name: "FAQ", href: "#faq" }
+      ]} />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />

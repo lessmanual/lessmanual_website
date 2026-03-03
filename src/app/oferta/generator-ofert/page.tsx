@@ -20,6 +20,7 @@ import { About } from "@/components/sections/generator-ofert/About";
 import { Urgency } from "@/components/sections/generator-ofert/Urgency";
 import { FinalCTA } from "@/components/sections/generator-ofert/FinalCTA";
 import { FAQ } from "@/components/sections/generator-ofert/FAQ";
+import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { GEN_OFERT_FAQ_ITEMS } from "@/lib/generator-ofert-constants";
 
@@ -102,6 +103,13 @@ export default function GeneratorOfertPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
+      <StickyLocalNav items={[
+        { name: "Wyniki", href: "#wyniki" },
+        { name: "Kalkulator", href: "#roi-calculator" },
+        { name: "Cennik", href: "#pricing" },
+        { name: "Jak działamy", href: "#proces" },
+        { name: "FAQ", href: "#faq" }
+      ]} />
       <main className="pt-16 pb-16 md:pb-0">
         <Hero />
         <HeroProof />
