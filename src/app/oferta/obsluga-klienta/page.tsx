@@ -22,7 +22,7 @@ import { FinalCTA } from "@/components/sections/obsluga-klienta/FinalCTA";
 import { FAQ } from "@/components/sections/obsluga-klienta/FAQ";
 import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { OBSLUGA_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
+import { OBS_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
 
 export const metadata: Metadata = {
   title: "Obsługa Klienta AI — Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
