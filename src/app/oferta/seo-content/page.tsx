@@ -50,17 +50,17 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "SoftwareApplication",
   name: "SEO Content System",
   description:
     "Done-for-you system produkcji contentu SEO. AI generuje artykuły, human review pilnuje jakości, system publikuje na Twoim blogu.",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
   provider: {
     "@type": "Organization",
     name: "LessManual.ai",
     url: "https://lessmanual.ai",
   },
-  areaServed: "PL",
-  serviceType: "SEO Content Marketing",
   offers: {
     "@type": "Offer",
     priceCurrency: "PLN",

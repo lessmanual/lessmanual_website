@@ -50,17 +50,17 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "SoftwareApplication",
   name: "AI SDR - Pay-Per-Meeting",
   description:
     "System AI umawiający kwalifikowane spotkania B2B. Płacisz tylko za spotkania, które się odbędą.",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
   provider: {
     "@type": "Organization",
     name: "LessManual.ai",
     url: "https://lessmanual.ai",
   },
-  areaServed: "PL",
-  serviceType: "AI Sales Development",
   offers: {
     "@type": "Offer",
     priceCurrency: "PLN",

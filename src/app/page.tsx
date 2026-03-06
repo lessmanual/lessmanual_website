@@ -21,7 +21,7 @@ import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "LocalBusiness",
   name: "LessManual.ai",
   url: "https://lessmanual.ai",
   description:
@@ -30,6 +30,11 @@ const jsonLd = {
   founder: {
     "@type": "Person",
     name: "Bartłomiej Chudzik",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kraków",
+    addressCountry: "PL",
   },
   areaServed: "PL",
   priceRange: "$$",

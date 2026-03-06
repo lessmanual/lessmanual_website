@@ -50,17 +50,17 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "SoftwareApplication",
   name: "System Obslugi Klienta AI",
   description:
     "AI Customer Service System. Chatbot na strone, WhatsApp Bot, Email Triage, Voice Agent. Odpowiedzi w 30 sekund, 24/7. Done-for-you, pod klucz.",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
   provider: {
     "@type": "Organization",
     name: "LessManual.ai",
     url: "https://lessmanual.ai",
   },
-  areaServed: "PL",
-  serviceType: "AI Customer Service System",
   offers: {
     "@type": "Offer",
     priceCurrency: "PLN",

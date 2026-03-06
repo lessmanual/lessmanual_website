@@ -50,17 +50,17 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "SoftwareApplication",
   name: "Konfigurator Wycen",
   description:
     "Self-service konfigurator wycen. Klient sam wycenia na Twojej stronie i dostaje profesjonalny PDF automatycznie. Done-for-you, pod klucz.",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
   provider: {
     "@type": "Organization",
     name: "LessManual.ai",
     url: "https://lessmanual.ai",
   },
-  areaServed: "PL",
-  serviceType: "AI Quote Generation System",
   offers: {
     "@type": "Offer",
     priceCurrency: "PLN",
