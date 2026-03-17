@@ -15,9 +15,9 @@ const SOLUTIONS = [
       "Pipeline Machine to system pay-per-meeting do prospectingu B2B, który zastępuje pracę handlowca. Profiluje decydentów, pisze spersonalizowane wiadomości cold email i umawia spotkania w Twoim kalendarzu. 3 warstwy gwarancji.",
     metrics: [
       { value: "76%", label: "open rate (standard: 20-30%)*" },
-      { value: "0 PLN", label: "stałych opłat — płacisz za spotkania" },
+      { value: "0 PLN", label: "stałych opłat, płacisz za spotkania" },
     ],
-    href: "/oferta/ai-sdr",
+    href: "/oferta/pipeline-machine",
   },
   {
     num: "02",
@@ -62,7 +62,7 @@ export function Solutions() {
           <SectionHeader
             eyebrow="Rozwiązania"
             title="Jeden system. Konkretny problem rozwiązany."
-            subtitle="Każdy system działa pod klucz — my budujemy, Ty widzisz wyniki."
+            subtitle="Każdy system działa pod klucz, my budujemy, Ty widzisz wyniki."
           />
           <p className="text-center text-sm text-text-light mt-[-2rem] mb-12">
             *Metryki skuteczności opierają się na wynikach z naszych wewnętrznych kampanii.
@@ -137,7 +137,7 @@ export function Solutions() {
           <div className="text-center">
             <p className="text-text-secondary text-lg mb-4">
               <strong className="text-text">Nie wiesz od czego zacząć?</strong>{" "}
-              80% naszych klientów zaczyna od Spotkań z decydentami — bo najszybciej
+              80% naszych klientów zaczyna od Spotkań z decydentami, bo najszybciej
               przekłada się na przychód.
             </p>
             <Button href={CALENDLY_URL} external>

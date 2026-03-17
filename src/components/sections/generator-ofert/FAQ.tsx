@@ -84,7 +84,7 @@ export function FAQ() {
                 Napisz: {GEN_OFERT_EMAIL}
               </Button>
               <Button href={GEN_OFERT_CALENDLY_URL} variant="text" external>
-                Umów rozmowę — 15 min
+                Umów rozmowę - 15 min
               </Button>
             </div>
           </div>

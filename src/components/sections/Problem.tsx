@@ -18,7 +18,7 @@ export function Problem() {
           <QuoteBlock className="mb-10">
             <p>
               &ldquo;4 miesiące robimy outbound. Płacę 2-2.5 tysiące miesięcznie
-              — zero spotkań. Agencja obiecywała leady, dostałem puste kontakty w CRM.
+              , zero spotkań. Agencja obiecywała leady, dostałem puste kontakty w CRM.
               Coś musi się zmienić.&rdquo;
             </p>
           </QuoteBlock>
@@ -26,7 +26,7 @@ export function Problem() {
 
         <FadeUp delay={0.15}>
           <p className="text-text-secondary text-lg mb-8 leading-relaxed">
-            Znasz to uczucie? Dobry produkt, dobry zespół — ale:
+            Znasz to uczucie? Dobry produkt, dobry zespół, ale:
           </p>
         </FadeUp>
 
@@ -35,13 +35,13 @@ export function Problem() {
             {
               num: "01",
               title: "Nie wiesz skąd przyjdzie klient za miesiąc.",
-              text: "Pipeline to rollercoaster. Agencja bierze retainer bez gwarancji. Handlowiec za 12-22 tysięcy — po 3 miesiącach zero spotkań z decydentami.",
+              text: "Pipeline to rollercoaster. Agencja bierze retainer bez gwarancji. Handlowiec za 12-22 tysięcy, po 3 miesiącach zero spotkań z decydentami.",
               cost: "Koszt: 12-22k PLN/mies",
             },
             {
               num: "02",
               title: "Klient ucieka, bo za wolno odpisujesz.",
-              text: "Ofertę wysyłasz po 2 dniach. Klient podpisał u kogoś kto odpowiedział w 5 minut. Na zapytania odpisujesz wieczorem — albo wcale.",
+              text: "Ofertę wysyłasz po 2 dniach. Klient podpisał u kogoś kto odpowiedział w 5 minut. Na zapytania odpisujesz wieczorem, albo wcale.",
               cost: "Koszt: utracone deale",
             },
             {

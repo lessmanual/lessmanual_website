@@ -22,8 +22,8 @@ export function Urgency() {
           <div className="space-y-6 text-text-secondary leading-relaxed mb-10 text-lg">
             <p>
               Wdrażam max 3 systemy jednocześnie. Każde wdrożenie wymaga dedykowanej
-              konfiguracji pod Twój biznes — Twoje ceny, materiały, logikę wycen.
-              Nie chcę robić tego masowo — chcę robić to dobrze.
+              konfiguracji pod Twój biznes, Twoje ceny, materiały, logikę wycen.
+              Nie chcę robić tego masowo. Chcę robić to dobrze.
             </p>
             <p>
               Każdy tydzień bez systemu to tydzień, w którym Ty (lub Twój handlowiec) ręcznie

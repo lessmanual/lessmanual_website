@@ -65,8 +65,8 @@ export function Agitation() {
             <StaggerContainer staggerDelay={0.1} className="space-y-3">
               {[
                 { them: "15-30 spotkań miesięcznie z decydentami", you: "Czekasz na polecenie albo płacisz agencji bez wyników" },
-                { them: "Odpowiedź w 30 sekund, 24/7", you: "Klient pisze o 22:00 — odpowiedź dostaje po 2 dniach" },
-                { them: "30 artykułów SEO miesięcznie bez pisania", you: "Ostatni wpis na blogu — 6 miesięcy temu" },
+                { them: "Odpowiedź w 30 sekund, 24/7", you: "Klient pisze o 22:00, odpowiedź dostaje po 2 dniach" },
+                { them: "30 artykułów SEO miesięcznie bez pisania", you: "Ostatni wpis na blogu, 6 miesięcy temu" },
                 { them: "Oferta PDF w 5 minut po zapytaniu", you: "Handlowiec robi wycenę 2 godziny w Excelu" },
               ].map((row) => (
                 <StaggerItem key={row.them}>

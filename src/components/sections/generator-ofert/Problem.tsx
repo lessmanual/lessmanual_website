@@ -70,7 +70,7 @@ export function Problem() {
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center">
             <p className="text-text font-medium">
               A na spotkaniu z zespołem znowu tłumaczysz, dlaczego oferty wychodzą za wolno.
-              Chaos w wycenach to chaos w firmie &mdash; i to widać.
+              Chaos w wycenach to chaos w firmie, i to widać.
             </p>
           </div>
           <p className="mt-6 text-text-secondary text-center leading-relaxed">

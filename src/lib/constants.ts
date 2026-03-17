@@ -45,31 +45,31 @@ export const PRODUCTS = [
       "3 warstwy gwarancji. 0 spotkań w 45 dni = zwrot setup",
     ],
     bonus:
-      "Bonus: ICP Workshop (2,500 PLN), Swipe File z 76% open rate (1,500 PLN), Auto-Reply AI (3,000 PLN) - w cenie setupu",
-    landingHref: "/oferta/ai-sdr",
+      "Bonus: Warsztat ICP (2,500 PLN), Sprawdzone Szablony z 76% open rate (1,500 PLN), Auto-Reply AI (3,000 PLN) - w cenie setupu",
+    landingHref: "/oferta/pipeline-machine",
   },
   {
     title: "Blog który pisze się sam",
     description:
-      "10-30 artykułów SEO miesięcznie. Keyword research, klastry tematyczne, internal linking. Ty nie robisz nic — ruch rośnie.",
+      "10-30 artykułów SEO miesięcznie. Keyword research, klastry tematyczne, linkowanie wewnętrzne. Ty nie robisz nic. Ruch rośnie.",
     metrics: [
       "Od 83 PLN za artykuł (vs 300-800 PLN copywriter)",
       "+150-400% ruchu organicznego w 6 miesięcy",
     ],
     bonus:
-      "Bonus: ruch z Google to klienci którzy sami Cię szukają — zero kosztów per lead",
+      "Bonus: ruch z Google to klienci którzy sami Cię szukają, zero kosztów per lead",
     landingHref: "/oferta/seo-content",
   },
   {
     title: "Odpowiedź w 30 sekund, 24/7",
     description:
-      "System który odpowiada klientom na stronie, WhatsApp i mailu. Wytrenowany na Twojej bazie wiedzy. Jak czegoś nie wie — przekazuje do Ciebie z pełnym kontekstem.",
+      "System który odpowiada klientom na stronie, WhatsApp i mailu. Wytrenowany na Twojej bazie wiedzy. Jak czegoś nie wie, przekazuje do Ciebie z pełnym kontekstem.",
     metrics: [
       "60-80% zapytań obsłużonych automatycznie",
       "System od 900 PLN/mies vs pracownik 8-9k PLN/mies",
     ],
     bonus:
-      "Bonus: klient dostaje odpowiedź o 2 w nocy, w weekend, w święta — nigdy nie czeka",
+      "Bonus: klient dostaje odpowiedź o 2 w nocy, w weekend, w święta, nigdy nie czeka",
     landingHref: "/oferta/obsluga-klienta",
   },
   {
@@ -81,7 +81,7 @@ export const PRODUCTS = [
       "+25-40% win rate dzięki szybkości odpowiedzi",
     ],
     bonus:
-      "Bonus: klient wycenia sam o 23:00, w weekend, w święta — Ty rano masz gotowe zapytanie",
+      "Bonus: klient wycenia sam o 23:00, w weekend, w święta. Ty rano masz gotowe zapytanie",
     landingHref: "/oferta/generator-ofert",
   },
 ];
@@ -122,7 +122,7 @@ export const SPOTLIGHT_CASES = [
     investment: "7,500 PLN",
     result: "~20 kwalifikowanych leadów dziennie",
     detail:
-      "440 leadów miesięcznie, 100% zgodnych z profilem idealnego klienta. System działa na automacie — klient nie dotyka klawiatury.",
+      "440 leadów miesięcznie, 100% zgodnych z profilem idealnego klienta. System działa na automacie. Klient nie dotyka klawiatury.",
     value: "300,000+ PLN/rok",
   },
   {
@@ -140,7 +140,7 @@ export const MORE_CASES = [
   {
     company: "Szkoła tańca",
     type: "24/7 odbiór telefonów",
-    result: "Voice Agent — inteligentna recepcjonistka AI. Odbiera telefony poza godzinami pracy.",
+    result: "Voice Agent, inteligentna recepcjonistka AI. Odbiera telefony poza godzinami pracy.",
   },
   {
     company: "Firma z branży stolarki budowlanej",
@@ -198,7 +198,7 @@ export const FAQ_ITEMS = [
     items: [
       {
         q: "Czy to zadziała w mojej branży?",
-        a: "80% problemów które rozwiązujemy jest identycznych niezależnie od branży — odpowiadanie na zapytania, tworzenie ofert, szukanie klientów, publikacja contentu. Pracujemy z firmami z IT, logistyki, OZE, e-commerce, HoReCa i usług B2B. Jeśli masz powtarzalne procesy które zjadają czas Twojego zespołu — zadziała.",
+        a: "80% problemów które rozwiązujemy jest identycznych niezależnie od branży: odpowiadanie na zapytania, tworzenie ofert, szukanie klientów, publikacja contentu. Pracujemy z firmami z IT, logistyki, OZE, e-commerce, HoReCa i usług B2B. Jeśli masz powtarzalne procesy które zjadają czas Twojego zespołu, zadziała.",
       },
       {
         q: "Jak szybko zobaczę wyniki?",
@@ -206,7 +206,7 @@ export const FAQ_ITEMS = [
       },
       {
         q: "Czy potrzebuję wiedzy technicznej?",
-        a: "Zero. Jeśli potrafisz otworzyć maila — dasz radę. Wdrażam, konfiguruję i utrzymuję. Twój czas przy setup: 1-2 godziny. Reszta to moja robota.",
+        a: "Zero. Jeśli potrafisz otworzyć maila, dasz radę. Wdrażam, konfiguruję i utrzymuję. Twój czas przy setup: 1-2 godziny. Reszta to moja robota.",
       },
     ],
   },
@@ -219,11 +219,11 @@ export const FAQ_ITEMS = [
       },
       {
         q: "Czy muszę mieć duży budżet żeby zacząć?",
-        a: "Nie. Zaczynasz od jednego systemu który rozwiązuje Twój największy problem. Widzisz wyniki — dodajesz kolejne. 50% zaliczki na start, reszta po wdrożeniu. Przy 2+ produktach rabat 15%.",
+        a: "Nie. Zaczynasz od jednego systemu który rozwiązuje Twój największy problem. Widzisz wyniki, dodajesz kolejne. 50% zaliczki na start, reszta po wdrożeniu. Przy 2+ produktach rabat 15%.",
       },
       {
         q: "Co jeśli nie zadziała?",
-        a: "Gwarancja wyników lub pełny zwrot kosztów. Wyniki definiujemy razem przed startem — konkretne liczby, konkretny termin. Nie dowieziemy? Zwracamy pieniądze. 50% zaliczki, reszta po wdrożeniu. Ryzyko jest po mojej stronie.",
+        a: "Gwarancja wyników lub pełny zwrot kosztów. Wyniki definiujemy razem przed startem, konkretne liczby, konkretny termin. Nie dowieziemy? Zwracamy pieniądze. 50% zaliczki, reszta po wdrożeniu. Ryzyko jest po mojej stronie.",
       },
     ],
   },
@@ -232,15 +232,15 @@ export const FAQ_ITEMS = [
     items: [
       {
         q: "Czy AI nie pomyli się i nie zrazi moich klientów?",
-        a: "System odpowiada tylko na podstawie Twojej bazy wiedzy — nie wymyśla. Jeśli nie zna odpowiedzi, przekazuje do Twojego zespołu z pełnym kontekstem rozmowy. Masz pełną kontrolę nad tym co system mówi.",
+        a: "System odpowiada tylko na podstawie Twojej bazy wiedzy, nie wymyśla. Jeśli nie zna odpowiedzi, przekazuje do Twojego zespołu z pełnym kontekstem rozmowy. Masz pełną kontrolę nad tym co system mówi.",
       },
       {
         q: "A co z RODO i bezpieczeństwem danych?",
-        a: "Dane przetwarzane na serwerach w EU. System zgodny z RODO i AI Act. Dane Twoich klientów nie trenują AI — zostają w Twoim systemie.",
+        a: "Dane przetwarzane na serwerach w EU. System zgodny z RODO i AI Act. Dane Twoich klientów nie trenują AI, zostają w Twoim systemie.",
       },
       {
         q: "Ktoś mnie już oszukał z AI. Czemu mam Ci zaufać?",
-        a: "Dlatego: 50% zaliczki, reszta po wdrożeniu. Gwarancja wyników lub pełny zwrot. 5.0 na Google. Na rozmowie pokażę dokładnie co dostajesz i jaki wynik jest realny. 15 minut — sam ocenisz.",
+        a: "Dlatego: 50% zaliczki, reszta po wdrożeniu. Gwarancja wyników lub pełny zwrot. 5.0 na Google. Na rozmowie pokażę dokładnie co dostajesz i jaki wynik jest realny. 15 minut, sam ocenisz.",
       },
     ],
   },
@@ -264,7 +264,7 @@ export const PROCESS_STEPS = [
     duration: "7-14 dni",
     points: [
       "Budujemy system na Twoich danych i procesach",
-      "Pokazujemy wersję testową — zatwierdzasz lub dajesz feedback",
+      "Pokazujemy wersję testową, zatwierdzasz lub dajesz feedback",
     ],
     yourTime: "1-2 godziny",
   },
@@ -282,11 +282,11 @@ export const PROCESS_STEPS = [
 ];
 
 export const GUARANTEE_POINTS = [
-  "50% zaliczki, reszta po wdrożeniu — nie płacisz za coś czego nie ma",
-  "Nie wdrożymy na czas — zwrot setup",
+  "50% zaliczki, reszta po wdrożeniu, nie płacisz za coś czego nie ma",
+  "Nie wdrożymy na czas, zwrot setup",
   "Pipeline Machine: 0 spotkań w 45 dni - zwrot setup",
-  "Wyniki poniżej ustaleń — zwrot kosztów",
-  "Chcesz zrezygnować? Jeden mail — bez kar, bez okresu wypowiedzenia",
+  "Wyniki poniżej ustaleń, zwrot kosztów",
+  "Chcesz zrezygnować? Jeden mail, bez kar, bez okresu wypowiedzenia",
 ];
 
 export const COST_TABLE_SUMMARY = "Suma: 18,000-39,000 PLN miesięcznie na ręczną robotę. Z nami: od 2,400 PLN. Reszta zostaje w Twojej kieszeni.";

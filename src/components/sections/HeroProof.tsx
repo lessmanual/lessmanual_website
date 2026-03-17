@@ -46,7 +46,7 @@ export function HeroProof() {
                   architect and engineer.&rdquo;
                 </span>{" "}
                 <span className="text-text-light text-sm">
-                  — Arek Skuza, CEO
+                  - Arek Skuza, CEO
                 </span>
               </p>
             </div>

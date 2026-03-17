@@ -35,7 +35,7 @@ export function FinalCTA() {
               Chcę odpowiedzi w 30 sekund
             </Button>
             <p className="mt-5 text-text-muted text-sm max-w-[520px] mx-auto">
-              Jeśli pasujemy — startujemy w 7-21 dni. Jeśli nie — wyjdziesz z darmową
+              Jeśli pasujemy, startujemy w 7-21 dni. Jeśli nie, wyjdziesz z darmową
               analizą Twojego procesu obsługi i konkretnymi wskazówkami jak go usprawnić.
             </p>
           </div>
@@ -73,16 +73,16 @@ export function FinalCTA() {
           <div className="mt-10 text-text-muted text-base leading-relaxed space-y-3">
             <p>
               <strong className="text-text-secondary">P.S.</strong> Jeśli obsługujesz 30+ zapytań dziennie
-              i odpowiadasz na te same pytania po raz setny — ten system jest dla Ciebie.
+              i odpowiadasz na te same pytania po raz setny, ten system jest dla Ciebie.
             </p>
             <p>
               Pracownik obsługi: 8-9k miesięcznie i pracuje 8h dziennie. Nasz system: od 900 PLN
               miesięcznie i pracuje 24/7.
             </p>
             <p>
-              50% zaliczki. Gwarancja ROI 200% w 90 dni. 30 dni trial. Nie działa — nie płacisz.
+              50% zaliczki. Gwarancja ROI 200% w 90 dni. 30 dni trial. Nie działa, nie płacisz.
             </p>
-            <p className="mt-3 text-text-light">— Bartek</p>
+            <p className="mt-3 text-text-light">- Bartek</p>
           </div>
         </FadeUp>
 

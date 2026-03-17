@@ -2,18 +2,18 @@
 
 > Agencja automatyzacji AI dla firm B2B. Budujemy systemy AI ktore oszczedzaja 20-40h miesiecznie. Gwarancja wynikow lub pelny zwrot kosztow.
 
-LessManual.ai to agencja zalozoona przez Bartlomieja Chudzika, specjalizujaca sie w automatyzacji sprzedazy, obslugi klienta, marketingu i ofertowania z uzyciem sztucznej inteligencji. Obslugujemy firmy B2B w Polsce i Europie.
+LessManual.ai to agencja zalozona przez Bartlomieja Chudzika, specjalizujaca sie w automatyzacji sprzedazy, obslugi klienta, marketingu i ofertowania z uzyciem sztucznej inteligencji. Obslugujemy firmy B2B w Polsce i Europie.
 
 ## Produkty
 
-- [AI SDR — Spotkania z decydentami](https://lessmanual.ai/oferta/ai-sdr): System ktory znajduje idealnych klientow, pisze spersonalizowane wiadomosci i umawia potwierdzone spotkania. 77% open rate. Model pay-per-meeting — zero stalych oplat.
-- [SEO Content — Blog ktory pisze sie sam](https://lessmanual.ai/oferta/seo-content): 10-30 artykulow SEO miesiecznie. Keyword research, klastry tematyczne, internal linking. Od 83 PLN za artykul. +150-400% ruchu organicznego w 6 miesiecy.
-- [Obsluga Klienta AI — Odpowiedz w 30 sekund 24/7](https://lessmanual.ai/oferta/obsluga-klienta): Chatbot i voiceagent wytrenowany na bazie wiedzy firmy. 60-80% zapytan obsluzonych automatycznie. Od 900 PLN/mies.
-- [Generator Ofert AI — Wycena w 5 minut](https://lessmanual.ai/oferta/generator-ofert): Klient sam wycenia na stronie lub w chacie. System generuje profesjonalny PDF i wysyla mailem. Oszczednosc 96% czasu.
+- [Pipeline Machine - Spotkania z decydentami](https://lessmanual.ai/oferta/pipeline-machine): System ktory znajduje idealnych klientow, pisze spersonalizowane wiadomosci i umawia potwierdzone spotkania. 76% open rate. Model pay-per-meeting, zero stalych oplat.
+- [SEO Content - Blog ktory pisze sie sam](https://lessmanual.ai/oferta/seo-content): 10-30 artykulow SEO miesiecznie. Keyword research, klastry tematyczne, linkowanie wewnetrzne. Od 83 PLN za artykul. +150-400% ruchu organicznego w 6 miesiecy.
+- [Obsluga Klienta AI - Odpowiedz w 30 sekund 24/7](https://lessmanual.ai/oferta/obsluga-klienta): Chatbot i voiceagent wytrenowany na bazie wiedzy firmy. 60-80% zapytan obsluzonych automatycznie. Od 900 PLN/mies.
+- [Generator Ofert AI - Wycena w 5 minut](https://lessmanual.ai/oferta/generator-ofert): Klient sam wycenia na stronie lub w chacie. System generuje profesjonalny PDF i wysyla mailem. Oszczednosc 96% czasu.
 
 ## Cennik
 
-- AI SDR: model pay-per-meeting, od 500 PLN za spotkanie, zero stalych oplat miesieccznych
+- Pipeline Machine: model pay-per-meeting, od 500 PLN za spotkanie, zero stalych oplat miesiecznych
 - SEO Content: od 1,000 PLN/mies (10-30 artykulow)
 - Obsluga Klienta AI: od 900 PLN/mies
 - Generator Ofert AI: setup jednorazowy + utrzymanie
@@ -22,22 +22,41 @@ LessManual.ai to agencja zalozoona przez Bartlomieja Chudzika, specjalizujaca si
 
 ## Proces wdrozenia
 
-1. Rozmowa (15 min) — sprawdzamy gdzie tracisz czas, dostajesz propozycje z cena i terminem
-2. Budowa (7-14 dni) — system na Twoich danych, wersja testowa do zatwierdzenia
-3. Uruchomienie (od razu) — system na produkcji, monitorujemy i optymalizujemy
+1. Rozmowa (15 min) - sprawdzamy gdzie tracisz czas, dostajesz propozycje z cena i terminem
+2. Budowa (7-14 dni) - system na Twoich danych, wersja testowa do zatwierdzenia
+3. Uruchomienie (od razu) - system na produkcji, monitorujemy i optymalizujemy
 
 ## Gwarancje
 
 - 50% zaliczki, reszta po wdrozeniu
-- Nie wdrozymy na czas — zwrot setup
-- AI SDR: 0 spotkan w 45 dni — zwrot setup
-- Wyniki ponizej ustalen — zwrot kosztow
+- Nie wdrozymy na czas - zwrot setup
+- Pipeline Machine: 0 spotkan w 45 dni - zwrot setup
+- Wyniki ponizej ustalen - zwrot kosztow
 - Rezygnacja: jeden mail, bez kar, bez okresu wypowiedzenia
 
-## Case studies
+## Case studies i wyniki
 
-- [Recykling Karat — Lead Generation](https://lessmanual.ai/#wyniki): 440 leadow miesiecznie, 100% zgodnych z ICP. Wartosc 300,000+ PLN/rok. Inwestycja: 7,500 PLN.
-- [SMD-LED — SEO Content](https://lessmanual.ai/#wyniki): 3 artykuly tygodniowo, wszystkie na 1-2 stronie Google. Wartosc ruchu: 10-50k PLN/mies.
+- Recykling Karat (Lead Generation): 440 leadow miesiecznie, 100% zgodnych z ICP. System dziala na automacie, klient nie dotyka klawiatury. Wartosc 300,000+ PLN/rok. Inwestycja: 7,500 PLN.
+- SMD-LED (SEO Content): 3 artykuly tygodniowo, wszystkie na 1. lub 2. stronie Google w ciagu tygodnia. Wartosc ruchu organicznego po 6 miesiacach: 10-50k PLN/mies. Inwestycja: 5,000 PLN + 500 PLN/mies.
+- Szkola tanca (Voice Agent): Inteligentna recepcjonistka AI. Odbiera telefony 24/7 poza godzinami pracy, umawia wizyty, odpowiada na pytania.
+- Firma z branzy stolarki budowlanej (Automatyzacja raportow): Cotygodniowy raport generowany automatycznie. Oszczednosc 4-8h pracy tygodniowo.
+- Firma z branzy OZE (Generator Ofert AI): Klient podaje dane w chatbocie, dostaje spersonalizowana wycene PDF na maila. Oszczednosc 3h na kazda wycene.
+
+## Metryki Pipeline Machine (potwierdzone dane z kampanii)
+
+- Open rate: 76% (standard rynkowy: 20-30%)
+- Positive reply rate: 61% (standard: 5-15%)
+- Sent-to-Meeting rate: 2.5% (12 spotkan z 476 maili, standard: 0.5-1%)
+- Czas do pierwszego deala: 6 dni (standard: 30-90 dni)
+- Meeting-to-Close rate: 50% (standard: 20-30%)
+
+## Opinie klientow (5.0 na Google)
+
+- Marcin Pietrasik (129 opinii): "Efekt przerosl oczekiwania. Wszystko zostalo swietnie pospinane: publikacje, powiadomienia, przekazywanie zadan dzialaja praktycznie same. To co wczesniej zajmowalo dlugie godziny, teraz trwa chwile."
+- Dawid Kar: "Bartek wykazuje sie duza samodzielnoscia i dobra orientacja w automatyzacjach. Szybko reaguje na zglaszane problemy i sprawnie wprowadza zmiany w dzialajacych workflow."
+- Maciej Osiecki: "Polecam z calego serca. Zlecilem stworzenie strony a dostalem duzo wiecej - nowe logo, nowa wizje na marketing i dobre pozycjonowanie w Google. 5/5."
+- Pawel Muchewicz: "Dzieki wdrozeniom LessManual.ai zaoszczedzilismy mnostwo czasu, ktory wczesniej marnowalismy na powtarzalne zadania."
+- CreativeDanceRumia (15 opinii): "Bartek to ekspert ktory nie tylko zna sie na AI ale rozumie jak to przelozyc na realne zyski w firmie. 5 gwiazdek za terminowosc i merytoryczne wsparcie."
 
 ## O firmie
 
@@ -52,6 +71,10 @@ LessManual.ai to agencja zalozoona przez Bartlomieja Chudzika, specjalizujaca si
 
 - [Strona glowna](https://lessmanual.ai)
 - [Oferta](https://lessmanual.ai/oferta)
+- [Pipeline Machine](https://lessmanual.ai/oferta/pipeline-machine)
+- [SEO Content](https://lessmanual.ai/oferta/seo-content)
+- [Obsluga Klienta AI](https://lessmanual.ai/oferta/obsluga-klienta)
+- [Generator Ofert AI](https://lessmanual.ai/oferta/generator-ofert)
 - [Blog](https://lessmanual.ai/blog)
 - [Regulamin](https://lessmanual.ai/legal/regulamin)
 - [Polityka prywatnosci](https://lessmanual.ai/legal/polityka-prywatnosci)

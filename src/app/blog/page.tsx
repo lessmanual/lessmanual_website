@@ -50,7 +50,7 @@ export default async function BlogPage() {
 
             <h1 className="font-serif text-text mb-4">Blog</h1>
             <p className="text-text-secondary text-lg max-w-[680px] mb-12">
-              Praktyczna wiedza o automatyzacji biznesu z AI. Bez teorii — same
+              Praktyczna wiedza o automatyzacji biznesu z AI. Bez teorii, same
               konkretne rozwiazania.
             </p>
 

@@ -11,7 +11,7 @@ export function About() {
       <div className="max-w-[1000px] mx-auto px-6">
         <FadeUp>
           <p className="text-text-light text-sm mb-6 text-center">
-            Zanim umówisz rozmowę — sprawdź z kim będziesz rozmawiać.
+            Zanim umówisz rozmowę, sprawdź z kim będziesz rozmawiać.
           </p>
         </FadeUp>
 
@@ -42,13 +42,13 @@ export function About() {
 
               <div className="space-y-4 text-text-secondary leading-relaxed">
                 <p>
-                  10 lat w logistyce — Saint-Gobain, Mondi, Raben. Optymalizowałem procesy
+                  10 lat w logistyce (Saint-Gobain, Mondi, Raben). Optymalizowałem procesy
                   dla firm z obrotami w setkach milionów. Aż zobaczyłem wzorzec: 80% tej
                   roboty to powtarzalne zadania które może robić system.
                 </p>
                 <p>
                   Odszedłem z etatu i zacząłem budować te systemy. Dziś buduję je dla firm
-                  B2B — sprzedaż, obsługa klienta, content, oferty. Wszystko co zjada czas
+                  B2B, sprzedaż, obsługa klienta, content, oferty. Wszystko co zjada czas
                   Twojego zespołu, a nie wymaga ludzkiej kreatywności.
                 </p>
               </div>

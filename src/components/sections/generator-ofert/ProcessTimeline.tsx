@@ -59,7 +59,7 @@ export function ProcessTimeline() {
               Łączne zaangażowanie z Twojej strony: ~5-7 godzin w ciągu całego wdrożenia.
             </p>
             <p className="text-text-secondary text-base mt-1">
-              Resztę robimy my. Ty w tym czasie robisz to, co robisz najlepiej — prowadzisz firmę.
+              Resztę robimy my. Ty w tym czasie robisz to, co robisz najlepiej, prowadzisz firmę.
             </p>
           </div>
 

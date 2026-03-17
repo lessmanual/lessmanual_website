@@ -50,7 +50,7 @@ export function Process() {
             </p>
             <p className="text-text-secondary text-base mb-8">
               Masz 2 godziny żeby odzyskać 20-40 godzin miesięcznie?
-              Nie działa? Nie płacisz — z gwarancją wyników.
+              Nie działa? Nie płacisz, z gwarancją wyników.
             </p>
             <Button href={CALENDLY_URL} external>
               Odzyskaj czas

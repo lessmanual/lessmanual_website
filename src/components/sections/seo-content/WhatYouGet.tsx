@@ -15,7 +15,7 @@ export function WhatYouGet() {
             title="Nie kupujesz artykułów. Kupujesz ruch z Google i leady, które same Cię znajdują."
           />
           <p className="text-lg text-text-secondary text-center mb-12">
-            Każdy pakiet to pełny system — od keyword research po monitoring pozycji.
+            Każdy pakiet to pełny system - od keyword research po monitoring pozycji.
             Oto co dokładnie dostajesz:
           </p>
         </FadeUp>

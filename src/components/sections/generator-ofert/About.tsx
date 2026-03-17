@@ -36,15 +36,15 @@ export function About() {
                 <p>
                   Buduję systemy, które eliminują ręczną robotę z biznesu. Generator ofert powstał,
                   bo widziałem jak firmy OZE, producenci mebli i firmy budowlane tracą godziny
-                  na wyceny — zamiast sprzedawać.
+                  na wyceny, zamiast sprzedawać.
                 </p>
                 <p>
                   Każdy system konfiguruję osobiście pod specyfikę branży. Znam logikę wycen
                   w fotowoltaice, meblach na wymiar i kosztorysach budowlanych. Nie daję gotowego
-                  narzędzia — buduję rozwiązanie, które zna Twój biznes.
+                  narzędzia. Buduję rozwiązanie, które zna Twój biznes.
                 </p>
                 <p className="text-text font-medium">
-                  Nie sprzedaję marzeń. Sprzedaję system, który robi oferty za Ciebie — szybciej
+                  Nie sprzedaję marzeń. Sprzedaję system, który robi oferty za Ciebie, szybciej
                   i profesjonalniej niż ręcznie.
                 </p>
               </div>

@@ -25,11 +25,11 @@ import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { GEN_OFERT_FAQ_ITEMS } from "@/lib/generator-ofert-constants";
 
 export const metadata: Metadata = {
-  title: "Generator Ofert AI — Wycena w 5 Minut | LessManual.ai",
+  title: "Generator Ofert AI - Wycena w 5 Minut | LessManual.ai",
   description:
     "Klient sam wycenia na Twojej stronie, dostaje profesjonalny PDF automatycznie. 96% mniej czasu na wyceny. Dla OZE, mebli, budowlanki. Done-for-you w 7-21 dni.",
   openGraph: {
-    title: "Generator Ofert AI — Wycena w 5 Minut | LessManual.ai",
+    title: "Generator Ofert AI - Wycena w 5 Minut | LessManual.ai",
     description:
       "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny.",
     url: "https://lessmanual.ai/oferta/generator-ofert",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Generator Ofert AI — Wycena w 5 Minut | LessManual.ai",
+    title: "Generator Ofert AI - Wycena w 5 Minut | LessManual.ai",
     description:
       "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny.",
   },
@@ -66,7 +66,7 @@ const jsonLd = {
     priceCurrency: "PLN",
     price: "4000",
     description:
-      "setup od 4,000 PLN. Konfigurator wycen na stronie — klient sam wycenia, dostaje PDF automatycznie.",
+      "setup od 4,000 PLN. Konfigurator wycen na stronie, klient sam wycenia, dostaje PDF automatycznie.",
     availability: "https://schema.org/InStock",
   },
   aggregateRating: {
@@ -115,7 +115,7 @@ export default function GeneratorOfertPage() {
         <HeroProof />
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-sm text-text-muted leading-relaxed">
-            Generator Ofert AI od LessManual to system automatycznego tworzenia wycen i ofert. Klient sam wycenia na stronie lub w chacie wycenowym — system generuje profesjonalny PDF i wysyła mailem. Oszczędność 96% czasu na ofertowaniu. Wdrożenie w 7-14 dni.
+            Generator Ofert AI od LessManual to system automatycznego tworzenia wycen i ofert. Klient sam wycenia na stronie lub w chacie wycenowym, system generuje profesjonalny PDF i wysyła mailem. Oszczędność 96% czasu na ofertowaniu. Wdrożenie w 7-14 dni.
           </p>
         </div>
         <Problem />

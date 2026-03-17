@@ -11,7 +11,7 @@ const imagineCards = [
   {
     icon: Calendar,
     title: "Piątek, 16:00",
-    desc: "Klient wchodzi na Twoją stronę, wypełnia konfigurator. System generuje profesjonalny PDF i wysyła na maila. Ty nawet nie wiesz, że to się stało — do rana masz gotowe zapytanie.",
+    desc: "Klient wchodzi na Twoją stronę, wypełnia konfigurator. System generuje profesjonalny PDF i wysyła na maila. Ty nawet nie wiesz, że to się stało. Do rana masz gotowe zapytanie.",
   },
   {
     icon: BarChart3,
@@ -25,7 +25,7 @@ const imagineCards = [
   },
   {
     icon: Users,
-    title: "21:00 — jesteś z rodziną",
+    title: "21:00 - jesteś z rodziną",
     desc: "Klient właśnie wycenił instalację OZE na Twojej stronie. Dostał PDF. System wysłał follow-up. Rano masz odpowiedź: 'Podpisujemy'.",
   },
 ];

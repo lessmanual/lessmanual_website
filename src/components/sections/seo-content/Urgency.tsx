@@ -23,12 +23,12 @@ export function Urgency() {
             <p>
               Przyjmuję max 3 projekty SEO Content miesięcznie. Każdy klient wymaga
               dedykowanego keyword research, konfiguracji systemu i testów jakości.
-              Nie chcę robić tego masowo — chcę robić to dobrze.
+              Nie chcę robić tego masowo. Chcę robić to dobrze.
             </p>
             <p>
               SEO to gra długoterminowa. Artykuł opublikowany dzisiaj zacznie rankować za 2-3
-              miesiące. Artykuł opublikowany za 3 miesiące — za pół roku. Artykuł nieopublikowany
-              — nigdy. Im wcześniej zaczniesz, tym wcześniej zbierasz ruch.
+              miesiące. Artykuł opublikowany za 3 miesiące, za pół roku. Artykuł nieopublikowany,
+              nigdy. Im wcześniej zaczniesz, tym wcześniej zbierasz ruch.
             </p>
             <p>
               Twoja konkurencja nie czeka. Ktoś w Twojej niszy właśnie opublikował kolejny artykuł.

@@ -10,7 +10,7 @@ const VISIONS = [
   {
     icon: Calendar,
     title: "Kalendarz pełny spotkań",
-    text: "Otwierasz kalendarz — 4 potwierdzone spotkania z decydentami. Nie szukałeś ich. System znalazł, napisał, umówił.",
+    text: "Otwierasz kalendarz, 4 potwierdzone spotkania z decydentami. Nie szukałeś ich. System znalazł, napisał, umówił.",
   },
   {
     icon: MessageSquare,

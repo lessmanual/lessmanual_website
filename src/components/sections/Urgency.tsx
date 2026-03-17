@@ -12,7 +12,7 @@ const urgencyPoints = [
   {
     icon: Users,
     title: "Max 3 projekty miesięcznie",
-    desc: "Prowadzę każdy projekt osobiście. Jak kalendarz jest pełny — czekasz na kolejny miesiąc.",
+    desc: "Prowadzę każdy projekt osobiście. Jak kalendarz jest pełny, czekasz na kolejny miesiąc.",
   },
   {
     icon: TrendingUp,
@@ -22,7 +22,7 @@ const urgencyPoints = [
   {
     icon: Timer,
     title: "Okno cenowe się zamyka",
-    desc: "18 miesięcy temu te systemy kosztowały 10x więcej. Dziś koszty na historycznym minimum — ale im więcej firm wdroży AI, tym trudniej będzie się wyróżnić.",
+    desc: "18 miesięcy temu te systemy kosztowały 10x więcej. Dziś koszty na historycznym minimum, ale im więcej firm wdroży AI, tym trudniej będzie się wyróżnić.",
   },
 ];
 
@@ -49,7 +49,7 @@ export function Urgency() {
         <FadeUp delay={0.15}>
           <QuoteBlock className="mb-10">
             <p>
-              Setup trwa 7-21 dni. Pierwsze efekty — w dniach. Im szybciej zaczniemy,
+              Setup trwa 7-21 dni. Pierwsze efekty w dniach. Im szybciej zaczniemy,
               tym szybciej zobaczysz wyniki.
             </p>
           </QuoteBlock>
@@ -58,7 +58,7 @@ export function Urgency() {
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-10">
             <p className="text-text font-medium text-lg">
-              Pytanie nie brzmi &ldquo;czy automatyzować&rdquo; — tylko kiedy zaczniesz
+              Pytanie nie brzmi &ldquo;czy automatyzować&rdquo;, tylko kiedy zaczniesz
               i ile Cię będzie kosztował każdy miesiąc zwłoki.
             </p>
           </div>

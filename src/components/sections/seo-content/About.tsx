@@ -37,7 +37,7 @@ export function About() {
                   Widziałem, jak firmy płacą copywriterom 5-8k PLN miesięcznie za 10 artykułów,
                   które nie rankują. Albo kupują narzędzia SaaS i odkrywają, że ktoś musi te
                   artykuły napisać, zoptymalizować i opublikować. Ten &ldquo;ktoś&rdquo; to zawsze
-                  właściciel — który ma milion ważniejszych rzeczy do zrobienia.
+                  właściciel, który ma milion ważniejszych rzeczy do zrobienia.
                 </p>
                 <p>
                   Postawiłem system, który robi keyword research, pisze artykuły SEO, optymalizuje

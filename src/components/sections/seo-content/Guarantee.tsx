@@ -40,7 +40,7 @@ export function Guarantee() {
                 Ryzyko jest po naszej stronie, nie Twojej.
               </p>
               <p className="text-text-secondary text-base mt-1">
-                Dlatego możemy sobie na to pozwolić — bo wiemy, co robimy.
+                Dlatego możemy sobie na to pozwolić, bo wiemy, co robimy.
               </p>
             </div>
           </div>

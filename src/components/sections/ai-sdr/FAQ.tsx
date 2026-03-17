@@ -84,7 +84,7 @@ export function FAQ() {
                 Napisz: {AI_SDR_EMAIL}
               </Button>
               <Button href={AI_SDR_CALENDLY_URL} variant="text" external>
-                Umów rozmowę — 15 min
+                Umów rozmowę - 15 min
               </Button>
             </div>
           </div>

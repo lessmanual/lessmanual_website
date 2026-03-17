@@ -16,7 +16,7 @@ export function Solution() {
           />
           <p className="text-lg text-text-secondary text-center mb-12 leading-relaxed">
             Nie dajesz nam pieniędzy i czekasz. Stawiamy system AI, który robi to, co SDR
-            — ale szybciej, taniej i bez chorobowego. Ty dostajesz spotkania w kalendarzu
+            , ale szybciej, taniej i bez chorobowego. Ty dostajesz spotkania w kalendarzu
             z ludźmi, którzy mogą u Ciebie kupić.
           </p>
         </FadeUp>

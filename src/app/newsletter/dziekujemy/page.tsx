@@ -9,7 +9,7 @@ import { CopyLinkButton } from "@/components/newsletter/CopyLinkButton";
 import { CheckCircle, Linkedin, Mail, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Jesteś na liście! — AI Insider | LessManual.ai",
+  title: "Jesteś na liście! - AI Insider | LessManual.ai",
   description: "Dziękujemy za zapis do newslettera AI Insider. Pierwszy numer wpadnie w środę o 7:30.",
   robots: { index: false, follow: false },
 };
@@ -18,7 +18,7 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197";
 
 export default function ThankYouPage() {
   const shareText = encodeURIComponent(
-    "Zapisałem się do AI Insider — jedynego newslettera AI w Polsce z wersją audio. Polecam: lessmanual.ai/newsletter"
+    "Zapisałem się do AI Insider, jedynego newslettera AI w Polsce z wersją audio. Polecam: lessmanual.ai/newsletter"
   );
   const shareUrl = encodeURIComponent("https://lessmanual.ai/newsletter");
 
@@ -61,7 +61,7 @@ export default function ThankYouPage() {
                       </span>
                       <span>
                         <strong className="text-text">Sprawdź skrzynkę</strong>{" "}
-                        (również SPAM) — za chwilę dostaniesz welcome mail z
+                        (również SPAM), za chwilę dostaniesz welcome mail z
                         potwierdzeniem.
                       </span>
                     </li>
@@ -73,7 +73,7 @@ export default function ThankYouPage() {
                         <strong className="text-text">
                           Dodaj kontakt@lessmanual.ai do kontaktów
                         </strong>{" "}
-                        — żeby newsletter nie wpadał do spamu.
+                        , żeby newsletter nie wpadał do spamu.
                       </span>
                     </li>
                     <li className="flex gap-3">
@@ -81,7 +81,7 @@ export default function ThankYouPage() {
                         3
                       </span>
                       <span>
-                        <strong className="text-text">W środę o 7:30</strong> —
+                        <strong className="text-text">W środę o 7:30</strong>,
                         pierwszy numer w Twojej skrzynce.
                       </span>
                     </li>
@@ -186,7 +186,7 @@ export default function ThankYouPage() {
                     LinkedIn
                   </a>
                   <a
-                    href={`mailto:?subject=${encodeURIComponent("Newsletter AI Insider — polecam")}&body=${shareText}`}
+                    href={`mailto:?subject=${encodeURIComponent("Newsletter AI Insider - polecam")}&body=${shareText}`}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-sm text-text-secondary hover:border-accent/40 hover:text-accent transition-all duration-200"
                   >
                     <Mail size={16} />

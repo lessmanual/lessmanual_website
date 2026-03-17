@@ -17,7 +17,7 @@ export function WhatYouGet() {
           />
           <p className="text-text-secondary text-center mb-12 text-lg">
             Nie musisz nic konfigurować, uczyć się, ani utrzymywać. Dostajesz gotowy system
-            pod klucz — my budujemy, Ty zatwierdzasz i korzystasz.
+            pod klucz, my budujemy, Ty zatwierdzasz i korzystasz.
           </p>
         </FadeUp>
 
@@ -44,7 +44,7 @@ export function WhatYouGet() {
             <p className="text-text font-medium mb-3">Dlaczego done-for-you?</p>
             <p className="text-text-secondary leading-relaxed text-base">
               Bo narzędzia SaaS dają Ci pusty dashboard i mówią &ldquo;konfiguruj&rdquo;. My budujemy
-              cały system pod Twój biznes — z Twoimi cenami, materiałami, marżami. Ty nie musisz
+              cały system pod Twój biznes, z Twoimi cenami, materiałami, marżami. Ty nie musisz
               się uczyć nowego narzędzia. Dostajesz gotowe rozwiązanie, które działa od dnia 1.
             </p>
           </div>

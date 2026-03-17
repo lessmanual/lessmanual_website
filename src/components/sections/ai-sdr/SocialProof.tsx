@@ -23,7 +23,7 @@ export function SocialProof() {
         <FadeUp>
           <SectionHeader
             eyebrow="Wyniki"
-            title="Wyniki z aktywnej kampanii. Nie obietnice — dane."
+            title="Wyniki z aktywnej kampanii. Nie obietnice, dane."
           />
         </FadeUp>
 

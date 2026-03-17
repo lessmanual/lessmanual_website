@@ -25,11 +25,11 @@ import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { SEO_FAQ_ITEMS } from "@/lib/seo-content-constants";
 
 export const metadata: Metadata = {
-  title: "SEO Content — 30 Artykułów Miesięcznie od 83 PLN | LessManual.ai",
+  title: "SEO Content - 30 Artykułów Miesięcznie od 83 PLN | LessManual.ai",
   description:
     "Blog, który pisze się sam. AI generuje 10-30 artykułów SEO miesięcznie z human review. +150-400% ruchu organicznego w 6 miesięcy. Done-for-you.",
   openGraph: {
-    title: "SEO Content — 30 Artykułów Miesięcznie | LessManual.ai",
+    title: "SEO Content - 30 Artykułów Miesięcznie | LessManual.ai",
     description:
       "AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. +150-400% ruchu organicznego.",
     url: "https://lessmanual.ai/oferta/seo-content",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO Content — 30 Artykułów Miesięcznie | LessManual.ai",
+    title: "SEO Content - 30 Artykułów Miesięcznie | LessManual.ai",
     description:
       "AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. +150-400% ruchu organicznego.",
   },

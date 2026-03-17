@@ -4,8 +4,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/oferta/pipeline-machine",
-        destination: "/oferta/ai-sdr",
+        source: "/oferta/ai-sdr",
+        destination: "/oferta/pipeline-machine",
         permanent: true,
       },
     ];

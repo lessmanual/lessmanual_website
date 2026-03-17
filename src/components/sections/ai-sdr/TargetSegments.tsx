@@ -43,7 +43,7 @@ export function TargetSegments() {
 
         <FadeUp delay={0.2}>
           <div className="text-center">
-            <p className="text-text-secondary mb-4">Ta sama cena, inne ICP, emaile i lead sources. Twoja branża jest tutaj? Policz swój ROI:</p>
+            <p className="text-text-secondary mb-4">Ta sama cena, inne ICP, emaile i źródła leadów. Twoja branża jest tutaj? Policz swój ROI:</p>
             <Button href="#roi-calculator">
               Policz swój ROI
             </Button>

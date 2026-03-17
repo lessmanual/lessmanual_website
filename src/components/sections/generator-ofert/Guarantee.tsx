@@ -34,7 +34,7 @@ export function Guarantee() {
 
             <div className="mt-6 pt-6 border-t border-success/20">
               <p className="text-text font-medium">
-                Ryzyko jest po naszej stronie, nie Twojej. Dlatego możemy sobie na to pozwolić — bo wiemy, że to działa.
+                Ryzyko jest po naszej stronie, nie Twojej. Dlatego możemy sobie na to pozwolić, bo wiemy, że to działa.
               </p>
             </div>
           </div>

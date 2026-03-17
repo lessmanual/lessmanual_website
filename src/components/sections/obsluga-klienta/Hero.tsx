@@ -142,7 +142,7 @@ export function Hero() {
                   variants={fadeUp}
                   className="text-text-secondary text-2xl leading-relaxed max-w-[600px] mt-8"
                 >
-                  Chat, WhatsApp, email — jeden system wytrenowany na Twojej bazie wiedzy. Ty dostajesz tylko sprawy, które wymagają człowieka.
+                  Chat, WhatsApp, email, jeden system wytrenowany na Twojej bazie wiedzy. Ty dostajesz tylko sprawy, które wymagają człowieka.
                 </motion.p>
 
                 {/* CTA */}

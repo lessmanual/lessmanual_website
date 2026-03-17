@@ -38,15 +38,15 @@ export function About() {
                   Telefon, który dzwoni gdy jesteś na spotkaniu.
                 </p>
                 <p>
-                  Przez 8 lat robiłem to w logistyce — międzynarodowe korporacje, miliony ton
+                  Przez 8 lat robiłem to w logistyce, międzynarodowe korporacje, miliony ton
                   na trasach, terminowość 99%. Aż zrozumiałem: większość tej roboty może robić system.
                 </p>
                 <p>
                   Dziś buduję systemy obsługi klienta dla firm, które mają dość ręcznej roboty.
-                  E-commerce, kliniki, hotele — firmy z dużym wolumenem powtarzalnych zapytań.
+                  E-commerce, kliniki, hotele, firmy z dużym wolumenem powtarzalnych zapytań.
                 </p>
                 <p className="text-text font-medium">
-                  5.0 na Google. Gwarancja wyników. Nie działa — zwracam pieniądze.
+                  5.0 na Google. Gwarancja wyników. Nie działa, zwracam pieniądze.
                 </p>
               </div>
 

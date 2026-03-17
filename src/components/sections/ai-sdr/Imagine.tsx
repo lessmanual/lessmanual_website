@@ -11,7 +11,7 @@ const imagineCards = [
   {
     icon: Calendar,
     title: "Handlowiec sprzedaje",
-    desc: "Nie siedzi nad Excelem. Spotkania ustawia system — on zamyka deale.",
+    desc: "Nie siedzi nad Excelem. Spotkania ustawia system, on zamyka deale.",
   },
   {
     icon: BarChart3,
@@ -21,7 +21,7 @@ const imagineCards = [
   {
     icon: TrendingUp,
     title: "Przewidywalny pipeline",
-    desc: "System pracuje w tle — codziennie, systematycznie, bez chorobowego.",
+    desc: "System pracuje w tle. Codziennie, systematycznie, bez chorobowego.",
   },
   {
     icon: Users,
@@ -37,7 +37,7 @@ export function Imagine() {
         <FadeUp>
           <SectionHeader eyebrow="Wyobraź sobie" title="Jak wyglądają Twoje poniedziałkowe poranki?" />
           <p className="text-lg text-text-secondary text-center mb-12 leading-relaxed max-w-[680px] mx-auto">
-            Poniedziałek rano. Otwierasz kalendarz — 3 potwierdzone spotkania z decydentami.
+            Poniedziałek rano. Otwierasz kalendarz, 3 potwierdzone spotkania z decydentami.
             Nie szukałeś ich. Nie pisałeś maili. System znalazł, napisał, umówił.
           </p>
         </FadeUp>

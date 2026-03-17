@@ -36,7 +36,7 @@ export function About() {
                 <p>
                   8 lat w logistyce B2B nauczyło mnie jednego: ręczna robota zabija biznes.
                   Pipeline Machine powstał, bo sam potrzebowałem spotkań. Zamiast zatrudnić handlowca
-                  za 12k/mies — postawiłem system. Wyniki wyżej to moja kampania, nie teoria.
+                  za 12k/mies, postawiłem system. Wyniki wyżej to moja kampania, nie teoria.
                 </p>
                 <p>
                   Teraz ten sam system stawiam dla firm B2B które chcą spotkania bez ręcznego prospectingu.

@@ -47,15 +47,15 @@ export function Guarantee() {
         <FadeUp delay={0.2}>
           <p className="text-text-secondary text-lg leading-relaxed mb-8 text-center">
             <strong className="text-text">Nie musisz kupować wszystkiego na raz.</strong>{" "}
-            Zaczynasz od jednego systemu pilotażowego. Widzisz wyniki — decydujesz o kolejnych.
+            Zaczynasz od jednego systemu pilotażowego. Widzisz wyniki, decydujesz o kolejnych.
           </p>
 
           <h3 className="font-serif text-2xl mb-6 text-center">Dlaczego mogę to obiecać?</h3>
           <StaggerContainer staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
-              { num: "1", title: "Wybieram klientów", desc: "Nie biorę projektów gdzie nie widzę realnych wyników. Firma B2B z dobrym produktem/usługą — to mój klient." },
+              { num: "1", title: "Wybieram klientów", desc: "Nie biorę projektów gdzie nie widzę realnych wyników. Firma B2B z dobrym produktem/usługą, to mój klient." },
               { num: "2", title: "Sprawdzony mechanizm", desc: "Te same systemy działają u firm z IT, logistyki, OZE, e-commerce. 5.0 na Google." },
-              { num: "3", title: "Prowadzę osobiście", desc: "Nie deleguję do juniorów. Każdy system buduję sam — max 3 projekty miesięcznie." },
+              { num: "3", title: "Prowadzę osobiście", desc: "Nie deleguję do juniorów. Każdy system buduję sam (max 3 projekty miesięcznie)." },
             ].map((item) => (
               <StaggerItem key={item.num}>
                 <div className="bg-bg border border-border rounded-[6px] p-6 md:p-8 h-full text-center hover:border-accent transition-colors duration-200">

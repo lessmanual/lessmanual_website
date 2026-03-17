@@ -118,7 +118,7 @@ export function Pricing() {
                 <span className="text-lg text-text-muted">za potwierdzone spotkanie</span>
               </div>
               <p className="text-lg text-text-secondary">
-                Dokładną kwotę ustalamy razem na konsultacji. Nie płacisz za maile, leady ani &ldquo;MQL&rdquo; — tylko za realne spotkania z decision makerami z Twojego ICP.
+                Dokładną kwotę ustalamy razem na konsultacji. Nie płacisz za maile, leady ani &ldquo;MQL&rdquo;. Tylko za realne spotkania z decision makerami z Twojego ICP.
               </p>
               <p className="text-lg text-text font-medium mt-3">
                 Żadnych ukrytych opłat. Żadnych stałych abonamentów. Nie ma spotkań = nie płacisz.
@@ -145,7 +145,7 @@ export function Pricing() {
         <FadeUp delay={0.25}>
           <div className="bg-white border border-border rounded-[6px] p-6 mb-8">
             <h4 className="font-serif text-xl mb-4">
-              Definicja &ldquo;spotkanie&rdquo; — płacisz TYLKO gdy spełnione są WSZYSTKIE warunki:
+              Definicja &ldquo;spotkanie&rdquo;. Płacisz TYLKO gdy spełnione są WSZYSTKIE warunki:
             </h4>
             <div className="space-y-3">
               {AI_SDR_MEETING_DEFINITION.map((item, idx) => (

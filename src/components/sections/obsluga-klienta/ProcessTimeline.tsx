@@ -59,7 +59,7 @@ export function ProcessTimeline() {
               Nie musisz nic programować. Nie musisz nic konfigurować.
             </p>
             <p className="text-text-secondary text-base mt-1">
-              Odpowiadasz na nasze pytania — my robimy resztę.
+              Odpowiadasz na nasze pytania, my robimy resztę.
             </p>
           </div>
 

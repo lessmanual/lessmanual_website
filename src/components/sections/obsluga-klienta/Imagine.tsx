@@ -23,10 +23,10 @@ export function Imagine() {
             </p>
             <p>
               Ty? Pijesz kawę. Przeglądasz 3 sprawy które wymagają Twojej uwagi
-              — resztę system ogarniał.
+              , resztę system ogarniał.
             </p>
             <p>
-              Zamiast 2.5h dziennie na powtarzalne pytania — masz 2.5h na rozwój
+              Zamiast 2.5h dziennie na powtarzalne pytania, masz 2.5h na rozwój
               firmy.
             </p>
             <p>

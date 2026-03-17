@@ -22,7 +22,7 @@ export function SocialProof() {
         <FadeUp>
           <SectionHeader
             eyebrow="Wyniki"
-            title="Co widzimy u firm, z którymi pracujemy. Nie obietnice — wzorce."
+            title="Co widzimy u firm, z którymi pracujemy. Nie obietnice, wzorce."
           />
         </FadeUp>
 
@@ -57,7 +57,7 @@ export function SocialProof() {
               zajmowało 3 godziny. Handlowiec obsługuje 3-4 klientów dziennie. Reszta czeka.
             </p>
             <p className="text-text-secondary leading-relaxed mb-4 text-base">
-              <strong className="text-text">Co zrobiliśmy:</strong> Agent wycen PDF &mdash; klient
+              <strong className="text-text">Co zrobiliśmy:</strong> Agent wycen PDF, klient
               podaje dane, system generuje profesjonalną ofertę automatycznie.
             </p>
             <p className="font-serif text-2xl text-text">
@@ -75,21 +75,21 @@ export function SocialProof() {
               <h4 className="font-serif text-lg mb-3">Producenci mebli</h4>
               <p className="text-base text-text-secondary leading-relaxed">
                 Każda wycena szafy to osobne obliczenia materiałów. Częste błędy w kalkulacji.
-                System eliminuje te błędy &mdash; baza materiałów, automatyczna kalkulacja, zero pomyłek.
+                System eliminuje te błędy, baza materiałów, automatyczna kalkulacja, zero pomyłek.
               </p>
             </div>
             <div className="bg-bg border border-border rounded-[6px] p-6">
               <h4 className="font-serif text-lg mb-3">Firmy remontowe</h4>
               <p className="text-base text-text-secondary leading-relaxed">
                 Kosztorys robi właściciel. Wieczorami. Bo tylko on zna ceny podwykonawców.
-                Z systemem &mdash; każdy w firmie może wygenerować kosztorys w 5 minut.
+                Z systemem, każdy w firmie może wygenerować kosztorys w 5 minut.
               </p>
             </div>
             <div className="bg-bg border border-border rounded-[6px] p-6">
               <h4 className="font-serif text-lg mb-3">Firmy instalacyjne</h4>
               <p className="text-base text-text-secondary leading-relaxed">
                 Oferty wychodzą na drugi dzień. Klienci kupują u szybszej konkurencji.
-                Z systemem &mdash; oferta wychodzi w 5 minut od rozmowy.
+                Z systemem, oferta wychodzi w 5 minut od rozmowy.
               </p>
             </div>
           </div>

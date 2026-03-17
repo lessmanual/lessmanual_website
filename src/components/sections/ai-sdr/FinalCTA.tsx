@@ -35,7 +35,7 @@ export function FinalCTA() {
               Chcę spotkania w kalendarzu
             </Button>
             <p className="mt-5 text-text-muted text-lg max-w-[520px] mx-auto">
-              Jeśli pasujemy — startujemy w 3 tygodnie. Jeśli nie — wyjdziesz z darmową
+              Jeśli pasujemy, startujemy w 3 tygodnie. Jeśli nie, wyjdziesz z darmową
               analizą Twojego rynku i konkretnymi wskazówkami jak poprawić prospecting.
             </p>
           </div>
@@ -73,9 +73,9 @@ export function FinalCTA() {
           <div className="mt-10 text-text-muted text-lg leading-relaxed">
             <p>
               <strong className="text-text-secondary">P.S.</strong> Sam prowadzę każdą kampanię.
-              Max 3 projekty jednocześnie. Miejsca jeszcze są — ale nie będą wiecznie.
+              Max 3 projekty jednocześnie. Miejsca jeszcze są, ale nie będą wiecznie.
             </p>
-            <p className="mt-3 text-text-light">— Bartek</p>
+            <p className="mt-3 text-text-light">- Bartek</p>
           </div>
         </FadeUp>
 

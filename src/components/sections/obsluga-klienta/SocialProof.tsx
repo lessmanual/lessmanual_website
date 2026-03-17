@@ -49,15 +49,15 @@ export function SocialProof() {
               <span className="inline-block px-3 py-1 text-xs font-sans font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
                 Case Study
               </span>
-              <span className="font-serif text-xl">Szkoła tańca — Voice Agent</span>
+              <span className="font-serif text-xl">Szkoła tańca - Voice Agent</span>
             </div>
             <p className="text-text-secondary leading-relaxed mb-4">
               <strong className="text-text">Problem:</strong> Właścicielka na
-              zajęciach — nie może odebrać telefonu. Klienci dzwonią do
+              zajęciach, nie może odebrać telefonu. Klienci dzwonią do
               konkurencji.
             </p>
             <p className="text-text-secondary leading-relaxed mb-4">
-              <strong className="text-text">Rozwiązanie:</strong> Voice Agent —
+              <strong className="text-text">Rozwiązanie:</strong> Voice Agent,
               odbiera telefony 24/7, odpowiada na pytania, zapisuje na zajęcia.
             </p>
             <p className="font-serif text-2xl text-text">
@@ -72,7 +72,7 @@ export function SocialProof() {
         <FadeUp delay={0.2}>
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-12">
             <p className="text-base text-text-secondary leading-relaxed text-center">
-              System jest lepszy w miesiącu 3 niż w miesiącu 1 — bo uczymy go
+              System jest lepszy w miesiącu 3 niż w miesiącu 1, bo uczymy go
               na bieżąco.
             </p>
           </div>

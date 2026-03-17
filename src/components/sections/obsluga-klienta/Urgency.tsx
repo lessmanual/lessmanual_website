@@ -39,9 +39,9 @@ export function Urgency() {
             </div>
             <div className="space-y-3">
               {[
-                "Kolejne zapytanie o 23:00 bez odpowiedzi — klient idzie do konkurencji",
-                "Kolejny poniedziałek z 200 mailami — kolejny dzień stracony",
-                "Kolejny nieodebrany telefon — kolejna utracona szansa",
+                "Kolejne zapytanie o 23:00 bez odpowiedzi. Klient idzie do konkurencji",
+                "Kolejny poniedziałek z 200 mailami. Kolejny dzień stracony",
+                "Kolejny nieodebrany telefon. Kolejna utracona szansa",
                 "Kolejne 50 godzin miesięcznie na powtarzalną robotę",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">

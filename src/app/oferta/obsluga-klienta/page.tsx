@@ -25,11 +25,11 @@ import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { OBS_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
 
 export const metadata: Metadata = {
-  title: "Obsługa Klienta AI — Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
+  title: "Obsługa Klienta AI - Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
   description:
     "Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań rozwiązanych automatycznie. Done-for-you w 7-21 dni. Od 3,500 PLN setup + 600 PLN/mies.",
   openGraph: {
-    title: "Obsługa Klienta AI — Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
+    title: "Obsługa Klienta AI - Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
     description:
       "Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań automatycznie. Done-for-you w 7-21 dni.",
     url: "https://lessmanual.ai/oferta/obsluga-klienta",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Obsługa Klienta AI — Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
+    title: "Obsługa Klienta AI - Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
     description:
       "Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań automatycznie. Done-for-you w 7-21 dni.",
   },

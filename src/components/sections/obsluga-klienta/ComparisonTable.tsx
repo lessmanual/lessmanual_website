@@ -85,8 +85,8 @@ export function ComparisonTable() {
         <FadeUp delay={0.15}>
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-8">
             <p className="text-text-secondary leading-relaxed text-base">
-              <strong className="text-text">Różnica?</strong> Tidio, InteliWISE, KODA — to narzędzia. Ty konfigurujesz.{" "}
-              <strong className="text-text">LessManual — to system.</strong> My budujemy, trenujemy, monitorujemy.
+              <strong className="text-text">Różnica?</strong> Tidio, InteliWISE, KODA, to narzędzia. Ty konfigurujesz.{" "}
+              <strong className="text-text">LessManual, to system.</strong> My budujemy, trenujemy, monitorujemy.
             </p>
           </div>
 

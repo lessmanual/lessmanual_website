@@ -12,7 +12,7 @@ export function ComparisonTable() {
         <FadeUp>
           <SectionHeader
             eyebrow="Porównanie"
-            title="Narzędzia SaaS vs LessManual. Jedno daje dashboard. Drugie — gotowy system."
+            title="Narzędzia SaaS vs LessManual. Jedno daje dashboard. Drugie - gotowy system."
           />
           <p className="text-text-secondary text-center mb-12 text-lg">
             Pewnie porównujesz opcje. Ułatwiamy:
@@ -62,7 +62,7 @@ export function ComparisonTable() {
               <strong className="text-text">Narzędzia SaaS</strong> dają Ci pusty dashboard i mówią
               &ldquo;konfiguruj sam&rdquo;. Tygodnie konfiguracji Twojego czasu, który mógłbyś
               poświęcić na zamykanie deali.{" "}
-              <strong className="text-text">My budujemy system pod klucz</strong> — z Twoimi
+              <strong className="text-text">My budujemy system pod klucz</strong>, z Twoimi
               cenami, materiałami, logiką wycen. Ty zatwierdzasz i korzystasz.
             </p>
           </div>

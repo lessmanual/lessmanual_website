@@ -16,11 +16,11 @@ export function Solution() {
         <FadeUp>
           <SectionHeader
             eyebrow="Rozwiązanie"
-            title="System Obsługi Klienta LessManual — odpowiada za Ciebie. 24/7. Na każdym kanale."
+            title="System Obsługi Klienta LessManual - odpowiada za Ciebie. 24/7. Na każdym kanale."
           />
           <p className="text-text-secondary text-center mb-12 leading-relaxed">
             Wytrenowany na wiedzy Twojej firmy. Wie tyle co Twój najlepszy
-            pracownik — ale nigdy nie wymyśla odpowiedzi, bo korzysta TYLKO
+            pracownik, ale nigdy nie wymyśla odpowiedzi, bo korzysta TYLKO
             z Twoich danych.
           </p>
         </FadeUp>
@@ -54,14 +54,14 @@ export function Solution() {
             <p className="text-text-secondary leading-relaxed">
               System odpowiada <strong className="text-text">WYŁĄCZNIE</strong> na
               podstawie Twoich danych. Nie szuka w internecie. Nie wymyśla. Nie
-              zgaduje. Jeśli nie zna odpowiedzi — mówi wprost i przekazuje do
+              zgaduje. Jeśli nie zna odpowiedzi, mówi wprost i przekazuje do
               konsultanta.
             </p>
           </div>
 
           <p className="text-text font-medium text-center mb-8">
-            Jeden dashboard na wszystko. Chat, WhatsApp, email, telefon —
-            wszystkie kanały w jednym miejscu.
+            Jeden dashboard na wszystko. Chat, WhatsApp, email, telefon.
+            Wszystkie kanały w jednym miejscu.
           </p>
 
           <div className="text-center">

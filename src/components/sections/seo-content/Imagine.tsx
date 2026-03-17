@@ -21,7 +21,7 @@ const imagineCards = [
   {
     icon: TrendingUp,
     title: "Leady z Google i ChatGPT",
-    desc: "Ludzie szukają w Google — znajdują Twój artykuł. Pytają ChatGPT — cytuje Twoją firmę. Dwa kanały, jeden system.",
+    desc: "Ludzie szukają w Google, znajdują Twój artykuł. Pytają ChatGPT, cytuje Twoją firmę. Dwa kanały, jeden system.",
   },
   {
     icon: Users,
@@ -38,7 +38,7 @@ export function Imagine() {
           <SectionHeader eyebrow="Wyobraź sobie" title="Jak wygląda Twój marketing za 6 miesięcy?" />
           <p className="text-lg text-text-secondary text-center mb-12 leading-relaxed max-w-[680px] mx-auto">
             Otwierasz Google Analytics. Ruch organiczny +300%. Blog ma 120 artykułów.
-            Leady przychodzą z Google — bez reklam, bez cold maili. System zrobił to za Ciebie.
+            Leady przychodzą z Google, bez reklam, bez cold maili. System zrobił to za Ciebie.
           </p>
         </FadeUp>
 

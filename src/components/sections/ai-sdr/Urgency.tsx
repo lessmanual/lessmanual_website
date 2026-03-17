@@ -22,7 +22,7 @@ export function Urgency() {
           <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-10">
             <p>
               Przyjmuję max 3 projekty Pipeline Machine jednocześnie. Każdy klient wymaga dedykowanej
-              konfiguracji, testów i optymalizacji. Nie chcę robić tego masowo — chcę robić
+              konfiguracji, testów i optymalizacji. Nie chcę robić tego masowo, chcę robić
               to dobrze.
             </p>
             <p>
@@ -31,7 +31,7 @@ export function Urgency() {
             </p>
             <p>
               Twoja konkurencja nie czeka. Firmy B2B, które automatyzują prospecting, mają pełny
-              pipeline. Te, które nie automatyzują — walczą o polecenia i liczą na szczęście.
+              pipeline. Te, które nie automatyzują, walczą o polecenia i liczą na szczęście.
             </p>
           </div>
         </FadeUp>

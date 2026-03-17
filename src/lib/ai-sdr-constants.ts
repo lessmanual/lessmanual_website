@@ -58,8 +58,8 @@ export const AI_SDR_AGITATION_COSTS = [
 export const AI_SDR_SOLUTION_STEPS = [
   {
     num: 1,
-    title: "ICP Deep Dive Workshop (60 min)",
-    desc: "Wspólna sesja: definiujemy Twojego idealnego klienta - branża, wielkość, stanowisko, buying signals. Dostajesz ICP Document (PDF) który zatrzymujesz na zawsze. Wartość: 2,500 PLN - w cenie setupu.",
+    title: "Warsztat ICP Deep Dive (60 min)",
+    desc: "Wspólna sesja: definiujemy Twojego idealnego klienta - branża, wielkość, stanowisko, sygnały zakupowe. Dostajesz Dokument ICP (PDF) który zatrzymujesz na zawsze. Wartość: 2,500 PLN - w cenie setupu.",
   },
   {
     num: 2,
@@ -89,7 +89,7 @@ export const AI_SDR_SOCIAL_PROOF_METRICS = [
   { label: "Sent-to-Meeting", ours: "2.5% (12/476)", benchmark: "0.5-1%" },
   { label: "Czas do pierwszego deala", ours: "6 dni", benchmark: "30-90 dni" },
   { label: "Meeting-to-Close rate", ours: "50%", benchmark: "20-30%" },
-  { label: "Pipeline value", ours: "~40,000 PLN ($9,900)", benchmark: "—" },
+  { label: "Pipeline value", ours: "~40,000 PLN ($9,900)", benchmark: "-" },
 ];
 
 export const AI_SDR_DELIVERABLES = [
@@ -97,25 +97,25 @@ export const AI_SDR_DELIVERABLES = [
     title: "System pod klucz (Done-for-you)",
     items: [
       "My budujemy, konfigurujemy i uruchamiamy. Twój czas: 1 godzina na setup + 5 minut tygodniowo.",
-      "Dedykowane domeny wysyłkowe — Twoja główna domena zostaje nietknięta.",
-      "AI scoring leadów — tylko kontakty 7/10+ trafiają do kampanii. Jakość, nie ilość.",
-      "Każdy mail zatwierdzasz przed wysłaniem — pełna kontrola nad komunikacją.",
+      "Dedykowane domeny wysyłkowe. Twoja główna domena zostaje nietknięta.",
+      "AI scoring leadów, tylko kontakty 7/10+ trafiają do kampanii. Jakość, nie ilość.",
+      "Każdy mail zatwierdzasz przed wysłaniem. Pełna kontrola nad komunikacją.",
     ],
   },
   {
     title: "Pełna obsługa kampanii",
     items: [
-      "Obsługujemy CAŁĄ korespondencję z leadami — Ty nie piszesz ani jednego maila.",
-      "Follow-upy, kwalifikacja, umawianie terminów — wszystko po naszej stronie.",
-      "Bieżąca optymalizacja — system jest lepszy z każdym tygodniem.",
+      "Obsługujemy CAŁĄ korespondencję z leadami. Ty nie piszesz ani jednego maila.",
+      "Follow-upy, kwalifikacja, umawianie terminów, wszystko po naszej stronie.",
+      "Bieżąca optymalizacja, system jest lepszy z każdym tygodniem.",
     ],
   },
   {
     title: "Raporty i transparentność",
     items: [
-      "Cotygodniowe raporty z metrykami — wiesz, co działa i ile spotkań przynosi.",
-      "Dedykowany support — piszesz, odpowiadamy w godziny, nie w dni.",
-      "Zero niespodzianek — wiesz dokładnie za co płacisz.",
+      "Cotygodniowe raporty z metrykami. Wiesz, co działa i ile spotkań przynosi.",
+      "Dedykowany support. Piszesz, odpowiadamy w godziny, nie w dni.",
+      "Zero niespodzianek. Wiesz dokładnie za co płacisz.",
     ],
   },
 ];
@@ -123,21 +123,21 @@ export const AI_SDR_DELIVERABLES = [
 export const AI_SDR_TARGET_SEGMENTS = [
   {
     icon: "Code2" as const,
-    title: "Pipeline Machine for Tech",
+    title: "Pipeline Machine dla Tech",
     subtitle: "SaaS / Software Houses",
-    desc: "CEO/CTO szukają klientów na development ale handlowcy kosztują i nie skalują się? System targetuje decydentów w firmach które potrzebują tego co robicie. Lead sources: LinkedIn Sales Nav, Clutch, G2, Crunchbase.",
+    desc: "CEO/CTO szukają klientów na development ale handlowcy kosztują i nie skalują się? System targetuje decydentów w firmach które potrzebują tego co robicie. Źródła leadów: LinkedIn Sales Nav, Clutch, G2, Crunchbase.",
   },
   {
     icon: "Users" as const,
-    title: "Pipeline Machine for Recruitment",
+    title: "Pipeline Machine dla Rekrutacji",
     subtitle: "Agencje rekrutacyjne",
-    desc: "Kandydatów masz - klientów brakuje? System dociera do firm które aktywnie rekrutują i potrzebują wsparcia agencji. Multi-country kampanie: PL, UK, DACH, Nordics.",
+    desc: "Kandydatów masz - klientów brakuje? System dociera do firm które aktywnie rekrutują i potrzebują wsparcia agencji. Kampanie międzynarodowe: PL, UK, DACH, Nordics.",
   },
   {
     icon: "Factory" as const,
-    title: "Pipeline Machine for Industry",
+    title: "Pipeline Machine dla Przemysłu",
     subtitle: "Produkcja / Przemysł",
-    desc: "Dyrektorzy handlowi firm produkcyjnych 20-500 osób. Lead sources: Biznesradar, KRS, LinkedIn, katalogi branżowe. Email angle: efektywność operacyjna, compliance EU.",
+    desc: "Dyrektorzy handlowi firm produkcyjnych 20-500 osób. Źródła leadów: Biznesradar, KRS, LinkedIn, katalogi branżowe. Komunikacja: efektywność operacyjna, zgodność z regulacjami EU.",
   },
 ];
 
@@ -170,8 +170,8 @@ export const AI_SDR_SETUP_PLANS = [
       "Cotygodniowe raporty",
     ],
     bonuses: [
-      "ICP Deep Dive Workshop (2,500 PLN)",
-      "Monthly Performance Report (1,000 PLN/mies)",
+      "Warsztat ICP Deep Dive (2,500 PLN)",
+      "Miesięczny Raport Wyników (1,000 PLN/mies)",
     ],
     bonusValue: "3,500 PLN",
     desc: "Testujesz system. Zero ryzyka - 0 spotkań w 45 dni = zwrot setup.",
@@ -193,9 +193,9 @@ export const AI_SDR_SETUP_PLANS = [
       "Cotygodniowe raporty",
     ],
     bonuses: [
-      "ICP Deep Dive Workshop (2,500 PLN)",
-      "Monthly Performance Report (1,000 PLN/mies)",
-      "Swipe File - 3 sekwencje z 76% open rate (1,500 PLN)",
+      "Warsztat ICP Deep Dive (2,500 PLN)",
+      "Miesięczny Raport Wyników (1,000 PLN/mies)",
+      "Sprawdzone Szablony - 3 sekwencje z 76% open rate (1,500 PLN)",
       "Auto-Reply AI (3,000 PLN)",
     ],
     bonusValue: "8,000 PLN",
@@ -215,14 +215,14 @@ export const AI_SDR_SETUP_PLANS = [
       "Multi-kanał (email + LinkedIn + inne)",
       "Dedykowana strategia outreach",
       "Priorytetowa obsługa",
-      "Cotygodniowe raporty + monthly review",
+      "Cotygodniowe raporty + przegląd miesięczny",
     ],
     bonuses: [
-      "ICP Deep Dive Workshop (2,500 PLN)",
-      "Monthly Performance Report (1,000 PLN/mies)",
-      "Swipe File - 3 sekwencje z 76% open rate (1,500 PLN)",
+      "Warsztat ICP Deep Dive (2,500 PLN)",
+      "Miesięczny Raport Wyników (1,000 PLN/mies)",
+      "Sprawdzone Szablony - 3 sekwencje z 76% open rate (1,500 PLN)",
       "Auto-Reply AI (3,000 PLN)",
-      "Quarterly Strategy Call (2,000 PLN)",
+      "Kwartalna Rozmowa Strategiczna (2,000 PLN)",
     ],
     bonusValue: "10,000 PLN",
     desc: "Dominacja rynku. Wielu decydentów, wiele kanałów, priorytet.",
@@ -295,8 +295,8 @@ export const AI_SDR_COMPARISON_TABLE = {
 export const AI_SDR_PROCESS_STEPS = [
   {
     week: "Dzień 1",
-    title: "ICP Deep Dive Workshop",
-    desc: "60 min sesja. Definiujemy Twojego idealnego klienta - branża, wielkość, stanowisko, buying signals. Dostajesz ICP Document (PDF) który zatrzymujesz na zawsze. Ustalamy kryteria spotkań.",
+    title: "Warsztat ICP Deep Dive",
+    desc: "60 min sesja. Definiujemy Twojego idealnego klienta - branża, wielkość, stanowisko, sygnały zakupowe. Dostajesz Dokument ICP (PDF) który zatrzymujesz na zawsze. Ustalamy kryteria spotkań.",
     yourTime: "60 minut",
   },
   {
@@ -331,11 +331,11 @@ export const AI_SDR_FAQ_ITEMS = [
     items: [
       {
         q: "Ile trwa setup?",
-        a: "3 tygodnie. Warmup domen zajmuje 14-21 dni — to niezbędne, żeby maile nie trafiały do spamu. W tym czasie scrapujemy leady, oceniamy je AI scoringiem i przygotowujemy sekwencje mailowe. Ty zatwierdzasz treści.",
+        a: "3 tygodnie. Warmup domen zajmuje 14-21 dni, to niezbędne, żeby maile nie trafiały do spamu. W tym czasie scrapujemy leady, oceniamy je AI scoringiem i przygotowujemy sekwencje mailowe. Ty zatwierdzasz treści.",
       },
       {
         q: "Kiedy mogę spodziewać się pierwszych spotkań?",
-        a: "Tydzień 3-4 po starcie. Z naszych danych: 12 spotkań z 476 maili, kampania ukończona w 41%. System ruszamy po warmupie — spotkania pojawiają się szybko.",
+        a: "Tydzień 3-4 po starcie. Z naszych danych: 12 spotkań z 476 maili, kampania ukończona w 41%. System ruszamy po warmupie, spotkania pojawiają się szybko.",
       },
       {
         q: "Ile spotkań mogę oczekiwać miesięcznie?",
@@ -352,7 +352,7 @@ export const AI_SDR_FAQ_ITEMS = [
       },
       {
         q: "Co jeśli ktoś się nie pojawi (no-show)?",
-        a: "Umawiamy ponownie. Jeśli 2x nie przyjdzie — spotkanie jest bezpłatne i zastępujemy je innym. Nie płacisz za no-showy.",
+        a: "Umawiamy ponownie. Jeśli 2x nie przyjdzie, spotkanie jest bezpłatne i zastępujemy je innym. Nie płacisz za no-showy.",
       },
       {
         q: "Mogę zobaczyć treści maili przed startem?",
@@ -364,11 +364,11 @@ export const AI_SDR_FAQ_ITEMS = [
       },
       {
         q: "Dlaczego 100% z góry za setup?",
-        a: "Bo Dzień 1 zaczynamy od ICP Workshop (wartość 2,500 PLN) - dostajesz deliverable natychmiast. Jeśli nie jesteś zadowolony z przygotowanej kampanii PRZED jej uruchomieniem - pełny zwrot. Masz 3 warstwy gwarancji. A po starcie płacisz TYLKO za spotkania które się odbędą.",
+        a: "Bo Dzień 1 zaczynamy od Warsztatu ICP (wartość 2,500 PLN) - dostajesz deliverable natychmiast. Jeśli nie jesteś zadowolony z przygotowanej kampanii PRZED jej uruchomieniem - pełny zwrot. Masz 3 warstwy gwarancji. A po starcie płacisz TYLKO za spotkania które się odbędą.",
       },
       {
         q: "Jakie bonusy dostaję w cenie?",
-        a: "Zależy od planu. COLD START: ICP Workshop (2,500 PLN) + Monthly Report (1,000 PLN/mies). FULL PIPELINE: dodatkowo Swipe File z 76% open rate (1,500 PLN) + Auto-Reply AI (3,000 PLN). DOMINACJA: wszystko plus Quarterly Strategy Call (2,000 PLN). Łączna wartość bonusów: 3,500-10,000 PLN - w cenie setupu.",
+        a: "Zależy od planu. COLD START: Warsztat ICP (2,500 PLN) + Miesięczny Raport (1,000 PLN/mies). FULL PIPELINE: dodatkowo Sprawdzone Szablony z 76% open rate (1,500 PLN) + Auto-Reply AI (3,000 PLN). DOMINACJA: wszystko plus Kwartalna Rozmowa Strategiczna (2,000 PLN). Łączna wartość bonusów: 3,500-10,000 PLN - w cenie setupu.",
       },
     ],
   },
@@ -393,21 +393,21 @@ export const AI_SDR_FAQ_ITEMS = [
 
 export const AI_SDR_BONUSES = [
   {
-    name: "ICP Deep Dive Workshop",
+    name: "Warsztat ICP Deep Dive",
     value: "2,500 PLN",
-    desc: "60 min sesja z Bartkiem. Deliverable: ICP Document (PDF) - zatrzymujesz na zawsze. Competitor mapping, buying signals, decision makers.",
+    desc: "60 min sesja z Bartkiem. Otrzymujesz: Dokument ICP (PDF) - zatrzymujesz na zawsze. Analiza konkurencji, sygnały zakupowe, decydenci.",
     tiers: ["COLD START", "FULL PIPELINE", "DOMINACJA"],
   },
   {
-    name: "Monthly Performance Report",
+    name: "Miesięczny Raport Wyników",
     value: "1,000 PLN/mies",
-    desc: "Open rates, reply rates, meetings, pipeline. 3 konkretne rekomendacje na następny miesiąc. AI-generated insights.",
+    desc: "Open rates, reply rates, meetings, pipeline. 3 konkretne rekomendacje na następny miesiąc. Wnioski generowane przez AI.",
     tiers: ["COLD START", "FULL PIPELINE", "DOMINACJA"],
   },
   {
-    name: "Swipe File - 3 sprawdzone sekwencje",
+    name: "Sprawdzone Szablony - 3 sekwencje email",
     value: "1,500 PLN",
-    desc: "Anonimizowane szablony z 76% open rate i 61% positive reply rate. Subject lines, follow-up sequences, A/B test framework. Zatrzymujesz nawet po zakończeniu współpracy.",
+    desc: "Anonimizowane szablony z 76% open rate i 61% positive reply rate. Tematy maili, sekwencje follow-up, schemat testów A/B. Zatrzymujesz nawet po zakończeniu współpracy.",
     tiers: ["FULL PIPELINE", "DOMINACJA"],
   },
   {
@@ -417,7 +417,7 @@ export const AI_SDR_BONUSES = [
     tiers: ["FULL PIPELINE", "DOMINACJA"],
   },
   {
-    name: "Quarterly Strategy Call",
+    name: "Kwartalna Rozmowa Strategiczna",
     value: "2,000 PLN",
     desc: "Przegląd kampanii, nowe segmenty, optymalizacja. Strategiczny przegląd co kwartał.",
     tiers: ["DOMINACJA"],

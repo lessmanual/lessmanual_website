@@ -21,7 +21,7 @@ export function Problem() {
               { num: "01", title: "Ręczny prospecting", desc: "20-40 godzin miesięcznie. To pół etatu na coś, co nie jest sprzedażą." },
               { num: "02", title: "Kupione leady", desc: "Excel z numerami. Zero odpowiedzi. Kontakt na liście to nie spotkanie." },
               { num: "03", title: "Zatrudnienie handlowca", desc: "12-22k PLN/mies. Plus 3-6 miesięcy onboardingu. 40% odchodzi w ciągu roku." },
-              { num: "04", title: "Życie z poleceń", desc: "Działa. Dopóki się nie skończy. A kiedy pipeline jest pusty — zaczynasz od zera." },
+              { num: "04", title: "Życie z poleceń", desc: "Działa. Dopóki się nie skończy. A kiedy pipeline jest pusty, zaczynasz od zera." },
             ].map((item) => (
               <div key={item.num} className="relative bg-bg border border-border rounded-[6px] p-6 md:p-8 overflow-hidden hover:border-warning/50 transition-colors duration-200 group">
                 <span className="absolute top-4 right-5 font-mono text-7xl font-bold text-accent/10 leading-none select-none pointer-events-none group-hover:text-accent/15 transition-colors duration-200">

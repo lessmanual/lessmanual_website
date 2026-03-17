@@ -86,7 +86,7 @@ export function HeroSplit() {
             >
               Firmy B2B tracą 100-300 tys. PLN rocznie na szukanie klientów,
               odpowiadanie na zapytania i pisanie ofert. Budujemy systemy AI
-              które robią to pod klucz — z gwarancją wyników.
+              które robią to pod klucz, z gwarancją wyników.
             </motion.p>
 
             {/* CTAs */}
@@ -192,7 +192,7 @@ export function HeroSplit() {
               architect and engineer.&rdquo;
             </span>{" "}
             <span className="text-text-light text-xs">
-              — Arek Skuza, CEO and boards advisor on AI Powered Growth
+              - Arek Skuza, CEO and boards advisor on AI Powered Growth
             </span>
           </p>
         </motion.div>

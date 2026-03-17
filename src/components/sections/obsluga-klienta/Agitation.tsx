@@ -55,7 +55,7 @@ export function Agitation() {
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 mb-10">
             <p className="text-text-secondary leading-relaxed italic">
               &quot;300 maili dziennie, spotkania od 9 do 17 bez przerw na myślenie.&quot;
-              — tak opisują swój dzień przedsiębiorcy, z którymi rozmawiamy
+              - tak opisują swój dzień przedsiębiorcy, z którymi rozmawiamy
             </p>
           </div>
 

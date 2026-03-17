@@ -30,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lessmanual.ai"),
-  title: "LessManual.ai — Systemy AI dla firm B2B | Automatyzacja pod klucz",
+  title: "LessManual.ai - Systemy AI dla firm B2B | Automatyzacja pod klucz",
   description:
     "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Pipeline Machine, SEO Content, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
   keywords: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "automatyzacja B2B",
   ],
   openGraph: {
-    title: "LessManual.ai — Systemy AI dla firm B2B",
+    title: "LessManual.ai - Systemy AI dla firm B2B",
     description:
       "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Gwarancja wyników lub pełny zwrot kosztów.",
     url: "https://lessmanual.ai",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LessManual.ai — Systemy AI dla firm B2B",
+    title: "LessManual.ai - Systemy AI dla firm B2B",
     description:
       "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Gwarancja wyników lub pełny zwrot kosztów.",
   },

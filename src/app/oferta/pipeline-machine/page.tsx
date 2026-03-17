@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Pipeline Machine - Spotkania z Decydentami B2B | LessManual.ai",
     description:
       "Pipeline Machine umawia spotkania B2B. 76% open rate. 61% positive reply. Zero stałych opłat. 3 warstwy gwarancji.",
-    url: "https://lessmanual.ai/oferta/ai-sdr",
+    url: "https://lessmanual.ai/oferta/pipeline-machine",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "Pipeline Machine umawia spotkania B2B. 76% open rate. 61% positive reply. Zero stałych opłat. 3 warstwy gwarancji.",
   },
   alternates: {
-    canonical: "https://lessmanual.ai/oferta/ai-sdr",
+    canonical: "https://lessmanual.ai/oferta/pipeline-machine",
   },
 };
 
@@ -67,7 +67,7 @@ const jsonLd = {
     priceCurrency: "PLN",
     price: "500",
     description:
-      "od 500 PLN za spotkanie. Model pay-per-meeting — płacisz tylko za spotkania które się odbędą.",
+      "od 500 PLN za spotkanie. Model pay-per-meeting, płacisz tylko za spotkania które się odbędą.",
     availability: "https://schema.org/InStock",
   },
   review: {
@@ -94,7 +94,7 @@ const faqSchema = generateFAQSchema(AI_SDR_FAQ_ITEMS);
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: "Strona główna", url: "https://lessmanual.ai" },
   { name: "Oferta", url: "https://lessmanual.ai/oferta" },
-  { name: "Pipeline Machine", url: "https://lessmanual.ai/oferta/ai-sdr" },
+  { name: "Pipeline Machine", url: "https://lessmanual.ai/oferta/pipeline-machine" },
 ]);
 
 export default function AISDRPage() {

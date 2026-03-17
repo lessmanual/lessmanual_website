@@ -14,11 +14,11 @@ export function WhatYouGet() {
         <FadeUp>
           <SectionHeader
             eyebrow="Co dostajesz"
-            title="Co dokładnie dostajesz — krok po kroku"
+            title="Co dokładnie dostajesz - krok po kroku"
           />
           <p className="text-text-secondary text-center mb-12">
             Nie sprzedajemy licencji na chatbota. Budujemy system obsługi klienta dopasowany
-            do Twojej firmy. Ty odpowiadasz na nasze pytania (max 2h) — my robimy resztę.
+            do Twojej firmy. Ty odpowiadasz na nasze pytania (max 2h), my robimy resztę.
           </p>
         </FadeUp>
 

@@ -66,7 +66,7 @@ export function ComparisonTable() {
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-8">
             <p className="text-text-secondary leading-relaxed text-lg">
               <strong className="text-text">Koszt jednego spotkania z in-house handlowcem:</strong>{" "}
-              1,000-1,830 PLN (przy 12 spotkaniach/mies — branżowy benchmark).{" "}
+              1,000-1,830 PLN (przy 12 spotkaniach/mies, branżowy benchmark).{" "}
               <strong className="text-text">Koszt jednego spotkania z nami:</strong>{" "}
               750-2,000 PLN. Porównywalnie lub taniej. Bez stałych kosztów. Bez ryzyka.
               Bez 3 miesięcy czekania.

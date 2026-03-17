@@ -41,7 +41,7 @@ export const OBS_KLIENTA_AGITATION_TIMEFRAMES = [
   },
   {
     time: "Za rok",
-    text: "240,000 PLN utraconych szans. 600 godzin straconych. Konkurencja z systemem przejmuje Twoich klientów — nie dlatego, że jest lepsza. Dlatego, że odpowiada szybciej.",
+    text: "240,000 PLN utraconych szans. 600 godzin straconych. Konkurencja z systemem przejmuje Twoich klientów, nie dlatego, że jest lepsza. Dlatego, że odpowiada szybciej.",
   },
 ];
 
@@ -55,24 +55,24 @@ export const OBS_KLIENTA_SOLUTION_STEPS = [
   {
     num: 1,
     title: "Chatbot na stronę",
-    desc: "Widget na Twojej stronie. Klient wchodzi, pyta — dostaje odpowiedź w sekundy. Konkretna odpowiedź z Twojego FAQ, cennika, regulaminu. Nie 'przepraszam, czekaj na konsultanta'.",
+    desc: "Widget na Twojej stronie. Klient wchodzi, pyta, dostaje odpowiedź w sekundy. Konkretna odpowiedź z Twojego FAQ, cennika, regulaminu. Nie 'przepraszam, czekaj na konsultanta'.",
     tier: "Od STARTER",
   },
   {
     num: 2,
     title: "WhatsApp Bot",
-    desc: "Twoi klienci i tak piszą na WhatsApp. Teraz dostaną odpowiedź natychmiast — automatycznie, z tych samych danych co chatbot na stronie.",
+    desc: "Twoi klienci i tak piszą na WhatsApp. Teraz dostaną odpowiedź natychmiast, automatycznie, z tych samych danych co chatbot na stronie.",
     tier: "Od GROWTH",
   },
   {
     num: 3,
     title: "Auto-sortowanie maili",
-    desc: "System czyta maile, kategoryzuje, odpowiada na te powtarzalne. Te wymagające Twojej uwagi — przekazuje Ci posegregowane, z kontekstem. Koniec z przebijaniem się przez 200 maili rano.",
+    desc: "System czyta maile, kategoryzuje, odpowiada na te powtarzalne. Te wymagające Twojej uwagi, przekazuje Ci posegregowane, z kontekstem. Koniec z przebijaniem się przez 200 maili rano.",
     tier: "Od GROWTH",
   },
   {
     num: 4,
-    title: "Voice Agent — AI recepcjonistka",
+    title: "Voice Agent, AI recepcjonistka",
     desc: "Odbiera telefony 24/7. Naturalny polski głos. Kwalifikuje rozmówcę, odpowiada na pytania, umawia spotkania w kalendarzu, wysyła SMS z potwierdzeniem.",
     tier: "SCALE",
   },
@@ -80,9 +80,9 @@ export const OBS_KLIENTA_SOLUTION_STEPS = [
 
 export const OBS_KLIENTA_DELIVERABLES = [
   {
-    title: "STARTER — Chat",
+    title: "STARTER - Chat",
     items: [
-      "Widget chatbot na stronę (LUB WhatsApp — 1 kanał do wyboru)",
+      "Widget chatbot na stronę (LUB WhatsApp, 1 kanał do wyboru)",
       "System wytrenowany na FAQ Twojej firmy (RAG)",
       "500 konwersacji miesięcznie",
       "Eskalacja do człowieka z pełnym kontekstem",
@@ -90,7 +90,7 @@ export const OBS_KLIENTA_DELIVERABLES = [
     ],
   },
   {
-    title: "GROWTH — Multi-channel",
+    title: "GROWTH - Multi-channel",
     items: [
       "Wszystko ze STARTER +",
       "Chat na stronie + WhatsApp + Email",
@@ -102,10 +102,10 @@ export const OBS_KLIENTA_DELIVERABLES = [
     ],
   },
   {
-    title: "SCALE — Full Suite + Voice",
+    title: "SCALE - Full Suite + Voice",
     items: [
       "Wszystko z GROWTH +",
-      "Voice Agent — AI recepcjonistka 24/7",
+      "Voice Agent, AI recepcjonistka 24/7",
       "Unlimited konwersacje",
       "Wielojęzyczność",
       "Custom integracje",
@@ -130,7 +130,7 @@ export const OBS_KLIENTA_TARGET_SEGMENTS = [
   {
     icon: "Hotel" as const,
     title: "Hotele i HoReCa",
-    desc: "Rezerwacje, wielojęzyczność, FAQ — system obsługuje gości w ich języku, 24/7. Integracja z PMS.",
+    desc: "Rezerwacje, wielojęzyczność, FAQ, system obsługuje gości w ich języku, 24/7. Integracja z PMS.",
   },
   {
     icon: "Briefcase" as const,
@@ -144,7 +144,7 @@ export const OBS_KLIENTA_COMPARISON_TABLE = {
   rows: [
     { label: "Model", cols: ["SaaS (DIY)", "SaaS (DIY)", "SaaS (DIY)", "Jednorazowy", "Done-for-you"] },
     { label: "Setup", cols: ["0 PLN", "?", "?", "3,500-35,000 PLN", "5,000-18,000 PLN"] },
-    { label: "MRR", cols: ["97-2,996 PLN", "1,299+ PLN", "800-2,500 PLN", "—", "900-2,500 PLN"] },
+    { label: "MRR", cols: ["97-2,996 PLN", "1,299+ PLN", "800-2,500 PLN", "-", "900-2,500 PLN"] },
     { label: "Wdrożenie", cols: ["Ty sam", "Ty sam", "Ty sam", "Zależy", "My robimy"] },
     { label: "RAG (Twoje dane)", cols: ["Ograniczone", "Ograniczone", "Tak", "Zależy", "Full"] },
     { label: "Voice Agent", cols: ["Nie", "Nie", "Nie", "50,000-350,000 PLN", "W SCALE"] },
@@ -165,13 +165,13 @@ export const OBS_KLIENTA_PROCESS_STEPS = [
   {
     week: "Tydzień 1-2",
     title: "Konfiguracja i trening systemu",
-    desc: "Budujemy bazę wiedzy. Konfigurujemy kanały — chat, WhatsApp, email, telefon (zależnie od pakietu). Testujemy wewnętrznie — 200+ scenariuszy.",
-    yourTime: "0h — my robimy",
+    desc: "Budujemy bazę wiedzy. Konfigurujemy kanały (chat, WhatsApp, email, telefon, zależnie od pakietu). Testujemy wewnętrznie, 200+ scenariuszy.",
+    yourTime: "0h, my robimy",
   },
   {
     week: "Tydzień 2-3",
     title: "Testy z Tobą",
-    desc: "Testujesz z nami na żywo. Próbujemy go 'złamać' — najtrudniejsze pytania z Twojej branży. Poprawiamy w czasie rzeczywistym.",
+    desc: "Testujesz z nami na żywo. Próbujemy go 'złamać', najtrudniejsze pytania z Twojej branży. Poprawiamy w czasie rzeczywistym.",
     yourTime: "1-2 godziny",
   },
   {
@@ -186,7 +186,7 @@ export const OBS_KLIENTA_SETUP_PLANS = [
   {
     name: "STARTER",
     subtitle: "Chat (1 kanał)",
-    targetAudience: "Na start — testujesz AI w firmie",
+    targetAudience: "Na start, testujesz AI w firmie",
     setup: "5,000",
     mrr: "900",
     features: [
@@ -204,7 +204,7 @@ export const OBS_KLIENTA_SETUP_PLANS = [
   {
     name: "GROWTH",
     subtitle: "Multi-channel",
-    targetAudience: "Na poważnie — skalujesz sprzedaż/obsługę",
+    targetAudience: "Na poważnie, skalujesz sprzedaż/obsługę",
     setup: "10,000",
     mrr: "1,500",
     features: [
@@ -224,12 +224,12 @@ export const OBS_KLIENTA_SETUP_PLANS = [
   {
     name: "SCALE",
     subtitle: "Full Suite + Voice Agent",
-    targetAudience: "Full stack — automatyzacja całego procesu",
+    targetAudience: "Full stack, automatyzacja całego procesu",
     setup: "15,000",
     mrr: "2,200",
     features: [
       "Wszystko z GROWTH +",
-      "Voice Agent — AI recepcjonistka 24/7",
+      "Voice Agent, AI recepcjonistka 24/7",
       "Unlimited konwersacje",
       "Wielojęzyczność",
       "Custom integracje",
@@ -303,15 +303,15 @@ export const OBS_KLIENTA_FAQ_ITEMS = [
     items: [
       {
         q: "Czy AI nie będzie wymyślać odpowiedzi? Słyszałem, że chatboty halucynują.",
-        a: "System odpowiada WYŁĄCZNIE na podstawie Twoich danych — FAQ, regulaminu, cennika. Nie szuka w internecie. Nie zgaduje. Jeśli nie zna odpowiedzi — mówi wprost i przekazuje rozmowę do człowieka.",
+        a: "System odpowiada WYŁĄCZNIE na podstawie Twoich danych (FAQ, regulaminu, cennika). Nie szuka w internecie. Nie zgaduje. Jeśli nie zna odpowiedzi, mówi wprost i przekazuje rozmowę do człowieka.",
       },
       {
         q: "Nie zrazi mi klientów? Bot to bot.",
-        a: "System nie udaje człowieka. Ale odpowiada szybko, konkretnie i bez błędów. A jeśli klient chce rozmawiać z człowiekiem? Jedno kliknięcie — Twój zespół przejmuje rozmowę z pełnym kontekstem.",
+        a: "System nie udaje człowieka. Ale odpowiada szybko, konkretnie i bez błędów. A jeśli klient chce rozmawiać z człowiekiem? Jedno kliknięcie, Twój zespół przejmuje rozmowę z pełnym kontekstem.",
       },
       {
         q: "Czy Voice Agent w SCALE brzmi naturalnie?",
-        a: "Naturalny polski głos. Klienci nie odróżniają od prawdziwej recepcjonistki. Umów się na demo — pokażemy Ci na żywo.",
+        a: "Naturalny polski głos. Klienci nie odróżniają od prawdziwej recepcjonistki. Umów się na demo, pokażemy Ci na żywo.",
       },
       {
         q: "Ile zapytań obsłuży?",
@@ -319,7 +319,7 @@ export const OBS_KLIENTA_FAQ_ITEMS = [
       },
       {
         q: "Czy integruje się z moim CRM / systemem zamówień?",
-        a: "Od GROWTH — tak. Obsługujemy integracje z najpopularniejszymi CRM-ami (Salesforce, HubSpot, Pipedrive, Firmao). SCALE obejmuje custom integracje.",
+        a: "Od GROWTH, tak. Obsługujemy integracje z najpopularniejszymi CRM-ami (Salesforce, HubSpot, Pipedrive, Firmao). SCALE obejmuje custom integracje.",
       },
     ],
   },
@@ -332,11 +332,11 @@ export const OBS_KLIENTA_FAQ_ITEMS = [
       },
       {
         q: "Nie mam czasu na wdrożenie.",
-        a: "Nie musisz mieć. Ty odpowiadasz na nasze pytania — max 2 godziny Twojego czasu w całym procesie. My robimy resztę.",
+        a: "Nie musisz mieć. Ty odpowiadasz na nasze pytania, max 2 godziny Twojego czasu w całym procesie. My robimy resztę.",
       },
       {
         q: "Co jeśli coś się zepsuje?",
-        a: "Support w godzinach roboczych (STARTER/GROWTH) lub monitoring 24/7 (SCALE). SLA na naprawę. System jest monitorowany — wiemy o problemie zanim Ty go zauważysz.",
+        a: "Support w godzinach roboczych (STARTER/GROWTH) lub monitoring 24/7 (SCALE). SLA na naprawę. System jest monitorowany, wiemy o problemie zanim Ty go zauważysz.",
       },
     ],
   },
@@ -345,11 +345,11 @@ export const OBS_KLIENTA_FAQ_ITEMS = [
     items: [
       {
         q: "Muszę coś instalować? Zmieniać stronę?",
-        a: "Nie. Chatbot to widget — jedna linijka kodu na Twojej stronie. WhatsApp i email integrujemy po naszej stronie. Voice Agent działa na naszym numerze lub przekierowaniu z Twojego.",
+        a: "Nie. Chatbot to widget, jedna linijka kodu na Twojej stronie. WhatsApp i email integrujemy po naszej stronie. Voice Agent działa na naszym numerze lub przekierowaniu z Twojego.",
       },
       {
         q: "A jeśli zmienię stronę / CRM / system?",
-        a: "Migrujemy system razem z Tobą. To nasza robota — nie zostawimy Cię z niedziałającym chatbotem po zmianie platformy.",
+        a: "Migrujemy system razem z Tobą. To nasza robota, nie zostawimy Cię z niedziałającym chatbotem po zmianie platformy.",
       },
     ],
   },
@@ -358,18 +358,18 @@ export const OBS_KLIENTA_FAQ_ITEMS = [
 export const OBS_KLIENTA_GUARANTEES = [
   {
     title: "100% zwrot setup, jeśli nie wdrożymy w 14 dni",
-    desc: "Obiecujemy terminy i się ich trzymamy. Jeśli nie dostarczymy — oddajemy cały setup. Bez haczyków.",
+    desc: "Obiecujemy terminy i się ich trzymamy. Jeśli nie dostarczymy, oddajemy cały setup. Bez haczyków.",
   },
   {
     title: "30 dni trial",
-    desc: "Używasz systemu przez 30 dni. Jeśli nie widzisz wartości — nie płacisz reszty. Bez negocjacji. Jeden mail.",
+    desc: "Używasz systemu przez 30 dni. Jeśli nie widzisz wartości, nie płacisz reszty. Bez negocjacji. Jeden mail.",
   },
   {
     title: "ROI 200% w 90 dni",
-    desc: "Jeśli system nie przyniesie Ci co najmniej dwukrotności tego, co płacisz — następny miesiąc gratis.",
+    desc: "Jeśli system nie przyniesie Ci co najmniej dwukrotności tego, co płacisz, następny miesiąc gratis.",
   },
   {
     title: "Rezygnacja bez kar",
-    desc: "Jeden mail — koniec współpracy. Zero okresu wypowiedzenia, zero kar. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.",
+    desc: "Jeden mail, koniec współpracy. Zero okresu wypowiedzenia, zero kar. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.",
   },
 ];

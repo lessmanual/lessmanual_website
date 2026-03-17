@@ -36,7 +36,7 @@ export function OfertaGrid() {
               Wybierz rozwiązanie AI dla swojej firmy
             </h1>
             <p className="text-xl text-text-secondary max-w-[680px] mx-auto leading-relaxed">
-              Każdy system działa pod klucz — my budujemy, Ty widzisz wyniki.
+              Każdy system działa pod klucz, my budujemy, Ty widzisz wyniki.
               Gwarancja wyników lub pełny zwrot kosztów.
             </p>
           </FadeUp>
@@ -130,7 +130,7 @@ export function OfertaGrid() {
             <div className="text-center">
               <p className="text-text-secondary mb-4">
                 <strong className="text-text">Nie wiesz od czego zacząć?</strong>{" "}
-                80% naszych klientów zaczyna od Spotkań z decydentami — bo najszybciej
+                80% naszych klientów zaczyna od Spotkań z decydentami, bo najszybciej
                 przekłada się na przychód.
               </p>
               <Button href={CALENDLY_URL} external>

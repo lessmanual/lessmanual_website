@@ -43,7 +43,7 @@ export function WhatYouGet() {
           <div className="bg-white border border-border rounded-[6px] p-6 md:p-8 mb-8">
             <p className="text-text font-medium mb-3">Dlaczego pay-per-meeting?</p>
             <p className="text-lg text-text-secondary leading-relaxed">
-              Bo jeśli nie dowieziemy spotkań — zarabiamy zero. Nasz interes jest tożsamy z Twoim.
+              Bo jeśli nie dowieziemy spotkań, zarabiamy zero. Nasz interes jest tożsamy z Twoim.
               Agencja zarabia na retainerze niezależnie od wyników. My zarabiamy TYLKO gdy Ty masz
               spotkania w kalendarzu.
             </p>

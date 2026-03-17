@@ -35,7 +35,7 @@ export function FinalCTA() {
               Chcę blog, który pisze się sam
             </Button>
             <p className="mt-5 text-text-muted text-base max-w-[520px] mx-auto">
-              Jeśli pasujemy — startujemy w 5-14 dni. Jeśli nie — wyjdziesz z darmową
+              Jeśli pasujemy, startujemy w 5-14 dni. Jeśli nie, wyjdziesz z darmową
               analizą SEO Twojej branży i konkretnymi wskazówkami, co publikować.
             </p>
           </div>
@@ -76,7 +76,7 @@ export function FinalCTA() {
               to pozycje w Google, które zbiera Twoja konkurencja. Artykuł opublikowany dzisiaj
               zacznie rankować za 2-3 miesiące. Im wcześniej zaczniesz, tym wcześniej zbierasz.
             </p>
-            <p className="mt-3 text-text-light">— Bartek</p>
+            <p className="mt-3 text-text-light">- Bartek</p>
           </div>
         </FadeUp>
 

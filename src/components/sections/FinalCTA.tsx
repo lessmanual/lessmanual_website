@@ -47,8 +47,8 @@ export function FinalCTA() {
         <FadeUp delay={0.15}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-10">
             <p className="text-text font-medium text-lg">
-              Jeśli nie pasujemy — powiem Ci to wprost. Ale jeśli Twoja firma ma dobry produkt
-              i chce rosnąć szybciej — ta rozmowa może być najlepszą inwestycją 15 minut w tym kwartale.
+              Jeśli nie pasujemy, powiem Ci to wprost. Ale jeśli Twoja firma ma dobry produkt
+              i chce rosnąć szybciej, ta rozmowa może być najlepszą inwestycją 15 minut w tym kwartale.
             </p>
           </div>
         </FadeUp>
