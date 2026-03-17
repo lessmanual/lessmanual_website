@@ -12,7 +12,7 @@ const SOLUTIONS = [
     title: "Spotkania z decydentami",
     popular: true,
     description:
-      "AI SDR to zautomatyzowany system do prospectingu B2B, który zastępuje pracę handlowca. Automatycznie profiluje decydentów, pisze spersonalizowane wiadomości cold email i prowadzi konwersację aż do umówienia spotkania w Twoim kalendarzu.",
+      "Pipeline Machine to system pay-per-meeting do prospectingu B2B, który zastępuje pracę handlowca. Profiluje decydentów, pisze spersonalizowane wiadomości cold email i umawia spotkania w Twoim kalendarzu. 3 warstwy gwarancji.",
     metrics: [
       { value: "76%", label: "open rate (standard: 20-30%)*" },
       { value: "0 PLN", label: "stałych opłat — płacisz za spotkania" },

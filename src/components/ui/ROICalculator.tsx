@@ -254,7 +254,7 @@ export function ROICalculator() {
 
         {/* Footnote */}
         <p className="text-xs text-text-muted mt-4 leading-relaxed">
-          * AI SDR działa w modelu pay-per-appointment (od 750 PLN/spotkanie). Estymacja
+          * Pipeline Machine działa w modelu pay-per-meeting (od 500 PLN/spotkanie). Estymacja
           zakłada ~3 spotkania/mies. Ceny netto. Każdy produkt wymaga jednorazowego
           wdrożenia (setup).
         </p>

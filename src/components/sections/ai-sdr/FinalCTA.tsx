@@ -9,7 +9,7 @@ import { AI_SDR_CALENDLY_URL, AI_SDR_EMAIL } from "@/lib/ai-sdr-constants";
 const trustElements = [
   { icon: Shield, text: "0 spotkań w 45 dni = zwrot setup" },
   { icon: Banknote, text: "Zero stałych opłat" },
-  { icon: BarChart3, text: "Pierwszy w Polsce: AI SDR + Pay-Per-Meeting" },
+  { icon: BarChart3, text: "Pierwszy w Polsce: Pipeline Machine + Pay-Per-Meeting" },
   { icon: CalendarCheck, text: "Dane z aktywnych kampanii." },
 ];
 

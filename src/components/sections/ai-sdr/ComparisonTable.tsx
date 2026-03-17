@@ -12,7 +12,7 @@ export function ComparisonTable() {
         <FadeUp>
           <SectionHeader
             eyebrow="Porównanie"
-            title="Zatrudnienie handlowca vs AI SDR. Jedno kosztuje 12k miesięcznie. Drugie — zero stałych."
+            title="Handlowiec vs agencja vs Pipeline Machine. Jedno kosztuje 12k miesięcznie. Drugie - zero stałych."
           />
           <p className="text-lg text-text-secondary text-center mb-12">
             Pewnie porównujesz opcje. Ułatwiamy:
@@ -33,7 +33,7 @@ export function ComparisonTable() {
                     Agencja Lead Gen
                   </th>
                   <th className="text-center p-3 text-lg font-sans font-semibold text-accent w-[26%] bg-accent/5 border-t-2 border-x-2 border-accent/20 rounded-t-[6px]">
-                    AI SDR (LessManual)
+                    Pipeline Machine (LessManual)
                   </th>
                 </tr>
               </thead>

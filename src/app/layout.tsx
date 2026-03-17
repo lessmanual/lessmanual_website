@@ -32,10 +32,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://lessmanual.ai"),
   title: "LessManual.ai — Systemy AI dla firm B2B | Automatyzacja pod klucz",
   description:
-    "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. AI SDR, SEO Content, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+    "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Pipeline Machine, SEO Content, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
   keywords: [
     "automatyzacja AI",
-    "AI SDR",
+    "Pipeline Machine",
     "chatbot AI",
     "SEO automatyzacja",
     "generator ofert AI",

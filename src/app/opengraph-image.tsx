@@ -71,7 +71,7 @@ export default async function Image() {
             lineHeight: 1.6,
           }}
         >
-          AI SDR | SEO Content | Chatbot 24/7 | Generator Ofert
+          Pipeline Machine | SEO Content | Chatbot 24/7 | Generator Ofert
         </div>
 
         {/* Bottom bar */}

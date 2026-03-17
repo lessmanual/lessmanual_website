@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CALENDLY_URL, EMAIL } from "@/lib/constants";
 
 const products = [
-  { name: "AI SDR", href: "/oferta/ai-sdr" },
+  { name: "Pipeline Machine", href: "/oferta/ai-sdr" },
   { name: "SEO Content", href: "/oferta/seo-content" },
   { name: "Obsługa Klienta", href: "/oferta/obsluga-klienta" },
   { name: "Generator Ofert", href: "/oferta/generator-ofert" },

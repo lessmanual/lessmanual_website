@@ -21,7 +21,7 @@ export function Urgency() {
         <FadeUp delay={0.1}>
           <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-10">
             <p>
-              Przyjmuję max 3 projekty AI SDR jednocześnie. Każdy klient wymaga dedykowanej
+              Przyjmuję max 3 projekty Pipeline Machine jednocześnie. Każdy klient wymaga dedykowanej
               konfiguracji, testów i optymalizacji. Nie chcę robić tego masowo — chcę robić
               to dobrze.
             </p>

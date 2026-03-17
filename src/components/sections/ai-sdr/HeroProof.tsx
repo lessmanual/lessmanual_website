@@ -3,32 +3,14 @@
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { ProofBar } from "@/components/ui/ProofBar";
+import { AI_SDR_PROOF_METRICS } from "@/lib/ai-sdr-constants";
 
 export function HeroProof() {
   return (
     <section className="py-14 md:py-20 bg-bg border-t border-border">
       <div className="max-w-[1000px] mx-auto px-6">
         <FadeUp>
-          <ProofBar
-            metrics={[
-              {
-                value: "77%",
-                label: "open rate (3x standard)",
-                countTo: 77,
-                suffix: "%",
-              },
-              {
-                value: "6 dni",
-                label: "od maila do umowy",
-                countTo: 6,
-                suffix: " dni",
-              },
-              {
-                value: "0 PLN",
-                label: "stałych kosztów",
-              },
-            ]}
-          />
+          <ProofBar metrics={AI_SDR_PROOF_METRICS} />
         </FadeUp>
 
         <FadeUp delay={0.15}>
@@ -53,7 +35,7 @@ export function HeroProof() {
               </p>
             </div>
             <p className="font-mono text-sm text-accent tracking-wide font-medium text-center">
-              Pierwszy w Polsce: AI SDR z modelem Pay-Per-Meeting.
+              Pierwszy w Polsce: Pipeline Machine z modelem Pay-Per-Meeting.
             </p>
           </div>
         </FadeUp>

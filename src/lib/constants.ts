@@ -38,14 +38,14 @@ export const PRODUCTS = [
     title: "Spotkania z decydentami",
     badge: "NAJPOPULARNIEJSZE",
     description:
-      "System który znajduje Twoich idealnych klientów, pisze spersonalizowane wiadomości i umawia potwierdzone spotkania w Twoim kalendarzu.",
+      "System który umawia spotkania z Twoimi idealnymi klientami. Płacisz tylko za wynik - zero stałych opłat. 3 warstwy gwarancji. Bonusy o wartości do 10,000 PLN w cenie.",
     metrics: [
-      "76% open rate (standard: 20-30%)",
-      "Płacisz tylko za spotkania które się odbędą",
-      "Zero stałych opłat miesięcznych",
+      "76% open rate, 61% positive reply rate",
+      "Pay-per-meeting od 500 PLN. Zero stałych opłat",
+      "3 warstwy gwarancji. 0 spotkań w 45 dni = zwrot setup",
     ],
     bonus:
-      "Bonus: pełna baza danych o Twoich idealnych klientach — wiesz kto otworzył, kto kliknął, kto jest gorący",
+      "Bonus: ICP Workshop (2,500 PLN), Swipe File z 76% open rate (1,500 PLN), Auto-Reply AI (3,000 PLN) - w cenie setupu",
     landingHref: "/oferta/ai-sdr",
   },
   {
@@ -110,8 +110,8 @@ export const COST_TABLE = [
 ];
 
 export const SOCIAL_PROOF_METRICS = [
-  { label: "Open rate", value: "77%", countTo: 77, suffix: "%", benchmark: "20-30%" },
-  { label: "Positive reply rate", value: "60%", countTo: 60, suffix: "%", decimals: 0, benchmark: "5-15%" },
+  { label: "Open rate", value: "76%", countTo: 76, suffix: "%", benchmark: "20-30%" },
+  { label: "Positive reply rate", value: "61%", countTo: 61, suffix: "%", decimals: 0, benchmark: "5-15%" },
   { label: "Od kontaktu do dealu", value: "6 dni", countTo: 6, suffix: " dni", benchmark: "30-90 dni" },
 ];
 
@@ -202,7 +202,7 @@ export const FAQ_ITEMS = [
       },
       {
         q: "Jak szybko zobaczę wyniki?",
-        a: "Wdrożenie trwa 7-21 dni. System obsługi klienta zaczyna odpowiadać od dnia 1. AI SDR — pierwsze spotkania w 3-4 tygodniu. SEO Content — ruch zaczyna rosnąć w 60 dni.",
+        a: "Wdrożenie trwa 7-21 dni. System obsługi klienta zaczyna odpowiadać od dnia 1. Pipeline Machine - pierwsze spotkania w 3-4 tygodniu. SEO Content - ruch zaczyna rosnąć w 60 dni.",
       },
       {
         q: "Czy potrzebuję wiedzy technicznej?",
@@ -215,7 +215,7 @@ export const FAQ_ITEMS = [
     items: [
       {
         q: "Ile to kosztuje?",
-        a: "Zależy od produktu. Inwestycja zaczyna się od 900 PLN/mies — mniej niż 1 dzień pracy pracownika. AI SDR działa w modelu pay-per-meeting — zero stałych opłat, płacisz tylko za spotkania które się odbędą. Szczegóły na stronach poszczególnych produktów.",
+        a: "Zależy od produktu. Inwestycja zaczyna się od 900 PLN/mies - mniej niż 1 dzień pracy pracownika. Pipeline Machine działa w modelu pay-per-meeting - zero stałych opłat, płacisz tylko za spotkania które się odbędą. Szczegóły na stronach poszczególnych produktów.",
       },
       {
         q: "Czy muszę mieć duży budżet żeby zacząć?",
@@ -284,7 +284,7 @@ export const PROCESS_STEPS = [
 export const GUARANTEE_POINTS = [
   "50% zaliczki, reszta po wdrożeniu — nie płacisz za coś czego nie ma",
   "Nie wdrożymy na czas — zwrot setup",
-  "AI SDR: 0 spotkań w 45 dni — zwrot setup",
+  "Pipeline Machine: 0 spotkań w 45 dni - zwrot setup",
   "Wyniki poniżej ustaleń — zwrot kosztów",
   "Chcesz zrezygnować? Jeden mail — bez kar, bez okresu wypowiedzenia",
 ];
@@ -295,7 +295,7 @@ export const VALUE_STACK_SAVINGS = [
   {
     area: "Sprzedaż",
     before: "Handlowiec + agencja + ads = 100-300k PLN/rok",
-    after: "AI SDR od 500 PLN/spotkanie, zero stałych opłat",
+    after: "Pipeline Machine od 500 PLN/spotkanie, zero stałych opłat",
   },
   {
     area: "Obsługa klienta",

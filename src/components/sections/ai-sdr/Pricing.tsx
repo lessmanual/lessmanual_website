@@ -67,8 +67,24 @@ export function Pricing() {
                   ))}
                 </div>
 
+                {"bonuses" in plan && plan.bonuses && plan.bonuses.length > 0 && (
+                  <div className="border-t border-border pt-4 mt-4 mb-4">
+                    <p className="text-sm uppercase tracking-wider text-accent font-semibold mb-2">
+                      Bonusy w cenie {"bonusValue" in plan ? `(wartość ${plan.bonusValue})` : ""}
+                    </p>
+                    <div className="space-y-1.5">
+                      {plan.bonuses.map((bonus: string) => (
+                        <div key={bonus} className="flex items-start gap-2">
+                          <Check size={14} className="text-accent mt-0.5 shrink-0" strokeWidth={2} />
+                          <span className="text-sm text-text-secondary">{bonus}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 <p className="text-base text-text-muted mb-4">{plan.desc}</p>
-                {plan.valueNote && (
+                {"valueNote" in plan && plan.valueNote && (
                   <p className="text-base text-accent mb-4">{plan.valueNote}</p>
                 )}
 
@@ -88,7 +104,7 @@ export function Pricing() {
         {/* Payment terms */}
         <FadeUp delay={0.15}>
           <p className="text-center text-lg text-text-secondary mb-10">
-            <strong className="text-text">50% zaliczki przed startem. 50% na dzień uruchomienia kampanii.</strong>
+            <strong className="text-text">100% płatności setup z góry przed rozpoczęciem prac. Zero stałych opłat miesięcznych.</strong>
           </p>
         </FadeUp>
 

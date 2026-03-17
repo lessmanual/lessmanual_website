@@ -35,7 +35,7 @@ export function About() {
               <div className="space-y-4 text-lg text-text-secondary leading-relaxed">
                 <p>
                   8 lat w logistyce B2B nauczyło mnie jednego: ręczna robota zabija biznes.
-                  AI SDR powstał, bo sam potrzebowałem spotkań. Zamiast zatrudnić handlowca
+                  Pipeline Machine powstał, bo sam potrzebowałem spotkań. Zamiast zatrudnić handlowca
                   za 12k/mies — postawiłem system. Wyniki wyżej to moja kampania, nie teoria.
                 </p>
                 <p>
@@ -47,7 +47,7 @@ export function About() {
               </div>
 
               <div className="flex flex-wrap gap-3 mt-6 mb-8">
-                {["77% open rate", "Deal w 6 dni", "Prowadzę osobiście"].map((badge) => (
+                {["76% open rate", "Deal w 6 dni", "Prowadzę osobiście"].map((badge) => (
                   <span
                     key={badge}
                     className="inline-flex items-center px-3 py-1.5 rounded-full text-base font-medium bg-accent/10 text-accent border border-accent/20"

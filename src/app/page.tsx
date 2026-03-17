@@ -25,7 +25,7 @@ const jsonLd = {
   name: "LessManual.ai",
   url: "https://lessmanual.ai",
   description:
-    "Systemy AI dla firm B2B — AI SDR, SEO Content, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+    "Systemy AI dla firm B2B - Pipeline Machine, SEO Content, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
   email: "kontakt@lessmanual.ai",
   founder: {
     "@type": "Person",
@@ -71,7 +71,7 @@ export default function Home() {
         <HeroProof />
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-sm text-text-muted leading-relaxed">
-            LessManual.ai to polska agencja automatyzacji AI dla firm B2B. Budujemy done-for-you systemy: AI SDR (umawianie spotkań), SEO Content (blog na autopilocie), Obsługa Klienta AI (wszystkie kanały 24/7) i Generator Ofert (wycena w 5 minut). 11 firm obsłużonych, 13 wdrożeń, 5.0 na Google. Gwarancja wyników lub zwrot kosztów.
+            LessManual.ai to polska agencja automatyzacji AI dla firm B2B. Budujemy done-for-you systemy: Pipeline Machine (umawianie spotkań pay-per-meeting), SEO Content (blog na autopilocie), Obsługa Klienta AI (wszystkie kanały 24/7) i Generator Ofert (wycena w 5 minut). 11 firm obsłużonych, 13 wdrożeń, 5.0 na Google. Gwarancja wyników lub zwrot kosztów.
           </p>
         </div>
         <Problem />

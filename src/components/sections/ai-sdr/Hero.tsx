@@ -132,7 +132,7 @@ export function Hero() {
                   className="font-serif leading-[1.05]"
                   style={{ fontSize: "clamp(3.2rem, 7vw, 5rem)" }}
                 >
-                  Zatrudnij AI do umawiania spotkań z Twoimi idealnymi klientami.
+                  Spotkania z decydentami w Twoim kalendarzu. Płacisz tylko za wynik.
                 </motion.h1>
 
                 {/* Subtitle */}
@@ -140,7 +140,7 @@ export function Hero() {
                   variants={fadeUp}
                   className="text-text-secondary text-2xl leading-relaxed max-w-[600px] mt-8"
                 >
-                  System znajduje decydentów, pisze spersonalizowane wiadomości, follow-upuje i umawia spotkania w Twoim kalendarzu. Ty tylko zamykasz.
+                  Pipeline Machine znajduje Twoich idealnych klientów, pisze spersonalizowane wiadomości i umawia potwierdzone spotkania. Zero stałych opłat. 3 warstwy gwarancji. Ty tylko zamykasz.
                 </motion.p>
 
                 {/* CTA */}

@@ -11,8 +11,8 @@ import { AI_SDR_SOCIAL_PROOF_METRICS, AI_SDR_CALENDLY_URL } from "@/lib/ai-sdr-c
 import { REVIEWS } from "@/lib/constants";
 
 const billboardMetrics = [
-  { value: "77%", label: "open rate", benchmark: "standard: 20-30%" },
-  { value: "60%", label: "positive reply rate", benchmark: "standard: 5-15%" },
+  { value: "76%", label: "open rate", benchmark: "standard: 20-30%" },
+  { value: "61%", label: "positive reply rate", benchmark: "standard: 5-15%" },
   { value: "6 dni", label: "do pierwszego deala", benchmark: "standard: 30-90 dni" },
 ];
 
@@ -49,7 +49,7 @@ export function SocialProof() {
           <div className="bg-bg border border-border rounded-[6px] p-3 mb-12">
             <Image
               src="/images/instantly-dashboard.png"
-              alt="Instantly Campaign Dashboard — 476 sent, 77% open rate, 60% positive reply, 12 opportunities, $9,900"
+              alt="Instantly Campaign Dashboard - 476 sent, 76% open rate, 61% positive reply, 12 opportunities, $9,900"
               width={1000}
               height={620}
               className="w-full h-auto rounded-[4px]"
@@ -87,7 +87,7 @@ export function SocialProof() {
             </div>
           </div>
           <p className="text-base text-text-muted text-center mb-12">
-            Dane z kampanii LessManual AI SDR. Kampania w toku — wyniki rosną z każdym tygodniem.
+            Dane z kampanii Pipeline Machine. Kampania w toku - wyniki rosną z każdym tygodniem.
           </p>
         </FadeUp>
 

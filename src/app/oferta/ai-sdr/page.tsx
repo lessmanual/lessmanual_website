@@ -16,6 +16,7 @@ import { ComparisonTable } from "@/components/sections/ai-sdr/ComparisonTable";
 import { ProcessTimeline } from "@/components/sections/ai-sdr/ProcessTimeline";
 import { FAQ } from "@/components/sections/ai-sdr/FAQ";
 import { Guarantee } from "@/components/sections/ai-sdr/Guarantee";
+import { Bonuses } from "@/components/sections/ai-sdr/Bonuses";
 import { Pricing } from "@/components/sections/ai-sdr/Pricing";
 import { Urgency } from "@/components/sections/ai-sdr/Urgency";
 import { FinalCTA } from "@/components/sections/ai-sdr/FinalCTA";
@@ -25,13 +26,13 @@ import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { AI_SDR_FAQ_ITEMS } from "@/lib/ai-sdr-constants";
 
 export const metadata: Metadata = {
-  title: "AI SDR — Spotkania z Decydentami B2B | LessManual.ai",
+  title: "Pipeline Machine - Spotkania z Decydentami B2B | LessManual.ai",
   description:
-    "System AI umawiający spotkania B2B. 77% open rate. Deal w 6 dni. Płacisz per spotkanie — zero stałych opłat. Pierwszy w Polsce AI SDR Pay-Per-Meeting.",
+    "Pipeline Machine umawia spotkania z Twoimi idealnymi klientami. 76% open rate. 61% positive reply. Pay-per-meeting od 500 PLN - zero stałych opłat. 3 warstwy gwarancji.",
   openGraph: {
-    title: "AI SDR — Spotkania z Decydentami B2B | LessManual.ai",
+    title: "Pipeline Machine - Spotkania z Decydentami B2B | LessManual.ai",
     description:
-      "System AI umawiający spotkania B2B. 77% open rate. Deal w 6 dni. Zero stałych opłat.",
+      "Pipeline Machine umawia spotkania B2B. 76% open rate. 61% positive reply. Zero stałych opłat. 3 warstwy gwarancji.",
     url: "https://lessmanual.ai/oferta/ai-sdr",
     siteName: "LessManual.ai",
     locale: "pl_PL",
@@ -39,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI SDR — Spotkania z Decydentami B2B | LessManual.ai",
+    title: "Pipeline Machine - Spotkania z Decydentami B2B | LessManual.ai",
     description:
-      "System AI umawiający spotkania B2B. 77% open rate. Deal w 6 dni. Zero stałych opłat.",
+      "Pipeline Machine umawia spotkania B2B. 76% open rate. 61% positive reply. Zero stałych opłat. 3 warstwy gwarancji.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta/ai-sdr",
@@ -51,9 +52,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "AI SDR - Pay-Per-Meeting",
+  name: "Pipeline Machine - Pay-Per-Meeting",
   description:
-    "System AI umawiający kwalifikowane spotkania B2B. Płacisz tylko za spotkania, które się odbędą.",
+    "System który umawia kwalifikowane spotkania B2B. Płacisz tylko za spotkania, które się odbędą. 3 warstwy gwarancji.",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   provider: {
@@ -93,7 +94,7 @@ const faqSchema = generateFAQSchema(AI_SDR_FAQ_ITEMS);
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: "Strona główna", url: "https://lessmanual.ai" },
   { name: "Oferta", url: "https://lessmanual.ai/oferta" },
-  { name: "AI SDR", url: "https://lessmanual.ai/oferta/ai-sdr" },
+  { name: "Pipeline Machine", url: "https://lessmanual.ai/oferta/ai-sdr" },
 ]);
 
 export default function AISDRPage() {
@@ -124,7 +125,7 @@ export default function AISDRPage() {
         <HeroProof />
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-sm text-text-muted leading-relaxed">
-            AI SDR od LessManual to system pay-per-meeting do umawiania spotkań B2B. AI znajduje idealnych klientów, pisze spersonalizowane cold maile i umawia potwierdzone spotkania z decydentami. 77% open rate, deal w 6 dni. Płacisz od 500 PLN za spotkanie — zero stałych opłat. Gwarancja: 0 spotkań w 45 dni = zwrot setup.
+            Pipeline Machine od LessManual to system pay-per-meeting do umawiania spotkań B2B. System znajduje idealnych klientów, pisze spersonalizowane cold maile i umawia potwierdzone spotkania z decydentami. 76% open rate, 61% positive reply rate, deal w 6 dni. Płacisz od 500 PLN za spotkanie - zero stałych opłat. 3 warstwy gwarancji: 0 spotkań w 45 dni = zwrot setup.
           </p>
         </div>
         <Problem />
@@ -133,6 +134,7 @@ export default function AISDRPage() {
         <Imagine />
         <SocialProof />
         <WhatYouGet />
+        <Bonuses />
         <TargetSegments />
         <SDRROICalculator />
         <ComparisonTable />
@@ -144,7 +146,7 @@ export default function AISDRPage() {
         <FinalCTA />
         <FAQ />
         <div className="text-center text-sm text-text-muted py-6">
-          Ostatnia aktualizacja: luty 2026
+          Ostatnia aktualizacja: marzec 2026
         </div>
       </main>
       <Footer />

@@ -263,19 +263,19 @@ export function SDRROICalculator() {
             <div className="bg-white border border-border rounded-[6px] p-6">
               <h4 className="font-serif text-xl mb-3">Software house, avg deal 50k PLN</h4>
               <div className="space-y-2 text-lg text-text-secondary">
-                <p><span className="text-text-muted">Setup:</span> 3,500 PLN</p>
-                <p><span className="text-text-muted">Koszt:</span> 5 spotkań x 1,250 PLN = 6,250 PLN/mies</p>
+                <p><span className="text-text-muted">Setup:</span> 4,500 PLN (FULL PIPELINE)</p>
+                <p><span className="text-text-muted">Koszt:</span> 5 spotkań x 1,500 PLN = 7,500 PLN/mies</p>
                 <p><span className="text-text-muted">Przychód:</span> 1 klient x 50,000 PLN = 50,000 PLN</p>
-                <p className="font-mono font-semibold text-accent">ROI: 8x</p>
+                <p className="font-mono font-semibold text-accent">ROI: 6.7x</p>
               </div>
             </div>
             <div className="bg-white border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-xl mb-3">Agencja marketingowa, avg deal 20k PLN</h4>
+              <h4 className="font-serif text-xl mb-3">Agencja rekrutacyjna, avg deal 20k PLN</h4>
               <div className="space-y-2 text-lg text-text-secondary">
-                <p><span className="text-text-muted">Setup:</span> 2,500 PLN</p>
-                <p><span className="text-text-muted">Koszt:</span> 5 spotkań x 750 PLN = 3,750 PLN/mies</p>
+                <p><span className="text-text-muted">Setup:</span> 3,000 PLN (COLD START)</p>
+                <p><span className="text-text-muted">Koszt:</span> 5 spotkań x 1,000 PLN = 5,000 PLN/mies</p>
                 <p><span className="text-text-muted">Przychód:</span> 1 klient x 20,000 PLN = 20,000 PLN</p>
-                <p className="font-mono font-semibold text-accent">ROI: 5.3x</p>
+                <p className="font-mono font-semibold text-accent">ROI: 4x</p>
               </div>
             </div>
           </div>

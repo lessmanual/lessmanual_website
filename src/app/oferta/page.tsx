@@ -8,11 +8,11 @@ import { generateItemListSchema, generateBreadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Oferta — AI dla Twojej Firmy | LessManual.ai",
   description:
-    "4 systemy AI pod klucz: AI SDR, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów. Wdrożenie w 7-21 dni.",
+    "4 systemy AI pod klucz: Pipeline Machine, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów. Wdrożenie w 7-21 dni.",
   openGraph: {
     title: "Oferta — AI dla Twojej Firmy | LessManual.ai",
     description:
-      "4 systemy AI pod klucz: AI SDR, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+      "4 systemy AI pod klucz: Pipeline Machine, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
     url: "https://lessmanual.ai/oferta",
     siteName: "LessManual.ai",
     locale: "pl_PL",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Oferta — AI dla Twojej Firmy | LessManual.ai",
     description:
-      "4 systemy AI pod klucz: AI SDR, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+      "4 systemy AI pod klucz: Pipeline Machine, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const itemListSchema = generateItemListSchema([
   {
-    name: "AI SDR — Spotkania z Decydentami B2B",
+    name: "Pipeline Machine - Spotkania z Decydentami B2B",
     url: "https://lessmanual.ai/oferta/ai-sdr",
     description:
       "System AI umawiający kwalifikowane spotkania B2B. Pay-per-meeting od 500 PLN.",
