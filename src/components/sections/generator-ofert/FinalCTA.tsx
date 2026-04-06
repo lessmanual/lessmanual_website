@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/Button";
 import { GEN_OFERT_CALENDLY_URL, GEN_OFERT_EMAIL } from "@/lib/generator-ofert-constants";
 
 const trustElements = [
-  { icon: Shield, text: "100% zwrot setup w 14 dni" },
-  { icon: Banknote, text: "30 dni trial" },
-  { icon: BarChart3, text: "ROI 200% w 90 dni" },
-  { icon: CalendarCheck, text: "7-21 dni do działającego systemu" },
+  { icon: Shield, text: "100% zwrot setup jeśli nie wdrożymy w 14 dni" },
+  { icon: Banknote, text: "30 dni trial - nie działa, rezygnujesz bez konsekwencji" },
+  { icon: BarChart3, text: "ROI 200% w 90 dni lub następny miesiąc gratis" },
+  { icon: CalendarCheck, text: "7-14 dni do działającego systemu" },
 ];
 
 export function FinalCTA() {
@@ -20,11 +20,11 @@ export function FinalCTA() {
         <FadeUp>
           <div className="text-center mb-10">
             <h2 className="font-serif text-text mb-6">
-              Ile godzin tygodniowo tracisz na wyceny?
+              Przestań tracić klientów bo &ldquo;wycena będzie jutro&rdquo;
             </h2>
             <p className="text-text-secondary text-xl leading-relaxed max-w-[680px] mx-auto">
-              15 minut. Pokażemy Ci, jak system wygląda na żywo, policzymy Twój ROI i ustalimy,
-              czy to ma sens dla Twojego biznesu. Bez zobowiązań.
+              Twoja konkurencja odpowiada w godzinę. Ty możesz odpowiadać w 5 minut. Automatycznie. 24/7.
+              30 minut konsultacji. Pokażę Ci jak to wygląda na żywo dla Twojej branży. Zero zobowiązań.
             </p>
           </div>
         </FadeUp>
@@ -32,11 +32,10 @@ export function FinalCTA() {
         <FadeUp delay={0.1}>
           <div className="text-center mb-10">
             <Button href={GEN_OFERT_CALENDLY_URL} external>
-              Chcę system, który robi oferty za mnie
+              Umów bezpłatną konsultację - 30 min
             </Button>
             <p className="mt-5 text-text-muted text-base max-w-[520px] mx-auto">
-              Jeśli pasujemy, startujemy w 7-21 dni. Jeśli nie, wyjdziesz z darmową
-              analizą Twojego procesu wycen i konkretnymi wskazówkami jak go usprawnić.
+              Maksymalnie 3 nowe projekty miesięcznie. Ograniczona dostępność - solo founder, done-for-you delivery.
             </p>
           </div>
         </FadeUp>

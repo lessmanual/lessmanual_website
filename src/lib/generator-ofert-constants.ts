@@ -4,9 +4,9 @@ export const GEN_OFERT_EMAIL = "kontakt@lessmanual.ai";
 export const GEN_OFERT_ROTATOR_WORDS = ["automatycznie", "bez Excela", "z Twoim logo"];
 
 export const GEN_OFERT_PROOF_METRICS = [
-  { value: "96%", label: "mniej czasu (2h → 5 min)", countTo: 96, suffix: "%" },
-  { value: "+25-40%", label: "win rate (szybsza oferta wygrywa)", countTo: 40, suffix: "%" },
-  { value: "7-21 dni", label: "do działającego systemu", countTo: 21, suffix: " dni" },
+  { value: "96%", label: "oszczędności czasu (2h → 5 min)", countTo: 96, suffix: "%" },
+  { value: "+25-40%", label: "win rate dzięki szybkości odpowiedzi", countTo: 40, suffix: "%" },
+  { value: "~300%", label: "ROI w pierwszym kwartale", countTo: 300, suffix: "%" },
 ];
 
 export const GEN_OFERT_PROOF_META = "13 wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
@@ -14,19 +14,19 @@ export const GEN_OFERT_PROOF_META = "13 wdrożeń | 5.0 na Google | Max 3 projek
 export const GEN_OFERT_COST_TABLE = [
   {
     task: "20 ofert miesięcznie x 2 godziny",
-    result: "40 godzin straconych na wyceny",
+    result: "40 godzin straconych na wyceny - cały tydzień pracy",
   },
   {
-    task: "40 godzin",
-    result: "cały tydzień pracy. Miesięcznie. Na same oferty.",
+    task: "Klient wysyła zapytanie do 3 firm",
+    result: "kto odpowie pierwszy, ten wygrywa - Ty odpowiadasz 'jutro'",
   },
   {
-    task: "40h x Twoja stawka godzinowa",
-    result: "tyle tracisz co miesiąc (z systemem to 1h 40 min)",
+    task: "Nie wiesz ile ofert wysłałeś",
+    result: "nie wiesz które otworzył klient, nie wiesz dlaczego 70% nie wraca",
   },
   {
-    task: "Każdy klient, który nie wrócił",
-    result: "bo oferta przyszła za późno",
+    task: "Handlowiec 'zapomniał' zadzwonić",
+    result: "pipeline to czarna dziura - zero kontroli nad procesem",
   },
 ];
 
@@ -54,23 +54,23 @@ export const GEN_OFERT_AGITATION_COSTS = [
 export const GEN_OFERT_SOLUTION_STEPS = [
   {
     num: 1,
-    title: "Klient sam wycenia na Twojej stronie",
-    desc: "Klient wchodzi na chat lub formularz na Twojej stronie. Sam wybiera co potrzebuje, wymiary, materiały, zakres prac. Koniec z telefonami 'a jaki wymiar?'. W STARTER to link do chatu, w GROWTH to dedykowana aplikacja na Twojej domenie (np. wyceny.twojafirma.pl).",
+    title: "Klient wchodzi na Twój konfigurator",
+    desc: "Link na stronie, QR code w showroomie, lub embed widget. Klient wybiera parametry - metraż, materiały, zakres. Bez rejestracji, bez formularzy 'zostaw numer to oddzwonimy'.",
   },
   {
     num: 2,
-    title: "AI wycenia w sekundy",
-    desc: "Baza Twoich produktów i usług (RAG). System zna Twoje ceny, marże, rabaty. Kalkuluje w sekundy to, co Tobie zajmuje godzinę. Od GROWTH automatycznie generuje 3 warianty cenowe (Basic / Standard / Premium), żeby klient miał wybór.",
+    title: "AI generuje ofertę na żywo",
+    desc: "System zna Twój cennik, materiały, marże. Na podstawie inputu klienta dobiera szablon, liczy warianty cenowe (Basic/Standard/Premium), generuje profesjonalny PDF z Twoim logo.",
   },
   {
     num: 3,
-    title: "Profesjonalny PDF trafia do klienta",
-    desc: "Z Twoim logo, Twoimi kolorami, Twoim stylem. Nie generyczny szablon z 2005 roku. Wygląda, jakby robiła to agencja za 5 tysięcy. Klient dostaje ofertę na maila automatycznie.",
+    title: "Oferta ląduje u klienta i u Ciebie",
+    desc: "Klient dostaje PDF na maila w ciągu minuty. Ty dostajesz powiadomienie + pełny kontekst w CRM. Zero ręcznej roboty.",
   },
   {
     num: 4,
-    title: "System pilnuje follow-upu za Ciebie",
-    desc: "Od GROWTH automatyczny follow-up po 3 i 7 dniach. Od SCALE tracking otwarć: wiesz KIEDY klient otworzył ofertę. Nie musisz pamiętać, system pilnuje za Ciebie.",
+    title: "Follow-up idzie automatycznie",
+    desc: "Po 3 dniach system wysyła follow-up. Po 7 dniach kolejny. Handlowiec dostaje alert gdy klient otworzy ofertę. Nie tracisz leadów bo ktoś 'zapomniał'.",
   },
 ];
 
@@ -186,41 +186,35 @@ export const GEN_OFERT_COMPARISON_TABLE = {
     {
       label: "Czas do działania",
       saas: "Tygodnie/miesiące (sam musisz wszystko zrobić)",
-      ours: "7-21 dni (my robimy, Ty zatwierdzasz)",
+      ours: "7-14 dni (my robimy, Ty zatwierdzasz)",
     },
   ],
 };
 
 export const GEN_OFERT_PROCESS_STEPS = [
   {
+    week: "Onboarding (30 minut)",
+    title: "Przesyłasz cennik, szablony, FAQ",
+    desc: "Przesyłasz cennik, szablony ofert, FAQ. Definiujesz zmienne (co klient może wybrać). Określasz warianty cenowe i marże. To wszystko co od Ciebie potrzebujemy na start.",
+    yourTime: "30 minut",
+  },
+  {
     week: "Tydzień 1",
-    title: "Zbieramy dane",
-    desc: "Rozmawiamy o Twoich produktach, usługach, cenach. Zbieramy cenniki, katalogi, materiały. Projektujemy logikę wycen, co od czego zależy, jakie warianty, jakie marże.",
-    yourTime: "2-3 godziny na rozmowy",
+    title: "Konfiguracja i budowa",
+    desc: "Budujemy konfigurator pod Twój cennik. Generujemy szablony PDF z Twoim brandingiem. Konfigurujemy bazę wiedzy RAG. Ustawiamy integracje (CRM, maile, follow-up).",
+    yourTime: "0 minut",
   },
   {
     week: "Tydzień 1-2",
-    title: "Budujemy konfigurator",
-    desc: "Tworzymy szablony ofert w Twoim stylu, z Twoim logo, kolorami, formatem. Budujemy bazę produktów/usług (RAG). Konfigurujemy chat wycenowy lub dedykowaną aplikację. Ustawiamy integracje.",
-    yourTime: "1h na review szablonów",
+    title: "Testy na Twoich danych",
+    desc: "Testujemy system na 3-5 scenariuszach z Twoich prawdziwych wycen. Sprawdzamy poprawność kalkulacji. Wprowadzamy poprawki. Dostajesz link testowy do sprawdzenia.",
+    yourTime: "30 minut na testy",
   },
   {
-    week: "Tydzień 2-3",
-    title: "Testujemy na prawdziwych wycenach",
-    desc: "Testujemy system na realnych scenariuszach z Twojej firmy. Sprawdzamy poprawność kalkulacji. Poprawiamy detale, bo diabeł tkwi w szczegółach.",
-    yourTime: "1-2h na testy",
-  },
-  {
-    week: "Tydzień 3",
-    title: "Live + szkolenie",
-    desc: "Uruchamiamy na produkcji. Szkolimy Ciebie i zespół, 1h szkolenia, video do odtworzenia. Konfigurujemy embed na stronie lub QR code na showroom.",
-    yourTime: "1-2h",
-  },
-  {
-    week: "Po wdrożeniu",
-    title: "Optymalizacja i rozwój",
-    desc: "Cotygodniowy raport z analizą wycen (od GROWTH). Dodajemy nowe produkty/usługi. Rozwijamy system, nowe szablony, integracje. Upsell: Voice Agent na tej samej bazie wiedzy.",
-    yourTime: "5 min/tydzień",
+    week: "Tydzień 2 (max 14 dni)",
+    title: "Go live",
+    desc: "Embed na stronie lub link do konfiguratora. Integracja z CRM aktywna. Follow-upy ustawione. Dostajesz instrukcję i nagranie wideo jak obsługiwać system.",
+    yourTime: "0 minut",
   },
 ];
 
@@ -270,7 +264,7 @@ export const GEN_OFERT_SETUP_PLANS = [
     subtitle: "Konfigurator wszędzie",
     targetAudience: "Full stack, automatyzacja całego procesu",
     setup: "14,000",
-    mrr: "2,000",
+    mrr: "1,800",
     features: [
       "Wszystko z GROWTH +",
       "Unlimited szablonów PDF",
@@ -343,57 +337,44 @@ export const GEN_OFERT_INDUSTRY_VARIANTS = {
 
 export const GEN_OFERT_FAQ_ITEMS = [
   {
-    category: "O produkcie i wdrożeniu",
+    category: "Wdrożenie i działanie",
     items: [
-      {
-        q: "Mój biznes jest za skomplikowany na automatyzację ofert.",
-        a: "80% logiki wycen jest identyczna w każdej branży: dane wejściowe, kalkulacja, szablon. Te 80% automatyzujemy. Pozostałe 20% customizujemy dokładnie pod Twoją specyfikę. Dlatego robimy to done-for-you, nie dajemy Ci narzędzia i 'radzi sobie'. Siedzimy nad Twoimi cennikami, aż system liczy dokładnie tak jak Ty.",
-      },
-      {
-        q: "Czym się różni STARTER od GROWTH?",
-        a: "STARTER to chat wycenowy (link, który wysyłasz klientowi lub osadzasz na stronie). GROWTH to profesjonalna aplikacja na Twojej domenie (np. wyceny.twojafirma.pl) z 3 wariantami cenowymi, follow-upem, CRM i cotygodniowym raportem. STARTER to szybki start, GROWTH to pełny system.",
-      },
       {
         q: "Ile trwa wdrożenie?",
-        a: "STARTER: 7-10 dni roboczych. GROWTH: 10-14 dni. SCALE: 14-21 dni. Twoje zaangażowanie to 5-7 godzin w ciągu całego wdrożenia. Resztę robimy my. A jeśli nie wdrożymy w terminie, zwracamy 100% setup. Na piśmie.",
+        a: "7-14 dni od onboardingu. Onboarding to 30 minut - przesyłasz cennik, szablony, FAQ. Resztę ogarniamy my.",
       },
       {
-        q: "Czy to zadziała w mojej branży?",
-        a: "Jeśli robisz wyceny ofertowe ręcznie, tak. Budujemy warianty branżowe dla OZE, mebli na wymiar, firm remontowo-budowlanych. Ale system działa wszędzie tam, gdzie wycena wymaga kalkulacji: klimatyzacje, okna, ogrodzenia, wyposażenie biur. Napisz, powiemy czy możemy pomóc.",
-      },
-    ],
-  },
-  {
-    category: "O płatnościach i ryzyku",
-    items: [
-      {
-        q: "Moi klienci wolą oferty przygotowane ręcznie, indywidualnie.",
-        a: "Klienci wolą szybkie oferty. Profesjonalny PDF w 5 minut vs ręczna wycena w 2 godziny, klient nie widzi różnicy w jakości. Widzi, że dostał ofertę tego samego dnia zamiast za 3 dni. A jeśli chcesz dodać osobistą notatkę, system generuje bazę, Ty dodajesz ludzki touch w 1 minutę.",
+        q: "Czy muszę mieć stronę internetową?",
+        a: "Nie. STARTER działa jako link (możesz wysyłać go klientom mailem, na WhatsAppie, gdziekolwiek). Od GROWTH masz dedykowaną subdomenę.",
       },
       {
-        q: "Za drogo.",
-        a: "Policz: 20 ofert miesięcznie x 2 godziny = 40 godzin. 40h x Twoja stawka godzinowa = ile? Najczęściej wychodzi 4,000-6,000 PLN miesięcznie straconego czasu. U nas setup zwraca się w niecałe 2 miesiące. A system pracuje na Ciebie latami. Pytanie nie brzmi 'czy mnie na to stać'. Pytanie brzmi 'czy stać mnie na to, żeby tego NIE mieć'.",
+        q: "Ile kosztuje utrzymanie?",
+        a: "Abonament miesięczny (800-1,800 PLN/mies w zależności od pakietu). W cenie wsparcie techniczne, aktualizacje, hosting. Zero ukrytych kosztów.",
       },
       {
-        q: "Ktoś mnie już raz oszukał z AI.",
-        a: "Rozumiem. Dlatego: 50% zaliczki na start, reszta po wdrożeniu. Jeśli nie wdrożymy w 14 dni, 100% zwrot setup. 30 dni trial, nie działa, nie płacisz reszty. 5.0 na Google. Nie mamy czego się bać, bo wiemy, że to działa.",
+        q: "Czy system się integruje z moim CRM?",
+        a: "Od pakietu GROWTH - tak. Wspieramy większość popularnych CRM (Pipedrive, HubSpot, Firmao). Niestandardowe integracje w pakiecie SCALE.",
       },
     ],
   },
   {
-    category: "Kwestie techniczne",
+    category: "Cennik i techniczne",
     items: [
       {
-        q: "Czy klient musi coś instalować żeby skorzystać z konfiguratora?",
-        a: "Nie. Klient wchodzi na link lub na Twoją stronę i od razu może wycenić usługę. Bez rejestracji, bez logowania, bez instalacji. W STARTER to chat, w GROWTH to dedykowana aplikacja webowa. Działa na telefonie, tablecie i komputerze.",
+        q: "A co jeśli mój cennik jest skomplikowany?",
+        a: "Im bardziej skomplikowany cennik, tym więcej zyskujesz na automatyzacji. System obsługuje cenniki z dziesiątkami zmiennych - metraż, materiały, wykończenia, opcje dodatkowe. Konfigurujemy pod Twoją specyfikę.",
       },
       {
-        q: "A co z RODO i bezpieczeństwem danych?",
-        a: "Dane przetwarzane na serwerach w EU. RODO wbudowane. Twoje dane nie trenują żadnego modelu AI. Pełna dokumentacja i umowa DPA przy podpisaniu. Możemy podpisać NDA, zanim pokażesz nam cenniki.",
+        q: "Czy klient musi się rejestrować?",
+        a: "Nie. Klient podaje email na końcu (żeby dostać ofertę PDF) - to wszystko. Bez rejestracji, bez kont, bez barier.",
       },
       {
-        q: "Mogę później dodać Voice Agenta do tego systemu?",
-        a: "Tak. Voice Agent podpina się pod tę samą bazę wiedzy (RAG). Klient dzwoni, agent wycenia przez telefon i wysyła PDF na maila. Dodatkowy setup od 3,500 PLN + 1,200 PLN/mies. Ta sama logika wycen, inny interfejs.",
+        q: "Co z danymi moich klientów?",
+        a: "Dane na serwerach w EU (GCP europe-west). RODO compliant. Twoje dane to Twoje dane - pełny eksport w dowolnym momencie.",
+      },
+      {
+        q: "Mogę zmienić pakiet?",
+        a: "Tak. Upgrade w dowolnym momencie (dopłata proporcjonalna). Downgrade z końcem okresu rozliczeniowego.",
       },
     ],
   },
@@ -401,19 +382,15 @@ export const GEN_OFERT_FAQ_ITEMS = [
 
 export const GEN_OFERT_GUARANTEES = [
   {
-    title: "100% zwrot setup, jeśli nie wdrożymy w 14 dni",
-    desc: "Obiecujemy terminy i się ich trzymamy. Jeśli nie dostarczymy w ustalonym czasie, oddajemy cały setup. Bez 'ale', bez 'bo klient nie odpisał'. Nasz problem.",
+    title: "Gwarancja wdrożenia: 100% zwrot setup jeśli nie wdrożymy w 14 dni",
+    desc: "Nie wdrożymy w 14 dni = 100% zwrot setup. Bez pytań. Przelew w 7 dni.",
   },
   {
     title: "30 dni trial",
-    desc: "Używasz systemu przez 30 dni. Jeśli nie widzisz wartości, nie płacisz reszty za setup. Bez negocjacji, bez przekonywania. Wystarczy jeden mail.",
+    desc: "Przez 30 dni testujesz system na żywo z prawdziwymi klientami. Nie działa? Rezygnujesz bez konsekwencji.",
   },
   {
-    title: "ROI 200% w 90 dni",
-    desc: "Jeśli system nie przyniesie Ci co najmniej dwukrotności tego, co płacisz, następny miesiąc gratis. Mierzymy razem. Liczymy razem. Dane są Twoje, widzisz wszystko.",
-  },
-  {
-    title: "Rezygnacja bez kar",
-    desc: "Jeden mail, koniec współpracy. Zero okresu wypowiedzenia, zero kar. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.",
+    title: "Gwarancja ROI: 200% w 90 dni lub następny miesiąc gratis",
+    desc: "ROI 200% w 90 dni lub następny miesiąc gratis. Liczone twardo na danych z systemu.",
   },
 ];

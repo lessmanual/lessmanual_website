@@ -15,13 +15,12 @@ export function Solution() {
       <div className="max-w-[800px] mx-auto px-6">
         <FadeUp>
           <SectionHeader
-            eyebrow="Rozwiązanie"
-            title="System Obsługi Klienta LessManual - odpowiada za Ciebie. 24/7. Na każdym kanale."
+            eyebrow="Jak to rozwiązujemy"
+            title="Stawiamy AI chatbota, który zna Twoją firmę lepiej niż nowy pracownik."
           />
           <p className="text-text-secondary text-center mb-12 leading-relaxed">
-            Wytrenowany na wiedzy Twojej firmy. Wie tyle co Twój najlepszy
-            pracownik, ale nigdy nie wymyśla odpowiedzi, bo korzysta TYLKO
-            z Twoich danych.
+            Wytrenowany na Twoim FAQ, regulaminie, cenniku. Odpowiada na stronie,
+            WhatsAppie, mailu i telefonie. Z jednego dashboardu.
           </p>
         </FadeUp>
 
@@ -50,18 +49,17 @@ export function Solution() {
 
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 md:p-8 mb-8">
-            <h3 className="font-serif text-xl mb-3">Technologia RAG</h3>
-            <p className="text-text-secondary leading-relaxed">
-              System odpowiada <strong className="text-text">WYŁĄCZNIE</strong> na
-              podstawie Twoich danych. Nie szuka w internecie. Nie wymyśla. Nie
-              zgaduje. Jeśli nie zna odpowiedzi, mówi wprost i przekazuje do
-              konsultanta.
-            </p>
+            <h3 className="font-serif text-xl mb-3">Jak wygląda proces</h3>
+            <ol className="text-text-secondary leading-relaxed space-y-2 list-decimal list-inside">
+              <li>Dajesz nam FAQ i materiały firmy</li>
+              <li>My trenujemy bota i ustawiamy kanały</li>
+              <li>W 14 dni system jest live</li>
+              <li>Ty patrzysz na dashboard i widzisz ile zapytań obsłużył bot</li>
+            </ol>
           </div>
 
           <p className="text-text font-medium text-center mb-8">
-            Jeden dashboard na wszystko. Chat, WhatsApp, email, telefon.
-            Wszystkie kanały w jednym miejscu.
+            Done-for-you. Daj FAQ, my robimy resztę.
           </p>
 
           <div className="text-center">

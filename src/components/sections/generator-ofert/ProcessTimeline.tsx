@@ -13,7 +13,7 @@ export function ProcessTimeline() {
         <FadeUp>
           <SectionHeader
             eyebrow="Proces"
-            title="Od startu do działającego systemu w 7-21 dni"
+            title="Od startu do działającego systemu w 7-14 dni"
           />
         </FadeUp>
 
@@ -56,16 +56,16 @@ export function ProcessTimeline() {
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center mb-8">
             <p className="text-text font-medium">
-              Łączne zaangażowanie z Twojej strony: ~5-7 godzin w ciągu całego wdrożenia.
+              Łączne zaangażowanie z Twojej strony: ~1 godzina w ciągu całego wdrożenia.
             </p>
             <p className="text-text-secondary text-base mt-1">
-              Resztę robimy my. Ty w tym czasie robisz to, co robisz najlepiej, prowadzisz firmę.
+              30 minut onboarding + 30 minut testy. Resztę robimy my.
             </p>
           </div>
 
           <div className="text-center">
             <Button href={GEN_OFERT_CALENDLY_URL} external>
-              Chcę system w 7-21 dni
+              Chcę system w 7-14 dni
             </Button>
           </div>
         </FadeUp>

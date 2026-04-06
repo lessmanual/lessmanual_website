@@ -15,23 +15,23 @@ export function Problem() {
         <FadeUp>
           <SectionHeader
             eyebrow="Problem"
-            title="Odpowiadasz na te same pytania 30 razy dziennie?"
+            title="Znasz to?"
           />
         </FadeUp>
 
         <FadeUp delay={0.1}>
           <div className="text-text-secondary leading-relaxed mb-10 space-y-4">
             <p>
-              Znasz to. Poniedziałek, 8:00 rano. Otwierasz maila. 47 nowych
-              wiadomości. Połowa to pytania, na które odpowiadałeś wczoraj.
-              I przedwczoraj.
+              O 3 w nocy ktoś pisze na WhatsAppie. Mail o 22:00. Telefon w weekend.
+              Nikt nie odpowiada. Klient idzie do konkurencji, bo tam odpisali szybciej.
             </p>
             <p>
-              &quot;Ile kosztuje?&quot; &quot;Czy macie na stanie?&quot; &quot;Jak długo trwa
-              realizacja?&quot; Te same pytania. Dzień w dzień.
+              &quot;Gdzie moja paczka?&quot; &quot;Czy macie wolne terminy?&quot; &quot;Ile kosztuje?&quot;
+              70% zapytań to FAQ. Twoi ludzie tracą 30 godzin tygodniowo na kopiuj-wklej.
             </p>
             <p>
-              A jak ktoś napisze o 22:00? Odpowiedź dostanie rano. Albo wcale.
+              Etat obsługi to 8,000-9,000 PLN miesięcznie. I tak nie pracuje 24/7.
+              A jak weźmie L4 w szczycie sezonu, jesteś w punkcie wyjścia.
             </p>
           </div>
         </FadeUp>
@@ -53,9 +53,9 @@ export function Problem() {
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] px-6 py-4 text-center">
             <p className="text-text font-medium">
-              Problem nie jest w tym, że masz za mało ludzi. Problem jest w tym,
-              że Twoi ludzie tracą godziny na robotę, którą system zrobiłby
-              w sekundy.
+              Mail się rozjeżdża, WhatsApp to chaos, telefon dzwoni w pustkę.
+              Tracisz klientów nie dlatego, że Twój produkt jest gorszy - tylko
+              dlatego, że nie odpowiadasz wystarczająco szybko.
             </p>
           </div>
 

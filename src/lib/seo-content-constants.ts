@@ -14,23 +14,23 @@ export const SEO_PROOF_META = "5-14 dni do startu | 30 dni trial | Max 3 projekt
 export const SEO_PROBLEM_BULLETS = [
   {
     num: "01",
-    title: "Copywriter za 500 PLN/artykuł",
-    desc: "Potrzebujesz 20 wpisów miesięcznie. To 10,000 PLN. Za sam content. Bez strategii, bez SEO, bez publikacji.",
+    title: "Brak czasu na content",
+    desc: "Ostatni wpis na blogu? Nie pamiętasz. Bo prowadzenie firmy to nie siedzenie i pisanie artykułów. Masz ważniejsze rzeczy na głowie - sprzedaż, klientów, produkt. Tymczasem konkurencja publikuje co tydzień i zbiera leady, które powinny trafiać do Ciebie.",
   },
   {
     num: "02",
-    title: "Pisać samemu",
-    desc: "Jeden porządny artykuł SEO = 4-6 godzin. Razy 20 = 100 godzin miesięcznie. Masz tyle wolnego czasu?",
+    title: "Copywriter = drogi i wolny",
+    desc: "Dobry copywriter kosztuje 5-8 tys. PLN miesięcznie za 8-10 artykułów. Plus management - briefy, poprawki, deadline'y. A jak odejdzie, zaczynasz od zera. Freelancerzy? Jeden pisze dobrze, następny tragicznie. Loteria.",
   },
   {
     num: "03",
-    title: "Narzędzia SaaS (Surfer, Jasper, ChatGPT)",
-    desc: "Narzędzia są. Ale kto zrobi keyword research? Kto ustawi klastry tematyczne? Kto opublikuje? Kto sprawdzi pozycje? Ty. Sam. Między wszystkim innym.",
+    title: "Zero strategii SEO",
+    desc: "Nawet jak coś napiszesz, to Google tego nie widzi. Bo artykuł bez keyword research, bez internal linking, bez klastrów tematycznych to tekst w próżni. Jak ulotka wrzucona do wiatru.",
   },
   {
     num: "04",
-    title: "Zero artykułów = zero ruchu",
-    desc: "Płacisz za każde kliknięcie. Wyłączasz reklamy, ruch spada do zera. A konkurencja? Publikuje regularnie i zbiera ruch za darmo.",
+    title: "Blog leży, konkurencja rośnie",
+    desc: "Efekt? Blog leży odłogiem. Konkurencja rośnie w Google. A Ty dalej polegasz na rekomendacjach i jednym kanale pozyskiwania klientów.",
   },
 ];
 
@@ -59,44 +59,47 @@ export const SEO_AGITATION_STATS = [
 export const SEO_SOLUTION_STEPS = [
   {
     num: 1,
-    title: "Keyword research + strategia",
-    desc: "Analizujemy Twoją branżę. Znajdujemy frazy, na które szukają Twoi klienci. Budujemy klastry tematyczne, żeby Google widział Cię jako eksperta, nie autora losowych wpisów. Sprawdzamy konkurencję: na co rankują, czego im brakuje. Tam wchodzimy.",
+    title: "Keyword Research",
+    desc: "Analizujemy Twoją branżę, konkurencję i frazy, które realnie przynoszą ruch. Nie losowe tematy - precyzyjna strategia oparta na danych. Budujesz klastry tematyczne, które Google traktuje poważnie.",
   },
   {
     num: 2,
-    title: "Produkcja contentu (AI + Human)",
-    desc: "System generuje 10-30 artykułów miesięcznie. Każdy zoptymalizowany pod SEO: meta tagi, nagłówki H1-H3, linkowanie wewnętrzne, odpowiednia długość. Akceptujesz każdy artykuł przed publikacją, albo dajesz full auto. Twoja decyzja.",
+    title: "AI Content Agent pisze",
+    desc: "Nasz agent generuje artykuły dopasowane do Twojej niszy. Nie generyczny bełkot z ChatGPT - treści napisane pod SEO, z nagłówkami, meta opisami, internal linkami. Jak redakcja, ale bez redakcji.",
   },
   {
     num: 3,
-    title: "Publikacja + monitoring (Google i AI)",
-    desc: "Artykuły lądują bezpośrednio na Twoim blogu. Monitorujemy pozycje w Google. Optymalizujemy to, co nie rankuje. Skalujemy to, co przynosi wyniki. Bonus: artykuły pisane w formacie, który cytują ChatGPT, Gemini i Perplexity, structured data, Q&A, konkretne dane. Jedna inwestycja, dwa kanały widoczności.",
+    title: "Human-in-the-Loop (opcjonalnie)",
+    desc: "Chcesz zatwierdzać przed publikacją? Dostajesz draft do review. Nie chcesz? Lecimy full auto. Ty decydujesz ile kontroli potrzebujesz.",
+  },
+  {
+    num: 4,
+    title: "Publikacja na Twoim blogu",
+    desc: "Artykuły lądują bezpośrednio na Twojej stronie. Zoptymalizowane, zlinkowane, gotowe do indeksacji. Ty nie robisz nic.",
   },
 ];
 
 export const SEO_DELIVERABLES_TABLE = {
   headers: ["Element", "STARTER", "GROWTH", "SCALE"],
   rows: [
-    { label: "Keyword research + strategia", starter: true, growth: true, scale: true },
-    { label: "Artykuły SEO/mies", starter: "10", growth: "20", scale: "30 (full auto)" },
+    { label: "Keyword research", starter: true, growth: true, scale: true },
+    { label: "Artykuły SEO/mies", starter: "10", growth: "20", scale: "30" },
     { label: "Klastry tematyczne", starter: "1", growth: "3", scale: "Unlimited" },
-    { label: "Optymalizacja on-page (meta, H1-H3, linki)", starter: true, growth: true, scale: true },
-    { label: "Twoja akceptacja przed publikacją", starter: true, growth: true, scale: true },
-    { label: "Publikacja na blogu", starter: false, growth: true, scale: true },
+    { label: "Podstawowe SEO (on-page)", starter: true, growth: true, scale: true },
+    { label: "Publikacja na blogu", starter: true, growth: true, scale: true },
     { label: "Tracking pozycji w Google", starter: false, growth: true, scale: true },
-    { label: "Miesięczny raport SEO", starter: false, growth: true, scale: true },
-    { label: "Kalendarz treści 6 mies", starter: false, growth: "2,000 PLN w cenie", scale: true },
-    { label: "Miesięczny audyt SEO", starter: false, growth: "1,500 PLN/mies w cenie", scale: true },
-    { label: "Analiza luk konkurencji", starter: false, growth: false, scale: "3,000 PLN w cenie" },
-    { label: "AI-ready format (ChatGPT, Gemini, Perplexity)", starter: true, growth: true, scale: true },
-    { label: "Dedykowany PM", starter: false, growth: false, scale: true },
+    { label: "Monthly SEO report", starter: false, growth: true, scale: true },
+    { label: "Content calendar na 6 miesięcy", starter: false, growth: "2,000 PLN w cenie", scale: "2,000 PLN w cenie" },
+    { label: "Monthly SEO audit", starter: false, growth: "1,500 PLN/mies w cenie", scale: "1,500 PLN/mies w cenie" },
+    { label: "Competitor gap analysis", starter: false, growth: false, scale: "3,000 PLN w cenie" },
+    { label: "Dedykowany Project Manager", starter: false, growth: false, scale: true },
   ],
 };
 
 export const SEO_BONUS_VALUES = [
-  { tier: "STARTER", desc: "raport analizy słów kluczowych", value: "2,000 PLN" },
-  { tier: "GROWTH", desc: "keyword research + kalendarz treści + miesięczny audyt SEO", value: "5,500 PLN" },
-  { tier: "SCALE", desc: "wszystko powyżej + analiza luk konkurencji", value: "8,500 PLN" },
+  { tier: "STARTER", desc: "keyword research report", value: "2,000 PLN" },
+  { tier: "GROWTH", desc: "keyword research report + content calendar na 6 miesięcy + monthly SEO audit", value: "5,500 PLN" },
+  { tier: "SCALE", desc: "wszystko powyżej + competitor content gap analysis", value: "8,500 PLN" },
 ];
 
 export const SEO_TARGET_SEGMENTS = [
@@ -199,11 +202,12 @@ export const SEO_SETUP_PLANS = [
     features: [
       "10 artykułów SEO miesięcznie",
       "1 klaster tematyczny",
-      "Keyword research + strategia (wartość 2,000 PLN, w cenie)",
-      "Optymalizacja on-page: meta tagi, H1-H3, linkowanie wewnętrzne",
-      "Twoja akceptacja przed publikacją",
+      "Keyword research",
+      "Podstawowe SEO (on-page)",
+      "Publikacja na Twoim blogu",
+      "Bonus: Keyword research report (wartość 2,000 PLN)",
     ],
-    desc: "Zaczynam blogować. Chcę przetestować, czy to działa.",
+    desc: "Dla firm które startują z content marketingiem i chcą sprawdzić efekt.",
     popular: false,
     ctaVariant: "secondary" as const,
   },
@@ -215,16 +219,16 @@ export const SEO_SETUP_PLANS = [
     monthlyPrice: "1,800",
     perArticle: "~90 PLN/artykuł",
     features: [
-      "Wszystko z STARTER, plus:",
-      "20 artykułów miesięcznie",
+      "20 artykułów SEO miesięcznie",
       "3 klastry tematyczne",
-      "Publikacja bezpośrednio na Twoim blogu",
+      "Internal linking automatyczny",
       "Tracking pozycji w Google",
-      "Miesięczny raport SEO",
-      "Kalendarz treści na 6 miesięcy (wartość 2,000 PLN, w cenie)",
-      "Miesięczny audyt SEO (wartość 1,500 PLN/mies, w cenie)",
+      "Monthly SEO report",
+      "Bonus: Keyword research report (wartość 2,000 PLN)",
+      "Bonus: Content calendar na 6 miesięcy (wartość 2,000 PLN)",
+      "Bonus: Monthly SEO audit (wartość 1,500 PLN/mies)",
     ],
-    desc: "Poważnie biorę się za SEO. Chcę regularny ruch z Google.",
+    desc: "Dla firm które poważnie myślą o pozycji w Google. Najczęściej wybierany.",
     valueNote: "Najczęściej wybierany. 20 artykułów za 90 PLN/szt. Copywriter bierze 300-800 PLN.",
     popular: true,
     ctaVariant: "primary" as const,
@@ -237,15 +241,17 @@ export const SEO_SETUP_PLANS = [
     monthlyPrice: "2,500",
     perArticle: "~83 PLN/artykuł",
     features: [
-      "Wszystko z GROWTH, plus:",
-      "30 artykułów miesięcznie na full auto",
-      "Unlimited klastry tematyczne, pokrywasz całą niszę",
-      "Analiza luk w treściach konkurencji (wartość 3,000 PLN, w cenie)",
-      "Dedykowany PM, jedna osoba do kontaktu",
-      "Kalendarz treści + strategia na 6 miesięcy",
-      "AI-ready format, widoczność w ChatGPT, Gemini, Perplexity",
+      "30 artykułów SEO miesięcznie",
+      "Unlimited klastry tematyczne",
+      "Content calendar",
+      "Dedykowany Project Manager",
+      "Competitor gap analysis",
+      "Bonus: Keyword research report (wartość 2,000 PLN)",
+      "Bonus: Content calendar na 6 miesięcy (wartość 2,000 PLN)",
+      "Bonus: Monthly SEO audit (wartość 1,500 PLN/mies)",
+      "Bonus: Competitor content gap analysis (wartość 3,000 PLN)",
     ],
-    desc: "Chcę zdominować wyniki wyszukiwania w mojej niszy.",
+    desc: "Dla firm które chcą dominować w wynikach wyszukiwania. Pełna redakcja AI pod klucz.",
     popular: false,
     ctaVariant: "secondary" as const,
   },
@@ -256,54 +262,41 @@ export const SEO_FAQ_ITEMS = [
     category: "O produkcie i jakości",
     items: [
       {
-        q: "Ale przecież AI pisze słabo. Google to wyłapie.",
-        a: "Dwa fakty. Pierwszy: Google oficjalnie potwierdził, że content tworzony z pomocą AI jest OK, o ile jest wartościowy dla użytkownika (Helpful Content Update). Nie karze za AI. Karze za spam, niskiej jakości masówkę. Drugi: nasz system to nie \"wrzuć prompt i publikuj\". To AI + human review. Keyword research, klastry tematyczne, optymalizacja on-page, kontrola jakości. Jakość powyżej 80% copywriterów. Za 1/5 ceny.",
+        q: "Czy te artykuły nie brzmią jak AI?",
+        a: "Nie. Nasz agent jest wytrenowany na Twojej branży i stylu komunikacji. Plus opcjonalny human-in-the-loop review. Efekt: treść, która brzmi jak ekspert, nie jak robot.",
       },
       {
-        q: "Czy artykuły będą pasować do mojej branży?",
-        a: "Każdy artykuł pisany pod Twoją branżę, Twoich klientów i Twoje słowa kluczowe. Na starcie robimy brief branżowy, ton, styl, terminologia. Pierwsze 3-5 artykułów testowych do Twojej akceptacji. Nie pasuje? Korygujemy. Pasuje? Idziemy dalej.",
+        q: "Jak szybko zobaczę efekty w Google?",
+        a: "Content publikujemy od tygodnia 1. Pierwsze efekty SEO (wzrost pozycji, ruch) - po 60-90 dniach. To standardowy czas indeksacji. Po 6 miesiącach - ruch rośnie 3-5x.",
       },
       {
-        q: "Mogę sprawdzić artykuły przed publikacją?",
-        a: "Tak. Twoja akceptacja artykułów to opcja w każdym pakiecie. Chcesz czytać i akceptować? Dostajesz artykuły do review. Nie chcesz się tym zajmować? Full auto. Twoja decyzja. Możesz zmienić zdanie w dowolnym momencie.",
+        q: "Czy mogę zatwierdzać artykuły przed publikacją?",
+        a: "Tak. Human-in-the-loop review to opcja w każdym pakiecie. Dostajesz draft, zatwierdzasz lub prosisz o poprawki. Albo lecisz full auto - Ty decydujesz.",
       },
       {
-        q: "A co z ChatGPT i Gemini? Ludzie pytają AI zamiast Google.",
-        a: "Dokładnie. I wiesz skąd AI bierze odpowiedzi? Z artykułów, które wysoko rankują w Google. Artykuł na pozycji 1-5 w Google = artykuł cytowany przez ChatGPT, Gemini i Perplexity. Dlatego nasze artykuły piszemy w formacie, który AI uwielbia: structured data, format Q&A, konkretne liczby, jasna struktura. Jedna inwestycja, widoczność w Google I w AI jednocześnie. Nikt inny tego nie oferuje w pakiecie.",
+        q: "Na jakiej platformie to działa? WordPress, Webflow, Shopify?",
+        a: "Na każdej. Publikujemy bezpośrednio na Twój blog niezależnie od CMS.",
       },
       {
-        q: "Mam już bloga. Macie co z nim robić?",
-        a: "Nie zaczynamy od zera, jeśli nie musimy. Robimy audyt istniejącego contentu. Uzupełniamy luki, frazy, na które nie masz artykułów. Optymalizujemy stare wpisy pod aktualne standardy SEO. Istniejący blog z historią to przewaga, Google już zna Twoją domenę. Budujemy na tym, co masz.",
-      },
-    ],
-  },
-  {
-    category: "O płatnościach i wynikach",
-    items: [
-      {
-        q: "SEO nie działa od razu. Muszę czekać pół roku na wyniki?",
-        a: "Będę szczery: tak, SEO to maraton. Ale nie zaczynamy od najtrudniejszych fraz. Strategia: niskokonkurencyjne frazy long-tail na start. Efekty: pierwsze indeksacje i impresje w 4-8 tygodni. Widoczne pozycje na łatwiejsze frazy w 2-3 miesiące. Pełne efekty: 6 miesięcy. Im wcześniej zaczniesz, tym wcześniej zbierasz.",
-      },
-      {
-        q: "Za drogo. Nie stać mnie.",
-        a: "Policzmy. Copywriter: 5-8k PLN miesięcznie za 8-10 artykułów. Agencja contentowa: 1.6-5.5k PLN za 4-12 artykułów. LessManual: 1-2.5k PLN za 10-30 artykułów. Nasz pakiet GROWTH daje 20 artykułów za 1,800 PLN. To 90 PLN per artykuł. Copywriter bierze 300-800 PLN za jeden. Gdzie tu \"za drogo\"?",
-      },
-      {
-        q: "Muszę to przemyśleć.",
-        a: "Rozumiem. Ale przemyśl też to: każdy dzień bez nowego artykułu to pozycje w Google, które zbiera Twoja konkurencja. Artykuł opublikowany dzisiaj zacznie rankować za 2-3 miesiące. Artykuł opublikowany za 3 miesiące, za pół roku. Artykuł nieopublikowany, nigdy. Im dłużej czekasz, tym więcej Cię to kosztuje.",
+        q: "Co z unikalnością treści? Google nie karze za AI content?",
+        a: "Google karze za niskiej jakości content, nie za AI. Nasze artykuły są unikalne, zoptymalizowane pod SEO i pisane pod konkretne frazy. Dokładnie to, co Google chce widzieć.",
       },
     ],
   },
   {
-    category: "Kwestie techniczne",
+    category: "Praktyczne pytania",
     items: [
       {
-        q: "Ile czasu ja muszę na to poświęcić?",
-        a: "Na początku: 1-2 godziny na brief i akceptację kierunku. Potem: zero. Chyba że chcesz sprawdzać artykuły, wtedy tyle, ile chcesz. System jest zaprojektowany tak, żebyś nie musiał się w to angażować. Blog rośnie niezależnie od Twojego kalendarza.",
+        q: "Mam już jakieś artykuły na blogu. Co z nimi?",
+        a: "Auditujemy istniejący content. To co działa - wzmacniamy internal linkami. To co nie działa - optymalizujemy lub zastępujemy. Nic się nie marnuje.",
       },
       {
-        q: "Z jakimi platformami się integrujecie?",
-        a: "WordPress, Webflow, Ghost, Shopify, custom CMS, od pakietu GROWTH. STARTER: dostarczamy artykuły w formacie gotowym do wklejenia. GROWTH/SCALE: publikujemy bezpośrednio na Twoim blogu.",
+        q: "Czym się różnicie od SurferSEO, Jasper i innych narzędzi?",
+        a: "Tam musisz sam pisać, sam optymalizować, sam publikować. My robimy wszystko za Ciebie. Narzędzia SaaS to DIY. My jesteśmy done-for-you.",
+      },
+      {
+        q: "Mogę zrezygnować w dowolnym momencie?",
+        a: "Tak. Abonament miesięczny, bez umowy na czas określony. Ale szczerze - po 3 miesiącach nikt nie rezygnuje, bo wyniki mówią same za siebie.",
       },
     ],
   },
@@ -311,19 +304,11 @@ export const SEO_FAQ_ITEMS = [
 
 export const SEO_GUARANTEES = [
   {
-    title: "Gwarantowana ilość artykułów",
-    desc: "Umówiliśmy się na 20 artykułów? Dostarczamy 20 artykułów. Nie dostarczymy umówionej liczby? Zwrot proporcjonalny. Bez tłumaczeń, bez dyskusji.",
+    title: "Gwarancja ilości",
+    desc: "Gwarantujemy dostarczenie umówionej liczby artykułów. Nie dostarczymy? Zwrot proporcjonalny. Bez dyskusji.",
   },
   {
-    title: "ROI 200% w 90 dni lub miesiąc gratis",
-    desc: "Jeśli w ciągu 90 dni nie zobaczysz wymiernych rezultatów (wzrost ruchu organicznego, nowe pozycje w Google, więcej impresji), następny miesiąc dostajesz za darmo.",
-  },
-  {
-    title: "Wsparcie w cenie abonamentu",
-    desc: "Nie zostawiamy Cię z systemem i \"radź sobie\". Opiekujemy się, optymalizujemy, odpowiadamy na pytania, przez cały okres współpracy. Bez dodatkowych opłat. Bez \"to nie wchodzi w pakiet\".",
-  },
-  {
-    title: "Rezygnacja bez kar",
-    desc: "Jeden mail, koniec współpracy. Zero okresu wypowiedzenia, zero kar. Zostajemy, bo dowozimy wyniki, nie dlatego że trzyma Cię umowa.",
+    title: "Gwarancja ROI",
+    desc: "ROI 200% w 90 dni lub następny miesiąc gratis. Mierzymy ruch, pozycje, leady. Dane nie kłamią.",
   },
 ];

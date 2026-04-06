@@ -12,7 +12,7 @@ export function Solution() {
         <FadeUp>
           <SectionHeader
             eyebrow="Rozwiązanie"
-            title="Blog, który pisze się sam. Dosłownie."
+            title="Jak to działa? 4 kroki, zero Twojego czasu."
           />
           <p className="text-lg text-text-secondary text-center mb-12 leading-relaxed">
             Nie dajesz nam pieniędzy i czekasz. Stawiamy system, który robi keyword research,
@@ -40,7 +40,7 @@ export function Solution() {
         <FadeUp delay={0.2}>
           <div className="bg-accent/10 border border-accent/20 rounded-[6px] p-6 md:p-8 text-center">
             <p className="font-serif text-2xl text-text">
-              3 kroki. 0 Twojego czasu po setupie. Blog rośnie sam.
+              Od tygodnia 1 masz regularny content. Od miesiąca 2 Google zaczyna to doceniać. Po 6 miesiącach - ruch organiczny rośnie 3-5x.
             </p>
           </div>
         </FadeUp>

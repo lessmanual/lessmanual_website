@@ -10,10 +10,10 @@ import { REVIEWS } from "@/lib/constants";
 import { OBS_KLIENTA_CALENDLY_URL } from "@/lib/obsluga-klienta-constants";
 
 const billboardMetrics = [
-  { value: "60-80%", label: "zapytań rozwiązanych automatycznie" },
-  { value: "<30s", label: "czas odpowiedzi" },
-  { value: "2-5 etatów", label: "oszczędność w obsłudze" },
-  { value: "3x częściej", label: "kupują klienci z szybką odpowiedzią" },
+  { value: "60-80%", label: "zapytań obsłużonych automatycznie" },
+  { value: "<30s", label: "średni czas odpowiedzi (vs 4-24h bez systemu)" },
+  { value: "2-5 etatów", label: "oszczędności miesięcznie" },
+  { value: "500-1000%", label: "ROI w pierwszym roku" },
 ];
 
 

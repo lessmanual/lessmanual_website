@@ -25,13 +25,13 @@ import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { GEN_OFERT_FAQ_ITEMS } from "@/lib/generator-ofert-constants";
 
 export const metadata: Metadata = {
-  title: "Generator Ofert AI - Wycena w 5 Minut | LessManual.ai",
+  title: "Generator Ofert AI - Klient Sam Wycenia, Ty Dostajesz Ofertę | LessManual.ai",
   description:
-    "Klient sam wycenia na Twojej stronie, dostaje profesjonalny PDF automatycznie. 96% mniej czasu na wyceny. Dla OZE, mebli, budowlanki. Done-for-you w 7-21 dni.",
+    "Self-service konfigurator wycen. Klient sam wycenia na Twojej stronie, dostaje PDF w 5 minut. 96% oszczędności czasu, +25-40% win rate. Done-for-you w 7-14 dni.",
   openGraph: {
-    title: "Generator Ofert AI - Wycena w 5 Minut | LessManual.ai",
+    title: "Generator Ofert AI - Klient Sam Wycenia, Ty Dostajesz Ofertę | LessManual.ai",
     description:
-      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny.",
+      "Klient sam wycenia na Twojej stronie, dostaje PDF w 5 minut. 96% oszczędności czasu, +25-40% win rate. Wdrożenie w 7-14 dni.",
     url: "https://lessmanual.ai/oferta/generator-ofert",
     siteName: "LessManual.ai",
     locale: "pl_PL",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Generator Ofert AI - Wycena w 5 Minut | LessManual.ai",
+    title: "Generator Ofert AI - Klient Sam Wycenia, Ty Dostajesz Ofertę | LessManual.ai",
     description:
-      "Klient sam wycenia na Twojej stronie, dostaje PDF automatycznie. 96% mniej czasu na wyceny.",
+      "Klient sam wycenia na Twojej stronie, dostaje PDF w 5 minut. 96% oszczędności czasu, +25-40% win rate. Wdrożenie w 7-14 dni.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta/generator-ofert",
@@ -64,9 +64,9 @@ const jsonLd = {
   offers: {
     "@type": "Offer",
     priceCurrency: "PLN",
-    price: "4000",
+    price: "800",
     description:
-      "setup od 4,000 PLN. Konfigurator wycen na stronie, klient sam wycenia, dostaje PDF automatycznie.",
+      "od 800 PLN/mies. Self-service konfigurator wycen, klient sam wycenia na Twojej stronie, dostaje PDF w 5 minut.",
     availability: "https://schema.org/InStock",
   },
   aggregateRating: {
@@ -115,7 +115,7 @@ export default function GeneratorOfertPage() {
         <HeroProof />
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-sm text-text-muted leading-relaxed">
-            Generator Ofert AI od LessManual to system automatycznego tworzenia wycen i ofert. Klient sam wycenia na stronie lub w chacie wycenowym, system generuje profesjonalny PDF i wysyła mailem. Oszczędność 96% czasu na ofertowaniu. Wdrożenie w 7-14 dni.
+            Generator Ofert AI od LessManual to self-service konfigurator wycen dla firm usługowych. Klient sam wycenia na Twojej stronie, system generuje profesjonalny PDF z Twoim logo i wysyła mailem w 5 minut. Bez ręcznej roboty, bez exceli. 96% oszczędności czasu, +25-40% win rate. Wdrożenie done-for-you w 7-14 dni.
           </p>
         </div>
         <Problem />
@@ -135,7 +135,7 @@ export default function GeneratorOfertPage() {
         <FinalCTA />
         <FAQ />
         <div className="text-center text-sm text-text-muted py-6">
-          Ostatnia aktualizacja: luty 2026
+          Ostatnia aktualizacja: kwiecień 2026
         </div>
       </main>
       <Footer />

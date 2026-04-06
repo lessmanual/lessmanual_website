@@ -134,7 +134,7 @@ export function Hero() {
                   className="font-serif leading-[1.05]"
                   style={{ fontSize: "clamp(3.2rem, 7vw, 5rem)" }}
                 >
-                  Zatrudnij AI do odpowiadania klientom. O każdej porze.
+                  Twoi klienci dostaną odpowiedź w 30 sekund. 24/7. Bez zatrudniania.
                 </motion.h1>
 
                 {/* Subtitle */}
@@ -142,7 +142,7 @@ export function Hero() {
                   variants={fadeUp}
                   className="text-text-secondary text-2xl leading-relaxed max-w-[600px] mt-8"
                 >
-                  Chat, WhatsApp, email, jeden system wytrenowany na Twojej bazie wiedzy. Ty dostajesz tylko sprawy, które wymagają człowieka.
+                  AI chatbot + Voice Agent na wszystkich kanałach. Wytrenowany na danych Twojej firmy. Wdrożenie w 14 dni albo zwrot pieniędzy.
                 </motion.p>
 
                 {/* CTA */}
@@ -151,12 +151,16 @@ export function Hero() {
                   className="mt-10 flex flex-col sm:flex-row sm:items-center items-start gap-5"
                 >
                   <Button href={OBS_KLIENTA_CALENDLY_URL} variant="primary" external className="!px-11 !py-5 !text-xl">
-                    Chcę udzielać odpowiedzi automatycznie
+                    Umów bezpłatną konsultację (15 min)
                   </Button>
                   <Button href="#wyniki" variant="text" className="!text-lg">
                     Zobacz wyniki klientów
                   </Button>
                 </motion.div>
+
+                <motion.p variants={fadeUp} className="mt-4 text-sm text-text-muted">
+                  Max 3 nowe projekty miesięcznie. Zostało wolnych miejsc w tym miesiącu.
+                </motion.p>
               </div>
 
               {/* Animation */}

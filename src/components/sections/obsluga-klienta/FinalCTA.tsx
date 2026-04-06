@@ -20,11 +20,11 @@ export function FinalCTA() {
         <FadeUp>
           <div className="text-center mb-10">
             <h2 className="font-serif text-text mb-6">
-              Od kiedy chcesz, żeby Twoi klienci dostawali odpowiedź w 30 sekund?
+              Załatwmy temat obsługi klienta
             </h2>
             <p className="text-text-secondary text-xl leading-relaxed max-w-[680px] mx-auto">
-              Umów się na bezpłatne demo. 15 minut. Pokażemy Ci jak system działa
-              na przykładzie Twojej firmy.
+              15-minutowa rozmowa. Pokażę Ci jak system wygląda na żywo, policzę ile zaoszczędzisz,
+              i powiem czy to ma sens dla Twojej firmy. Bez pitchu, bez zobowiązań.
             </p>
           </div>
         </FadeUp>
@@ -32,11 +32,10 @@ export function FinalCTA() {
         <FadeUp delay={0.1}>
           <div className="text-center mb-10">
             <Button href={OBS_KLIENTA_CALENDLY_URL} external>
-              Chcę odpowiedzi w 30 sekund
+              Umów bezpłatną konsultację
             </Button>
             <p className="mt-5 text-text-muted text-sm max-w-[520px] mx-auto">
-              Jeśli pasujemy, startujemy w 7-21 dni. Jeśli nie, wyjdziesz z darmową
-              analizą Twojego procesu obsługi i konkretnymi wskazówkami jak go usprawnić.
+              Max 3 nowe projekty miesięcznie. Najbliższy wolny termin: sprawdź w kalendarzu.
             </p>
           </div>
         </FadeUp>

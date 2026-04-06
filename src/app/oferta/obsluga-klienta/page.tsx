@@ -25,13 +25,13 @@ import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { OBS_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
 
 export const metadata: Metadata = {
-  title: "Obsługa Klienta AI - Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
+  title: "Obsługa Klienta AI - Odpowiedź w 30 Sekund 24/7 | LessManual.ai",
   description:
-    "Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań rozwiązanych automatycznie. Done-for-you w 7-21 dni. Od 3,500 PLN setup + 600 PLN/mies.",
+    "AI chatbot + Voice Agent wytrenowany na danych Twojej firmy. 60-80% zapytań obsłużonych automatycznie. Wdrożenie w 14 dni albo zwrot pieniędzy. Od 5,000 PLN setup + 900 PLN/mies.",
   openGraph: {
-    title: "Obsługa Klienta AI - Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
+    title: "Obsługa Klienta AI - Odpowiedź w 30 Sekund 24/7 | LessManual.ai",
     description:
-      "Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań automatycznie. Done-for-you w 7-21 dni.",
+      "AI chatbot + Voice Agent na wszystkich kanałach. 60-80% zapytań automatycznie. Wdrożenie w 14 dni albo zwrot pieniędzy.",
     url: "https://lessmanual.ai/oferta/obsluga-klienta",
     siteName: "LessManual.ai",
     locale: "pl_PL",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Obsługa Klienta AI - Odpowiedzi w 30 Sekund 24/7 | LessManual.ai",
+    title: "Obsługa Klienta AI - Odpowiedź w 30 Sekund 24/7 | LessManual.ai",
     description:
-      "Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań automatycznie. Done-for-you w 7-21 dni.",
+      "AI chatbot + Voice Agent na wszystkich kanałach. 60-80% zapytań automatycznie. Wdrożenie w 14 dni albo zwrot pieniędzy.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta/obsluga-klienta",
@@ -115,7 +115,7 @@ export default function ObslugaKlientaPage() {
         <HeroProof />
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-sm text-text-muted leading-relaxed">
-            Obsługa Klienta AI od LessManual to chatbot i voiceagent wytrenowany na bazie wiedzy Twojej firmy. Odpowiada na 60-80% zapytań automatycznie w 30 sekund, 24/7. Integracja z CRM, auto-sortowanie maili, lead capture. Od 900 PLN/mies. Wdrożenie w 7 dni.
+            System Obsługi Klienta AI od LessManual to chatbot RAG + Voice Agent wytrenowany na danych Twojej firmy. Odpowiada na 60-80% zapytań automatycznie w 30 sekund, 24/7. Web, WhatsApp, email, telefon - jeden dashboard. Od 5,000 PLN setup + 900 PLN/mies. Wdrożenie w 14 dni albo zwrot pieniędzy.
           </p>
         </div>
         <Problem />

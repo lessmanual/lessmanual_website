@@ -14,7 +14,7 @@ export function WhatYouGet() {
         <FadeUp>
           <SectionHeader
             eyebrow="Co dostajesz"
-            title="Co dokładnie dostajesz - krok po kroku"
+            title="Co dokładnie dostajesz"
           />
           <p className="text-text-secondary text-center mb-12">
             Nie sprzedajemy licencji na chatbota. Budujemy system obsługi klienta dopasowany

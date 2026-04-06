@@ -132,7 +132,7 @@ export function Hero() {
                   className="font-serif leading-[1.05]"
                   style={{ fontSize: "clamp(2.6rem, 5.5vw, 4rem)" }}
                 >
-                  Zatrudnij AI do pisania bloga, który generuje ruch z Google i ChatGPT.
+                  Blog pisze się sam. Google zaczyna Cię widzieć.
                 </motion.h1>
 
                 {/* Subtitle */}
@@ -140,7 +140,7 @@ export function Hero() {
                   variants={fadeUp}
                   className="text-text-secondary text-2xl leading-relaxed max-w-[600px] mt-8"
                 >
-                  System pisze, wstawia Twoje produkty, linkuje do poprzednich wpisów. Ty akceptujesz i zbierasz leady.
+                  10 do 30 artykułów SEO miesięcznie. Bez copywritera, bez Twojego czasu, bez kombinowania z promptami. Dajesz branżę - my robimy resztę.
                 </motion.p>
 
                 {/* CTA */}
@@ -149,7 +149,7 @@ export function Hero() {
                   className="mt-10 flex flex-col sm:flex-row sm:items-center items-start gap-5"
                 >
                   <Button href={SEO_CALENDLY_URL} variant="primary" external className="!px-11 !py-5 !text-xl">
-                    Chcę generować ruch bez pisania
+                    Umów bezpłatną konsultację (15 min)
                   </Button>
                   <Button href="#wyniki" variant="text" className="!text-lg">
                     Zobacz case study

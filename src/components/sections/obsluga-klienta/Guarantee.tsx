@@ -11,7 +11,7 @@ export function Guarantee() {
     <section className="py-28 md:py-40 bg-white">
       <div className="max-w-[800px] mx-auto px-6">
         <FadeUp>
-          <SectionHeader eyebrow="Gwarancja" title="Gwarancja bez ściemy. Ryzyko jest po mojej stronie." />
+          <SectionHeader eyebrow="Gwarancja" title="Zero ryzyka. Serio." />
         </FadeUp>
 
         <FadeUp delay={0.1}>
@@ -34,8 +34,7 @@ export function Guarantee() {
 
             <div className="mt-6 pt-6 border-t border-success/20">
               <p className="text-text font-medium">
-                Dlaczego mogę dać takie gwarancje? Bo pracownik obsługi kosztuje 8-9k/mies,
-                a nasz system od 900 PLN.
+                Więcej ryzykuję na to, że Twój pracownik weźmie L4 w gorączkę sezonu.
               </p>
             </div>
           </div>

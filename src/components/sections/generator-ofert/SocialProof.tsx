@@ -10,9 +10,9 @@ import { GEN_OFERT_CALENDLY_URL } from "@/lib/generator-ofert-constants";
 import { REVIEWS } from "@/lib/constants";
 
 const billboardMetrics = [
-  { value: "96%", label: "mniej czasu na wyceny", benchmark: "2h → 5 min" },
-  { value: "+25-40%", label: "wyższy win rate", benchmark: "szybsza oferta wygrywa" },
-  { value: "3h → 0", label: "czas generowania oferty", benchmark: "pełna automatyzacja (OZE)" },
+  { value: "96%", label: "oszczędności czasu", benchmark: "oferta w 5 minut zamiast 2 godzin" },
+  { value: "+25-40%", label: "wyższy win rate", benchmark: "szybsza odpowiedź = wyższy close rate" },
+  { value: "~300%", label: "ROI", benchmark: "przy 20 ofert miesięcznie (oszczędność ~3,500 PLN/mies)" },
 ];
 
 export function SocialProof() {
@@ -22,7 +22,7 @@ export function SocialProof() {
         <FadeUp>
           <SectionHeader
             eyebrow="Wyniki"
-            title="Co widzimy u firm, z którymi pracujemy. Nie obietnice, wzorce."
+            title="Liczby, nie obietnice"
           />
         </FadeUp>
 
@@ -72,24 +72,21 @@ export function SocialProof() {
         <FadeUp delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
             <div className="bg-bg border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-lg mb-3">Producenci mebli</h4>
+              <h4 className="font-serif text-lg mb-3">Firma OZE</h4>
               <p className="text-base text-text-secondary leading-relaxed">
-                Każda wycena szafy to osobne obliczenia materiałów. Częste błędy w kalkulacji.
-                System eliminuje te błędy, baza materiałów, automatyczna kalkulacja, zero pomyłek.
+                &ldquo;Handlowiec generował 8 ofert dziennie ręcznie. Teraz klienci wyceniają sami na stronie - handlowiec dzwoni tylko do tych, którzy otworzyli PDF.&rdquo;
               </p>
             </div>
             <div className="bg-bg border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-lg mb-3">Firmy remontowe</h4>
+              <h4 className="font-serif text-lg mb-3">Producent mebli na wymiar</h4>
               <p className="text-base text-text-secondary leading-relaxed">
-                Kosztorys robi właściciel. Wieczorami. Bo tylko on zna ceny podwykonawców.
-                Z systemem, każdy w firmie może wygenerować kosztorys w 5 minut.
+                &ldquo;Klient konfiguruje szafę na stronie, dostaje 3 warianty cenowe. My dostajemy lead z pełnym kontekstem - wiemy dokładnie czego szuka.&rdquo;
               </p>
             </div>
             <div className="bg-bg border border-border rounded-[6px] p-6">
-              <h4 className="font-serif text-lg mb-3">Firmy instalacyjne</h4>
+              <h4 className="font-serif text-lg mb-3">Firma remontowa</h4>
               <p className="text-base text-text-secondary leading-relaxed">
-                Oferty wychodzą na drugi dzień. Klienci kupują u szybszej konkurencji.
-                Z systemem, oferta wychodzi w 5 minut od rozmowy.
+                &ldquo;Kosztorys remontu łazienki w 5 minut zamiast wizyty na miejscu. Klient widzi cenę od razu - nie musi czekać 3 dni.&rdquo;
               </p>
             </div>
           </div>

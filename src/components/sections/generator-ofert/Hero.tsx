@@ -101,11 +101,11 @@ export function Hero() {
               className="flex flex-wrap gap-3 justify-center mb-10"
             >
               {[
-                { icon: Users, text: "10+ firm B2B", highlight: false },
-                { icon: Star, text: "5.0 na Google", highlight: false },
+                { icon: Users, text: "96% oszczędności czasu na ofertach", highlight: false },
+                { icon: Star, text: "+25-40% win rate", highlight: false },
                 {
                   icon: Clock,
-                  text: "Max 3 projekty miesięcznie",
+                  text: "Wdrożenie w 7-14 dni",
                   highlight: true,
                 },
               ].map((b) => (
@@ -132,7 +132,7 @@ export function Hero() {
                   className="font-serif leading-[1.05]"
                   style={{ fontSize: "clamp(3.2rem, 7vw, 5rem)" }}
                 >
-                  Zatrudnij AI do robienia wycen. 5 minut zamiast 2 godzin.
+                  Klient sam wycenia na Twojej stronie. Ty dostajesz gotową ofertę na maila.
                 </motion.h1>
 
                 {/* Subtitle */}
@@ -140,9 +140,7 @@ export function Hero() {
                   variants={fadeUp}
                   className="text-text-secondary text-2xl leading-relaxed max-w-[600px] mt-8"
                 >
-                  Klient wycenia sam na Twojej stronie. System generuje
-                  profesjonalny PDF z Twoim logo i wysyła mailem. Z
-                  auto follow-upem.
+                  Self-service konfigurator wycen dla firm usługowych. Bez ręcznej roboty, bez exceli, bez &ldquo;wyślij zapytanie i czekaj 3 dni&rdquo;. System generuje ofertę PDF w 5 minut zamiast 2 godzin Twojego handlowca.
                 </motion.p>
 
                 {/* CTA */}
@@ -156,7 +154,7 @@ export function Hero() {
                     external
                     className="!px-11 !py-5 !text-xl"
                   >
-                    Chcę wysyłać oferty w 5 minut
+                    Umów bezpłatną konsultację - 30 min
                   </Button>
                   <Button href="#wyniki" variant="text" className="!text-lg">
                     Zobacz wyniki klientów

@@ -13,8 +13,8 @@ export function ComparisonTable() {
       <div className="max-w-[1100px] mx-auto px-6">
         <FadeUp>
           <SectionHeader
-            eyebrow="Porównanie"
-            title="LessManual vs alternatywy"
+            eyebrow="Liczby, nie obietnice"
+            title="Pracownik obsługi vs Nasz system"
           />
         </FadeUp>
 
@@ -85,8 +85,8 @@ export function ComparisonTable() {
         <FadeUp delay={0.15}>
           <div className="bg-bg border border-border rounded-[6px] p-6 mb-8">
             <p className="text-text-secondary leading-relaxed text-base">
-              <strong className="text-text">Różnica?</strong> Tidio, InteliWISE, KODA, to narzędzia. Ty konfigurujesz.{" "}
-              <strong className="text-text">LessManual, to system.</strong> My budujemy, trenujemy, monitorujemy.
+              <strong className="text-text">Liczby, nie obietnice.</strong> Nasz system kosztuje 900-2,200 PLN/mies i pracuje 24/7/365.{" "}
+              <strong className="text-text">Pracownik obsługi kosztuje 8-9k/mies i pracuje 8h/dzień.</strong> Matematyka jest prosta.
             </p>
           </div>
 

@@ -25,13 +25,13 @@ import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { SEO_FAQ_ITEMS } from "@/lib/seo-content-constants";
 
 export const metadata: Metadata = {
-  title: "SEO Content - 30 Artykułów Miesięcznie od 83 PLN | LessManual.ai",
+  title: "Content Machine - Blog pisze się sam. Google zaczyna Cię widzieć | LessManual.ai",
   description:
-    "Blog, który pisze się sam. AI generuje 10-30 artykułów SEO miesięcznie z human review. +150-400% ruchu organicznego w 6 miesięcy. Done-for-you.",
+    "10 do 30 artykułów SEO miesięcznie. Bez copywritera, bez Twojego czasu. Dajesz branżę - my robimy resztę. +150-400% ruchu organicznego w 6 miesięcy. Done-for-you.",
   openGraph: {
-    title: "SEO Content - 30 Artykułów Miesięcznie | LessManual.ai",
+    title: "Content Machine - Blog pisze się sam | LessManual.ai",
     description:
-      "AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. +150-400% ruchu organicznego.",
+      "10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. Bez copywritera, bez Twojego czasu. +150-400% ruchu organicznego.",
     url: "https://lessmanual.ai/oferta/seo-content",
     siteName: "LessManual.ai",
     locale: "pl_PL",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO Content - 30 Artykułów Miesięcznie | LessManual.ai",
+    title: "Content Machine - Blog pisze się sam | LessManual.ai",
     description:
-      "AI generuje 10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. +150-400% ruchu organicznego.",
+      "10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. Bez copywritera, bez Twojego czasu. +150-400% ruchu organicznego.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta/seo-content",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "SEO Content System",
+  name: "Content Machine",
   description:
-    "Done-for-you system produkcji contentu SEO. AI generuje artykuły, human review pilnuje jakości, system publikuje na Twoim blogu.",
+    "Done-for-you system produkcji contentu SEO. 10-30 artykułów miesięcznie. Dajesz branżę - my robimy resztę. Bez copywritera, bez Twojego czasu.",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   provider: {
@@ -112,7 +112,7 @@ export default function SEOContentPage() {
         <HeroProof />
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-sm text-text-muted leading-relaxed">
-            SEO Content od LessManual to done-for-you system produkcji artykułów SEO. AI generuje 10-30 artykułów miesięcznie z keyword research, klastry tematyczne i internal linking. Twoja akceptacja przed publikacją. Od 83 PLN za artykuł. Wzrost ruchu organicznego +150-400% w 6 miesięcy.
+            Content Machine od LessManual to done-for-you system produkcji artykułów SEO. AI generuje 10-30 artykułów miesięcznie z keyword research, klastry tematyczne i internal linking. Opcjonalny human-in-the-loop review. Od 83 PLN za artykuł. Wzrost ruchu organicznego +150-400% w 6 miesięcy.
           </p>
         </div>
         <Problem />
