@@ -28,7 +28,8 @@ export function WhoWeAreCard() {
               alt="Bartłomiej Chudzik - LessManual"
               width={96}
               height={96}
-              className="rounded-full object-cover border-2 border-[#E5E5E5]"
+              className="rounded-full border-2 border-[#E5E5E5]"
+              style={{ objectFit: "cover", objectPosition: "center 20%" }}
             />
             <div className="text-center md:text-left">
               <div className="text-[15px] font-medium text-[#0A0A0A]">

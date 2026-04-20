@@ -355,9 +355,14 @@ export function LiveEmailGenerator() {
                 </div>
               )}
 
-              {!isLoading && !showOutput && !errorMessage && (
+              {!isLoading && !showOutput && !errorMessage && !localLimitHit && (
                 <p className="text-[#A3A3A3] text-[13px]">
                   Wypełnij formularz po lewej. Email pojawi się tutaj.
+                </p>
+              )}
+              {!isLoading && !showOutput && !errorMessage && localLimitHit && (
+                <p className="text-[#B87333] text-[13px]">
+                  Dzienny limit 3 generacji osiągnięty. Spróbuj jutro lub napisz na kontakt@lessmanual.ai.
                 </p>
               )}
             </div>

@@ -1,7 +1,7 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig, Easing } from 'remotion';
 
 // Chat bubble scene - 400x240 px, 60 FPS, 300 frames loop
-// User message -> typing indicator -> bot response -> badge "Rozwi\u0105zane"
+// User message -> typing indicator -> bot response -> badge "Rozwiązane"
 
 const COPPER = '#B87333';
 const TEXT_PRIMARY = '#0A0A0A';
@@ -41,7 +41,7 @@ export const ObslugaKlientaScene: React.FC = () => {
   const botX = interpolate(botProgress, [0, 1], [-30, 0]);
   const botOpacity = botProgress;
 
-  // Badge "Rozwi\u0105zane" frames 180-210
+  // Badge "Rozwiązane" frames 180-210
   const badgeProgress = easing(
     interpolate(loopFrame, [180, 210], [0, 1], {
       extrapolateLeft: 'clamp',
@@ -79,7 +79,7 @@ export const ObslugaKlientaScene: React.FC = () => {
             lineHeight: 1.5,
           }}
         >
-          Cze\u015b\u0107, mam problem z faktur\u0105
+          Cześć, mam problem z fakturą
         </div>
       </div>
 
@@ -134,12 +134,12 @@ export const ObslugaKlientaScene: React.FC = () => {
               lineHeight: 1.5,
             }}
           >
-            Widz\u0119, chodzi o faktur\u0119 nr 2384
+            Widzę, chodzi o fakturę nr 2384
           </div>
         </div>
       )}
 
-      {/* Badge "Rozwi\u0105zane" */}
+      {/* Badge "Rozwiązane" */}
       {loopFrame >= 180 && (
         <div
           style={{
@@ -159,7 +159,7 @@ export const ObslugaKlientaScene: React.FC = () => {
               letterSpacing: '0.03em',
             }}
           >
-            \u2713 Rozwi\u0105zane
+            ✓ Rozwiązane
           </span>
         </div>
       )}

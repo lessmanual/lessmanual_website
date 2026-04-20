@@ -14,27 +14,27 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Dane timeline - tylko z profil.md, bez fabrykat
+// Kontekst zawodowy - fokus na domain expertise, nie biografii
 const TIMELINE_ITEMS = [
   {
-    date: "02.2025",
-    title: "Koniec etatu",
-    desc: "Wyrzucony z Mondi Solec. Koniec 8 lat w transporcie i logistyce. Pierwszy raz w życiu sam wybieram, czym się zajmuję.",
+    date: "2018-2025",
+    title: "Optymalizacja procesów B2B",
+    desc: "8 lat w transporcie i logistyce międzynarodowej. Projektowanie i wdrażanie procesów operacyjnych, integracje systemów ERP, redukcja ręcznej pracy w zespołach 20+ osób. Ten sam wzorzec: tam gdzie ludzie powtarzają tę samą czynność setki razy, zawsze jest lepszy system.",
   },
   {
-    date: "03.2025",
-    title: "All-in w AI",
-    desc: "Decyzja o pełnym poświęceniu się automatyzacji. Samouk, darmowe źródła, 12 godzin dziennie, 6 dni tygodniowo.",
+    date: "03-09.2025",
+    title: "Pełne przejście na AI",
+    desc: "Intensywna budowa kompetencji technicznych: LLM agents, RAG, vector databases, Next.js, Supabase, Vercel, AWS. Od pierwszych prototypów do produkcyjnych workflow z klientami.",
   },
   {
     date: "10.2025",
-    title: "Założenie LessManual",
-    desc: "Rejestracja JDG. Oficjalny start firmy. Buduję systemy AI dla firm B2B, które uwalniają je od ręcznej roboty.",
+    title: "Start LessManual",
+    desc: "Rejestracja działalności. Pięć produktów core: Hot Lead Catcher, Pipeline Machine, Content Machine, Obsługa Klienta, Generator Ofert. Każdy to gotowy system wdrażany w 7 dni, nie miesiącach.",
   },
   {
-    date: "01.2026",
-    title: "Pierwsza wycena dla Volvo",
-    desc: "Przypadkowa oferta okazała się być dla Volvo. Poprowadziłem całe spotkanie po angielsku z Global IT Director i Prezesem Renault Trucks PL. PoC 28 500 PLN.",
+    date: "Q1 2026",
+    title: "Pierwsze wdrożenia",
+    desc: "Projekty dla klientów z sektora logistyki, legal tech, e-commerce i SaaS. Od PoC po pełne wdrożenia MRR. Wszystkie dowiezione w zadeklarowanym terminie.",
   },
 ];
 
@@ -113,8 +113,13 @@ export default function ONasContent() {
                   alt="Bartłomiej Chudzik - LessManual"
                   width={320}
                   height={320}
-                  className="rounded-full object-cover border-4 border-[#E5E5E5] shadow-sm"
-                  style={{ width: "clamp(200px, 30vw, 320px)", height: "clamp(200px, 30vw, 320px)" }}
+                  className="rounded-full border-4 border-[#E5E5E5] shadow-sm"
+                  style={{
+                    width: "clamp(200px, 30vw, 320px)",
+                    height: "clamp(200px, 30vw, 320px)",
+                    objectFit: "cover",
+                    objectPosition: "center 20%",
+                  }}
                   priority
                 />
               </div>
@@ -148,8 +153,8 @@ export default function ONasContent() {
         <section className="px-6 md:px-10 py-24 md:py-36 bg-[#FAFAFA]">
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
-              <SectionLabel>DROGA</SectionLabel>
-              <h2>Jak dotarłem tutaj.</h2>
+              <SectionLabel>KONTEKST</SectionLabel>
+              <h2>Skąd to doświadczenie.</h2>
             </header>
 
             <div className="relative max-w-[760px]">
