@@ -55,7 +55,7 @@ const MAP: Array<{
     slug: "Hot Lead Catcher",
     metric: "4 źródła",
     metricLabel: "sygnałów zakupowych · alert w 24h",
-    short: "Agent AI, który czeka na moment zakupowy. Monitoruje news, job boards, reviews, social. Alert Telegram + gotowy draft maila.",
+    short: "Agent AI, który czeka na moment zakupowy. Monitoruje newsy, oferty pracy, opinie, social media. Alert Telegram + gotowy draft maila.",
     visual: "intent",
   },
   {

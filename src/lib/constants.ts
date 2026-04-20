@@ -38,10 +38,10 @@ export const PRODUCTS = [
     title: "Hot Lead Catcher",
     badge: "NAJCZĘŚCIEJ WYBIERANY",
     description:
-      "Agent AI który wychwytuje gorące leady zanim konkurencja je zauważy. Monitoruje 4 źródła sygnałów zakupowych (news, job boards, reviews, social) i alertuje gdy ktoś z Twojego ICP właśnie rozważa zakup.",
+      "Agent AI który wychwytuje gorące leady zanim konkurencja je zauważy. Monitoruje 4 źródła sygnałów zakupowych (newsy, oferty pracy, opinie, social media) i alertuje gdy ktoś z Twojego ICP właśnie rozważa zakup.",
     metrics: [
       "Setup 3 000 PLN + od 800 PLN/mies",
-      "4 źródła sygnałów (news, job boards, reviews, social)",
+      "4 źródła sygnałów (newsy, oferty pracy, opinie, social media)",
       "Alert Telegram + gotowy draft maila w Instantly",
     ],
     bonus:
