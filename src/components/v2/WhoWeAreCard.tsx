@@ -54,7 +54,7 @@ export function WhoWeAreCard() {
 
             <p className="text-[15px] leading-[1.65] text-[#525252] max-w-[640px]">
               Pracuję bez pośredników. Kod, wdrożenie, pomiar efektu, utrzymanie - wszystko u jednej osoby.
-              8 lat w logistyce B2B nauczyło mnie, że tam gdzie ludzie powtarzają te same kroki setki razy dziennie, zawsze jest lepszy system.
+              8 lat w logistyce B2B nauczyło mnie, że tam gdzie ludzie powtarzają te same kroki setki razy dziennie, zawsze lepszy jest system.
             </p>
 
             {/* Proof strip */}
