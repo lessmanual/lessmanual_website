@@ -2,12 +2,27 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Player } from "@remotion/player";
-import { HotLeadCatcherFlow } from "@/remotion/HotLeadCatcherFlow";
+import dynamic from "next/dynamic";
 import { HeaderV2 } from "@/components/v2/HeaderV2";
 import { FooterV2 } from "@/components/v2/FooterV2";
 import { LiveDemoTerminal } from "@/components/v2/LiveDemoTerminal";
 import { CALENDLY_URL, EMAIL } from "@/lib/constants";
+
+// Lazy-load Remotion Player + composition — keeps them out of the initial bundle.
+// ssr:false is valid here because this is a "use client" component.
+const HotLeadCatcherPlayer = dynamic(
+  () => import("./_player").then((m) => m.HotLeadCatcherPlayer),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        style={{ width: "100%", aspectRatio: "1/1", borderRadius: 8 }}
+        className="bg-[#F0F0F0] animate-pulse"
+        aria-hidden="true"
+      />
+    ),
+  }
+);
 
 function useReducedMotion() {
   const [reduced, setReduced] = useState(false);
@@ -98,7 +113,7 @@ const FAQ_ITEMS = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
       {children}
     </div>
   );
@@ -195,12 +210,12 @@ export default function HotLeadCatcherContent() {
                   <span className="font-mono text-[13px] uppercase tracking-[0.18em] font-medium text-[#0A0A0A]">
                     Hot Lead Catcher
                   </span>
-                  <span className="font-mono text-[11px] text-[#A3A3A3]">
+                  <span className="font-mono text-[11px] text-[#737373]">
                     demo na żywo
                   </span>
                 </div>
                 <LiveDemoTerminal />
-                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#A3A3A3]">
+                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#737373]">
                   <span>do 8 źródeł · alert w 60s</span>
                 </div>
               </div>
@@ -239,7 +254,7 @@ export default function HotLeadCatcherContent() {
                     <span className="font-mono text-[56px] font-medium leading-none tracking-tight text-[#B87333]">
                       {s.num}
                     </span>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                       {s.title}
                     </span>
                   </div>
@@ -248,25 +263,9 @@ export default function HotLeadCatcherContent() {
               ))}
             </div>
 
-            {/* Animated flow: 8 sources → agent → alert (Remotion, no emoji) */}
+            {/* Animated flow: 8 sources → agent → alert (Remotion, lazy-loaded) */}
             <div className="mt-16 max-w-[640px] mx-auto">
-              <Player
-                component={HotLeadCatcherFlow}
-                durationInFrames={240}
-                fps={30}
-                compositionWidth={640}
-                compositionHeight={640}
-                autoPlay={!reducedMotion}
-                loop={!reducedMotion}
-                controls={reducedMotion}
-                acknowledgeRemotionLicense
-                style={{ width: "100%", aspectRatio: "1/1", borderRadius: 8 }}
-              />
-              {reducedMotion && (
-                <p className="mt-3 text-center font-mono text-[11px] text-[#A3A3A3]">
-                  Animacja wstrzymana (prefers-reduced-motion). Kliknij play, aby odtworzyć.
-                </p>
-              )}
+              <HotLeadCatcherPlayer reducedMotion={reducedMotion} />
             </div>
           </div>
         </section>
@@ -283,7 +282,7 @@ export default function HotLeadCatcherContent() {
               {/* Lewa: klient + problem + workflow */}
               <div className="flex flex-col gap-5">
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Klient
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#0A0A0A]">
@@ -292,7 +291,7 @@ export default function HotLeadCatcherContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Problem
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -301,7 +300,7 @@ export default function HotLeadCatcherContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Co dostał (workflow)
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -310,7 +309,7 @@ export default function HotLeadCatcherContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Dziś
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -323,7 +322,7 @@ export default function HotLeadCatcherContent() {
               <div className="border border-[#E5E5E5] bg-white p-8" style={{ borderRadius: 8 }}>
                 <div className="flex flex-col gap-6">
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Czas od sygnału do maila
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
@@ -332,7 +331,7 @@ export default function HotLeadCatcherContent() {
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Źródeł monitorowanych
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
@@ -341,7 +340,7 @@ export default function HotLeadCatcherContent() {
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Próg hot signal
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
@@ -350,7 +349,7 @@ export default function HotLeadCatcherContent() {
                   </div>
                 </div>
 
-                <p className="mt-6 font-mono text-[11px] text-[#A3A3A3] leading-[1.6]">
+                <p className="mt-6 font-mono text-[11px] text-[#737373] leading-[1.6]">
                   Pełne liczby (leady, konwersja, ROI) pokazujemy 1:1 w rozmowie 15-min.
                 </p>
               </div>
@@ -389,13 +388,13 @@ export default function HotLeadCatcherContent() {
                   )}
 
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                       {tier.name}
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       {tier.monthly}
                     </div>
-                    <div className="text-[13px] text-[#A3A3A3] mt-1">
+                    <div className="text-[13px] text-[#737373] mt-1">
                       Setup: {tier.setup}
                     </div>
                   </div>
@@ -480,7 +479,7 @@ export default function HotLeadCatcherContent() {
               </Link>
             </div>
 
-            <p className="mt-8 font-mono text-[11px] text-[#A3A3A3]">
+            <p className="mt-8 font-mono text-[11px] text-[#737373]">
               Średnia odpowiedź: 4h w dni robocze.
             </p>
           </div>
