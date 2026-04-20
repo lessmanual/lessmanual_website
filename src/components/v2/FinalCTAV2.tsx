@@ -55,7 +55,7 @@ export function FinalCTAV2() {
           </Link>
         </div>
 
-        <div className="mt-16 pt-10 border-t border-[#E5E5E5] flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-[#737373]">
+        <div className="mt-16 pt-10 border-t border-[#E5E5E5] flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-[#525252]">
           <span className="font-mono">LessManual.ai · Bartłomiej Chudzik</span>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link href="/oferta" className="v2-link">Oferta</Link>

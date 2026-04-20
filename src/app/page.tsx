@@ -28,13 +28,17 @@ const jsonLd = {
   description:
     "Systemy AI dla firm B2B - Pipeline Machine, Content Machine, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
   email: "kontakt@lessmanual.ai",
+  taxID: "1231589909",
   founder: {
     "@type": "Person",
     name: "Bartłomiej Chudzik",
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Kraków",
+    streetAddress: "ul. Długa 33",
+    addressLocality: "Cendrowice",
+    addressRegion: "mazowieckie",
+    postalCode: "05-530",
     addressCountry: "PL",
   },
   areaServed: "PL",

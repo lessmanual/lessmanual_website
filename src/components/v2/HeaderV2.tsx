@@ -74,7 +74,7 @@ export function HeaderV2() {
           href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 bg-[#0A0A0A] px-4 py-3 text-[13px] font-medium text-white transition-all duration-200 hover:bg-[#B87333]"
+          className="inline-flex items-center gap-1.5 bg-[#0A0A0A] px-4 py-3 text-[13px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2"
           style={{ borderRadius: 4 }}
         >
           Rozmowa <span>→</span>

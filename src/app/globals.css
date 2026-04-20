@@ -103,3 +103,27 @@ h3 {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================
+   Focus-visible (WCAG 2.4.7, keyboard nav)
+   Global fallback dla CTA/nav/form elements
+   ============================================ */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[role="menuitem"]:focus-visible,
+[role="tab"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #B87333;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip default on elements z custom focus (np. inputy w LEG) */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-offset: 0;
+}

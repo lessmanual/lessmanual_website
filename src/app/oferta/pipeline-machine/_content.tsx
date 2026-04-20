@@ -127,7 +127,7 @@ const VARIANTS = [
 const FAQ_ITEMS = [
   {
     q: "Ile trwa do pierwszego spotkania?",
-    a: "3-4 tygodnie od podpisania. Setup: ICP Workshop + konfiguracja domen + warmup + sekwencje. Pierwsza kampania startuje w tygodniu 1-2. Pierwsze spotkania pojawiają się w tygodniu 3-4. Dla porównania: rekrutacja SDR trwa 3-6 miesięcy.",
+    a: "3-4 tygodnie od podpisania. Setup: ICP Workshop + konfiguracja domen + warmup + sekwencje. Pierwsza kampania startuje w tygodniu 1-2. Pierwsze spotkania pojawiają się w tygodniu 3-4. Dla porównania: rekrutacja handlowca B2B trwa 3-6 miesięcy.",
   },
   {
     q: "Co jeżeli 0 spotkań w 45 dni?",

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import FaqContent from "./_content";
+import { FAQ_ITEMS } from "@/lib/constants";
+import { generateFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Najczęstsze pytania | LessManual",
@@ -26,5 +28,14 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
-  return <FaqContent />;
+  const faqSchema = generateFAQSchema(FAQ_ITEMS);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <FaqContent />
+    </>
+  );
 }
