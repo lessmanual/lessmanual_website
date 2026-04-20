@@ -153,7 +153,7 @@ const FAQ_ITEMS = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
       {children}
     </div>
   );
@@ -248,7 +248,7 @@ export default function ObslugaKlientaContent() {
                   <span className="font-mono text-[13px] uppercase tracking-[0.18em] font-medium text-[#0A0A0A]">
                     System Obsługi Klienta
                   </span>
-                  <span className="font-mono text-[11px] text-[#A3A3A3]">
+                  <span className="font-mono text-[11px] text-[#737373]">
                     demo na żywo
                   </span>
                 </div>
@@ -256,7 +256,7 @@ export default function ObslugaKlientaContent() {
                   script={CUSTOMER_SERVICE_SCRIPT}
                   chromeLabel="lessmanual-cli · obsluga-klienta"
                 />
-                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#A3A3A3]">
+                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#737373]">
                   <span>3 kanały · auto-resolve 75%</span>
                 </div>
               </div>
@@ -295,7 +295,7 @@ export default function ObslugaKlientaContent() {
                     <span className="font-mono text-[56px] font-medium leading-none tracking-tight text-[#B87333]">
                       {s.num}
                     </span>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                       {s.title}
                     </span>
                   </div>
@@ -319,7 +319,7 @@ export default function ObslugaKlientaContent() {
                 style={{ width: "100%", aspectRatio: "1/1", borderRadius: 8 }}
               />
               {reducedMotion && (
-                <p className="mt-3 text-center font-mono text-[11px] text-[#A3A3A3]">
+                <p className="mt-3 text-center font-mono text-[11px] text-[#737373]">
                   Animacja wstrzymana (prefers-reduced-motion). Kliknij play, aby odtworzyć.
                 </p>
               )}
@@ -339,7 +339,7 @@ export default function ObslugaKlientaContent() {
               {/* Left */}
               <div className="flex flex-col gap-5">
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Klient
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#0A0A0A]">
@@ -348,7 +348,7 @@ export default function ObslugaKlientaContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Problem
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -357,7 +357,7 @@ export default function ObslugaKlientaContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Co dostał
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -366,7 +366,7 @@ export default function ObslugaKlientaContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Dziś
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -379,7 +379,7 @@ export default function ObslugaKlientaContent() {
               <div className="border border-[#E5E5E5] bg-white p-8" style={{ borderRadius: 8 }}>
                 <div className="flex flex-col gap-6">
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Automatyzacja zapytań
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
@@ -388,7 +388,7 @@ export default function ObslugaKlientaContent() {
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Czas odpowiedzi
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
@@ -397,7 +397,7 @@ export default function ObslugaKlientaContent() {
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Koszt systemu vs pracownik
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
@@ -406,7 +406,7 @@ export default function ObslugaKlientaContent() {
                   </div>
                 </div>
 
-                <p className="mt-6 font-mono text-[11px] text-[#A3A3A3] leading-[1.6]">
+                <p className="mt-6 font-mono text-[11px] text-[#737373] leading-[1.6]">
                   Pełne liczby i demo live pokazujemy na rozmowie 15-min.
                 </p>
               </div>
@@ -437,7 +437,7 @@ export default function ObslugaKlientaContent() {
                 >
                   {tier.badge && (
                     <div
-                      className="absolute -top-3 left-6 font-mono text-[11px] uppercase tracking-[0.18em] bg-[#B87333] text-white px-3 py-1"
+                      className="absolute -top-3 left-6 font-mono text-[11px] uppercase tracking-[0.18em] bg-[#8B4513] text-white px-3 py-1"
                       style={{ borderRadius: 4 }}
                     >
                       {tier.badge}
@@ -445,16 +445,16 @@ export default function ObslugaKlientaContent() {
                   )}
 
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       {tier.name}
                     </div>
-                    <div className="font-mono text-[11px] text-[#B87333] mb-2">
+                    <div className="font-mono text-[11px] text-[#8B4513] mb-2">
                       {tier.subtitle}
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       {tier.monthly}
                     </div>
-                    <div className="text-[13px] text-[#A3A3A3] mt-1">
+                    <div className="text-[13px] text-[#737373] mt-1">
                       Setup: {tier.setup}
                     </div>
                   </div>
@@ -492,7 +492,7 @@ export default function ObslugaKlientaContent() {
               style={{ borderRadius: 8 }}
             >
               <div className="flex-1">
-                <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
+                <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513] mb-1">
                   VOICE AGENT
                 </div>
                 <p className="text-[15px] font-medium text-[#0A0A0A]">
@@ -534,12 +534,12 @@ export default function ObslugaKlientaContent() {
                   className="bg-white border border-[#E5E5E5] p-6 flex flex-col gap-4"
                   style={{ borderRadius: 8 }}
                 >
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                     {v.segment}
                   </div>
 
                   <div className="border-t border-[#E5E5E5] pt-4">
-                    <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-[#B87333] mb-2">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-[#8B4513] mb-2">
                       BASIC
                     </div>
                     <div className="text-[16px] font-medium text-[#0A0A0A]">
@@ -548,13 +548,13 @@ export default function ObslugaKlientaContent() {
                     <div className="text-[13px] text-[#525252] mt-0.5">
                       {v.basic.mrr}
                     </div>
-                    <p className="text-[13px] text-[#A3A3A3] mt-2">
+                    <p className="text-[13px] text-[#737373] mt-2">
                       {v.basic.note}
                     </p>
                   </div>
 
                   <div className="border-t border-[#E5E5E5] pt-4">
-                    <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-[#B87333] mb-2">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-[#8B4513] mb-2">
                       PRO
                     </div>
                     <div className="text-[16px] font-medium text-[#0A0A0A]">
@@ -563,7 +563,7 @@ export default function ObslugaKlientaContent() {
                     <div className="text-[13px] text-[#525252] mt-0.5">
                       {v.pro.mrr}
                     </div>
-                    <p className="text-[13px] text-[#A3A3A3] mt-2">
+                    <p className="text-[13px] text-[#737373] mt-2">
                       {v.pro.note}
                     </p>
                   </div>
@@ -620,7 +620,7 @@ export default function ObslugaKlientaContent() {
               </Link>
             </div>
 
-            <p className="mt-8 font-mono text-[11px] text-[#A3A3A3]">
+            <p className="mt-8 font-mono text-[11px] text-[#525252]">
               Średnia odpowiedź: 4h w dni robocze.
             </p>
           </div>

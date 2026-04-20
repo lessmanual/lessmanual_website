@@ -30,11 +30,11 @@ export function HeroV2() {
 
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[12px] text-[#525252]">
               <span>76% open</span>
-              <span className="text-[#A3A3A3]">·</span>
+              <span className="text-[#737373]">·</span>
               <span>61% reply</span>
-              <span className="text-[#A3A3A3]">·</span>
+              <span className="text-[#737373]">·</span>
               <span>4h avg response</span>
-              <span className="text-[#A3A3A3]">·</span>
+              <span className="text-[#737373]">·</span>
               <span>{SOCIAL_PROOF.systemsLive} systemów live</span>
             </div>
 
@@ -73,7 +73,7 @@ export function HeroV2() {
               <div className="flex items-center gap-2 text-[13px]">
                 <StarRow />
                 <span className="text-[#525252]">5.0</span>
-                <span className="text-[#A3A3A3]">·</span>
+                <span className="text-[#737373]">·</span>
                 <span className="text-[#525252]">{SOCIAL_PROOF.googleReviews} opinii Google · {SOCIAL_PROOF.companiesEngaged}+ firm B2B · {SOCIAL_PROOF.implementationsDelivered} wdrożeń</span>
               </div>
             </div>
@@ -82,7 +82,7 @@ export function HeroV2() {
           {/* Right column: terminal */}
           <div className="relative">
             <LiveDemoTerminal />
-            <div className="mt-4 flex items-center justify-between px-1 font-mono text-[11px] text-[#A3A3A3]">
+            <div className="mt-4 flex items-center justify-between px-1 font-mono text-[11px] text-[#737373]">
               <span>Hot Lead Catcher · real-time demo</span>
               <span>76% open · 61% reply</span>
             </div>
@@ -95,7 +95,7 @@ export function HeroV2() {
 
 function StarRow() {
   return (
-    <span className="inline-flex gap-0.5" aria-label="5 out of 5 stars">
+    <span className="inline-flex gap-0.5" role="img" aria-label="5 out of 5 stars">
       {[0, 1, 2, 3, 4].map((i) => (
         <svg key={i} width="14" height="14" viewBox="0 0 20 20" fill="#B87333" aria-hidden="true">
           <path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7L10 1.5z" />

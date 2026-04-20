@@ -29,7 +29,7 @@ const BG = "#FAFAFA";
 const CARD_BG = "#FFFFFF";
 const BORDER = "#E5E5E5";
 const TEXT = "#0A0A0A";
-const TEXT_MUTED = "#A3A3A3";
+const TEXT_MUTED = "#737373";
 const TEXT_SEC = "#525252";
 
 // 4 sources + 1 central AGENT + 3 outputs

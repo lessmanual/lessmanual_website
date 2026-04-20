@@ -61,7 +61,7 @@ export function FooterV2() {
             </div>
             <Link
               href={`mailto:${EMAIL}`}
-              className="text-[13px] text-[#525252] hover:text-[#B87333] transition-colors duration-200"
+              className="text-[13px] text-[#525252] hover:text-[#B87333] transition-colors duration-200 py-2 inline-block"
             >
               {EMAIL}
             </Link>
@@ -69,7 +69,7 @@ export function FooterV2() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] text-[#525252] hover:text-[#B87333] transition-colors duration-200"
+              className="text-[13px] text-[#525252] hover:text-[#B87333] transition-colors duration-200 py-2 inline-block"
             >
               Zarezerwuj rozmowę →
             </Link>
@@ -102,7 +102,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return (
     <Link
       href={href}
-      className="text-[13px] text-[#525252] hover:text-[#B87333] transition-colors duration-200"
+      className="text-[13px] text-[#525252] hover:text-[#B87333] transition-colors duration-200 py-2 inline-block"
     >
       {children}
     </Link>

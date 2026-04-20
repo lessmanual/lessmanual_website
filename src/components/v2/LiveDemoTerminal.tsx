@@ -152,7 +152,7 @@ export function LiveDemoTerminal({
       } else {
         const toneClass =
           line.tone === "success"
-            ? "text-[#10B981]"
+            ? "text-[#047857]"
             : line.tone === "accent"
               ? "text-[#B87333]"
               : line.tone === "muted"
@@ -190,10 +190,10 @@ export function LiveDemoTerminal({
             <span className="block h-2.5 w-2.5 rounded-full bg-[#E5E5E5]" />
             <span className="block h-2.5 w-2.5 rounded-full bg-[#E5E5E5]" />
           </div>
-          <span className="font-mono text-[11px] tracking-tight text-[#A3A3A3]">
+          <span className="font-mono text-[11px] tracking-tight text-[#737373]">
             {chromeLabel}
           </span>
-          <span className="font-mono text-[11px] text-[#10B981]">● live</span>
+          <span className="font-mono text-[11px] text-[#047857]">● live</span>
         </div>
         {/* Body */}
         <div
@@ -223,8 +223,8 @@ function StaticTerminal({ script, chromeLabel }: { script: Line[]; chromeLabel: 
           <span className="block h-2.5 w-2.5 rounded-full bg-[#E5E5E5]" />
           <span className="block h-2.5 w-2.5 rounded-full bg-[#E5E5E5]" />
         </div>
-        <span className="font-mono text-[11px] text-[#A3A3A3]">{chromeLabel}</span>
-        <span className="font-mono text-[11px] text-[#10B981]">● live</span>
+        <span className="font-mono text-[11px] text-[#737373]">{chromeLabel}</span>
+        <span className="font-mono text-[11px] text-[#047857]">● live</span>
       </div>
       <div className="font-mono text-[13px] leading-[1.7] px-5 py-5" style={{ minHeight: 380 }}>
         {script.map((line, i) => {
@@ -239,7 +239,7 @@ function StaticTerminal({ script, chromeLabel }: { script: Line[]; chromeLabel: 
           }
           const tone =
             line.tone === "success"
-              ? "text-[#10B981]"
+              ? "text-[#047857]"
               : line.tone === "accent"
                 ? "text-[#B87333]"
                 : "text-[#525252]";

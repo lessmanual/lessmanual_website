@@ -55,7 +55,7 @@ export const GeneratorOfertScene: React.FC = () => {
         style={{
           fontSize: 10,
           fontFamily: MONO,
-          color: '#A3A3A3',
+          color: '#737373',
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
           marginBottom: 12,

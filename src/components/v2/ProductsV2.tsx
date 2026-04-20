@@ -226,7 +226,7 @@ function ProductVisual({ kind }: { kind: Visual }) {
         <div className="text-[#525252]">
           <span className="text-[#B87333]">→</span> 12 emails sent · 3 replies
         </div>
-        <div className="text-[#059669]">
+        <div className="text-[#047857]">
           <span className="text-[#B87333]">→</span> 1 meeting booked
         </div>
       </div>
@@ -245,11 +245,11 @@ function ProductVisual({ kind }: { kind: Visual }) {
         <div className="text-[#737373]">intent-signals.log</div>
         <div className="mt-1 flex items-center justify-between">
           <span className="text-[#0A0A0A]">news · &quot;hire DPO&quot;</span>
-          <span className="text-[#059669]">score 87</span>
+          <span className="text-[#047857]">score 87</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-[#0A0A0A]">reviews · Competitor X down</span>
-          <span className="text-[#059669]">score 79</span>
+          <span className="text-[#047857]">score 79</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-[#0A0A0A]">social · founder post</span>
@@ -292,7 +292,7 @@ function ProductVisual({ kind }: { kind: Visual }) {
       </div>
       <div className="mt-1 flex items-center gap-2">
         <span className="block h-1 w-40 bg-[#B87333]" />
-        <span className="text-[#059669]">emailed \u2713</span>
+        <span className="text-[#047857]">emailed \u2713</span>
       </div>
     </div>
   );

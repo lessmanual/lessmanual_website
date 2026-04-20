@@ -15,7 +15,7 @@ export function ArekBadgeV2() {
             className="rounded-full border border-[#E5E5E5] shrink-0"
           />
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
               LinkedIn · 2026
             </div>
             <p className="text-[15px] leading-[1.55] text-[#0A0A0A]">

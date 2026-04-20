@@ -29,7 +29,7 @@ export function StackStrip() {
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] items-center gap-6">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
             Zbudowane na
           </div>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">

@@ -11,7 +11,7 @@ import { CALENDLY_URL } from "@/lib/constants";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
       {children}
     </div>
   );
@@ -53,7 +53,7 @@ function FAQItem({ q, a, idx }: { q: string; a: string; idx: number }) {
 function ContactRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
         {label}
       </div>
       <div className="text-[15px] text-[#0A0A0A]">{children}</div>
@@ -135,7 +135,7 @@ export default function KontaktContent() {
                   className="border border-[#E5E5E5] bg-[#FAFAFA] px-6 py-5"
                   style={{ borderRadius: 6 }}
                 >
-                  <p className="font-mono text-[11px] text-[#A3A3A3] leading-[1.6]">
+                  <p className="font-mono text-[11px] text-[#737373] leading-[1.6]">
                     LessManual Bartłomiej Chudzik
                     <br />
                     NIP 1231589909
@@ -201,7 +201,7 @@ export default function KontaktContent() {
               >
                 Wszystkie pytania i odpowiedzi →
               </a>
-              <p className="mt-3 text-[13px] text-[#A3A3A3]">
+              <p className="mt-3 text-[13px] text-[#737373]">
                 Masz inne pytanie? Napisz na kontakt@lessmanual.ai lub zarezerwuj rozmowę wyżej.
               </p>
             </div>

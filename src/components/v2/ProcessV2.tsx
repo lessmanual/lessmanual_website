@@ -43,7 +43,7 @@ export function ProcessV2() {
     <section id="proces" className="px-6 md:px-10 py-32 md:py-48">
       <div className="mx-auto max-w-[1440px]">
         <header className="mb-16 max-w-[720px]">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             Proces
           </div>
           <h2>Trzy kroki. Bez fakturowania godzin.</h2>
@@ -67,7 +67,7 @@ export function ProcessV2() {
                 <span className="font-mono text-[56px] font-medium leading-none tracking-tight text-[#B87333]">
                   {s.num}
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                   {s.duration}
                 </span>
               </div>

@@ -74,7 +74,7 @@ export function CookieBanner() {
                 Uzywamy cookies aby zapewnic prawidlowe dzialanie strony.{" "}
                 <Link
                   href="/legal/polityka-cookies"
-                  className="text-accent hover:underline"
+                  className="text-[#8B4513] underline"
                 >
                   Dowiedz sie wiecej
                 </Link>
@@ -96,7 +96,7 @@ export function CookieBanner() {
               </button>
               <button
                 onClick={acceptAll}
-                className="px-5 py-2.5 text-sm bg-accent text-white rounded-[6px] hover:bg-accent-hover transition-colors"
+                className="px-5 py-2.5 text-sm bg-[#8B4513] text-white rounded-[6px] hover:bg-[#6B3A10] transition-colors"
               >
                 Akceptuj wszystkie
               </button>
@@ -112,7 +112,7 @@ export function CookieBanner() {
                 Wybierz, ktore kategorie cookies chcesz zaakceptowac.{" "}
                 <Link
                   href="/legal/polityka-cookies"
-                  className="text-accent hover:underline"
+                  className="text-[#8B4513] underline"
                 >
                   Polityka Cookies
                 </Link>
@@ -221,7 +221,7 @@ export function CookieBanner() {
               </button>
               <button
                 onClick={saveCustom}
-                className="flex-1 px-5 py-2.5 text-sm bg-accent text-white rounded-[6px] hover:bg-accent-hover transition-colors"
+                className="flex-1 px-5 py-2.5 text-sm bg-[#8B4513] text-white rounded-[6px] hover:bg-[#6B3A10] transition-colors"
               >
                 Zapisz wybrane
               </button>

@@ -6,7 +6,7 @@ import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig, Easing } fr
 const MONO = "'JetBrains Mono', monospace";
 const BG_TERMINAL = '#0A0A0A';
 const GREEN = '#10B981';
-const MUTED = '#A3A3A3';
+const MUTED = '#737373';
 const WHITE = '#FAFAFA';
 
 // Sekwencje tekstu z frame start/end

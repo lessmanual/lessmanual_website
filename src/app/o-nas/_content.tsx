@@ -8,7 +8,7 @@ import { FinalCTAV2 } from "@/components/v2/FinalCTAV2";
 // Sekcja label mono
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
       {children}
     </div>
   );
@@ -138,7 +138,7 @@ export default function ONasContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5E5E5] border border-[#E5E5E5]">
               {MANIFEST_ITEMS.map((item) => (
                 <div key={item.label} className="bg-[#FAFAFA] p-8 md:p-10">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-4">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513] mb-4">
                     {item.label}
                   </div>
                   <h3 className="mb-4 text-[#0A0A0A]">{item.title}</h3>
@@ -173,7 +173,7 @@ export default function ONasContent() {
                       aria-hidden="true"
                     />
 
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513] mb-1">
                       {item.date}
                     </div>
                     <h3 className="mb-2 text-[#0A0A0A]">{item.title}</h3>
@@ -200,7 +200,7 @@ export default function ONasContent() {
                   className="border border-[#E5E5E5] bg-[#FAFAFA] p-8"
                   style={{ borderRadius: 8 }}
                 >
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
                     {item.label}
                   </div>
                   <h3 className="mb-4 text-[#0A0A0A]">{item.title}</h3>
@@ -217,7 +217,7 @@ export default function ONasContent() {
         {/* Stopka firmowa */}
         <div className="px-6 md:px-10 pb-8 bg-[#FAFAFA]">
           <div className="mx-auto max-w-[1440px]">
-            <p className="font-mono text-[11px] text-[#A3A3A3] text-center">
+            <p className="font-mono text-[11px] text-[#737373] text-center">
               LessManual Bartłomiej Chudzik | NIP 1231589909 | Cendrowice, ul. Długa 33 | JDG od 09.10.2025
             </p>
           </div>

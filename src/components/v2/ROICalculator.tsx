@@ -309,7 +309,7 @@ function OutputRow({
         className={[
           mono ? "font-mono" : "",
           big ? "text-[20px] font-semibold" : "text-[14px] font-medium",
-          success ? "text-[#059669]" : "text-[#0A0A0A]",
+          success ? "text-[#047857]" : "text-[#0A0A0A]",
         ].join(" ")}
       >
         {valueNode}

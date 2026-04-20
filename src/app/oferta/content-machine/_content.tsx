@@ -431,7 +431,7 @@ export default function ContentMachineContent() {
                 >
                   {tier.featured && (
                     <div
-                      className="absolute -top-3 left-6 font-mono text-[11px] uppercase tracking-[0.18em] bg-[#B87333] text-white px-3 py-1"
+                      className="absolute -top-3 left-6 font-mono text-[11px] uppercase tracking-[0.18em] bg-[#8B4513] text-white px-3 py-1"
                       style={{ borderRadius: 4 }}
                     >
                       NAJPOPULARNIEJSZY
@@ -562,7 +562,7 @@ export default function ContentMachineContent() {
               </Link>
             </div>
 
-            <p className="mt-8 font-mono text-[11px] text-[#737373]">
+            <p className="mt-8 font-mono text-[11px] text-[#525252]">
               Średnia odpowiedź: 4h w dni robocze.
             </p>
           </div>

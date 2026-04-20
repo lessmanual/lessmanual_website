@@ -145,7 +145,7 @@ export function LiveEmailGenerator() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10">
         {/* Header */}
         <div className="mb-12">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             ZOBACZ AGENTA W AKCJI
           </div>
           <h2 className="font-semibold text-[32px] md:text-[48px] leading-[1.1] tracking-[-0.02em] text-[#0A0A0A]">
@@ -164,7 +164,7 @@ export function LiveEmailGenerator() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="lm-industry"
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]"
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]"
               >
                 BRANŻA
               </label>
@@ -175,7 +175,7 @@ export function LiveEmailGenerator() {
                 value={industry}
                 onChange={(e) => setIndustry(e.target.value)}
                 placeholder="np. SaaS B2B, agencja e-commerce, kancelaria prawna"
-                className="w-full border border-[#E5E5E5] bg-white px-4 py-3 rounded-[4px] text-[15px] text-[#0A0A0A] placeholder-[#A3A3A3] focus:outline-none focus:border-[#B87333] transition-colors"
+                className="w-full border border-[#E5E5E5] bg-white px-4 py-3 rounded-[4px] text-[15px] text-[#0A0A0A] placeholder-[#737373] focus:outline-none focus:border-[#B87333] transition-colors"
               />
             </div>
 
@@ -183,7 +183,7 @@ export function LiveEmailGenerator() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="lm-icp"
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]"
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]"
               >
                 ICP (komu sprzedajesz)
               </label>
@@ -194,7 +194,7 @@ export function LiveEmailGenerator() {
                 value={icp}
                 onChange={(e) => setIcp(e.target.value)}
                 placeholder="np. CTO SaaS, dyrektor marketingu, właściciel kancelarii"
-                className="w-full border border-[#E5E5E5] bg-white px-4 py-3 rounded-[4px] text-[15px] text-[#0A0A0A] placeholder-[#A3A3A3] focus:outline-none focus:border-[#B87333] transition-colors"
+                className="w-full border border-[#E5E5E5] bg-white px-4 py-3 rounded-[4px] text-[15px] text-[#0A0A0A] placeholder-[#737373] focus:outline-none focus:border-[#B87333] transition-colors"
               />
             </div>
 
@@ -214,7 +214,7 @@ export function LiveEmailGenerator() {
             </button>
 
             {/* Meta info */}
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#A3A3A3]">
+            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#737373]">
               Claude Sonnet · ~3-6 sekund · maks. 3 generacje / 24h
             </p>
 
@@ -225,7 +225,7 @@ export function LiveEmailGenerator() {
                   initial={{ opacity: 0, y: -4 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -4 }}
-                  className="text-[14px] text-[#B87333]"
+                  className="text-[14px] text-[#8B4513]"
                 >
                   Limit 3 generacji na dobę osiągnięty. Spróbuj jutro.
                 </motion.p>
@@ -236,7 +236,7 @@ export function LiveEmailGenerator() {
                   initial={{ opacity: 0, y: -4 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -4 }}
-                  className="text-[14px] text-[#B87333]"
+                  className="text-[14px] text-[#8B4513]"
                 >
                   {formError}
                 </motion.p>
@@ -259,11 +259,11 @@ export function LiveEmailGenerator() {
           <div className="border border-[#E5E5E5] bg-white rounded-[4px] p-6 min-h-[400px] flex flex-col">
             {/* Output header */}
             <div className="flex items-center justify-between mb-4">
-              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                 WYGENEROWANY EMAIL
               </span>
               {showOutput && !isLoading && (
-                <span className="font-mono text-[10px] text-[#A3A3A3]">
+                <span className="font-mono text-[10px] text-[#737373]">
                   Claude Sonnet
                 </span>
               )}
@@ -284,7 +284,7 @@ export function LiveEmailGenerator() {
                     : ""}
               </span>
               {isLoading && !showOutput && (
-                <div className="flex items-center gap-3 text-[#A3A3A3]">
+                <div className="flex items-center gap-3 text-[#737373]">
                   {/* Spinner */}
                   <svg
                     className="animate-spin"
@@ -317,7 +317,7 @@ export function LiveEmailGenerator() {
                   {/* Subject */}
                   {parsed.subject && (
                     <div>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#A3A3A3]">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#737373]">
                         SUBJECT
                       </span>
                       <p className="font-semibold text-[#0A0A0A] mt-1">
@@ -339,7 +339,7 @@ export function LiveEmailGenerator() {
                   {/* Body */}
                   {parsed.body && (
                     <div>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#A3A3A3]">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#737373]">
                         TREŚĆ
                       </span>
                       <p className="text-[#0A0A0A] mt-1 whitespace-pre-wrap text-[13px] leading-[1.7]">
@@ -356,12 +356,12 @@ export function LiveEmailGenerator() {
               )}
 
               {!isLoading && !showOutput && !errorMessage && !localLimitHit && (
-                <p className="text-[#A3A3A3] text-[13px]">
+                <p className="text-[#737373] text-[13px]">
                   Wypełnij formularz po lewej. Email pojawi się tutaj.
                 </p>
               )}
               {!isLoading && !showOutput && !errorMessage && localLimitHit && (
-                <p className="text-[#B87333] text-[13px]">
+                <p className="text-[#8B4513] text-[13px]">
                   Dzienny limit 3 generacji osiągnięty. Spróbuj jutro lub napisz na kontakt@lessmanual.ai.
                 </p>
               )}
@@ -373,7 +373,7 @@ export function LiveEmailGenerator() {
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="font-mono text-[11px] uppercase tracking-[0.15em] text-[#A3A3A3] hover:text-[#B87333] transition-colors"
+                  className="font-mono text-[11px] uppercase tracking-[0.15em] text-[#737373] hover:text-[#8B4513] transition-colors"
                 >
                   {copied ? "Skopiowano" : "Skopiuj"}
                 </button>

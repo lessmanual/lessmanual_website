@@ -104,7 +104,7 @@ export const ObslugaKlientaScene: React.FC = () => {
                   width: 6,
                   height: 6,
                   borderRadius: '50%',
-                  background: '#A3A3A3',
+                  background: '#737373',
                   opacity: 0.3 + pulse * 0.7,
                   transform: `translateY(${interpolate(pulse, [0, 1], [0, -3])}px)`,
                 }}

@@ -61,20 +61,20 @@ export function HeaderV2() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[13px]">
-          <Link href={anchor("systems")} className="v2-link">Systemy</Link>
+          <Link href={anchor("systems")} className="v2-link py-3 inline-block">Systemy</Link>
           <OfertaDropdown />
-          <Link href={anchor("proces")} className="v2-link">Proces</Link>
-          <Link href={anchor("pricing")} className="v2-link">Cennik</Link>
-          <Link href="/faq" className="v2-link">FAQ</Link>
-          <Link href="/o-nas" className="v2-link">O nas</Link>
-          <Link href="/kontakt" className="v2-link">Kontakt</Link>
+          <Link href={anchor("proces")} className="v2-link py-3 inline-block">Proces</Link>
+          <Link href={anchor("pricing")} className="v2-link py-3 inline-block">Cennik</Link>
+          <Link href="/faq" className="v2-link py-3 inline-block">FAQ</Link>
+          <Link href="/o-nas" className="v2-link py-3 inline-block">O nas</Link>
+          <Link href="/kontakt" className="v2-link py-3 inline-block">Kontakt</Link>
         </nav>
 
         <Link
           href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 bg-[#0A0A0A] px-4 py-2 text-[13px] font-medium text-white transition-all duration-200 hover:bg-[#B87333]"
+          className="inline-flex items-center gap-1.5 bg-[#0A0A0A] px-4 py-3 text-[13px] font-medium text-white transition-all duration-200 hover:bg-[#B87333]"
           style={{ borderRadius: 4 }}
         >
           Rozmowa <span>→</span>
@@ -113,7 +113,7 @@ function OfertaDropdown() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="v2-link inline-flex items-center gap-1"
+        className="v2-link inline-flex items-center gap-1 py-3"
       >
         Oferta
         <span

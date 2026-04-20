@@ -10,7 +10,7 @@ import { FAQ_ITEMS } from "@/lib/constants";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
       {children}
     </div>
   );
@@ -67,7 +67,7 @@ export default function FaqContent() {
               Wszystko co chcesz wiedzieć zanim zarezerwujesz rozmowę. Jeżeli nie znajdziesz odpowiedzi, napisz na{" "}
               <a
                 href="mailto:kontakt@lessmanual.ai"
-                className="text-[#B87333] hover:underline"
+                className="text-[#8B4513] underline"
               >
                 kontakt@lessmanual.ai
               </a>

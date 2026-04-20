@@ -20,7 +20,7 @@ export function WhoWeAreCard() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="mx-auto max-w-[1200px]">
-        <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-8">
+        <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-8">
           KTO BUDUJE
         </div>
 
@@ -39,7 +39,7 @@ export function WhoWeAreCard() {
               <div className="text-[17px] font-semibold text-[#0A0A0A]">
                 Bartłomiej Chudzik
               </div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mt-1">
+              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mt-1">
                 CEO &amp; Solution Architect
               </div>
             </div>

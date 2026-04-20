@@ -155,7 +155,7 @@ const FAQ_ITEMS = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
       {children}
     </div>
   );
@@ -253,7 +253,7 @@ export default function PipelineMachineContent() {
                   <span className="font-mono text-[13px] uppercase tracking-[0.18em] font-medium text-[#0A0A0A]">
                     Pipeline Machine
                   </span>
-                  <span className="font-mono text-[11px] text-[#A3A3A3]">
+                  <span className="font-mono text-[11px] text-[#737373]">
                     demo na żywo
                   </span>
                 </div>
@@ -261,7 +261,7 @@ export default function PipelineMachineContent() {
                   script={PIPELINE_SCRIPT}
                   chromeLabel="lessmanual-cli · pipeline-machine"
                 />
-                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#A3A3A3]">
+                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#737373]">
                   <span>76% open · 61% reply</span>
                 </div>
               </div>
@@ -300,7 +300,7 @@ export default function PipelineMachineContent() {
                     <span className="font-mono text-[56px] font-medium leading-none tracking-tight text-[#B87333]">
                       {s.num}
                     </span>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                       {s.title}
                     </span>
                   </div>
@@ -324,7 +324,7 @@ export default function PipelineMachineContent() {
                 style={{ width: "100%", aspectRatio: "1/1", borderRadius: 8 }}
               />
               {reducedMotion && (
-                <p className="mt-3 text-center font-mono text-[11px] text-[#A3A3A3]">
+                <p className="mt-3 text-center font-mono text-[11px] text-[#737373]">
                   Animacja wstrzymana (prefers-reduced-motion). Kliknij play, aby odtworzyć.
                 </p>
               )}
@@ -344,7 +344,7 @@ export default function PipelineMachineContent() {
               {/* Lewa: klient + problem + workflow */}
               <div className="flex flex-col gap-5">
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Klient
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#0A0A0A]">
@@ -353,7 +353,7 @@ export default function PipelineMachineContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Problem
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -362,7 +362,7 @@ export default function PipelineMachineContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Co dostał (workflow)
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -371,7 +371,7 @@ export default function PipelineMachineContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Dziś
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -384,37 +384,37 @@ export default function PipelineMachineContent() {
               <div className="border border-[#E5E5E5] bg-white p-8" style={{ borderRadius: 8 }}>
                 <div className="flex flex-col gap-6">
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Open rate kampanii
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       76%
                     </div>
-                    <div className="font-mono text-[11px] text-[#A3A3A3]">benchmark: 20-30%</div>
+                    <div className="font-mono text-[11px] text-[#737373]">benchmark: 20-30%</div>
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Positive reply rate
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       61%
                     </div>
-                    <div className="font-mono text-[11px] text-[#A3A3A3]">6 na 10 odpowiedzi to chęć rozmowy</div>
+                    <div className="font-mono text-[11px] text-[#737373]">6 na 10 odpowiedzi to chęć rozmowy</div>
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Od maila do umowy
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       6 dni
                     </div>
-                    <div className="font-mono text-[11px] text-[#A3A3A3]">benchmark: 30-90 dni</div>
+                    <div className="font-mono text-[11px] text-[#737373]">benchmark: 30-90 dni</div>
                   </div>
                 </div>
 
-                <p className="mt-6 font-mono text-[11px] text-[#A3A3A3] leading-[1.6]">
+                <p className="mt-6 font-mono text-[11px] text-[#737373] leading-[1.6]">
                   Pełne liczby 1:1 w rozmowie 15-min.
                 </p>
               </div>
@@ -445,7 +445,7 @@ export default function PipelineMachineContent() {
                 >
                   {tier.featured && (
                     <div
-                      className="absolute -top-3 left-6 font-mono text-[11px] uppercase tracking-[0.18em] bg-[#B87333] text-white px-3 py-1"
+                      className="absolute -top-3 left-6 font-mono text-[11px] uppercase tracking-[0.18em] bg-[#8B4513] text-white px-3 py-1"
                       style={{ borderRadius: 4 }}
                     >
                       NAJPOPULARNIEJSZY
@@ -453,19 +453,19 @@ export default function PipelineMachineContent() {
                   )}
 
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       {tier.name}
                     </div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#B87333] mb-3">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#8B4513] mb-3">
                       {tier.sub}
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       {tier.perMeeting} PLN
                     </div>
-                    <div className="text-[13px] text-[#A3A3A3] mt-1">
+                    <div className="text-[13px] text-[#737373] mt-1">
                       za spotkanie (zależne od ACV)
                     </div>
-                    <div className="text-[13px] text-[#A3A3A3] mt-0.5">
+                    <div className="text-[13px] text-[#737373] mt-0.5">
                       Setup: {tier.setup}
                     </div>
                   </div>
@@ -522,34 +522,34 @@ export default function PipelineMachineContent() {
                   className="bg-white border border-[#E5E5E5] p-8 flex flex-col gap-4"
                   style={{ borderRadius: 8 }}
                 >
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333]">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513]">
                     {v.label}
                   </div>
                   <h3 className="text-[16px] font-medium text-[#0A0A0A]">{v.name}</h3>
 
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#737373] mb-1">
                       ICP
                     </div>
                     <p className="text-[14px] text-[#525252]">{v.icp}</p>
                   </div>
 
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#737373] mb-1">
                       Lead Sources
                     </div>
                     <p className="text-[14px] text-[#525252]">{v.sources}</p>
                   </div>
 
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#737373] mb-1">
                       Email Angle
                     </div>
                     <p className="text-[14px] text-[#525252]">{v.angle}</p>
                   </div>
 
                   <div className="mt-auto pt-4 border-t border-[#E5E5E5]">
-                    <span className="font-mono text-[11px] text-[#B87333]">{v.price}</span>
+                    <span className="font-mono text-[11px] text-[#8B4513]">{v.price}</span>
                   </div>
                 </div>
               ))}
@@ -608,7 +608,7 @@ export default function PipelineMachineContent() {
               </Link>
             </div>
 
-            <p className="mt-8 font-mono text-[11px] text-[#A3A3A3]">
+            <p className="mt-8 font-mono text-[11px] text-[#525252]">
               Średnia odpowiedź: 4h w dni robocze.
             </p>
           </div>

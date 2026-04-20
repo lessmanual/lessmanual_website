@@ -24,7 +24,7 @@ export function TestimonialsV2() {
     <section className="bg-white border-y border-[#E5E5E5] px-6 md:px-10 py-32 md:py-48">
       <div className="mx-auto max-w-[1440px]">
         <header className="mb-16 max-w-[720px]">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             {SOCIAL_PROOF.googleRating.toFixed(1)} · Google Reviews · {SOCIAL_PROOF.googleReviews} opinii
           </div>
           <h2>Klienci nie oglądają demo. Oglądają wyniki.</h2>
@@ -57,7 +57,7 @@ export function TestimonialsV2() {
                     <div className="text-[14px] font-medium text-[#0A0A0A]">
                       {r.name}
                     </div>
-                    <div className="font-mono text-[11px] text-[#A3A3A3]">
+                    <div className="font-mono text-[11px] text-[#737373]">
                       Google Review · {r.meta}
                     </div>
                   </div>
@@ -70,10 +70,10 @@ export function TestimonialsV2() {
               </p>
 
               <div className="mt-6 flex items-center gap-3 border-t border-[#E5E5E5] pt-5">
-                <span className="font-mono text-[11px] text-[#A3A3A3]">przed</span>
+                <span className="font-mono text-[11px] text-[#737373]">przed</span>
                 <span className="text-[13px] text-[#525252]">{r.before}</span>
                 <span className="text-[#B87333]">→</span>
-                <span className="font-mono text-[11px] text-[#A3A3A3]">po</span>
+                <span className="font-mono text-[11px] text-[#737373]">po</span>
                 <span className="text-[13px] text-[#0A0A0A]">{r.after}</span>
               </div>
             </motion.article>
@@ -86,7 +86,7 @@ export function TestimonialsV2() {
 
 function StarRow() {
   return (
-    <span className="inline-flex gap-0.5" aria-label="5 out of 5 stars">
+    <span className="inline-flex gap-0.5" role="img" aria-label="5 out of 5 stars">
       {[0, 1, 2, 3, 4].map((i) => (
         <svg key={i} width="12" height="12" viewBox="0 0 20 20" fill="#B87333" aria-hidden="true">
           <path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7L10 1.5z" />
