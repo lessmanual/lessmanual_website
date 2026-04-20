@@ -8,6 +8,7 @@ const STACK = [
   "Vercel",
   "Claude (Anthropic)",
   "AWS",
+  "GCP",
   "Remotion",
   "Apify",
   "OpenAI",
