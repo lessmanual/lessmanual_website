@@ -10,6 +10,7 @@ import { ProofBar } from "@/components/ui/ProofBar";
 import { Button } from "@/components/ui/Button";
 import { Users, Star, Clock } from "lucide-react";
 import { CALENDLY_URL, HERO_ROTATOR_WORDS } from "@/lib/constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 const stagger = {
   hidden: {},
@@ -48,11 +49,11 @@ export function HeroSplit() {
               className="flex flex-wrap gap-3 mb-8"
             >
               {[
-                { icon: Users, text: "10+ firm B2B" },
+                { icon: Users, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B` },
                 { icon: Star, text: "5.0 na Google" },
                 {
                   icon: Clock,
-                  text: "Max 3 projekty miesięcznie",
+                  text: `Max ${SOCIAL_PROOF.maxProjectsMonthly} projekty miesięcznie`,
                   highlight: true,
                 },
               ].map((badge) => (

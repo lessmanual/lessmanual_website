@@ -23,7 +23,7 @@ export const PROOF_METRICS = [
   { value: "Gwarancja wyników", label: "lub pełny zwrot kosztów" },
 ];
 
-export const PROOF_META = "11 firm B2B · 13 wdrożeń · 5.0 na Google · Max 3 projekty miesięcznie";
+export { PROOF_WITH_CAPACITY as PROOF_META } from "./social-proof";
 
 export const NAVIGATION = [
   { name: "Oferta", href: "/oferta" },
@@ -35,8 +35,21 @@ export const NAVIGATION = [
 
 export const PRODUCTS = [
   {
+    title: "Hot Lead Catcher",
+    badge: "NAJCZĘŚCIEJ WYBIERANY",
+    description:
+      "Agent AI który wychwytuje gorące leady zanim konkurencja je zauważy. Monitoruje 4 źródła sygnałów zakupowych (news, job boards, reviews, social) i alertuje gdy ktoś z Twojego ICP właśnie rozważa zakup.",
+    metrics: [
+      "Setup 3 000 PLN + od 800 PLN/mies",
+      "4 źródła sygnałów (news, job boards, reviews, social)",
+      "Alert Telegram + gotowy draft maila w Instantly",
+    ],
+    bonus:
+      "Bonus: CRM integration + scoring agent w cenie setupu GROWTH (wartość 2 000 PLN)",
+    landingHref: "/oferta/hot-lead-catcher",
+  },
+  {
     title: "Spotkania z decydentami",
-    badge: "NAJPOPULARNIEJSZE",
     description:
       "System który umawia spotkania z Twoimi idealnymi klientami. Płacisz tylko za wynik - zero stałych opłat. 3 warstwy gwarancji. Bonusy o wartości do 10,000 PLN w cenie.",
     metrics: [
@@ -189,6 +202,13 @@ export const REVIEWS = [
     before: "Ręczne procesy, wolne efekty",
     after: "Rozwiązania szyte na miarę",
     text: `Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę" i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.`,
+  },
+  {
+    name: "Arek Skuza",
+    meta: "CEO and boards advisor on AI Powered Growth",
+    before: "Standard agency processes",
+    after: "Focus. Precision. AI agents' knowledge.",
+    text: `Focus. Precision. Excellent time management, and AI agents' knowledge are what make Bartek an exceptional architect and engineer.`,
   },
 ];
 

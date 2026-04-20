@@ -7,6 +7,7 @@ import { TangledWires } from "@/remotion/variants/TangledWires";
 import { Button } from "@/components/ui/Button";
 import { TilesBackground } from "@/components/ui/TilesBackground";
 import { Users, Star, Clock } from "lucide-react";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 const stagger = {
   hidden: {},
@@ -47,11 +48,11 @@ export function Hero() {
               className="flex flex-wrap gap-3 justify-center mb-10"
             >
               {[
-                { icon: Users, text: "10+ firm B2B", highlight: false },
+                { icon: Users, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B`, highlight: false },
                 { icon: Star, text: "5.0 na Google", highlight: false },
                 {
                   icon: Clock,
-                  text: "Max 3 projekty miesięcznie",
+                  text: `Max ${SOCIAL_PROOF.maxProjectsMonthly} projekty miesięcznie`,
                   highlight: true,
                 },
               ].map((b) => (

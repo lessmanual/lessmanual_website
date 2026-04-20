@@ -12,6 +12,7 @@ import { TextRotator } from "@/components/animations/TextRotator";
 import { Button } from "@/components/ui/Button";
 import { Users, Star, Clock } from "lucide-react";
 import { CALENDLY_URL, HERO_ROTATOR_WORDS } from "@/lib/constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 const variants = [
   { id: 1, name: "Scattered Papers", desc: "Kartki → schludny stos", component: ScatteredPapers },
@@ -119,9 +120,9 @@ export default function DemoHeroPage() {
             <motion.div variants={stagger} initial="hidden" animate="visible">
               <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: Users, text: "10+ firm B2B" },
+                  { icon: Users, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B` },
                   { icon: Star, text: "5.0 na Google" },
-                  { icon: Clock, text: "Max 3 projekty miesięcznie", highlight: true },
+                  { icon: Clock, text: `Max ${SOCIAL_PROOF.maxProjectsMonthly} projekty miesięcznie`, highlight: true },
                 ].map((badge) => (
                   <span
                     key={badge.text}

@@ -1,4 +1,5 @@
 import { Header } from "@/components/layout/Header";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { Hero } from "@/components/sections/Hero";
@@ -40,8 +41,8 @@ const jsonLd = {
   priceRange: "$$",
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "6",
+    ratingValue: SOCIAL_PROOF.googleRating.toFixed(1),
+    reviewCount: SOCIAL_PROOF.googleReviews.toString(),
     bestRating: "5",
   },
 };
@@ -71,7 +72,7 @@ export default function Home() {
         <HeroProof />
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-sm text-text-muted leading-relaxed">
-            LessManual.ai to polska agencja automatyzacji AI dla firm B2B. Budujemy done-for-you systemy: Pipeline Machine (umawianie spotkań pay-per-meeting), SEO Content (blog na autopilocie), Obsługa Klienta AI (wszystkie kanały 24/7) i Generator Ofert (wycena w 5 minut). 11 firm obsłużonych, 13 wdrożeń, 5.0 na Google. Gwarancja wyników lub zwrot kosztów.
+            LessManual.ai to polska agencja automatyzacji AI dla firm B2B. Budujemy done-for-you systemy: Pipeline Machine (umawianie spotkań pay-per-meeting), SEO Content (blog na autopilocie), Obsługa Klienta AI (wszystkie kanały 24/7) i Generator Ofert (wycena w 5 minut). {SOCIAL_PROOF.companiesEngaged}+ firm obsłużonych, {SOCIAL_PROOF.implementationsDelivered} wdrożeń, {SOCIAL_PROOF.googleRating} na Google. Gwarancja wyników lub zwrot kosztów.
           </p>
         </div>
         <Problem />
