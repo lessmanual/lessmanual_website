@@ -1,0 +1,204 @@
+# System Obsługi Klienta · chatbot AI + multi-channel · LessManual
+
+> Chatbot RAG na web, WhatsApp i email. 60-80% zapytań obsługiwanych automatycznie. Odpowiedź w 30 sekund, 24/7. Voice Agent w tierze SCALE. Od 5 000 PLN setup + 900 PLN/mies. Wdrożenie w 14 dni.
+
+> Source: http://localhost:3000/oferta/obsluga-klienta
+> Generated: 2026-04-20T17:54:10.640Z
+
+---
+
+Agent #3 LessManual · OBSŁUGA KLIENTA
+
+# Odpowiedź w 30 sekund,  
+24/7, na wszystkich  
+kanałach jednocześnie.
+
+Chatbot RAG wytrenowany na FAQ Twojej firmy obsługuje web, WhatsApp i email. 60-80% zapytań automatycznie. Eskalacja do człowieka z pełnym kontekstem gdy trzeba. System od 900 PLN/mies. vs pracownik 8-9 tys. PLN/mies.
+
+[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+
+System Obsługi Klientademo na żywo
+
+lessmanual-cli · obsluga-klienta● live
+
+$
+
+3 kanały · auto-resolve 75%
+
+01TRENING RAG
+
+Agent uczy się na FAQ, regulaminach, cenniku i historii rozmów Twojej firmy. Baza wiedzy to tylko Twoje dokumenty - nic nie wymyśla. Aktualizacja bazy w minuty przez panel. Wdrożenie: 14 dni.
+
+02OBSŁUGA KANAŁÓW
+
+Zapytanie wpada przez web, WhatsApp lub email. Agent odpowiada w tym samym kanale w ciągu kilku sekund. CSAT scoring per rozmowę. Gdy rozmowa wymaga człowieka - eskalacja z pełnym kontekstem trafia do Slack lub CRM.
+
+03RAPORT + OPTYMALIZACJA
+
+Miesięczny raport CSAT (od GROWTH): ile zapytań obsłużonych, ile eskalacji, średni czas odpowiedzi, tematy najczęstszych pytań. Dane wskazują co dodać do bazy by podnieść auto-resolve powyżej 80%.
+
+Klient
+
+Sklep e-commerce, segment mid-market, 200+ zapytań dziennie o statusy zamówień, zwroty i godziny dostawy.
+
+Problem
+
+Pracownik działu obsługi: 8-9 tys. PLN/mies. Odpowiadał na te same 15 pytań w kółko. Poza godzinami pracy - zero odpowiedzi. Klienci pisali negatywne opinie o czasie oczekiwania.
+
+Co dostał
+
+System GROWTH: chatbot web + WhatsApp + email triage. RAG wytrenowany na FAQ, regulaminie zwrotów i bazie produktowej. Eskalacja z kontekstem gdy klient prosi o decyzję. Integracja z CRM - każda eskalacja trafia z historią rozmowy.
+
+Dziś
+
+75% zapytań obsługiwanych automatycznie, średnia odpowiedź w 24 sekundy. Pracownik obsługi skupia się na przypadkach wymagających decyzji - nie na powtarzalnych pytaniach.
+
+Automatyzacja zapytań
+
+75% (było 0%)
+
+Czas odpowiedzi
+
+<30s (było 4-24h)
+
+Koszt systemu vs pracownik
+
+900 vs 8 500 PLN/mies.
+
+Pełne liczby i demo live pokazujemy na rozmowie 15-min.
+
+STARTER
+
+1 kanał
+
+900 PLN/mies.
+
+Setup: 5 000 PLN
+
+-   +Chatbot na stronę LUB WhatsApp (1 kanał)
+-   +RAG wytrenowany na FAQ firmy
+-   +500 konwersacji/mies.
+-   +Eskalacja do człowieka z kontekstem
+-   +Bonus: konfiguracja agenta pod ICP (wartość 1 000 PLN)
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+NAJPOPULARNIEJSZY
+
+GROWTH
+
+Multi-channel
+
+1 500 PLN/mies.
+
+Setup: 10 000 PLN
+
+-   +WhatsApp + email triage + chatbot web
+-   +2 000 konwersacji/mies.
+-   +Integracja CRM (HubSpot / Pipedrive)
+-   +Miesięczny raport CSAT
+-   +Bonus: Email Triage automation (wartość 600 PLN/mies)
+-   +Bonus: WhatsApp Business integration (wartość 2 000 PLN)
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+SCALE
+
+Full Suite + Voice
+
+2 200 PLN/mies.
+
+Setup: 15 000 PLN
+
+-   +Wszystko z GROWTH
+-   +Voice Agent (AI receptionist 24/7, polski głos)
+-   +Unlimited konwersacje
+-   +Wielojęzyczność (PL + EN + DE + UA)
+-   +Custom integracje + 24/7 monitoring
+-   +Bonus: Wielojęzyczność (wartość 3 000 PLN)
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+VOICE AGENT
+
+Recepcjonistka która nigdy nie idzie na L4.
+
+AI odbiera telefon 24/7, kwalifikuje rozmówcę, umawia spotkania w kalendarzu, wysyła SMS z potwierdzeniem. Nagrania i transkrypcje każdej rozmowy. Dostępny w tierze SCALE lub jako add-on.
+
+[Zapytaj o Voice →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+50% zaliczki przed startem. Reszta po wdrożeniu. Wdrożenie w 14 dni albo zwrot setup.
+
+E-COMMERCE
+
+BASIC
+
+5 000 PLN setup
+
+1 000 PLN/mies.
+
+koszyk, śledzenie zamówień, FAQ
+
+PRO
+
+10 000 PLN setup
+
+1 800 PLN/mies.
+
+\+ rekomendacje produktów, odzyskiwanie porzuconych koszyków
+
+PRZYCHODNIE / MEDYCYNA
+
+BASIC
+
+6 000 PLN setup
+
+1 200 PLN/mies.
+
+umawianie wizyt, FAQ, zgodność RODO
+
+PRO
+
+12 000 PLN setup
+
+2 000 PLN/mies.
+
+\+ przypomnienia SMS, integracja z systemem
+
+HOTELE / HORECA
+
+BASIC
+
+5 500 PLN setup
+
+1 000 PLN/mies.
+
+rezerwacje, wielojęzyczność, FAQ
+
+PRO
+
+11 000 PLN setup
+
+1 800 PLN/mies.
+
+\+ upselling, integracja z PMS
+
+Czy AI nie pomyli się i nie zrazi klientów?+
+
+Jakie kanały obsługuje system?+
+
+Ile trwa wdrożenie?+
+
+Czy system obsługuje wiele języków?+
+
+Czy jest integracja z CRM?+
+
+Czy dane klientów są bezpieczne?+
+
+## Gotowy żeby system odpowiadał klientom za Ciebie?
+
+15 minut rozmowy. Pokażę demo na FAQ Twojej firmy, ustalimy kanały i tier. Wdrożenie w 14 dni.
+
+[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
+
+Średnia odpowiedź: 4h w dni robocze.
