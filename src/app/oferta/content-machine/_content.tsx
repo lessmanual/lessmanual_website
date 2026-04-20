@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Player } from "@remotion/player";
-import { SeoContentFlow } from "@/remotion/SeoContentFlow";
+import { ContentMachineFlow } from "@/remotion/ContentMachineFlow";
 import { HeaderV2 } from "@/components/v2/HeaderV2";
 import { FooterV2 } from "@/components/v2/FooterV2";
 import { LiveDemoTerminal, type Line } from "@/components/v2/LiveDemoTerminal";
@@ -141,7 +141,7 @@ const FAQ_ITEMS = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
       {children}
     </div>
   );
@@ -180,7 +180,7 @@ function FAQItem({ q, a, idx }: { q: string; a: string; idx: number }) {
 
 // ── Main content ───────────────────────────────────────────────────────────────
 
-export default function SeoContentContent() {
+export default function ContentMachineContent() {
   const reducedMotion = useReducedMotion();
 
   return (
@@ -197,7 +197,7 @@ export default function SeoContentContent() {
                 <div className="inline-flex items-center gap-2 border border-[#E5E5E5] bg-white px-3 py-1.5 mb-8">
                   <span className="block h-1.5 w-1.5 rounded-full bg-[#10B981]" />
                   <span className="font-mono text-[11px] tracking-tight text-[#525252]">
-                    SEO Content System · zrobione za Ciebie · od 83 PLN/artykuł
+                    Content Machine · zrobione za Ciebie · od 83 PLN/artykuł
                   </span>
                 </div>
 
@@ -237,17 +237,17 @@ export default function SeoContentContent() {
               <div className="relative">
                 <div className="mb-4 flex items-center justify-between px-1">
                   <span className="font-mono text-[13px] uppercase tracking-[0.18em] font-medium text-[#0A0A0A]">
-                    SEO Content System
+                    Content Machine
                   </span>
-                  <span className="font-mono text-[11px] text-[#A3A3A3]">
+                  <span className="font-mono text-[11px] text-[#737373]">
                     demo na żywo
                   </span>
                 </div>
                 <LiveDemoTerminal
                   script={SEO_SCRIPT}
-                  chromeLabel="lessmanual-cli · seo-content"
+                  chromeLabel="lessmanual-cli · content-machine"
                 />
-                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#A3A3A3]">
+                <div className="mt-4 flex items-center justify-end px-1 font-mono text-[11px] text-[#737373]">
                   <span>+237% ruch · 18 fraz TOP 10</span>
                 </div>
               </div>
@@ -286,7 +286,7 @@ export default function SeoContentContent() {
                     <span className="font-mono text-[56px] font-medium leading-none tracking-tight text-[#B87333]">
                       {s.num}
                     </span>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                       {s.title}
                     </span>
                   </div>
@@ -298,7 +298,7 @@ export default function SeoContentContent() {
             {/* Remotion flow */}
             <div className="mt-16 max-w-[640px] mx-auto">
               <Player
-                component={SeoContentFlow}
+                component={ContentMachineFlow}
                 durationInFrames={240}
                 fps={30}
                 compositionWidth={640}
@@ -310,7 +310,7 @@ export default function SeoContentContent() {
                 style={{ width: "100%", aspectRatio: "1/1", borderRadius: 8 }}
               />
               {reducedMotion && (
-                <p className="mt-3 text-center font-mono text-[11px] text-[#A3A3A3]">
+                <p className="mt-3 text-center font-mono text-[11px] text-[#737373]">
                   Animacja wstrzymana (prefers-reduced-motion). Kliknij play, aby odtworzyć.
                 </p>
               )}
@@ -330,7 +330,7 @@ export default function SeoContentContent() {
               {/* Lewa: klient + problem + workflow */}
               <div className="flex flex-col gap-5">
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Klient
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#0A0A0A]">
@@ -339,7 +339,7 @@ export default function SeoContentContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Problem
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -348,7 +348,7 @@ export default function SeoContentContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Co dostał (workflow)
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -357,7 +357,7 @@ export default function SeoContentContent() {
                 </div>
 
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                     Dziś
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
@@ -370,37 +370,37 @@ export default function SeoContentContent() {
               <div className="border border-[#E5E5E5] bg-white p-8" style={{ borderRadius: 8 }}>
                 <div className="flex flex-col gap-6">
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Inwestycja
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       5 000 PLN setup
                     </div>
-                    <div className="font-mono text-[11px] text-[#A3A3A3]">+ 500 PLN/mies</div>
+                    <div className="font-mono text-[11px] text-[#737373]">+ 500 PLN/mies</div>
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Wartość ruchu organicznego
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       10-50k PLN/mies
                     </div>
-                    <div className="font-mono text-[11px] text-[#A3A3A3]">po 6 miesiącach</div>
+                    <div className="font-mono text-[11px] text-[#737373]">po 6 miesiącach</div>
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-1">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
                       Czas do TOP 10
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       7 dni
                     </div>
-                    <div className="font-mono text-[11px] text-[#A3A3A3]">od pierwszej publikacji</div>
+                    <div className="font-mono text-[11px] text-[#737373]">od pierwszej publikacji</div>
                   </div>
                 </div>
 
-                <p className="mt-6 font-mono text-[11px] text-[#A3A3A3] leading-[1.6]">
+                <p className="mt-6 font-mono text-[11px] text-[#737373] leading-[1.6]">
                   Pełne liczby 1:1 w rozmowie 15-min.
                 </p>
               </div>
@@ -412,7 +412,7 @@ export default function SeoContentContent() {
         <section id="pricing" className="px-6 md:px-10 py-24 md:py-36 bg-white border-y border-[#E5E5E5]">
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
-              <SectionLabel>CENNIK SEO CONTENT</SectionLabel>
+              <SectionLabel>CENNIK CONTENT MACHINE</SectionLabel>
               <h2>Trzy tiery. Ruch który rośnie co miesiąc.</h2>
             </header>
 
@@ -439,13 +439,13 @@ export default function SeoContentContent() {
                   )}
 
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-2">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
                       {tier.name}
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       {tier.monthly}
                     </div>
-                    <div className="text-[13px] text-[#A3A3A3] mt-1">
+                    <div className="text-[13px] text-[#737373] mt-1">
                       Setup: {tier.setup}
                     </div>
                   </div>
@@ -501,7 +501,7 @@ export default function SeoContentContent() {
                   <div className="text-[42px] font-medium text-[#0A0A0A] tracking-tight leading-none">
                     {m.value}
                   </div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333]">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513]">
                     {m.label}
                   </div>
                   <p className="text-[14px] leading-[1.6] text-[#525252]">{m.desc}</p>
@@ -520,7 +520,7 @@ export default function SeoContentContent() {
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-12 max-w-[720px]">
               <SectionLabel>PYTANIA</SectionLabel>
-              <h2>Najczęstsze pytania o SEO Content System.</h2>
+              <h2>Najczęstsze pytania o Content Machine.</h2>
             </header>
 
             <div className="max-w-[800px] border border-[#E5E5E5] bg-white px-8" style={{ borderRadius: 8 }}>
@@ -562,7 +562,7 @@ export default function SeoContentContent() {
               </Link>
             </div>
 
-            <p className="mt-8 font-mono text-[11px] text-[#A3A3A3]">
+            <p className="mt-8 font-mono text-[11px] text-[#737373]">
               Średnia odpowiedź: 4h w dni robocze.
             </p>
           </div>

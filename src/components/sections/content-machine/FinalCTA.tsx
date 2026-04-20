@@ -4,7 +4,7 @@ import { Shield, Banknote, BarChart3, CalendarCheck } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { Button } from "@/components/ui/Button";
-import { SEO_CALENDLY_URL, SEO_EMAIL } from "@/lib/seo-content-constants";
+import { SEO_CALENDLY_URL, SEO_EMAIL } from "@/lib/content-machine-constants";
 
 const trustElements = [
   { icon: Shield, text: "30 dni trial" },

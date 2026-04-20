@@ -21,7 +21,7 @@ const ROWS = [
     note: "zero stałych opłat",
   },
   {
-    name: "SEO Content",
+    name: "Content Machine",
     slug: "Blog który pisze się sam",
     setup: "od 3 000 PLN",
     monthly: "od 1 000 PLN",
@@ -62,7 +62,7 @@ export function PricingV2() {
     <section id="pricing" className="bg-white border-y border-[#E5E5E5] px-6 md:px-10 py-32 md:py-48">
       <div className="mx-auto max-w-[1440px]">
         <header className="mb-16 max-w-[720px]">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             Cennik
           </div>
           <h2>Jeden cennik. Bez stawek godzinowych.</h2>
@@ -73,7 +73,7 @@ export function PricingV2() {
 
         <div className="border border-[#E5E5E5] bg-[#FAFAFA]">
           {/* Header row */}
-          <div className="hidden md:grid grid-cols-[2fr_1.2fr_1fr_1.2fr] gap-6 px-6 py-4 border-b border-[#E5E5E5] font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+          <div className="hidden md:grid grid-cols-[2fr_1.2fr_1fr_1.2fr] gap-6 px-6 py-4 border-b border-[#E5E5E5] font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
             <div>System</div>
             <div>Setup</div>
             <div>Miesięcznie</div>
@@ -95,7 +95,7 @@ export function PricingV2() {
               >
                 <div>
                   <div className="text-[15px] font-medium text-[#0A0A0A]">{r.name}</div>
-                  <div className="text-[13px] text-[#A3A3A3]">{r.slug}</div>
+                  <div className="text-[13px] text-[#737373]">{r.slug}</div>
                 </div>
                 <div className="font-mono text-[14px] text-[#0A0A0A]">{r.setup}</div>
                 <div className="font-mono text-[14px] text-[#0A0A0A]">{r.monthly}</div>

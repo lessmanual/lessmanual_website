@@ -20,8 +20,8 @@ const PRODUCT_LINKS: ProductLink[] = [
     tagline: "Spotkania z decydentami B2B pay-per-meeting.",
   },
   {
-    title: "SEO Content",
-    href: "/oferta/seo-content",
+    title: "Content Machine",
+    href: "/oferta/content-machine",
     tagline: "Blog, który pisze się sam. 10-30 artykułów/mies.",
   },
   {
@@ -154,7 +154,7 @@ function OfertaDropdown() {
             <Link
               href="/v2#systems"
               onClick={() => setOpen(false)}
-              className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333]"
+              className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513]"
             >
               Zobacz wszystkie systemy →
             </Link>

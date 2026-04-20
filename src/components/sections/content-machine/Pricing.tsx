@@ -11,7 +11,7 @@ import {
   SEO_SETUP_PLANS,
   SEO_DELIVERY_TIMES,
   SEO_CALENDLY_URL,
-} from "@/lib/seo-content-constants";
+} from "@/lib/content-machine-constants";
 
 export function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");

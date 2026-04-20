@@ -3,7 +3,7 @@
 import { FadeUp } from "@/components/animations/FadeUp";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { SEO_SOLUTION_STEPS } from "@/lib/seo-content-constants";
+import { SEO_SOLUTION_STEPS } from "@/lib/content-machine-constants";
 
 export function Solution() {
   return (

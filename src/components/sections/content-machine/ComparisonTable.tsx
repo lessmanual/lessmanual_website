@@ -3,7 +3,7 @@
 import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { SEO_COMPARISON_TABLE, SEO_CALENDLY_URL } from "@/lib/seo-content-constants";
+import { SEO_COMPARISON_TABLE, SEO_CALENDLY_URL } from "@/lib/content-machine-constants";
 
 export function ComparisonTable() {
   return (

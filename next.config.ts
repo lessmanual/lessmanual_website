@@ -12,6 +12,16 @@ const nextConfig: NextConfig = {
         destination: "/oferta/pipeline-machine",
         permanent: true,
       },
+      {
+        source: "/oferta/seo-content",
+        destination: "/oferta/content-machine",
+        permanent: true,
+      },
+      {
+        source: "/oferta/seo-content/:path*",
+        destination: "/oferta/content-machine/:path*",
+        permanent: true,
+      },
     ];
   },
 };

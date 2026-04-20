@@ -71,7 +71,7 @@ export const PRODUCTS = [
     ],
     bonus:
       "Bonus: ruch z Google to klienci którzy sami Cię szukają, zero kosztów per lead",
-    landingHref: "/oferta/seo-content",
+    landingHref: "/oferta/content-machine",
   },
   {
     title: "Odpowiedź w 30 sekund, 24/7",
@@ -222,7 +222,7 @@ export const FAQ_ITEMS = [
       },
       {
         q: "Jak szybko zobaczę wyniki?",
-        a: "Wdrożenie trwa 7-21 dni. System obsługi klienta zaczyna odpowiadać od dnia 1. Pipeline Machine - pierwsze spotkania w 3-4 tygodniu. SEO Content - ruch zaczyna rosnąć w 60 dni.",
+        a: "Wdrożenie trwa 7-21 dni. System obsługi klienta zaczyna odpowiadać od dnia 1. Pipeline Machine - pierwsze spotkania w 3-4 tygodniu. Content Machine - ruch zaczyna rosnąć w 60 dni.",
       },
       {
         q: "Czy potrzebuję wiedzy technicznej?",

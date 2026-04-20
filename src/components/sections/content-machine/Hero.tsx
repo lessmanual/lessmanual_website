@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Users, Star, Clock } from "lucide-react";
 import { ContentFactory } from "@/remotion/variants/ContentFactory";
 import { Button } from "@/components/ui/Button";
-import { SEO_CALENDLY_URL } from "@/lib/seo-content-constants";
+import { SEO_CALENDLY_URL } from "@/lib/content-machine-constants";
 import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 const stagger = {

@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { SEO_CALENDLY_URL } from "@/lib/seo-content-constants";
+import { SEO_CALENDLY_URL } from "@/lib/content-machine-constants";
 
 function formatPLN(value: number): string {
   return value.toLocaleString("pl-PL");

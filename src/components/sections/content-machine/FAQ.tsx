@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { SEO_FAQ_ITEMS, SEO_CALENDLY_URL, SEO_EMAIL } from "@/lib/seo-content-constants";
+import { SEO_FAQ_ITEMS, SEO_CALENDLY_URL, SEO_EMAIL } from "@/lib/content-machine-constants";
 
 function FAQItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);

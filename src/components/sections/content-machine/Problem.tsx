@@ -2,7 +2,7 @@
 
 import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { SEO_PROBLEM_BULLETS } from "@/lib/seo-content-constants";
+import { SEO_PROBLEM_BULLETS } from "@/lib/content-machine-constants";
 
 export function Problem() {
   return (

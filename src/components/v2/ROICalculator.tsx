@@ -110,7 +110,7 @@ const SCENARIOS: ScenarioConfig[] = [
   },
   {
     id: "seo",
-    label: "SEO Content",
+    label: "Content Machine",
     shortName: "Content B2B",
     agentSetup: 5000,
     agentMonthly: 1800,
@@ -234,7 +234,7 @@ function SliderRow({
   return (
     <div>
       <div className="flex items-baseline justify-between">
-        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
           {label}
         </span>
         <span className="font-mono text-[14px] font-medium text-[#0A0A0A]">
@@ -300,7 +300,7 @@ function OutputRow({
       <span
         className={[
           "text-[13px]",
-          muted ? "text-[#A3A3A3]" : "text-[#525252]",
+          muted ? "text-[#737373]" : "text-[#525252]",
         ].join(" ")}
       >
         {label}
@@ -309,7 +309,7 @@ function OutputRow({
         className={[
           mono ? "font-mono" : "",
           big ? "text-[20px] font-semibold" : "text-[14px] font-medium",
-          success ? "text-[#10B981]" : "text-[#0A0A0A]",
+          success ? "text-[#059669]" : "text-[#0A0A0A]",
         ].join(" ")}
       >
         {valueNode}
@@ -375,7 +375,7 @@ function MiniBarChart({
           dataKey="name"
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: 11, fontFamily: "inherit", fill: "#A3A3A3" }}
+          tick={{ fontSize: 11, fontFamily: "inherit", fill: "#737373" }}
         />
         <YAxis hide />
         <Bar
@@ -460,7 +460,7 @@ export function ROICalculator() {
       <div className="mx-auto max-w-[1440px] px-6 md:px-10">
         {/* Naglowek sekcji */}
         <div className="mb-10 max-w-[720px]">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
             Kalkulator
           </p>
           <h2 className="mt-4 text-[32px] font-semibold leading-[1.1] tracking-[-0.02em] text-[#0A0A0A] md:text-[48px]">
@@ -498,7 +498,7 @@ export function ROICalculator() {
               ].join(" ")}
             >
               <span className="block">{s.label}</span>
-              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-[#A3A3A3] mt-0.5">
+              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-[#737373] mt-0.5">
                 {s.shortName}
               </span>
             </button>
@@ -536,7 +536,7 @@ export function ROICalculator() {
 
             {/* Kontekst pomocniczy */}
             <div className="border border-[#E5E5E5] bg-white p-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                 Jak czytać wyniki?
               </p>
               <ul className="mt-3 space-y-2 text-[13px] text-[#525252]">
@@ -581,7 +581,7 @@ export function ROICalculator() {
                 <div className="w-full border-t border-[#E5E5E5]" />
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white px-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+                <span className="bg-white px-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#737373]">
                   Twój scenariusz
                 </span>
               </div>
@@ -635,7 +635,7 @@ export function ROICalculator() {
 
             {/* Mini bar chart */}
             <div className="mt-6 border-t border-[#E5E5E5] pt-4">
-              <p className="mb-1 font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3]">
+              <p className="mb-1 font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                 Koszt miesięczny: porównanie
               </p>
               <MiniBarChart
@@ -646,7 +646,7 @@ export function ROICalculator() {
             </div>
 
             {/* Przypis */}
-            <p className="mt-3 font-mono text-[10px] leading-[1.6] text-[#A3A3A3]">
+            <p className="mt-3 font-mono text-[10px] leading-[1.6] text-[#737373]">
               * Kalkulacja zakłada tier Standard z cennika LessManual (
               {formatPLN(scenario.agentSetup)} PLN setup +{" "}
               {formatPLN(scenario.agentMonthly)} PLN/mies.). Koszt{" "}

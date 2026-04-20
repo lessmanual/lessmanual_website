@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { Button } from "@/components/ui/Button";
-import { SEO_CALENDLY_URL } from "@/lib/seo-content-constants";
+import { SEO_CALENDLY_URL } from "@/lib/content-machine-constants";
 
 export function About() {
   return (

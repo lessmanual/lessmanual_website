@@ -3,7 +3,7 @@
 import { Check, X } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { SEO_DELIVERABLES_TABLE, SEO_BONUS_VALUES } from "@/lib/seo-content-constants";
+import { SEO_DELIVERABLES_TABLE, SEO_BONUS_VALUES } from "@/lib/content-machine-constants";
 
 export function WhatYouGet() {
   return (

@@ -8,11 +8,11 @@ import { generateItemListSchema, generateBreadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Oferta - AI dla Twojej Firmy | LessManual.ai",
   description:
-    "4 systemy AI pod klucz: Pipeline Machine, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów. Wdrożenie w 7-21 dni.",
+    "4 systemy AI pod klucz: Pipeline Machine, Content Machine, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów. Wdrożenie w 7-21 dni.",
   openGraph: {
     title: "Oferta - AI dla Twojej Firmy | LessManual.ai",
     description:
-      "4 systemy AI pod klucz: Pipeline Machine, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+      "4 systemy AI pod klucz: Pipeline Machine, Content Machine, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
     url: "https://lessmanual.ai/oferta",
     siteName: "LessManual.ai",
     locale: "pl_PL",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Oferta - AI dla Twojej Firmy | LessManual.ai",
     description:
-      "4 systemy AI pod klucz: Pipeline Machine, SEO Content, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+      "4 systemy AI pod klucz: Pipeline Machine, Content Machine, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
   },
   alternates: {
     canonical: "https://lessmanual.ai/oferta",
@@ -37,8 +37,8 @@ const itemListSchema = generateItemListSchema([
       "System AI umawiający kwalifikowane spotkania B2B. Pay-per-meeting od 500 PLN.",
   },
   {
-    name: "SEO Content - Blog na Autopilocie",
-    url: "https://lessmanual.ai/oferta/seo-content",
+    name: "Content Machine - Blog na Autopilocie",
+    url: "https://lessmanual.ai/oferta/content-machine",
     description:
       "Done-for-you system produkcji artykułów SEO. 10-30 artykułów miesięcznie od 1,000 PLN/mies.",
   },

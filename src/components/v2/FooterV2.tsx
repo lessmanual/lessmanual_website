@@ -26,7 +26,7 @@ export function FooterV2() {
             <p className="text-[13px] leading-[1.55] text-[#525252]">
               Agenci AI dla firm B2B.
             </p>
-            <p className="font-mono text-[11px] text-[#A3A3A3]">
+            <p className="font-mono text-[11px] text-[#737373]">
               © 2026 LessManual.ai
             </p>
           </div>
@@ -38,7 +38,7 @@ export function FooterV2() {
             </div>
             <FooterLink href="/oferta/hot-lead-catcher">Hot Lead Catcher</FooterLink>
             <FooterLink href="/oferta/pipeline-machine">Pipeline Machine</FooterLink>
-            <FooterLink href="/oferta/seo-content">SEO Content</FooterLink>
+            <FooterLink href="/oferta/content-machine">Content Machine</FooterLink>
             <FooterLink href="/oferta/obsluga-klienta">Obsługa Klienta</FooterLink>
             <FooterLink href="/oferta/generator-ofert">Generator Ofert</FooterLink>
           </div>
@@ -78,10 +78,10 @@ export function FooterV2() {
 
         {/* Bottom strip */}
         <div className="border-t border-[#E5E5E5] mt-12 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <span className="font-mono text-[11px] text-[#A3A3A3]">
+          <span className="font-mono text-[11px] text-[#737373]">
             LessManual · NIP 1231589909 · Cendrowice, ul. Długa 33
           </span>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-[#A3A3A3]">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-[#737373]">
             <Link href="/legal/polityka-prywatnosci" className="hover:text-[#B87333] transition-colors duration-200">
               Polityka prywatności
             </Link>

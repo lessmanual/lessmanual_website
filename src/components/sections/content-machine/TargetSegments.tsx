@@ -5,7 +5,7 @@ import { FadeUp } from "@/components/animations/FadeUp";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { SEO_TARGET_SEGMENTS } from "@/lib/seo-content-constants";
+import { SEO_TARGET_SEGMENTS } from "@/lib/content-machine-constants";
 
 const iconMap = {
   Briefcase,

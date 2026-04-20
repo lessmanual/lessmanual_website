@@ -20,8 +20,8 @@ const PipelineMachineScene = dynamic(
   () => import("./remotion/PipelineMachineScene").then((m) => m.PipelineMachineScene),
   { ssr: false }
 );
-const SEOContentScene = dynamic(
-  () => import("./remotion/SEOContentScene").then((m) => m.SEOContentScene),
+const ContentMachineScene = dynamic(
+  () => import("./remotion/ContentMachineScene").then((m) => m.ContentMachineScene),
   { ssr: false }
 );
 const ObslugaKlientaScene = dynamic(
@@ -39,7 +39,7 @@ type SceneComponent = React.ComponentType;
 const SCENE_MAP: Record<string, SceneComponent> = {
   "Hot Lead Catcher": HotLeadCatcherScene as SceneComponent,
   "Spotkania z decydentami": PipelineMachineScene as SceneComponent,
-  "Blog który pisze się sam": SEOContentScene as SceneComponent,
+  "Blog który pisze się sam": ContentMachineScene as SceneComponent,
   "Odpowiedź w 30 sekund, 24/7": ObslugaKlientaScene as SceneComponent,
   "Wycena w 5 minut zamiast 2 godzin": GeneratorOfertScene as SceneComponent,
 };
@@ -124,7 +124,7 @@ export function ProductsV2() {
     >
       <div className="mx-auto max-w-[1440px]">
         <header className="max-w-[720px] mb-16">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#A3A3A3] mb-4">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             5 systemów
           </div>
           <h2>Pięć agentów AI pod operacyjną pracę B2B.</h2>
@@ -159,7 +159,7 @@ export function ProductsV2() {
                 onBlur={() => setHoveredId(null)}
               >
                 {isPopular && (
-                  <span className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[#B87333]">
+                  <span className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[#8B4513]">
                     · NAJCZĘŚCIEJ WYBIERANY
                   </span>
                 )}
@@ -197,7 +197,7 @@ export function ProductsV2() {
                 <div className="mt-8">
                   <Link
                     href={p.landingHref}
-                    className="inline-flex items-center gap-2 text-[14px] font-medium text-[#0A0A0A] transition-colors duration-200 hover:text-[#B87333]"
+                    className="inline-flex items-center gap-2 text-[14px] font-medium text-[#0A0A0A] transition-colors duration-200 hover:text-[#8B4513]"
                     onClick={(e) => e.stopPropagation()}
                   >
                     Zobacz system
@@ -217,7 +217,7 @@ function ProductVisual({ kind }: { kind: Visual }) {
   if (kind === "pipeline") {
     return (
       <div className="border border-[#E5E5E5] bg-white p-4 font-mono text-[11px] leading-[1.7]">
-        <div className="text-[#A3A3A3]">icp.yaml</div>
+        <div className="text-[#737373]">icp.yaml</div>
         <div className="text-[#0A0A0A]">target: &quot;B2B SaaS PL&quot;</div>
         <div className="text-[#0A0A0A]">size: 50-500</div>
         <div className="mt-2 border-t border-[#E5E5E5] pt-2 text-[#525252]">
@@ -226,7 +226,7 @@ function ProductVisual({ kind }: { kind: Visual }) {
         <div className="text-[#525252]">
           <span className="text-[#B87333]">→</span> 12 emails sent · 3 replies
         </div>
-        <div className="text-[#10B981]">
+        <div className="text-[#059669]">
           <span className="text-[#B87333]">→</span> 1 meeting booked
         </div>
       </div>
@@ -242,14 +242,14 @@ function ProductVisual({ kind }: { kind: Visual }) {
   if (kind === "intent") {
     return (
       <div className="border border-[#E5E5E5] bg-white p-4 font-mono text-[11px] leading-[1.7]">
-        <div className="text-[#A3A3A3]">intent-signals.log</div>
+        <div className="text-[#737373]">intent-signals.log</div>
         <div className="mt-1 flex items-center justify-between">
           <span className="text-[#0A0A0A]">news · &quot;hire DPO&quot;</span>
-          <span className="text-[#10B981]">score 87</span>
+          <span className="text-[#059669]">score 87</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-[#0A0A0A]">reviews · Competitor X down</span>
-          <span className="text-[#10B981]">score 79</span>
+          <span className="text-[#059669]">score 79</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-[#0A0A0A]">social · founder post</span>
@@ -266,7 +266,7 @@ function ProductVisual({ kind }: { kind: Visual }) {
       <div className="border border-[#E5E5E5] bg-white p-4 text-[12px] leading-[1.55]">
         <div className="mb-2 flex items-center gap-1.5">
           <span className="block h-1.5 w-1.5 rounded-full bg-[#10B981]" />
-          <span className="font-mono text-[10px] text-[#A3A3A3]">online · 23:47</span>
+          <span className="font-mono text-[10px] text-[#737373]">online · 23:47</span>
         </div>
         <div className="inline-block bg-[#F5EDE6] px-3 py-1.5 text-[#0A0A0A]">
           Ile kosztuje generator ofert?
@@ -281,7 +281,7 @@ function ProductVisual({ kind }: { kind: Visual }) {
   }
   return (
     <div className="border border-[#E5E5E5] bg-white p-4 font-mono text-[11px] leading-[1.7]">
-      <div className="text-[#A3A3A3]">oferta-2026-04-17.pdf</div>
+      <div className="text-[#737373]">oferta-2026-04-17.pdf</div>
       <div className="mt-1 flex items-center gap-2">
         <span className="block h-1 w-24 bg-[#E5E5E5]" />
         <span className="text-[#525252]">generated</span>
@@ -292,7 +292,7 @@ function ProductVisual({ kind }: { kind: Visual }) {
       </div>
       <div className="mt-1 flex items-center gap-2">
         <span className="block h-1 w-40 bg-[#B87333]" />
-        <span className="text-[#10B981]">emailed \u2713</span>
+        <span className="text-[#059669]">emailed \u2713</span>
       </div>
     </div>
   );

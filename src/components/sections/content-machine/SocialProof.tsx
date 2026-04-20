@@ -6,7 +6,7 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StarRating } from "@/components/ui/StarRating";
 import { Button } from "@/components/ui/Button";
-import { SEO_CALENDLY_URL, SEO_BONUS_VALUES } from "@/lib/seo-content-constants";
+import { SEO_CALENDLY_URL, SEO_BONUS_VALUES } from "@/lib/content-machine-constants";
 import { REVIEWS } from "@/lib/constants";
 
 const billboardMetrics = [

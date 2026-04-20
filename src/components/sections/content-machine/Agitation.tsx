@@ -9,7 +9,7 @@ import {
   SEO_CALENDLY_URL,
   SEO_AGITATION_TIMEFRAMES,
   SEO_AGITATION_STATS,
-} from "@/lib/seo-content-constants";
+} from "@/lib/content-machine-constants";
 
 export function Agitation() {
   return (

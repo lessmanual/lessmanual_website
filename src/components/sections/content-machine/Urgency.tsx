@@ -4,7 +4,7 @@ import { Clock } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { SEO_CALENDLY_URL } from "@/lib/seo-content-constants";
+import { SEO_CALENDLY_URL } from "@/lib/content-machine-constants";
 import { getNextMonthPL } from "@/lib/constants";
 
 export function Urgency() {
@@ -21,7 +21,7 @@ export function Urgency() {
         <FadeUp delay={0.1}>
           <div className="space-y-6 text-lg text-text-secondary leading-relaxed mb-10">
             <p>
-              Przyjmuję max 3 projekty SEO Content miesięcznie. Każdy klient wymaga
+              Przyjmuję max 3 projekty Content Machine miesięcznie. Każdy klient wymaga
               dedykowanego keyword research, konfiguracji systemu i testów jakości.
               Nie chcę robić tego masowo. Chcę robić to dobrze.
             </p>

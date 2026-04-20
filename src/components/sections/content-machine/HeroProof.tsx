@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { ProofBar } from "@/components/ui/ProofBar";
-import { SEO_PROOF_METRICS } from "@/lib/seo-content-constants";
+import { SEO_PROOF_METRICS } from "@/lib/content-machine-constants";
 
 export function HeroProof() {
   return (

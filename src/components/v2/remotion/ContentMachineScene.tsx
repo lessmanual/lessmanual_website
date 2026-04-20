@@ -16,7 +16,7 @@ const META = '7 min read \u00b7 SEO score 94';
 // 2 frames per char
 const CHARS_PER_FRAME = 0.5; // 1 char co 2 frames
 
-export const SEOContentScene: React.FC = () => {
+export const ContentMachineScene: React.FC = () => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const loopFrame = frame % durationInFrames;
@@ -50,7 +50,7 @@ export const SEOContentScene: React.FC = () => {
         style={{
           fontSize: 10,
           fontFamily: MONO,
-          color: '#A3A3A3',
+          color: '#737373',
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
           marginBottom: 10,
