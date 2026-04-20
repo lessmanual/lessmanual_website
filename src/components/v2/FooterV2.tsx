@@ -77,13 +77,21 @@ export function FooterV2() {
         </div>
 
         {/* Bottom strip */}
-        <div className="border-t border-[#E5E5E5] mt-12 pt-6 flex flex-col md:flex-row justify-between gap-2">
+        <div className="border-t border-[#E5E5E5] mt-12 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <span className="font-mono text-[11px] text-[#A3A3A3]">
-            Cendrowice · NIP 1231589909
+            LessManual · NIP 1231589909 · Cendrowice, ul. Długa 33
           </span>
-          <span className="font-mono text-[11px] text-[#A3A3A3]">
-            Built with Claude · Vercel · Supabase
-          </span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-[#A3A3A3]">
+            <Link href="/legal/polityka-prywatnosci" className="hover:text-[#B87333] transition-colors duration-200">
+              Polityka prywatności
+            </Link>
+            <Link href="/legal/polityka-cookies" className="hover:text-[#B87333] transition-colors duration-200">
+              Cookies
+            </Link>
+            <Link href="/legal/regulamin" className="hover:text-[#B87333] transition-colors duration-200">
+              Regulamin
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

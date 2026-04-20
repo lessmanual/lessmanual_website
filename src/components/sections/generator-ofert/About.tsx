@@ -35,7 +35,7 @@ export function About() {
 
               <div className="space-y-4 text-text-secondary leading-relaxed text-lg">
                 <p>
-                  Buduję systemy, które eliminują ręczną robotę z biznesu. Generator ofert powstał,
+                  Buduję systemy, które eliminują ręczne czynności z biznesu. Generator ofert powstał,
                   bo widziałem jak firmy OZE, producenci mebli i firmy budowlane tracą godziny
                   na wyceny, zamiast sprzedawać.
                 </p>

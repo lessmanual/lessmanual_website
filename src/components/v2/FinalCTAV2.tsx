@@ -22,7 +22,7 @@ export function FinalCTAV2() {
         <div className="inline-flex items-center gap-2 border border-[#E5E5E5] bg-white px-3 py-1.5 mb-8">
           <span className="block h-1.5 w-1.5 rounded-full bg-[#10B981]" />
           <span className="font-mono text-[11px] tracking-tight text-[#525252]">
-            Wolne sloty · ten kwartał
+            1 miejsce w maju · 1 miejsce w czerwcu
           </span>
         </div>
 
@@ -57,11 +57,13 @@ export function FinalCTAV2() {
 
         <div className="mt-16 pt-10 border-t border-[#E5E5E5] flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-[#A3A3A3]">
           <span className="font-mono">LessManual.ai · Bartłomiej Chudzik</span>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link href="/oferta" className="v2-link">Oferta</Link>
             <Link href="/blog" className="v2-link">Blog</Link>
             <Link href="/faq" className="v2-link">FAQ</Link>
-            <Link href="/legal/privacy" className="v2-link">Privacy</Link>
+            <Link href="/legal/polityka-prywatnosci" className="v2-link">Polityka prywatności</Link>
+            <Link href="/legal/polityka-cookies" className="v2-link">Cookies</Link>
+            <Link href="/legal/regulamin" className="v2-link">Regulamin</Link>
           </div>
         </div>
       </div>

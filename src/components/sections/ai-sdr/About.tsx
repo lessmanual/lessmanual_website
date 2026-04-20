@@ -34,7 +34,7 @@ export function About() {
 
               <div className="space-y-4 text-lg text-text-secondary leading-relaxed">
                 <p>
-                  8 lat w logistyce B2B nauczyło mnie jednego: ręczna robota zabija biznes.
+                  8 lat w logistyce B2B nauczyło mnie jednego: powtarzalna praca zabija biznes.
                   Pipeline Machine powstał, bo sam potrzebowałem spotkań. Zamiast zatrudnić handlowca
                   za 12k/mies, postawiłem system. Wyniki wyżej to moja kampania, nie teoria.
                 </p>

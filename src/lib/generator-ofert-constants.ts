@@ -65,7 +65,7 @@ export const GEN_OFERT_SOLUTION_STEPS = [
   {
     num: 3,
     title: "Oferta ląduje u klienta i u Ciebie",
-    desc: "Klient dostaje PDF na maila w ciągu minuty. Ty dostajesz powiadomienie + pełny kontekst w CRM. Zero ręcznej roboty.",
+    desc: "Klient dostaje PDF na maila w ciągu minuty. Ty dostajesz powiadomienie + pełny kontekst w CRM. Zero ręcznych czynności.",
   },
   {
     num: 4,

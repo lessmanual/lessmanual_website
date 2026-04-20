@@ -226,7 +226,7 @@ export const FAQ_ITEMS = [
       },
       {
         q: "Czy potrzebuję wiedzy technicznej?",
-        a: "Zero. Jeśli potrafisz otworzyć maila, dasz radę. Wdrażam, konfiguruję i utrzymuję. Twój czas przy setup: 1-2 godziny. Reszta to moja robota.",
+        a: "Zero. Jeśli potrafisz otworzyć maila, dasz radę. Wdrażam, konfiguruję i utrzymuję. Twój czas przy setup: 1-2 godziny. Reszta to moja praca.",
       },
     ],
   },
@@ -309,7 +309,7 @@ export const GUARANTEE_POINTS = [
   "Chcesz zrezygnować? Jeden mail, bez kar, bez okresu wypowiedzenia",
 ];
 
-export const COST_TABLE_SUMMARY = "Suma: 18,000-39,000 PLN miesięcznie na ręczną robotę. Z nami: od 2,400 PLN. Reszta zostaje w Twojej kieszeni.";
+export const COST_TABLE_SUMMARY = "Suma: 18,000-39,000 PLN miesięcznie na ręczne czynności. Z nami: od 2,400 PLN. Reszta zostaje w Twojej kieszeni.";
 
 export const VALUE_STACK_SAVINGS = [
   {

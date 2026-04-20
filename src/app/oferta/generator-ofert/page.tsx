@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Generator Ofert AI · LessManual",
     description:
-      "Klient podaje dane w chacie, dostaje PDF z Twoim logo w 5 minut. 2h ręcznej roboty → zero. Win rate +25-40%.",
+      "Klient podaje dane w chacie, dostaje PDF z Twoim logo w 5 minut. 2h ręcznych czynności → zero. Win rate +25-40%.",
   },
 };
 

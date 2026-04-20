@@ -140,7 +140,7 @@ export function Hero() {
                   variants={fadeUp}
                   className="text-text-secondary text-2xl leading-relaxed max-w-[600px] mt-8"
                 >
-                  Self-service konfigurator wycen dla firm usługowych. Bez ręcznej roboty, bez exceli, bez &ldquo;wyślij zapytanie i czekaj 3 dni&rdquo;. System generuje ofertę PDF w 5 minut zamiast 2 godzin Twojego handlowca.
+                  Self-service konfigurator wycen dla firm usługowych. Bez ręcznych czynności, bez exceli, bez &ldquo;wyślij zapytanie i czekaj 3 dni&rdquo;. System generuje ofertę PDF w 5 minut zamiast 2 godzin Twojego handlowca.
                 </motion.p>
 
                 {/* CTA */}

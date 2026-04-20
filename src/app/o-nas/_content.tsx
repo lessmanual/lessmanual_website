@@ -32,7 +32,7 @@ const TIMELINE_ITEMS = [
     desc: "Rejestracja działalności. Pięć produktów core: Hot Lead Catcher, Pipeline Machine, Content Machine, Obsługa Klienta, Generator Ofert. Każdy to gotowy system wdrażany w 7 dni, nie miesiącach.",
   },
   {
-    date: "Q1 2026",
+    date: "11-12.2025",
     title: "Pierwsze wdrożenia",
     desc: "Projekty dla klientów z sektora logistyki, legal tech, e-commerce i SaaS. Od PoC po pełne wdrożenia MRR. Wszystkie dowiezione w zadeklarowanym terminie.",
   },
@@ -43,7 +43,7 @@ const MANIFEST_ITEMS = [
   {
     label: "01",
     title: "Praktyczność ponad wszystko",
-    desc: "Buduję tylko to, co rozwiązuje realny problem. Żaden system nie wychodzi z mojej pracowni, jeśli nie redukuje ręcznej roboty o minimum 70%. Efekt musi być mierzalny i widoczny w ciągu dni, nie miesięcy.",
+    desc: "Buduję tylko to, co rozwiązuje realny problem. Żaden system nie wychodzi z mojej pracowni, jeśli nie redukuje powtarzalnych czynności o minimum 70%. Efekt musi być mierzalny i widoczny w ciągu dni, nie miesięcy.",
   },
   {
     label: "02",
@@ -98,11 +98,11 @@ export default function ONasContent() {
                   Bartłomiej Chudzik. Solo founder, architekt automatyzacji AI.
                   Przez 8 lat pracowałem w transporcie i logistyce, optymalizowałem procesy
                   i zarządzałem projektami. Dziś buduję systemy AI dla firm B2B w Polsce,
-                  które uwalniają ludzi od ręcznej, powtarzalnej roboty.
+                  które zdejmują z ludzi ręczne, powtarzalne zadania.
                 </p>
                 <p className="mt-4 max-w-[560px] text-[16px] leading-[1.6] text-[#525252]">
                   Misja: "Make your business Less Manual". Każde rozwiązanie, które wychodzi
-                  z mojej pracowni, redukuje ręczną robotę o minimum 70%.
+                  z mojej pracowni, redukuje ręczne operacje o minimum 70%.
                 </p>
               </div>
 

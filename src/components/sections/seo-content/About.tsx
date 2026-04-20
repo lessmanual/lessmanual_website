@@ -41,7 +41,7 @@ export function About() {
                 </p>
                 <p>
                   Postawiłem system, który robi keyword research, pisze artykuły SEO, optymalizuje
-                  i publikuje. Done-for-you. Bez ręcznej roboty. Teraz ten sam system stawiam
+                  i publikuje. Done-for-you. Bez ręcznych czynności. Teraz ten sam system stawiam
                   dla firm, które chcą ruch z Google bez poświęcania na to czasu.
                 </p>
                 <p className="text-text font-medium">
