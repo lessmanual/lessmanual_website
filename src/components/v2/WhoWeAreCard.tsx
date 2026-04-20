@@ -49,7 +49,7 @@ export function WhoWeAreCard() {
           <div className="flex flex-col gap-5">
             <p className="text-[17px] leading-[1.6] text-[#0A0A0A] max-w-[640px]">
               Solo founder. Buduję agenty AI dla firm B2B w Polsce od 2025 roku.
-              Pięć produktów core. Każde wdrożenie zamykam w 7 dni. Wycena projektowa, nigdy godzinowa.
+              Pięć produktów core. Sprint developmentu: 7 dni po scope locku (discovery + PRD + baza wiedzy osobno). Wycena projektowa, nigdy godzinowa.
             </p>
 
             <p className="text-[15px] leading-[1.65] text-[#525252] max-w-[640px]">

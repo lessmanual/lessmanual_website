@@ -29,7 +29,7 @@ const TIMELINE_ITEMS = [
   {
     date: "10.2025",
     title: "Start LessManual",
-    desc: "Rejestracja działalności. Pięć produktów core: Hot Lead Catcher, Pipeline Machine, Content Machine, Obsługa Klienta, Generator Ofert. Każdy to gotowy system wdrażany w 7 dni, nie miesiącach.",
+    desc: "Rejestracja działalności. Pięć produktów core: Hot Lead Catcher, Pipeline Machine, Content Machine, Obsługa Klienta, Generator Ofert. Każdy to gotowy system z 7-dniowym sprintem developmentu (po wcześniejszym discovery, scope locku i przygotowaniu bazy wiedzy).",
   },
   {
     date: "11-12.2025",
@@ -53,7 +53,7 @@ const MANIFEST_ITEMS = [
   {
     label: "03",
     title: "Szybkość, która dostarcza",
-    desc: "7-dniowy sprint od kontraktu do działającego systemu. Nie ma projektów które ciągną się miesiącami. Ship today, iteruj jutro. Czas klienta jest drogi, mój też.",
+    desc: "Proces: 1-2 spotkania discovery (ICP, zakres, integracje, narzędzia, workflow) → scope lock i PRD → 2-5 dni baza wiedzy i prompty → 7-dniowy sprint developmentu → handover. Razem 3-4 tygodnie od pierwszego calla do live. Bez projektów, które ciągną się miesiącami.",
   },
 ];
 
@@ -67,7 +67,7 @@ const HOW_ITEMS = [
   {
     label: "ZASADA 02",
     title: "Szybko, a nie kiedyś",
-    desc: "Każdy projekt zamykam w 7 dni. Nie ma u mnie projektów które czekają w kolejce miesiącami. Jeśli biorę temat, to daję mu pełną uwagę i dostarczam na czas. Wolne sloty to wolne sloty, nie obietnica.",
+    desc: "Sam sprint developmentu zamykam w 7 dni po dogranym zakresie. Cały proces od kontraktu do live: 3-4 tygodnie kalendarzowo. Nie ma u mnie projektów, które czekają w kolejce miesiącami. Jeśli biorę temat, daję mu pełną uwagę i dostarczam na czas.",
   },
   {
     label: "ZASADA 03",
