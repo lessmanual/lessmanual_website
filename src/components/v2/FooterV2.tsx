@@ -11,7 +11,7 @@ export function FooterV2() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Kolumna 1: Logo + tagline */}
           <div className="flex flex-col gap-4">
-            <Link href="/v2" className="flex items-center gap-2 w-fit">
+            <Link href="/" className="flex items-center gap-2 w-fit">
               <Image
                 src="/logo-icon.png"
                 alt="LessManual"
