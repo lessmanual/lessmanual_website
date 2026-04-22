@@ -43,14 +43,24 @@ export default async function BlogPage() {
           font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
           min-height: 100vh;
         }
-        .v2-scope h1, .v2-scope h2 {
+        .v2-scope h1 {
           font-family: var(--font-inter), system-ui, sans-serif;
           font-weight: 600;
           letter-spacing: -0.035em;
           line-height: 1.05;
           color: #0A0A0A;
+          font-size: clamp(2.75rem, 6vw, 4.75rem);
         }
-        .v2-scope h1 { font-size: clamp(2.75rem, 6vw, 4.75rem); }
+        .v2-scope h2 {
+          font-family: var(--font-instrument-serif), Georgia, serif;
+          font-weight: 400;
+          letter-spacing: -0.01em;
+          line-height: 1.35;
+          color: #0A0A0A;
+        }
+        .v2-scope article h2 {
+          font-size: 1.125rem;
+        }
         .v2-scope .font-mono { font-family: var(--font-jetbrains-mono), ui-monospace, monospace; }
         .v2-scope .v2-link { color: #0A0A0A; transition: color 150ms ease; }
         .v2-scope .v2-link:hover { color: #B87333; }
