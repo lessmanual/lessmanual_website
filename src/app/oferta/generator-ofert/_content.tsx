@@ -218,9 +218,8 @@ export default function GeneratorOfertContent() {
                 </div>
 
                 <h1 className="text-[#0A0A0A]">
-                  Wycena w 5 minut<br />
-                  zamiast 2 godzin.<br />
-                  Klient sam wycenia,<br />
+                  Klient sam wycenia<br />
+                  w 5 minut,<br />
                   <span className="text-[#B87333]">Ty dostajesz gotowe zapytanie.</span>
                 </h1>
 
