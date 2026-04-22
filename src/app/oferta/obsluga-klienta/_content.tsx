@@ -60,7 +60,7 @@ const TIERS = [
       "RAG wytrenowany na FAQ firmy",
       "500 konwersacji/mies.",
       "Eskalacja do człowieka z kontekstem",
-      "Bonus: konfiguracja agenta pod ICP (wartość 1 000 PLN)",
+      "Bonus: eskalacja do człowieka z kontekstem rozmowy (wartość 1 000 PLN)",
     ],
   },
   {
