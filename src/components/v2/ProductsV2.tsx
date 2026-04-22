@@ -299,8 +299,8 @@ function ProductVisual({ kind }: { kind: Visual }) {
           <span className="text-[#B87333]">mapped</span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-[#0A0A0A]">budget: &gt; 15 000 PLN</span>
-          <span className="text-[#047857]">qualified</span>
+          <span className="text-[#0A0A0A]">pricing: after Discovery</span>
+          <span className="text-[#047857]">scoped</span>
         </div>
         <div className="mt-2 border-t border-[#E5E5E5] pt-2 text-[#525252]">
           <span className="text-[#B87333]">&rarr;</span> fixed scope + fixed price

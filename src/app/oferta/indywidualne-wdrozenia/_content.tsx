@@ -22,7 +22,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 const FAQ_ITEMS = [
   {
     q: "Ile kosztuje wdrożenie indywidualne?",
-    a: "Zależy od zakresu. Zaczynamy od bezpłatnej 30-minutowej rozmowy wstępnej - oceniam czy Twój projekt kwalifikuje się do Indywidualnych Wdrożeń. Budżety projektowe od 15 000 PLN wzwyż - bez górnej granicy, zależnie od złożoności. Wycena finalna po Discovery Workshop.",
+    a: "Zależy od zakresu. Zaczynamy od bezpłatnej 30-minutowej rozmowy wstępnej - oceniam czy Twój projekt kwalifikuje się do Indywidualnych Wdrożeń. Wycena finalna po Discovery Workshop - zakres determinuje cenę, nie godzinowa stawka.",
   },
   {
     q: "Ile trwa wdrożenie?",
@@ -118,7 +118,7 @@ export default function IndywidualneContent() {
                 </p>
 
                 <p className="mt-4 max-w-[560px] text-[15px] leading-[1.55] text-[#525252]">
-                  Budżety od 15 000 PLN wzwyż. Wycena projektowa - nie godzinowa. 3 warstwy gwarancji.
+                  Wycena projektowa - nie godzinowa. 3 warstwy gwarancji. Bez zaskoczeń po starcie.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -249,7 +249,7 @@ export default function IndywidualneContent() {
                 {
                   num: "04",
                   title: "WYCENA PROJEKTOWA",
-                  sub: "Budżety od 15 000 PLN",
+                  sub: "Fixed price + fixed scope",
                   desc: "Stała cena za projekt - nie godzinowa. Wiesz z góry ile zapłacisz i co dostajesz. 50% przy starcie Pilota, 50% po UAT i Twojej akceptacji systemu. Nie akceptujesz - nie płacisz drugiej raty.",
                 },
               ].map((s) => (
@@ -269,7 +269,7 @@ export default function IndywidualneContent() {
             </div>
 
             <p className="mt-8 text-[13px] text-[#525252]">
-              Budżet anchor: projekty indywidualne od 15 000 PLN wzwyż. Bez górnej granicy - zależy od zakresu i złożoności.
+              Wycena finalna po Discovery Workshop - zakres i złożoność determinują cenę. Zero niespodzianek po podpisie SoW.
             </p>
           </div>
         </section>
@@ -550,7 +550,7 @@ export default function IndywidualneContent() {
             </div>
 
             <p className="mt-8 font-mono text-[11px] text-[#525252]">
-              Wycena projektowa - nie godzinowa. Budżety od 15 000 PLN wzwyż. Odpowiedź w 24h.
+              Wycena projektowa - nie godzinowa. Odpowiedź w 24h. 3 warstwy gwarancji.
             </p>
           </div>
         </section>

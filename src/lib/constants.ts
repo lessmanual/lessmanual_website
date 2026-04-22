@@ -101,10 +101,10 @@ export const PRODUCTS = [
     title: "Indywidualne Wdrożenia",
     badge: "DLA NON-STANDARD",
     description:
-      "Agent AI dopasowany pod Twój unikalny workflow - gdy żaden z 5 produktów nie pasuje. Discovery bezpłatne. Wycena projektowa po scoping. Budżety od 15 000 PLN.",
+      "Agent AI dopasowany pod Twój unikalny workflow - gdy żaden z 5 produktów nie pasuje. Discovery bezpłatne. Wycena projektowa po scoping.",
     metrics: [
       "Wdrożenie 4-12 tyg",
-      "Od 15 000 PLN",
+      "Wycena po Discovery",
       "4h SLA",
     ],
     bonus:
