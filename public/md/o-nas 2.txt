@@ -1,0 +1,95 @@
+# O nas | LessManual
+
+> Bartłomiej Chudzik - buduję systemy AI dla firm B2B, które nie wymagają obsługi. Solo founder, JDG od 2025, klienci z całej Polski.
+
+> Source: http://localhost:3000/o-nas
+> Generated: 2026-04-20T17:54:10.457Z
+
+---
+
+O NAS
+
+# Buduję systemy,  
+które nie wymagają  
+obsługi.
+
+Bartłomiej Chudzik. Solo founder, architekt automatyzacji AI. Przez 8 lat pracowałem w transporcie i logistyce, optymalizowałem procesy i zarządzałem projektami. Dziś buduję systemy AI dla firm B2B w Polsce, które zdejmują z ludzi ręczne, powtarzalne zadania.
+
+Misja: "Make your business Less Manual". Każde rozwiązanie, które wychodzi z mojej pracowni, redukuje ręczne operacje o minimum 70%.
+
+![Bartłomiej Chudzik - LessManual](/_next/image?url=%2Fbartek.jpg&w=640&q=75)
+
+01
+
+### Praktyczność ponad wszystko
+
+Buduję tylko to, co rozwiązuje realny problem. Żaden system nie wychodzi z mojej pracowni, jeśli nie redukuje powtarzalnych czynności o minimum 70%. Efekt musi być mierzalny i widoczny w ciągu dni, nie miesięcy.
+
+02
+
+### Jakość bez kompromisów
+
+Nie robię rzeczy których się wstydzę. Każdy system który wdrażam, mógłbym pokazać publicznie z nazwą klienta. Jeśli coś nie działa - naprawiam, nie ukrywam. Gwarancja wyników albo zwrot.
+
+03
+
+### Szybkość, która dostarcza
+
+Proces: 1-2 spotkania discovery (ICP, zakres, integracje, narzędzia, workflow) → scope lock i PRD → 2-5 dni baza wiedzy i prompty → 7-dniowy sprint developmentu → handover. Razem 3-4 tygodnie od pierwszego calla do live. Bez projektów, które ciągną się miesiącami.
+
+2018-2025
+
+### Optymalizacja procesów B2B
+
+8 lat w transporcie i logistyce międzynarodowej. Projektowanie i wdrażanie procesów operacyjnych, integracje systemów ERP, redukcja ręcznej pracy w zespołach 20+ osób. Ten sam wzorzec: tam gdzie ludzie powtarzają tę samą czynność setki razy, zawsze jest lepszy system.
+
+03-09.2025
+
+### Pełne przejście na AI
+
+Intensywna budowa kompetencji technicznych: LLM agents, RAG, vector databases, Next.js, Supabase, Vercel, AWS. Od pierwszych prototypów do produkcyjnych workflow z klientami.
+
+10.2025
+
+### Start LessManual
+
+Rejestracja działalności. Pięć produktów core: Hot Lead Catcher, Pipeline Machine, Content Machine, Obsługa Klienta, Generator Ofert. Każdy to gotowy system z 7-dniowym sprintem developmentu (po wcześniejszym discovery, scope locku i przygotowaniu bazy wiedzy).
+
+11-12.2025
+
+### Pierwsze wdrożenia
+
+Projekty dla klientów z sektora logistyki, legal tech, e-commerce i SaaS. Od PoC po pełne wdrożenia MRR. Wszystkie dowiezione w zadeklarowanym terminie.
+
+ZASADA 01
+
+### Zero godzin
+
+Nie wyceniam czasu, wyceniam efekt. Klient płaci za działający system z konkretnymi wynikami, nie za moje godziny. Cena jest stała i ustalona przed startem. Żadnych niespodzianek na fakturze.
+
+ZASADA 02
+
+### Szybko, a nie kiedyś
+
+Sam sprint developmentu zamykam w 7 dni po dogranym zakresie. Cały proces od kontraktu do live: 3-4 tygodnie kalendarzowo. Nie ma u mnie projektów, które czekają w kolejce miesiącami. Jeśli biorę temat, daję mu pełną uwagę i dostarczam na czas.
+
+ZASADA 03
+
+### Gwarancja albo zwrot
+
+Jeśli system nie działa zgodnie z ustaleniami w 14 dni od wdrożenia, oddaję pieniądze. Bez dyskusji, bez kar, bez okresu wypowiedzenia. Ryzyko jest po mojej stronie, nie po stronie klienta.
+
+1 miejsce w maju · 1 miejsce w czerwcu
+
+## 15 minut rozmowy. Konkretna propozycja.  
+Zero stawki godzinowej.
+
+Budujemy agenty AI dla firm B2B od 2025. Solo founder, bez pośredników. Jeśli nie pasujemy, powiem to na rozmowie.
+
+[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Napisz maila](mailto:kontakt@lessmanual.ai)
+
+LessManual.ai · Bartłomiej Chudzik
+
+[Oferta](/oferta)[Blog](/blog)[FAQ](/faq)[Polityka prywatności](/legal/polityka-prywatnosci)[Cookies](/legal/polityka-cookies)[Regulamin](/legal/regulamin)
+
+LessManual Bartłomiej Chudzik | NIP 1231589909 | Cendrowice, ul. Długa 33 | JDG od 09.10.2025
