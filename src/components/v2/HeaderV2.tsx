@@ -34,6 +34,11 @@ const PRODUCT_LINKS: ProductLink[] = [
     href: "/oferta/generator-ofert",
     tagline: "Klient sam wycenia. PDF leci mailem w 5 min.",
   },
+  {
+    title: "Indywidualne Wdrozenia",
+    href: "/oferta/indywidualne-wdrozenia",
+    tagline: "Dedykowany agent pod Twoj unikalny workflow - wycena po Discovery.",
+  },
 ];
 
 export function HeaderV2() {
