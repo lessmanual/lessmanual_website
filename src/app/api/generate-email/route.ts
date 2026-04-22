@@ -3,29 +3,23 @@ export const dynamic = "force-dynamic";
 
 import { createAnthropic } from "@ai-sdk/anthropic";
 import { streamText } from "ai";
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
+import { createClient } from "@supabase/supabase-js";
 
 const MONTHLY_TOKEN_CAP = 100000;
-const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
-const hasRedis = Boolean(REDIS_URL && REDIS_TOKEN);
 
-// Upstash path (preferred: works across Edge instances)
-const redis = hasRedis
-  ? new Redis({ url: REDIS_URL!, token: REDIS_TOKEN! })
-  : null;
-const ratelimit = redis
-  ? new Ratelimit({
-      redis,
-      limiter: Ratelimit.slidingWindow(3, "24 h"),
-      prefix: "lm:email-gen",
-      analytics: false,
-    })
-  : null;
+const SUPABASE_URL =
+  process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-// In-memory fallback (preview/dev only: reset on cold start, NOT multi-instance safe)
-const requestTracker = new Map<string, number[]>();
+// Service-role client - bypasses RLS, used only server-side for rate limiting
+const supabase =
+  SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
+    ? createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+        auth: { persistSession: false, autoRefreshToken: false },
+      })
+    : null;
+
+// In-memory fallback for monthly token tracking (reset on cold start, NOT multi-instance safe)
 let fallbackMonthlyTokenUsage = 0;
 let fallbackMonth = new Date().getMonth();
 
@@ -37,7 +31,7 @@ function sanitiseInput(raw: string): string {
   // NFKC normalize: collapse visually-equivalent unicode forms (defence against homoglyph attacks)
   let s = raw.normalize("NFKC");
   // Strip zero-width and bidi-override chars (prompt injection via invisible separators)
-  s = s.replace(/[\u200B-\u200F\u202A-\u202E\uFEFF]/g, "");
+  s = s.replace(/[​-‏‪-‮﻿]/g, "");
   for (const needle of INJECTION_SUBSTRINGS) {
     while (s.includes(needle)) {
       s = s.replaceAll(needle, "");
@@ -48,12 +42,9 @@ function sanitiseInput(raw: string): string {
   return s;
 }
 
+// Monthly token budget - in-memory only (per-instance, resets on cold start)
+// Acceptable for soft cap: protects against runaway spend, not exact across instances
 async function getMonthlyTokenUsage(): Promise<number> {
-  if (redis) {
-    const key = `lm:email-gen:tokens:${new Date().toISOString().slice(0, 7)}`;
-    const value = await redis.get<number>(key);
-    return value ?? 0;
-  }
   const nowMonth = new Date().getMonth();
   if (nowMonth !== fallbackMonth) {
     fallbackMonth = nowMonth;
@@ -63,28 +54,30 @@ async function getMonthlyTokenUsage(): Promise<number> {
 }
 
 async function addMonthlyTokenUsage(delta: number): Promise<void> {
-  if (redis) {
-    const key = `lm:email-gen:tokens:${new Date().toISOString().slice(0, 7)}`;
-    await redis.incrby(key, delta);
-    await redis.expire(key, 60 * 60 * 24 * 40); // ~40d rolling TTL
-    return;
-  }
   fallbackMonthlyTokenUsage += delta;
 }
 
-async function checkRateLimit(ip: string): Promise<boolean> {
-  if (ratelimit) {
-    const { success } = await ratelimit.limit(ip);
-    return success;
+// Rate limit: 3 requests per 24h per identifier, backed by Supabase Postgres RPC
+// Falls back to allow-on-error (fail-open) to avoid blocking legit users on DB hiccups
+async function checkRateLimit(
+  identifier: string,
+): Promise<{ success: boolean }> {
+  if (!supabase) {
+    // Supabase not configured (missing env vars) - allow with warning
+    console.warn("[rate-limit] Supabase client not configured, allowing request");
+    return { success: true };
   }
-  const now = Date.now();
-  const windowMs = 24 * 60 * 60 * 1000;
-  const existing = (requestTracker.get(ip) ?? []).filter(
-    (ts) => now - ts < windowMs,
-  );
-  if (existing.length >= 3) return false;
-  requestTracker.set(ip, [...existing, now]);
-  return true;
+  const { data, error } = await supabase.rpc("check_and_increment_rate_limit", {
+    p_identifier: identifier,
+    p_window_seconds: 86400,
+    p_max: 3,
+  });
+  if (error) {
+    console.error("[rate-limit] Supabase RPC error:", error.message);
+    // Fail-open: allow request to avoid blocking users on transient DB errors
+    return { success: true };
+  }
+  return { success: data.allowed };
 }
 
 export async function POST(request: Request): Promise<Response> {
@@ -101,7 +94,7 @@ export async function POST(request: Request): Promise<Response> {
     // Rate limiting
     const ip =
       request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "anon";
-    const allowed = await checkRateLimit(ip);
+    const { success: allowed } = await checkRateLimit(ip);
     if (!allowed) {
       return Response.json(
         { error: "Limit 3 generacji na dobę osiągnięty." },
