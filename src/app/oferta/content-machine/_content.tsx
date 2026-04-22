@@ -32,7 +32,7 @@ const SEO_SCRIPT: Line[] = [
   { kind: "out", text: "✓ 12 high-intent clusters identified (KD 15-35)", tone: "success", delay: 260 },
   { kind: "blank" },
   { kind: "prompt", text: "lessmanual seo outline --cluster=automation-b2b" },
-  { kind: "out", text: "Claude drafting H1-H3 structure + SERP analysis", tone: "muted", delay: 380 },
+  { kind: "out", text: "Agent AI drafting H1-H3 structure + SERP analysis", tone: "muted", delay: 380 },
   { kind: "out", text: "Brief ready · 1500 słów target · 8 internal links", tone: "muted", delay: 220 },
   { kind: "blank" },
   { kind: "prompt", text: "lessmanual seo article --voice=brand --count=20" },
@@ -121,7 +121,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Jak zachowujecie brand voice?",
-    a: "Na początku przygotowujemy prompt brandowy - zbieramy Twój ton, styl, słownictwo, tematy tabu. Artykuły są pisane przez Claude z tym promptem, potem przechodzi human-in-the-loop review. Jeśli chcesz zatwierdzać artykuły przed publikacją - to jest opcja w każdym tierze.",
+    a: "Na początku przygotowujemy prompt brandowy - zbieramy Twój ton, styl, słownictwo, tematy tabu. Artykuły są pisane przez agenta AI z tym promptem, potem przechodzi human-in-the-loop review. Jeśli chcesz zatwierdzać artykuły przed publikacją - to jest opcja w każdym tierze.",
   },
   {
     q: "Co jeśli artykuły nie rankują?",
@@ -129,7 +129,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Czy używacie AI generycznego? ChatGPT?",
-    a: "Nie. Claude (Anthropic) z promptem brandowym + keyword intent per artykuł + SERP analysis + schema.org + meta i OG tags. Każdy artykuł ma brief oparty o realne frazy z Twojej niszy (Senuto). Human-in-the-loop review przed publikacją. To nie jest ChatGPT copy-paste.",
+    a: "Nie. Agent AI (Anthropic) z promptem brandowym + keyword intent per artykuł + SERP analysis + schema.org + meta i OG tags. Każdy artykuł ma brief oparty o realne frazy z Twojej niszy (Senuto). Human-in-the-loop review przed publikacją. To nie jest ChatGPT copy-paste.",
   },
   {
     q: "Moja branża jest niszowa - zadziała?",
@@ -273,7 +273,7 @@ export default function ContentMachineContent() {
                 {
                   num: "02",
                   title: "BRIEF + ARTYKUŁ",
-                  desc: "Dla każdego artykułu: analiza SERP, struktura H1-H3, internal links plan. Claude pisze w Twoim brand voice (prompt przygotowany w setupie). Human-in-the-loop review przed publikacją - możesz zatwierdzać lub dawać feedback.",
+                  desc: "Dla każdego artykułu: analiza SERP, struktura H1-H3, internal links plan. Agent AI pisze w Twoim brand voice (prompt przygotowany w setupie). Human-in-the-loop review przed publikacją - możesz zatwierdzać lub dawać feedback.",
                 },
                 {
                   num: "03",
