@@ -91,25 +91,23 @@ export function SocialProof() {
           </p>
         </FadeUp>
 
-        {/* WiperApp Case Study — accent left bar */}
+        {/* TODO Bartek: case study do dodania gdy bedzie klient z publicznym approval.
+            Do wyboru: Rolbest / Krispol / Karat (potwierdzic NDA) */}
         <FadeUp delay={0.2}>
           <div className="bg-white border-l-[3px] border-l-accent border border-border rounded-r-[6px] rounded-l-none p-6 md:p-8 mb-12">
             <div className="flex items-center gap-3 mb-4">
               <span className="inline-block px-3 py-1 text-base font-sans font-semibold uppercase tracking-wider bg-accent/10 text-accent rounded-full">
-                Case Study
+                Wynik
               </span>
-              <span className="font-serif text-2xl">WiperApp</span>
             </div>
             <p className="font-serif text-2xl text-text mb-4">
               Cold email. Podpisana umowa. <span className="text-accent">6 dni.</span>
             </p>
             <p className="text-lg text-text-secondary leading-relaxed mb-4">
-              WiperApp (SaaS, data erasure) potrzebował spotkań z firmami ITAD i Enterprise
-              na poziomie C-Level, globalnie. Wysłaliśmy cold email, umówiliśmy spotkanie
-              i podpisaliśmy umowę na współpracę. Od pierwszego maila do podpisu: 6 dni.
+              Nasz klient (SaaS B2B) potrzebowal spotkan z firmami Enterprise na poziomie C-Level. Wyslalismy cold email, umowilismy spotkanie i podpisalismy umowe na wspolprace. Od pierwszego maila do podpisu: 6 dni.
             </p>
             <p className="text-text font-medium">
-              Nie tydzień na &ldquo;oglądanie oferty&rdquo;. 6 dni: mail &rarr; spotkanie &rarr; umowa.
+              Nie tydzien na &ldquo;ogladanie oferty&rdquo;. 6 dni: mail &rarr; spotkanie &rarr; umowa.
             </p>
           </div>
         </FadeUp>
