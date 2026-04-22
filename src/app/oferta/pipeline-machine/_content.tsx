@@ -148,7 +148,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Czym Pipeline Machine różni się od Hot Lead Catcher?",
-    a: "Pipeline Machine = outbound cold email/LinkedIn na ICP. Skalowany zasięg, systematyczne prospecting. Hot Lead Catcher = precision strike gdy pojawia się sygnał zakupowy (firma zatrudnia DPO, dostała rundę, ma złe recenzje konkurenta). Razem: PM robi regularny outbound, HLC odpala celowany strzał gdy okazja.",
+    a: "Pipeline Machine = outbound cold email/LinkedIn na ICP. Skalowany zasieg, systematyczne pozyskiwanie leadow. Hot Lead Catcher = precision strike gdy pojawia sie sygnal zakupowy (firma zatrudnia DPO, dostala runde, ma zle recenzje konkurenta). Razem: PM robi regularny outbound, HLC odpala celowany strzal gdy okazja.",
   },
 ];
 
@@ -358,7 +358,7 @@ export default function PipelineMachineContent() {
                     Problem
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
-                    Brak systemu outbound. Ręczne prospecting na LinkedIn zajmowało dziesiątki godzin tygodniowo bez mierzalnych wyników.
+                    Brak systemu outbound. Reczne pozyskiwanie leadow na LinkedIn zajmowalo dziesiatki godzin tygodniowo bez mierzalnych wynikow.
                   </p>
                 </div>
 
