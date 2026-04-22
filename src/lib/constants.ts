@@ -97,6 +97,20 @@ export const PRODUCTS = [
       "Bonus: klient wycenia sam o 23:00, w weekend, w święta. Ty rano masz gotowe zapytanie",
     landingHref: "/oferta/generator-ofert",
   },
+  {
+    title: "Indywidualne Wdrozenia",
+    badge: "DLA NON-STANDARD",
+    description:
+      "Agent AI dopasowany pod Twoj unikalny workflow - gdy zaden z 5 produktow nie pasuje. Discovery bezplatne. Wycena projektowa po scoping. Budżety od 15 000 PLN.",
+    metrics: [
+      "Wdrozenie 4-12 tyg",
+      "Od 15 000 PLN",
+      "4h SLA",
+    ],
+    bonus:
+      "Bonus: Discovery Workshop (2 000 PLN), Architecture Spec (2 500 PLN), 3 mies. Production Support (8 000 PLN) - w cenie projektu",
+    landingHref: "/oferta/indywidualne-wdrozenia",
+  },
 ];
 
 export const COST_TABLE = [

@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { PRODUCTS } from "@/lib/constants";
 
-type Visual = "pipeline" | "seo" | "chatbot" | "offers" | "intent";
+type Visual = "pipeline" | "seo" | "chatbot" | "offers" | "intent" | "custom";
 
 // Lazy-load Player (no SSR - Remotion uses browser APIs)
 const Player = dynamic(() => import("@remotion/player").then((m) => m.Player), { ssr: false });
@@ -86,6 +86,13 @@ const MAP: Array<{
     short: "Klient sam wycenia na stronie. System generuje brandowane PDF i wysyła mailem.",
     visual: "offers",
   },
+  {
+    slug: "Indywidualne Wdrozenia",
+    metric: "od 15k PLN",
+    metricLabel: "wycena projektowa po Discovery",
+    short: "Agent AI pod Twoj unikalny workflow - gdy zadne z 5 gotowych rozwiazan nie pasuje. Discovery bezplatne.",
+    visual: "custom",
+  },
 ];
 
 // Stagger container variants
@@ -125,7 +132,7 @@ export function ProductsV2() {
       <div className="mx-auto max-w-[1440px]">
         <header className="max-w-[720px] mb-16">
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
-            5 systemów
+            6 systemów
           </div>
           <h2>Pięć agentów AI. Każdy robi jedną rzecz doskonale.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
@@ -146,7 +153,7 @@ export function ProductsV2() {
               <motion.article
                 key={p.title}
                 variants={cardVariants}
-                className={`relative bg-[#FAFAFA] p-8 md:p-10 transition-colors duration-200 group ${i === 0 ? "lg:col-span-2" : ""}`}
+                className={`relative bg-[#FAFAFA] p-8 md:p-10 transition-colors duration-200 group ${i === 0 ? "lg:col-span-2" : ""} ${i === 5 ? "lg:col-span-3" : ""}`}
                 style={
                   isPopular
                     ? { boxShadow: "inset 0 0 0 1px #B87333" }
@@ -275,6 +282,28 @@ function ProductVisual({ kind }: { kind: Visual }) {
           <span className="inline-block bg-[#0A0A0A] px-3 py-1.5 text-white">
             Setup 5 000 PLN, potem od 900 PLN/mies. Umówić demo?
           </span>
+        </div>
+      </div>
+    );
+  }
+  if (kind === "custom") {
+    return (
+      <div className="border border-[#E5E5E5] bg-white p-4 font-mono text-[11px] leading-[1.7]">
+        <div className="text-[#737373]">discovery.yml</div>
+        <div className="mt-1 flex items-center justify-between">
+          <span className="text-[#0A0A0A]">workflow: non-standard</span>
+          <span className="text-[#B87333]">scope</span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-[#0A0A0A]">integrations: ERP + CRM + DB</span>
+          <span className="text-[#B87333]">mapped</span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-[#0A0A0A]">budget: &gt; 15 000 PLN</span>
+          <span className="text-[#047857]">qualified</span>
+        </div>
+        <div className="mt-2 border-t border-[#E5E5E5] pt-2 text-[#525252]">
+          <span className="text-[#B87333]">&rarr;</span> fixed scope + fixed price
         </div>
       </div>
     );
