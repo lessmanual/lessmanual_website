@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/oferta/content-machine`, lastModified: "2026-04-20", changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/oferta/obsluga-klienta`, lastModified: "2026-04-20", changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/oferta/generator-ofert`, lastModified: "2026-04-20", changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/oferta/indywidualne-wdrozenia`, lastModified: "2026-04-21", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/faq`, lastModified: "2026-04-20", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/kontakt`, lastModified: "2026-04-20", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/o-nas`, lastModified: "2026-04-20", changeFrequency: "monthly", priority: 0.7 },

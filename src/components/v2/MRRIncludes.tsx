@@ -5,8 +5,8 @@ import { Wrench, Shield, Sparkles, BarChart2, Cpu } from "lucide-react";
 
 // ── Types ───────────────────────────────────────────────────────────────────
 
-export type Tier = "STARTER" | "GROWTH" | "SCALE";
-export type Product = "hlc" | "pipeline" | "content" | "obsluga" | "generator";
+export type Tier = "STARTER" | "GROWTH" | "SCALE" | "CUSTOM";
+export type Product = "hlc" | "pipeline" | "content" | "obsluga" | "generator" | "indywidualne";
 
 export type MRRCategory = {
   id: "narzedzia" | "monitoring" | "optymalizacja" | "raporty" | "modele";
@@ -27,6 +27,7 @@ const slaHours: Record<Tier, number> = {
   STARTER: 24,
   GROWTH: 8,
   SCALE: 4,
+  CUSTOM: 4,
 };
 
 // ── Data: 5 produktow x 3 tiery x 5 kategorii = 75 one-linerow ──────────────
@@ -48,6 +49,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Hosting, API agenta, bazy danych i monitoring systemu w cenie - zero kont do zakładania po Twojej stronie.",
         GROWTH: "Hosting, API agenta, bazy danych i monitoring systemu w cenie - zero kont do zakładania po Twojej stronie.",
         SCALE: "Hosting, API agenta, bazy danych i monitoring systemu w cenie - zero kont do zakładania po Twojej stronie.",
+        CUSTOM: "Hosting, API agenta, bazy danych i monitoring systemu w cenie - zero kont do zakładania po Twojej stronie.",
       },
     },
     monitoring: {
@@ -57,6 +59,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Codzienny health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 24h).",
         GROWTH: "Codzienny health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 8h).",
         SCALE: "Ciągły health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 4h).",
+        CUSTOM: "Ciągły health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -66,6 +69,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Co kwartał przestrajamy ICP i scoring pod Twój feedback - żeby alerty były coraz trafniejsze.",
         GROWTH: "Co kwartał przestrajamy ICP i scoring pod Twój feedback - żeby alerty były coraz trafniejsze.",
         SCALE: "Co miesiąc dostosowujemy agenta do zmian w Twojej branży i nowych źródeł sygnałów.",
+        CUSTOM: "Co miesiąc dostosowujemy agenta do zmian w Twojej branży i nowych źródeł sygnałów.",
       },
     },
     raporty: {
@@ -75,6 +79,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Miesięczny raport: ile sygnałów złapał agent, jakość alertów i 3 rekomendacje co poprawić.",
         GROWTH: "Miesięczny raport: ile sygnałów złapał agent, jakość alertów i 3 rekomendacje co poprawić.",
         SCALE: "Tygodniowy health check + miesięczny raport strategiczny z 3 rekomendacjami co skalować.",
+        CUSTOM: "Tygodniowy health check + miesięczny raport strategiczny z 3 rekomendacjami co skalować.",
       },
     },
     modele: {
@@ -84,6 +89,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
         GROWTH: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
         SCALE: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
+        CUSTOM: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
       },
     },
   },
@@ -97,6 +103,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Domeny, warmup mailboxów, subskrypcja Instantly i scraping tools w cenie - zero kont do zakładania po Twojej stronie.",
         GROWTH: "Domeny, warmup mailboxów, Instantly, LinkedIn outreach tools i scraping tools w cenie - zero kont do zakładania po Twojej stronie.",
         SCALE: "Domeny, warmup, Instantly, LinkedIn, narzędzia multi-persona i scraping w cenie - zero kont do zakładania po Twojej stronie.",
+        CUSTOM: "Domeny, warmup, Instantly, LinkedIn, narzędzia multi-persona i scraping w cenie - zero kont do zakładania po Twojej stronie.",
       },
     },
     monitoring: {
@@ -106,6 +113,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Codzienny health check sekwencji - deliverability spada, domena traci reputację? Naprawiamy zanim obniżysz reply rate (reakcja do 24h).",
         GROWTH: "Codzienny health check sekwencji - deliverability spada, domena traci reputację? Naprawiamy zanim obniżysz reply rate (reakcja do 8h).",
         SCALE: "Ciągły health check sekwencji i kont - deliverability spada, domena traci reputację? Naprawiamy natychmiast (reakcja do 4h).",
+        CUSTOM: "Ciągły health check sekwencji i kont - deliverability spada, domena traci reputację? Naprawiamy natychmiast (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -115,6 +123,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Co kwartał rekalibracja ICP i test nowej sekwencji - żeby open rate i reply rate rosły.",
         GROWTH: "Co kwartał rekalibracja ICP i A/B test nowej sekwencji email + LinkedIn - żeby open rate i reply rate rosły.",
         SCALE: "Co miesiąc nowy wariant sekwencji, nowe segmenty ICP i optymalizacja tone of voice pod wyniki z poprzedniego miesiąca.",
+        CUSTOM: "Co miesiąc nowy wariant sekwencji, nowe segmenty ICP i optymalizacja tone of voice pod wyniki z poprzedniego miesiąca.",
       },
     },
     raporty: {
@@ -124,6 +133,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Miesięczny Performance Report: open rate, reply rate, pipeline value i 3 rekomendacje co zmienić.",
         GROWTH: "Miesięczny Performance Report: open rate, reply rate, meeting rate, pipeline value i 3 rekomendacje co skalować.",
         SCALE: "Tygodniowy health check kampanii + miesięczny raport strategiczny z analizą per segment ICP.",
+        CUSTOM: "Tygodniowy health check kampanii + miesięczny raport strategiczny z analizą per segment ICP.",
       },
     },
     modele: {
@@ -133,6 +143,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
         GROWTH: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
         SCALE: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
+        CUSTOM: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - Ty nic nie robisz.",
       },
     },
   },
@@ -146,6 +157,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Senuto, agenty do writingu, CMS integration i hosting artykułów w cenie - zero dodatkowych subskrypcji po Twojej stronie.",
         GROWTH: "Senuto, agenty do writingu, tracking pozycji, CMS integration i hosting artykułów w cenie - zero dodatkowych subskrypcji.",
         SCALE: "Senuto, agenty do writingu, tracking pozycji, competitor gap tools i dedykowany PM w cenie - zero dodatkowych subskrypcji.",
+        CUSTOM: "Senuto, agenty do writingu, tracking pozycji, competitor gap tools i dedykowany PM w cenie - zero dodatkowych subskrypcji.",
       },
     },
     monitoring: {
@@ -155,6 +167,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Śledzimy indeksację i pozycje artykułów - jeśli Google przestanie indeksować lub pozycje zaczną spadać, reagujemy (reakcja do 24h).",
         GROWTH: "Śledzimy indeksację, pozycje i core web vitals - anomalia techniczna? Reagujemy zanim ruch zacznie spadać (reakcja do 8h).",
         SCALE: "Monitoring indeksacji, pozycji, konkurencji i core web vitals w czasie rzeczywistym - każda anomalia trafia do Ciebie natychmiast (reakcja do 4h).",
+        CUSTOM: "Monitoring indeksacji, pozycji, konkurencji i core web vitals w czasie rzeczywistym - każda anomalia trafia do Ciebie natychmiast (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -164,6 +177,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Co kwartał przeglądamy keyword clusters i dostosowujemy brief artykułów do zmian w SERP-ie.",
         GROWTH: "Co kwartał aktualizujemy klastry, refreshujemy artykuły poniżej TOP 20 i optymalizujemy internal linking.",
         SCALE: "Co miesiąc aktualizacja klastrów, refresh słabszych artykułów i rozbudowa internal linkingu pod nowe frazy.",
+        CUSTOM: "Co miesiąc aktualizacja klastrów, refresh słabszych artykułów i rozbudowa internal linkingu pod nowe frazy.",
       },
     },
     raporty: {
@@ -173,6 +187,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Miesięczny raport SEO: liczba artykułów, nowe pozycje w TOP 50, ruch organiczny i 3 rekomendacje na kolejny miesiąc.",
         GROWTH: "Miesięczny raport SEO: frazy w TOP 10, wzrost ruchu organicznego, estymowana wartość ruchu i 3 rekomendacje strategiczne.",
         SCALE: "Tygodniowy health check pozycji + miesięczny raport strategiczny z analizą luk wobec konkurencji i nowym planem klastrów.",
+        CUSTOM: "Tygodniowy health check pozycji + miesięczny raport strategiczny z analizą luk wobec konkurencji i nowym planem klastrów.",
       },
     },
     modele: {
@@ -182,6 +197,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Gdy producent modelu wypuści nową wersję, migrujemy pipeline bez przestoju - artykuły piszą się dalej.",
         GROWTH: "Gdy producent modelu wypuści nową wersję, migrujemy pipeline bez przestoju - artykuły piszą się dalej.",
         SCALE: "Gdy producent modelu wypuści nową wersję, migrujemy pipeline bez przestoju - artykuły piszą się dalej.",
+        CUSTOM: "Gdy producent modelu wypuści nową wersję, migrujemy pipeline bez przestoju - artykuły piszą się dalej.",
       },
     },
   },
@@ -195,6 +211,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Hosting chatbota, baza RAG, widget do embedowania i integracja kanału w cenie - zero dodatkowych subskrypcji po Twojej stronie.",
         GROWTH: "Hosting chatbota, baza RAG, integracje WhatsApp Business, email triage i CRM w cenie - zero dodatkowych subskrypcji.",
         SCALE: "Hosting chatbota, baza RAG, WhatsApp, email triage, Voice Agent i integracje CRM plus ERP w cenie - zero dodatkowych subskrypcji.",
+        CUSTOM: "Hosting chatbota, baza RAG, WhatsApp, email triage, Voice Agent i integracje CRM plus ERP w cenie - zero dodatkowych subskrypcji.",
       },
     },
     monitoring: {
@@ -204,6 +221,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Codziennie sprawdzamy czy bot odpowiada poprawnie i nie robi false answers - anomalia? Naprawiamy zanim klient to zgłosi (reakcja do 24h).",
         GROWTH: "Codziennie sprawdzamy CSAT, false answers i coverage bazy RAG - anomalia? Naprawiamy zanim wpłynie na oceny (reakcja do 8h).",
         SCALE: "Ciągły monitoring CSAT, false answers i coverage RAG na wszystkich kanałach - anomalia? Naprawiamy natychmiast (reakcja do 4h).",
+        CUSTOM: "Ciągły monitoring CSAT, false answers i coverage RAG na wszystkich kanałach - anomalia? Naprawiamy natychmiast (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -213,6 +231,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Co kwartał rozbudowujemy bazę RAG o nowe FAQ i tematy z eskalacji - żeby auto-resolve rate rósł.",
         GROWTH: "Co kwartał rozbudowujemy bazę RAG, optymalizujemy flow eskalacji i aktualizujemy reguły CSAT scoringu.",
         SCALE: "Co miesiąc rozbudowujemy bazę RAG, dodajemy nowe scenariusze obsługi i optymalizujemy tone of voice per kanał.",
+        CUSTOM: "Co miesiąc rozbudowujemy bazę RAG, dodajemy nowe scenariusze obsługi i optymalizujemy tone of voice per kanał.",
       },
     },
     raporty: {
@@ -222,6 +241,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Miesięczny raport: liczba konwersacji, auto-resolve rate, tematy eskalacji i 3 rekomendacje co dodać do bazy.",
         GROWTH: "Miesięczny raport CSAT: auto-resolve rate, czas odpowiedzi, tematy eskalacji i 3 rekomendacje co poprawić w bocie.",
         SCALE: "Tygodniowy health check botów + miesięczny raport CSAT z analizą per kanał i rekomendacjami do bazy RAG.",
+        CUSTOM: "Tygodniowy health check botów + miesięczny raport CSAT z analizą per kanał i rekomendacjami do bazy RAG.",
       },
     },
     modele: {
@@ -231,6 +251,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - bot odpowiada dalej bez przerwy dla klientów.",
         GROWTH: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - bot odpowiada dalej bez przerwy dla klientów.",
         SCALE: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - bot odpowiada dalej bez przerwy dla klientów.",
+        CUSTOM: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - bot odpowiada dalej bez przerwy dla klientów.",
       },
     },
   },
@@ -244,6 +265,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Hosting chatu wycenowego, baza RAG z cennikiem, generator PDF i integracja z Google Sheets w cenie - zero dodatkowych subskrypcji.",
         GROWTH: "Hosting aplikacji Next.js, baza RAG, generator PDF, auto follow-up i integracja CRM w cenie - zero dodatkowych subskrypcji.",
         SCALE: "Hosting aplikacji, baza RAG, generator PDF, tracking otwarć, widget embed, QR kody i integracje ERP w cenie - zero dodatkowych subskrypcji.",
+        CUSTOM: "Hosting aplikacji, baza RAG, generator PDF, tracking otwarć, widget embed, QR kody i integracje ERP w cenie - zero dodatkowych subskrypcji.",
       },
     },
     monitoring: {
@@ -253,6 +275,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Codziennie sprawdzamy czy agent liczy prawidłowo i PDF generuje się bez błędów - anomalia? Naprawiamy zanim trafi do klienta (reakcja do 24h).",
         GROWTH: "Codziennie sprawdzamy poprawność kalkulacji, generowania PDF i działania follow-upów - anomalia? Naprawiamy zanim trafi do klienta (reakcja do 8h).",
         SCALE: "Ciągły monitoring kalkulacji, PDF, follow-upów i integracji CRM plus ERP - każda anomalia trafia do nas natychmiast (reakcja do 4h).",
+        CUSTOM: "Ciągły monitoring kalkulacji, PDF, follow-upów i integracji CRM plus ERP - każda anomalia trafia do nas natychmiast (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -262,6 +285,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Co kwartał przeglądamy bazę RAG i aktualizujemy szablony PDF pod Twój feedback i zmiany w cenniku.",
         GROWTH: "Co kwartał optymalizujemy pytania kwalifikacyjne, warianty cenowe i timing follow-upów pod dane z konwersji.",
         SCALE: "Co miesiąc optymalizujemy flow kwalifikacji, warianty cenowe i treści follow-upów pod dane win rate z CRM.",
+        CUSTOM: "Co miesiąc optymalizujemy flow kwalifikacji, warianty cenowe i treści follow-upów pod dane win rate z CRM.",
       },
     },
     raporty: {
@@ -271,6 +295,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Miesięczny raport: liczba wycen, najpopularniejsze warianty i 3 rekomendacje jak podnieść win rate.",
         GROWTH: "Cotygodniowy raport z analizą wycen: win rate, najpopularniejsze warianty, czas do decyzji i 3 rekomendacje co zoptymalizować.",
         SCALE: "Tygodniowy raport konwersji + miesięczny raport strategiczny z analizą win rate per segment klienta i per wariant cenowy.",
+        CUSTOM: "Tygodniowy raport konwersji + miesięczny raport strategiczny z analizą win rate per segment klienta i per wariant cenowy.",
       },
     },
     modele: {
@@ -280,6 +305,61 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
         STARTER: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - konfiguratory wyceniają dalej bez przerwy.",
         GROWTH: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - konfiguratory wyceniają dalej bez przerwy.",
         SCALE: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - konfiguratory wyceniają dalej bez przerwy.",
+        CUSTOM: "Gdy producent modelu wypuści nową wersję, migrujemy bez przestoju - konfiguratory wyceniają dalej bez przerwy.",
+      },
+    },
+  },
+
+  // ── INDYWIDUALNE (Indywidualne Wdrożenia) ─────────────────────────────────
+  indywidualne: {
+    narzedzia: {
+      label: "Narzędzia",
+      icon: Wrench,
+      descriptions: {
+        STARTER: "Wszystkie narzędzia potrzebne do Twojego projektu - hosting, bazy, API, narzędzia dev - w cenie.",
+        GROWTH: "Wszystkie narzędzia potrzebne do Twojego projektu - hosting, bazy, API, narzędzia dev - w cenie.",
+        SCALE: "Wszystkie narzędzia potrzebne do Twojego projektu - hosting, bazy, API, narzędzia dev - w cenie.",
+        CUSTOM: "Wszystkie narzędzia potrzebne do Twojego projektu - hosting, bazy, API, narzędzia dev - w cenie.",
+      },
+    },
+    monitoring: {
+      label: "Monitoring",
+      icon: Shield,
+      descriptions: {
+        STARTER: "Dedykowany monitoring projektu (reakcja do 4h na incydenty).",
+        GROWTH: "Dedykowany monitoring projektu (reakcja do 4h na incydenty).",
+        SCALE: "Dedykowany monitoring projektu (reakcja do 4h na incydenty).",
+        CUSTOM: "Dedykowany monitoring projektu (reakcja do 4h na incydenty).",
+      },
+    },
+    optymalizacja: {
+      label: "Optymalizacja",
+      icon: Sparkles,
+      descriptions: {
+        STARTER: "Co miesiąc rewizja workflow i optymalizacja pod Twoje zmiany biznesowe.",
+        GROWTH: "Co miesiąc rewizja workflow i optymalizacja pod Twoje zmiany biznesowe.",
+        SCALE: "Co miesiąc rewizja workflow i optymalizacja pod Twoje zmiany biznesowe.",
+        CUSTOM: "Co miesiąc rewizja workflow i optymalizacja pod Twoje zmiany biznesowe.",
+      },
+    },
+    raporty: {
+      label: "Raporty",
+      icon: BarChart2,
+      descriptions: {
+        STARTER: "Tygodniowy status report + miesięczny strategic review z 3 rekomendacjami.",
+        GROWTH: "Tygodniowy status report + miesięczny strategic review z 3 rekomendacjami.",
+        SCALE: "Tygodniowy status report + miesięczny strategic review z 3 rekomendacjami.",
+        CUSTOM: "Tygodniowy status report + miesięczny strategic review z 3 rekomendacjami.",
+      },
+    },
+    modele: {
+      label: "Modele AI",
+      icon: Cpu,
+      descriptions: {
+        STARTER: "Migracja modeli AI bez przestoju gdy dostawca wydaje nową wersję.",
+        GROWTH: "Migracja modeli AI bez przestoju gdy dostawca wydaje nową wersję.",
+        SCALE: "Migracja modeli AI bez przestoju gdy dostawca wydaje nową wersję.",
+        CUSTOM: "Migracja modeli AI bez przestoju gdy dostawca wydaje nową wersję.",
       },
     },
   },
