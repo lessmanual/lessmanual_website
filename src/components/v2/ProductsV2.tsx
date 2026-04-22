@@ -134,9 +134,9 @@ export function ProductsV2() {
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             6 systemów
           </div>
-          <h2>Pięć agentów AI. Każdy robi jedną rzecz doskonale.</h2>
+          <h2>Sześć systemów AI. Każdy robi jedną rzecz doskonale.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
-            Wdrożenie w 2-4 tygodnie, pierwsze wyniki w pierwszym miesiącu. Hot Lead Catcher to nasz flagship - wychwytuje moment zakupowy zanim zrobi to konkurencja. Pozostałe 4 działają solo lub w kombinacji.
+            Wdrożenie w 2-4 tygodnie, pierwsze wyniki w pierwszym miesiącu. Hot Lead Catcher to nasz flagship - wychwytuje moment zakupowy zanim zrobi to konkurencja. Pozostałe 4 działają solo lub w kombinacji. Szósty - Indywidualne Wdrożenia - gdy potrzebujesz czegoś custom.
           </p>
         </header>
 
