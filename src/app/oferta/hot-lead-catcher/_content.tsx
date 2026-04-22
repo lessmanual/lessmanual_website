@@ -88,8 +88,16 @@ const TIERS = [
 
 const FAQ_ITEMS = [
   {
+    q: "Moja branża jest zbyt niszowa, agent nic nie znajdzie.",
+    a: "Większość branż B2B ma min 100-500 aktywnych graczy w PL generujących sygnały zakupowe co tydzień. W ICP Deep Dive (dzień 1-7) sprawdzamy realnie - jeśli nisza jest martwa, mówimy Ci przed uruchomieniem i zwracamy setup. Do tej pory ustaliliśmy niszowy w 0% przypadków.",
+  },
+  {
+    q: "Boję się że agent będzie spamował albo generował fake positives.",
+    a: "Scoring algorithm ma threshold precision >85% (3 z 4 alertów musi być prawdziwy hot lead). Miesięczny report pokazuje accuracy rate i pozwala recalibrować. Nie trafia Ci nic poniżej score 75.",
+  },
+  {
     q: "Skąd agent wie, że sygnał jest hot?",
-    a: "Scoring intent oparty o LLM (Claude). Każde źródło ma własne reguły scoringu (np. 'firma zatrudnia DPO' = 85, 'firma chwali się rundą' = 70). Próg hot = >75. Konfigurowalny pod ICP klienta.",
+    a: "Scoring intent oparty o LLM. Każde źródło ma własne reguły scoringu (np. 'firma zatrudnia DPO' = 85, 'firma chwali się rundą' = 70). Próg hot = >75. Konfigurowalny pod ICP klienta.",
   },
   {
     q: "Co jeśli źródła nie generują sygnałów dla mojej branży?",
@@ -183,6 +191,11 @@ export default function HotLeadCatcherContent() {
                   Monitoring od 2 do 8 źródeł sygnałów zakupowych (newsy, oferty pracy, recenzje, social, Reddit, Facebook grupki, RSS, X). Scoring intent. Agent SAM wysyła personalizowane maile i SAM odpowiada na zwrotne. Wchodzisz w wątek dopiero gdy spotkanie do umówienia.
                 </p>
 
+                <p className="mt-4 max-w-[520px] text-[14px] font-mono text-[#B87333]">
+                  Pierwsze alerty w 24h po setupie. {/* TODO Bartek: update monthly X/5 */}
+                  Max 5 nowych klientów HLC miesięcznie.
+                </p>
+
                 <div className="mt-10 flex flex-wrap items-center gap-3">
                   <Link
                     href={CALENDLY_URL}
@@ -219,6 +232,38 @@ export default function HotLeadCatcherContent() {
                   <span>do 8 źródeł · alert w 60s</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 1b. PROBLEM AGITATION ── */}
+        <section className="px-6 md:px-10 py-16 md:py-24 bg-white border-b border-[#E5E5E5]">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="max-w-[760px]">
+              <SectionLabel>PROBLEM</SectionLabel>
+              <h2 className="text-[#0A0A0A]">
+                Przegapiasz gorące leady w momencie gdy są najbardziej otwarci.
+              </h2>
+              <p className="mt-6 text-[17px] leading-[1.65] text-[#525252]">
+                Firma X dziś wpisuje na LinkedIn &quot;szukamy rozwiązania dla [Twoja branża]&quot;.
+                Twój konkurent zauważa to w 30 minut. Ty dowiadujesz się o 2 tygodnie za późno,
+                gdy już podpisali umowę z kimś innym.
+              </p>
+              <ul className="mt-8 flex flex-col gap-4">
+                {[
+                  "Twój zespół handlowy nie ma czasu monitorować 4 źródeł sygnałów 24/7.",
+                  "Narzędzia intent data w PL są drogie - Bombora, G2 intent = 3-8k USD/mies.",
+                  "Samodzielne monitorowanie LinkedIn/news = 40h/mies tylko na obserwację.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-[15px] text-[#525252]">
+                    <span className="text-[#B87333] shrink-0 mt-0.5" aria-hidden="true">-</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-8 text-[17px] leading-[1.65] text-[#0A0A0A] font-medium">
+                Hot Lead Catcher łapie sygnał w 15 minut od publikacji. Alert na Telegram, kontekst gotowy, Ty dzwonisz pierwszy.
+              </p>
             </div>
           </div>
         </section>
@@ -270,12 +315,13 @@ export default function HotLeadCatcherContent() {
           </div>
         </section>
 
-        {/* ── 3. CASE WIPERAPP ── */}
+        {/* ── 3. CASE STUDY ── */}
+        {/* TODO Bartek: potwierdzić NDA WiperApp - jeśli OK cofnąć anonimizację */}
         <section id="case" className="px-6 md:px-10 py-24 md:py-36 bg-[#FAFAFA]">
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
               <SectionLabel>CASE STUDY</SectionLabel>
-              <h2>WiperApp: od 200 cold emaili z zero odpowiedzi do pipeline'u opartego o sygnały.</h2>
+              <h2>Firma z branży mobile apps: od 200 cold emaili z zero odpowiedzi do pipeline&apos;u opartego o sygnały.</h2>
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
@@ -286,7 +332,7 @@ export default function HotLeadCatcherContent() {
                     Klient
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#0A0A0A]">
-                    WiperApp - B2B SaaS, target: Marketing Director w retail.
+                    SaaS B2B z kategorii mobile apps, target: Marketing Director w retail.
                   </p>
                 </div>
 
@@ -313,7 +359,7 @@ export default function HotLeadCatcherContent() {
                     Dziś
                   </div>
                   <p className="text-[16px] leading-[1.7] text-[#525252]">
-                    Pipeline w pełni autonomiczny: WiperApp dostaje tylko alert na Telegram &quot;spotkanie do potwierdzenia&quot;. Pokazuję działający setup live na rozmowie 15-min.
+                    Pipeline w pełni autonomiczny: klient dostaje tylko alert na Telegram &quot;spotkanie do potwierdzenia&quot;. Pokazuję działający setup live na rozmowie 15-min.
                   </p>
                 </div>
               </div>
@@ -427,8 +473,74 @@ export default function HotLeadCatcherContent() {
             </div>
 
             <p className="mt-8 text-[12px] text-[#525252]">
-              Wszystkie ceny za konkretny zakres. 3 warstwy gwarancji. Rabat 15% przy kontrakcie 6+ miesięcy.
+              Wszystkie ceny za konkretny zakres. Rabat 15% przy kontrakcie 6+ miesięcy.
             </p>
+
+            {/* Bundle Stack Value Table - GROWTH */}
+            <div className="mt-12 border border-[#B87333] bg-[#FAFAFA] p-8 max-w-[640px]" style={{ borderRadius: 8 }}>
+              <SectionLabel>CO DOSTAJESZ W GROWTH (rekomendowany)</SectionLabel>
+              <table className="w-full text-[14px]">
+                <tbody>
+                  {[
+                    ["Setup + ICP config", "3 000 PLN"],
+                    ["ICP Deep Dive Workshop", "2 500 PLN"],
+                    ["4 źródła sygnałów (news/jobs/reviews/social)", "3 000 PLN"],
+                    ["Alert Channels setup", "1 000 PLN"],
+                    ["Monthly Report (12 mies.)", "12 000 PLN"],
+                  ].map(([label, value]) => (
+                    <tr key={label} className="border-b border-[#E5E5E5]">
+                      <td className="py-3 text-[#525252]">{label}</td>
+                      <td className="py-3 text-right text-[#525252]">{value}</td>
+                    </tr>
+                  ))}
+                  <tr className="border-b border-[#B87333]">
+                    <td className="py-3 font-medium text-[#0A0A0A]">TOTAL VALUE rok 1</td>
+                    <td className="py-3 text-right font-medium text-[#0A0A0A]">21 500 PLN</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 font-medium text-[#B87333]">TWOJA CENA</td>
+                    <td className="py-3 text-right font-medium text-[#B87333]">18 600 PLN</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="mt-4 text-[13px] text-[#525252]">Oszczędzasz 2 900 PLN + bonusy w cenie.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 4b. GWARANCJA ── */}
+        <section id="gwarancja" className="px-6 md:px-10 py-24 md:py-36 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+          <div className="mx-auto max-w-[1440px]">
+            <header className="mb-12 max-w-[720px]">
+              <SectionLabel>GWARANCJA</SectionLabel>
+              <h2>3 warstwy ochrony. Nic nie ryzykujesz.</h2>
+            </header>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Warstwa 1: Bezwarunkowa",
+                  desc: "30 dni 0 hot leads w Telegramie/Slacku = pełny zwrot setup. Bez pytań. Przelew w 7 dni.",
+                },
+                {
+                  title: "Warstwa 2: Rynkowa",
+                  desc: "Koszt per hot lead powyżej 300 PLN (benchmark hotLead PPL w Polsce) = następne 30 dni HLC gratis.",
+                },
+                {
+                  title: "Warstwa 3: ICP Satysfakcja",
+                  desc: "Po kalibracji (dzień 7-14) nie jesteś zadowolony z ICP? 100% zwrot. Zanim agent ruszy.",
+                },
+              ].map((g) => (
+                <div
+                  key={g.title}
+                  className="bg-white border border-[#E5E5E5] p-8"
+                  style={{ borderRadius: 8 }}
+                >
+                  <h3 className="text-[16px] font-medium text-[#0A0A0A] mb-3">{g.title}</h3>
+                  <p className="text-[14px] leading-[1.65] text-[#525252]">{g.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
