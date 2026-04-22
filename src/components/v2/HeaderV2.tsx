@@ -37,16 +37,16 @@ const PRODUCT_LINKS: ProductLink[] = [
 ];
 
 export function HeaderV2() {
-  const pathname = usePathname() || "/v2";
-  const onHome = pathname === "/v2" || pathname === "/";
+  const pathname = usePathname() || "/";
+  const onHome = pathname === "/";
 
-  // Anchor links: na /v2 scrollują, na podstronach linkują do /v2#anchor
-  const anchor = (section: string) => (onHome ? `#${section}` : `/v2#${section}`);
+  // Anchor links: na / scrollują, na podstronach linkują do /#anchor
+  const anchor = (section: string) => (onHome ? `#${section}` : `/#${section}`);
 
   return (
     <header className="sticky top-0 z-40 border-b border-[#E5E5E5] bg-[#FAFAFA]/85 backdrop-blur-xl">
       <div className="mx-auto max-w-[1440px] px-6 md:px-10 h-14 flex items-center justify-between">
-        <Link href="/v2" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo-icon.png"
             alt="LessManual"
@@ -152,7 +152,7 @@ function OfertaDropdown() {
           </ul>
           <div className="border-t border-[#E5E5E5] px-4 py-3">
             <Link
-              href="/v2#systems"
+              href="/#systems"
               onClick={() => setOpen(false)}
               className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513]"
             >

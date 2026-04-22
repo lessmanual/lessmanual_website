@@ -20,12 +20,12 @@ export function HeroV2() {
             </div>
 
             <h1 className="text-[#0A0A0A]">
-              Zatrudnij agenta AI<br />
-              za <span className="text-[#B87333]">1/5 ceny pracownika.</span>
+              Zatrudnij agentów AI<br />
+              i <span className="text-[#B87333]">odzyskaj swój czas.</span>
             </h1>
 
             <p className="mt-8 max-w-[560px] text-[17px] leading-[1.55] text-[#525252]">
-              Sprzedaż, obsługa, marketing, raportowanie - 24/7, bez L4, bez lojalności, bez stałej wypłaty. Od 900 PLN/mies.
+              1/5 kosztu etatu. Sprzedaż, obsługa, marketing, raportowanie - 24/7, bez L4, bez rekrutacji. Od 900 PLN/mies.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[12px] text-[#525252]">

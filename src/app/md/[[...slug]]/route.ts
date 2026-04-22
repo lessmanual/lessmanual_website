@@ -7,7 +7,6 @@ export const dynamic = "force-dynamic";
 
 const ALLOWED = new Set([
   "index",
-  "v2",
   "faq",
   "o-nas",
   "kontakt",

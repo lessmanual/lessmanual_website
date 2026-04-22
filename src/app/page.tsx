@@ -1,3 +1,5 @@
+import { V2ShellStyles, v2FontClasses } from "@/components/v2/V2ShellStyles";
+import { WebMCPProvider } from "@/components/webmcp-provider";
 import { HeaderV2 } from "@/components/v2/HeaderV2";
 import { HeroV2 } from "@/components/v2/HeroV2";
 import { ArekBadgeV2 } from "@/components/v2/ArekBadgeV2";
@@ -12,9 +14,11 @@ import { PricingV2 } from "@/components/v2/PricingV2";
 import { FinalCTAV2 } from "@/components/v2/FinalCTAV2";
 import { FooterV2 } from "@/components/v2/FooterV2";
 
-export default function V2Home() {
+export default function Home() {
   return (
-    <>
+    <div className={`v2-scope ${v2FontClasses}`}>
+      <V2ShellStyles />
+      <WebMCPProvider />
       <HeaderV2 />
       <main>
         <HeroV2 />
@@ -30,6 +34,6 @@ export default function V2Home() {
         <FinalCTAV2 />
       </main>
       <FooterV2 />
-    </>
+    </div>
   );
 }

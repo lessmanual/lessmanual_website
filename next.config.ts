@@ -46,10 +46,6 @@ const nextConfig: NextConfig = {
         source: "/",
         headers: [{ key: "Link", value: AGENT_LINK_HEADER }],
       },
-      {
-        source: "/v2",
-        headers: [{ key: "Link", value: AGENT_LINK_HEADER }],
-      },
       // Content-Type overrides for well-known (Vercel defaults do not cover linkset/vendored openapi)
       {
         source: "/.well-known/api-catalog",

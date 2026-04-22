@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 // Routes with a pre-rendered markdown variant in public/md/
 const MARKDOWNABLE_ROUTES = new Set([
   "/",
-  "/v2",
   "/faq",
   "/o-nas",
   "/kontakt",
