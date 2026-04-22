@@ -35,9 +35,9 @@ const PRODUCT_LINKS: ProductLink[] = [
     tagline: "Klient sam wycenia. PDF leci mailem w 5 min.",
   },
   {
-    title: "Indywidualne Wdrozenia",
+    title: "Indywidualne Wdrożenia",
     href: "/oferta/indywidualne-wdrozenia",
-    tagline: "Dedykowany agent pod Twoj unikalny workflow - wycena po Discovery.",
+    tagline: "Dedykowany agent pod Twój unikalny workflow - wycena po Discovery.",
   },
 ];
 

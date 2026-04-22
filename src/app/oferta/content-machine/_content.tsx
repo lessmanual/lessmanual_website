@@ -72,7 +72,7 @@ const TIERS = [
     featured: true,
     features: [
       "20 artykułów SEO/mies",
-      "5 postow LinkedIn/tydzien + watki X + grafiki IG",
+      "5 postów LinkedIn/tydzień + wątki X + grafiki IG",
       "3 klastry tematyczne",
       "Internal linking + tracking pozycji",
       "Miesięczny raport SEO",
@@ -285,7 +285,7 @@ export default function ContentMachineContent() {
                 {
                   num: "03",
                   title: "PUBLIKACJA + SOCIAL + TRACKING",
-                  desc: "Artykuły trafiają do Twojego CMS (Webflow, WordPress, Ghost, inne). Schema.org, meta tagi, OG, sitemap - wszystko w cenie. Z kazdego artykułu agent generuje 3-5 postow LinkedIn, watki X i grafiki IG/FB - jeden artykuł to 10+ kawalkow contentu. Tracking pozycji (od GROWTH) - widzisz wzrost co miesiąc.",
+                  desc: "Artykuły trafiają do Twojego CMS (Webflow, WordPress, Ghost, inne). Schema.org, meta tagi, OG, sitemap - wszystko w cenie. Z każdego artykułu agent generuje 3-5 postów LinkedIn, wątki X i grafiki IG/FB - jeden artykuł to 10+ kawałków contentu. Tracking pozycji (od GROWTH) - widzisz wzrost co miesiąc.",
                 },
               ].map((s) => (
                 <div key={s.num} className="bg-[#FAFAFA] p-8 md:p-10">

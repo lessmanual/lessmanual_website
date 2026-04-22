@@ -98,12 +98,12 @@ export const PRODUCTS = [
     landingHref: "/oferta/generator-ofert",
   },
   {
-    title: "Indywidualne Wdrozenia",
+    title: "Indywidualne Wdrożenia",
     badge: "DLA NON-STANDARD",
     description:
-      "Agent AI dopasowany pod Twoj unikalny workflow - gdy zaden z 5 produktow nie pasuje. Discovery bezplatne. Wycena projektowa po scoping. Budżety od 15 000 PLN.",
+      "Agent AI dopasowany pod Twój unikalny workflow - gdy żaden z 5 produktów nie pasuje. Discovery bezpłatne. Wycena projektowa po scoping. Budżety od 15 000 PLN.",
     metrics: [
-      "Wdrozenie 4-12 tyg",
+      "Wdrożenie 4-12 tyg",
       "Od 15 000 PLN",
       "4h SLA",
     ],

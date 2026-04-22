@@ -339,10 +339,10 @@ export default function HotLeadCatcherContent() {
               {/* Lewa: info */}
               <div className="flex flex-col gap-5">
                 <p className="text-[16px] leading-[1.7] text-[#525252]">
-                  Liczby z wdrozonych projektow udostepniamy gdy klienci wyraza zgode na case study publiczne. Na rozmowie 15-min pokazuje dzialajacy setup live - to szybciej niz kazdy case study.
+                  Liczby z wdrożonych projektów udostępniamy gdy klienci wyrażą zgodę na case study publiczne. Na rozmowie 15-min pokazuję działający setup live - to szybciej niż każdy case study.
                 </p>
                 <p className="text-[16px] leading-[1.7] text-[#525252]">
-                  Co zobaczysz na demo: agent skanuje zrodla w czasie rzeczywistym, scoring intent, alert Telegram z kontekstem gotowym do telefonu.
+                  Co zobaczysz na demo: agent skanuje źródła w czasie rzeczywistym, scoring intent, alert Telegram z kontekstem gotowym do telefonu.
                 </p>
               </div>
 
