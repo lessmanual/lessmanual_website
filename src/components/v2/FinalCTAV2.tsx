@@ -32,7 +32,7 @@ export function FinalCTAV2() {
         </h2>
 
         <p className="mx-auto mt-6 max-w-[640px] text-[17px] leading-[1.55] text-[#525252]">
-          Budujemy agenty AI dla firm B2B od 2025. Solo founder, bez pośredników. Jeśli nie pasujemy, powiem to na rozmowie.
+          Dostajesz agenta AI dopasowanego do Twojego biznesu - od pierwszej rozmowy do działającego systemu. Bez pośredników, bez godzinowych rozliczeń. Jeśli Twój case nie pasuje, powiem Ci to wprost na rozmowie.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

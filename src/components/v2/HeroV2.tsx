@@ -25,7 +25,7 @@ export function HeroV2() {
             </h1>
 
             <p className="mt-8 max-w-[560px] text-[17px] leading-[1.55] text-[#525252]">
-              1/5 kosztu etatu. Sprzedaż, obsługa, marketing, raportowanie - 24/7, bez L4, bez rekrutacji. Od 900 PLN/mies.
+              Zamiast etatowego pracownika za 8-10 tys. PLN/mies. dostajesz agenta AI który sprzedaje, odpowiada klientom i tworzy content - 24/7, bez L4, bez rekrutacji. Od 900 PLN/mies.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[12px] text-[#525252]">
