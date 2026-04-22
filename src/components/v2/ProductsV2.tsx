@@ -129,7 +129,7 @@ export function ProductsV2() {
           </div>
           <h2>Pięć agentów AI pod operacyjną pracę B2B.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
-            Pięć agentów AI pod operacyjną pracę B2B. Hot Lead Catcher to nasz flagship - agent który wychwytuje moment zakupowy. Pozostałe 4 systemy działają solo albo w kombinacji. Setup od 7 do 21 dni.
+            Każdy system robi jedną rzecz doskonale. Wdrożenie 2-4 tygodnie, wyniki od pierwszego miesiąca. Hot Lead Catcher to nasz flagship - agent który wychwytuje moment zakupowy. Pozostałe 4 działają solo albo w kombinacji.
           </p>
         </header>
 
