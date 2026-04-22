@@ -374,9 +374,9 @@ export default function ContentMachineContent() {
                       Inwestycja
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
-                      5 000 PLN setup
+                      3 000 PLN setup
                     </div>
-                    <div className="font-mono text-[11px] text-[#737373]">+ 500 PLN/mies</div>
+                    <div className="font-mono text-[11px] text-[#737373]">+ 1 000 PLN/mies</div>
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
