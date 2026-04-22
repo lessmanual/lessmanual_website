@@ -221,6 +221,10 @@ export default function ObslugaKlientaContent() {
                 <p className="mt-8 max-w-[520px] text-[17px] leading-[1.55] text-[#525252]">
                   Chatbot RAG wytrenowany na FAQ Twojej firmy obsługuje web, WhatsApp i email. 60-80% zapytań automatycznie. Eskalacja do człowieka z pełnym kontekstem gdy trzeba. System od 900 PLN/mies. vs pracownik 8-9 tys. PLN/mies.
                 </p>
+                <div className="mt-6 inline-flex items-center gap-2 border border-[#B87333] bg-[#F5EDE6] px-4 py-2">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513]">SCALE</span>
+                  <span className="text-[13px] text-[#0A0A0A] font-medium">Voice Agent 24/7 - agent głosowy odbiera telefony po polsku</span>
+                </div>
 
                 <div className="mt-10 flex flex-wrap items-center gap-3">
                   <Link
@@ -324,6 +328,73 @@ export default function ObslugaKlientaContent() {
                   Animacja wstrzymana (prefers-reduced-motion). Kliknij play, aby odtworzyć.
                 </p>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 2.5 VOICE AGENT ── */}
+        <section id="voice-agent" className="px-6 md:px-10 py-24 md:py-36 bg-[#0A0A0A]">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-4">
+                  SCALE TIER · VOICE AGENT
+                </div>
+                <h2 className="text-white">
+                  Kiedy Twoi klienci dzwonią o 22:00, nasz agent głosowy odbiera.
+                </h2>
+                <p className="mt-6 text-[17px] leading-[1.55] text-[#A3A3A3]">
+                  Polski głos (ElevenLabs), naturalny styl rozmowy. Agent kwalifikuje rozmowce, odpowiada na FAQ, umawia spotkania w kalendarzu, aktualizuje CRM na zywo. Eskalacja do człowieka z pełnym transkryptem gdy trzeba.
+                </p>
+                <ul className="mt-8 flex flex-col gap-3">
+                  {[
+                    "Odbiera 100% połączeń - zero kolejek, zero straconych klientów",
+                    "Transkrypt + analiza per rozmowa - widzisz co klienci pytają",
+                    "Booking w kalendarzu bez ingerencji człowieka",
+                    "CRM update live - każda rozmowa trafia jako nota z kontekstem",
+                    "Eskalacja z pełnym transkryptem gdy sytuacja wymaga decyzji",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-[14px] text-[#D4D4D4]">
+                      <span className="text-[#B87333] mt-0.5 shrink-0">+</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-10">
+                  <Link
+                    href={CALENDLY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 bg-[#B87333] px-6 py-3.5 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#8B4513] hover:-translate-y-[1px]"
+                    style={{ borderRadius: 4 }}
+                  >
+                    SCALE - zapytaj o Voice Agent
+                    <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                  </Link>
+                </div>
+              </div>
+              <div className="border border-[#262626] bg-[#141414] p-8" style={{ borderRadius: 8 }}>
+                <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-6">
+                  voice-agent.log
+                </div>
+                <div className="flex flex-col gap-4 font-mono text-[12px]">
+                  <div>
+                    <span className="text-[#737373]">[ 22:14 ]</span>
+                    <span className="ml-2 text-[#D4D4D4]">Przychodzące połączenie · Anna Kowalska</span>
+                  </div>
+                  <div className="pl-4 text-[#A3A3A3]">Agent: Dzień dobry, Pani Anno. W czym mogę pomoc?</div>
+                  <div className="pl-4 text-[#A3A3A3]">Klient: Chciałabym umówić spotkanie na przyszły tydzień.</div>
+                  <div className="pl-4 text-[#10B981]">Agent: Mamy wolne wtorek 14:00 lub środa 10:30. Który termin pasuje?</div>
+                  <div className="border-t border-[#262626] pt-4">
+                    <span className="text-[#B87333]">→</span>
+                    <span className="ml-2 text-[#D4D4D4]">Booking potwierdzony · SMS wysłany · CRM zaktualizowany</span>
+                  </div>
+                  <div>
+                    <span className="text-[#B87333]">→</span>
+                    <span className="ml-2 text-[#D4D4D4]">Czas rozmowy: 2m 14s · Transkrypt zapisany</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
