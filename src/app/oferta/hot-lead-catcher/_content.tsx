@@ -326,60 +326,32 @@ export default function HotLeadCatcherContent() {
         </section>
 
         {/* ── 3. CASE STUDY ── */}
-        {/* TODO Bartek: potwierdzić NDA WiperApp - jeśli OK cofnąć anonimizację */}
+        {/* TODO Bartek: case study do dodania gdy bedzie klient z publicznym approval.
+            Do wyboru: Rolbest / Krispol / Karat (potwierdzic NDA) */}
         <section id="case" className="px-6 md:px-10 py-24 md:py-36 bg-[#FAFAFA]">
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
-              <SectionLabel>CASE STUDY</SectionLabel>
-              <h2>Firma z branży mobile apps: od 200 cold emaili z zero odpowiedzi do pipeline&apos;u opartego o sygnały.</h2>
+              <SectionLabel>WYNIKI</SectionLabel>
+              <h2>Pierwsze firmy korzystają z HLC od Q1 2026.</h2>
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
-              {/* Lewa: klient + problem + workflow */}
+              {/* Lewa: info */}
               <div className="flex flex-col gap-5">
-                <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
-                    Klient
-                  </div>
-                  <p className="text-[16px] leading-[1.7] text-[#0A0A0A]">
-                    SaaS B2B z kategorii mobile apps, target: Marketing Director w retail.
-                  </p>
-                </div>
-
-                <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
-                    Problem
-                  </div>
-                  <p className="text-[16px] leading-[1.7] text-[#525252]">
-                    200 cold emaili z generycznym pitchem. Zero odpowiedzi. Brak danych żeby wiedzieć kogo zaczepić w odpowiednim momencie.
-                  </p>
-                </div>
-
-                <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
-                    Co dostał (workflow)
-                  </div>
-                  <p className="text-[16px] leading-[1.7] text-[#525252]">
-                    Agent skanuje 4 źródła pod ICP retail (newsy, oferty pracy DPO/CMO, recenzje konkurentów, wzmianki social). Score &gt;75 = mail wysłany via Instantly z kontekstem (&quot;widziałem że szukacie DPO&quot; / &quot;gratuluję rundy&quot;). Agent SAM odpowiada na zwrotne i prowadzi wątek aż do umówienia spotkania.
-                  </p>
-                </div>
-
-                <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
-                    Dziś
-                  </div>
-                  <p className="text-[16px] leading-[1.7] text-[#525252]">
-                    Pipeline w pełni autonomiczny: klient dostaje tylko alert na Telegram &quot;spotkanie do potwierdzenia&quot;. Pokazuję działający setup live na rozmowie 15-min.
-                  </p>
-                </div>
+                <p className="text-[16px] leading-[1.7] text-[#525252]">
+                  Liczby z wdrozonych projektow udostepniamy gdy klienci wyraza zgode na case study publiczne. Na rozmowie 15-min pokazuje dzialajacy setup live - to szybciej niz kazdy case study.
+                </p>
+                <p className="text-[16px] leading-[1.7] text-[#525252]">
+                  Co zobaczysz na demo: agent skanuje zrodla w czasie rzeczywistym, scoring intent, alert Telegram z kontekstem gotowym do telefonu.
+                </p>
               </div>
 
-              {/* Prawa: metryki */}
+              {/* Prawa: metryki techniczne (obiektywne, nie z case study) */}
               <div className="border border-[#E5E5E5] bg-white p-8" style={{ borderRadius: 8 }}>
                 <div className="flex flex-col gap-6">
                   <div>
                     <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
-                      Czas od sygnału do maila
+                      Czas od sygnału do alertu
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       60 sekund
@@ -388,16 +360,16 @@ export default function HotLeadCatcherContent() {
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
                     <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
-                      Źródeł monitorowanych
+                      Zrodel monitorowanych
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
-                      4 (24/7)
+                      do 8 (24/7)
                     </div>
                   </div>
                   <div className="border-t border-[#E5E5E5]" />
                   <div>
                     <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-1">
-                      Próg hot signal
+                      Prog hot signal
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       score &gt; 75
@@ -406,7 +378,7 @@ export default function HotLeadCatcherContent() {
                 </div>
 
                 <p className="mt-6 font-mono text-[11px] text-[#737373] leading-[1.6]">
-                  Pełne liczby (leady, konwersja, ROI) pokazujemy 1:1 w rozmowie 15-min.
+                  Pelne liczby (leady, konwersja, ROI) pokazujemy 1:1 w rozmowie 15-min.
                 </p>
               </div>
             </div>
