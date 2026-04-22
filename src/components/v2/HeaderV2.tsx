@@ -70,6 +70,7 @@ export function HeaderV2() {
           <OfertaDropdown />
           <Link href={anchor("proces")} className="v2-link py-3 inline-block">Proces</Link>
           <Link href={anchor("pricing")} className="v2-link py-3 inline-block">Cennik</Link>
+          <Link href="/blog" className="v2-link py-3 inline-block">Blog</Link>
           <Link href="/faq" className="v2-link py-3 inline-block">FAQ</Link>
           <Link href="/o-nas" className="v2-link py-3 inline-block">O nas</Link>
           <Link href="/kontakt" className="v2-link py-3 inline-block">Kontakt</Link>
