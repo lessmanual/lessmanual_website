@@ -275,7 +275,7 @@ export default function PipelineMachineContent() {
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
               <SectionLabel>JAK TO DZIAŁA</SectionLabel>
-              <h2>Trzy kroki. Agent robi resztę.</h2>
+              <h2>Trzy kroki. Ty wchodzisz dopiero gdy spotkanie jest potwierdzone.</h2>
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5E5E5] border border-[#E5E5E5]">

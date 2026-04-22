@@ -89,6 +89,14 @@ const TIERS = [
 
 const FAQ_ITEMS = [
   {
+    q: "Co to znaczy hot lead w HLC?",
+    a: "Hot lead w HLC = alert dostarczony do Telegram/Slack/Email ze scoring >= 75 pkt + match Twoj ICP. Signal score liczymy na: swiezosci sygnalu (<72h), konkretnych slow kluczowych zakupowych ('szukamy', 'potrzebujemy', 'rozwazamy'), kontekscie firmy (match ICP zdefiniowany w Discovery), dostepnosci decision makera (profil LinkedIn). Hot lead NIE ROWNA SIE spotkaniu w kalendarzu - umawianie spotkan to Pipeline Machine (pay-per-meeting). HLC dostarcza sygnal + kontekst, Ty dzwonisz pierwszy.",
+  },
+  {
+    q: "Co jeśli agent znajdzie leady ale żaden nie zamieni się w spotkanie?",
+    a: "HLC dostarcza sygnal + kontekst, nie umawia spotkan (to Pipeline Machine). Gwarancja: 0 alertow >75 pkt w 30 dni = zwrot setup. Reality check: nawet 10 hot lead alertow, ktorych nie udalo Ci sie skonwertowac = gwarancja NIE dziala, bo dostarczylismy produkt. Twoja sprzedaz jest na Tobie.",
+  },
+  {
     q: "Moja branża jest zbyt niszowa, agent nic nie znajdzie.",
     a: "Większość branż B2B ma min 100-500 aktywnych graczy w PL generujących sygnały zakupowe co tydzień. W ICP Deep Dive (dzień 1-7) sprawdzamy realnie - jeśli nisza jest martwa, mówimy Ci przed uruchomieniem i zwracamy setup. Do tej pory ustaliliśmy niszowy w 0% przypadków.",
   },
@@ -193,8 +201,9 @@ export default function HotLeadCatcherContent() {
                 </p>
 
                 <p className="mt-4 max-w-[520px] text-[14px] font-mono text-[#B87333]">
-                  Pierwsze alerty w 24h po setupie. {/* TODO Bartek: update monthly X/5 */}
-                  Max 5 nowych klientów HLC miesięcznie.
+                  Pierwsze alerty w 24h po setupie.{" "}
+                  {/* TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md */}
+                  Max 5 klientów miesięcznie. Ostatnie miejsce w maju.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -243,7 +252,7 @@ export default function HotLeadCatcherContent() {
             <div className="max-w-[760px]">
               <SectionLabel>PROBLEM</SectionLabel>
               <h2 className="text-[#0A0A0A]">
-                Przegapiasz gorące leady w momencie gdy są najbardziej otwarci.
+                Twój lead jest gorący przez 48 godzin. Potem podpisuje z kimś innym.
               </h2>
               <p className="mt-6 text-[17px] leading-[1.65] text-[#525252]">
                 Firma X dziś wpisuje na LinkedIn &quot;szukamy rozwiązania dla [Twoja branża]&quot;.
@@ -274,7 +283,7 @@ export default function HotLeadCatcherContent() {
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
               <SectionLabel>JAK TO DZIAŁA</SectionLabel>
-              <h2>Trzy kroki. Zero ręcznych czynności.</h2>
+              <h2>Trzy kroki. Ty tylko potwierdzasz spotkania.</h2>
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5E5E5] border border-[#E5E5E5]">
@@ -521,16 +530,42 @@ export default function HotLeadCatcherContent() {
         {/* ── 4b. GWARANCJA ── */}
         <section id="gwarancja" className="px-6 md:px-10 py-24 md:py-36 bg-[#FAFAFA] border-b border-[#E5E5E5]">
           <div className="mx-auto max-w-[1440px]">
-            <header className="mb-12 max-w-[720px]">
+            <header className="mb-8 max-w-[720px]">
               <SectionLabel>GWARANCJA</SectionLabel>
               <h2>3 warstwy ochrony. Nic nie ryzykujesz.</h2>
             </header>
+
+            {/* Hot lead definition box */}
+            <div className="mb-10 max-w-[760px] bg-white border border-[#E5E5E5] p-6" style={{ borderRadius: 8 }}>
+              <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-3">
+                CO TO ZNACZY HOT LEAD?
+              </div>
+              <p className="text-[15px] leading-[1.65] text-[#0A0A0A] mb-3">
+                Hot lead w HLC = alert ze scoring &gt;=75 pkt + match Twoj ICP, dostarczony do Telegram/Slack/Email.
+              </p>
+              <ul className="flex flex-col gap-1.5">
+                {[
+                  "Swiezosc sygnalu (<72h od publikacji)",
+                  "Slowa kluczowe zakupowe: 'szukamy', 'potrzebujemy', 'rozwazamy'",
+                  "Kontekst firmy - match ICP zdefiniowany w Discovery",
+                  "Dostepnosc decision makera (LinkedIn profil)",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-[14px] text-[#525252]">
+                    <span className="text-[#B87333] mt-0.5 shrink-0">+</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-[13px] text-[#737373]">
+                Hot lead NIE ROWNA SIE spotkaniu w kalendarzu. Umawianie spotkan to Pipeline Machine (pay-per-meeting). HLC dostarcza sygnal + kontekst, Ty dzwonisz pierwszy.
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
                   title: "Warstwa 1: Bezwarunkowa",
-                  desc: "30 dni 0 hot leads w Telegramie/Slacku = pełny zwrot setup. Bez pytań. Przelew w 7 dni.",
+                  desc: "30 dni 0 alertow >75 pkt w Telegramie/Slacku/Email = pelny zwrot setup. Bez pytan. Przelew w 7 dni. Uwaga: gwarancja dotyczy braku alertow - nie braku spotkan w kalendarzu.",
                 },
                 {
                   title: "Warstwa 2: Rynkowa",
