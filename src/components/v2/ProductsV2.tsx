@@ -88,9 +88,9 @@ const MAP: Array<{
   },
   {
     slug: "Indywidualne Wdrożenia",
-    metric: "od 15k PLN",
-    metricLabel: "wycena projektowa po Discovery",
-    short: "Agent AI pod Twoj unikalny workflow - gdy zadne z 5 gotowych rozwiazan nie pasuje. Discovery bezplatne.",
+    metric: "wycena po Discovery",
+    metricLabel: "fixed price + fixed scope",
+    short: "Agent AI pod Twój unikalny workflow - gdy żadne z 5 gotowych rozwiązań nie pasuje. Discovery bezpłatne.",
     visual: "custom",
   },
 ];
