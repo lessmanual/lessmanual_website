@@ -9,7 +9,8 @@ export const SEO_PROOF_METRICS = [
   { value: "+150-400%", label: "wzrost ruchu organicznego w 6 mies", countTo: 400, suffix: "%" },
 ];
 
-export const SEO_PROOF_META = "5-14 dni do startu | 30 dni trial | Max 3 projekty miesięcznie";
+// TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
+export const SEO_PROOF_META = "5-14 dni do startu | 30 dni trial | Max 5 klientów miesięcznie. Ostatnie miejsce w maju.";
 
 export const SEO_PROBLEM_BULLETS = [
   {

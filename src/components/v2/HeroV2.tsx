@@ -15,7 +15,8 @@ export function HeroV2() {
             <div className="inline-flex items-center gap-2 border border-[#E5E5E5] bg-white px-3 py-1.5 mb-8">
               <span className="block h-1.5 w-1.5 rounded-full bg-[#10B981]" />
               <span className="font-mono text-[11px] tracking-tight text-[#525252]">
-                Max 3 nowe projekty miesięcznie
+                {/* TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md */}
+                Max 5 klientów miesięcznie. Ostatnie miejsce w maju.
               </span>
             </div>
 

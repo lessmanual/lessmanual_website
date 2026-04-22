@@ -36,7 +36,8 @@ export function FinalCTA() {
               Umów bezpłatną konsultację
             </Button>
             <p className="mt-5 text-text-muted text-sm max-w-[520px] mx-auto">
-              Max 3 nowe projekty miesięcznie. Najbliższy wolny termin: sprawdź w kalendarzu.
+              {/* TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md */}
+              Max 5 klientów miesięcznie. Ostatnie miejsce w maju.
             </p>
           </div>
         </FadeUp>

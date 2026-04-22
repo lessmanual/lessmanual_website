@@ -73,7 +73,8 @@ export function FinalCTA() {
           <div className="mt-10 text-text-muted text-lg leading-relaxed">
             <p>
               <strong className="text-text-secondary">P.S.</strong> Sam prowadzę każdą kampanię.
-              Max 3 projekty jednocześnie. Miejsca jeszcze są, ale nie będą wiecznie.
+              {/* TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md */}
+              Max 5 klientów miesięcznie. Ostatnie miejsce w maju.
             </p>
             <p className="mt-3 text-text-light">- Bartek</p>
           </div>

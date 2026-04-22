@@ -9,7 +9,8 @@ export const AI_SDR_PROOF_METRICS = [
   { value: "0 PLN", label: "stałych opłat miesięcznych", countTo: 0, suffix: " PLN" },
 ];
 
-export const AI_SDR_PROOF_META = "76% open rate | 61% positive reply | Deal w 6 dni | 3 warstwy gwarancji | Max 3 projekty miesięcznie";
+// TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
+export const AI_SDR_PROOF_META = "76% open rate | 61% positive reply | Deal w 6 dni | 3 warstwy gwarancji | Max 5 klientów miesięcznie. Ostatnie miejsce w maju.";
 
 export const AI_SDR_COST_TABLE = [
   {

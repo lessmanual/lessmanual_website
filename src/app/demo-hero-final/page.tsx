@@ -116,7 +116,8 @@ export default function DemoHeroFinalPage() {
                   { icon: Star, text: "5.0 na Google" },
                   {
                     icon: Clock,
-                    text: "Max 3 projekty miesięcznie",
+                    // TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
+                    text: "Max 5 klientów miesięcznie. Ostatnie miejsce w maju.",
                     highlight: true,
                   },
                 ].map((badge) => (

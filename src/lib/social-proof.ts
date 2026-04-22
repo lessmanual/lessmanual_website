@@ -9,7 +9,7 @@ export const SOCIAL_PROOF = {
   systemsLive: 24,              // obecnie w produkcji
   googleReviews: 6,             // liczba opinii 5.0 na Google
   googleRating: 5.0,            // średnia ocena
-  maxProjectsMonthly: 3,        // kapacytet agencji
+  maxProjectsMonthly: 5,        // kapacytet agencji (zmienione 2026-04-22: 3 -> 5, global)
 } as const;
 
 // Helper strings - importowane przez komponenty
@@ -17,6 +17,7 @@ export const PROOF_FULL = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIA
 
 export const PROOF_COMPACT = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google`;
 
-export const PROOF_WITH_CAPACITY = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google · Max ${SOCIAL_PROOF.maxProjectsMonthly} projekty miesięcznie`;
+// TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
+export const PROOF_WITH_CAPACITY = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google · Max ${SOCIAL_PROOF.maxProjectsMonthly} klientów miesięcznie. Ostatnie miejsce w maju.`;
 
-export const PROOF_OFFER_META = `${SOCIAL_PROOF.implementationsDelivered} wdrożeń | ${SOCIAL_PROOF.googleRating} na Google | Max ${SOCIAL_PROOF.maxProjectsMonthly} projekty miesięcznie`;
+export const PROOF_OFFER_META = `${SOCIAL_PROOF.implementationsDelivered} wdrożeń | ${SOCIAL_PROOF.googleRating} na Google | Max ${SOCIAL_PROOF.maxProjectsMonthly} klientów miesięcznie. Ostatnie miejsce w maju.`;

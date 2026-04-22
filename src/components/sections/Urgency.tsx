@@ -11,7 +11,8 @@ import { CALENDLY_URL } from "@/lib/constants";
 const urgencyPoints = [
   {
     icon: Users,
-    title: "Max 3 projekty miesięcznie",
+    // TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
+    title: "Max 5 klientów miesięcznie. Ostatnie miejsce w maju.",
     desc: "Prowadzę każdy projekt osobiście. Jak kalendarz jest pełny, czekasz na kolejny miesiąc.",
   },
   {
