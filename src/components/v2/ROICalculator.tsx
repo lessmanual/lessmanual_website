@@ -565,7 +565,7 @@ export function ROICalculator() {
             tabIndex={0}
           >
             <OutputRow
-              label={`Agent AI (cennik Standard)`}
+              label={`Agent AI (cennik GROWTH)`}
               valueNode={`${formatPLN(scenario.agentSetup)} PLN setup + ${formatPLN(scenario.agentMonthly)} PLN/mies.`}
               muted
             />
@@ -647,7 +647,7 @@ export function ROICalculator() {
 
             {/* Przypis */}
             <p className="mt-3 font-mono text-[10px] leading-[1.6] text-[#737373]">
-              * Kalkulacja zakłada tier Standard z cennika LessManual (
+              * Kalkulacja zakłada tier GROWTH z cennika LessManual (
               {formatPLN(scenario.agentSetup)} PLN setup +{" "}
               {formatPLN(scenario.agentMonthly)} PLN/mies.). Koszt{" "}
               {scenario.alternativeRole.toLowerCase()} (TCO = pensja brutto +
