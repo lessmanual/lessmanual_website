@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { MobileCTABar } from "@/components/layout/MobileCTABar";
+import { HeaderV2 } from "@/components/v2/HeaderV2";
+import { FooterV2 } from "@/components/v2/FooterV2";
 import { BlogContent } from "@/components/sections/blog/BlogContent";
 import { getPostBySlug, getAllSlugs } from "@/lib/supabase";
 import { generateBlogPostSchema, generateBreadcrumbSchema } from "@/lib/schema";
@@ -98,7 +97,26 @@ export default async function BlogPostPage({
   ]);
 
   return (
-    <>
+    <div className="v2-scope">
+      <style>{`
+        .v2-scope {
+          background: #FAFAFA;
+          color: #0A0A0A;
+          font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+          min-height: 100vh;
+        }
+        .v2-scope h1, .v2-scope h2 {
+          font-family: var(--font-inter), system-ui, sans-serif;
+          font-weight: 600;
+          letter-spacing: -0.035em;
+          line-height: 1.05;
+          color: #0A0A0A;
+        }
+        .v2-scope h1 { font-size: clamp(2.75rem, 6vw, 4.75rem); }
+        .v2-scope .font-mono { font-family: var(--font-jetbrains-mono), ui-monospace, monospace; }
+        .v2-scope .v2-link { color: #0A0A0A; transition: color 150ms ease; }
+        .v2-scope .v2-link:hover { color: #B87333; }
+      `}</style>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
@@ -107,7 +125,7 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <Header />
+      <HeaderV2 />
       <main className="pt-16 pb-16 md:pb-0">
         <article className="py-20 md:py-28">
           <div className="max-w-[760px] mx-auto px-6">
@@ -170,8 +188,7 @@ export default async function BlogPostPage({
           </div>
         </article>
       </main>
-      <Footer />
-      <MobileCTABar />
-    </>
+      <FooterV2 />
+    </div>
   );
 }

@@ -10,6 +10,7 @@ import { ProofBar } from "@/components/ui/ProofBar";
 import { Button } from "@/components/ui/Button";
 import { Users, Star, Clock } from "lucide-react";
 import { CALENDLY_URL, HERO_ROTATOR_WORDS } from "@/lib/constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 /* ─── Animation variants (same as original Hero) ─── */
 const stagger = {
@@ -111,11 +112,12 @@ export default function DemoHeroFinalPage() {
                 className="flex flex-wrap gap-3 mb-10"
               >
                 {[
-                  { icon: Users, text: "10+ firm B2B" },
+                  { icon: Users, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B` },
                   { icon: Star, text: "5.0 na Google" },
                   {
                     icon: Clock,
-                    text: "Max 3 projekty miesięcznie",
+                    // TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
+                    text: "Max 5 klientów miesięcznie. Ostatnie miejsce w maju.",
                     highlight: true,
                   },
                 ].map((badge) => (

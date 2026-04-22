@@ -23,12 +23,12 @@ const SOLUTIONS = [
     num: "02",
     title: "Blog który pisze się sam",
     description:
-      "Nasz system SEO Content zamienia stronę w maszynę do generowania ruchu organicznego. Sztuczna inteligencja samodzielnie robi research słów kluczowych, układa klastry tematyczne i publikuje 10-30 gotowych artykułów miesięcznie.",
+      "Content Machine zamienia stronę w maszynę do generowania ruchu organicznego. Sztuczna inteligencja samodzielnie robi research słów kluczowych, układa klastry tematyczne i publikuje 10-30 gotowych artykułów miesięcznie.",
     metrics: [
       { value: "od 83 PLN", label: "za artykuł (vs 300-800 PLN)" },
       { value: "+150-400%", label: "ruchu organicznego w 6 mies.*" },
     ],
-    href: "/oferta/seo-content",
+    href: "/oferta/content-machine",
   },
   {
     num: "03",

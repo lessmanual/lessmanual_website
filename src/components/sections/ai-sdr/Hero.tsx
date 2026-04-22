@@ -8,6 +8,7 @@ import { ArrowLeft, Users, Star, Clock } from "lucide-react";
 import { EmailPipeline } from "@/remotion/variants/EmailPipeline";
 import { Button } from "@/components/ui/Button";
 import { AI_SDR_CALENDLY_URL } from "@/lib/ai-sdr-constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 const stagger = {
   hidden: {},
@@ -101,11 +102,11 @@ export function Hero() {
               className="flex flex-wrap gap-3 justify-center mb-10"
             >
               {[
-                { icon: Users, text: "10+ firm B2B", highlight: false },
+                { icon: Users, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B`, highlight: false },
                 { icon: Star, text: "5.0 na Google", highlight: false },
                 {
                   icon: Clock,
-                  text: "Max 3 projekty miesięcznie",
+                  text: `Max ${SOCIAL_PROOF.maxProjectsMonthly} projekty miesięcznie`,
                   highlight: true,
                 },
               ].map((b) => (

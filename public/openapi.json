@@ -1,0 +1,47 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "LessManual API",
+    "version": "1.0.0",
+    "description": "Public API for LessManual website. Rate-limited (Upstash), no auth required.",
+    "contact": { "email": "kontakt@lessmanual.ai" }
+  },
+  "servers": [
+    { "url": "https://lessmanual.ai", "description": "Production" }
+  ],
+  "paths": {
+    "/api/generate-email": {
+      "post": {
+        "operationId": "generateEmail",
+        "summary": "Generate personalized B2B sales email draft",
+        "description": "Streaming response (Server-Sent Events). Rate-limited: 30 req/day per IP.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["industry", "icp"],
+                "properties": {
+                  "industry": { "type": "string", "example": "SaaS B2B" },
+                  "icp": { "type": "string", "example": "CTO w firmie 50-200 osob" },
+                  "language": { "type": "string", "enum": ["pl", "en"], "default": "pl" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Streaming email text (SSE)",
+            "content": {
+              "text/event-stream": { "schema": { "type": "string" } }
+            }
+          },
+          "429": { "description": "Rate limit exceeded" },
+          "500": { "description": "Server error" }
+        }
+      }
+    }
+  }
+}

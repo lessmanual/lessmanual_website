@@ -1,0 +1,47 @@
+# robots.txt - LessManual
+# Content Signals (contentsignals.org + draft-romm-aipref-contentsignals)
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /md/
+
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+# AI Search Bots - explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block training-only crawlers
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Safety
+Disallow: /
+
+Sitemap: https://lessmanual.ai/sitemap.xml
+
+# Agent discovery resources (non-standard, informational)
+# /.well-known/api-catalog  - RFC 9727
+# /.well-known/agent-skills/index.json  - agentskills.io v0.2.0
+# /.well-known/mcp/server-card.json  - SEP-1649
+# /openapi.json  - OpenAPI 3.1

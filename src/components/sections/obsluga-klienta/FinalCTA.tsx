@@ -5,9 +5,10 @@ import { FadeUp } from "@/components/animations/FadeUp";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { Button } from "@/components/ui/Button";
 import { OBS_KLIENTA_CALENDLY_URL, OBS_KLIENTA_EMAIL } from "@/lib/obsluga-klienta-constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 const trustElements = [
-  { icon: Shield, text: "10+ firm B2B" },
+  { icon: Shield, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B` },
   { icon: Banknote, text: "5.0 na Google" },
   { icon: BarChart3, text: "30 dni trial" },
   { icon: CalendarCheck, text: "Gwarancja ROI 200%" },
@@ -35,7 +36,8 @@ export function FinalCTA() {
               Umów bezpłatną konsultację
             </Button>
             <p className="mt-5 text-text-muted text-sm max-w-[520px] mx-auto">
-              Max 3 nowe projekty miesięcznie. Najbliższy wolny termin: sprawdź w kalendarzu.
+              {/* TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md */}
+              Max 5 klientów miesięcznie. Ostatnie miejsce w maju.
             </p>
           </div>
         </FadeUp>

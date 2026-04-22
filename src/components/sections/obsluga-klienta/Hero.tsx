@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import {
   OBS_KLIENTA_CALENDLY_URL,
 } from "@/lib/obsluga-klienta-constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 const stagger = {
   hidden: {},
@@ -103,11 +104,12 @@ export function Hero() {
               className="flex flex-wrap gap-3 justify-center mb-10"
             >
               {[
-                { icon: Users, text: "10+ firm B2B", highlight: false },
+                { icon: Users, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B`, highlight: false },
                 { icon: Star, text: "5.0 na Google", highlight: false },
                 {
                   icon: Clock,
-                  text: "Max 3 projekty miesięcznie",
+                  // TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
+                  text: `Max ${SOCIAL_PROOF.maxProjectsMonthly} klientów miesięcznie. Ostatnie miejsce w maju.`,
                   highlight: true,
                 },
               ].map((b) => (
@@ -159,7 +161,8 @@ export function Hero() {
                 </motion.div>
 
                 <motion.p variants={fadeUp} className="mt-4 text-sm text-text-muted">
-                  Max 3 nowe projekty miesięcznie. Zostało wolnych miejsc w tym miesiącu.
+                  {/* TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md */}
+                  Max 5 klientów miesięcznie. Ostatnie miejsce w maju.
                 </motion.p>
               </div>
 

@@ -1,145 +1,30 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { MobileCTABar } from "@/components/layout/MobileCTABar";
-import { Hero } from "@/components/sections/obsluga-klienta/Hero";
-import { HeroProof } from "@/components/sections/obsluga-klienta/HeroProof";
-import { Problem } from "@/components/sections/obsluga-klienta/Problem";
-import { Agitation } from "@/components/sections/obsluga-klienta/Agitation";
-import { Solution } from "@/components/sections/obsluga-klienta/Solution";
-import { Imagine } from "@/components/sections/obsluga-klienta/Imagine";
-import { SocialProof } from "@/components/sections/obsluga-klienta/SocialProof";
-import { WhatYouGet } from "@/components/sections/obsluga-klienta/WhatYouGet";
-import { TargetSegments } from "@/components/sections/obsluga-klienta/TargetSegments";
-import { ROICalculator } from "@/components/sections/obsluga-klienta/ROICalculator";
-import { ComparisonTable } from "@/components/sections/obsluga-klienta/ComparisonTable";
-import { Pricing } from "@/components/sections/obsluga-klienta/Pricing";
-import { Guarantee } from "@/components/sections/obsluga-klienta/Guarantee";
-import { ProcessTimeline } from "@/components/sections/obsluga-klienta/ProcessTimeline";
-import { About } from "@/components/sections/obsluga-klienta/About";
-import { Urgency } from "@/components/sections/obsluga-klienta/Urgency";
-import { FinalCTA } from "@/components/sections/obsluga-klienta/FinalCTA";
-import { FAQ } from "@/components/sections/obsluga-klienta/FAQ";
-import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
-import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { OBS_KLIENTA_FAQ_ITEMS } from "@/lib/obsluga-klienta-constants";
+import ObslugaKlientaContent from "./_content";
 
 export const metadata: Metadata = {
-  title: "Obsługa Klienta AI - Odpowiedź w 30 Sekund 24/7 | LessManual.ai",
+  title: "System Obsługi Klienta · chatbot AI + multi-channel · LessManual",
   description:
-    "AI chatbot + Voice Agent wytrenowany na danych Twojej firmy. 60-80% zapytań obsłużonych automatycznie. Wdrożenie w 14 dni albo zwrot pieniędzy. Od 5,000 PLN setup + 900 PLN/mies.",
+    "Chatbot RAG na web, WhatsApp i email. 60-80% zapytań obsługiwanych automatycznie. Odpowiedź w 30 sekund, 24/7. Voice Agent w tierze SCALE. Od 5 000 PLN setup + 900 PLN/mies. Wdrożenie w 14 dni.",
+  alternates: {
+    canonical: "/oferta/obsluga-klienta",
+  },
   openGraph: {
-    title: "Obsługa Klienta AI - Odpowiedź w 30 Sekund 24/7 | LessManual.ai",
+    title: "System Obsługi Klienta · chatbot AI + multi-channel",
     description:
-      "AI chatbot + Voice Agent na wszystkich kanałach. 60-80% zapytań automatycznie. Wdrożenie w 14 dni albo zwrot pieniędzy.",
-    url: "https://lessmanual.ai/oferta/obsluga-klienta",
-    siteName: "LessManual.ai",
+      "60-80% zapytań automatycznie. Odpowiedź w 30 sekund, 24/7. Web + WhatsApp + email w jednym systemie. Wdrożenie w 14 dni.",
+    url: "/oferta/obsluga-klienta",
+    siteName: "LessManual",
     locale: "pl_PL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Obsługa Klienta AI - Odpowiedź w 30 Sekund 24/7 | LessManual.ai",
+    title: "System Obsługi Klienta · LessManual",
     description:
-      "AI chatbot + Voice Agent na wszystkich kanałach. 60-80% zapytań automatycznie. Wdrożenie w 14 dni albo zwrot pieniędzy.",
-  },
-  alternates: {
-    canonical: "https://lessmanual.ai/oferta/obsluga-klienta",
+      "Chatbot RAG na web, WhatsApp i email. 60-80% zapytań automatycznie. Od 900 PLN/mies. vs pracownik 8-9 tys. PLN/mies.",
   },
 };
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "System Obslugi Klienta AI",
-  description:
-    "AI Customer Service System. Chatbot na strone, WhatsApp Bot, Email Triage, Voice Agent. Odpowiedzi w 30 sekund, 24/7. Done-for-you, pod klucz.",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  provider: {
-    "@type": "Organization",
-    name: "LessManual.ai",
-    url: "https://lessmanual.ai",
-  },
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "PLN",
-    price: "900",
-    description:
-      "od 900 PLN/mies. Chatbot, WhatsApp, Email Triage, Voice Agent. 60-80% zapytań automatycznie.",
-    availability: "https://schema.org/InStock",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "6",
-    bestRating: "5",
-  },
-};
-
-const faqSchema = generateFAQSchema(OBS_KLIENTA_FAQ_ITEMS);
-const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: "Strona główna", url: "https://lessmanual.ai" },
-  { name: "Oferta", url: "https://lessmanual.ai/oferta" },
-  {
-    name: "Obsługa Klienta AI",
-    url: "https://lessmanual.ai/oferta/obsluga-klienta",
-  },
-]);
 
 export default function ObslugaKlientaPage() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Header />
-      <StickyLocalNav items={[
-        { name: "Wyniki", href: "#wyniki" },
-        { name: "Kalkulator", href: "#roi-calculator" },
-        { name: "Cennik", href: "#pricing" },
-        { name: "Jak działamy", href: "#proces" },
-        { name: "FAQ", href: "#faq" }
-      ]} />
-      <main className="pt-16 pb-16 md:pb-0">
-        <Hero />
-        <HeroProof />
-        <div className="max-w-3xl mx-auto px-6 py-6">
-          <p className="text-sm text-text-muted leading-relaxed">
-            System Obsługi Klienta AI od LessManual to chatbot RAG + Voice Agent wytrenowany na danych Twojej firmy. Odpowiada na 60-80% zapytań automatycznie w 30 sekund, 24/7. Web, WhatsApp, email, telefon - jeden dashboard. Od 5,000 PLN setup + 900 PLN/mies. Wdrożenie w 14 dni albo zwrot pieniędzy.
-          </p>
-        </div>
-        <Problem />
-        <Agitation />
-        <Solution />
-        <Imagine />
-        <SocialProof />
-        <WhatYouGet />
-        <TargetSegments />
-        <ROICalculator />
-        <ComparisonTable />
-        <Pricing />
-        <Guarantee />
-        <ProcessTimeline />
-        <About />
-        <Urgency />
-        <FinalCTA />
-        <FAQ />
-        <div className="text-center text-sm text-text-muted py-6">
-          Ostatnia aktualizacja: luty 2026
-        </div>
-      </main>
-      <Footer />
-      <MobileCTABar />
-    </>
-  );
+  return <ObslugaKlientaContent />;
 }

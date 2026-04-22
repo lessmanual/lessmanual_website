@@ -42,7 +42,7 @@ export function Urgency() {
                 "Kolejne zapytanie o 23:00 bez odpowiedzi. Klient idzie do konkurencji",
                 "Kolejny poniedziałek z 200 mailami. Kolejny dzień stracony",
                 "Kolejny nieodebrany telefon. Kolejna utracona szansa",
-                "Kolejne 50 godzin miesięcznie na powtarzalną robotę",
+                "Kolejne 50 godzin miesięcznie na powtarzalne zadania",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <span className="text-warning mt-0.5 shrink-0">&#x2022;</span>

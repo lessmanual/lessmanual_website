@@ -1,0 +1,9 @@
+{
+  "resource": "https://lessmanual.ai/api/generate-email",
+  "authorization_servers": [],
+  "scopes_supported": [],
+  "bearer_methods_supported": [],
+  "x-status": "planned",
+  "x-eta": "2026-Q3",
+  "x-current-auth": "none - public endpoint with rate-limit only (Upstash Ratelimit, 30 req/day per IP). OAuth protection planned for MCP streamable HTTP server deployment."
+}

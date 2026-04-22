@@ -9,7 +9,7 @@ export const OBS_KLIENTA_PROOF_METRICS = [
   { value: "500-1000%", label: "ROI w pierwszym roku", countTo: 1000, suffix: "%" },
 ];
 
-export const OBS_KLIENTA_PROOF_META = "13 wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
+export { PROOF_OFFER_META as OBS_KLIENTA_PROOF_META } from "./social-proof";
 
 export const OBS_KLIENTA_COST_TABLE = [
   {

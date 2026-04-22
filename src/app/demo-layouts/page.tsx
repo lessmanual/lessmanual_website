@@ -10,6 +10,7 @@ import { ProofBar } from "@/components/ui/ProofBar";
 import { Button } from "@/components/ui/Button";
 import { Users, Star, Clock } from "lucide-react";
 import { CALENDLY_URL, HERO_ROTATOR_WORDS } from "@/lib/constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 /* ─── Animations ─── */
 const stagger = {
@@ -94,11 +95,11 @@ export default function DemoLayoutsPage() {
               className="flex flex-wrap gap-3 justify-center mb-10"
             >
               {[
-                { icon: Users, text: "10+ firm B2B", highlight: false },
+                { icon: Users, text: `${SOCIAL_PROOF.companiesEngaged}+ firm B2B`, highlight: false },
                 { icon: Star, text: "5.0 na Google", highlight: false },
                 {
                   icon: Clock,
-                  text: "Max 3 projekty miesięcznie",
+                  text: `Max ${SOCIAL_PROOF.maxProjectsMonthly} projekty miesięcznie`,
                   highlight: true,
                 },
               ].map((b) => (

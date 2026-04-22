@@ -44,7 +44,7 @@ export function About() {
                 <p>
                   10 lat w logistyce (Saint-Gobain, Mondi, Raben). Optymalizowałem procesy
                   dla firm z obrotami w setkach milionów. Aż zobaczyłem wzorzec: 80% tej
-                  roboty to powtarzalne zadania które może robić system.
+                  pracy to powtarzalne zadania, które może robić system.
                 </p>
                 <p>
                   Odszedłem z etatu i zacząłem budować te systemy. Dziś buduję je dla firm

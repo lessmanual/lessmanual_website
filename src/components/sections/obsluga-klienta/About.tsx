@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { Button } from "@/components/ui/Button";
 import { OBS_KLIENTA_CALENDLY_URL } from "@/lib/obsluga-klienta-constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 export function About() {
   return (
@@ -39,10 +40,10 @@ export function About() {
                 </p>
                 <p>
                   Przez 8 lat robiłem to w logistyce, międzynarodowe korporacje, miliony ton
-                  na trasach, terminowość 99%. Aż zrozumiałem: większość tej roboty może robić system.
+                  na trasach, terminowość 99%. Aż zrozumiałem: większość tych czynności może robić system.
                 </p>
                 <p>
-                  Dziś buduję systemy obsługi klienta dla firm, które mają dość ręcznej roboty.
+                  Dziś buduję systemy obsługi klienta dla firm, które mają dość ręcznych czynności.
                   E-commerce, kliniki, hotele, firmy z dużym wolumenem powtarzalnych zapytań.
                 </p>
                 <p className="text-text font-medium">
@@ -51,7 +52,7 @@ export function About() {
               </div>
 
               <div className="flex flex-wrap gap-3 mt-6 mb-8">
-                {["10+ wdrożeń", "5.0 na Google", "Done-for-you"].map((badge) => (
+                {[`${SOCIAL_PROOF.implementationsDelivered}+ wdrożeń`, "5.0 na Google", "Done-for-you"].map((badge) => (
                   <span
                     key={badge}
                     className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-accent/10 text-accent border border-accent/20"

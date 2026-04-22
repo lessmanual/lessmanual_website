@@ -1,0 +1,135 @@
+# Hot Lead Catcher · agent AI łapie gorące leady · LessManual
+
+> Agent AI monitoruje 4 źródła sygnałów zakupowych (newsy, oferty pracy, recenzje, wzmianki). Scoring intent, alert na Telegram, draft maila w Instantly. 24h od sygnału do kontaktu. Cennik: STARTER, GROWTH, SCALE.
+
+> Source: http://localhost:3000/oferta/hot-lead-catcher
+> Generated: 2026-04-20T17:54:10.527Z
+
+---
+
+Agent #1 LessManual · NAJCZĘŚCIEJ WYBIERANY
+
+# Agent AI, który łapie  
+gorące leady  
+zanim konkurencja je zauważy.
+
+Monitoring od 2 do 8 źródeł sygnałów zakupowych (newsy, oferty pracy, recenzje, social, Reddit, Facebook grupki, RSS, X). Scoring intent. Agent SAM wysyła personalizowane maile i SAM odpowiada na zwrotne. Wchodzisz w wątek dopiero gdy spotkanie do umówienia.
+
+[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+
+Hot Lead Catcherdemo na żywo
+
+lessmanual-cli · hot-lead-catcher● live
+
+$
+
+do 8 źródeł · alert w 60s
+
+01SKAN
+
+Agent monitoruje od 2 do 8 źródeł sygnałów zakupowych: newsy o branży klienta, oferty pracy (szukają DPO/CTO/Marketing Director), recenzje na Google/G2, wzmianki social, wątki na Reddicie, Facebook grupki, RSS branżowe, posty na X. Codziennie. Bez przerwy.
+
+02SCORING
+
+'CTO firmy X szuka pracy' = score 90+. 'Firma Y chwali się rundą A' = score 70+. Każdy sygnał dostaje score intent (0-100). Filtrowanie: tylko hot (>75) idą dalej.
+
+03WYSYŁKA + REPLY
+
+Agent SAM wysyła personalizowanego maila (kontekst sygnału + propozycja rozmowy) i SAM odpowiada na zwrotne. Tone of voice konfigurowalny pod Twoją markę. Wchodzisz dopiero gdy spotkanie do umówienia. Alert na Telegram.
+
+Klient
+
+WiperApp - B2B SaaS, target: Marketing Director w retail.
+
+Problem
+
+200 cold emaili z generycznym pitchem. Zero odpowiedzi. Brak danych żeby wiedzieć kogo zaczepić w odpowiednim momencie.
+
+Co dostał (workflow)
+
+Agent skanuje 4 źródła pod ICP retail (newsy, oferty pracy DPO/CMO, recenzje konkurentów, wzmianki social). Score >75 = mail wysłany via Instantly z kontekstem ("widziałem że szukacie DPO" / "gratuluję rundy"). Agent SAM odpowiada na zwrotne i prowadzi wątek aż do umówienia spotkania.
+
+Dziś
+
+Pipeline w pełni autonomiczny: WiperApp dostaje tylko alert na Telegram "spotkanie do potwierdzenia". Pokazuję działający setup live na rozmowie 15-min.
+
+Czas od sygnału do maila
+
+60 sekund
+
+Źródeł monitorowanych
+
+4 (24/7)
+
+Próg hot signal
+
+score > 75
+
+Pełne liczby (leady, konwersja, ROI) pokazujemy 1:1 w rozmowie 15-min.
+
+STARTER
+
+od 800 PLN/mies.
+
+Setup: 3 000 PLN
+
+-   +2 źródła: newsy branżowe + oferty pracy
+-   +Scoring intent podstawowy
+-   +Agent wysyła maile autonomicznie via Instantly
+-   +Auto-reply podstawowy (1 follow-up)
+-   +1 agent dla 1 ICP
+-   +Alert Telegram
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+NAJCZĘŚCIEJ WYBIERANY
+
+GROWTH
+
+od 1 300 PLN/mies.
+
+Setup: 3 000 PLN
+
+-   +4 źródła: newsy + oferty pracy + recenzje (G2/Google) + wzmianki social
+-   +Scoring intent zaawansowany (LLM custom rules)
+-   +Agent wysyła + odpowiada autonomicznie (do 3 follow-upów)
+-   +Tone of voice konfigurowalny pod markę
+-   +2 agenty dla 2 ICP
+-   +Wsparcie 24h SLA
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+SCALE
+
+od 2 000 PLN/mies.
+
+Setup: 3 000 PLN
+
+-   +8 źródeł: wszystko z GROWTH + Reddit + Facebook grupki + RSS branżowe + X
+-   +Scoring custom z LLM + integracje API
+-   +Pełna konwersacja autonomiczna (unlimited follow-upy + handling obiekcji)
+-   +Multi-account inbox handling + integracja CRM
+-   +Unlimited agentów i ICP
+-   +Dedykowany account manager
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+Wszystkie ceny za konkretny zakres. 3 warstwy gwarancji. Rabat 15% przy kontrakcie 6+ miesięcy.
+
+Skąd agent wie, że sygnał jest hot?+
+
+Co jeśli źródła nie generują sygnałów dla mojej branży?+
+
+Ile czasu zajmuje uruchomienie?+
+
+Co dokładnie agent wysyła i jak unika spamu?+
+
+Mogę wypróbować zanim podpiszę?+
+
+## Gotowy żeby agent łapał leady za Ciebie?
+
+15 minut rozmowy. Sprawdzimy czy HLC pasuje do Twojego ICP, pokażę demo na żywo, ustalimy tier.
+
+[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
+
+Średnia odpowiedź: 4h w dni robocze.

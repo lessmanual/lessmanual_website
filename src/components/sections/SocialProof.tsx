@@ -15,6 +15,7 @@ import {
   REVIEWS,
   CALENDLY_URL,
 } from "@/lib/constants";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 export function SocialProof() {
   return (
@@ -26,7 +27,7 @@ export function SocialProof() {
 
         <FadeUp delay={0.1}>
           <p className="text-center text-lg text-text-secondary mb-4">
-            <strong className="text-text">10+ firm B2B</strong> zaufało LessManual.
+            <strong className="text-text">{SOCIAL_PROOF.companiesEngaged}+ firm B2B</strong> zaufało LessManual.
             Od startupów SaaS po firmy z branży automotive, recyklingu i OZE.
           </p>
           <p className="text-center text-text-secondary mb-16">

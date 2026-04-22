@@ -1,0 +1,99 @@
+import { Header } from "@/components/layout/Header";
+import { SOCIAL_PROOF } from "@/lib/social-proof";
+import { Footer } from "@/components/layout/Footer";
+import { MobileCTABar } from "@/components/layout/MobileCTABar";
+import { Hero } from "@/components/sections/Hero";
+import { generateFAQSchema } from "@/lib/schema";
+import { FAQ_ITEMS } from "@/lib/constants";
+import { HeroProof } from "@/components/sections/HeroProof";
+import { Problem } from "@/components/sections/Problem";
+import { Agitation } from "@/components/sections/Agitation";
+import { Solutions } from "@/components/sections/Solutions";
+import { Imagine } from "@/components/sections/Imagine";
+import { SocialProof } from "@/components/sections/SocialProof";
+import { ValueStack } from "@/components/sections/ValueStack";
+import { Process } from "@/components/sections/Process";
+import { About } from "@/components/sections/About";
+import { FAQ } from "@/components/sections/FAQ";
+import { Guarantee } from "@/components/sections/Guarantee";
+import { Urgency } from "@/components/sections/Urgency";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { StickyLocalNav } from "@/components/layout/StickyLocalNav";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "LessManual.ai",
+  url: "https://lessmanual.ai",
+  description:
+    "Systemy AI dla firm B2B - Pipeline Machine, Content Machine, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+  email: "kontakt@lessmanual.ai",
+  taxID: "1231589909",
+  founder: {
+    "@type": "Person",
+    name: "Bartłomiej Chudzik",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "ul. Długa 33",
+    addressLocality: "Cendrowice",
+    addressRegion: "mazowieckie",
+    postalCode: "05-530",
+    addressCountry: "PL",
+  },
+  areaServed: "PL",
+  priceRange: "$$",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: SOCIAL_PROOF.googleRating.toFixed(1),
+    reviewCount: SOCIAL_PROOF.googleReviews.toString(),
+    bestRating: "5",
+  },
+};
+
+const faqSchema = generateFAQSchema(FAQ_ITEMS);
+
+export default function Home() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Header />
+      <StickyLocalNav items={[
+        { name: "Rozwiązania", href: "#oferta" },
+        { name: "Wyniki", href: "#wyniki" },
+        { name: "Jak działamy", href: "#proces" },
+        { name: "FAQ", href: "#faq" }
+      ]} />
+      <main className="pt-16 pb-16 md:pb-0">
+        <Hero />
+        <HeroProof />
+        <div className="max-w-3xl mx-auto px-6 py-6">
+          <p className="text-sm text-text-muted leading-relaxed">
+            LessManual.ai to polska agencja automatyzacji AI dla firm B2B. Budujemy done-for-you systemy: Pipeline Machine (umawianie spotkań pay-per-meeting), Content Machine (blog na autopilocie), Obsługa Klienta AI (wszystkie kanały 24/7) i Generator Ofert (wycena w 5 minut). {SOCIAL_PROOF.companiesEngaged}+ firm obsłużonych, {SOCIAL_PROOF.implementationsDelivered} wdrożeń, {SOCIAL_PROOF.googleRating} na Google. Gwarancja wyników lub zwrot kosztów.
+          </p>
+        </div>
+        <Problem />
+        <Agitation />
+        <Solutions />
+        <Imagine />
+        <SocialProof />
+        <ValueStack />
+        <Process />
+        <About />
+        <Guarantee />
+        <Urgency />
+        <FinalCTA />
+        <FAQ />
+      </main>
+      <Footer />
+      <MobileCTABar />
+    </>
+  );
+}

@@ -9,7 +9,7 @@ export const GEN_OFERT_PROOF_METRICS = [
   { value: "~300%", label: "ROI w pierwszym kwartale", countTo: 300, suffix: "%" },
 ];
 
-export const GEN_OFERT_PROOF_META = "13 wdrożeń | 5.0 na Google | Max 3 projekty miesięcznie";
+export { PROOF_OFFER_META as GEN_OFERT_PROOF_META } from "./social-proof";
 
 export const GEN_OFERT_COST_TABLE = [
   {
@@ -65,7 +65,7 @@ export const GEN_OFERT_SOLUTION_STEPS = [
   {
     num: 3,
     title: "Oferta ląduje u klienta i u Ciebie",
-    desc: "Klient dostaje PDF na maila w ciągu minuty. Ty dostajesz powiadomienie + pełny kontekst w CRM. Zero ręcznej roboty.",
+    desc: "Klient dostaje PDF na maila w ciągu minuty. Ty dostajesz powiadomienie + pełny kontekst w CRM. Zero ręcznych czynności.",
   },
   {
     num: 4,

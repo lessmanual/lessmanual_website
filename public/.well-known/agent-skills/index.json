@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agentskills.io/schemas/discovery/v0.2.0.json",
+  "version": "0.2.0",
+  "skills": [
+    {
+      "name": "generate-sales-email",
+      "type": "action",
+      "description": "Generate personalized B2B sales email draft based on industry and ICP (Ideal Customer Profile). Polish/English output, 5 variants.",
+      "url": "https://lessmanual.ai/api/generate-email",
+      "sha256": "PLACEHOLDER_POST_ONLY_ENDPOINT"
+    },
+    {
+      "name": "list-offers",
+      "type": "query",
+      "description": "List LessManual AI automation offers with pricing tiers and ICP match. Read-only.",
+      "url": "https://lessmanual.ai/api/offers",
+      "sha256": "PLACEHOLDER_ENDPOINT_NOT_IMPLEMENTED"
+    },
+    {
+      "name": "book-call",
+      "type": "action",
+      "description": "Schedule a discovery call with LessManual founder Bartek via Cal.com.",
+      "url": "https://cal.com/bart%C5%82omiej-chudzik-2en6pt",
+      "sha256": "PLACEHOLDER_EXTERNAL_CAL_COM"
+    }
+  ]
+}

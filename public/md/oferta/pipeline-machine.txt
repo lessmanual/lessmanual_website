@@ -1,0 +1,216 @@
+# Pipeline Machine · pay-per-meeting · LessManual
+
+> System który umawia spotkania z Twoimi idealnymi klientami B2B. 76% open rate. 61% positive reply. Pay-per-meeting od 500 PLN - zero stałych opłat. 3 warstwy gwarancji.
+
+> Source: http://localhost:3000/oferta/pipeline-machine
+> Generated: 2026-04-20T17:54:10.580Z
+
+---
+
+Pipeline Machine · pay-per-meeting · PIERWSZY W POLSCE
+
+# Spotkania z decydentami  
+B2B. Płacisz  
+tylko za wynik.  
+Zero stałych opłat.
+
+System który filtruje ICP, pisze spersonalizowane cold maile, wysyła przez Instantly i umawia potwierdzone spotkania z decydentami. 76% open rate, 61% positive reply rate, booking w 37 minut od pierwszego maila.
+
+[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+
+Pipeline Machinedemo na żywo
+
+lessmanual-cli · pipeline-machine● live
+
+$
+
+76% open · 61% reply
+
+01SCRAPING + SCORING
+
+Agent zbiera decydentów z LinkedIn Sales Nav, Clutch, Crunchbase i KRS zgodnie z Twoim ICP. Enrichment: firma + stanowisko + email zweryfikowany. Scoring intent - filtrujemy tych którzy pasują najbardziej.
+
+02PERSONALIZACJA + SEKWENCJE
+
+Claude pisze spersonalizowanego cold maila dla każdego kontaktu (nie szablon blast). Kontekst: branża, stanowisko, competitor displacement. 1-2 sekwencje z follow-upami. Tone of voice konfigurowalny pod Twoją markę.
+
+03WYSYŁKA + BOOKING
+
+Kampania przez Instantly na rozgrzanych domenach (warmup score 95+). Agent SAM monitoruje odpowiedzi i umawia spotkania. Ty wchodzisz dopiero gdy spotkanie jest potwierdzone w kalendarzu.
+
+Klient
+
+SaaS B2B (data erasure / ITAD) - target: firmy enterprise, poziom C-Level, globalnie.
+
+Problem
+
+Brak systemu outbound. Ręczne prospecting na LinkedIn zajmowało dziesiątki godzin tygodniowo bez mierzalnych wyników.
+
+Co dostał (workflow)
+
+Full Pipeline: scraping decydentów z LinkedIn Sales Nav + Crunchbase pod ICP ITAD enterprise. Claude pisze personalizowane cold maile (tech-to-tech tone). Wysyłka przez Instantly na 3 domenach. Agent monitoruje odpowiedzi i umawia spotkania.
+
+Dziś
+
+Pipeline autonomiczny. Od pierwszego cold maila do podpisanej umowy: 6 dni. Pełne liczby i demo live na rozmowie 15-min.
+
+Open rate kampanii
+
+76%
+
+benchmark: 20-30%
+
+Positive reply rate
+
+61%
+
+6 na 10 odpowiedzi to chęć rozmowy
+
+Od maila do umowy
+
+6 dni
+
+benchmark: 30-90 dni
+
+Pełne liczby 1:1 w rozmowie 15-min.
+
+COLD START
+
+Email
+
+500-2 000 PLN PLN
+
+za spotkanie (zależne od ACV)
+
+Setup: 3 000 PLN
+
+500-2 000 PLN za spotkanie (zależnie od ACV). Zero stałych opłat.
+
+-   +2 domeny + warmup
+-   +Scraping + scoring ICP
+-   +1 sekwencja email
+-   +ICP Deep Dive Workshop (wart. 2 500 PLN)
+-   +Monthly Performance Report (wart. 1 000 PLN/mies)
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+NAJPOPULARNIEJSZY
+
+FULL PIPELINE
+
+Email + LinkedIn
+
+500-2 000 PLN PLN
+
+za spotkanie (zależne od ACV)
+
+Setup: 4 500 PLN
+
+500-2 000 PLN za spotkanie (zależnie od ACV). Zero stałych opłat.
+
+-   +3 domeny + warmup
+-   +LinkedIn outreach
+-   +2 sekwencje email + ICP rozbudowany
+-   +ICP Deep Dive Workshop + Swipe File (wart. 4 000 PLN)
+-   +Auto-Reply AI - draft odpowiedzi (wart. 3 000 PLN)
+-   +Monthly Performance Report
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+DOMINACJA
+
+Multi-channel
+
+500-2 000 PLN PLN
+
+za spotkanie (zależne od ACV)
+
+Setup: 7 000 PLN
+
+500-2 000 PLN za spotkanie (zależnie od ACV). Zero stałych opłat.
+
+-   +4+ domeny + warmup
+-   +Multi-persona + multi-kanał
+-   +Priorytetowa obsługa
+-   +Wszystkie bonusy FULL PIPELINE
+-   +Quarterly Strategy Call (wart. 2 000 PLN)
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+3 warstwy gwarancji. Rabat 15% przy 2+ produktach LessManual.
+
+BRANŻA TECH
+
+### Pipeline Machine dla technologii
+
+ICP
+
+CEO/CTO software house 10-200 osób, SaaS B2B
+
+Lead Sources
+
+LinkedIn Sales Nav, Clutch, G2, Crunchbase
+
+Email Angle
+
+tech-to-tech, przejmowanie klientów konkurencji
+
+od 3 000 PLN setup + PPM
+
+BRANŻA REKRUTACJA
+
+### Pipeline Machine dla rekrutacji
+
+ICP
+
+CEO/MD agencji rekrutacyjnych 5-100 osób
+
+Lead Sources
+
+LinkedIn Sales Nav, Clutch, portale pracy
+
+Email Angle
+
+Kandydatów masz - klientów brakuje
+
+od 3 000 PLN setup + PPM
+
+BRANŻA PRZEMYSŁ
+
+### Pipeline Machine dla przemysłu
+
+ICP
+
+Dyrektor handlowy / CEO firm produkcyjnych 20-500 osób
+
+Lead Sources
+
+Biznesradar, KRS, LinkedIn, katalogi branżowe
+
+Email Angle
+
+efektywność operacyjna, zgodność EU
+
+od 3 000 PLN setup + PPM
+
+Nie widzisz swojej branży? ICP Deep Dive Workshop w setupie dopasuje system do Twojego segmentu.
+
+Ile trwa do pierwszego spotkania?+
+
+Co jeżeli 0 spotkań w 45 dni?+
+
+Jak działa model pay-per-meeting?+
+
+Co jeśli moja branża nie pasuje do 3 wariantów?+
+
+Kiedy płacę za spotkanie i co ze spotkaniami no-show?+
+
+Czym Pipeline Machine różni się od Hot Lead Catcher?+
+
+## Gotowy na spotkania z decydentami B2B?
+
+15 minut rozmowy. Sprawdzimy Twój ICP, pokażę demo na żywo, ustalimy tier. Wychodzisz z planem albo bez zobowiązań.
+
+[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
+
+Średnia odpowiedź: 4h w dni robocze.

@@ -1,0 +1,208 @@
+# Generator Ofert AI · klient sam wycenia, PDF w 5 minut · LessManual
+
+> Self-service konfigurator wycen. Klient podaje dane przez chat lub formularz, system generuje PDF z Twoim logo i wysyła mailem w 5 minut. Auto follow-up D3+D7. Win rate +25-40%. Od 5 000 PLN setup + 800 PLN/mies.
+
+> Source: http://localhost:3000/oferta/generator-ofert
+> Generated: 2026-04-20T17:54:10.667Z
+
+---
+
+Agent #4 LessManual · GENERATOR OFERT
+
+# Wycena w 5 minut  
+zamiast 2 godzin.  
+Klient sam wycenia,  
+Ty dostajesz gotowe zapytanie.
+
+Samoobsługowy konfigurator wycen oparty o RAG. Klient podaje dane przez chat, formularz lub QR kod. System oblicza warianty, generuje profesjonalny PDF z Twoim logo i wysyła mailem. Auto follow-up po 3 i 7 dniach. Win rate +25-40%.
+
+[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+
+Generator Ofertdemo na żywo
+
+lessmanual-cli · generator-ofert● live
+
+$
+
+5 min · win rate +40%
+
+01INPUT KLIENTA
+
+Klient podaje dane przez chat AI na Twojej stronie, formularz konfiguratora lub skanując QR kod na targach/showroomie. Agent zadaje doprecyzowujące pytania i wyciąga z bazy RAG odpowiednie produkty i ceny.
+
+02KALKULACJA + PDF
+
+System oblicza 1-3 warianty cenowe (ECO / STANDARD / PREMIUM lub custom). Generuje profesjonalny PDF z Twoim logo, opisami produktów i kalkulacją. PDF wysyłany mailem do klienta w ciągu 5 minut od pierwszego pytania.
+
+03FOLLOW-UP + CRM
+
+Auto follow-up po 3 i 7 dniach (od GROWTH). Klient który nie odpisał dostaje przypomnienie z linkiem do wyceny. Każda wycena trafia do CRM z danymi klienta, wybranym wariantem i statusem otwarcia PDF (SCALE).
+
+Klient
+
+Firma z branży OZE (fotowoltaika), kilkuset instalacji rocznie, wyceny ręczne zajmowały 2-3h per klient.
+
+Problem
+
+Każda wycena: handlowiec zbierał dane przez telefon, otwierał Excel, liczył ręcznie, robił PDF w Wordzie, wysyłał mailem. 2-3 godziny per wycenę. Klient czekał 24-48h. Połowa nie odpowiadała po tak długim czasie.
+
+Co dostał
+
+System GROWTH: chat wycenowy na stronie, baza RAG z pełnym katalogiem paneli i falowników, kalkulator ROI, 3 warianty cenowe, PDF z brandingiem firmy. Auto follow-up D3 i D7. Integracja z CRM.
+
+Dziś
+
+Klient wycenia sam o dowolnej porze. PDF w 5 minut. Handlowiec dostaje powiadomienie gdy klient otworzył ofertę - dzwoni w odpowiednim momencie. Win rate wyższy o 30+ punktów procentowych.
+
+Czas przygotowania wyceny
+
+2h → 5 minut
+
+Win rate po wdrożeniu
+
++25-40%
+
+ROI w 30 dni
+
+~300%
+
+Pełne liczby i demo live na rozmowie 15-min.
+
+STARTER
+
+Chat + PDF
+
+800 PLN/mies.
+
+Setup: 5 000 PLN
+
+-   +Chat AI (link/embed na stronę)
+-   +1 szablon PDF z logo klienta
+-   +Baza RAG (cennik, produkty, specyfikacje)
+-   +Wysyłka wyceny mailem
+-   +Historia wycen w Google Sheets
+-   +50 wycen/mies.
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+NAJPOPULARNIEJSZY
+
+GROWTH
+
+Dedykowana app
+
+1 500 PLN/mies.
+
+Setup: 9 000 PLN
+
+-   +Dedykowana app Next.js (wyceny.firma.pl)
+-   +3 szablony PDF dobierane z inputu klienta
+-   +3 warianty cenowe generowane automatycznie
+-   +Auto follow-up po 3 i 7 dniach
+-   +1 integracja CRM (HubSpot / Pipedrive)
+-   +Cotygodniowy raport z analizą wycen
+-   +Unlimited wycen
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+SCALE
+
+Full Suite
+
+1 800 PLN/mies.
+
+Setup: 14 000 PLN
+
+-   +Wszystko z GROWTH
+-   +Unlimited szablonów PDF
+-   +Tracking otwarć oferty z analytics
+-   +Embed widget na dowolną stronę
+-   +QR code dla showroom i targów
+-   +Dodatkowe integracje (ERP, kalendarz)
+-   +Dedykowany opiekun wdrożenia
+
+[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+VOICE AGENT - ROZSZERZENIE
+
+Ta sama baza RAG → Voice Agent wycenia przez telefon.
+
+Klient dzwoni, agent zadaje pytania, oblicza warianty, wysyła PDF na maila. Zero handlowca w pierwszym kontakcie. Dodatkowy setup od 3 500 PLN + 1 200 PLN/mies.
+
+[Zapytaj o Voice →](https://cal.com/bartłomiej-chudzik-2en6pt)
+
+50% zaliczki przed startem. Reszta po wdrożeniu. Wdrożenie w 14 dni albo zwrot setup.
+
+OZE / FOTOWOLTAIKA
+
+STARTER
+
+5 500 PLN setup
+
+800 PLN/mies.
+
+kalkulator ROI, baza paneli/falowników, chat wycenowy
+
+PRO
+
+10 000 PLN setup
+
+1 500 PLN/mies.
+
+\+ dedykowana app, warianty cenowe, follow-up, CRM sync
+
+MEBLE NA WYMIAR
+
+STARTER
+
+6 000 PLN setup
+
+900 PLN/mies.
+
+kalkulacja materiałów, biblioteka dostawców, chat wycenowy
+
+PRO
+
+11 000 PLN setup
+
+1 500 PLN/mies.
+
+\+ dedykowana app, warianty cenowe, follow-up, CRM sync
+
+REMONTOWO-BUDOWLANE
+
+STARTER
+
+5 500 PLN setup
+
+800 PLN/mies.
+
+szablon kosztorysu, baza materiałów, chat wycenowy
+
+PRO
+
+9 500 PLN setup
+
+1 500 PLN/mies.
+
+\+ dedykowana app, warianty cenowe, follow-up, CRM sync
+
+Czy klient sam wycenia bez ingerencji handlowca?+
+
+Co jeśli baza cen się zmienia?+
+
+Czy system działa na mojej stronie?+
+
+Ile szablonów PDF mogę mieć?+
+
+Czy jest integracja z CRM?+
+
+Czy mogę dodać Voice Agent na tej samej bazie?+
+
+## Gotowy żeby klienci wyceniali się sami?
+
+15 minut rozmowy. Pokażę demo na produktach z Twojej branży, ustalimy warianty i tier. Wdrożenie w 14 dni.
+
+[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
+
+Średnia odpowiedź: 4h w dni robocze.

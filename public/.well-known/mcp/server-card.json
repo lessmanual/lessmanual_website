@@ -1,0 +1,23 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card/draft.json",
+  "serverInfo": {
+    "name": "lessmanual-website-mcp",
+    "version": "0.1.0-stub",
+    "description": "MCP stub for LessManual website. WebMCP tools live in-page at /v2. Standalone MCP server planned Q3 2026."
+  },
+  "transport": {
+    "type": "webmcp",
+    "endpoint": "https://lessmanual.ai/v2",
+    "note": "In-page WebMCP via navigator.modelContext.provideContext(). Not a streamable HTTP MCP server yet."
+  },
+  "capabilities": {
+    "tools": [
+      { "name": "generate_email", "description": "Generate B2B sales email" },
+      { "name": "list_offers", "description": "List LessManual offers" }
+    ],
+    "resources": [],
+    "prompts": []
+  },
+  "x-status": "webmcp-only",
+  "x-roadmap": "Standalone MCP server (streamable HTTP) planned 2026-Q3 with OAuth 2.0 protected resource."
+}

@@ -23,7 +23,7 @@ export const PROOF_METRICS = [
   { value: "Gwarancja wyników", label: "lub pełny zwrot kosztów" },
 ];
 
-export const PROOF_META = "11 firm B2B · 13 wdrożeń · 5.0 na Google · Max 3 projekty miesięcznie";
+export { PROOF_WITH_CAPACITY as PROOF_META } from "./social-proof";
 
 export const NAVIGATION = [
   { name: "Oferta", href: "/oferta" },
@@ -35,8 +35,21 @@ export const NAVIGATION = [
 
 export const PRODUCTS = [
   {
+    title: "Hot Lead Catcher",
+    badge: "NAJCZĘŚCIEJ WYBIERANY",
+    description:
+      "Agent AI który wychwytuje gorące leady zanim konkurencja je zauważy. Monitoruje 4 źródła sygnałów zakupowych (newsy, oferty pracy, opinie, social media) i alertuje gdy ktoś z Twojego ICP właśnie rozważa zakup.",
+    metrics: [
+      "Setup 3 000 PLN + od 800 PLN/mies",
+      "4 źródła sygnałów (newsy, oferty pracy, opinie, social media)",
+      "Alert Telegram + gotowy draft maila w Instantly",
+    ],
+    bonus:
+      "Bonus: CRM integration + scoring agent w cenie setupu GROWTH (wartość 2 000 PLN)",
+    landingHref: "/oferta/hot-lead-catcher",
+  },
+  {
     title: "Spotkania z decydentami",
-    badge: "NAJPOPULARNIEJSZE",
     description:
       "System który umawia spotkania z Twoimi idealnymi klientami. Płacisz tylko za wynik - zero stałych opłat. 3 warstwy gwarancji. Bonusy o wartości do 10,000 PLN w cenie.",
     metrics: [
@@ -58,7 +71,7 @@ export const PRODUCTS = [
     ],
     bonus:
       "Bonus: ruch z Google to klienci którzy sami Cię szukają, zero kosztów per lead",
-    landingHref: "/oferta/seo-content",
+    landingHref: "/oferta/content-machine",
   },
   {
     title: "Odpowiedź w 30 sekund, 24/7",
@@ -83,6 +96,20 @@ export const PRODUCTS = [
     bonus:
       "Bonus: klient wycenia sam o 23:00, w weekend, w święta. Ty rano masz gotowe zapytanie",
     landingHref: "/oferta/generator-ofert",
+  },
+  {
+    title: "Indywidualne Wdrożenia",
+    badge: "DLA NON-STANDARD",
+    description:
+      "Agent AI dopasowany pod Twój unikalny workflow - gdy żaden z 5 produktów nie pasuje. Discovery bezpłatne. Wycena projektowa po scoping.",
+    metrics: [
+      "Wdrożenie 4-12 tyg",
+      "Wycena po Discovery",
+      "4h SLA",
+    ],
+    bonus:
+      "Bonus: Discovery Workshop (2 000 PLN), Architecture Spec (2 500 PLN), 3 mies. Production Support (8 000 PLN) - w cenie projektu",
+    landingHref: "/oferta/indywidualne-wdrozenia",
   },
 ];
 
@@ -190,6 +217,13 @@ export const REVIEWS = [
     after: "Rozwiązania szyte na miarę",
     text: `Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę" i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.`,
   },
+  {
+    name: "Arek Skuza",
+    meta: "CEO and boards advisor on AI Powered Growth",
+    before: "Standard agency processes",
+    after: "Focus. Precision. AI agents' knowledge.",
+    text: `Focus. Precision. Excellent time management, and AI agents' knowledge are what make Bartek an exceptional architect and engineer.`,
+  },
 ];
 
 export const FAQ_ITEMS = [
@@ -202,11 +236,11 @@ export const FAQ_ITEMS = [
       },
       {
         q: "Jak szybko zobaczę wyniki?",
-        a: "Wdrożenie trwa 7-21 dni. System obsługi klienta zaczyna odpowiadać od dnia 1. Pipeline Machine - pierwsze spotkania w 3-4 tygodniu. SEO Content - ruch zaczyna rosnąć w 60 dni.",
+        a: "Wdrożenie trwa 7-21 dni. System obsługi klienta zaczyna odpowiadać od dnia 1. Pipeline Machine - pierwsze spotkania w 3-4 tygodniu. Content Machine - ruch zaczyna rosnąć w 60 dni.",
       },
       {
         q: "Czy potrzebuję wiedzy technicznej?",
-        a: "Zero. Jeśli potrafisz otworzyć maila, dasz radę. Wdrażam, konfiguruję i utrzymuję. Twój czas przy setup: 1-2 godziny. Reszta to moja robota.",
+        a: "Zero. Jeśli potrafisz otworzyć maila, dasz radę. Wdrażam, konfiguruję i utrzymuję. Twój czas przy setup: 1-2 godziny. Reszta to moja praca.",
       },
     ],
   },
@@ -289,7 +323,7 @@ export const GUARANTEE_POINTS = [
   "Chcesz zrezygnować? Jeden mail, bez kar, bez okresu wypowiedzenia",
 ];
 
-export const COST_TABLE_SUMMARY = "Suma: 18,000-39,000 PLN miesięcznie na ręczną robotę. Z nami: od 2,400 PLN. Reszta zostaje w Twojej kieszeni.";
+export const COST_TABLE_SUMMARY = "Suma: 18,000-39,000 PLN miesięcznie na ręczne czynności. Z nami: od 2,400 PLN. Reszta zostaje w Twojej kieszeni.";
 
 export const VALUE_STACK_SAVINGS = [
   {
