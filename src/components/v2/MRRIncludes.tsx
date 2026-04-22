@@ -8,7 +8,7 @@ import { Wrench, Shield, Sparkles, BarChart2, Cpu } from "lucide-react";
 export type Tier = "STARTER" | "GROWTH" | "SCALE";
 export type Product = "hlc" | "pipeline" | "content" | "obsluga" | "generator";
 
-type MRRCategory = {
+export type MRRCategory = {
   id: "narzedzia" | "monitoring" | "optymalizacja" | "raporty" | "modele";
   label: string;
   icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -56,7 +56,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
       descriptions: {
         STARTER: "Codzienny health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 24h).",
         GROWTH: "Codzienny health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 8h).",
-        SCALE: "Ciągly health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 4h).",
+        SCALE: "Ciągły health check agenta - jeśli padnie lub zwróci false positives, naprawiamy zanim zauważysz (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -105,7 +105,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
       descriptions: {
         STARTER: "Codzienny health check sekwencji - deliverability spada, domena traci reputację? Naprawiamy zanim obniżysz reply rate (reakcja do 24h).",
         GROWTH: "Codzienny health check sekwencji - deliverability spada, domena traci reputację? Naprawiamy zanim obniżysz reply rate (reakcja do 8h).",
-        SCALE: "Ciągly health check sekwencji i kont - deliverability spada, domena traci reputację? Naprawiamy natychmiast (reakcja do 4h).",
+        SCALE: "Ciągły health check sekwencji i kont - deliverability spada, domena traci reputację? Naprawiamy natychmiast (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -203,7 +203,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
       descriptions: {
         STARTER: "Codziennie sprawdzamy czy bot odpowiada poprawnie i nie robi false answers - anomalia? Naprawiamy zanim klient to zgłosi (reakcja do 24h).",
         GROWTH: "Codziennie sprawdzamy CSAT, false answers i coverage bazy RAG - anomalia? Naprawiamy zanim wpłynie na oceny (reakcja do 8h).",
-        SCALE: "Ciągly monitoring CSAT, false answers i coverage RAG na wszystkich kanałach - anomalia? Naprawiamy natychmiast (reakcja do 4h).",
+        SCALE: "Ciągły monitoring CSAT, false answers i coverage RAG na wszystkich kanałach - anomalia? Naprawiamy natychmiast (reakcja do 4h).",
       },
     },
     optymalizacja: {
@@ -252,7 +252,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
       descriptions: {
         STARTER: "Codziennie sprawdzamy czy agent liczy prawidłowo i PDF generuje się bez błędów - anomalia? Naprawiamy zanim trafi do klienta (reakcja do 24h).",
         GROWTH: "Codziennie sprawdzamy poprawność kalkulacji, generowania PDF i działania follow-upów - anomalia? Naprawiamy zanim trafi do klienta (reakcja do 8h).",
-        SCALE: "Ciągly monitoring kalkulacji, PDF, follow-upów i integracji CRM plus ERP - każda anomalia trafia do nas natychmiast (reakcja do 4h).",
+        SCALE: "Ciągły monitoring kalkulacji, PDF, follow-upów i integracji CRM plus ERP - każda anomalia trafia do nas natychmiast (reakcja do 4h).",
       },
     },
     optymalizacja: {
