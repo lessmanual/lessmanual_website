@@ -7,6 +7,7 @@ import { HeaderV2 } from "@/components/v2/HeaderV2";
 import { FooterV2 } from "@/components/v2/FooterV2";
 import { LiveDemoTerminal } from "@/components/v2/LiveDemoTerminal";
 import { CALENDLY_URL, EMAIL } from "@/lib/constants";
+import { MRRIncludes } from "@/components/v2/MRRIncludes";
 
 // Lazy-load Remotion Player + composition — keeps them out of the initial bundle.
 // ssr:false is valid here because this is a "use client" component.
@@ -504,6 +505,15 @@ export default function HotLeadCatcherContent() {
                 </tbody>
               </table>
               <p className="mt-4 text-[13px] text-[#525252]">Oszczędzasz 2 900 PLN + bonusy w cenie.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 4b. MRR INCLUDES ── */}
+        <section className="px-6 md:px-10 py-16 md:py-24 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="max-w-[720px]">
+              <MRRIncludes product="hlc" tier="GROWTH" />
             </div>
           </div>
         </section>

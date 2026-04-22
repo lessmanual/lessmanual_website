@@ -8,6 +8,7 @@ import { HeaderV2 } from "@/components/v2/HeaderV2";
 import { FooterV2 } from "@/components/v2/FooterV2";
 import { LiveDemoTerminal, type Line } from "@/components/v2/LiveDemoTerminal";
 import { CALENDLY_URL, EMAIL } from "@/lib/constants";
+import { MRRIncludes } from "@/components/v2/MRRIncludes";
 
 // ── Reduced motion hook ────────────────────────────────────────────────────────
 
@@ -504,6 +505,15 @@ export default function PipelineMachineContent() {
             <p className="mt-8 text-[12px] text-[#525252]">
               3 warstwy gwarancji. Rabat 15% przy 2+ produktach LessManual.
             </p>
+          </div>
+        </section>
+
+        {/* ── MRR INCLUDES ── */}
+        <section className="px-6 md:px-10 py-16 md:py-24 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="max-w-[720px]">
+              <MRRIncludes product="pipeline" tier="GROWTH" />
+            </div>
           </div>
         </section>
 
