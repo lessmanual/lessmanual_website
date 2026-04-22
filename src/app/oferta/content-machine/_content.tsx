@@ -57,7 +57,8 @@ const TIERS = [
     monthly: "1 000 PLN/mies.",
     featured: false,
     features: [
-      "10 artykułów/mies",
+      "10 artykułów SEO/mies",
+      "2 posty LinkedIn/tydzien + 1 watek X/tydzien",
       "1 klaster tematyczny",
       "Keyword research",
       "Podstawowe SEO (meta, OG, schema)",
@@ -70,7 +71,8 @@ const TIERS = [
     monthly: "1 800 PLN/mies.",
     featured: true,
     features: [
-      "20 artykułów/mies",
+      "20 artykułów SEO/mies",
+      "5 postow LinkedIn/tydzien + watki X + grafiki IG",
       "3 klastry tematyczne",
       "Internal linking + tracking pozycji",
       "Miesięczny raport SEO",
@@ -80,13 +82,17 @@ const TIERS = [
   },
   {
     name: "SCALE",
-    setup: "7 000 PLN",
+    setup: "9 000 PLN",
     monthly: "2 500 PLN/mies.",
     featured: false,
     features: [
-      "30 artykułów/mies",
+      "30 artykułów SEO/mies",
+      "Social media full (LinkedIn Articles, X, IG, FB, TikTok hooks)",
       "Unlimited klastry tematyczne",
       "Content calendar + dedykowany PM",
+      "Strona indexowalna przez AI (ChatGPT, Claude, Perplexity) - llms.txt, agent-skills, MCP server-card",
+      "Technical SEO audit + fix: sitemap.xml, robots.txt, schema.org, meta tags, canonical",
+      "GEO (Generative Engine Optimization) - Twoja firma w odpowiedziach AI",
       "Analiza luk konkurencji (wart. 3 000 PLN)",
       "Wszystkie bonusy GROWTH",
     ],
@@ -210,7 +216,7 @@ export default function ContentMachineContent() {
                 </h1>
 
                 <p className="mt-8 max-w-[520px] text-[17px] leading-[1.55] text-[#525252]">
-                  10 do 30 artykułów SEO miesięcznie. Keyword research, klastry tematyczne, internal linking, schema.org. Ty dajesz branżę - my robimy resztę. +150-400% ruchu organicznego w 6 miesięcy.
+                  10 do 30 artykułów SEO miesięcznie. Dostajesz keyword research, klastry tematyczne, internal linking i schema.org - wszystko gotowe do Google. Jeden artykuł zamienia się automatycznie w posty na LinkedIn i X. +150-400% ruchu organicznego w 6 miesięcy.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -261,7 +267,7 @@ export default function ContentMachineContent() {
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
               <SectionLabel>JAK TO DZIAŁA</SectionLabel>
-              <h2>Trzy kroki. Zero Twojego czasu.</h2>
+              <h2>Trzy kroki. Artykuły trafiają do Google bez Twojego zaangażowania.</h2>
             </header>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5E5E5] border border-[#E5E5E5]">
@@ -278,8 +284,8 @@ export default function ContentMachineContent() {
                 },
                 {
                   num: "03",
-                  title: "PUBLIKACJA + TRACKING",
-                  desc: "Artykuły trafiają do Twojego CMS (Webflow, WordPress, Ghost, inne). Schema.org, meta tagi, OG, sitemap - wszystko w cenie. Tracking pozycji (od GROWTH) - widzisz wzrost co miesiąc. Miesięczny raport SEO.",
+                  title: "PUBLIKACJA + SOCIAL + TRACKING",
+                  desc: "Artykuły trafiają do Twojego CMS (Webflow, WordPress, Ghost, inne). Schema.org, meta tagi, OG, sitemap - wszystko w cenie. Z kazdego artykułu agent generuje 3-5 postow LinkedIn, watki X i grafiki IG/FB - jeden artykuł to 10+ kawalkow contentu. Tracking pozycji (od GROWTH) - widzisz wzrost co miesiąc.",
                 },
               ].map((s) => (
                 <div key={s.num} className="bg-[#FAFAFA] p-8 md:p-10">

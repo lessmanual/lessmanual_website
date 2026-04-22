@@ -69,7 +69,7 @@ const MAP: Array<{
     slug: "Blog który pisze się sam",
     metric: "+150-400%",
     metricLabel: "ruchu organicznego w 6 mies.",
-    short: "10-30 artykułów SEO miesięcznie. Keyword research, klastry, linkowanie wewnętrzne.",
+    short: "10-30 artykułów SEO miesięcznie + social media (LinkedIn, X, IG). Keyword research, klastry, GEO pod AI.",
     visual: "seo",
   },
   {
@@ -127,9 +127,9 @@ export function ProductsV2() {
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             5 systemów
           </div>
-          <h2>Pięć agentów AI pod operacyjną pracę B2B.</h2>
+          <h2>Pięć agentów AI. Każdy robi jedną rzecz doskonale.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
-            Każdy system robi jedną rzecz doskonale. Wdrożenie 2-4 tygodnie, wyniki od pierwszego miesiąca. Hot Lead Catcher to nasz flagship - agent który wychwytuje moment zakupowy. Pozostałe 4 działają solo albo w kombinacji.
+            Wdrożenie w 2-4 tygodnie, pierwsze wyniki w pierwszym miesiącu. Hot Lead Catcher to nasz flagship - wychwytuje moment zakupowy zanim zrobi to konkurencja. Pozostałe 4 działają solo lub w kombinacji.
           </p>
         </header>
 
