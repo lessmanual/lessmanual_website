@@ -26,14 +26,17 @@ export type BlogPost = {
   author: string | null;
 };
 
+// Widoczność posta = wyłącznie published_at (IS NOT NULL AND <= now).
+// Status ('draft'/'scheduled'/'published'/'archived') służy wyłącznie
+// do workflowu redakcyjnego. Scheduled = draft z datą w przyszłości.
+// Wzorzec sprawdzony na ts_finanse_posts (stabilny od Q4 2025).
 export async function getPublishedPosts(): Promise<BlogPost[]> {
-  const now = new Date().toISOString();
-
   const { data, error } = await supabase
     .from("blog_posts")
     .select("*")
-    .or(`status.eq.published,and(status.eq.scheduled,published_at.lte.${now})`)
-    .order("published_at", { ascending: false, nullsFirst: false });
+    .not("published_at", "is", null)
+    .lte("published_at", new Date().toISOString())
+    .order("published_at", { ascending: false });
 
   if (error) {
     console.error("Error fetching posts:", error);
@@ -46,13 +49,12 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
 export async function getPostBySlug(
   slug: string
 ): Promise<BlogPost | null> {
-  const now = new Date().toISOString();
-
   const { data, error } = await supabase
     .from("blog_posts")
     .select("*")
     .eq("slug", slug)
-    .or(`status.eq.published,and(status.eq.scheduled,published_at.lte.${now})`)
+    .not("published_at", "is", null)
+    .lte("published_at", new Date().toISOString())
     .single();
 
   if (error) {
@@ -63,12 +65,11 @@ export async function getPostBySlug(
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const now = new Date().toISOString();
-
   const { data, error } = await supabase
     .from("blog_posts")
     .select("slug")
-    .or(`status.eq.published,and(status.eq.scheduled,published_at.lte.${now})`);
+    .not("published_at", "is", null)
+    .lte("published_at", new Date().toISOString());
 
   if (error) {
     console.error("Error fetching slugs:", error);
