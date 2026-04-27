@@ -90,9 +90,9 @@ const TIERS = [
       "Social media full (LinkedIn Articles, X, IG, FB, TikTok hooks)",
       "Unlimited klastry tematyczne",
       "Content calendar + dedykowany PM",
-      "Strona indexowalna przez AI (ChatGPT, Claude, Perplexity) - llms.txt, agent-skills, MCP server-card",
+      "Twoja firma w odpowiedziach ChatGPT, Perplexity i Gemini - nie tylko Google",
       "Technical SEO audit + fix: sitemap.xml, robots.txt, schema.org, meta tags, canonical",
-      "GEO (Generative Engine Optimization) - Twoja firma w odpowiedziach AI",
+      "GEO (Generative Engine Optimization): llms.txt dla LLM crawlerów, agent-skills/*.md które AI cytuje, MCP server-card opcjonalnie",
       "Analiza luk konkurencji (wart. 3 000 PLN)",
       "Wszystkie bonusy GROWTH",
     ],
@@ -215,7 +215,11 @@ export default function ContentMachineContent() {
                   <span className="text-[#B87333]">Cię widzieć.</span>
                 </h1>
 
-                <p className="mt-8 max-w-[520px] text-[17px] leading-[1.55] text-[#525252]">
+                <p className="mt-4 max-w-[520px] text-[14px] leading-[1.55] text-[#B87333] font-medium">
+                  To nie agencja SEO. To agentic workflow - buduje Twoją widoczność w Google, ChatGPT i Perplexity bez copywritera, bez project managera z Twojej strony.
+                </p>
+
+                <p className="mt-5 max-w-[520px] text-[17px] leading-[1.55] text-[#525252]">
                   10 do 30 artykułów SEO miesięcznie. Dostajesz keyword research, klastry tematyczne, internal linking i schema.org - wszystko gotowe do Google. Jeden artykuł zamienia się automatycznie w posty na LinkedIn i X. +150-400% ruchu organicznego w 6 miesięcy.
                 </p>
 
