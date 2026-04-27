@@ -433,11 +433,11 @@ export default function ContentMachineContent() {
         </section>
 
         {/* ── SCARCITY BANNER ── */}
-        <section className="px-6 md:px-10 py-6 bg-[#2D3748] border-b border-[#1A202C]">
+        <section className="px-6 md:px-10 py-6 bg-white border-b border-[#E5E5E5]">
           <div className="mx-auto max-w-[1440px] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <p className="text-white text-[14px] font-medium">
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#C4956A] mr-3">Q2 2026</span>
+              <p className="text-[#0A0A0A] text-[14px] font-medium">
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mr-3">Q2 2026</span>
                 3 sloty GROWTH + 1 slot SCALE - startujemy 5 maja 2026.
               </p>
             </div>
@@ -674,10 +674,10 @@ export default function ContentMachineContent() {
             </div>
 
             <div
-              className="mt-8 p-6 bg-[#2D3748] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+              className="mt-8 p-6 bg-[#F5EDE6] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
               style={{ borderRadius: 8 }}
             >
-              <p className="text-white text-[15px] font-medium">
+              <p className="text-[#0A0A0A] text-[15px] font-medium">
                 Trzy warstwy ochrony. Nic nie ryzykujesz.
               </p>
               <Link
@@ -694,19 +694,19 @@ export default function ContentMachineContent() {
         </section>
 
         {/* ── 6c. HLC CROSS-SELL ── */}
-        <section className="px-6 md:px-10 py-12 bg-[#2D3748] border-b border-[#1A202C]">
+        <section className="px-6 md:px-10 py-12 bg-[#FAFAFA] border-b border-[#E5E5E5]">
           <div className="mx-auto max-w-[1440px]">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="flex-1">
                 <div className="mb-3">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#C4956A]">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333]">
                     Naturalny next step
                   </span>
                 </div>
-                <h3 className="text-white text-[20px] font-medium mb-2">
+                <h3 className="text-[#0A0A0A] text-[20px] font-medium mb-2">
                   Masz już ruch z bloga, ale nie wiesz kto z odwiedzających chce kupić?
                 </h3>
-                <p className="text-[#A0AEC0] text-[14px] leading-[1.65] max-w-[560px]">
+                <p className="text-[#525252] text-[14px] leading-[1.65] max-w-[560px]">
                   HLC monitoruje intent - pokazuje firmy które wracają, czytają konkretne oferty, klikają cennik. Content Machine generuje ruch. HLC zamienia ten ruch w sygnały sprzedażowe.
                 </p>
               </div>
