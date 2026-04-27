@@ -53,6 +53,9 @@ const SEO_SCRIPT: Line[] = [
 const TIERS = [
   {
     name: "STARTER",
+    badge: null,
+    scarcity: null,
+    subtext: null,
     setup: "3 000 PLN",
     monthly: "1 000 PLN/mies.",
     featured: false,
@@ -67,11 +70,14 @@ const TIERS = [
   },
   {
     name: "GROWTH",
+    badge: "REKOMENDOWANY DLA WIĘKSZOŚCI FIRM B2B",
+    scarcity: "Q2 2026: 3 sloty",
+    subtext: "Sweet spot dla firm 10-50 FTE bez content team - zwykle 1 artykuł/dzień roboczy + repurposing na social.",
     setup: "5 000 PLN",
     monthly: "1 800 PLN/mies.",
     featured: true,
     features: [
-      "20 artykułów SEO/mies",
+      "do 20 artykułów SEO/mies",
       "5 postów LinkedIn/tydzień + wątki X + grafiki IG",
       "3 klastry tematyczne",
       "Internal linking + tracking pozycji",
@@ -82,11 +88,14 @@ const TIERS = [
   },
   {
     name: "SCALE",
+    badge: "PREMIUM",
+    scarcity: "Q2 2026: 1 slot",
+    subtext: "Dla firm które chcą być cytowane przez LLM-y. Wymaga setup workshop + dedicated review (max 1 klient równolegle).",
     setup: "9 000 PLN",
     monthly: "2 500 PLN/mies.",
     featured: false,
     features: [
-      "30 artykułów SEO/mies",
+      "do 30 artykułów SEO/mies",
       "Social media full (LinkedIn Articles, X, IG, FB, TikTok hooks)",
       "Unlimited klastry tematyczne",
       "Content calendar + dedykowany PM",
@@ -419,6 +428,27 @@ export default function ContentMachineContent() {
           </div>
         </section>
 
+        {/* ── SCARCITY BANNER ── */}
+        <section className="px-6 md:px-10 py-6 bg-[#2D3748] border-b border-[#1A202C]">
+          <div className="mx-auto max-w-[1440px] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="text-[#C4956A] text-[18px]">⏳</span>
+              <p className="text-white text-[14px] font-medium">
+                Q2 2026: 3 sloty GROWTH + 1 slot SCALE - startujemy 5 maja 2026.
+              </p>
+            </div>
+            <Link
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 bg-[#C4956A] px-5 py-2.5 text-[13px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] hover:-translate-y-[1px]"
+              style={{ borderRadius: 4 }}
+            >
+              Zarezerwuj rozmowę kalibracyjną →
+            </Link>
+          </div>
+        </section>
+
         {/* ── 4. PRICING ── */}
         <section id="pricing" className="px-6 md:px-10 py-24 md:py-36 bg-white border-y border-[#E5E5E5]">
           <div className="mx-auto max-w-[1440px]">
@@ -450,8 +480,22 @@ export default function ContentMachineContent() {
                   )}
 
                   <div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-2">
-                      {tier.name}
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
+                        {tier.name}
+                      </div>
+                      {tier.badge && (
+                        <div
+                          className="font-mono text-[10px] uppercase tracking-[0.1em] px-2 py-0.5"
+                          style={{
+                            background: tier.name === "SCALE" ? "#2D3748" : "#F5EDE6",
+                            color: tier.name === "SCALE" ? "#C4956A" : "#8B4513",
+                            borderRadius: 3,
+                          }}
+                        >
+                          {tier.badge}
+                        </div>
+                      )}
                     </div>
                     <div className="text-[28px] font-medium text-[#0A0A0A] tracking-tight">
                       {tier.monthly}
@@ -459,6 +503,17 @@ export default function ContentMachineContent() {
                     <div className="text-[13px] text-[#737373] mt-1">
                       Setup: {tier.setup}
                     </div>
+                    {tier.scarcity && (
+                      <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[11px] text-[#B87333]">
+                        <span>⏳</span>
+                        <span>{tier.scarcity}</span>
+                      </div>
+                    )}
+                    {tier.subtext && (
+                      <p className="mt-2 text-[12px] leading-[1.55] text-[#737373]">
+                        {tier.subtext}
+                      </p>
+                    )}
                   </div>
 
                   <ul className="flex flex-col gap-2.5 flex-1">
