@@ -72,7 +72,7 @@ const TIERS = [
     name: "GROWTH",
     badge: "REKOMENDOWANY DLA WIĘKSZOŚCI FIRM B2B",
     scarcity: "Q2 2026: 3 sloty",
-    subtext: "Sweet spot dla firm 10-50 FTE bez content team - zwykle 1 artykuł/dzień roboczy + repurposing na social.",
+    subtext: "Sweet spot dla firm B2B bez dedykowanego content team - zwykle 1 artykuł/dzień roboczy + repurposing na social.",
     setup: "5 000 PLN",
     monthly: "1 800 PLN/mies.",
     featured: true,
@@ -230,6 +230,10 @@ export default function ContentMachineContent() {
 
                 <p className="mt-5 max-w-[520px] text-[17px] leading-[1.55] text-[#525252]">
                   10 do 30 artykułów SEO miesięcznie. Dostajesz keyword research, klastry tematyczne, internal linking i schema.org - wszystko gotowe do Google. Jeden artykuł zamienia się automatycznie w posty na LinkedIn i X. +150-400% ruchu organicznego w 6 miesięcy.
+                </p>
+
+                <p className="mt-4 max-w-[520px] text-[14px] leading-[1.6] text-[#737373]">
+                  Dla firm B2B z blogiem który nie był aktualizowany od ponad roku - gdy ruch organiczny umarł, a koszt copywritera, edytora i project managera nie domyka się dla regularnego contentu.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -689,6 +693,38 @@ export default function ContentMachineContent() {
               >
                 Sprawdź czy Content Machine jest dla Ciebie →
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 6c. HLC CROSS-SELL ── */}
+        <section className="px-6 md:px-10 py-12 bg-[#2D3748] border-b border-[#1A202C]">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[#C4956A] text-[20px]">🎯</span>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#C4956A]">
+                    Naturalny next step
+                  </span>
+                </div>
+                <h3 className="text-white text-[20px] font-medium mb-2">
+                  Masz już ruch z bloga, ale nie wiesz kto z odwiedzających chce kupić?
+                </h3>
+                <p className="text-[#A0AEC0] text-[14px] leading-[1.65] max-w-[560px]">
+                  HLC monitoruje intent - pokazuje firmy które wracają, czytają konkretne oferty, klikają cennik. Content Machine generuje ruch. HLC zamienia ten ruch w sygnały sprzedażowe.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Link
+                  href="/oferta/hlc"
+                  className="inline-flex items-center gap-2 bg-[#C4956A] px-6 py-3.5 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] hover:-translate-y-[1px]"
+                  style={{ borderRadius: 4 }}
+                >
+                  Sprawdź HLC
+                  <span>→</span>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
