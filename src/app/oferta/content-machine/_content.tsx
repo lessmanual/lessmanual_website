@@ -717,7 +717,7 @@ export default function ContentMachineContent() {
               </div>
               <div className="shrink-0">
                 <Link
-                  href="/oferta/hlc"
+                  href="/oferta/hot-lead-catcher"
                   className="inline-flex items-center gap-2 bg-[#C4956A] px-6 py-3.5 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] hover:-translate-y-[1px]"
                   style={{ borderRadius: 4 }}
                 >
