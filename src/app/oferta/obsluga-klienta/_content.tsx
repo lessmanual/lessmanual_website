@@ -571,7 +571,7 @@ export default function ObslugaKlientaContent() {
                   Recepcjonistka która nigdy nie idzie na L4.
                 </p>
                 <p className="text-[14px] text-[#525252] mt-1">
-                  AI odbiera telefon 24/7, kwalifikuje rozmówcę, umawia spotkania w kalendarzu, wysyła SMS z potwierdzeniem. Nagrania i transkrypcje każdej rozmowy. Dostępny w tierze SCALE lub jako add-on.
+                  AI odbiera telefon 24/7, kwalifikuje rozmówcę, umawia spotkania w kalendarzu, wysyła SMS z potwierdzeniem. Nagrania i transkrypcje każdej rozmowy. Dostępny WYŁĄCZNIE w tierze SCALE — nie sprzedajemy osobno ani jako add-on do niższych pakietów.
                 </p>
               </div>
               <Link
