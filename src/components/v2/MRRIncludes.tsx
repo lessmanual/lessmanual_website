@@ -156,7 +156,7 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
       descriptions: {
         STARTER: "Senuto, agenty do writingu, CMS integration i hosting artykułów w cenie - zero dodatkowych subskrypcji po Twojej stronie.",
         GROWTH: "Senuto, agenty do writingu, tracking pozycji, CMS integration i hosting artykułów w cenie - zero dodatkowych subskrypcji.",
-        SCALE: "Senuto, agenty do writingu, tracking pozycji, competitor gap tools i dedykowany PM w cenie - zero dodatkowych subskrypcji.",
+        SCALE: "Senuto, agenty do writingu, tracking pozycji, competitor gap tools, GEO setup (llms.txt, agent-skills, MCP server-card) i dedykowany PM w cenie - zero dodatkowych subskrypcji.",
         CUSTOM: "Senuto, agenty do writingu, tracking pozycji, competitor gap tools i dedykowany PM w cenie - zero dodatkowych subskrypcji.",
       },
     },
@@ -176,8 +176,8 @@ const DATA: Record<Product, Record<MRRCategory["id"], CategoryData>> = {
       descriptions: {
         STARTER: "Co kwartał przeglądamy keyword clusters i dostosowujemy brief artykułów do zmian w SERP-ie.",
         GROWTH: "Co kwartał aktualizujemy klastry, refreshujemy artykuły poniżej TOP 20 i optymalizujemy internal linking.",
-        SCALE: "Co miesiąc aktualizacja klastrów, refresh słabszych artykułów i rozbudowa internal linkingu pod nowe frazy.",
-        CUSTOM: "Co miesiąc aktualizacja klastrów, refresh słabszych artykułów i rozbudowa internal linkingu pod nowe frazy.",
+        SCALE: "Co miesiąc aktualizacja klastrów, refresh słabszych artykułów, rozbudowa internal linkingu pod nowe frazy i aktualizacja GEO plików (llms.txt, agent-skills).",
+        CUSTOM: "Co miesiąc aktualizacja klastrów, refresh słabszych artykułów, rozbudowa internal linkingu pod nowe frazy i aktualizacja GEO plików (llms.txt, agent-skills).",
       },
     },
     raporty: {
