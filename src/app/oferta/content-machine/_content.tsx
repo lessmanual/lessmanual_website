@@ -606,6 +606,93 @@ export default function ContentMachineContent() {
           </div>
         </section>
 
+        {/* ── 6b. GWARANCJA ── */}
+        <section id="gwarancja" className="px-6 md:px-10 py-24 md:py-36 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+          <div className="mx-auto max-w-[1440px]">
+            <header className="mb-12 max-w-[720px]">
+              <SectionLabel>GWARANCJA</SectionLabel>
+              <h2>3 warstwy gwarancji. Zero ryzyka z Twojej strony.</h2>
+              <p className="mt-4 text-[15px] leading-[1.65] text-[#525252]">
+                WAL ("już raz go ktoś oszukał") zasługuje na konkretne warunki, nie ogólnikowe deklaracje.
+              </p>
+            </header>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                className="bg-white border border-[#E5E5E5] p-8 flex flex-col gap-4"
+                style={{ borderRadius: 8 }}
+              >
+                <div className="text-[28px]">🛡️</div>
+                <div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
+                    WARSTWA 1 - DELIVERY
+                  </div>
+                  <h3 className="text-[17px] font-medium text-[#0A0A0A] mb-3">
+                    Gwarantowana liczba artykułów
+                  </h3>
+                  <p className="text-[14px] leading-[1.65] text-[#525252]">
+                    Nie dostarczymy zadeklarowanej liczby artykułów w danym miesiącu? Zwrot proporcjonalny - bez pytań, w 7 dni.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                className="bg-white border border-[#E5E5E5] p-8 flex flex-col gap-4"
+                style={{ borderRadius: 8 }}
+              >
+                <div className="text-[28px]">📈</div>
+                <div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
+                    WARSTWA 2 - PERFORMANCE
+                  </div>
+                  <h3 className="text-[17px] font-medium text-[#0A0A0A] mb-3">
+                    Artykuły w TOP 50 Google
+                  </h3>
+                  <p className="text-[14px] leading-[1.65] text-[#525252]">
+                    Artykuły nie weszły do TOP 50 Google po 90 dniach? Optymalizacja gratis przez kolejny miesiąc - bez dopłat, bez negocjacji.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                className="bg-white border border-[#E5E5E5] p-8 flex flex-col gap-4"
+                style={{ borderRadius: 8 }}
+              >
+                <div className="text-[28px]">🎯</div>
+                <div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
+                    WARSTWA 3 - BRAND VOICE
+                  </div>
+                  <h3 className="text-[17px] font-medium text-[#0A0A0A] mb-3">
+                    Głos marki albo pełny zwrot
+                  </h3>
+                  <p className="text-[14px] leading-[1.65] text-[#525252]">
+                    Niezadowolony z brand voice w pierwszym tygodniu? Pełny zwrot setup + zerwanie umowy bez żadnych kar. Ty decydujesz.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="mt-8 p-6 bg-[#2D3748] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+              style={{ borderRadius: 8 }}
+            >
+              <p className="text-white text-[15px] font-medium">
+                Trzy warstwy ochrony. Nic nie ryzykujesz.
+              </p>
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 bg-[#C4956A] px-5 py-3 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] hover:-translate-y-[1px]"
+                style={{ borderRadius: 4 }}
+              >
+                Sprawdź czy Content Machine jest dla Ciebie →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── 7. FINAL CTA ── */}
         <section id="kontakt" className="px-6 md:px-10 py-24 md:py-36 bg-[#F5EDE6]">
           <div className="mx-auto max-w-[1440px] text-center">
