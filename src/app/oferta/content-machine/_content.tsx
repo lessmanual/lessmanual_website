@@ -229,7 +229,7 @@ export default function ContentMachineContent() {
                 </p>
 
                 <p className="mt-5 max-w-[520px] text-[17px] leading-[1.55] text-[#525252]">
-                  10 do 30 artykułów SEO miesięcznie. Dostajesz keyword research, klastry tematyczne, internal linking i schema.org - wszystko gotowe do Google. Jeden artykuł zamienia się automatycznie w posty na LinkedIn i X. +150-400% ruchu organicznego w 6 miesięcy.
+                  10 do 30 artykułów SEO miesięcznie. Dostajesz keyword research, klastry tematyczne, internal linking i schema.org - wszystko gotowe do Google. Jeden artykuł zamienia się automatycznie w posty na Twoje social media. +150-400% ruchu organicznego w 6 miesięcy.
                 </p>
 
                 <p className="mt-4 max-w-[520px] text-[14px] leading-[1.6] text-[#737373]">
@@ -436,9 +436,9 @@ export default function ContentMachineContent() {
         <section className="px-6 md:px-10 py-6 bg-[#2D3748] border-b border-[#1A202C]">
           <div className="mx-auto max-w-[1440px] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="text-[#C4956A] text-[18px]">⏳</span>
               <p className="text-white text-[14px] font-medium">
-                Q2 2026: 3 sloty GROWTH + 1 slot SCALE - startujemy 5 maja 2026.
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#C4956A] mr-3">Q2 2026</span>
+                3 sloty GROWTH + 1 slot SCALE - startujemy 5 maja 2026.
               </p>
             </div>
             <Link
@@ -508,8 +508,7 @@ export default function ContentMachineContent() {
                       Setup: {tier.setup}
                     </div>
                     {tier.scarcity && (
-                      <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[11px] text-[#B87333]">
-                        <span>⏳</span>
+                      <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333]">
                         <span>{tier.scarcity}</span>
                       </div>
                     )}
@@ -626,7 +625,6 @@ export default function ContentMachineContent() {
                 className="bg-white border border-[#E5E5E5] p-8 flex flex-col gap-4"
                 style={{ borderRadius: 8 }}
               >
-                <div className="text-[28px]">🛡️</div>
                 <div>
                   <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
                     WARSTWA 1 - DELIVERY
@@ -644,7 +642,6 @@ export default function ContentMachineContent() {
                 className="bg-white border border-[#E5E5E5] p-8 flex flex-col gap-4"
                 style={{ borderRadius: 8 }}
               >
-                <div className="text-[28px]">📈</div>
                 <div>
                   <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
                     WARSTWA 2 - PERFORMANCE
@@ -662,7 +659,6 @@ export default function ContentMachineContent() {
                 className="bg-white border border-[#E5E5E5] p-8 flex flex-col gap-4"
                 style={{ borderRadius: 8 }}
               >
-                <div className="text-[28px]">🎯</div>
                 <div>
                   <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#B87333] mb-1">
                     WARSTWA 3 - BRAND VOICE
@@ -702,8 +698,7 @@ export default function ContentMachineContent() {
           <div className="mx-auto max-w-[1440px]">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[#C4956A] text-[20px]">🎯</span>
+                <div className="mb-3">
                   <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#C4956A]">
                     Naturalny next step
                   </span>
