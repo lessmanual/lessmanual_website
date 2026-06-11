@@ -117,6 +117,30 @@ describe("handleSafeDraftRewriteRequest", () => {
     });
     expect(JSON.stringify(body)).not.toContain("metadata_record");
   });
+
+  it("returns generic provider failure without leaking raw draft or email", async () => {
+    const response = await handleSafeDraftRewriteRequest(createRequest(validPayload()), {
+      model: {
+        async rewrite(request) {
+          throw new Error(`provider failed for ${request.prompt}`);
+        },
+      },
+      hashText: stableHash,
+    });
+    const body: unknown = await response.json();
+    const serialised = JSON.stringify(body);
+
+    expect(response.status).toBe(502);
+    expect(body).toEqual({
+      ok: false,
+      error: "provider_call_failed",
+      public_status: "Zatrzymane ze względów bezpieczeństwa",
+      internal_status: "BLOCKED_SAFETY",
+    });
+    expect(serialised).not.toContain(VALID_DRAFT);
+    expect(serialised).not.toContain("founder@example.com");
+    expect(serialised).not.toContain("<untrusted_user_draft>");
+  });
 });
 
 function validPayload(): Record<string, unknown> {

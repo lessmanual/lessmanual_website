@@ -76,7 +76,20 @@ export async function handleSafeDraftRewriteRequest(
   }
 
   const prompt = buildRewritePrompt(parsedSubmission.value);
-  const modelResponse = await dependencies.model.rewrite({ prompt });
+  let modelResponse;
+  try {
+    modelResponse = await dependencies.model.rewrite({ prompt });
+  } catch {
+    return Response.json(
+      {
+        ok: false,
+        error: "provider_call_failed",
+        public_status: "Zatrzymane ze względów bezpieczeństwa",
+        internal_status: "BLOCKED_SAFETY",
+      },
+      { status: 502 }
+    );
+  }
   const parsedOutput = parseStructuredModelOutput(modelResponse.raw_output);
 
   if (!parsedOutput.ok) {
