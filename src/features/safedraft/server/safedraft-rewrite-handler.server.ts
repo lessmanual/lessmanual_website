@@ -1,17 +1,48 @@
 import { createHash, randomUUID } from "node:crypto";
 
-import { buildSafeDraftMetadataRecord, type SafeDraftHashText } from "../core/metadata-record";
-import { parseSafeDraftSubmission } from "../core/input-schema";
+import { createSafeDraftBotGuard, type SafeDraftBotGuardPort } from "../core/bot-guard";
+import type { SafeDraftCostCapPort } from "../core/cost-cap";
+import { parseSafeDraftSubmission, type SafeDraftSubmission } from "../core/input-schema";
+import {
+  buildSafeDraftMetadataRecord,
+  type SafeDraftHashText,
+  type SafeDraftMetadataRecord,
+  type SafeDraftMetadataRecordResult,
+  type SafeDraftRequestMetadata,
+} from "../core/metadata-record";
+import type { SafeDraftMetadataStorePort } from "../core/metadata-store-port";
 import type { RewriteModelPort } from "../core/rewrite-model-port";
 import { buildRewritePrompt } from "../core/rewrite-prompt";
-import { runPreModelSafetyGate } from "../core/pre-model-safety-gate";
+import { runPreModelSafetyGate, type PreModelFinding } from "../core/pre-model-safety-gate";
+import type { SafeDraftKillSwitchPort } from "../core/kill-switch";
+import type { SafeDraftRateLimiterPort } from "../core/rate-limit";
 import { parseStructuredModelOutput } from "../core/structured-output";
+
+const DEFAULT_ESTIMATED_RUN_COST_USD = 0.015;
+const BLOCKED_PUBLIC_STATUS = "Zatrzymane ze względów bezpieczeństwa";
+const BLOCKED_INTERNAL_STATUS = "BLOCKED_SAFETY";
+
+type SafeDraftRuntimeBlockReason =
+  | "honeypot_filled"
+  | "kill_switch_enabled"
+  | "rate_limit_ip"
+  | "rate_limit_email"
+  | "rate_limit_session"
+  | "daily_cost_cap_exceeded"
+  | "monthly_cost_cap_exceeded"
+  | "pre_model_safety";
 
 export type SafeDraftRewriteHandlerDependencies = {
   model: RewriteModelPort;
   now?: () => Date;
   createSubmissionId?: () => string;
   hashText?: SafeDraftHashText;
+  botGuard?: SafeDraftBotGuardPort;
+  killSwitch?: SafeDraftKillSwitchPort;
+  rateLimiter?: SafeDraftRateLimiterPort;
+  costCap?: SafeDraftCostCapPort;
+  metadataStore?: SafeDraftMetadataStorePort;
+  estimatedRunCostUsd?: number;
 };
 
 export async function handleSafeDraftRewriteRequest(
@@ -35,7 +66,8 @@ export async function handleSafeDraftRewriteRequest(
   const hashText = dependencies.hashText ?? sha256Hex;
   const now = dependencies.now ?? (() => new Date());
   const createSubmissionId = dependencies.createSubmissionId ?? defaultSubmissionId;
-  const createdAt = now().toISOString();
+  const requestTime = now();
+  const createdAt = requestTime.toISOString();
   const requestMetadata = {
     submission_id: createSubmissionId(),
     created_at: createdAt,
@@ -43,35 +75,70 @@ export async function handleSafeDraftRewriteRequest(
     ip_address: clientIp(request.headers),
     user_agent: request.headers.get("user-agent") ?? undefined,
   };
+  const sessionId = clientSessionId(request.headers, body);
+  const botGuard = dependencies.botGuard ?? createSafeDraftBotGuard();
+  const botGuardResult = botGuard.check(body);
+  if (!botGuardResult.ok) {
+    return buildBlockedResponse({
+      blockReason: botGuardResult.reason,
+      submission: parsedSubmission.value,
+      request: requestMetadata,
+      hashText,
+      metadataStore: dependencies.metadataStore,
+    });
+  }
+
+  const killSwitchEnabled = dependencies.killSwitch ? await dependencies.killSwitch.isEnabled() : false;
+  if (killSwitchEnabled) {
+    return buildBlockedResponse({
+      blockReason: "kill_switch_enabled",
+      submission: parsedSubmission.value,
+      request: requestMetadata,
+      hashText,
+      metadataStore: dependencies.metadataStore,
+    });
+  }
+
+  const normalisedEmail = parsedSubmission.value.email.trim().toLowerCase();
+  const rateLimitResult = await dependencies.rateLimiter?.check({
+    nowMs: requestTime.getTime(),
+    ipHash: requestMetadata.ip_address ? hashText(requestMetadata.ip_address) : null,
+    emailHash: hashText(normalisedEmail),
+    sessionHash: sessionId ? hashText(sessionId) : null,
+  });
+  if (rateLimitResult && !rateLimitResult.ok) {
+    return buildBlockedResponse({
+      blockReason: `rate_limit_${rateLimitResult.scope}`,
+      submission: parsedSubmission.value,
+      request: requestMetadata,
+      hashText,
+      metadataStore: dependencies.metadataStore,
+    });
+  }
+
+  const costCapResult = await dependencies.costCap?.check({
+    now: requestTime,
+    estimatedRunCostUsd: dependencies.estimatedRunCostUsd ?? DEFAULT_ESTIMATED_RUN_COST_USD,
+  });
+  if (costCapResult && !costCapResult.ok) {
+    return buildBlockedResponse({
+      blockReason: costCapResult.scope === "daily" ? "daily_cost_cap_exceeded" : "monthly_cost_cap_exceeded",
+      submission: parsedSubmission.value,
+      request: requestMetadata,
+      hashText,
+      metadataStore: dependencies.metadataStore,
+    });
+  }
 
   const safetyGate = runPreModelSafetyGate(parsedSubmission.value.draft_text);
   if (!safetyGate.allow_model_call) {
-    const metadataRecord = buildSafeDraftMetadataRecord({
+    return buildBlockedResponse({
+      blockReason: "pre_model_safety",
       submission: parsedSubmission.value,
-      result: {
-        output_text: "",
-        public_status: safetyGate.public_status,
-        internal_status: safetyGate.internal_status,
-        risk_count: safetyGate.findings.length,
-        removed_ai_tells_count: 0,
-      },
       request: requestMetadata,
-      model: {
-        provider: "none",
-        model_id: "not_called",
-        latency_ms: 0,
-        estimated_cost_usd: 0,
-      },
       hashText,
-    });
-
-    return Response.json({
-      ok: false,
-      error: "blocked_safety",
-      public_status: safetyGate.public_status,
-      internal_status: safetyGate.internal_status,
+      metadataStore: dependencies.metadataStore,
       findings: safetyGate.findings,
-      metadata_record: metadataRecord,
     });
   }
 
@@ -90,6 +157,11 @@ export async function handleSafeDraftRewriteRequest(
       { status: 502 }
     );
   }
+  await dependencies.costCap?.record({
+    now: now(),
+    estimatedCostUsd: modelResponse.estimated_cost_usd,
+  });
+
   const parsedOutput = parseStructuredModelOutput(modelResponse.raw_output);
 
   if (!parsedOutput.ok) {
@@ -106,6 +178,7 @@ export async function handleSafeDraftRewriteRequest(
       model: modelResponse,
       hashText,
     });
+    await saveMetadata(dependencies.metadataStore, metadataRecord);
 
     return Response.json(
       {
@@ -132,6 +205,7 @@ export async function handleSafeDraftRewriteRequest(
     model: modelResponse,
     hashText,
   });
+  await saveMetadata(dependencies.metadataStore, metadataRecord);
 
   return Response.json({
     ok: true,
@@ -168,4 +242,84 @@ function clientIp(headers: Headers): string | undefined {
 
   const realIp = headers.get("x-real-ip")?.trim();
   return realIp ? realIp : undefined;
+}
+
+async function buildBlockedResponse(input: {
+  blockReason: SafeDraftRuntimeBlockReason;
+  submission: SafeDraftSubmission;
+  request: SafeDraftRequestMetadata;
+  hashText: SafeDraftHashText;
+  metadataStore?: SafeDraftMetadataStorePort;
+  findings?: PreModelFinding[];
+}): Promise<Response> {
+  const metadataRecord = buildSafeDraftMetadataRecord({
+    submission: input.submission,
+    result: blockedMetadataResult(input.findings?.length ?? 1),
+    request: input.request,
+    model: {
+      provider: "none",
+      model_id: "not_called",
+      latency_ms: 0,
+      estimated_cost_usd: 0,
+    },
+    hashText: input.hashText,
+  });
+  await saveMetadata(input.metadataStore, metadataRecord);
+
+  return Response.json({
+    ok: false,
+    error: "blocked_safety",
+    block_reason: input.blockReason,
+    public_status: BLOCKED_PUBLIC_STATUS,
+    internal_status: BLOCKED_INTERNAL_STATUS,
+    findings: input.findings ?? [],
+    metadata_record: metadataRecord,
+  });
+}
+
+function blockedMetadataResult(riskCount: number): SafeDraftMetadataRecordResult {
+  return {
+    output_text: "",
+    public_status: BLOCKED_PUBLIC_STATUS,
+    internal_status: BLOCKED_INTERNAL_STATUS,
+    risk_count: riskCount,
+    removed_ai_tells_count: 0,
+  };
+}
+
+async function saveMetadata(
+  metadataStore: SafeDraftMetadataStorePort | undefined,
+  metadataRecord: SafeDraftMetadataRecord
+): Promise<void> {
+  if (metadataStore) {
+    await metadataStore.save(metadataRecord);
+  }
+}
+
+function clientSessionId(headers: Headers, body: unknown): string | undefined {
+  const headerSessionId = headers.get("x-safedraft-session-id")?.trim();
+  if (headerSessionId) {
+    return headerSessionId;
+  }
+
+  if (!isRecord(body)) {
+    return undefined;
+  }
+
+  const sessionId = optionalBodyString(body, "session_id") ?? optionalBodyString(body, "safedraft_session_id");
+  return sessionId;
+}
+
+function optionalBodyString(record: Record<string, unknown>, key: string): string | undefined {
+  const value = record[key];
+  if (typeof value !== "string") {
+    return undefined;
+  }
+
+  const trimmedValue = value.trim();
+  return trimmedValue ? trimmedValue : undefined;
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
