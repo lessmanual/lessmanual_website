@@ -8,11 +8,11 @@ vi.mock("server-only", () => ({}));
 import {
   createAnthropicRewriteModelPort,
   SafeDraftProviderError,
-  type GenerateTextForSafeDraft,
+  type GenerateStructuredForSafeDraft,
 } from "./anthropic-rewrite-model.server";
 import { SAFEDRAFT_ANTHROPIC_MODEL_ID } from "../server/safedraft-provider-config.server";
 
-const STRUCTURED_JSON = JSON.stringify({
+const STRUCTURED_OUTPUT = {
   rewritten_text: "Dzięki za rozmowę. Proponuję sprawdzić jeden proces i policzyć koszt ręcznej pracy.",
   public_status: "Wymaga ręcznego review",
   internal_status: "NEEDS_REVIEW",
@@ -22,15 +22,15 @@ const STRUCTURED_JSON = JSON.stringify({
   unchanged_facts: [],
   risk_flags: [],
   one_sentence_summary: "Mocked Anthropic SafeDraft rewrite.",
-});
+};
 
 describe("createAnthropicRewriteModelPort", () => {
-  it("maps generated structured text into RewriteModelResponse metadata", async () => {
+  it("maps generated structured object into RewriteModelResponse metadata", async () => {
     let capturedPrompt = "";
-    const generateTextForSafeDraft: GenerateTextForSafeDraft = async ({ prompt }) => {
+    const generateStructuredForSafeDraft: GenerateStructuredForSafeDraft = async ({ prompt }) => {
       capturedPrompt = prompt;
       return {
-        text: STRUCTURED_JSON,
+        output: STRUCTURED_OUTPUT,
         usage: {
           inputTokens: 1000,
           outputTokens: 500,
@@ -39,7 +39,7 @@ describe("createAnthropicRewriteModelPort", () => {
     };
     const port = createAnthropicRewriteModelPort({
       apiKey: "test-anthropic-key",
-      generateTextForSafeDraft,
+      generateStructuredForSafeDraft,
       now: createNowSequence([100, 137]),
     });
 
@@ -51,18 +51,18 @@ describe("createAnthropicRewriteModelPort", () => {
       model_id: SAFEDRAFT_ANTHROPIC_MODEL_ID,
       latency_ms: 37,
       estimated_cost_usd: 0.0105,
-      raw_output: STRUCTURED_JSON,
+      raw_output: JSON.stringify(STRUCTURED_OUTPUT),
     });
   });
 
   it("fails with generic error without leaking raw prompt text", async () => {
     const rawPrompt = "UNIQUE_RAW_DRAFT_PROMPT_20260611 do not leak this text";
-    const generateTextForSafeDraft: GenerateTextForSafeDraft = async () => {
+    const generateStructuredForSafeDraft: GenerateStructuredForSafeDraft = async () => {
       throw new Error(`provider failure included ${rawPrompt}`);
     };
     const port = createAnthropicRewriteModelPort({
       apiKey: "test-anthropic-key",
-      generateTextForSafeDraft,
+      generateStructuredForSafeDraft,
       now: createNowSequence([100, 130]),
     });
 

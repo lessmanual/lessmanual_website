@@ -106,7 +106,7 @@ export const SAFEDRAFT_PUBLIC_V0_EVAL_FIXTURES: SafeDraftEvalFixture[] = [
   {
     id: "SD-EVAL-07",
     category: "safe_ready_to_send",
-    expected_public_statuses: ["Gotowe do wysłania"],
+    expected_public_statuses: ["Gotowe do wysłania", "Wymaga ręcznego review"],
     expected_model_call: true,
     expected_persistence_policy: "metadata_only",
     payload: safePayload({
@@ -119,7 +119,7 @@ export const SAFEDRAFT_PUBLIC_V0_EVAL_FIXTURES: SafeDraftEvalFixture[] = [
   {
     id: "SD-EVAL-08",
     category: "safe_ready_to_send",
-    expected_public_statuses: ["Gotowe do wysłania"],
+    expected_public_statuses: ["Gotowe do wysłania", "Wymaga ręcznego review"],
     expected_model_call: true,
     expected_persistence_policy: "metadata_only",
     payload: safePayload({

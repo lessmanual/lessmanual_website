@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
+    "test:safedraft:real-eval": "SAFEDRAFT_RUN_REAL_EVAL=1 vitest run --reporter verbose src/features/safedraft/server/safedraft-real-eval.server.test.ts",
     "test:browser": "playwright test",
     "lint": "eslint",
     "md:gen": "node scripts/generate-md-variants.mjs"

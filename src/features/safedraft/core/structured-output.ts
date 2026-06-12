@@ -1,4 +1,4 @@
-import type { SafeDraftInternalStatus, SafeDraftPublicStatus } from "./status";
+import { publicStatusForInternalStatus, type SafeDraftInternalStatus, type SafeDraftPublicStatus } from "./status";
 
 export type SafeDraftRiskFlag = {
   category: "tone" | "fact_change" | "claim" | "privacy" | "safety" | "scope";
@@ -37,7 +37,7 @@ export type StructuredOutputParseResult =
 export function parseStructuredModelOutput(rawOutput: string): StructuredOutputParseResult {
   let parsed: unknown;
   try {
-    parsed = JSON.parse(rawOutput);
+    parsed = JSON.parse(extractJsonObjectCandidate(rawOutput));
   } catch {
     return failClosed("invalid_json");
   }
@@ -79,14 +79,17 @@ export function parseStructuredModelOutput(rawOutput: string): StructuredOutputP
   if (riskFlags === undefined) {
     return failClosed("invalid_shape");
   }
+  const normalisedInternalStatus = normaliseInternalStatus(internalStatus, manualReviewReasons, riskFlags);
+  const normalisedPublicStatus =
+    normalisedInternalStatus === internalStatus ? publicStatus : publicStatusForInternalStatus(normalisedInternalStatus);
 
   return {
     ok: true,
-    internal_status: internalStatus,
+    internal_status: normalisedInternalStatus,
     value: {
       rewritten_text: rewrittenText,
-      public_status: publicStatus,
-      internal_status: internalStatus,
+      public_status: normalisedPublicStatus,
+      internal_status: normalisedInternalStatus,
       confidence,
       removed_ai_tells: removedAiTells,
       manual_review_reasons: manualReviewReasons,
@@ -95,6 +98,46 @@ export function parseStructuredModelOutput(rawOutput: string): StructuredOutputP
       one_sentence_summary: oneSentenceSummary,
     },
   };
+}
+
+function normaliseInternalStatus(
+  status: SafeDraftInternalStatus,
+  manualReviewReasons: string[],
+  riskFlags: SafeDraftRiskFlag[]
+): SafeDraftInternalStatus {
+  if (status === "BLOCKED_SAFETY") {
+    return status;
+  }
+
+  const hasReviewSignal = manualReviewReasons.length > 0 || riskFlags.length > 0;
+
+  return hasReviewSignal ? "NEEDS_REVIEW" : status;
+}
+
+function extractJsonObjectCandidate(rawOutput: string): string {
+  const trimmedOutput = stripMarkdownFence(rawOutput.trim());
+  const objectStart = trimmedOutput.indexOf("{");
+  const objectEnd = trimmedOutput.lastIndexOf("}");
+
+  if (objectStart >= 0 && objectEnd > objectStart) {
+    return trimmedOutput.slice(objectStart, objectEnd + 1);
+  }
+
+  return trimmedOutput;
+}
+
+function stripMarkdownFence(value: string): string {
+  if (!value.startsWith("```")) {
+    return value;
+  }
+
+  const lines = value.split("\n");
+  const withoutOpeningFence = lines.slice(1);
+  if (withoutOpeningFence[withoutOpeningFence.length - 1]?.trim() === "```") {
+    withoutOpeningFence.pop();
+  }
+
+  return withoutOpeningFence.join("\n").trim();
 }
 
 function failClosed(reason: StructuredOutputFailureReason): StructuredOutputParseResult {
