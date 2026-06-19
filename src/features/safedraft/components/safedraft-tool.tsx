@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, type ReactNode, useMemo, useState } from "react";
 import { Loader2, Send, ShieldCheck } from "lucide-react";
 
 import type { SafeDraftChannel, SafeDraftTone } from "../core/input-schema";
@@ -190,7 +190,23 @@ export function SafeDraftTool() {
           <ConsentCheckbox
             checked={privacyTermsAccepted}
             onChange={setPrivacyTermsAccepted}
-            label="Akceptuję regulamin i politykę prywatności"
+            label={
+              <>
+                Akceptuję{" "}
+                <a className="text-[#8A4F1D] underline" href="/legal/regulamin" rel="noreferrer" target="_blank">
+                  regulamin
+                </a>{" "}
+                i{" "}
+                <a
+                  className="text-[#8A4F1D] underline"
+                  href="/legal/polityka-prywatnosci"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  politykę prywatności
+                </a>
+              </>
+            }
             error={errors.privacyTerms}
             errorId="safedraft-privacy-error"
           />
@@ -198,6 +214,7 @@ export function SafeDraftTool() {
             checked={processingConsentAccepted}
             onChange={setProcessingConsentAccepted}
             label="Zgadzam się na przetworzenie draftu w SafeDraft public v0"
+            description="Draft trafia do modelu AI w celu przeredagowania. Nie zapisujemy surowego draftu ani surowej odpowiedzi w telemetrii SafeDraft."
             error={errors.processingConsent}
             errorId="safedraft-processing-error"
           />
@@ -313,7 +330,7 @@ function ConsentCheckbox({
 }: {
   checked: boolean;
   onChange: (checked: boolean) => void;
-  label: string;
+  label: ReactNode;
   description?: string;
   error?: string;
   errorId?: string;
