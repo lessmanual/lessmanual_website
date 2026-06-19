@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
-import { POST } from "./route";
+import { isSafeDraftPublicV0Enabled, POST } from "./route";
 
 const VALID_DRAFT =
   "Czesc, dzieki za rozmowe o automatyzacji follow-upow. Chce wyslac wiadomosc, ktora brzmi mniej sztucznie i nie dodaje nowych obietnic.";
@@ -10,6 +10,15 @@ const VALID_DRAFT =
 describe("POST /api/safedraft/rewrite provider gate", () => {
   afterEach(() => {
     vi.unstubAllEnvs();
+  });
+
+  it("parses only explicit public v0 enablement values", () => {
+    expect(isSafeDraftPublicV0Enabled(undefined)).toBe(false);
+    expect(isSafeDraftPublicV0Enabled("")).toBe(false);
+    expect(isSafeDraftPublicV0Enabled("false")).toBe(false);
+    expect(isSafeDraftPublicV0Enabled("true")).toBe(true);
+    expect(isSafeDraftPublicV0Enabled(" enabled ")).toBe(true);
+    expect(isSafeDraftPublicV0Enabled("1")).toBe(true);
   });
 
   it("keeps fake provider as the default local route", async () => {
@@ -60,6 +69,43 @@ describe("POST /api/safedraft/rewrite provider gate", () => {
     expect(body).toEqual({
       ok: false,
       error: "safedraft_public_v0_disabled",
+    });
+  });
+
+  it("rejects fake provider when public v0 is explicitly enabled in production", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("SAFEDRAFT_PUBLIC_V0_ENABLED", "true");
+    vi.stubEnv("SAFEDRAFT_REWRITE_PROVIDER", "");
+
+    const response = await POST(createRequest(validPayload()));
+    const body: unknown = await response.json();
+
+    expect(response.status).toBe(500);
+    expect(body).toEqual({
+      ok: false,
+      error: "provider_config_invalid",
+      provider: "fake",
+      reason: "anthropic_required_for_public_v0",
+    });
+  });
+
+  it("requires Supabase lead capture config when public v0 is explicitly enabled in production", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("SAFEDRAFT_PUBLIC_V0_ENABLED", "true");
+    vi.stubEnv("SAFEDRAFT_REWRITE_PROVIDER", "anthropic");
+    vi.stubEnv("ANTHROPIC_API_KEY", "test-key");
+    vi.stubEnv("SUPABASE_URL", "");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "");
+    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "");
+
+    const response = await POST(createRequest(validPayload()));
+    const body: unknown = await response.json();
+
+    expect(response.status).toBe(500);
+    expect(body).toEqual({
+      ok: false,
+      error: "lead_capture_config_invalid",
+      reason: "supabase_url_missing",
     });
   });
 });

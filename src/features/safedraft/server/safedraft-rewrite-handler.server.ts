@@ -4,6 +4,10 @@ import { createSafeDraftBotGuard, type SafeDraftBotGuardPort } from "../core/bot
 import type { SafeDraftCostCapPort } from "../core/cost-cap";
 import { parseSafeDraftSubmission, type SafeDraftSubmission } from "../core/input-schema";
 import {
+  buildSafeDraftLeadCaptureRecord,
+  type SafeDraftLeadCapturePort,
+} from "../core/lead-capture-port";
+import {
   buildSafeDraftMetadataRecord,
   type SafeDraftHashText,
   type SafeDraftMetadataRecord,
@@ -42,6 +46,7 @@ export type SafeDraftRewriteHandlerDependencies = {
   rateLimiter?: SafeDraftRateLimiterPort;
   costCap?: SafeDraftCostCapPort;
   metadataStore?: SafeDraftMetadataStorePort;
+  leadCapture?: SafeDraftLeadCapturePort;
   estimatedRunCostUsd?: number;
 };
 
@@ -85,6 +90,7 @@ export async function handleSafeDraftRewriteRequest(
       request: requestMetadata,
       hashText,
       metadataStore: dependencies.metadataStore,
+      leadCapture: dependencies.leadCapture,
     });
   }
 
@@ -96,6 +102,7 @@ export async function handleSafeDraftRewriteRequest(
       request: requestMetadata,
       hashText,
       metadataStore: dependencies.metadataStore,
+      leadCapture: dependencies.leadCapture,
     });
   }
 
@@ -113,6 +120,7 @@ export async function handleSafeDraftRewriteRequest(
       request: requestMetadata,
       hashText,
       metadataStore: dependencies.metadataStore,
+      leadCapture: dependencies.leadCapture,
     });
   }
 
@@ -127,6 +135,7 @@ export async function handleSafeDraftRewriteRequest(
       request: requestMetadata,
       hashText,
       metadataStore: dependencies.metadataStore,
+      leadCapture: dependencies.leadCapture,
     });
   }
 
@@ -138,7 +147,9 @@ export async function handleSafeDraftRewriteRequest(
       request: requestMetadata,
       hashText,
       metadataStore: dependencies.metadataStore,
+      leadCapture: dependencies.leadCapture,
       findings: safetyGate.findings,
+      captureLead: true,
     });
   }
 
@@ -179,6 +190,14 @@ export async function handleSafeDraftRewriteRequest(
       hashText,
     });
     await saveMetadata(dependencies.metadataStore, metadataRecord);
+    const leadCaptureFailure = await saveLeadCapture(
+      dependencies.leadCapture,
+      parsedSubmission.value,
+      metadataRecord
+    );
+    if (leadCaptureFailure) {
+      return leadCaptureFailure;
+    }
 
     return Response.json(
       {
@@ -206,6 +225,10 @@ export async function handleSafeDraftRewriteRequest(
     hashText,
   });
   await saveMetadata(dependencies.metadataStore, metadataRecord);
+  const leadCaptureFailure = await saveLeadCapture(dependencies.leadCapture, parsedSubmission.value, metadataRecord);
+  if (leadCaptureFailure) {
+    return leadCaptureFailure;
+  }
 
   return Response.json({
     ok: true,
@@ -250,7 +273,9 @@ async function buildBlockedResponse(input: {
   request: SafeDraftRequestMetadata;
   hashText: SafeDraftHashText;
   metadataStore?: SafeDraftMetadataStorePort;
+  leadCapture?: SafeDraftLeadCapturePort;
   findings?: PreModelFinding[];
+  captureLead?: boolean;
 }): Promise<Response> {
   const metadataRecord = buildSafeDraftMetadataRecord({
     submission: input.submission,
@@ -265,6 +290,12 @@ async function buildBlockedResponse(input: {
     hashText: input.hashText,
   });
   await saveMetadata(input.metadataStore, metadataRecord);
+  if (input.captureLead) {
+    const leadCaptureFailure = await saveLeadCapture(input.leadCapture, input.submission, metadataRecord);
+    if (leadCaptureFailure) {
+      return leadCaptureFailure;
+    }
+  }
 
   return Response.json({
     ok: false,
@@ -275,6 +306,31 @@ async function buildBlockedResponse(input: {
     findings: input.findings ?? [],
     metadata_record: metadataRecord,
   });
+}
+
+async function saveLeadCapture(
+  leadCapture: SafeDraftLeadCapturePort | undefined,
+  submission: SafeDraftSubmission,
+  metadataRecord: SafeDraftMetadataRecord
+): Promise<Response | undefined> {
+  if (!leadCapture) {
+    return undefined;
+  }
+
+  try {
+    await leadCapture.save(buildSafeDraftLeadCaptureRecord({ submission, metadataRecord }));
+    return undefined;
+  } catch {
+    return Response.json(
+      {
+        ok: false,
+        error: "lead_capture_failed",
+        public_status: BLOCKED_PUBLIC_STATUS,
+        internal_status: BLOCKED_INTERNAL_STATUS,
+      },
+      { status: 502 }
+    );
+  }
 }
 
 function blockedMetadataResult(riskCount: number): SafeDraftMetadataRecordResult {
