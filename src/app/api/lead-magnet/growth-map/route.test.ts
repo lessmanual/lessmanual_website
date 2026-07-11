@@ -95,6 +95,31 @@ describe("Growth Map intake route V10", () => {
     }
   });
 
+  it("does not promise an email when the local webhook runs in mock mode", async () => {
+    const originalFetch = globalThis.fetch;
+    process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL = "http://127.0.0.1:8788/lead-magnet";
+    globalThis.fetch = vi.fn(async () => new Response(JSON.stringify({
+      ok: true,
+      emailDeliveryMode: "mock",
+    }), {
+      status: 202,
+      headers: { "content-type": "application/json" },
+    })) as typeof fetch;
+
+    try {
+      const response = await POST(jsonRequest(validSubmission));
+      const body = await jsonBody(response);
+
+      expect(response.status).toBe(202);
+      expect(body.ok).toBe(true);
+      expect(body.status).toBe("local_preview_ready");
+      expect(body.message).toContain("email nie jest wysyłany");
+      expect(body.message).not.toContain("przyjdzie");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
   it("returns field errors for missing context and invalid numeric baselines", async () => {
     const response = await POST(jsonRequest({
       ...validSubmission,

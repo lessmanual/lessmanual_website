@@ -114,6 +114,20 @@ export async function POST(request: Request) {
         502,
       );
     }
+
+    const webhookResult = await readJsonObject(response);
+
+    if (webhookResult?.emailDeliveryMode === "mock") {
+      return jsonResponse(
+        {
+          ok: true,
+          requestId,
+          status: "local_preview_ready",
+          message: "Tryb testowy: CloudCSO przygotowuje raport lokalnie. W tym trybie email nie jest wysyłany.",
+        },
+        202,
+      );
+    }
   } catch {
     return jsonResponse(
       {
@@ -165,4 +179,17 @@ function createRequestId(): string {
   }
 
   return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+async function readJsonObject(response: Response): Promise<Record<string, unknown> | undefined> {
+  try {
+    const body: unknown = await response.json();
+    return isRecord(body) ? body : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
