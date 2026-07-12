@@ -18,7 +18,7 @@ const validSubmission = {
   researchConsent: true,
 };
 
-describe("Growth Map intake route V10", () => {
+describe("Growth Map intake route V11", () => {
   afterEach(() => {
     delete process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL;
     delete process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_TOKEN;
@@ -49,7 +49,7 @@ describe("Growth Map intake route V10", () => {
     expect(body.message).toContain("Automatyczna wysyłka");
   });
 
-  it("forwards the fixed routing and numeric V10 baseline", async () => {
+  it("forwards the fixed routing, phone context and numeric V11 baseline", async () => {
     const originalFetch = globalThis.fetch;
     const calls: Array<{ input: RequestInfo | URL; init?: RequestInit }> = [];
     process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL = "http://127.0.0.1:8787/lead-magnet";
@@ -63,7 +63,11 @@ describe("Growth Map intake route V10", () => {
     }) as typeof fetch;
 
     try {
-      const response = await POST(jsonRequest(validSubmission));
+      const response = await POST(jsonRequest({
+        ...validSubmission,
+        bottleneck: "Telefony poza godzinami pracy wymagają odciążenia zespołu.",
+        afterHoursCallHandling: "mixed",
+      }));
       const body = await jsonBody(response);
       const forwarded = calls[0];
       const headers = forwarded.init?.headers;
@@ -78,7 +82,7 @@ describe("Growth Map intake route V10", () => {
       expect(String(forwarded.input)).toBe("http://127.0.0.1:8787/lead-magnet");
       expect(headers instanceof Headers ? headers.get("authorization") : "").toBe("Bearer local-test-token");
       expect(payload.recordType).toBe("cloudcso_lead_magnet_request");
-      expect(payload.version).toBe("2026-07-10-v10");
+      expect(payload.version).toBe("2026-07-12-v11");
       expect(readRecord(payload.lead).email).toBe(validSubmission.email);
       expect(forwardedRequest.productMode).toBe("not_sure");
       expect(forwardedRequest.weeklyProcessVolume).toBe(125);
@@ -90,6 +94,7 @@ describe("Growth Map intake route V10", () => {
         "Google Docs",
         "Asana",
       ]);
+      expect(forwardedRequest.afterHoursCallHandling).toBe("mixed");
     } finally {
       globalThis.fetch = originalFetch;
     }

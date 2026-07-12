@@ -32,12 +32,18 @@ const forbiddenPublicPhrases = [
   "—",
 ];
 
-describe("AI Growth Opportunity Map public copy V10", () => {
+describe("AI Growth Opportunity Map public copy V11", () => {
   it("states the core promise and delivery without internal jargon", () => {
     expect(pageSource).toContain("Znajdź pierwszy proces, który AI może przejąć w Twojej firmie.");
-    expect(pageSource).toContain("spersonalizowany, 2-stronicowy raport PDF");
+    expect(pageSource).toContain("spersonalizowany");
+    expect(pageSource).toContain("raport PDF");
     expect(pageSource).toContain("formularza oraz publicznych źródeł firmy");
     expect(pageSource).toContain("wyślemy na podany email");
+    expect(formSource).toContain("Gotowy PDF przyjdzie na email.");
+    expect(formSource).not.toContain("2-stronicowy PDF");
+    expect(formSource).not.toContain("Raport będzie miał 2 strony");
+    expect(pageSource).not.toContain("2-stronicowy");
+    expect(pageSource).not.toContain("2 strony");
 
     for (const phrase of forbiddenPublicPhrases) {
       expect(combinedSource).not.toContain(phrase);
@@ -45,6 +51,11 @@ describe("AI Growth Opportunity Map public copy V10", () => {
   });
 
   it("shows a truthful preview of the four report contents", () => {
+    expect(pageSource).toContain('aria-label="Podgląd czterech stron raportu"');
+    for (const pageNumber of ["01 / 04", "02 / 04", "03 / 04", "04 / 04"]) {
+      expect(pageSource).toContain(pageNumber);
+    }
+
     for (const section of [
       "Punkt wyjścia firmy",
       "Fakty z publicznych źródeł",
@@ -75,12 +86,27 @@ describe("AI Growth Opportunity Map public copy V10", () => {
     expect(formSource).toContain("min-h-[18px]");
   });
 
+  it("shows an accessible after-hours call question only for a telephone bottleneck", () => {
+    expect(formSource).toContain("requiresAfterHoursCallHandling(values.bottleneck)");
+    expect(formSource).toContain("Co dzieje się z telefonami poza godzinami pracy?");
+    expect(formSource).toContain('name="afterHoursCallHandling"');
+
+    for (const option of [
+      "Odbiera właściciel lub zespół",
+      "Zwykle pozostają nieodebrane",
+      "Część jest odbierana, część pozostaje nieodebrana",
+      "Nie wiem, chcę to zmierzyć",
+    ]) {
+      expect(formSource).toContain(option);
+    }
+  });
+
   it("frames progress as the journey to a measurable first implementation", () => {
     expect(pageSource).toContain("Droga do pierwszego mierzalnego wdrożenia");
-    for (const stage of ["Analiza", "Mapa", "Decyzja", "Wdrożenie", "Wynik"]) {
+    for (const stage of ["Analiza", "Mapa", "Decyzja", "Pilotaż", "Wynik"]) {
       expect(pageSource).toContain(stage);
     }
-    expect(formSource).toContain("analiza, mapa, decyzja, wdrożenie i wynik");
+    expect(formSource).toContain("analiza, mapa, decyzja, pilotaż i wynik");
     expect(combinedSource).not.toContain("zgłoszenie, analiza, mapa, decyzja i pierwsze wdrożenie");
   });
 

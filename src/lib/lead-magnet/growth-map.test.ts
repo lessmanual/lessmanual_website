@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   buildCloudCsoGrowthMapPayload,
   parseGrowthMapSubmission,
+  requiresAfterHoursCallHandling,
 } from "./growth-map";
 
 const baseSubmission = {
@@ -21,7 +22,7 @@ const baseSubmission = {
   researchConsent: true,
 };
 
-describe("Growth Map lead magnet contract V10", () => {
+describe("Growth Map lead magnet contract V11", () => {
   it("fixes product mode to not_sure instead of trusting a public selection", () => {
     for (const submission of [
       { ...baseSubmission, productMode: undefined },
@@ -125,20 +126,91 @@ describe("Growth Map lead magnet contract V10", () => {
     expect(result.fieldErrors.notes).toContain("haseł");
   });
 
-  it("builds the V10 payload expected by the automation layer", () => {
+  it.each([
+    ["telefon", "Telefony po zamknięciu recepcji często nie mają obsługi."],
+    ["połączenie", "Każde połączenie po zamknięciu recepcji może przepaść."],
+    ["dzwonienie", "Dzwonienie po zamknięciu recepcji nie ma jasnej obsługi."],
+  ])("requires after-hours call handling for a bottleneck containing %s", (_keyword, bottleneck) => {
+    expect(requiresAfterHoursCallHandling(bottleneck)).toBe(true);
+
+    const result = parseGrowthMapSubmission({
+      ...baseSubmission,
+      bottleneck,
+      afterHoursCallHandling: "",
+    });
+
+    if (result.ok) {
+      throw new Error("Expected missing after-hours call handling to be rejected");
+    }
+
+    expect(result.fieldErrors.afterHoursCallHandling).toContain("poza godzinami pracy");
+  });
+
+  it.each(["not_applicable", "owner_answers", 123])(
+    "rejects unsupported after-hours call handling %s for a telephone bottleneck",
+    (afterHoursCallHandling) => {
+      const result = parseGrowthMapSubmission({
+        ...baseSubmission,
+        bottleneck: "Telefony po zamknięciu recepcji często nie mają obsługi.",
+        afterHoursCallHandling,
+      });
+
+      if (result.ok) {
+        throw new Error("Expected unsupported after-hours call handling to be rejected");
+      }
+
+      expect(result.fieldErrors.afterHoursCallHandling).toBeTruthy();
+    },
+  );
+
+  it.each([
+    "answered_by_owner_or_team",
+    "mostly_missed",
+    "mixed",
+    "unknown",
+  ])("accepts %s for a telephone bottleneck", (afterHoursCallHandling) => {
+    const result = parseGrowthMapSubmission({
+      ...baseSubmission,
+      bottleneck: "Telefony po zamknięciu recepcji często nie mają obsługi.",
+      afterHoursCallHandling,
+    });
+
+    if (!result.ok) {
+      throw new Error(`Expected ${afterHoursCallHandling} to be valid`);
+    }
+
+    expect(result.value.afterHoursCallHandling).toBe(afterHoursCallHandling);
+  });
+
+  it("sets after-hours call handling to not_applicable for a non-telephone bottleneck", () => {
+    const result = parseGrowthMapSubmission({
+      ...baseSubmission,
+      afterHoursCallHandling: "mostly_missed",
+    });
+
+    if (!result.ok) {
+      throw new Error("Expected a non-telephone bottleneck to be valid");
+    }
+
+    expect(result.value.afterHoursCallHandling).toBe("not_applicable");
+  });
+
+  it("builds the V11 payload expected by the automation layer", () => {
     const parsed = parseGrowthMapSubmission({
       ...baseSubmission,
       productMode: "custom_agentic_workflow",
       priority: "custom_project",
+      bottleneck: "Telefony po zamknięciu recepcji często nie mają obsługi.",
+      afterHoursCallHandling: "mostly_missed",
     });
 
     if (!parsed.ok) {
       throw new Error("Expected submission to be valid");
     }
 
-    const payload = buildCloudCsoGrowthMapPayload(parsed.value, "req-123", "2026-07-10T10:00:00.000Z");
+    const payload = buildCloudCsoGrowthMapPayload(parsed.value, "req-123", "2026-07-12T10:00:00.000Z");
 
-    expect(payload.version).toBe("2026-07-10-v10");
+    expect(payload.version).toBe("2026-07-12-v11");
     expect(payload.recordType).toBe("cloudcso_lead_magnet_request");
     expect(payload.request.productMode).toBe("not_sure");
     expect(payload.request.currentSystems).toEqual([
@@ -148,6 +220,7 @@ describe("Growth Map lead magnet contract V10", () => {
       "Google Docs",
       "Asana",
     ]);
+    expect(payload.request.afterHoursCallHandling).toBe("mostly_missed");
     expect(payload.request.weeklyProcessVolume).toBe(125);
     expect(payload.request.minutesPerOccurrence).toBe(12);
     expect(payload.delivery.expectedDocument).toBe("branded_pdf");

@@ -18,7 +18,7 @@ import { AIGrowthOpportunityMapForm } from "@/components/lead-magnet/AIGrowthOpp
 export const metadata: Metadata = {
   title: "Mapa pierwszego procesu AI | LessManual.ai",
   description:
-    "Znajdź pierwszy proces, który AI może przejąć w Twojej firmie. Otrzymaj spersonalizowany, 2-stronicowy raport PDF na email.",
+    "Znajdź pierwszy proces, który AI może przejąć w Twojej firmie. Otrzymaj spersonalizowany raport PDF na email.",
   alternates: {
     canonical: "/ai-growth-opportunity-map",
   },
@@ -34,14 +34,20 @@ export const metadata: Metadata = {
 
 const reportPages = [
   {
-    page: "01 / 02",
-    title: "Diagnoza firmy",
+    page: "01 / 04",
+    title: "Punkt wyjścia",
     sections: [
       {
         title: "Punkt wyjścia firmy",
         body: "Skala powtarzalnej pracy, czas jednej czynności, używane systemy i wskazana blokada.",
         icon: Building2,
       },
+    ],
+  },
+  {
+    page: "02 / 04",
+    title: "Analiza firmy",
+    sections: [
       {
         title: "Fakty z publicznych źródeł",
         body: "Informacje, które można sprawdzić na stronie firmy i w dostępnych materiałach publicznych.",
@@ -50,14 +56,20 @@ const reportPages = [
     ],
   },
   {
-    page: "02 / 02",
-    title: "Plan działania",
+    page: "03 / 04",
+    title: "Pierwsza decyzja",
     sections: [
       {
         title: "Pierwszy system do wdrożenia",
         body: "Jeden proces z jasnym zakresem, danymi wejściowymi i wynikiem, który można zmierzyć.",
         icon: Map,
       },
+    ],
+  },
+  {
+    page: "04 / 04",
+    title: "Plan pilotażu",
+    sections: [
       {
         title: "Kontrolowane wdrożenie",
         body: "Co sprawdzić przed startem, gdzie zostawić decyzję człowiekowi i jak mierzyć efekt.",
@@ -67,7 +79,7 @@ const reportPages = [
   },
 ];
 
-const journeyStages = ["Analiza", "Mapa", "Decyzja", "Wdrożenie", "Wynik"];
+const journeyStages = ["Analiza", "Mapa", "Decyzja", "Pilotaż", "Wynik"];
 
 export default function AIGrowthOpportunityMapPage() {
   return (
@@ -104,7 +116,7 @@ export default function AIGrowthOpportunityMapPage() {
               </h1>
 
               <p className="mt-6 max-w-[680px] text-[18px] leading-[1.6] text-[#525252]">
-                Na podstawie formularza oraz publicznych źródeł firmy przygotujemy spersonalizowany, 2-stronicowy raport PDF. Raport wyślemy na podany email.
+                Na podstawie formularza oraz publicznych źródeł firmy przygotujemy spersonalizowany raport PDF z rekomendacją pierwszego systemu do wdrożenia. Raport wyślemy na podany email.
               </p>
 
               <div className="mt-7 grid max-w-[680px] grid-cols-1 gap-3 sm:grid-cols-2">
@@ -141,7 +153,7 @@ export default function AIGrowthOpportunityMapPage() {
             <div
               className="border border-[#D4D4D4] bg-[#EFEFEF] p-4 shadow-[0_24px_64px_rgba(10,10,10,0.08)] md:p-5"
               style={{ borderRadius: 6 }}
-              aria-label="Podgląd dwóch stron raportu"
+              aria-label="Podgląd czterech stron raportu"
             >
               <div className="mb-4 flex items-center justify-between gap-4">
                 <div>
@@ -157,7 +169,7 @@ export default function AIGrowthOpportunityMapPage() {
                 {reportPages.map((reportPage) => (
                   <article
                     key={reportPage.page}
-                    className="flex min-h-[330px] flex-col border border-[#E5E5E5] bg-white p-5 shadow-[0_8px_24px_rgba(10,10,10,0.06)]"
+                    className="flex min-h-[250px] flex-col border border-[#E5E5E5] bg-white p-5 shadow-[0_8px_24px_rgba(10,10,10,0.06)]"
                     style={{ borderRadius: 3 }}
                   >
                     <div className="flex items-start justify-between gap-3 border-b border-[#E5E5E5] pb-4">

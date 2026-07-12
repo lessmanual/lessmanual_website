@@ -18,13 +18,19 @@ import {
   GROWTH_MAP_MAX_WEEKLY_PROCESS_VOLUME,
   GROWTH_MAP_PRIORITY_OPTIONS,
   parseGrowthMapSubmission,
+  requiresAfterHoursCallHandling,
 } from "@/lib/lead-magnet/growth-map";
 import type {
+  GrowthMapAfterHoursCallHandling,
   GrowthMapPriority,
   GrowthMapSubmission,
 } from "@/lib/lead-magnet/growth-map";
 
 type FormStep = 1 | 2;
+type TelephoneAfterHoursCallHandling = Exclude<GrowthMapAfterHoursCallHandling, "not_applicable">;
+type GrowthMapFormValues = Omit<GrowthMapSubmission, "afterHoursCallHandling"> & {
+  afterHoursCallHandling: TelephoneAfterHoursCallHandling | "";
+};
 
 type TextField =
   | "name"
@@ -52,8 +58,17 @@ type IntakeResponse = {
 };
 
 const companyStepFields = ["email", "company", "website"];
+const afterHoursCallHandlingOptions: ReadonlyArray<{
+  value: TelephoneAfterHoursCallHandling;
+  label: string;
+}> = [
+  { value: "answered_by_owner_or_team", label: "Odbiera właściciel lub zespół" },
+  { value: "mostly_missed", label: "Zwykle pozostają nieodebrane" },
+  { value: "mixed", label: "Część jest odbierana, część pozostaje nieodebrana" },
+  { value: "unknown", label: "Nie wiem, chcę to zmierzyć" },
+];
 
-const initialState: GrowthMapSubmission = {
+const initialState: GrowthMapFormValues = {
   name: "",
   email: "",
   company: "",
@@ -63,6 +78,7 @@ const initialState: GrowthMapSubmission = {
   productMode: "not_sure",
   priority: "relieve_team_now",
   bottleneck: "",
+  afterHoursCallHandling: "",
   weeklyProcessVolume: 0,
   minutesPerOccurrence: 0,
   notes: "",
@@ -72,7 +88,7 @@ const initialState: GrowthMapSubmission = {
 
 export function AIGrowthOpportunityMapForm() {
   const [step, setStep] = useState<FormStep>(1);
-  const [values, setValues] = useState<GrowthMapSubmission>(initialState);
+  const [values, setValues] = useState<GrowthMapFormValues>(initialState);
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [validationMessage, setValidationMessage] = useState("");
@@ -160,6 +176,9 @@ export function AIGrowthOpportunityMapForm() {
   function updateTextField(field: TextField, value: string) {
     setValues((current) => ({ ...current, [field]: value }));
     clearFieldError(field);
+    if (field === "bottleneck") {
+      clearFieldError("afterHoursCallHandling");
+    }
   }
 
   function updateNumericField(field: NumericField, value: number) {
@@ -170,6 +189,11 @@ export function AIGrowthOpportunityMapForm() {
   function updatePriority(value: GrowthMapPriority) {
     setValues((current) => ({ ...current, priority: value }));
     clearFieldError("priority");
+  }
+
+  function updateAfterHoursCallHandling(value: TelephoneAfterHoursCallHandling) {
+    setValues((current) => ({ ...current, afterHoursCallHandling: value }));
+    clearFieldError("afterHoursCallHandling");
   }
 
   function updateConsent(field: "privacyConsent" | "researchConsent", checked: boolean) {
@@ -196,7 +220,7 @@ export function AIGrowthOpportunityMapForm() {
         <div>
           <h2 className="text-[24px] leading-[1.15] text-[#0A0A0A]">Odbierz swoją mapę</h2>
           <p className="mt-2 text-[14px] leading-[1.55] text-[#525252]">
-            Odpowiedz na kilka pytań. Gotowy, 2-stronicowy PDF wyślemy na podany email.
+            Odpowiedz na kilka pytań. Gotowy PDF przyjdzie na email.
           </p>
         </div>
       </div>
@@ -310,6 +334,13 @@ export function AIGrowthOpportunityMapForm() {
               value={values.bottleneck}
               onChange={(value) => updateTextField("bottleneck", value)}
             />
+            {requiresAfterHoursCallHandling(values.bottleneck) ? (
+              <AfterHoursCallHandlingField
+                value={values.afterHoursCallHandling}
+                error={fieldErrors.afterHoursCallHandling}
+                onChange={updateAfterHoursCallHandling}
+              />
+            ) : null}
             <div className="grid grid-cols-1 gap-x-4 md:grid-cols-2">
               <NumberField
                 label="Ile razy w tygodniu ten proces się powtarza?"
@@ -423,7 +454,7 @@ export function AIGrowthOpportunityMapForm() {
         </div>
         <div className="flex items-start gap-2">
           <FileText size={16} className="mt-0.5 shrink-0 text-[#8B4513]" aria-hidden="true" />
-          <p>Raport będzie miał 2 strony i przyjdzie na email podany w pierwszym kroku.</p>
+          <p>Gotowy PDF przyjdzie na email podany w pierwszym kroku.</p>
         </div>
       </div>
     </form>
@@ -625,6 +656,53 @@ function SelectField({
   );
 }
 
+function AfterHoursCallHandlingField({
+  value,
+  error,
+  onChange,
+}: {
+  value: TelephoneAfterHoursCallHandling | "";
+  error?: string;
+  onChange: (value: TelephoneAfterHoursCallHandling) => void;
+}) {
+  const inputId = "growth-map-afterHoursCallHandling";
+  const errorId = `${inputId}-error`;
+
+  return (
+    <div className="block">
+      <label htmlFor={inputId} className="mb-2 block text-[13px] font-medium text-[#0A0A0A]">
+        Co dzieje się z telefonami poza godzinami pracy? <span className="text-[#B87333]">*</span>
+      </label>
+      <select
+        id={inputId}
+        name="afterHoursCallHandling"
+        required
+        value={value}
+        aria-describedby={errorId}
+        aria-invalid={Boolean(error)}
+        onChange={(event) => {
+          const selected = afterHoursCallHandlingOptions.find((option) => option.value === event.target.value);
+          if (selected) {
+            onChange(selected.value);
+          }
+        }}
+        className="min-h-12 w-full border border-[#D4D4D4] bg-[#FAFAFA] px-3 py-3 text-[14px] text-[#0A0A0A] transition-[border-color,box-shadow] duration-200 focus:border-[#B87333] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333]/30"
+        style={{ borderRadius: 6 }}
+      >
+        <option value="" disabled>
+          Wybierz odpowiedź
+        </option>
+        {afterHoursCallHandlingOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <FieldErrorSlot id={errorId} message={error} />
+    </div>
+  );
+}
+
 function ConsentCheckbox({
   name,
   label,
@@ -699,7 +777,7 @@ function StatusMessage({ state }: { state: SubmitState }) {
             </h3>
             <p className="mt-1 text-[12px] leading-[1.5] text-[#525252]">{state.message}</p>
             <p className="mt-2 text-[12px] leading-[1.5] text-[#525252]">
-              Droga do pierwszego mierzalnego wdrożenia: analiza, mapa, decyzja, wdrożenie i wynik.
+              Droga do pierwszego mierzalnego wdrożenia: analiza, mapa, decyzja, pilotaż i wynik.
             </p>
             <p className="mt-2 font-mono text-[11px] text-[#737373]">ID zgłoszenia: {state.requestId}</p>
           </div>

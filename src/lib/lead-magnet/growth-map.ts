@@ -16,6 +16,13 @@ export type GrowthMapPriority =
   | "spot_buying_signals"
   | "custom_project";
 
+export type GrowthMapAfterHoursCallHandling =
+  | "answered_by_owner_or_team"
+  | "mostly_missed"
+  | "mixed"
+  | "unknown"
+  | "not_applicable";
+
 export type GrowthMapPriorityOption = {
   value: GrowthMapPriority;
   label: string;
@@ -32,6 +39,7 @@ export type GrowthMapSubmission = {
   productMode: "not_sure";
   priority: GrowthMapPriority;
   bottleneck: string;
+  afterHoursCallHandling: GrowthMapAfterHoursCallHandling;
   weeklyProcessVolume: number;
   minutesPerOccurrence: number;
   notes: string;
@@ -46,7 +54,7 @@ export type GrowthMapValidationResult =
 export type CloudCsoGrowthMapPayload = {
   recordType: "cloudcso_lead_magnet_request";
   source: "lessmanual_website";
-  version: "2026-07-10-v10";
+  version: "2026-07-12-v11";
   requestId: string;
   submittedAt: string;
   lead: {
@@ -61,6 +69,7 @@ export type CloudCsoGrowthMapPayload = {
     priority: GrowthMapPriority;
     currentSystems: ReadonlyArray<string>;
     bottleneck: string;
+    afterHoursCallHandling: GrowthMapAfterHoursCallHandling;
     weeklyProcessVolume: number;
     minutesPerOccurrence: number;
     notes: string;
@@ -115,12 +124,20 @@ export const GROWTH_MAP_PRIORITY_OPTIONS: ReadonlyArray<GrowthMapPriorityOption>
 ];
 
 const PRIORITY_VALUES: ReadonlyArray<GrowthMapPriority> = GROWTH_MAP_PRIORITY_OPTIONS.map((option) => option.value);
+const TELEPHONE_AFTER_HOURS_CALL_HANDLING_VALUES: ReadonlyArray<
+  Exclude<GrowthMapAfterHoursCallHandling, "not_applicable">
+> = ["answered_by_owner_or_team", "mostly_missed", "mixed", "unknown"];
 
 export const GROWTH_MAP_MAX_WEEKLY_PROCESS_VOLUME = 1_000_000;
 export const GROWTH_MAP_MAX_MINUTES_PER_OCCURRENCE = 1_440;
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SENSITIVE_PATTERN = /\b(hasło|password|token|api key|apikey|secret|sekret|pesel|dowód|dowodu|karta|card number)\b/i;
+const TELEPHONE_BOTTLENECK_PATTERN = /telefon|połącze|dzwon/iu;
+
+export function requiresAfterHoursCallHandling(bottleneck: string): boolean {
+  return TELEPHONE_BOTTLENECK_PATTERN.test(bottleneck);
+}
 
 export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationResult {
   if (!isRecord(input)) {
@@ -141,12 +158,14 @@ export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationRes
   const currentSystems = readString(input, "currentSystems");
   const rawPriority = readString(input, "priority");
   const bottleneck = readString(input, "bottleneck");
+  const rawAfterHoursCallHandling = readString(input, "afterHoursCallHandling");
   const weeklyProcessVolume = readNumber(input, "weeklyProcessVolume");
   const minutesPerOccurrence = readNumber(input, "minutesPerOccurrence");
   const notes = readString(input, "notes");
   const privacyConsent = input.privacyConsent === true;
   const researchConsent = input.researchConsent === true;
   const website = normaliseWebsite(rawWebsite);
+  let afterHoursCallHandling: GrowthMapAfterHoursCallHandling = "not_applicable";
 
   if (!EMAIL_PATTERN.test(email)) {
     fieldErrors.email = "Podaj poprawny email.";
@@ -170,6 +189,14 @@ export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationRes
 
   if (bottleneck.length < 12) {
     fieldErrors.bottleneck = "Opisz krótko, co dziś najbardziej blokuje wzrost.";
+  }
+
+  if (requiresAfterHoursCallHandling(bottleneck)) {
+    if (isOneOf(rawAfterHoursCallHandling, TELEPHONE_AFTER_HOURS_CALL_HANDLING_VALUES)) {
+      afterHoursCallHandling = rawAfterHoursCallHandling;
+    } else {
+      fieldErrors.afterHoursCallHandling = "Wybierz, co dzieje się z telefonami poza godzinami pracy.";
+    }
   }
 
   if (!isPositiveIntegerAtMost(weeklyProcessVolume, GROWTH_MAP_MAX_WEEKLY_PROCESS_VOLUME)) {
@@ -208,6 +235,7 @@ export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationRes
       productMode: "not_sure",
       priority: rawPriority,
       bottleneck,
+      afterHoursCallHandling,
       weeklyProcessVolume,
       minutesPerOccurrence,
       notes,
@@ -225,7 +253,7 @@ export function buildCloudCsoGrowthMapPayload(
   return {
     recordType: "cloudcso_lead_magnet_request",
     source: "lessmanual_website",
-    version: "2026-07-10-v10",
+    version: "2026-07-12-v11",
     requestId,
     submittedAt,
     lead: {
@@ -240,6 +268,7 @@ export function buildCloudCsoGrowthMapPayload(
       priority: submission.priority,
       currentSystems: parseCurrentSystems(submission.currentSystems),
       bottleneck: submission.bottleneck,
+      afterHoursCallHandling: submission.afterHoursCallHandling,
       weeklyProcessVolume: submission.weeklyProcessVolume,
       minutesPerOccurrence: submission.minutesPerOccurrence,
       notes: submission.notes,
