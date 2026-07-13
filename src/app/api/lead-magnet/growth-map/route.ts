@@ -49,7 +49,12 @@ export async function POST(request: Request) {
   const requestId = createRequestId();
   const submittedAt = new Date().toISOString();
   const payload = buildCloudCsoGrowthMapPayload(parsed.value, requestId, submittedAt);
-  const webhookUrl = process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL?.trim() || "";
+  const configuredWebhookUrl = process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL?.trim() || "";
+  const webhookUrl = configuredWebhookUrl || (
+    process.env.NODE_ENV === "development"
+      ? "http://127.0.0.1:8788/lead-magnet"
+      : ""
+  );
   const requireWebhook =
     process.env.CLOUDCSO_LEAD_MAGNET_REQUIRE_WEBHOOK === "1" ||
     process.env.VERCEL_ENV === "production";
@@ -116,6 +121,21 @@ export async function POST(request: Request) {
     }
 
     const webhookResult = await readJsonObject(response);
+
+    if (webhookResult?.status === "queued_for_cloudcso") {
+      const localMockDelivery = webhookResult.emailDeliveryMode === "mock";
+      return jsonResponse(
+        {
+          ok: true,
+          requestId,
+          status: "queued_for_cloudcso",
+          message: localMockDelivery
+            ? "Etap 1/5 jest za nami. Przygotowujemy Twoją mapę wzrostu."
+            : "Etap 1/5 ukończony: analiza ruszyła. Potwierdzenie przyjdzie na email, a raport PDF wyślemy osobno po zakończeniu analizy.",
+        },
+        202,
+      );
+    }
 
     if (webhookResult?.emailDeliveryMode === "mock") {
       return jsonResponse(

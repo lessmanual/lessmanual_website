@@ -20,6 +20,7 @@ const validSubmission = {
 
 describe("Growth Map intake route V11", () => {
   afterEach(() => {
+    vi.unstubAllEnvs();
     delete process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL;
     delete process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_TOKEN;
     delete process.env.CLOUDCSO_LEAD_MAGNET_REQUIRE_WEBHOOK;
@@ -47,6 +48,36 @@ describe("Growth Map intake route V11", () => {
     expect(response.status).toBe(503);
     expect(body.ok).toBe(false);
     expect(body.message).toContain("Automatyczna wysyłka");
+  });
+
+  it("uses the local V18 webhook only in development", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: Array<{ input: RequestInfo | URL }> = [];
+    vi.stubEnv("NODE_ENV", "development");
+    globalThis.fetch = vi.fn(async (input: RequestInfo | URL) => {
+      calls.push({ input });
+      return new Response(JSON.stringify({
+        ok: true,
+        status: "queued_for_cloudcso",
+        emailDeliveryMode: "mock",
+      }), {
+        status: 202,
+        headers: { "content-type": "application/json" },
+      });
+    }) as typeof fetch;
+
+    try {
+      const response = await POST(jsonRequest(validSubmission));
+      const body = await jsonBody(response);
+
+      expect(response.status).toBe(202);
+      expect(body.status).toBe("queued_for_cloudcso");
+      expect(body.message).toContain("Etap 1/5 jest za nami");
+      expect(body.message).not.toContain("lokalnie");
+      expect(String(calls[0].input)).toBe("http://127.0.0.1:8788/lead-magnet");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
   });
 
   it("forwards the fixed routing, phone context and numeric V11 baseline", async () => {
@@ -100,11 +131,12 @@ describe("Growth Map intake route V11", () => {
     }
   });
 
-  it("does not promise an email when the local webhook runs in mock mode", async () => {
+  it("keeps the queued state when the local webhook runs in mock mode", async () => {
     const originalFetch = globalThis.fetch;
     process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL = "http://127.0.0.1:8788/lead-magnet";
     globalThis.fetch = vi.fn(async () => new Response(JSON.stringify({
       ok: true,
+      status: "queued_for_cloudcso",
       emailDeliveryMode: "mock",
     }), {
       status: 202,
@@ -117,9 +149,12 @@ describe("Growth Map intake route V11", () => {
 
       expect(response.status).toBe(202);
       expect(body.ok).toBe(true);
-      expect(body.status).toBe("local_preview_ready");
-      expect(body.message).toContain("email nie jest wysyłany");
-      expect(body.message).not.toContain("przyjdzie");
+      expect(body.status).toBe("queued_for_cloudcso");
+      expect(body.message).toContain("Etap 1/5 jest za nami");
+      expect(body.message).toContain("Przygotowujemy Twoją mapę wzrostu");
+      expect(body.message).not.toContain("lokalnie");
+      expect(body.message).not.toContain("artefakt");
+      expect(body.message).not.toContain("email nie jest wysyłany");
     } finally {
       globalThis.fetch = originalFetch;
     }
