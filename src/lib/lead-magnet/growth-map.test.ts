@@ -50,6 +50,65 @@ describe("Growth Map lead magnet contract V11", () => {
     expect(result.value.website).toBe("https://example.com/");
   });
 
+  it.each([
+    "localhost",
+    "http://localhost",
+    "http://localhost.",
+    "http://service.internal",
+    "http://metadata.google.internal",
+    "http://127.0.0.1",
+    "http://127.1",
+    "http://2130706433",
+    "http://10.0.0.1",
+    "http://100.64.0.1",
+    "http://169.254.169.254",
+    "http://172.16.0.1",
+    "http://192.0.0.9",
+    "http://192.168.1.1",
+    "http://192.88.99.1",
+    "http://224.0.0.1",
+    "http://[::]",
+    "http://[::1]",
+    "http://[::ffff:127.0.0.1]",
+    "http://[fc00::1]",
+    "http://[fe80::1]",
+    "http://[ff00::1]",
+    "http://[2001:2::1]",
+    "http://[2001:20::1]",
+    "http://[2002::1]",
+    "http://[3fff::1]",
+    "https://user:password@example.com",
+  ])("rejects a private, metadata or credentialed company website: %s", (website) => {
+    const result = parseGrowthMapSubmission({
+      ...baseSubmission,
+      website,
+    });
+
+    if (result.ok) {
+      throw new Error(`Expected ${website} to be rejected`);
+    }
+
+    expect(result.fieldErrors.website).toContain("publiczny adres");
+  });
+
+  it.each([
+    "https://example.com",
+    "https://subdomain.example.com/oferta",
+    "https://8.8.8.8",
+    "https://[2606:4700:4700::1111]",
+  ])("accepts a public company website: %s", (website) => {
+    const result = parseGrowthMapSubmission({
+      ...baseSubmission,
+      website,
+    });
+
+    if (!result.ok) {
+      throw new Error(`Expected ${website} to be accepted`);
+    }
+
+    expect(result.value.website).toContain("https://");
+  });
+
   it("requires consent for email contact and checking public company sources", () => {
     const result = parseGrowthMapSubmission({
       ...baseSubmission,

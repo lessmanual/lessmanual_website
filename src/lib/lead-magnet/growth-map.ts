@@ -209,7 +209,7 @@ export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationRes
   }
 
   if (!fieldErrors.website && !website) {
-    fieldErrors.website = "Podaj poprawny adres strony firmowej.";
+    fieldErrors.website = "Podaj publiczny adres strony firmowej.";
   }
 
   if (!fieldErrors.currentSystems && parseCurrentSystems(currentSystems).length === 0) {
@@ -427,9 +427,154 @@ function normaliseWebsite(value: string): string {
     if (url.protocol !== "https:" && url.protocol !== "http:") {
       return "";
     }
+    if (url.username || url.password || isNonPublicHostname(url.hostname)) {
+      return "";
+    }
 
+    // This input gate only rejects literal or reserved hosts. Any future
+    // fetcher must resolve DNS and re-check every resolved IP and redirect
+    // target before making an outbound request.
     return url.toString();
   } catch {
     return "";
   }
+}
+
+function isNonPublicHostname(value: string): boolean {
+  const hostname = value
+    .toLocaleLowerCase("en-US")
+    .replace(/^\[/, "")
+    .replace(/\]$/, "")
+    .replace(/\.$/, "");
+
+  const ipv4 = parseIpv4(hostname);
+  if (ipv4) {
+    return isNonPublicIpv4(ipv4);
+  }
+
+  const ipv6 = parseIpv6(hostname);
+  if (ipv6) {
+    return isNonPublicIpv6(ipv6);
+  }
+
+  if (!hostname.includes(".")) {
+    return true;
+  }
+
+  return [
+    "localhost",
+    "local",
+    "localdomain",
+    "internal",
+    "lan",
+    "home",
+    "test",
+    "invalid",
+  ].some((suffix) => hostname === suffix || hostname.endsWith(`.${suffix}`));
+}
+
+function parseIpv4(hostname: string): ReadonlyArray<number> | undefined {
+  const parts = hostname.split(".");
+  if (
+    parts.length !== 4 ||
+    parts.some((part) => !/^\d{1,3}$/.test(part))
+  ) {
+    return undefined;
+  }
+
+  const octets = parts.map(Number);
+  return octets.every((octet) => octet >= 0 && octet <= 255)
+    ? octets
+    : undefined;
+}
+
+function isNonPublicIpv4(octets: ReadonlyArray<number>): boolean {
+  const first = octets[0];
+  const second = octets[1];
+  const third = octets[2];
+
+  return (
+    first === 0 ||
+    first === 10 ||
+    first === 127 ||
+    first >= 224 ||
+    (first === 100 && second >= 64 && second <= 127) ||
+    (first === 169 && second === 254) ||
+    (first === 172 && second >= 16 && second <= 31) ||
+    (first === 192 && second === 168) ||
+    (first === 192 && second === 0 && (third === 0 || third === 2)) ||
+    (first === 192 && second === 88 && third === 99) ||
+    (first === 198 && (second === 18 || second === 19)) ||
+    (first === 198 && second === 51 && third === 100) ||
+    (first === 203 && second === 0 && third === 113)
+  );
+}
+
+function parseIpv6(hostname: string): ReadonlyArray<number> | undefined {
+  if (!hostname.includes(":")) {
+    return undefined;
+  }
+
+  const halves = hostname.split("::");
+  if (halves.length > 2) {
+    return undefined;
+  }
+
+  const head = parseIpv6Half(halves[0]);
+  const tail = parseIpv6Half(halves[1] ?? "");
+  if (!head || !tail) {
+    return undefined;
+  }
+
+  if (halves.length === 1) {
+    return head.length === 8 ? head : undefined;
+  }
+
+  const missingGroups = 8 - head.length - tail.length;
+  if (missingGroups < 1) {
+    return undefined;
+  }
+
+  return [
+    ...head,
+    ...Array.from({ length: missingGroups }, () => 0),
+    ...tail,
+  ];
+}
+
+function parseIpv6Half(value: string): ReadonlyArray<number> | undefined {
+  if (!value) {
+    return [];
+  }
+
+  const groups = value.split(":");
+  if (groups.some((group) => !/^[0-9a-f]{1,4}$/i.test(group))) {
+    return undefined;
+  }
+
+  return groups.map((group) => Number.parseInt(group, 16));
+}
+
+function isNonPublicIpv6(groups: ReadonlyArray<number>): boolean {
+  const first = groups[0];
+  const second = groups[1];
+  const isSpecialProtocolRange =
+    first === 0x2001 && second <= 0x01ff;
+  const isDocumentationRange = first === 0x2001 && groups[1] === 0x0db8;
+  const isSixToFourRange = first === 0x2002;
+  const isExtendedDocumentationRange =
+    first === 0x3fff && (second & 0xf000) === 0;
+  const isGloballyRoutable = (first & 0xe000) === 0x2000;
+  const isIpv4Mapped =
+    groups.slice(0, 5).every((group) => group === 0) &&
+    groups[5] === 0xffff;
+
+  return (
+    !isGloballyRoutable ||
+    isSpecialProtocolRange ||
+    isDocumentationRange ||
+    isSixToFourRange ||
+    isExtendedDocumentationRange ||
+    isIpv4Mapped
+  );
 }
