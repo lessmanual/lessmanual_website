@@ -1,52 +1,130 @@
-# Mapa pierwszego procesu AI | LessManual.ai
+# Mapa pierwszego procesu AI | LessManual
 
-> Znajdź pierwszy proces, który AI może przejąć w Twojej firmie. Otrzymaj spersonalizowany, 2-stronicowy raport PDF na email.
+> Znajdź pierwszy proces, w którym AI może zdjąć ręczną pracę z zespołu. Sprawdź skalę pracy, źródła i sposób kontroli wyniku.
 
 > Source: https://www.lessmanual.ai/ai-growth-opportunity-map
-> Generated: 2026-07-10
+> Generated: 2026-07-27T08:27:43.563Z
 
 ---
 
-# Znajdź pierwszy proces, który AI może przejąć w Twojej firmie
+Bezpłatna mapa dla firm
 
-Na podstawie formularza oraz publicznych źródeł firmy przygotujemy spersonalizowany, 2-stronicowy raport PDF. Raport wyślemy na podany email.
+# Znajdź pierwszy proces, w którym AI może zdjąć ręczną pracę z zespołu.
 
-- skala ręcznej pracy w jednym procesie
-- fakty z publicznie dostępnych materiałów
-- jeden rekomendowany system na start
-- sposób pomiaru pierwszego efektu
+Na podstawie formularza oraz publicznych źródeł firmy przygotujemy spersonalizowaną mapę pierwszego wdrożenia. Po wysłaniu formularza od razu zobaczysz status analizy.
 
-[Sprawdź pierwszy proces](https://www.lessmanual.ai/ai-growth-opportunity-map#formularz)
+skala ręcznej pracy w jednym procesie
+
+fakty z publicznie dostępnych materiałów
+
+jeden rekomendowany system na start
+
+sposób pomiaru pierwszego efektu
+
+[Uruchom analizę procesu](#formularz)
 
 Dwa krótkie kroki. Nie potrzebujemy dostępu do prywatnych systemów ani plików.
 
-## Co zawiera raport
+Podgląd mapy
 
-### Strona 1: Diagnoza firmy
+Mapa pierwszego procesu AI
 
-Punkt wyjścia firmy, skala powtarzalnej pracy, czas jednej czynności, używane systemy oraz fakty z publicznych źródeł.
+LessManual.ai
 
-### Strona 2: Plan działania
+## Punkt wyjścia
 
-Jeden proces z jasnym zakresem, danymi wejściowymi, kontrolą człowieka i wynikiem, który można zmierzyć.
+01 / 04
 
-Wnioski oraz rekomendacje wynikają z danych konkretnej firmy. Raport nie jest wyceną ani obietnicą wyniku.
+### Punkt wyjścia firmy
 
-## Droga do pierwszego mierzalnego wdrożenia
+Skala powtarzalnej pracy, czas jednej czynności, używane systemy i wskazana blokada.
 
-Analiza -> Mapa -> Decyzja -> Wdrożenie -> Wynik
+LessManual.ai
 
-Każdy etap porządkuje kolejną decyzję. Celem jest wybór jednego procesu i pomiar pierwszego wyniku.
+## Analiza firmy
 
-## Odbierz swoją mapę
+02 / 04
 
-Formularz składa się z dwóch kroków:
+### Fakty z publicznych źródeł
 
-1. Firma i kontakt: email, nazwa firmy, strona internetowa oraz opcjonalnie imię i branża.
-2. Proces i skala: używane systemy, główna blokada, tygodniowa liczba przypadków, czas jednego przypadku oraz priorytet wdrożenia.
+Informacje, które można sprawdzić na stronie firmy i w dostępnych materiałach publicznych.
 
-Przybliżone liczby wystarczą. Analizujemy formularz i publiczne materiały. Nie prosimy o loginy ani prywatne dokumenty.
+LessManual.ai
 
-[Wypełnij formularz](https://www.lessmanual.ai/ai-growth-opportunity-map#formularz)
+## Pierwsza decyzja
 
-Projekt i kryteria mapy: Bartłomiej Chudzik, CEO & Solution Architect, LessManual.
+03 / 04
+
+### Pierwszy system do wdrożenia
+
+Jeden proces z jasnym zakresem, danymi wejściowymi i wynikiem, który można zmierzyć.
+
+LessManual.ai
+
+## Plan pilotażu
+
+04 / 04
+
+### Kontrolowane wdrożenie
+
+Co sprawdzić przed startem, gdzie zostawić decyzję człowiekowi i jak mierzyć efekt.
+
+Przykładowy układ. Wnioski i rekomendacje będą wynikać z danych Twojej firmy.
+
+Droga do pierwszego mierzalnego wdrożenia
+
+## Mapa ma prowadzić do decyzji, którą można sprawdzić w praktyce.
+
+Każdy etap porządkuje kolejną decyzję. Celem nie jest zbieranie punktów ani kolejnych materiałów, tylko wybór jednego procesu i pomiar pierwszego wyniku.
+
+1.  01Analiza
+2.  02Mapa
+3.  03Decyzja
+4.  04Pilotaż
+5.  05Wynik
+
+Twoja firma
+
+## Opisz jeden proces. Resztę oprzemy na faktach.
+
+Podaj przybliżony tygodniowy wolumen i czas ręcznej pracy. Dzięki temu rekomendacja zacznie się od realnego punktu odniesienia, a nie ogólnej listy pomysłów.
+
+Przybliżone liczby wystarczą. Mapa nie jest wyceną ani obietnicą wyniku.
+
+Analizujemy formularz i publiczne materiały. Nie prosimy o loginy ani prywatne dokumenty.
+
+![Bartłomiej Chudzik](/_next/image?url=%2Fbartek.jpg&w=96&q=75)
+
+Projekt i kryteria tej mapy
+
+Bartłomiej Chudzik
+
+CEO & Solution Architect, LessManual
+
+## Uruchom analizę procesu
+
+Po wysłaniu formularza zobaczysz status analizy.
+
+Krok 1 z 2Firma i kontakt
+
+Dane firmy i kontakt
+
+### Zacznijmy od firmy
+
+Strona firmy pozwoli oprzeć rekomendację na publicznie dostępnych faktach.
+
+Imię (opcjonalnie)
+
+E-mail \*
+
+Firma \*
+
+Strona firmy \*
+
+Branża (opcjonalnie)
+
+Dalej
+
+Nie wklejaj haseł, tokenów, danych dokumentów ani danych płatniczych.
+
+Po wysłaniu formularza od razu zobaczysz status analizy.

@@ -37,61 +37,44 @@ type SceneComponent = React.ComponentType;
 
 // Mapping slug -> scene component
 const SCENE_MAP: Record<string, SceneComponent> = {
-  "Hot Lead Catcher": HotLeadCatcherScene as SceneComponent,
-  "Spotkania z decydentami": PipelineMachineScene as SceneComponent,
-  "Blog który pisze się sam": ContentMachineScene as SceneComponent,
-  "Odpowiedź w 30 sekund, 24/7": ObslugaKlientaScene as SceneComponent,
+  "Content Machine": ContentMachineScene as SceneComponent,
+  "Customer Operations AI": ObslugaKlientaScene as SceneComponent,
+  "Premium Cold Email+": PipelineMachineScene as SceneComponent,
   "Wycena w 5 minut zamiast 2 godzin": GeneratorOfertScene as SceneComponent,
+  "Hot Lead Catcher": HotLeadCatcherScene as SceneComponent,
 };
 
 const MAP: Array<{
   slug: string;
+  displayName: string;
   metric: string;
   metricLabel: string;
   short: string;
   visual: Visual;
 }> = [
   {
-    slug: "Hot Lead Catcher",
-    metric: "4 źródła",
-    metricLabel: "sygnałów zakupowych · alert w 24h",
-    short: "Agent AI, który czeka na moment zakupowy. Monitoruje newsy, oferty pracy, opinie, social media. Alert Telegram + gotowy draft maila.",
-    visual: "intent",
-  },
-  {
-    slug: "Spotkania z decydentami",
-    metric: "76%",
-    metricLabel: "open rate · 61% positive reply",
-    short: "Agent, który umawia spotkania z Twoim ICP. Pay-per-meeting, zero stałych opłat.",
-    visual: "pipeline",
-  },
-  {
-    slug: "Blog który pisze się sam",
-    metric: "+150-400%",
-    metricLabel: "ruchu organicznego w 6 mies.",
-    short: "10-30 artykułów SEO miesięcznie + social media (LinkedIn, X, IG). Keyword research, klastry, GEO pod AI.",
+    slug: "Content Machine",
+    displayName: "Content i SEO",
+    metric: "regularność",
+    metricLabel: "źródła, publikacja, dystrybucja",
+    short: "System przygotowuje treści na podstawie źródeł firmy, sprawdza fakty i prowadzi materiał do akceptacji oraz publikacji.",
     visual: "seo",
   },
   {
-    slug: "Odpowiedź w 30 sekund, 24/7",
-    metric: "60-80%",
-    metricLabel: "zapytań obsłużonych automatycznie",
-    short: "Agent odpowiada klientom na stronie, WhatsApp i mailu. Na Twojej bazie wiedzy.",
+    slug: "Customer Operations AI",
+    displayName: "Obsługa klienta",
+    metric: "mniej kolejek",
+    metricLabel: "email, chat, telefon, eskalacje",
+    short: "Agent odpowiada na podstawie bazy wiedzy, zbiera kontekst sprawy i przekazuje człowiekowi to, co wymaga decyzji.",
     visual: "chatbot",
   },
   {
-    slug: "Wycena w 5 minut zamiast 2 godzin",
-    metric: "2h → 5 min",
-    metricLabel: "oszczędność 96% czasu",
-    short: "Klient sam wycenia na stronie. System generuje brandowane PDF i wysyła mailem.",
-    visual: "offers",
-  },
-  {
-    slug: "Indywidualne Wdrożenia",
-    metric: "wycena po Discovery",
-    metricLabel: "fixed price + fixed scope",
-    short: "Agent AI pod Twój unikalny workflow - gdy żadne z 5 gotowych rozwiązań nie pasuje. Discovery bezpłatne.",
-    visual: "custom",
+    slug: "Premium Cold Email+",
+    displayName: "Sprzedaż B2B",
+    metric: "trafność",
+    metricLabel: "właściwa firma, powód kontaktu, źródło",
+    short: "System wybiera właściwe firmy, sprawdza publiczny powód kontaktu i przygotowuje wiadomość do kontroli przed wysyłką.",
+    visual: "pipeline",
   },
 ];
 
@@ -132,18 +115,21 @@ export function ProductsV2() {
       <div className="mx-auto max-w-[1440px]">
         <header className="max-w-[720px] mb-16">
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
-            6 systemów
+            Obszary wdrożeń AI
           </div>
-          <h2>Sześć systemów AI. Każdy robi jedną rzecz doskonale.</h2>
+          <h2>System dopasowany do procesu, nie gotowy bot do wszystkiego.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
-            Wdrożenie w 2-4 tygodnie, pierwsze wyniki w pierwszym miesiącu. Hot Lead Catcher to nasz flagship - wychwytuje moment zakupowy zanim zrobi to konkurencja. Pozostałe 4 działają solo lub w kombinacji. Szósty - Indywidualne Wdrożenia - gdy potrzebujesz czegoś custom.
+            Najczęściej pomagamy firmom w regularnym contencie, obsłudze
+            zapytań i sprzedaży B2B. Inne procesy bierzemy na warsztat, gdy
+            diagnoza pokazuje większą oszczędność czasu albo mniejsze ryzyko
+            błędu.
           </p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E5E5E5] border border-[#E5E5E5]">
-          {PRODUCTS.map((p, i) => {
+          {PRODUCTS.slice(0, 3).map((p, i) => {
             const meta = MAP[i];
-            const isPopular = p.badge === "NAJCZĘŚCIEJ WYBIERANY";
+            const isPopular = p.badge === "PRIMARY";
             const SceneComponent = SCENE_MAP[meta.slug];
             const isHovered = hoveredId === meta.slug;
             // If reduced motion is enabled, always show static thumbnail
@@ -167,7 +153,7 @@ export function ProductsV2() {
               >
                 {isPopular && (
                   <span className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[#8B4513]">
-                    · NAJCZĘŚCIEJ WYBIERANY
+                    · GŁÓWNY OBSZAR
                   </span>
                 )}
 
@@ -189,7 +175,7 @@ export function ProductsV2() {
                   )}
                 </div>
 
-                <h3 className="text-[#0A0A0A]">{p.title}</h3>
+                <h3 className="text-[#0A0A0A]">{meta.displayName}</h3>
                 <p className="mt-3 text-[15px] leading-[1.55] text-[#525252]">
                   {meta.short}
                 </p>
@@ -214,6 +200,30 @@ export function ProductsV2() {
               </motion.article>
             );
           })}
+
+          <motion.article
+            variants={cardVariants}
+            className="relative bg-[#FAFAFA] p-8 transition-colors duration-200 group md:p-10 lg:col-span-3"
+          >
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <ProductVisual kind="custom" />
+              <div>
+                <h3 className="text-[#0A0A0A]">Inne procesy w firmie</h3>
+                <p className="mt-3 text-[15px] leading-[1.55] text-[#525252]">
+                  Jeśli największy problem leży w ofertowaniu, obiegu
+                  dokumentów, danych lub integracji systemów, zaczynamy od
+                  diagnozy i projektujemy rozwiązanie pod ten proces.
+                </p>
+                <Link
+                  href="/oferta"
+                  className="mt-6 inline-flex items-center gap-2 text-[14px] font-medium text-[#0A0A0A] transition-colors duration-200 hover:text-[#8B4513]"
+                >
+                  Zobacz wszystkie możliwości
+                  <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                </Link>
+              </div>
+            </div>
+          </motion.article>
         </div>
       </div>
     </motion.section>
@@ -224,17 +234,17 @@ function ProductVisual({ kind }: { kind: Visual }) {
   if (kind === "pipeline") {
     return (
       <div className="border border-[#E5E5E5] bg-white p-4 font-mono text-[11px] leading-[1.7]">
-        <div className="text-[#737373]">icp.yaml</div>
-        <div className="text-[#0A0A0A]">target: &quot;B2B SaaS PL&quot;</div>
-        <div className="text-[#0A0A0A]">size: 50-500</div>
+        <div className="text-[#737373]">kontekst-konta.json</div>
+        <div className="text-[#0A0A0A]">sygnał firmy: potwierdzony</div>
+        <div className="text-[#0A0A0A]">powód kontaktu: konkretny</div>
         <div className="mt-2 border-t border-[#E5E5E5] pt-2 text-[#525252]">
-          <span className="text-[#B87333]">→</span> 147 leads matched
+          <span className="text-[#B87333]">→</span> wiadomość oparta na źródle
         </div>
         <div className="text-[#525252]">
-          <span className="text-[#B87333]">→</span> 12 emails sent · 3 replies
+          <span className="text-[#B87333]">→</span> redakcja języka
         </div>
         <div className="text-[#047857]">
-          <span className="text-[#B87333]">→</span> 1 meeting booked
+          <span className="text-[#B87333]">→</span> gotowe do kontroli
         </div>
       </div>
     );
@@ -276,11 +286,11 @@ function ProductVisual({ kind }: { kind: Visual }) {
           <span className="font-mono text-[10px] text-[#737373]">online · 23:47</span>
         </div>
         <div className="inline-block bg-[#F5EDE6] px-3 py-1.5 text-[#0A0A0A]">
-          Ile kosztuje generator ofert?
+          Czy muszę zatrudnić kolejną osobę?
         </div>
         <div className="mt-2 text-right">
           <span className="inline-block bg-[#0A0A0A] px-3 py-1.5 text-white">
-            Setup 5 000 PLN, potem od 900 PLN/mies. Umówić demo?
+            Najpierw sprawdzimy wolumen spraw i kanały. Potem dobierzemy proces.
           </span>
         </div>
       </div>
@@ -289,21 +299,21 @@ function ProductVisual({ kind }: { kind: Visual }) {
   if (kind === "custom") {
     return (
       <div className="border border-[#E5E5E5] bg-white p-4 font-mono text-[11px] leading-[1.7]">
-        <div className="text-[#737373]">discovery.yml</div>
+        <div className="text-[#737373]">diagnoza-procesu.yml</div>
         <div className="mt-1 flex items-center justify-between">
-          <span className="text-[#0A0A0A]">workflow: non-standard</span>
-          <span className="text-[#B87333]">scope</span>
+          <span className="text-[#0A0A0A]">proces: niestandardowy</span>
+          <span className="text-[#B87333]">zakres</span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-[#0A0A0A]">integrations: ERP + CRM + DB</span>
-          <span className="text-[#B87333]">mapped</span>
+          <span className="text-[#0A0A0A]">integracje: ERP + CRM + baza</span>
+          <span className="text-[#B87333]">zmapowane</span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-[#0A0A0A]">pricing: after Discovery</span>
-          <span className="text-[#047857]">scoped</span>
+          <span className="text-[#0A0A0A]">wycena: po diagnozie</span>
+          <span className="text-[#047857]">gotowa</span>
         </div>
         <div className="mt-2 border-t border-[#E5E5E5] pt-2 text-[#525252]">
-          <span className="text-[#B87333]">&rarr;</span> fixed scope + fixed price
+          <span className="text-[#B87333]">&rarr;</span> jasny zakres i cena
         </div>
       </div>
     );

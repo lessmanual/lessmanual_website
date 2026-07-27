@@ -1,19 +1,291 @@
-# Blog | LessManual.ai
+# Blog | LessManual
 
 > Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrażania systemów AI w firmach B2B.
 
-> Source: http://localhost:3000/blog
-> Generated: 2026-04-20T17:54:10.710Z
+> Source: https://www.lessmanual.ai/blog
+> Generated: 2026-07-27T08:27:47.885Z
 
 ---
 
-[← Strona glowna](/)
+[← Strona główna](/)
 
 # Blog
 
-Praktyczna wiedza o automatyzacji biznesu z AI. Bez teorii, same konkretne rozwiazania.
+Praktyczna wiedza o automatyzacji biznesu z AI. Bez teorii, same konkretne rozwiązania.
 
 [
+
+![Jak pisać artykuły które AI cytuje - przewodnik po llms.txt](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/llms-txt-ai-citation-featured.png)
+
+ai-content
+
+## Jak pisać artykuły które AI cytuje - przewodnik po llms.txt
+
+Przewodnik po llms.txt, schema markup i content pod AI search.
+
+13 maja 2026·11 min czytania
+
+
+
+
+
+](/blog/llms-txt-jak-ai-cytuje-twoja-strone)[
+
+![Audyt procesów przed wdrożeniem AI - checklist dla CEO](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/audyt-procesow-ai-featured.png)
+
+ai-automation
+
+## Audyt procesów przed wdrożeniem AI - checklist dla CEO
+
+Które procesy automatyzować i jak priorytetyzować.
+
+11 maja 2026·10 min czytania
+
+
+
+
+
+](/blog/audyt-procesow-ai-checklist-ceo)[
+
+![GEO: jak optymalizować treści pod Perplexity i ChatGPT Search](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/geo-optymalizacja-ai-search-featured.png)
+
+ai-content
+
+## GEO: jak optymalizować treści pod Perplexity i ChatGPT Search
+
+Generative Engine Optimization: jak pisać żeby AI cytowało.
+
+10 maja 2026·11 min czytania
+
+
+
+
+
+](/blog/geo-optymalizacja-ai-search-perplexity)[
+
+![AI w finansach: 5 zastosowań agentów AI w domu maklerskim](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/ai-finanse-5-zastosowan-featured.png)
+
+ai-automation
+
+## AI w finansach: 5 zastosowań agentów AI w domu maklerskim
+
+Analiza spółek, compliance, raportowanie, obsługa klienta.
+
+9 maja 2026·10 min czytania
+
+
+
+
+
+](/blog/ai-finanse-5-zastosowan-agentow)[
+
+![Wdrożenie AI w produkcji - 5 procesów do automatyzacji](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/wdrozenie-ai-produkcja-featured.png)
+
+ai-automation
+
+## Wdrożenie AI w produkcji - 5 procesów do automatyzacji
+
+AI w firmie produkcyjnej: ofertowanie, obsługa, sprzedaż.
+
+8 maja 2026·10 min czytania
+
+
+
+
+
+](/blog/wdrozenie-ai-produkcja-5-procesow)[
+
+![Wdrożenie AI w firmie usługowej - od czego zacząć?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/wdrozenie-ai-firma-uslugowa-featured.png)
+
+ai-automation
+
+## Wdrożenie AI w firmie usługowej - od czego zacząć?
+
+Przewodnik wdrożenia AI dla firm usługowych.
+
+6 maja 2026·10 min czytania
+
+
+
+
+
+](/blog/wdrozenie-ai-firma-uslugowa)[
+
+![Jak zbudować agenta AI bez działu IT - gotowe w 7 dni](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/agent-ai-bez-dzialu-it-featured.png)
+
+ai-automation
+
+## Jak zbudować agenta AI bez działu IT - gotowe w 7 dni
+
+Done-for-you wdrożenie agenta AI w 7 dni.
+
+5 maja 2026·9 min czytania
+
+
+
+
+
+](/blog/jak-zbudowac-agenta-ai-bez-dzialu-it)[
+
+![Chatbot AI dla kancelarii prawnej - obsługa zapytań i RODO](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/chatbot-ai-kancelaria-featured.png)
+
+chatbot-ai
+
+## Chatbot AI dla kancelarii prawnej - obsługa zapytań i RODO
+
+Automatyzacja zapytań w kancelarii z zachowaniem RODO.
+
+4 maja 2026·11 min czytania
+
+
+
+
+
+](/blog/chatbot-ai-kancelaria-prawna-rodo)[
+
+![Self-service wyceny w branży IT: jak software house oszczędza 10h tygodniowo](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/self-service-wyceny-it-featured.png)
+
+offer-generator
+
+## Self-service wyceny w branży IT: jak software house oszczędza 10h tygodniowo
+
+Automatyzacja wycen projektów IT.
+
+2 maja 2026·11 min czytania
+
+
+
+
+
+](/blog/self-service-wyceny-software-house)[
+
+![5 procesów które agent AI przejmie za Twojego handlowca](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/5-procesow-agent-ai-featured.png)
+
+ai-automation
+
+## 5 procesów które agent AI przejmie za Twojego handlowca
+
+Prospecting, scoring, follow-up, raportowanie, onboarding.
+
+1 maja 2026·8 min czytania
+
+
+
+
+
+](/blog/5-procesow-agent-ai-przejmie-za-handlowca)[
+
+![Buying signals: jak AI automatycznie wykrywa sygnały zakupowe](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/buying-signals-ai-featured.png)
+
+hot-lead-catcher
+
+## Buying signals: jak AI automatycznie wykrywa sygnały zakupowe
+
+6 kategorii sygnałów zakupowych i jak je monitorować.
+
+30 kwietnia 2026·11 min czytania
+
+
+
+
+
+](/blog/buying-signals-ai-automatyczne-wykrywanie)[
+
+![AI recepcjonistka: jak voice agent odbiera telefony 24/7](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/ai-recepcjonistka-featured.png)
+
+chatbot-ai
+
+## AI recepcjonistka: jak voice agent odbiera telefony 24/7
+
+Voice agent który odbiera telefony, kwalifikuje i umawia spotkania.
+
+28 kwietnia 2026·9 min czytania
+
+
+
+
+
+](/blog/ai-recepcjonistka-voice-agent-24-7)[
+
+![Voicebot vs chatbot vs live chat: co wybrać dla MSP?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/voicebot-vs-chatbot-featured.png)
+
+chatbot-ai
+
+## Voicebot vs chatbot vs live chat: co wybrać dla MSP?
+
+Porównanie kosztów i możliwości dla małych i średnich firm.
+
+26 kwietnia 2026·9 min czytania
+
+
+
+
+
+](/blog/voicebot-vs-chatbot-vs-live-chat)[
+
+![Generator ofert PDF dla agencji marketingowej: automatyzacja wycen](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/generator-ofert-agencja-featured.png)
+
+offer-generator
+
+## Generator ofert PDF dla agencji marketingowej: automatyzacja wycen
+
+Automatyzacja wycen w agencji marketingowej.
+
+25 kwietnia 2026·8 min czytania
+
+
+
+
+
+](/blog/generator-ofert-agencja-marketingowa)[
+
+![Ile kosztuje agent AI? Cennik wdrożenia w Polsce 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/ile-kosztuje-agent-ai-featured.png)
+
+ai-automation
+
+## Ile kosztuje agent AI? Cennik wdrożenia w Polsce 2026
+
+Cennik agentów AI w Polsce: od 3k do 15k PLN setup + MRR.
+
+24 kwietnia 2026·11 min czytania
+
+
+
+
+
+](/blog/ile-kosztuje-agent-ai-cennik-2026)[
+
+![Pipeline sprzedażowy AI: jak zbudować maszynę do spotkań bez handlowca](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/pipeline-sprzedazowy-ai-featured.png)
+
+pipeline-machine
+
+## Pipeline sprzedażowy AI: jak zbudować maszynę do spotkań bez handlowca
+
+System spotkań B2B bez zatrudniania handlowców.
+
+23 kwietnia 2026·9 min czytania
+
+
+
+
+
+](/blog/pipeline-sprzedazowy-ai-maszyna-spotkan)[
+
+![Lead scoring AI: jak automatycznie kwalifikować leady B2B](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/lead-scoring-ai-featured.png)
+
+hot-lead-catcher
+
+## Lead scoring AI: jak automatycznie kwalifikować leady B2B
+
+Scoring sygnałów zakupowych, narzędzia i wdrożenie.
+
+22 kwietnia 2026·12 min czytania
+
+
+
+
+
+](/blog/lead-scoring-ai-kwalifikacja-leadow)[
 
 ![5 powodów dlaczego agencje rekrutacyjne tracą klientów](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/pipeline-machine/2026-03-17-segA-hero-recruitment-pipeline.jpg)
 
@@ -79,22 +351,6 @@ Automatyzacja kosztorysów w branży budowlanej.
 
 ](/blog/konfigurator-wycen-firmy-budowlane)[
 
-![Cold email AI: jak napisać sekwencję z 76% open rate](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/cold-email-ai-sekwencja-featured.png)
-
-pipeline-machine
-
-## Cold email AI: jak napisać sekwencję z 76% open rate
-
-Anatomia skutecznego cold emaila, personalizacja AI, deliverability.
-
-16 kwietnia 2026·10 min czytania
-
-
-
-
-
-](/blog/cold-email-ai-sekwencja-76-open-rate)[
-
 ![Ile naprawdę kosztuje chatbot AI dla firmy w 2026? Cennik i ROI](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/ile-kosztuje-chatbot-ai-featured.png)
 
 chatbot-ai
@@ -143,22 +399,6 @@ Agent AI monitorujący internet 24/7 pod sygnały zakupowe.
 
 ](/blog/hot-lead-catcher-wykrywanie-goracych-leadow)[
 
-![Automatyzacja sprzedaży B2B: od cold emaila do umówionego spotkania](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/automatyzacja-sprzedazy-ai-featured.png)
-
-pipeline-machine
-
-## Automatyzacja sprzedaży B2B: od cold emaila do umówionego spotkania
-
-Jak zbudować automatyczny system sprzedażowy B2B z AI.
-
-10 kwietnia 2026·10 min czytania
-
-
-
-
-
-](/blog/automatyzacja-sprzedazy-ai-cold-email-spotkanie)[
-
 ![Agent AI czy automatyzacja? Kiedy firma potrzebuje agenta, a kiedy wystarczy RPA](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/lessmanual/agent-ai-vs-automatyzacja-featured.png)
 
 ai-automation
@@ -175,27 +415,11 @@ Porównanie agentów AI i tradycyjnej automatyzacji RPA. Praktyczny framework de
 
 ](/blog/agent-ai-vs-automatyzacja-kiedy-firma-potrzebuje-agenta)[
 
-![ROI z AI — ile naprawdę zaoszczędzisz? Kalkulator i dane](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/roi-z-ai-kalkulator/hero-roi-z-ai-kalkulator.webp)
+![AI dla małych i średnich firm - od czego zacząć w 2026?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/ai-dla-malych-firm-od-czego-zaczac/hero-ai-dla-malych-firm.webp)
 
 ai-automation
 
-## ROI z AI — ile naprawdę zaoszczędzisz? Kalkulator i dane
-
-75% firm źle liczy ROI z AI. Rozszerzona formuła ROI, kalkulator oszczędności, realne przykłady z polskich firm i oś czasu 6-18 miesięcy. Policz ile zaoszczędzisz.
-
-31 marca 2026·13 min czytania
-
-
-
-
-
-](/blog/roi-z-ai-kalkulator)[
-
-![AI dla małych i średnich firm — od czego zacząć w 2026?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/ai-dla-malych-firm-od-czego-zaczac/hero-ai-dla-malych-firm.webp)
-
-ai-automation
-
-## AI dla małych i średnich firm — od czego zacząć w 2026?
+## AI dla małych i średnich firm - od czego zacząć w 2026?
 
 11% polskich MŚP korzysta z AI. Reszta robi wszystko ręcznie. Przewodnik: od czego zacząć, jakie narzędzia wybrać, ile to kosztuje i jak sfinansować wdrożenie AI w małej firmie.
 
@@ -223,11 +447,11 @@ Konkretne widełki cenowe wdrożeń AI w Polsce 2026: chatbot, voice agent, auto
 
 ](/blog/ile-kosztuje-wdrozenie-ai-2026)[
 
-![Wdrożenie AI w firmie — praktyczny przewodnik dla CEO](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/wdrozenie-ai-w-firmie-przewodnik/hero-wdrozenie-ai-w-firmie.webp)
+![Wdrożenie AI w firmie - praktyczny przewodnik dla CEO](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/wdrozenie-ai-w-firmie-przewodnik/hero-wdrozenie-ai-w-firmie.webp)
 
 ai-automation
 
-## Wdrożenie AI w firmie — praktyczny przewodnik dla CEO
+## Wdrożenie AI w firmie - praktyczny przewodnik dla CEO
 
 Jak wdrożyć AI w firmie krok po kroku: audyt gotowości, 5 etapów wdrożenia, wybór procesów, build vs buy vs outsource, zarządzanie zmianą i plan 90 dni.
 
@@ -319,11 +543,11 @@ Generator ofert PDF automatyzuje tworzenie i wysyłkę ofert handlowych. Przewod
 
 ](/blog/generator-ofert-pdf-automatyzacja)[
 
-![Konfigurator wycen online — jak zbudować narzędzie, które zamienia odwiedzających w klientów](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/konfigurator-wycen-online-przewodnik/hero-konfigurator-wycen-online.webp)
+![Konfigurator wycen online - jak zbudować narzędzie, które zamienia odwiedzających w klientów](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/konfigurator-wycen-online-przewodnik/hero-konfigurator-wycen-online.webp)
 
 offer-generator
 
-## Konfigurator wycen online — jak zbudować narzędzie, które zamienia odwiedzających w klientów
+## Konfigurator wycen online - jak zbudować narzędzie, które zamienia odwiedzających w klientów
 
 Konfigurator wycen online pozwala klientowi samodzielnie policzyć cenę usługi w 7 sekund. Przewodnik: jak zbudować, ile kosztuje, jakie wyniki daje i jak zintegrować z CRM.
 
@@ -334,38 +558,6 @@ Konfigurator wycen online pozwala klientowi samodzielnie policzyć cenę usługi
 
 
 ](/blog/konfigurator-wycen-online-przewodnik)[
-
-![Od 0 do +150% ruchu organicznego w 6 miesięcy dzięki AI content — dane i metody](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/wzrost-ruchu-organicznego-ai-content/hero-wzrost-ruchu-organicznego.webp)
-
-ai-content
-
-## Od 0 do +150% ruchu organicznego w 6 miesięcy dzięki AI content — dane i metody
-
-Case study: jak firma B2B bez bloga osiągnęła +150% ruchu organicznego w 6 miesięcy z AI content pipeline. Twarde dane, narzędzia, koszty i plan do odtworzenia.
-
-20 marca 2026·14 min czytania
-
-
-
-
-
-](/blog/wzrost-ruchu-organicznego-ai-content)[
-
-![AI w SEO: 7 zastosowań, które naprawdę działają w 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/ai-w-seo-7-zastosowan/hero-ai-w-seo.webp)
-
-ai-content
-
-## AI w SEO: 7 zastosowań, które naprawdę działają w 2026
-
-7 praktycznych zastosowań AI w SEO: keyword research, tworzenie treści, technical SEO, klastry tematyczne, metadane, analiza konkurencji i optymalizacja pod AI Overviews.
-
-19 marca 2026·14 min czytania
-
-
-
-
-
-](/blog/ai-w-seo-7-zastosowan)[
 
 ![Jak automatyzować blog firmowy: od researchu przez pisanie do publikacji \[2026\]](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/jak-automatyzowac-blog-firmowy/hero-automatyzacja-bloga.webp)
 
@@ -399,11 +591,11 @@ Jak zbudować strategię content marketingu B2B od zera. Plan na 12 miesięcy, k
 
 ](/blog/content-marketing-b2b-strategia)[
 
-![Klastry tematyczne SEO — jak zbudować system treści, który dominuje Google \[2026\]](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/klastry-tematyczne-seo-przewodnik/hero-klastry-tematyczne-seo.webp)
+![Klastry tematyczne SEO - jak zbudować system treści, który dominuje Google \[2026\]](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/klastry-tematyczne-seo-przewodnik/hero-klastry-tematyczne-seo.webp)
 
 ai-content
 
-## Klastry tematyczne SEO — jak zbudować system treści, który dominuje Google \[2026\]
+## Klastry tematyczne SEO - jak zbudować system treści, który dominuje Google \[2026\]
 
 Czym są klastry tematyczne SEO, jak zbudować pillar page z artykułami wspierającymi i jak AI przyspiesza ten proces. Przewodnik krok po kroku z przykładami dla firm B2B.
 
@@ -414,22 +606,6 @@ Czym są klastry tematyczne SEO, jak zbudować pillar page z artykułami wspiera
 
 
 ](/blog/klastry-tematyczne-seo-przewodnik)[
-
-![Blog firmowy z AI: czy Google karze za treści generowane w 2026?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/blog-firmowy-ai-czy-google-karze/hero-google-ai-content.webp)
-
-ai-content
-
-## Blog firmowy z AI: czy Google karze za treści generowane w 2026?
-
-Oficjalne stanowisko Google wobec treści AI, konkretne przypadki kar i wzrostów, E-E-A-T z AI, mity o detektorach AI i workflow bezpiecznego pisania z AI.
-
-14 marca 2026·9 min czytania
-
-
-
-
-
-](/blog/blog-firmowy-ai-czy-google-karze)[
 
 ![Ile kosztuje artykuł SEO w 2026: copywriter, agencja czy AI?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/ile-kosztuje-artykul-seo/hero-koszt-artykulu-seo.webp)
 
@@ -463,29 +639,13 @@ Jak AI zmienia content marketing B2B? Pipeline od researchu do publikacji, narz�
 
 ](/blog/ai-content-marketing-przewodnik)[
 
-![Chatbot AI obsłuży 60-80% zapytań — dane, case studies i plan optymalizacji](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-60-80-procent-zapytan/hero-chatbot-60-80-procent.webp)
+![Automatyzacja obsługi klienta - 5 procesów które AI przejmie za Ciebie](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/automatyzacja-obslugi-klienta-5-procesow/hero-automatyzacja-obslugi-klienta.webp)
 
 chatbot-ai
 
-## Chatbot AI obsłuży 60-80% zapytań — dane, case studies i plan optymalizacji
+## Automatyzacja obsługi klienta - 5 procesów które AI przejmie za Ciebie
 
-Czy chatbot AI naprawdę obsłuży 60-80% zapytań bez człowieka? Twarde dane z badań IBM, Zendesk i Gartner, 3 case studies z polskiego rynku (e-commerce, B2B, klinika) i plan 90 dni do 80%+ automatyzacji.
-
-11 marca 2026·9 min czytania
-
-
-
-
-
-](/blog/chatbot-ai-60-80-procent-zapytan)[
-
-![Automatyzacja obsługi klienta — 5 procesów które AI przejmie za Ciebie](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/automatyzacja-obslugi-klienta-5-procesow/hero-automatyzacja-obslugi-klienta.webp)
-
-chatbot-ai
-
-## Automatyzacja obsługi klienta — 5 procesów które AI przejmie za Ciebie
-
-FAQ, zwroty, leady, rezerwacje, follow-upy — 5 procesów obsługi klienta, które AI zautomatyzuje. Oszczędność 23 000 PLN/mies. Plan wdrożenia w 30 dni.
+FAQ, zwroty, leady, rezerwacje, follow-upy - 5 procesów obsługi klienta, które AI zautomatyzuje. Oszczędność 23 000 PLN/mies. Plan wdrożenia w 30 dni.
 
 10 marca 2026·12 min czytania
 
@@ -495,11 +655,11 @@ FAQ, zwroty, leady, rezerwacje, follow-upy — 5 procesów obsługi klienta, kt�
 
 ](/blog/automatyzacja-obslugi-klienta-5-procesow)[
 
-![Chatbot AI dla przychodni — rejestracja, FAQ i RODO w praktyce](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-dla-przychodni/hero-chatbot-ai-przychodnia.webp)
+![Chatbot AI dla przychodni - rejestracja, FAQ i RODO w praktyce](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-dla-przychodni/hero-chatbot-ai-przychodnia.webp)
 
 chatbot-ai
 
-## Chatbot AI dla przychodni — rejestracja, FAQ i RODO w praktyce
+## Chatbot AI dla przychodni - rejestracja, FAQ i RODO w praktyce
 
 Chatbot AI dla przychodni lekarskiej: rejestracja wizyt 24/7, FAQ pacjentów, przypomnienia SMS, RODO w placówce medycznej. Cennik, case study, wdrożenie krok po kroku.
 
@@ -511,11 +671,11 @@ Chatbot AI dla przychodni lekarskiej: rejestracja wizyt 24/7, FAQ pacjentów, pr
 
 ](/blog/chatbot-ai-dla-przychodni)[
 
-![WhatsApp Bot dla firmy — automatyzuj obsługę klientów 24/7](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/whatsapp-bot-dla-firmy/hero-whatsapp-bot-firma.webp)
+![WhatsApp Bot dla firmy - automatyzuj obsługę klientów 24/7](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/whatsapp-bot-dla-firmy/hero-whatsapp-bot-firma.webp)
 
 chatbot-ai
 
-## WhatsApp Bot dla firmy — automatyzuj obsługę klientów 24/7
+## WhatsApp Bot dla firmy - automatyzuj obsługę klientów 24/7
 
 WhatsApp Business API + bot AI = automatyzacja obsługi klienta na kanale z 98% open rate. Co potrafi WhatsApp bot, ile kosztuje i jak wdrożyć bez programowania.
 
@@ -527,11 +687,11 @@ WhatsApp Business API + bot AI = automatyzacja obsługi klienta na kanale z 98% 
 
 ](/blog/whatsapp-bot-dla-firmy)[
 
-![Jak wdrożyć chatbota AI w 7 dni — plan krok po kroku](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/jak-wdrozyc-chatbota-ai-7-dni/hero-wdrozenie-chatbota-7-dni.webp)
+![Jak wdrożyć chatbota AI w 7 dni - plan krok po kroku](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/jak-wdrozyc-chatbota-ai-7-dni/hero-wdrozenie-chatbota-7-dni.webp)
 
 chatbot-ai
 
-## Jak wdrożyć chatbota AI w 7 dni — plan krok po kroku
+## Jak wdrożyć chatbota AI w 7 dni - plan krok po kroku
 
 Dokładny harmonogram wdrożenia chatbota AI dzień po dniu. Od analizy potrzeb przez budowę bazy wiedzy, integracje, testy po uruchomienie produkcyjne. Plan, który działa.
 
@@ -543,11 +703,11 @@ Dokładny harmonogram wdrożenia chatbota AI dzień po dniu. Od analizy potrzeb 
 
 ](/blog/jak-wdrozyc-chatbota-ai-7-dni)[
 
-![Voice Agent AI — czy AI może odbierać telefony zamiast Ciebie?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/voice-agent-ai-obsluga-telefonow/hero-voice-agent-ai.webp)
+![Voice Agent AI - czy AI może odbierać telefony zamiast Ciebie?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/voice-agent-ai-obsluga-telefonow/hero-voice-agent-ai.webp)
 
 chatbot-ai
 
-## Voice Agent AI — czy AI może odbierać telefony zamiast Ciebie?
+## Voice Agent AI - czy AI może odbierać telefony zamiast Ciebie?
 
 Voice agent AI odbiera telefony 24/7: rejestracja wizyt, status zamówień, kwalifikacja leadów. Porównanie z IVR i infolinią. Koszty, RODO, wdrożenie krok po kroku.
 
@@ -559,11 +719,11 @@ Voice agent AI odbiera telefony 24/7: rejestracja wizyt, status zamówień, kwal
 
 ](/blog/voice-agent-ai-obsluga-telefonow)[
 
-![Chatbot AI dla e-commerce — wdrożenie i koszty w 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-dla-ecommerce/hero-chatbot-ai-ecommerce.webp)
+![Chatbot AI dla e-commerce - wdrożenie i koszty w 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-dla-ecommerce/hero-chatbot-ai-ecommerce.webp)
 
 chatbot-ai
 
-## Chatbot AI dla e-commerce — wdrożenie i koszty w 2026
+## Chatbot AI dla e-commerce - wdrożenie i koszty w 2026
 
 Chatbot AI dla sklepów internetowych: odzyskiwanie koszyków (10-15% recovery), rekomendacje produktów, integracja z Shopify/WooCommerce/IdoSell. Koszty i ROI 940%.
 
@@ -575,11 +735,11 @@ Chatbot AI dla sklepów internetowych: odzyskiwanie koszyków (10-15% recovery),
 
 ](/blog/chatbot-ai-dla-ecommerce)[
 
-![Chatbot AI vs live chat — co lepiej konwertuje w 2026?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-vs-live-chat/hero-chatbot-ai-vs-live-chat.webp)
+![Chatbot AI vs live chat - co lepiej konwertuje w 2026?](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-vs-live-chat/hero-chatbot-ai-vs-live-chat.webp)
 
 chatbot-ai
 
-## Chatbot AI vs live chat — co lepiej konwertuje w 2026?
+## Chatbot AI vs live chat - co lepiej konwertuje w 2026?
 
 Porównanie chatbota AI i live chat: konwersje, koszty operacyjne, dostępność 24/7 i skalowalność. Model hybrydowy jako optymalne rozwiązanie dla firm.
 
@@ -607,11 +767,11 @@ Kompletny cennik chatbotów AI na polskim rynku: od prostego bota regułowego za
 
 ](/blog/ile-kosztuje-chatbot-ai-polska)[
 
-![Chatbot AI dla firm — kompletny przewodnik 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-dla-firm-przewodnik/hero-chatbot-ai-dla-firm.webp)
+![Chatbot AI dla firm - kompletny przewodnik 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/chatbot-ai-dla-firm-przewodnik/hero-chatbot-ai-dla-firm.webp)
 
 chatbot-ai
 
-## Chatbot AI dla firm — kompletny przewodnik 2026
+## Chatbot AI dla firm - kompletny przewodnik 2026
 
 Chatbot AI dla firm: jak działa, ile kosztuje, jak wdrożyć. Rodzaje chatbotów, ROI, integracje z CRM i e-commerce, RODO. Przewodnik dla MŚP.
 
@@ -623,11 +783,11 @@ Chatbot AI dla firm: jak działa, ile kosztuje, jak wdrożyć. Rodzaje chatbotó
 
 ](/blog/chatbot-ai-dla-firm-przewodnik)[
 
-![Ile kosztuje handlowiec AI w Polsce — porównanie in-house, outsourcing i AI](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/ile-kosztuje-handlowiec-ai-polska/hero-ile-kosztuje-handlowiec-ai.webp)
+![Ile kosztuje handlowiec AI w Polsce - porównanie in-house, outsourcing i AI](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/ile-kosztuje-handlowiec-ai-polska/hero-ile-kosztuje-handlowiec-ai.webp)
 
 ai-sprzedaz-b2b
 
-## Ile kosztuje handlowiec AI w Polsce — porównanie in-house, outsourcing i AI
+## Ile kosztuje handlowiec AI w Polsce - porównanie in-house, outsourcing i AI
 
 Ile kosztuje handlowiec AI w Polsce? In-house SDR: 12-22k PLN/mies, outsourcing: 5-15k PLN/mies, AI: od 750 PLN per spotkanie. Porównanie kosztów, ROI i ukrytych opłat.
 
@@ -639,45 +799,13 @@ Ile kosztuje handlowiec AI w Polsce? In-house SDR: 12-22k PLN/mies, outsourcing:
 
 ](/blog/ile-kosztuje-handlowiec-ai-polska)[
 
-![8 narzędzi do outbound B2B, które naprawdę warto znać w 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/narzedzia-outbound-b2b-2026/hero-narzedzia-outbound-b2b.webp)
+![Pay-per-meeting vs retainer - który model rozliczeń wybrać w B2B](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/pay-per-meeting-vs-retainer/hero-pay-per-meeting-vs-retainer.webp)
 
 ai-sprzedaz-b2b
 
-## 8 narzędzi do outbound B2B, które naprawdę warto znać w 2026
+## Pay-per-meeting vs retainer - który model rozliczeń wybrać w B2B
 
-Apollo.io, Instantly.ai, Clay, Lemlist, Hunter, Smartlead, n8n — porównanie narzędzi do cold email i prospectingu B2B. Ceny, funkcje i jak je łączyć w stack.
-
-27 lutego 2026·10 min czytania
-
-
-
-
-
-](/blog/narzedzia-outbound-b2b-2026)[
-
-![Jak AI umówiło spotkania B2B w 6 dni — case study z danymi](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/jak-ai-umawialo-spotkania-b2b-w-6-dni/hero-case-study-6-dni.webp)
-
-ai-sprzedaz-b2b
-
-## Jak AI umówiło spotkania B2B w 6 dni — case study z danymi
-
-Case study kampanii cold email AI: 73% open rate, 63% reply rate, pipeline ~40 000 PLN i deal zamknięty w 6 dni. Konkretne dane, koszty i wnioski.
-
-26 lutego 2026·8 min czytania
-
-
-
-
-
-](/blog/jak-ai-umawialo-spotkania-b2b-w-6-dni)[
-
-![Pay-per-meeting vs retainer — który model rozliczeń wybrać w B2B](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/pay-per-meeting-vs-retainer/hero-pay-per-meeting-vs-retainer.webp)
-
-ai-sprzedaz-b2b
-
-## Pay-per-meeting vs retainer — który model rozliczeń wybrać w B2B
-
-Porównanie modeli rozliczeń z agencją outbound B2B. Pay-per-meeting vs retainer — koszty, ryzyko, jakość spotkań i checklista decyzyjna.
+Porównanie modeli rozliczeń z agencją outbound B2B. Pay-per-meeting vs retainer - koszty, ryzyko, jakość spotkań i checklista decyzyjna.
 
 25 lutego 2026·6 min czytania
 
@@ -685,80 +813,4 @@ Porównanie modeli rozliczeń z agencją outbound B2B. Pay-per-meeting vs retain
 
 
 
-](/blog/pay-per-meeting-vs-retainer)[
-
-![Handlowiec AI vs etat — koszty, wyniki i ROI w polskich realiach](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/handlowiec-ai-vs-czlowiek/hero-handlowiec-ai-vs-czlowiek.webp)
-
-ai-w-sprzedazy-b2b
-
-## Handlowiec AI vs etat — koszty, wyniki i ROI w polskich realiach
-
-Handlowiec AI vs in-house handlowiec B2B — porównanie kosztów (12 200-22 000 PLN/mies vs 750-2 000 PLN/spotkanie), wyników, czasu wdrożenia i ROI.
-
-23 lutego 2026·7 min czytania
-
-
-
-
-
-](/blog/handlowiec-ai-vs-czlowiek)[
-
-![Jak napisać cold email B2B, który osiąga ponad 70% open rate](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/cold-email-b2b-jak-pisac/hero-cold-email-jak-pisac.webp)
-
-ai-w-sprzedazy-b2b
-
-## Jak napisać cold email B2B, który osiąga ponad 70% open rate
-
-Jak napisać cold email B2B z 73% open rate? 7 formuł na subject line, anatomia idealnego maila, sekwencja follow-up i wymagania techniczne SPF/DKIM/DMARC.
-
-22 lutego 2026·6 min czytania
-
-
-
-
-
-](/blog/cold-email-b2b-jak-pisac)[
-
-![Cold email AI vs ręczny outbound — co naprawdę działa lepiej w 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/cold-email-ai-vs-reczny/hero-v2.webp)
-
-ai-sprzedaz-b2b
-
-## Cold email AI vs ręczny outbound — co naprawdę działa lepiej w 2026
-
-21 lutego 2026·5 min czytania
-
-
-
-
-
-](/blog/cold-email-ai-vs-reczny)[
-
-![Handlowiec AI — czym jest i jak zastępuje cold calling w B2B](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/handlowiec-ai-czym-jest/hero-v2.webp)
-
-ai-sprzedaz-b2b
-
-## Handlowiec AI — czym jest i jak zastępuje cold calling w B2B
-
-20 lutego 2026·5 min czytania
-
-
-
-
-
-](/blog/handlowiec-ai-czym-jest)[
-
-![Automatyzacja sprzedaży B2B — kompletny przewodnik 2026](https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog/ai-w-sprzedazy-b2b-przewodnik/hero-ai-sprzedaz-b2b.webp)
-
-ai-sprzedaz-b2b
-
-## Automatyzacja sprzedaży B2B — kompletny przewodnik 2026
-
-Jak AI zmienia sprzedaż B2B w Polsce — od prospectingu po umawianie spotkań. Koszty, narzędzia, ROI i plan wdrożenia w 7 dni.
-
-19 lutego 2026·8 min czytania
-
-
-
-
-
-](/blog/ai-w-sprzedazy-b2b-przewodnik)
+](/blog/pay-per-meeting-vs-retainer)

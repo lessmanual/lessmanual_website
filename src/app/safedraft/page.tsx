@@ -6,8 +6,12 @@ import { V2ShellStyles, v2FontClasses } from "@/components/v2/V2ShellStyles";
 import { SafeDraftTool } from "@/features/safedraft/components/safedraft-tool";
 
 export const metadata: Metadata = {
-  title: "SafeDraft | LessManual",
+  title: "SafeDraft",
   description: "Lokalny public v0 do poprawiania draftów B2B na fake adapterze.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const FAQ_ITEMS = [

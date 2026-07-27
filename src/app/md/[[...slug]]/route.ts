@@ -10,6 +10,7 @@ const ALLOWED = new Set([
   "faq",
   "o-nas",
   "kontakt",
+  "ai-growth-opportunity-map",
   "oferta",
   "oferta/hot-lead-catcher",
   "oferta/pipeline-machine",
@@ -36,6 +37,8 @@ export async function GET(
       headers: {
         "Content-Type": "text/markdown; charset=utf-8",
         "Cache-Control": "public, max-age=3600",
+        Vary: "Accept",
+        "X-Robots-Tag": "noindex, follow",
       },
     });
   } catch {

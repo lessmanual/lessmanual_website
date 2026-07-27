@@ -81,7 +81,8 @@ export default function KontaktContent() {
               o Twoim projekcie.
             </h1>
             <p className="mt-6 max-w-[560px] text-[17px] leading-[1.55] text-[#525252]">
-              Zarezerwuj 15-minutową rozmowę. Sprawdzimy razem czy agenty AI pasują do Twojego biznesu i co można zautomatyzować w pierwszej kolejności.
+              Zarezerwuj rozmowę. Sprawdzimy, który proces zabiera najwięcej
+              czasu i czy automatyzacja ma w nim sens.
             </p>
           </div>
         </section>
@@ -97,7 +98,8 @@ export default function KontaktContent() {
                   <SectionLabel>DANE KONTAKTOWE</SectionLabel>
                   <h2 className="text-[#0A0A0A]">Napisz lub zarezerwuj slot.</h2>
                   <p className="mt-4 text-[15px] leading-[1.65] text-[#525252]">
-                    Wolisz maila? Napisz bezpośrednio. Wolisz pogadać? Wybierz termin w kalendarzu po prawej. Średni czas odpowiedzi na maila to 4 godziny w dni robocze.
+                    Wolisz maila? Napisz bezpośrednio. Wolisz rozmowę? Wybierz
+                    termin w kalendarzu po prawej.
                   </p>
                 </div>
 
@@ -117,17 +119,17 @@ export default function KontaktContent() {
 
                   <ContactRow label="LINKEDIN">
                     <a
-                      href="https://www.linkedin.com/in/bartlomiej-chudzik"
+                      href="https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#0A0A0A] hover:text-[#B87333] transition-colors duration-200"
                     >
-                      linkedin.com/in/bartlomiej-chudzik
+                      linkedin.com/in/bartlomiej-chudzik-7aa740197
                     </a>
                   </ContactRow>
 
                   <ContactRow label="CZAS ODPOWIEDZI">
-                    <span className="text-[#525252]">Średnia 4h w dni robocze</span>
+                    <span className="text-[#525252]">Odpowiadam osobiście</span>
                   </ContactRow>
                 </div>
 
@@ -162,7 +164,7 @@ export default function KontaktContent() {
               <div>
                 <SectionLabel>REZERWACJA ROZMOWY</SectionLabel>
                 <iframe
-                  src="https://cal.com/bartłomiej-chudzik-2en6pt/15min?embed=true"
+                  src={`${CALENDLY_URL}?embed=true`}
                   width="100%"
                   height="640"
                   style={{ border: 0, borderRadius: 4 }}

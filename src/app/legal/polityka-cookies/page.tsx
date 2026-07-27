@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { LegalPageContent } from "@/components/legal/LegalPageContent";
 
 export const metadata: Metadata = {
-  title: "Polityka Cookies | LessManual.ai",
+  title: "Polityka cookies",
   description:
     "Polityka Cookies LessManual.ai — informacje o plikach cookies uzywanych w serwisie.",
   alternates: {
-    canonical: "https://lessmanual.ai/legal/polityka-cookies",
+    canonical: "https://www.lessmanual.ai/legal/polityka-cookies",
   },
 };
 

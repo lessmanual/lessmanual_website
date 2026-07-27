@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import GeneratorOfertContent from "./_content";
+import { PremiumOfferPage } from "@/components/sections/PremiumOfferPage";
+import { PREMIUM_OFFERS } from "@/lib/premium-offers";
 
 export const metadata: Metadata = {
-  title: "Generator Ofert AI · klient sam wycenia, PDF w 5 minut · LessManual",
+  title: "Generator ofert AI na danych i cenniku firmy",
   description:
-    "Self-service konfigurator wycen. Klient podaje dane przez chat lub formularz, system generuje PDF z Twoim logo i wysyła mailem w 5 minut. Auto follow-up D3+D7. Win rate +25-40%. Od 5 000 PLN setup + 800 PLN/mies.",
+    "System zbiera dane, porządkuje zakres i przygotowuje draft oferty do sprawdzenia. Ceny pochodzą z zatwierdzonego cennika firmy.",
   alternates: {
     canonical: "/oferta/generator-ofert",
   },
   openGraph: {
-    title: "Generator Ofert AI · klient sam wycenia, PDF w 5 minut",
+    title: "Generator ofert AI na danych firmy | LessManual",
     description:
-      "Klient wycenia się sam. PDF z logo Twojej firmy w 5 minut. Auto follow-up. Win rate +25-40%. Wdrożenie w 14 dni.",
+      "Szybsze ofertowanie, mniej ręcznego przepisywania i bardziej spójny standard propozycji dla klienta.",
     url: "/oferta/generator-ofert",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Generator Ofert AI · LessManual",
+    title: "Generator ofert AI na danych firmy | LessManual",
     description:
-      "Klient podaje dane w chacie, dostaje PDF z Twoim logo w 5 minut. 2h ręcznych czynności → zero. Win rate +25-40%.",
+      "Zbieranie danych, przygotowanie oferty i kontrola przed wysyłką.",
   },
 };
 
 export default function GeneratorOfertPage() {
-  return <GeneratorOfertContent />;
+  return <PremiumOfferPage {...PREMIUM_OFFERS.generatorOfert} />;
 }

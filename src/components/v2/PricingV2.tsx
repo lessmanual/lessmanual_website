@@ -3,43 +3,36 @@
 import Link from "next/link";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { CALENDLY_URL } from "@/lib/constants";
+import { AI_GROWTH_MAP_URL } from "@/lib/constants";
 
 const ROWS = [
   {
-    name: "Hot Lead Catcher",
-    slug: "Agent AI do gorących leadów",
-    setup: "3 000 PLN",
-    monthly: "od 800 PLN",
-    note: "NAJCZĘŚCIEJ WYBIERANY",
-  },
-  {
-    name: "Pipeline Machine",
-    slug: "Spotkania z decydentami",
-    setup: "od 3 000 PLN",
-    monthly: "pay-per-meeting",
-    note: "zero stałych opłat",
-  },
-  {
     name: "Content Machine",
-    slug: "Blog który pisze się sam",
-    setup: "od 3 000 PLN",
-    monthly: "od 1 000 PLN",
-    note: "10-30 artykułów/mies",
+    slug: "content i SEO",
+    setup: "wdrożenie",
+    monthly: "miesięczna obsługa",
+    note: "dla firm, które chcą stały content bez zatrudniania zespołu",
   },
   {
-    name: "Chatbot AI",
-    slug: "Obsługa klienta 24/7",
-    setup: "od 5 000 PLN",
-    monthly: "od 900 PLN",
-    note: "strona + WhatsApp + mail",
+    name: "Customer Operations AI",
+    slug: "obsługa zapytań i spraw",
+    setup: "wdrożenie",
+    monthly: "miesięczna obsługa",
+    note: "dla firm z rosnącym wolumenem pytań, maili i spraw",
   },
   {
-    name: "Generator Ofert",
-    slug: "Wyceny w 5 minut",
-    setup: "od 5 000 PLN",
-    monthly: "od 800 PLN",
-    note: "PDF w Twoim brandzie",
+    name: "Premium Cold Email+",
+    slug: "sprzedaż B2B",
+    setup: "wdrożenie",
+    monthly: "miesięczna obsługa",
+    note: "dla kampanii, gdzie jakość listy i personalizacji ma wygrać z wolumenem",
+  },
+  {
+    name: "Indywidualne wdrożenie",
+    slug: "niestandardowy proces",
+    setup: "po diagnozie",
+    monthly: "utrzymanie",
+    note: "gdy trzeba połączyć dane, narzędzia i decyzje w jeden proces",
   },
 ];
 
@@ -63,11 +56,14 @@ export function PricingV2() {
       <div className="mx-auto max-w-[1440px]">
         <header className="mb-16 max-w-[720px]">
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
-            Cennik
+            Model współpracy
           </div>
-          <h2>Jeden cennik. Bez stawek godzinowych.</h2>
+          <h2>Zakres i wycena po diagnozie procesu.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
-            Wyceniamy projektowo, za zakres i efekt. Stała kwota, zero surprise billing. 50% zaliczki, reszta po wdrożeniu.
+            Pracujemy w modelu wdrożenie + miesięczna obsługa. Na koszt
+            wpływają dane, integracje, wolumen, ryzyko błędu i poziom
+            utrzymania. Najpierw sprawdzamy opłacalność, potem podajemy
+            konkretny zakres, termin i cenę.
           </p>
         </header>
 
@@ -75,9 +71,9 @@ export function PricingV2() {
           {/* Header row */}
           <div className="hidden md:grid grid-cols-[2fr_1.2fr_1fr_1.2fr] gap-6 px-6 py-4 border-b border-[#E5E5E5] font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
             <div>System</div>
-            <div>Setup</div>
-            <div>Miesięcznie</div>
-            <div>Model</div>
+            <div>Start</div>
+            <div>Dalej</div>
+            <div>Kiedy pasuje</div>
           </div>
 
           <motion.div
@@ -107,16 +103,14 @@ export function PricingV2() {
 
         <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <p className="text-[14px] text-[#525252]">
-            3 warstwy gwarancji · max 3 projekty miesięcznie · rabat 15% przy 2+ systemach
+            Jasny zakres · cena po diagnozie · utrzymanie systemu w zakresie
           </p>
           <Link
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={AI_GROWTH_MAP_URL}
             className="inline-flex items-center gap-2 bg-[#0A0A0A] px-6 py-3.5 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] hover:-translate-y-[1px]"
             style={{ borderRadius: 4 }}
           >
-            Zarezerwuj rozmowę
+            Sprawdź pierwszy proces do automatyzacji
             <span>→</span>
           </Link>
         </div>

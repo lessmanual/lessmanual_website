@@ -6,21 +6,27 @@ import { useRef } from "react";
 const STEPS = [
   {
     num: "01",
-    title: "Mapujemy proces, cel i zakres",
-    duration: "30 minut rozmowy",
-    desc: "Mapujemy Twoje procesy, definiujemy cel i zakres. Dostajesz konkretną propozycję zakresu, terminu i ceny.",
+    title: "Diagnoza procesu",
+    duration: "punkt startu",
+    desc: "Sprawdzamy, gdzie znika czas, ile kosztuje obecny sposób pracy i po czym poznamy, że wdrożenie ma sens.",
   },
   {
     num: "02",
-    title: "Budujemy system",
-    duration: "7 do 21 dni",
-    desc: "Budujemy na Twoich danych i procesach. Ty dajesz 1 do 2 godzin na feedback. Resztę robimy.",
+    title: "Źródła i reguły",
+    duration: "zakres",
+    desc: "Ustalamy, z jakich danych agent korzysta, co może zrobić sam i które decyzje zawsze zostają po stronie człowieka.",
   },
   {
     num: "03",
-    title: "Odbierasz wyniki",
-    duration: "cotygodniowy raport",
-    desc: "System idzie na produkcję. Monitorujemy i optymalizujemy. Cotygodniowy raport liczb. Trzy warstwy gwarancji.",
+    title: "Pilot na realnych danych",
+    duration: "sprawdzenie",
+    desc: "Uruchamiamy ograniczony zakres, mierzymy jakość wyniku i poprawiamy reguły przed przejściem na produkcję.",
+  },
+  {
+    num: "04",
+    title: "Produkcja i utrzymanie",
+    duration: "stała opieka",
+    desc: "Wdrażamy system do codziennej pracy, monitorujemy błędy i rozwijamy go wraz ze zmianą procesu.",
   },
 ];
 
@@ -46,12 +52,16 @@ export function ProcessV2() {
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             Proces
           </div>
-          <h2>Trzy kroki. Bez fakturowania godzin.</h2>
+          <h2>Od procesu do działającego systemu.</h2>
+          <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
+            Najpierw sprawdzamy sens wdrożenia. Dopiero potem dobieramy
+            technologię, zakres pilota i sposób utrzymania.
+          </p>
         </header>
 
         <motion.div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5E5E5] border border-[#E5E5E5]"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E5E5E5] border border-[#E5E5E5]"
           initial={reducedMotion ? "visible" : "hidden"}
           animate={reducedMotion || inView ? "visible" : "hidden"}
           variants={containerVariants}

@@ -47,25 +47,49 @@ export function WebMCPProvider() {
       },
       {
         name: "list_offers",
-        description: "List LessManual AI automation offers with pricing tiers and ICP match.",
+        description: "List LessManual premium AI automation offers with ICP fit and pricing model.",
         inputSchema: { type: "object", properties: {} },
         execute: async () => ({
           offers: [
-            { slug: "hot-lead-catcher", title: "Hot Lead Catcher", setup: 3000, mrr: 1300, icp: "B2B with sales team" },
-            { slug: "pipeline-machine", title: "Pipeline Machine", setup: 5000, mrr: 1800, icp: "B2B sales-led growth" },
-            { slug: "content-machine", title: "Content Machine", setup: 5000, mrr: 1800, icp: "Companies without regular content" },
-            { slug: "obsluga-klienta", title: "Obsluga Klienta AI", setup: 10000, mrr: 1500, icp: "E-commerce, clinics, services" },
-            { slug: "generator-ofert", title: "Generator Ofert", setup: 4000, mrr: 900, icp: "Sales-heavy B2B" },
+            {
+              slug: "content-machine",
+              title: "Content Machine",
+              pricingModel: "implementation plus monthly management, scoped after diagnosis",
+              icp: "Companies that need repeatable SEO/GEO content without hiring a content team",
+            },
+            {
+              slug: "obsluga-klienta",
+              title: "Customer Operations AI",
+              pricingModel: "implementation plus monthly management, scoped after diagnosis",
+              icp: "Companies with growing support, email, WhatsApp or operations volume",
+            },
+            {
+              slug: "pipeline-machine",
+              title: "Premium Cold Email+",
+              pricingModel: "setup plus MRR, no public per-meeting default",
+              icp: "Non-tech or sales-led companies where high-quality personalised outbound can work",
+            },
+            {
+              slug: "generator-ofert",
+              title: "Generator Ofert",
+              pricingModel: "implementation plus management, scoped after diagnosis",
+              icp: "Sales-heavy companies with slow or inconsistent quote creation",
+            },
+            {
+              slug: "hot-lead-catcher",
+              title: "Hot Lead Catcher",
+              pricingModel: "used when intent signals make sense for the segment",
+              icp: "B2B companies with visible buying signals in public sources",
+            },
           ],
           contact: "kontakt@lessmanual.ai",
-          calcom: "https://cal.com/bart%C5%82omiej-chudzik-2en6pt",
+          calcom: "https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min",
         }),
       },
     ];
 
     try {
       navigator.modelContext.provideContext(tools);
-      // eslint-disable-next-line no-console
       console.info(
         "[WebMCP] registered",
         tools.map((t) => t.name),

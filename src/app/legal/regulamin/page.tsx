@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { LegalPageContent } from "@/components/legal/LegalPageContent";
 
 export const metadata: Metadata = {
-  title: "Regulamin | LessManual.ai",
+  title: "Regulamin",
   description:
     "Regulamin swiadczenia uslug automatyzacji biznesowej przez LessManual.ai.",
   alternates: {
-    canonical: "https://lessmanual.ai/legal/regulamin",
+    canonical: "https://www.lessmanual.ai/legal/regulamin",
   },
 };
 

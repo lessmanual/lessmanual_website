@@ -1,204 +1,73 @@
-# System Obsługi Klienta · chatbot AI + multi-channel · LessManual
+# Automatyzacja obsługi klienta z AI | LessManual
 
-> Chatbot RAG na web, WhatsApp i email. 60-80% zapytań obsługiwanych automatycznie. Odpowiedź w 30 sekund, 24/7. Voice Agent w tierze SCALE. Od 5 000 PLN setup + 900 PLN/mies. Wdrożenie w 14 dni.
+> Agent AI odpowiada na podstawie bazy wiedzy, zbiera kontekst sprawy i przekazuje człowiekowi wyjątki wymagające decyzji.
 
-> Source: http://localhost:3000/oferta/obsluga-klienta
-> Generated: 2026-04-20T17:54:10.640Z
+> Source: https://www.lessmanual.ai/oferta/obsluga-klienta
+> Generated: 2026-07-27T08:27:45.991Z
 
 ---
 
-Agent #3 LessManual · OBSŁUGA KLIENTA
+[Oferta](/oferta)
 
-# Odpowiedź w 30 sekund,  
-24/7, na wszystkich  
-kanałach jednocześnie.
+Obsługa klienta
 
-Chatbot RAG wytrenowany na FAQ Twojej firmy obsługuje web, WhatsApp i email. 60-80% zapytań automatycznie. Eskalacja do człowieka z pełnym kontekstem gdy trzeba. System od 900 PLN/mies. vs pracownik 8-9 tys. PLN/mies.
+# Customer Operations AI
 
-[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+Agent AI do obsługi pytań i powtarzalnych spraw. Działa na źródłach firmy, zbiera kontekst i przekazuje ludziom tematy, które naprawdę wymagają decyzji.
 
-System Obsługi Klientademo na żywo
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
 
-lessmanual-cli · obsluga-klienta● live
+## Model współpracy
 
-$
+Najpierw diagnoza procesu. Potem zakres wdrożenia, sposób utrzymania i wycena dopasowana do danych oraz integracji.
 
-3 kanały · auto-resolve 75%
+Dla kogoFirmy, które rosną szybciej niż zespół obsługi, mają wiele kanałów kontaktu albo tracą czas na powtarzalne pytania.
 
-01TRENING RAG
+Cel wdrożeniaMniej gaszenia tematów, szybsza odpowiedź i uporządkowana obsługa bez automatyzacji na ślepo.
 
-Agent uczy się na FAQ, regulaminach, cenniku i historii rozmów Twojej firmy. Baza wiedzy to tylko Twoje dokumenty - nic nie wymyśla. Aktualizacja bazy w minuty przez panel. Wdrożenie: 14 dni.
+## Jak działa system
 
-02OBSŁUGA KANAŁÓW
+Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 
-Zapytanie wpada przez web, WhatsApp lub email. Agent odpowiada w tym samym kanale w ciągu kilku sekund. CSAT scoring per rozmowę. Gdy rozmowa wymaga człowieka - eskalacja z pełnym kontekstem trafia do Slack lub CRM.
+-   Mapujemy kanały kontaktu, typy spraw, bazę wiedzy, ryzyka i momenty, w których człowiek musi wejść do procesu.
+-   Budujemy źródła odpowiedzi: dokumenty, FAQ, regulaminy, historię spraw, dane z CRM i ograniczenia językowe.
+-   Projektujemy ścieżki odpowiedzi, zbierania braków, przekazania do człowieka i zapisu statusu w systemie.
+-   Po wdrożeniu monitorujemy jakość odpowiedzi, błędy, eskalacje i tematy do dopisania w bazie wiedzy.
 
-03RAPORT + OPTYMALIZACJA
+## Kontrola wyniku
 
-Miesięczny raport CSAT (od GROWTH): ile zapytań obsłużonych, ile eskalacji, średni czas odpowiedzi, tematy najczęstszych pytań. Dane wskazują co dodać do bazy by podnieść auto-resolve powyżej 80%.
+Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Klient
+Przy braku źródła system prosi o dane albo eskaluje sprawę.
 
-Sklep e-commerce, segment mid-market, 200+ zapytań dziennie o statusy zamówień, zwroty i godziny dostawy.
+Odpowiedzi są sprawdzane pod ton firmy, zgodność z bazą wiedzy i ryzyko błędnej obietnicy.
 
-Problem
+Każda automatyzacja ma granice odpowiedzialności, żeby AI nie podejmowało decyzji biznesowych za zespół.
 
-Pracownik działu obsługi: 8-9 tys. PLN/mies. Odpowiadał na te same 15 pytań w kółko. Poza godzinami pracy - zero odpowiedzi. Klienci pisali negatywne opinie o czasie oczekiwania.
+Raport pokazuje liczbę spraw oraz luki w procesie, źródłach i komunikacji.
 
-Co dostał
+Efekt biznesowy
 
-System GROWTH: chatbot web + WhatsApp + email triage. RAG wytrenowany na FAQ, regulaminie zwrotów i bazie produktowej. Eskalacja z kontekstem gdy klient prosi o decyzję. Integracja z CRM - każda eskalacja trafia z historią rozmowy.
+## Po czym poznamy, że wdrożenie działa
 
-Dziś
+Mierzymy czas od pytania klienta do pierwszej poprawnej odpowiedzi.
 
-75% zapytań obsługiwanych automatycznie, średnia odpowiedź w 24 sekundy. Pracownik obsługi skupia się na przypadkach wymagających decyzji - nie na powtarzalnych pytaniach.
+Zespół dostaje sprawy wymagające decyzji albo brakujących danych.
 
-Automatyzacja zapytań
+Każda sprawa ma status, kontekst i wskazaną ścieżkę eskalacji.
 
-75% (było 0%)
+Raport pokazuje pytania, które najczęściej wracają do człowieka.
 
-Czas odpowiedzi
+## Najpierw znajdź proces, który warto automatyzować
 
-<30s (było 4-24h)
+Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
 
-Koszt systemu vs pracownik
+Dobre dla sklepów, usług B2B, edukacji, usług lokalnych i firm z dużą liczbą powtarzalnych pytań.
 
-900 vs 8 500 PLN/mies.
+Zakres zależy od kanałów, jakości bazy wiedzy, integracji i wymaganych eskalacji.
 
-Pełne liczby i demo live pokazujemy na rozmowie 15-min.
+Kryterium wdrożenia stanowi jakość obsłużonej sprawy.
 
-STARTER
+Najpierw sprawdzamy, gdzie automatyzacja naprawdę odciąży zespół.
 
-1 kanał
-
-900 PLN/mies.
-
-Setup: 5 000 PLN
-
--   +Chatbot na stronę LUB WhatsApp (1 kanał)
--   +RAG wytrenowany na FAQ firmy
--   +500 konwersacji/mies.
--   +Eskalacja do człowieka z kontekstem
--   +Bonus: konfiguracja agenta pod ICP (wartość 1 000 PLN)
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-NAJPOPULARNIEJSZY
-
-GROWTH
-
-Multi-channel
-
-1 500 PLN/mies.
-
-Setup: 10 000 PLN
-
--   +WhatsApp + email triage + chatbot web
--   +2 000 konwersacji/mies.
--   +Integracja CRM (HubSpot / Pipedrive)
--   +Miesięczny raport CSAT
--   +Bonus: Email Triage automation (wartość 600 PLN/mies)
--   +Bonus: WhatsApp Business integration (wartość 2 000 PLN)
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-SCALE
-
-Full Suite + Voice
-
-2 200 PLN/mies.
-
-Setup: 15 000 PLN
-
--   +Wszystko z GROWTH
--   +Voice Agent (AI receptionist 24/7, polski głos)
--   +Unlimited konwersacje
--   +Wielojęzyczność (PL + EN + DE + UA)
--   +Custom integracje + 24/7 monitoring
--   +Bonus: Wielojęzyczność (wartość 3 000 PLN)
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-VOICE AGENT
-
-Recepcjonistka która nigdy nie idzie na L4.
-
-AI odbiera telefon 24/7, kwalifikuje rozmówcę, umawia spotkania w kalendarzu, wysyła SMS z potwierdzeniem. Nagrania i transkrypcje każdej rozmowy. Dostępny w tierze SCALE lub jako add-on.
-
-[Zapytaj o Voice →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-50% zaliczki przed startem. Reszta po wdrożeniu. Wdrożenie w 14 dni albo zwrot setup.
-
-E-COMMERCE
-
-BASIC
-
-5 000 PLN setup
-
-1 000 PLN/mies.
-
-koszyk, śledzenie zamówień, FAQ
-
-PRO
-
-10 000 PLN setup
-
-1 800 PLN/mies.
-
-\+ rekomendacje produktów, odzyskiwanie porzuconych koszyków
-
-PRZYCHODNIE / MEDYCYNA
-
-BASIC
-
-6 000 PLN setup
-
-1 200 PLN/mies.
-
-umawianie wizyt, FAQ, zgodność RODO
-
-PRO
-
-12 000 PLN setup
-
-2 000 PLN/mies.
-
-\+ przypomnienia SMS, integracja z systemem
-
-HOTELE / HORECA
-
-BASIC
-
-5 500 PLN setup
-
-1 000 PLN/mies.
-
-rezerwacje, wielojęzyczność, FAQ
-
-PRO
-
-11 000 PLN setup
-
-1 800 PLN/mies.
-
-\+ upselling, integracja z PMS
-
-Czy AI nie pomyli się i nie zrazi klientów?+
-
-Jakie kanały obsługuje system?+
-
-Ile trwa wdrożenie?+
-
-Czy system obsługuje wiele języków?+
-
-Czy jest integracja z CRM?+
-
-Czy dane klientów są bezpieczne?+
-
-## Gotowy żeby system odpowiadał klientom za Ciebie?
-
-15 minut rozmowy. Pokażę demo na FAQ Twojej firmy, ustalimy kanały i tier. Wdrożenie w 14 dni.
-
-[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
-
-Średnia odpowiedź: 4h w dni robocze.
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)

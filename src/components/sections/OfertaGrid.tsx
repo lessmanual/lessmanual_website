@@ -5,9 +5,9 @@ import { ArrowLeft } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { Button } from "@/components/ui/Button";
-import { PRODUCTS, CALENDLY_URL } from "@/lib/constants";
+import { AI_GROWTH_MAP_URL, PRODUCTS } from "@/lib/constants";
 
-const PRODUCT_NUMBERS = ["01", "02", "03", "04"];
+const PRODUCT_NUMBERS = ["01", "02", "03", "04", "05", "06"];
 
 export function OfertaGrid() {
   return (
@@ -33,11 +33,11 @@ export function OfertaGrid() {
               </span>
             </div>
             <h1 className="font-serif text-4xl md:text-5xl mb-5">
-              Wybierz rozwiązanie AI dla swojej firmy
+              Wdrożenia AI dla firm, które chcą rosnąć bez dokładania ręcznej pracy.
             </h1>
             <p className="text-xl text-text-secondary max-w-[680px] mx-auto leading-relaxed">
-              Każdy system działa pod klucz, my budujemy, Ty widzisz wyniki.
-              Gwarancja wyników lub pełny zwrot kosztów.
+              Najpierw sprawdzamy, gdzie znika czas i pieniądze. Potem dostajesz
+              konkretny zakres, termin i sposób utrzymania.
             </p>
           </FadeUp>
           </div>
@@ -53,7 +53,7 @@ export function OfertaGrid() {
           >
             {PRODUCTS.map((product, idx) => {
               const num = PRODUCT_NUMBERS[idx];
-              const isPopular = product.badge === "NAJPOPULARNIEJSZE";
+              const isPopular = product.badge === "PRIMARY";
 
               return (
                 <StaggerItem key={num}>
@@ -65,7 +65,7 @@ export function OfertaGrid() {
                     {/* Popular badge */}
                     {isPopular && (
                       <span className="absolute top-0 right-6 bg-accent text-white text-[0.65rem] font-semibold uppercase tracking-wider px-3 py-1 rounded-b-[4px]">
-                        Najpopularniejsze
+                        Primary
                       </span>
                     )}
 
@@ -100,7 +100,7 @@ export function OfertaGrid() {
                     </div>
 
                     {/* CTAs */}
-                    <div className="mt-auto space-y-3">
+                    <div className="mt-auto">
                       <Link
                         href={product.landingHref}
                         className={`block text-center px-8 py-3.5 font-sans font-medium text-base rounded-lg transition-all duration-200 ${
@@ -109,16 +109,8 @@ export function OfertaGrid() {
                             : "border-2 border-border text-text hover:border-accent hover:text-accent"
                         }`}
                       >
-                        Dowiedz się więcej
+                        Zobacz zakres
                       </Link>
-                      <a
-                        href={CALENDLY_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-center text-xs text-text-light hover:text-accent transition-colors"
-                      >
-                        lub umów rozmowę →
-                      </a>
                     </div>
                   </div>
                 </StaggerItem>
@@ -130,11 +122,11 @@ export function OfertaGrid() {
             <div className="text-center">
               <p className="text-text-secondary mb-4">
                 <strong className="text-text">Nie wiesz od czego zacząć?</strong>{" "}
-                80% naszych klientów zaczyna od Spotkań z decydentami, bo najszybciej
-                przekłada się na przychód.
+                Zaczniemy od AI Growth Opportunity Map i wybierzemy pierwszy system,
+                który ma największą szansę szybko dowieźć wynik.
               </p>
-              <Button href={CALENDLY_URL} external>
-                Dobierzmy system do Twojej firmy
+              <Button href={AI_GROWTH_MAP_URL}>
+                Sprawdź pierwszy proces do automatyzacji
               </Button>
             </div>
           </FadeUp>

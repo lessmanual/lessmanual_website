@@ -4,40 +4,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { CALENDLY_URL } from "@/lib/constants";
+import { AI_GROWTH_MAP_URL, CALENDLY_URL } from "@/lib/constants";
 
 type ProductLink = { title: string; href: string; tagline: string };
 
 const PRODUCT_LINKS: ProductLink[] = [
   {
-    title: "Hot Lead Catcher",
-    href: "/oferta/hot-lead-catcher",
-    tagline: "Agent łapie gorące leady z 8 źródeł.",
-  },
-  {
-    title: "Pipeline Machine",
-    href: "/oferta/pipeline-machine",
-    tagline: "Spotkania z decydentami B2B pay-per-meeting.",
-  },
-  {
     title: "Content Machine",
     href: "/oferta/content-machine",
-    tagline: "Blog, który pisze się sam. 10-30 artykułów/mies.",
+    tagline: "Regularny content oparty na źródłach firmy.",
   },
   {
-    title: "Obsługa Klienta",
+    title: "Customer Operations AI",
     href: "/oferta/obsluga-klienta",
-    tagline: "Chatbot + WhatsApp + email + voice. 24/7.",
+    tagline: "Obsługa pytań i spraw z kontrolowaną eskalacją.",
+  },
+  {
+    title: "Premium Cold Email+",
+    href: "/oferta/pipeline-machine",
+    tagline: "Sprzedaż B2B oparta na sygnałach i konkretnym kontekście.",
   },
   {
     title: "Generator Ofert",
     href: "/oferta/generator-ofert",
-    tagline: "Klient sam wycenia. PDF leci mailem w 5 min.",
+    tagline: "Oferty tworzone na podstawie danych i cennika firmy.",
+  },
+  {
+    title: "Hot Lead Catcher",
+    href: "/oferta/hot-lead-catcher",
+    tagline: "Sygnały zakupowe z kontekstem do kontaktu.",
   },
   {
     title: "Indywidualne Wdrożenia",
     href: "/oferta/indywidualne-wdrozenia",
-    tagline: "Dedykowany agent pod Twój unikalny workflow - wycena po Discovery.",
+    tagline: "Dedykowany agent pod niestandardowy proces firmy.",
   },
 ];
 
@@ -68,8 +68,9 @@ export function HeaderV2() {
         <nav className="hidden md:flex items-center gap-8 text-[13px]">
           <Link href={anchor("systems")} className="v2-link py-3 inline-block">Systemy</Link>
           <OfertaDropdown />
+          <Link href={AI_GROWTH_MAP_URL} className="v2-link py-3 inline-block">Mapa wzrostu</Link>
           <Link href={anchor("proces")} className="v2-link py-3 inline-block">Proces</Link>
-          <Link href={anchor("pricing")} className="v2-link py-3 inline-block">Cennik</Link>
+          <Link href={anchor("pricing")} className="v2-link py-3 inline-block">Model współpracy</Link>
           <Link href="/blog" className="v2-link py-3 inline-block">Blog</Link>
           <Link href="/faq" className="v2-link py-3 inline-block">FAQ</Link>
           <Link href="/o-nas" className="v2-link py-3 inline-block">O nas</Link>
@@ -158,7 +159,7 @@ function OfertaDropdown() {
           </ul>
           <div className="border-t border-[#E5E5E5] px-4 py-3">
             <Link
-              href="/#systems"
+              href="/oferta"
               onClick={() => setOpen(false)}
               className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513]"
             >

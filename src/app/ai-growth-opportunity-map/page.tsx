@@ -16,17 +16,17 @@ import { FooterV2 } from "@/components/v2/FooterV2";
 import { AIGrowthOpportunityMapForm } from "@/components/lead-magnet/AIGrowthOpportunityMapForm";
 
 export const metadata: Metadata = {
-  title: "Mapa pierwszego procesu AI | LessManual.ai",
+  title: "Mapa pierwszego procesu AI",
   description:
-    "Znajdź pierwszy proces, który AI może przejąć w Twojej firmie. Otrzymaj spersonalizowany raport PDF na email.",
+    "Znajdź pierwszy proces, w którym AI może zdjąć ręczną pracę z zespołu. Sprawdź skalę pracy, źródła i sposób kontroli wyniku.",
   alternates: {
-    canonical: "/ai-growth-opportunity-map",
+    canonical: "https://www.lessmanual.ai/ai-growth-opportunity-map",
   },
   openGraph: {
     title: "Mapa pierwszego procesu AI | LessManual.ai",
     description:
-      "Spersonalizowany raport wskazujący pierwszy mierzalny proces do wdrożenia z AI.",
-    url: "/ai-growth-opportunity-map",
+      "Spersonalizowana mapa pierwszego mierzalnego procesu do wdrożenia z AI.",
+    url: "https://www.lessmanual.ai/ai-growth-opportunity-map",
     type: "website",
     locale: "pl_PL",
   },
@@ -107,16 +107,18 @@ export default function AIGrowthOpportunityMapPage() {
               <div className="inline-flex items-center gap-2 border border-[#D4D4D4] bg-white px-3 py-1.5">
                 <span className="block h-1.5 w-1.5 rounded-full bg-[#10B981]" aria-hidden="true" />
                 <span className="font-mono text-[11px] tracking-normal text-[#525252]">
-                  Bezpłatny raport dla firm
+                  Bezpłatna mapa dla firm
                 </span>
               </div>
 
               <h1 className="mt-7 max-w-[760px] text-[#0A0A0A]">
-                Znajdź pierwszy proces, który AI może przejąć w Twojej firmie.
+                Znajdź pierwszy proces, w którym AI może zdjąć ręczną pracę z zespołu.
               </h1>
 
               <p className="mt-6 max-w-[680px] text-[18px] leading-[1.6] text-[#525252]">
-                Na podstawie formularza oraz publicznych źródeł firmy przygotujemy spersonalizowany raport PDF z rekomendacją pierwszego systemu do wdrożenia. Raport wyślemy na podany email.
+                Na podstawie formularza oraz publicznych źródeł firmy przygotujemy
+                spersonalizowaną mapę pierwszego wdrożenia. Po wysłaniu formularza
+                od razu zobaczysz status analizy.
               </p>
 
               <div className="mt-7 grid max-w-[680px] grid-cols-1 gap-3 sm:grid-cols-2">
@@ -141,7 +143,7 @@ export default function AIGrowthOpportunityMapPage() {
                   className="group inline-flex min-h-[52px] w-full items-center justify-center gap-2 bg-[#0A0A0A] px-6 py-3.5 text-[15px] font-medium text-white transition-[background-color,transform] duration-200 hover:-translate-y-[1px] hover:bg-[#B87333] sm:w-auto"
                   style={{ borderRadius: 4 }}
                 >
-                  Sprawdź pierwszy proces
+                  Uruchom analizę procesu
                   <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
                 </Link>
                 <p className="mt-3 text-[12px] leading-[1.5] text-[#737373]">
@@ -153,11 +155,11 @@ export default function AIGrowthOpportunityMapPage() {
             <div
               className="border border-[#D4D4D4] bg-[#EFEFEF] p-4 shadow-[0_24px_64px_rgba(10,10,10,0.08)] md:p-5"
               style={{ borderRadius: 6 }}
-              aria-label="Podgląd czterech stron raportu"
+              aria-label="Podgląd czterech stron mapy"
             >
               <div className="mb-4 flex items-center justify-between gap-4">
                 <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#737373]">Podgląd raportu</p>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#737373]">Podgląd mapy</p>
                   <p className="mt-1 text-[13px] font-medium text-[#0A0A0A]">Mapa pierwszego procesu AI</p>
                 </div>
                 <span className="flex h-9 w-9 items-center justify-center bg-white text-[#8B4513]" style={{ borderRadius: 4 }}>
@@ -218,7 +220,7 @@ export default function AIGrowthOpportunityMapPage() {
                 <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373]">
                   Droga do pierwszego mierzalnego wdrożenia
                 </div>
-                <h2 className="mt-4 max-w-[520px]">Raport ma prowadzić do decyzji, którą można sprawdzić w praktyce.</h2>
+                <h2 className="mt-4 max-w-[520px]">Mapa ma prowadzić do decyzji, którą można sprawdzić w praktyce.</h2>
               </div>
               <p className="max-w-[600px] text-[16px] leading-[1.65] text-[#525252] md:justify-self-end">
                 Każdy etap porządkuje kolejną decyzję. Celem nie jest zbieranie punktów ani kolejnych materiałów, tylko wybór jednego procesu i pomiar pierwszego wyniku.
@@ -251,7 +253,7 @@ export default function AIGrowthOpportunityMapPage() {
               <div className="mt-7 space-y-4 border-t border-[#E5E5E5] pt-6">
                 <div className="flex items-start gap-3">
                   <Gauge size={18} className="mt-0.5 shrink-0 text-[#8B4513]" aria-hidden="true" />
-                  <p className="text-[13px] leading-[1.55] text-[#525252]">Przybliżone liczby wystarczą. Raport nie jest wyceną ani obietnicą wyniku.</p>
+                  <p className="text-[13px] leading-[1.55] text-[#525252]">Przybliżone liczby wystarczą. Mapa nie jest wyceną ani obietnicą wyniku.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <ShieldCheck size={18} className="mt-0.5 shrink-0 text-[#8B4513]" aria-hidden="true" />

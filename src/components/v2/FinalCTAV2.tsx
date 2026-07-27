@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { CALENDLY_URL, EMAIL } from "@/lib/constants";
+import { AI_GROWTH_MAP_URL, CALENDLY_URL } from "@/lib/constants";
 
 export function FinalCTAV2() {
   const ref = useRef<HTMLElement>(null);
@@ -22,36 +22,37 @@ export function FinalCTAV2() {
         <div className="inline-flex items-center gap-2 border border-[#E5E5E5] bg-white px-3 py-1.5 mb-8">
           <span className="block h-1.5 w-1.5 rounded-full bg-[#10B981]" />
           <span className="font-mono text-[11px] tracking-tight text-[#525252]">
-            1 miejsce w maju · 1 miejsce w czerwcu
+            Pierwszy krok: diagnoza procesu
           </span>
         </div>
 
         <h2 className="mx-auto max-w-[900px]">
-          15 minut rozmowy. Konkretna propozycja.<br />
-          <span className="text-[#B87333]">Zero stawki godzinowej.</span>
+          Zacznij od procesu, który zabiera najwięcej czasu.
         </h2>
 
         <p className="mx-auto mt-6 max-w-[640px] text-[17px] leading-[1.55] text-[#525252]">
-          Dostajesz agenta AI dopasowanego do Twojego biznesu - od pierwszej rozmowy do działającego systemu. Bez pośredników, bez godzinowych rozliczeń. Jeśli Twój case nie pasuje, powiem Ci to wprost na rozmowie.
+          Mapa pokaże pierwszy proces do automatyzacji, źródła potrzebne do
+          działania agenta i sposób kontroli wyniku. Jeśli wdrożenie nie ma
+          sensu, powiem Ci to wprost.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={AI_GROWTH_MAP_URL}
             className="group inline-flex items-center gap-2 bg-[#0A0A0A] px-6 py-3.5 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] hover:-translate-y-[1px]"
             style={{ borderRadius: 4 }}
           >
-            Zarezerwuj rozmowę (15 min)
+            Sprawdź pierwszy proces do automatyzacji
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
           <Link
-            href={`mailto:${EMAIL}`}
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-[#E5E5E5] bg-white px-6 py-3.5 text-[14px] font-medium text-[#0A0A0A] transition-all duration-200 hover:border-[#0A0A0A] hover:-translate-y-[1px]"
             style={{ borderRadius: 4 }}
           >
-            Napisz maila
+            Umów rozmowę o wdrożeniu
           </Link>
         </div>
 

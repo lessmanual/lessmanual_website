@@ -1,9 +1,9 @@
-# Oferta - AI dla Twojej Firmy | LessManual.ai
+# Wdrożenia AI dla firm: sprzedaż, content i obsługa | LessManual
 
-> 4 systemy AI pod klucz: Pipeline Machine, Content Machine, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów. Wdrożenie w 7-21 dni.
+> Wdrażamy agentów AI do sprzedaży B2B, contentu, SEO i obsługi klienta. Zakres, termin i wycena powstają po diagnozie procesu.
 
-> Source: http://localhost:3000/oferta
-> Generated: 2026-04-20T17:54:10.498Z
+> Source: https://www.lessmanual.ai/oferta
+> Generated: 2026-07-27T08:27:44.120Z
 
 ---
 
@@ -11,68 +11,82 @@
 
 Oferta
 
-# Wybierz rozwiązanie AI dla swojej firmy
+# Wdrożenia AI dla firm, które chcą rosnąć bez dokładania ręcznej pracy.
 
-Każdy system działa pod klucz, my budujemy, Ty widzisz wyniki. Gwarancja wyników lub pełny zwrot kosztów.
+Najpierw sprawdzamy, gdzie znika czas i pieniądze. Potem dostajesz konkretny zakres, termin i sposób utrzymania.
 
-01
+Primary01
 
-### Hot Lead Catcher
+### Content Machine
 
-Agent AI który wychwytuje gorące leady zanim konkurencja je zauważy. Monitoruje 4 źródła sygnałów zakupowych (newsy, oferty pracy, opinie, social media) i alertuje gdy ktoś z Twojego ICP właśnie rozważa zakup.
+System wybiera tematy na podstawie pytań klientów, przygotowuje teksty, publikuje je i rozdziela na kolejne formaty. Jakość sprawdza człowiek.
 
-Setup 3 000 PLN + od 800 PLN/mies
+wdrożenie i stała opieka
 
-4 źródła sygnałów (newsy, oferty pracy, opinie, social media)
+regularny content bez budowania własnego działu
 
-[Dowiedz się więcej](/oferta/hot-lead-catcher)[lub umów rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+[Zobacz zakres](/oferta/content-machine)
 
-02
+Primary02
 
-### Spotkania z decydentami
+### Obsługa Klienta AI
 
-System który umawia spotkania z Twoimi idealnymi klientami. Płacisz tylko za wynik - zero stałych opłat. 3 warstwy gwarancji. Bonusy o wartości do 10,000 PLN w cenie.
+System odpowiada na powtarzalne pytania na podstawie wiedzy firmy. Zespół dostaje tylko sprawy wymagające decyzji, razem z pełnym kontekstem.
 
-76% open rate, 61% positive reply rate
+wdrożenie i stała opieka
 
-Pay-per-meeting od 500 PLN. Zero stałych opłat
+kanały i integracje dobierane po diagnozie
 
-[Dowiedz się więcej](/oferta/pipeline-machine)[lub umów rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+[Zobacz zakres](/oferta/obsluga-klienta)
 
-03
+Primary03
 
-### Blog który pisze się sam
+### Premium Cold Email+
 
-10-30 artykułów SEO miesięcznie. Keyword research, klastry tematyczne, linkowanie wewnętrzne. Ty nie robisz nic. Ruch rośnie.
+Kampania sprzedażowa B2B oparta na sprawdzonych danych o firmie i konkretnym powodzie kontaktu. Każdą wiadomość sprawdzamy przed wysyłką.
 
-Od 83 PLN za artykuł (vs 300-800 PLN copywriter)
+uruchomienie i stała obsługa
 
-+150-400% ruchu organicznego w 6 miesięcy
+dla firm, w których wartość kontraktu uzasadnia dokładne przygotowanie
 
-[Dowiedz się więcej](/oferta/content-machine)[lub umów rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+[Zobacz zakres](/oferta/pipeline-machine)
 
 04
 
-### Odpowiedź w 30 sekund, 24/7
+### Generator Ofert
 
-System który odpowiada klientom na stronie, WhatsApp i mailu. Wytrenowany na Twojej bazie wiedzy. Jak czegoś nie wie, przekazuje do Ciebie z pełnym kontekstem.
+System przygotowuje draft oferty na podstawie zatwierdzonego cennika, danych klienta i reguł firmy. Handlowiec sprawdza wynik przed wysyłką.
 
-60-80% zapytań obsłużonych automatycznie
+ceny wyłącznie z danych firmy
 
-System od 900 PLN/mies vs pracownik 8-9k PLN/mies
+akceptacja handlowca przed wysyłką
 
-[Dowiedz się więcej](/oferta/obsluga-klienta)[lub umów rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+[Zobacz zakres](/oferta/generator-ofert)
 
-### Wycena w 5 minut zamiast 2 godzin
+05
 
-Klient sam wycenia na Twojej stronie lub w chacie. System generuje profesjonalny PDF z Twoim logo i wysyła mailem. Z auto follow-upem i cotygodniowym raportem.
+### Hot Lead Catcher
 
-2h → 5 min (oszczędność 96% czasu)
+Agent monitoruje uzgodnione źródła i wskazuje sygnały, które mogą oznaczać moment zakupowy. Każdy alert zawiera źródło i kontekst do weryfikacji.
 
-+25-40% win rate dzięki szybkości odpowiedzi
+sygnał, źródło i szkic kontaktu
 
-[Dowiedz się więcej](/oferta/generator-ofert)[lub umów rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
+dane do sprawdzenia przed kontaktem z firmą
 
-**Nie wiesz od czego zacząć?** 80% naszych klientów zaczyna od Spotkań z decydentami, bo najszybciej przekłada się na przychód.
+[Zobacz zakres](/oferta/hot-lead-catcher)
 
-[Dobierzmy system do Twojej firmy](https://cal.com/bartłomiej-chudzik-2en6pt)
+06
+
+### Indywidualne Wdrożenia
+
+Agent AI dopasowany do niestandardowego procesu, gdy gotowa ścieżka nie pasuje. Zakres i wycena powstają po diagnozie.
+
+zakres po diagnozie procesu
+
+wycena przed rozpoczęciem prac
+
+[Zobacz zakres](/oferta/indywidualne-wdrozenia)
+
+**Nie wiesz od czego zacząć?** Zaczniemy od AI Growth Opportunity Map i wybierzemy pierwszy system, który ma największą szansę szybko dowieźć wynik.
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)

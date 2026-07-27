@@ -49,36 +49,40 @@ export async function POST(request: Request) {
   const requestId = createRequestId();
   const submittedAt = new Date().toISOString();
   const payload = buildCloudCsoGrowthMapPayload(parsed.value, requestId, submittedAt);
+  const isProduction =
+    process.env.NODE_ENV === "production" ||
+    process.env.VERCEL_ENV === "production";
+  const requireWebhook =
+    process.env.CLOUDCSO_LEAD_MAGNET_REQUIRE_WEBHOOK === "1";
+  const allowLocalPreview =
+    !isProduction &&
+    !requireWebhook &&
+    process.env.CLOUDCSO_LEAD_MAGNET_ALLOW_LOCAL_PREVIEW === "1";
   const configuredWebhookUrl = process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL?.trim() || "";
   const webhookUrl = configuredWebhookUrl || (
     process.env.NODE_ENV === "development"
       ? "http://127.0.0.1:8788/lead-magnet"
       : ""
   );
-  const requireWebhook =
-    process.env.CLOUDCSO_LEAD_MAGNET_REQUIRE_WEBHOOK === "1" ||
-    process.env.VERCEL_ENV === "production";
 
   if (!webhookUrl) {
-    if (requireWebhook) {
-      return jsonResponse(
-        {
-          ok: false,
-          message: "Automatyczna wysyłka raportu nie jest jeszcze skonfigurowana. Spróbuj później albo napisz na kontakt@lessmanual.ai.",
-        },
-        503,
-      );
-    }
-
-    return jsonResponse(
-      {
-        ok: true,
-        requestId,
-        status: "local_preview_ready",
-        message: "Zgłoszenie przyjęte w trybie testowym. Analiza i wysyłka ruszą po podpięciu pełnej automatyzacji.",
-      },
-      202,
-    );
+    return allowLocalPreview
+      ? jsonResponse(
+          {
+            ok: true,
+            requestId,
+            status: "local_preview_ready",
+            message: "Zgłoszenie przyjęte w trybie testowym. Analiza i wysyłka ruszą po podpięciu pełnej automatyzacji.",
+          },
+          202,
+        )
+      : jsonResponse(
+          {
+            ok: false,
+            message: "Analiza formularza nie jest jeszcze dostępna. Spróbuj później albo napisz na kontakt@lessmanual.ai.",
+          },
+          503,
+        );
   }
 
   const webhookTarget = parseWebhookUrl(webhookUrl);
@@ -131,13 +135,13 @@ export async function POST(request: Request) {
           status: "queued_for_cloudcso",
           message: localMockDelivery
             ? "Etap 1/5 jest za nami. Przygotowujemy Twoją mapę wzrostu."
-            : "Etap 1/5 ukończony: analiza ruszyła. Potwierdzenie przyjdzie na email, a raport PDF wyślemy osobno po zakończeniu analizy.",
+            : "Etap 1/5 ukończony: analiza ruszyła. Potwierdzenie przyjdzie na adres e-mail, a raport PDF wyślemy osobno po zakończeniu analizy.",
         },
         202,
       );
     }
 
-    if (webhookResult?.emailDeliveryMode === "mock") {
+    if (webhookResult?.emailDeliveryMode === "mock" && allowLocalPreview) {
       return jsonResponse(
         {
           ok: true,
@@ -162,12 +166,10 @@ export async function POST(request: Request) {
 
   return jsonResponse(
     {
-      ok: true,
-      requestId,
-      status: "queued_for_cloudcso",
-      message: "Etap 1/5 ukończony: analiza ruszyła. Potwierdzenie przyjdzie na email, a raport PDF wyślemy osobno po zakończeniu analizy.",
+      ok: false,
+      message: "Nie udało się potwierdzić przyjęcia zgłoszenia. Spróbuj ponownie za chwilę.",
     },
-    202,
+    502,
   );
 }
 

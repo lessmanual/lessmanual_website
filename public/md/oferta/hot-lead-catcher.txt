@@ -1,135 +1,73 @@
-# Hot Lead Catcher · agent AI łapie gorące leady · LessManual
+# Sygnały zakupowe dla sprzedaży B2B | LessManual
 
-> Agent AI monitoruje 4 źródła sygnałów zakupowych (newsy, oferty pracy, recenzje, wzmianki). Scoring intent, alert na Telegram, draft maila w Instantly. 24h od sygnału do kontaktu. Cennik: STARTER, GROWTH, SCALE.
+> Warstwa sygnałów zakupowych dla outboundu i sprzedaży. System monitoruje zdarzenia, ocenia intencję i przygotowuje kontekst do kontaktu.
 
-> Source: http://localhost:3000/oferta/hot-lead-catcher
-> Generated: 2026-04-20T17:54:10.527Z
+> Source: https://www.lessmanual.ai/oferta/hot-lead-catcher
+> Generated: 2026-07-27T08:27:44.565Z
 
 ---
 
-Agent #1 LessManual · NAJCZĘŚCIEJ WYBIERANY
+[Oferta](/oferta)
 
-# Agent AI, który łapie  
-gorące leady  
-zanim konkurencja je zauważy.
+Sygnały zakupowe
 
-Monitoring od 2 do 8 źródeł sygnałów zakupowych (newsy, oferty pracy, recenzje, social, Reddit, Facebook grupki, RSS, X). Scoring intent. Agent SAM wysyła personalizowane maile i SAM odpowiada na zwrotne. Wchodzisz w wątek dopiero gdy spotkanie do umówienia.
+# Hot Lead Catcher
 
-[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+Warstwa sygnałów zakupowych dla sprzedaży B2B. System monitoruje zdarzenia, ocenia ich znaczenie i przygotowuje kontekst do kontaktu.
 
-Hot Lead Catcherdemo na żywo
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
 
-lessmanual-cli · hot-lead-catcher● live
+## Model współpracy
 
-$
+Najpierw diagnoza procesu. Potem zakres wdrożenia, sposób utrzymania i wycena dopasowana do danych oraz integracji.
 
-do 8 źródeł · alert w 60s
+Dla kogoFirmy, które mają jasno opisany idealny profil klienta i wiedzą, jakie zdarzenia zwiększają szansę zakupu.
 
-01SKAN
+Cel wdrożeniaSzybsze zauważanie okazji, lepszy moment kontaktu i mniej ręcznego przeglądania źródeł.
 
-Agent monitoruje od 2 do 8 źródeł sygnałów zakupowych: newsy o branży klienta, oferty pracy (szukają DPO/CTO/Marketing Director), recenzje na Google/G2, wzmianki social, wątki na Reddicie, Facebook grupki, RSS branżowe, posty na X. Codziennie. Bez przerwy.
+## Jak działa system
 
-02SCORING
+Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 
-'CTO firmy X szuka pracy' = score 90+. 'Firma Y chwali się rundą A' = score 70+. Każdy sygnał dostaje score intent (0-100). Filtrowanie: tylko hot (>75) idą dalej.
+-   Ustalamy sygnały, które naprawdę mają znaczenie: zmiany w firmie, rekrutacje, ekspansja, nowe projekty albo publiczne wzmianki.
+-   System zbiera dane z uzgodnionych źródeł i odrzuca szum, który nie pasuje do profilu klienta albo scenariusza sprzedaży.
+-   Każdy mocny sygnał dostaje kontekst: co się stało, dlaczego to może mieć znaczenie i jaki kierunek kontaktu warto sprawdzić.
+-   Najlepsze sygnały mogą trafiać do Premium Cold Email+ jako powód kontaktu i materiał do personalizacji.
 
-03WYSYŁKA + REPLY
+## Kontrola wyniku
 
-Agent SAM wysyła personalizowanego maila (kontekst sygnału + propozycja rozmowy) i SAM odpowiada na zwrotne. Tone of voice konfigurowalny pod Twoją markę. Wchodzisz dopiero gdy spotkanie do umówienia. Alert na Telegram.
+Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Klient
+Sygnał ma związek z realnym problemem albo zmianą w firmie.
 
-WiperApp - B2B SaaS, target: Marketing Director w retail.
+Źródła są jawne w notatce, więc handlowiec zna pochodzenie kontekstu.
 
-Problem
+Kwalifikacja konta zostaje po stronie sprzedaży.
 
-200 cold emaili z generycznym pitchem. Zero odpowiedzi. Brak danych żeby wiedzieć kogo zaczepić w odpowiednim momencie.
+Każdy alert wskazuje konkretną akcję do sprawdzenia.
 
-Co dostał (workflow)
+Efekt biznesowy
 
-Agent skanuje 4 źródła pod ICP retail (newsy, oferty pracy DPO/CMO, recenzje konkurentów, wzmianki social). Score >75 = mail wysłany via Instantly z kontekstem ("widziałem że szukacie DPO" / "gratuluję rundy"). Agent SAM odpowiada na zwrotne i prowadzi wątek aż do umówienia spotkania.
+## Po czym poznamy, że wdrożenie działa
 
-Dziś
+Każdy alert wskazuje zdarzenie, źródło i możliwy związek z ofertą.
 
-Pipeline w pełni autonomiczny: WiperApp dostaje tylko alert na Telegram "spotkanie do potwierdzenia". Pokazuję działający setup live na rozmowie 15-min.
+Mierzymy, które typy sygnałów prowadzą do kontaktu zaakceptowanego przez sprzedaż.
 
-Czas od sygnału do maila
+Zespół odrzuca szum i zapisuje powód odrzucenia do dalszej kalibracji.
 
-60 sekund
+Raport pokazuje źródła, które dostarczają wartościowy kontekst.
 
-Źródeł monitorowanych
+## Najpierw znajdź proces, który warto automatyzować
 
-4 (24/7)
+Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
 
-Próg hot signal
+Dobre, gdy branża ma widoczne sygnały zakupu albo zmiany operacyjnej.
 
-score > 75
+Zakres zależy od źródeł, częstotliwości monitoringu, scoringu i integracji ze sprzedażą.
 
-Pełne liczby (leady, konwersja, ROI) pokazujemy 1:1 w rozmowie 15-min.
+Jakość sygnałów sprawdzamy na ograniczonej próbie przed skalowaniem.
 
-STARTER
+Najlepiej działa jako warstwa danych dla kampanii sprzedażowej.
 
-od 800 PLN/mies.
-
-Setup: 3 000 PLN
-
--   +2 źródła: newsy branżowe + oferty pracy
--   +Scoring intent podstawowy
--   +Agent wysyła maile autonomicznie via Instantly
--   +Auto-reply podstawowy (1 follow-up)
--   +1 agent dla 1 ICP
--   +Alert Telegram
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-NAJCZĘŚCIEJ WYBIERANY
-
-GROWTH
-
-od 1 300 PLN/mies.
-
-Setup: 3 000 PLN
-
--   +4 źródła: newsy + oferty pracy + recenzje (G2/Google) + wzmianki social
--   +Scoring intent zaawansowany (LLM custom rules)
--   +Agent wysyła + odpowiada autonomicznie (do 3 follow-upów)
--   +Tone of voice konfigurowalny pod markę
--   +2 agenty dla 2 ICP
--   +Wsparcie 24h SLA
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-SCALE
-
-od 2 000 PLN/mies.
-
-Setup: 3 000 PLN
-
--   +8 źródeł: wszystko z GROWTH + Reddit + Facebook grupki + RSS branżowe + X
--   +Scoring custom z LLM + integracje API
--   +Pełna konwersacja autonomiczna (unlimited follow-upy + handling obiekcji)
--   +Multi-account inbox handling + integracja CRM
--   +Unlimited agentów i ICP
--   +Dedykowany account manager
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-Wszystkie ceny za konkretny zakres. 3 warstwy gwarancji. Rabat 15% przy kontrakcie 6+ miesięcy.
-
-Skąd agent wie, że sygnał jest hot?+
-
-Co jeśli źródła nie generują sygnałów dla mojej branży?+
-
-Ile czasu zajmuje uruchomienie?+
-
-Co dokładnie agent wysyła i jak unika spamu?+
-
-Mogę wypróbować zanim podpiszę?+
-
-## Gotowy żeby agent łapał leady za Ciebie?
-
-15 minut rozmowy. Sprawdzimy czy HLC pasuje do Twojego ICP, pokażę demo na żywo, ustalimy tier.
-
-[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
-
-Średnia odpowiedź: 4h w dni robocze.
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)

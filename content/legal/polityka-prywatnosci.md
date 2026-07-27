@@ -1361,7 +1361,7 @@ Jeśli masz pytania dotyczące niniejszej Polityki Prywatności lub przetwarzani
 
 - **[Polityka Cookies](/legal/polityka-cookies)** - szczegółowe informacje o cookies
 - **[Regulamin Świadczenia Usług](/legal/regulamin)** - warunki umowne, płatności, SLA
-- **[Klauzula RODO (short)](/legal/klauzula-rodo-short)** - krótka informacja RODO dla formularzy kontaktowych
+- **[Polityka prywatności](/legal/polityka-prywatnosci)** - informacje o przetwarzaniu danych z formularzy kontaktowych
 
 ---
 

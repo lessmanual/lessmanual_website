@@ -616,7 +616,7 @@ export default function ContentMachineContent() {
               <SectionLabel>GWARANCJA</SectionLabel>
               <h2>3 warstwy gwarancji. Zero ryzyka z Twojej strony.</h2>
               <p className="mt-4 text-[15px] leading-[1.65] text-[#525252]">
-                WAL ("już raz go ktoś oszukał") zasługuje na konkretne warunki, nie ogólnikowe deklaracje.
+                WAL (&quot;już raz go ktoś oszukał&quot;) zasługuje na konkretne warunki, nie ogólnikowe deklaracje.
               </p>
             </header>
 

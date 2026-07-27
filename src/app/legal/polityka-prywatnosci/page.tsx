@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { LegalPageContent } from "@/components/legal/LegalPageContent";
 
 export const metadata: Metadata = {
-  title: "Polityka Prywatnosci | LessManual.ai",
+  title: "Polityka prywatności",
   description:
     "Polityka Prywatnosci LessManual.ai zgodna z RODO i polskim prawem ochrony danych osobowych.",
   alternates: {
-    canonical: "https://lessmanual.ai/legal/polityka-prywatnosci",
+    canonical: "https://www.lessmanual.ai/legal/polityka-prywatnosci",
   },
 };
 

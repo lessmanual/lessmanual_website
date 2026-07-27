@@ -9,7 +9,7 @@ import { CopyLinkButton } from "@/components/newsletter/CopyLinkButton";
 import { CheckCircle, Linkedin, Mail, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Jesteś na liście! - AI Insider | LessManual.ai",
+  title: "Jesteś na liście! AI Insider",
   description: "Dziękujemy za zapis do newslettera AI Insider. Pierwszy numer wpadnie w środę o 7:30.",
   robots: { index: false, follow: false },
 };
@@ -20,7 +20,7 @@ export default function ThankYouPage() {
   const shareText = encodeURIComponent(
     "Zapisałem się do AI Insider, jedynego newslettera AI w Polsce z wersją audio. Polecam: lessmanual.ai/newsletter"
   );
-  const shareUrl = encodeURIComponent("https://lessmanual.ai/newsletter");
+  const shareUrl = encodeURIComponent("https://www.lessmanual.ai/newsletter");
 
   return (
     <>

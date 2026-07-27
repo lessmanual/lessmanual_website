@@ -218,9 +218,9 @@ export function AIGrowthOpportunityMapForm() {
           <Sparkles size={18} aria-hidden="true" />
         </span>
         <div>
-          <h2 className="text-[24px] leading-[1.15] text-[#0A0A0A]">Odbierz swoją mapę</h2>
+          <h2 className="text-[24px] leading-[1.15] text-[#0A0A0A]">Uruchom analizę procesu</h2>
           <p className="mt-2 text-[14px] leading-[1.55] text-[#525252]">
-            Odpowiedz na kilka pytań. Gotowy PDF przyjdzie na email.
+            Po wysłaniu formularza zobaczysz status analizy.
           </p>
         </div>
       </div>
@@ -257,7 +257,7 @@ export function AIGrowthOpportunityMapForm() {
               onChange={(value) => updateTextField("name", value)}
             />
             <Field
-              label="Email"
+              label="E-mail"
               name="email"
               type="email"
               autoComplete="email"
@@ -373,7 +373,7 @@ export function AIGrowthOpportunityMapForm() {
               error={fieldErrors.privacyConsent}
               label={
                 <>
-                  Zgadzam się na kontakt w sprawie mapy i otrzymanie PDF na podany email. Zobacz{" "}
+                  Zgadzam się na kontakt w sprawie analizy i mapy pierwszego procesu. Zobacz{" "}
                   <Link
                     href="/legal/polityka-prywatnosci"
                     target="_blank"
@@ -438,7 +438,7 @@ export function AIGrowthOpportunityMapForm() {
             </>
           ) : (
             <>
-              Wyślij mi mapę
+              Uruchom analizę procesu
               <ArrowRight size={16} aria-hidden="true" />
             </>
           )}
@@ -454,7 +454,7 @@ export function AIGrowthOpportunityMapForm() {
         </div>
         <div className="flex items-start gap-2">
           <FileText size={16} className="mt-0.5 shrink-0 text-[#8B4513]" aria-hidden="true" />
-          <p>Gotowy PDF przyjdzie na email podany w pierwszym kroku.</p>
+          <p>Po wysłaniu formularza od razu zobaczysz status analizy.</p>
         </div>
       </div>
     </form>

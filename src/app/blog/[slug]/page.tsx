@@ -5,7 +5,12 @@ import { HeaderV2 } from "@/components/v2/HeaderV2";
 import { FooterV2 } from "@/components/v2/FooterV2";
 import { BlogContent } from "@/components/sections/blog/BlogContent";
 import { getPostBySlug, getAllSlugs } from "@/lib/supabase";
-import { generateBlogPostSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import {
+  generateBlogPostSchema,
+  generateBreadcrumbSchema,
+  serializeJsonLd,
+} from "@/lib/schema";
+import { normalizePublicProse } from "@/lib/public-prose";
 
 export const revalidate = 60;
 
@@ -25,19 +30,22 @@ export async function generateMetadata({
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    return { title: "Post nie znaleziony | LessManual.ai" };
+    return { title: "Post nie znaleziony" };
   }
 
-  const title = `${post.title_pl} | LessManual.ai`;
-  const description = post.meta_description_pl || post.description_pl || "";
+  const title = normalizePublicProse(post.title_pl);
+  const socialTitle = `${title} | LessManual.ai`;
+  const description = normalizePublicProse(
+    post.meta_description_pl || post.description_pl || "",
+  );
 
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: socialTitle,
       description,
-      url: `https://lessmanual.ai/blog/${post.slug}`,
+      url: `https://www.lessmanual.ai/blog/${post.slug}`,
       siteName: "LessManual.ai",
       locale: "pl_PL",
       type: "article",
@@ -58,12 +66,12 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: socialTitle,
       description,
       ...(post.featured_image ? { images: [post.featured_image] } : {}),
     },
     alternates: {
-      canonical: `https://lessmanual.ai/blog/${post.slug}`,
+      canonical: `https://www.lessmanual.ai/blog/${post.slug}`,
     },
   };
 }
@@ -91,9 +99,12 @@ export default async function BlogPostPage({
 
   const blogSchema = generateBlogPostSchema(post);
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Strona główna", url: "https://lessmanual.ai" },
-    { name: "Blog", url: "https://lessmanual.ai/blog" },
-    { name: post.title_pl, url: `https://lessmanual.ai/blog/${post.slug}` },
+    { name: "Strona główna", url: "https://www.lessmanual.ai" },
+    { name: "Blog", url: "https://www.lessmanual.ai/blog" },
+    {
+      name: normalizePublicProse(post.title_pl),
+      url: `https://www.lessmanual.ai/blog/${post.slug}`,
+    },
   ]);
 
   return (
@@ -127,11 +138,11 @@ export default async function BlogPostPage({
       `}</style>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(blogSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <HeaderV2 />
       <main className="pt-16 pb-16 md:pb-0">
@@ -151,7 +162,9 @@ export default async function BlogPostPage({
                 </span>
               )}
 
-              <h1 className="font-serif text-text mb-6">{post.title_pl}</h1>
+              <h1 className="font-serif text-text mb-6">
+                {normalizePublicProse(post.title_pl)}
+              </h1>
 
               <div className="flex flex-wrap items-center gap-3 text-sm text-text-muted">
                 <span>Bartłomiej Chudzik</span>
@@ -186,7 +199,7 @@ export default async function BlogPostPage({
               <div className="mb-12 rounded-[6px] overflow-hidden">
                 <img
                   src={post.featured_image}
-                  alt={post.title_pl}
+                  alt={normalizePublicProse(post.title_pl)}
                   className="w-full"
                 />
               </div>

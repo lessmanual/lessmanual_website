@@ -10,7 +10,7 @@ export function CopyLinkButton() {
     <button
       type="button"
       onClick={() => {
-        navigator.clipboard.writeText("https://lessmanual.ai/newsletter");
+        navigator.clipboard.writeText("https://www.lessmanual.ai/newsletter");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }}

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { LiveDemoTerminal } from "./LiveDemoTerminal";
-import { CALENDLY_URL } from "@/lib/constants";
+import { AI_GROWTH_MAP_URL, CALENDLY_URL } from "@/lib/constants";
 import { SOCIAL_PROOF } from "@/lib/social-proof";
 
 export function HeroV2() {
@@ -15,47 +15,48 @@ export function HeroV2() {
             <div className="inline-flex items-center gap-2 border border-[#E5E5E5] bg-white px-3 py-1.5 mb-8">
               <span className="block h-1.5 w-1.5 rounded-full bg-[#10B981]" />
               <span className="font-mono text-[11px] tracking-tight text-[#525252]">
-                {/* TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md */}
-                Max 5 klientów miesięcznie. Ostatnie miejsce w maju.
+                Automatyzacja AI dla firm B2B
               </span>
             </div>
 
             <h1 className="text-[#0A0A0A]">
-              Zatrudnij agentów AI<br />
-              i <span className="text-[#B87333]">odzyskaj swój czas.</span>
+              Zdejmujemy ręczną pracę ze sprzedaży, contentu i{" "}
+              <span className="text-[#B87333]">obsługi klienta.</span>
             </h1>
 
             <p className="mt-8 max-w-[560px] text-[17px] leading-[1.55] text-[#525252]">
-              Zamiast etatowego pracownika za 8-10 tys. PLN/mies. dostajesz agenta AI który sprzedaje, odpowiada klientom i tworzy content - 24/7, bez L4, bez rekrutacji. Od 900 PLN/mies.
+              Najpierw liczymy, gdzie firma traci czas i pieniądze. Potem
+              wdrażamy agenta AI, który pracuje na zatwierdzonych danych,
+              przechodzi kontrolę jakości i przekazuje wyjątki człowiekowi.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[12px] text-[#525252]">
-              <span>76% open</span>
+              <span>dane Twojej firmy</span>
               <span className="text-[#737373]">·</span>
-              <span>61% reply</span>
+              <span>jasne reguły</span>
               <span className="text-[#737373]">·</span>
-              <span>4h avg response</span>
+              <span>kontrola człowieka</span>
               <span className="text-[#737373]">·</span>
-              <span>{SOCIAL_PROOF.systemsLive} systemów live</span>
+              <span>wdrożenie i utrzymanie</span>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={AI_GROWTH_MAP_URL}
                 className="group inline-flex items-center gap-2 bg-[#0A0A0A] px-6 py-3.5 text-[14px] font-medium text-white transition-all duration-200 hover:bg-[#B87333] hover:-translate-y-[1px]"
                 style={{ borderRadius: 4 }}
               >
-                <span>Zarezerwuj rozmowę (15 min)</span>
+                <span>Sprawdź pierwszy proces do automatyzacji</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
               </Link>
               <Link
-                href="#systems"
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-[#E5E5E5] bg-white px-6 py-3.5 text-[14px] font-medium text-[#0A0A0A] transition-all duration-200 hover:border-[#0A0A0A] hover:-translate-y-[1px]"
                 style={{ borderRadius: 4 }}
               >
-                Zobacz systemy
+                Porozmawiaj o wdrożeniu
               </Link>
             </div>
 
@@ -73,9 +74,11 @@ export function HeroV2() {
               </div>
               <div className="flex items-center gap-2 text-[13px]">
                 <StarRow />
-                <span className="text-[#525252]">5.0</span>
+                <span className="text-[#525252]">{SOCIAL_PROOF.googleRating.toFixed(1)}</span>
                 <span className="text-[#737373]">·</span>
-                <span className="text-[#525252]">{SOCIAL_PROOF.googleReviews} opinii Google · {SOCIAL_PROOF.companiesEngaged}+ firm B2B · {SOCIAL_PROOF.implementationsDelivered} wdrożeń</span>
+                <span className="text-[#525252]">
+                  {SOCIAL_PROOF.googleReviews} opinii Google · {SOCIAL_PROOF.companiesEngaged}+ firm B2B · {SOCIAL_PROOF.implementationsDelivered} wdrożenia
+                </span>
               </div>
             </div>
           </div>
@@ -84,8 +87,8 @@ export function HeroV2() {
           <div className="relative">
             <LiveDemoTerminal />
             <div className="mt-4 flex items-center justify-between px-1 font-mono text-[11px] text-[#737373]">
-              <span>Hot Lead Catcher · real-time demo</span>
-              <span>76% open · 61% reply</span>
+              <span>Mapa pierwszego procesu AI</span>
+              <span>diagnoza przed wdrożeniem</span>
             </div>
           </div>
         </div>

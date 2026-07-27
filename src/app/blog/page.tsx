@@ -8,14 +8,14 @@ import { getPublishedPosts } from "@/lib/supabase";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blog | LessManual.ai",
+  title: "Blog",
   description:
     "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrażania systemów AI w firmach B2B.",
   openGraph: {
     title: "Blog | LessManual.ai",
     description:
       "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrażania systemów AI w firmach B2B.",
-    url: "https://lessmanual.ai/blog",
+    url: "https://www.lessmanual.ai/blog",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Praktyczna wiedza o automatyzacji biznesu z AI. Poradniki, case studies i strategie wdrażania systemów AI w firmach B2B.",
   },
   alternates: {
-    canonical: "https://lessmanual.ai/blog",
+    canonical: "https://www.lessmanual.ai/blog",
   },
 };
 
@@ -71,13 +71,13 @@ export default async function BlogPage() {
               href="/"
               className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-accent transition-colors mb-8"
             >
-              &larr; Strona glowna
+              &larr; Strona główna
             </Link>
 
             <h1 className="font-serif text-text mb-4">Blog</h1>
             <p className="text-text-secondary text-lg max-w-[680px] mb-12">
               Praktyczna wiedza o automatyzacji biznesu z AI. Bez teorii, same
-              konkretne rozwiazania.
+              konkretne rozwiązania.
             </p>
 
             {posts.length > 0 ? (
@@ -89,7 +89,7 @@ export default async function BlogPage() {
             ) : (
               <div className="text-center py-20">
                 <p className="text-text-muted text-lg">
-                  Wkrotce pojawia sie artykuly.
+                  Wkrótce pojawią się artykuły.
                 </p>
               </div>
             )}

@@ -1,4 +1,5 @@
-export const AI_SDR_CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
+export const AI_SDR_CALENDLY_URL =
+  "https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min";
 export const AI_SDR_EMAIL = "kontakt@lessmanual.ai";
 
 export const AI_SDR_ROTATOR_WORDS = ["brak", "zero", "nie ma"];
@@ -442,4 +443,3 @@ export const AI_SDR_GUARANTEE_LAYERS = [
     body: "Płacisz 100% z góry. Nie jesteś zadowolony z przygotowanej kampanii przed jej uruchomieniem? Pełny zwrot. Bez pytań.",
   },
 ];
-

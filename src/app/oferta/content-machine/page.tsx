@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import ContentMachineContent from "./_content";
+import { PremiumOfferPage } from "@/components/sections/PremiumOfferPage";
+import { PREMIUM_OFFERS } from "@/lib/premium-offers";
 
 export const metadata: Metadata = {
-  title: "Content Machine - automatyczny system treści SEO + social + lead magnety · LessManual",
+  title: "Automatyzacja contentu i SEO dla firm",
   description:
-    "10 do 30 artykułów SEO miesięcznie. Bez copywritera, bez Twojego czasu. Dajesz branżę - my robimy resztę. +150-400% ruchu organicznego w 6 miesięcy. Od 83 PLN za artykuł.",
+    "System regularnie przygotowuje treści na podstawie źródeł firmy, sprawdza fakty i prowadzi materiał do akceptacji, publikacji oraz dystrybucji.",
   alternates: {
     canonical: "/oferta/content-machine",
   },
   openGraph: {
-    title: "Content Machine - automatyczny system treści SEO · LessManual",
+    title: "Automatyzacja contentu i SEO dla firm | LessManual",
     description:
-      "10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. Bez copywritera, bez Twojego czasu. +150-400% ruchu organicznego.",
+      "Regularne treści oparte na źródłach firmy, z kontrolą faktów i publikacją.",
     url: "/oferta/content-machine",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Content Machine · LessManual",
+    title: "Automatyzacja contentu i SEO dla firm | LessManual",
     description:
-      "10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. Bez copywritera. +150-400% ruchu organicznego.",
+      "Regularne treści oparte na źródłach firmy, z kontrolą faktów i publikacją.",
   },
 };
 
 export default function ContentMachinePage() {
-  return <ContentMachineContent />;
+  return <PremiumOfferPage {...PREMIUM_OFFERS.contentMachine} />;
 }

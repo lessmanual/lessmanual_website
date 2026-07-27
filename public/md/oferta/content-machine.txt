@@ -1,160 +1,73 @@
-# Content Machine - automatyczny system treści SEO + social + lead magnety · LessManual
+# Automatyzacja contentu i SEO dla firm | LessManual
 
-> 10 do 30 artykułów SEO miesięcznie. Bez copywritera, bez Twojego czasu. Dajesz branżę - my robimy resztę. +150-400% ruchu organicznego w 6 miesięcy. Od 83 PLN za artykuł.
+> System regularnie przygotowuje treści na podstawie źródeł firmy, sprawdza fakty i prowadzi materiał do akceptacji, publikacji oraz dystrybucji.
 
-> Source: http://localhost:3000/oferta/content-machine
-> Generated: 2026-04-20T17:54:10.613Z
+> Source: https://www.lessmanual.ai/oferta/content-machine
+> Generated: 2026-07-27T08:27:45.492Z
 
 ---
 
-Content Machine · zrobione za Ciebie · od 83 PLN/artykuł
+[Oferta](/oferta)
 
-# Blog który  
-pisze się sam.  
-Google zaczyna  
-Cię widzieć.
+Content i SEO
 
-10 do 30 artykułów SEO miesięcznie. Keyword research, klastry tematyczne, internal linking, schema.org. Ty dajesz branżę - my robimy resztę. +150-400% ruchu organicznego w 6 miesięcy.
+# Content Machine
 
-[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+System do planowania, przygotowania, publikacji i dystrybucji treści. Zamienia wiedzę firmy w regularny content zgodny z jej językiem.
 
-Content Machinedemo na żywo
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
 
-lessmanual-cli · content-machine● live
+## Model współpracy
 
-$
+Najpierw diagnoza procesu. Potem zakres wdrożenia, sposób utrzymania i wycena dopasowana do danych oraz integracji.
 
-+237% ruch · 18 fraz TOP 10
+Dla kogoFirmy z e-commerce, usług B2B albo produkcji, które potrzebują regularnych treści bez zatrudniania kolejnych osób.
 
-01KEYWORD RESEARCH
+Cel wdrożeniaMniej ręcznej pracy, więcej publikacji i stała kontrola jakości zamiast generycznych tekstów z AI.
 
-Senuto scrape Twojej niszy. Analizujemy 50+ kandydatów keywordowych, wybieramy frazy z KD 15-40 i volume adekwatnym do branży. Dzielimy na klastry tematyczne. Dostajesz raport - widzisz na co będziemy się pozycjonować.
+## Jak działa system
 
-02BRIEF + ARTYKUŁ
+Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 
-Dla każdego artykułu: analiza SERP, struktura H1-H3, internal links plan. Claude pisze w Twoim brand voice (prompt przygotowany w setupie). Human-in-the-loop review przed publikacją - możesz zatwierdzać lub dawać feedback.
+-   Zbieramy źródła: oferta, katalog, FAQ, rozmowy sprzedażowe, komentarze klientów i realne pytania z rynku.
+-   Budujemy klastry tematów pod SEO, wyszukiwarki AI i social media, a potem wybieramy kolejność publikacji.
+-   Tworzymy plan tekstu, wersję roboczą, redakcję, kontrolę faktów i materiał gotowy do publikacji.
+-   Co miesiąc sprawdzamy jakość, pokrycie tematów, sygnały z rynku i następne priorytety contentowe.
 
-03PUBLIKACJA + TRACKING
+## Kontrola wyniku
 
-Artykuły trafiają do Twojego CMS (Webflow, WordPress, Ghost, inne). Schema.org, meta tagi, OG, sitemap - wszystko w cenie. Tracking pozycji (od GROWTH) - widzisz wzrost co miesiąc. Miesięczny raport SEO.
+Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Klient
+Każdy tekst powstaje na podstawie pakietu źródeł.
 
-SMD-LED - sklep B2B z oświetleniem LED. Niszowa branża, silna konkurencja w Google.
+Plan oddziela fakty od hipotez i oznacza miejsca, których nie wolno dopowiadać.
 
-Problem
+Redakcja usuwa sztuczny język, przesadzone obietnice i fragmenty bez konkretu.
 
-Zero ruchu organicznego. Brak czasu na pisanie contentu. Copywriter kosztuje zbyt dużo na stały content plan.
+Publikacja jest częścią procesu, więc materiał trafia do właściwego kanału po akceptacji.
 
-Co dostał (workflow)
+Efekt biznesowy
 
-Keyword research dla niszy LED: 40+ fraz z KD poniżej 35. Klastry tematyczne: typy oświetlenia, normy, zastosowania. 3 artykuły tygodniowo z brand voice, schema.org i internal linking. Publikacja na WordPress.
+## Po czym poznamy, że wdrożenie działa
 
-Dziś
+Publikacje wychodzą w ustalonym rytmie, bez zaczynania każdego tekstu od pustej kartki.
 
-Artykuły wchodziły na 1. lub 2. stronę Google w tydzień od publikacji. Wartość ruchu organicznego po 6 miesiącach: 10-50 tys. PLN miesięcznie. Demo live na rozmowie.
+Każdy materiał ma wskazane źródła i status kontroli faktów.
 
-Inwestycja
+Mierzymy czas od wyboru tematu do wersji gotowej do akceptacji.
 
-5 000 PLN setup
+Zespół widzi, co jest w analizie, co w redakcji i co czeka na publikację.
 
-\+ 500 PLN/mies
+## Najpierw znajdź proces, który warto automatyzować
 
-Wartość ruchu organicznego
+Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
 
-10-50k PLN/mies
+Dobre dla firm, gdzie jeden dobry temat może pracować w SEO, social i sprzedaży.
 
-po 6 miesiącach
+Wycena zależy od liczby źródeł, kanałów, tempa publikacji i poziomu redakcji.
 
-Czas do TOP 10
+Potencjał ruchu szacujemy po sprawdzeniu domeny, konkurencji i obecnych zasobów.
 
-7 dni
+Pierwszeństwo mają tematy z sensem biznesowym i potwierdzonym popytem.
 
-od pierwszej publikacji
-
-Pełne liczby 1:1 w rozmowie 15-min.
-
-STARTER
-
-1 000 PLN/mies.
-
-Setup: 3 000 PLN
-
--   +10 artykułów/mies
--   +1 klaster tematyczny
--   +Keyword research
--   +Podstawowe SEO (meta, OG, schema)
--   +Raport keyword research (wart. 2 000 PLN)
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-NAJPOPULARNIEJSZY
-
-GROWTH
-
-1 800 PLN/mies.
-
-Setup: 5 000 PLN
-
--   +20 artykułów/mies
--   +3 klastry tematyczne
--   +Internal linking + tracking pozycji
--   +Miesięczny raport SEO
--   +Kalendarz contentu 6 mies (wart. 2 000 PLN)
--   +Miesięczny audyt SEO (wart. 1 500 PLN/mies)
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-SCALE
-
-2 500 PLN/mies.
-
-Setup: 7 000 PLN
-
--   +30 artykułów/mies
--   +Unlimited klastry tematyczne
--   +Content calendar + dedykowany PM
--   +Analiza luk konkurencji (wart. 3 000 PLN)
--   +Wszystkie bonusy GROWTH
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-Gwarantowana liczba artykułów. Nie dostarczymy - zwrot proporcjonalny. Rabat 15% przy 2+ produktach LessManual.
-
-+150-400%
-
-ruch organiczny
-
-wzrost w ciągu 6 miesięcy od startu systemu
-
-83-100 PLN
-
-koszt artykułu
-
-vs 300-800 PLN copywriter. SCALE ok. 83 PLN, GROWTH ok. 90 PLN
-
-300-500%
-
-ROI rok 1
-
-zwrot z inwestycji w pierwszym roku przy założeniu wzrostu ruchu
-
-Metryki oparte na realnych wdrożeniach. Wyniki zależą od niszy, konkurencji i wyjściowego stanu SEO.
-
-Ile trwa do pierwszych efektów?+
-
-Jak zachowujecie brand voice?+
-
-Co jeśli artykuły nie rankują?+
-
-Czy używacie AI generycznego? ChatGPT?+
-
-Moja branża jest niszowa - zadziała?+
-
-## Gotowy żeby Google zaczął Cię widzieć?
-
-15 minut rozmowy. Sprawdzimy potencjał Twojej niszy, pokażę demo na żywo, ustalimy tier. Wychodzisz z planem albo bez zobowiązań.
-
-[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
-
-Średnia odpowiedź: 4h w dni robocze.
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)

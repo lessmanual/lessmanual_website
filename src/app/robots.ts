@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/"],
+        disallow: ["/api/"],
       },
       // AI Search Bots — explicitly allowed
       {
@@ -47,6 +47,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/",
       },
     ],
-    sitemap: "https://lessmanual.ai/sitemap.xml",
+    sitemap: "https://www.lessmanual.ai/sitemap.xml",
   };
 }

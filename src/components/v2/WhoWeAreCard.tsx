@@ -48,13 +48,16 @@ export function WhoWeAreCard() {
           {/* Prawa: pitch + proof + CTA */}
           <div className="flex flex-col gap-5">
             <p className="text-[17px] leading-[1.6] text-[#0A0A0A] max-w-[640px]">
-              Solo founder. Buduję agenty AI dla firm B2B w Polsce od 2025 roku.
-              Pięć produktów core. Sprint developmentu: 7 dni po scope locku (discovery + PRD + baza wiedzy osobno). Wycena projektowa, nigdy godzinowa.
+              LessManual prowadzę osobiście. Łączę doświadczenie z operacji B2B
+              z projektowaniem agentów AI, które mają działać w codziennej pracy
+              firmy, a nie tylko dobrze wyglądać na prezentacji.
             </p>
 
             <p className="text-[15px] leading-[1.65] text-[#525252] max-w-[640px]">
-              Pracuję bez pośredników. Kod, wdrożenie, pomiar efektu, utrzymanie - wszystko u jednej osoby.
-              8 lat w logistyce B2B nauczyło mnie, że tam gdzie ludzie powtarzają te same kroki setki razy dziennie, zawsze lepszy jest system.
+              Każde wdrożenie zaczynam od procesu i kosztu błędu. Dopiero potem
+              dobieram technologię, zakres pilota i sposób utrzymania. Przez 8
+              lat w logistyce B2B widziałem, ile czasu zjada ręczne przenoszenie
+              danych i pilnowanie powtarzalnych kroków.
             </p>
 
             {/* Proof strip */}
@@ -62,7 +65,7 @@ export function WhoWeAreCard() {
               <ProofStat value={`${SOCIAL_PROOF.companiesEngaged}+`} label="firm B2B" />
               <ProofStat value={`${SOCIAL_PROOF.implementationsDelivered}`} label="wdrożeń" />
               <ProofStat value={`${SOCIAL_PROOF.googleRating}`} label="★ Google" />
-              <ProofStat value="7d" label="sprint" />
+              <ProofStat value="8 lat" label="operacji B2B" />
             </div>
 
             <Link

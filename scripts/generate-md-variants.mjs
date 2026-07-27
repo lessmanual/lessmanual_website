@@ -14,10 +14,10 @@ import TurndownService from "turndown";
 
 const ROUTES = [
   "/",
-  "/v2",
   "/faq",
   "/o-nas",
   "/kontakt",
+  "/ai-growth-opportunity-map",
   "/oferta",
   "/oferta/hot-lead-catcher",
   "/oferta/pipeline-machine",
@@ -28,6 +28,7 @@ const ROUTES = [
 ];
 
 const BASE = process.env.MD_GEN_BASE || "http://localhost:3000";
+const PUBLIC_BASE = process.env.MD_GEN_PUBLIC_BASE || "https://www.lessmanual.ai";
 const OUT_DIR = "public/md";
 
 const turndown = new TurndownService({
@@ -35,7 +36,7 @@ const turndown = new TurndownService({
   codeBlockStyle: "fenced",
   bulletListMarker: "-",
 });
-turndown.remove(["script", "style", "noscript", "nav", "footer", "header", "aside"]);
+turndown.remove(["script", "style", "noscript", "nav", "footer", "aside"]);
 
 async function generate(route) {
   const url = `${BASE}${route}`;
@@ -52,7 +53,11 @@ async function generate(route) {
 
   const title = doc.querySelector("title")?.textContent || "LessManual";
   const desc = doc.querySelector('meta[name="description"]')?.getAttribute("content") || "";
-  const full = `# ${title}\n\n> ${desc}\n\n> Source: ${url}\n> Generated: ${new Date().toISOString()}\n\n---\n\n${md}\n`;
+  const publicUrl = `${PUBLIC_BASE}${route}`;
+  const full = `# ${title}\n\n> ${desc}\n\n> Source: ${publicUrl}\n> Generated: ${new Date().toISOString()}\n\n---\n\n${md}\n`
+    .split("\n")
+    .map((line) => line.trimEnd())
+    .join("\n");
 
   const outPath = route === "/" ? `${OUT_DIR}/index.txt` : `${OUT_DIR}${route}.txt`;
   await mkdir(dirname(outPath), { recursive: true });

@@ -4,7 +4,7 @@ import "./globals.css";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { CookieBanner } from "@/components/legal/CookieBanner";
 import ChatWidget from "@/components/chat/ChatWidget";
-import { ORGANIZATION_SCHEMA } from "@/lib/schema";
+import { ORGANIZATION_SCHEMA, serializeJsonLd } from "@/lib/schema";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 const instrumentSerif = Instrument_Serif({
@@ -29,41 +29,30 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lessmanual.ai"),
-  title: "LessManual.ai - Systemy AI dla firm B2B | Automatyzacja pod klucz",
+  metadataBase: new URL("https://www.lessmanual.ai"),
+  title: {
+    default: "LessManual.ai",
+    template: "%s | LessManual",
+  },
   description:
-    "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Pipeline Machine, Content Machine, Chatbot 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
-  keywords: [
-    "automatyzacja AI",
-    "Pipeline Machine",
-    "chatbot AI",
-    "SEO automatyzacja",
-    "generator ofert AI",
-    "LessManual",
-    "systemy AI dla firm",
-    "automatyzacja B2B",
-  ],
+    "LessManual projektuje, wdraża i utrzymuje agentów AI dla firm B2B.",
   openGraph: {
-    title: "LessManual.ai - Systemy AI dla firm B2B",
+    title: "LessManual.ai",
     description:
-      "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Gwarancja wyników lub pełny zwrot kosztów.",
-    url: "https://lessmanual.ai",
+      "Projektujemy, wdrażamy i utrzymujemy agentów AI dla firm B2B.",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LessManual.ai - Systemy AI dla firm B2B",
+    title: "LessManual.ai",
     description:
-      "Budujemy systemy AI które oszczędzają 20-40h miesięcznie. Gwarancja wyników lub pełny zwrot kosztów.",
+      "Projektujemy, wdrażamy i utrzymujemy agentów AI dla firm B2B.",
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: "https://lessmanual.ai",
   },
   icons: {
     icon: [
@@ -88,7 +77,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(ORGANIZATION_SCHEMA),
+            __html: serializeJsonLd(ORGANIZATION_SCHEMA),
           }}
         />
         {children}

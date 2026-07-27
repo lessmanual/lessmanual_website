@@ -88,8 +88,8 @@ export default function FaqContent() {
                 <h2 className="text-[#0A0A0A]">{category.category}</h2>
                 <p className="mt-4 text-[15px] leading-[1.65] text-[#525252]">
                   {catIdx === 0 && "Odpowiedzi na pytania o to jak działają nasze systemy, ile trwa wdrożenie i czego możesz się spodziewać."}
-                  {catIdx === 1 && "Szczegóły dotyczące cen, warunków współpracy i gwarancji jaką oferujemy każdemu klientowi."}
-                  {catIdx === 2 && "Pytania o bezpieczeństwo danych, zgodność z RODO i jak możesz nam zaufać jako partnerowi."}
+                  {catIdx === 1 && "Szczegóły dotyczące wyceny, warunków współpracy i sposobu odbioru wdrożenia."}
+                  {catIdx === 2 && "Pytania o bezpieczeństwo danych, zakres odpowiedzialności i kontrolę człowieka."}
                 </p>
               </header>
 

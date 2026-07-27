@@ -1,4 +1,5 @@
-export const SEO_CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
+export const SEO_CALENDLY_URL =
+  "https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min";
 export const SEO_EMAIL = "kontakt@lessmanual.ai";
 
 export const SEO_ROTATOR_WORDS = ["czasu", "zespołu", "stresu"];

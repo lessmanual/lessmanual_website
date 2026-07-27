@@ -24,10 +24,14 @@ describe("Growth Map intake route V11", () => {
     delete process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL;
     delete process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_TOKEN;
     delete process.env.CLOUDCSO_LEAD_MAGNET_REQUIRE_WEBHOOK;
+    delete process.env.CLOUDCSO_LEAD_MAGNET_ALLOW_LOCAL_PREVIEW;
     delete process.env.VERCEL_ENV;
   });
 
   it("returns local preview success without a webhook in local mode", async () => {
+    vi.stubEnv("NODE_ENV", "test");
+    process.env.CLOUDCSO_LEAD_MAGNET_ALLOW_LOCAL_PREVIEW = "1";
+
     const response = await POST(jsonRequest(validSubmission));
     const body = await jsonBody(response);
 
@@ -47,7 +51,18 @@ describe("Growth Map intake route V11", () => {
 
     expect(response.status).toBe(503);
     expect(body.ok).toBe(false);
-    expect(body.message).toContain("Automatyczna wysyłka");
+    expect(body.message).toContain("Analiza formularza");
+  });
+
+  it("fails closed outside development even without Vercel environment metadata", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+
+    const response = await POST(jsonRequest(validSubmission));
+    const body = await jsonBody(response);
+
+    expect(response.status).toBe(503);
+    expect(body.ok).toBe(false);
+    expect(body.message).toContain("Analiza formularza");
   });
 
   it("uses the local V18 webhook only in development", async () => {
@@ -87,7 +102,10 @@ describe("Growth Map intake route V11", () => {
     process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_TOKEN = "local-test-token";
     globalThis.fetch = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
       calls.push({ input, init });
-      return new Response(JSON.stringify({ ok: true }), {
+      return new Response(JSON.stringify({
+        ok: true,
+        status: "queued_for_cloudcso",
+      }), {
         status: 202,
         headers: { "content-type": "application/json" },
       });
@@ -126,6 +144,28 @@ describe("Growth Map intake route V11", () => {
         "Asana",
       ]);
       expect(forwardedRequest.afterHoursCallHandling).toBe("mixed");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it("rejects a successful webhook response without an acknowledged state", async () => {
+    const originalFetch = globalThis.fetch;
+    process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL =
+      "http://127.0.0.1:8787/lead-magnet";
+    globalThis.fetch = vi.fn(async () =>
+      new Response(JSON.stringify({}), {
+        status: 202,
+        headers: { "content-type": "application/json" },
+      })) as typeof fetch;
+
+    try {
+      const response = await POST(jsonRequest(validSubmission));
+      const body = await jsonBody(response);
+
+      expect(response.status).toBe(502);
+      expect(body.ok).toBe(false);
+      expect(body.message).toContain("potwierdzić przyjęcia zgłoszenia");
     } finally {
       globalThis.fetch = originalFetch;
     }

@@ -1,216 +1,73 @@
-# Pipeline Machine · pay-per-meeting · LessManual
+# Cold email B2B oparty na sygnałach i źródłach | LessManual
 
-> System który umawia spotkania z Twoimi idealnymi klientami B2B. 76% open rate. 61% positive reply. Pay-per-meeting od 500 PLN - zero stałych opłat. 3 warstwy gwarancji.
+> Kampanie cold email B2B oparte na selekcji firm, publicznym powodzie kontaktu, kontroli faktów i ręcznej akceptacji wiadomości.
 
-> Source: http://localhost:3000/oferta/pipeline-machine
-> Generated: 2026-04-20T17:54:10.580Z
+> Source: https://www.lessmanual.ai/oferta/pipeline-machine
+> Generated: 2026-07-27T08:27:45.013Z
 
 ---
 
-Pipeline Machine · pay-per-meeting · PIERWSZY W POLSCE
+[Oferta](/oferta)
 
-# Spotkania z decydentami  
-B2B. Płacisz  
-tylko za wynik.  
-Zero stałych opłat.
+Sprzedaż B2B
 
-System który filtruje ICP, pisze spersonalizowane cold maile, wysyła przez Instantly i umawia potwierdzone spotkania z decydentami. 76% open rate, 61% positive reply rate, booking w 37 minut od pierwszego maila.
+# Premium Cold Email+
 
-[Zarezerwuj rozmowę (15 min)→](https://cal.com/bartłomiej-chudzik-2en6pt)[Zobacz cennik](#pricing)
+Wybieramy firmy z realnym powodem do kontaktu. Sprawdzamy źródła, przygotowujemy wiadomości i prowadzimy kampanię na podstawie odpowiedzi.
 
-Pipeline Machinedemo na żywo
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
 
-lessmanual-cli · pipeline-machine● live
+## Model współpracy
 
-$
+Najpierw diagnoza procesu. Potem zakres wdrożenia, sposób utrzymania i wycena dopasowana do danych oraz integracji.
 
-76% open · 61% reply
+Dla kogoFirmy B2B, w których wartość kontraktu uzasadnia dokładniejszą analizę, lepszy język i lepszą selekcję kont.
 
-01SCRAPING + SCORING
+Cel wdrożeniaKampania prowadzona jako system: strategia, dane, treść, wysyłka, odpowiedzi i stałe utrzymanie.
 
-Agent zbiera decydentów z LinkedIn Sales Nav, Clutch, Crunchbase i KRS zgodnie z Twoim ICP. Enrichment: firma + stanowisko + email zweryfikowany. Scoring intent - filtrujemy tych którzy pasują najbardziej.
+## Jak działa system
 
-02PERSONALIZACJA + SEKWENCJE
+Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 
-Claude pisze spersonalizowanego cold maila dla każdego kontaktu (nie szablon blast). Kontekst: branża, stanowisko, competitor displacement. 1-2 sekwencje z follow-upami. Tone of voice konfigurowalny pod Twoją markę.
+-   Budujemy listę kont i oceniamy, czy firma pasuje do oferty, ma właściwy profil i sensowny powód do kontaktu.
+-   Dla najlepszych kont zbieramy źródła: stronę, ofertę, rolę decydenta, sygnały zmiany i możliwy moment zakupu.
+-   Na tej podstawie powstaje jeden jasny powód kontaktu i proste wezwanie do działania.
+-   Kampania ma kontrolę faktów, listę wykluczeń, monitoring odpowiedzi i plan zmian oparty na danych.
 
-03WYSYŁKA + BOOKING
+## Kontrola wyniku
 
-Kampania przez Instantly na rozgrzanych domenach (warmup score 95+). Agent SAM monitoruje odpowiedzi i umawia spotkania. Ty wchodzisz dopiero gdy spotkanie jest potwierdzone w kalendarzu.
+Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Klient
+Każda obietnica ma źródło albo jasno opisany logiczny wniosek.
 
-SaaS B2B (data erasure / ITAD) - target: firmy enterprise, poziom C-Level, globalnie.
+Personalizacja dotyczy biznesu odbiorcy i konkretnego powodu kontaktu.
 
-Problem
+Język jest prosty, konkretny i naturalny.
 
-Brak systemu outbound. Ręczne prospecting na LinkedIn zajmowało dziesiątki godzin tygodniowo bez mierzalnych wyników.
+Model współpracy obejmuje wdrożenie i stałą obsługę kampanii.
 
-Co dostał (workflow)
+Efekt biznesowy
 
-Full Pipeline: scraping decydentów z LinkedIn Sales Nav + Crunchbase pod ICP ITAD enterprise. Claude pisze personalizowane cold maile (tech-to-tech tone). Wysyłka przez Instantly na 3 domenach. Agent monitoruje odpowiedzi i umawia spotkania.
+## Po czym poznamy, że wdrożenie działa
 
-Dziś
+Każda firma na liście ma zapisany powód kontaktu i źródło.
 
-Pipeline autonomiczny. Od pierwszego cold maila do podpisanej umowy: 6 dni. Pełne liczby i demo live na rozmowie 15-min.
+Wiadomość przechodzi kontrolę faktów oraz języka przed wysyłką.
 
-Open rate kampanii
+Porównujemy odpowiedzi między segmentami i powodami kontaktu.
 
-76%
+Wnioski z odpowiedzi trafiają do kolejnych iteracji kampanii.
 
-benchmark: 20-30%
+## Najpierw znajdź proces, który warto automatyzować
 
-Positive reply rate
+Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
 
-61%
+Dobre dla ofert premium, gdzie masowa kampania psuje pozycjonowanie.
 
-6 na 10 odpowiedzi to chęć rozmowy
+Zakres zależy od jakości danych, liczby segmentów, poziomu analizy i liczby skrzynek.
 
-Od maila do umowy
+Prognozę kampanii przygotowujemy po sprawdzeniu rynku, listy, oferty i dotychczasowych danych.
 
-6 dni
+Najpierw kalibrujemy segmenty na mniejszej próbie, potem skalujemy zwycięskie kąty.
 
-benchmark: 30-90 dni
-
-Pełne liczby 1:1 w rozmowie 15-min.
-
-COLD START
-
-Email
-
-500-2 000 PLN PLN
-
-za spotkanie (zależne od ACV)
-
-Setup: 3 000 PLN
-
-500-2 000 PLN za spotkanie (zależnie od ACV). Zero stałych opłat.
-
--   +2 domeny + warmup
--   +Scraping + scoring ICP
--   +1 sekwencja email
--   +ICP Deep Dive Workshop (wart. 2 500 PLN)
--   +Monthly Performance Report (wart. 1 000 PLN/mies)
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-NAJPOPULARNIEJSZY
-
-FULL PIPELINE
-
-Email + LinkedIn
-
-500-2 000 PLN PLN
-
-za spotkanie (zależne od ACV)
-
-Setup: 4 500 PLN
-
-500-2 000 PLN za spotkanie (zależnie od ACV). Zero stałych opłat.
-
--   +3 domeny + warmup
--   +LinkedIn outreach
--   +2 sekwencje email + ICP rozbudowany
--   +ICP Deep Dive Workshop + Swipe File (wart. 4 000 PLN)
--   +Auto-Reply AI - draft odpowiedzi (wart. 3 000 PLN)
--   +Monthly Performance Report
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-DOMINACJA
-
-Multi-channel
-
-500-2 000 PLN PLN
-
-za spotkanie (zależne od ACV)
-
-Setup: 7 000 PLN
-
-500-2 000 PLN za spotkanie (zależnie od ACV). Zero stałych opłat.
-
--   +4+ domeny + warmup
--   +Multi-persona + multi-kanał
--   +Priorytetowa obsługa
--   +Wszystkie bonusy FULL PIPELINE
--   +Quarterly Strategy Call (wart. 2 000 PLN)
-
-[Zarezerwuj rozmowę →](https://cal.com/bartłomiej-chudzik-2en6pt)
-
-3 warstwy gwarancji. Rabat 15% przy 2+ produktach LessManual.
-
-BRANŻA TECH
-
-### Pipeline Machine dla technologii
-
-ICP
-
-CEO/CTO software house 10-200 osób, SaaS B2B
-
-Lead Sources
-
-LinkedIn Sales Nav, Clutch, G2, Crunchbase
-
-Email Angle
-
-tech-to-tech, przejmowanie klientów konkurencji
-
-od 3 000 PLN setup + PPM
-
-BRANŻA REKRUTACJA
-
-### Pipeline Machine dla rekrutacji
-
-ICP
-
-CEO/MD agencji rekrutacyjnych 5-100 osób
-
-Lead Sources
-
-LinkedIn Sales Nav, Clutch, portale pracy
-
-Email Angle
-
-Kandydatów masz - klientów brakuje
-
-od 3 000 PLN setup + PPM
-
-BRANŻA PRZEMYSŁ
-
-### Pipeline Machine dla przemysłu
-
-ICP
-
-Dyrektor handlowy / CEO firm produkcyjnych 20-500 osób
-
-Lead Sources
-
-Biznesradar, KRS, LinkedIn, katalogi branżowe
-
-Email Angle
-
-efektywność operacyjna, zgodność EU
-
-od 3 000 PLN setup + PPM
-
-Nie widzisz swojej branży? ICP Deep Dive Workshop w setupie dopasuje system do Twojego segmentu.
-
-Ile trwa do pierwszego spotkania?+
-
-Co jeżeli 0 spotkań w 45 dni?+
-
-Jak działa model pay-per-meeting?+
-
-Co jeśli moja branża nie pasuje do 3 wariantów?+
-
-Kiedy płacę za spotkanie i co ze spotkaniami no-show?+
-
-Czym Pipeline Machine różni się od Hot Lead Catcher?+
-
-## Gotowy na spotkania z decydentami B2B?
-
-15 minut rozmowy. Sprawdzimy Twój ICP, pokażę demo na żywo, ustalimy tier. Wychodzisz z planem albo bez zobowiązań.
-
-[Zarezerwuj rozmowę→](https://cal.com/bartłomiej-chudzik-2en6pt)[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
-
-Średnia odpowiedź: 4h w dni robocze.
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)

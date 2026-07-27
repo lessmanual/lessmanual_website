@@ -3,62 +3,78 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/layout/MobileCTABar";
 import { OfertaGrid } from "@/components/sections/OfertaGrid";
-import { generateItemListSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import {
+  generateItemListSchema,
+  generateBreadcrumbSchema,
+  serializeJsonLd,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Oferta - AI dla Twojej Firmy | LessManual.ai",
+  title: "Wdrożenia AI dla firm: sprzedaż, content i obsługa",
   description:
-    "4 systemy AI pod klucz: Pipeline Machine, Content Machine, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów. Wdrożenie w 7-21 dni.",
+    "Wdrażamy agentów AI do sprzedaży B2B, contentu, SEO i obsługi klienta. Zakres, termin i wycena powstają po diagnozie procesu.",
   openGraph: {
-    title: "Oferta - AI dla Twojej Firmy | LessManual.ai",
+    title: "Wdrożenia AI dla firm: sprzedaż, content i obsługa | LessManual",
     description:
-      "4 systemy AI pod klucz: Pipeline Machine, Content Machine, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
-    url: "https://lessmanual.ai/oferta",
+      "Agenci AI dopasowani do procesu firmy. Projekt, wdrożenie i utrzymanie.",
+    url: "https://www.lessmanual.ai/oferta",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oferta - AI dla Twojej Firmy | LessManual.ai",
+    title: "Wdrożenia AI dla firm: sprzedaż, content i obsługa | LessManual",
     description:
-      "4 systemy AI pod klucz: Pipeline Machine, Content Machine, Obsługa Klienta 24/7, Generator Ofert. Gwarancja wyników lub pełny zwrot kosztów.",
+      "Agenci AI dopasowani do procesu firmy. Projekt, wdrożenie i utrzymanie.",
   },
   alternates: {
-    canonical: "https://lessmanual.ai/oferta",
+    canonical: "https://www.lessmanual.ai/oferta",
   },
 };
 
 const itemListSchema = generateItemListSchema([
   {
-    name: "Pipeline Machine - Spotkania z Decydentami B2B",
-    url: "https://lessmanual.ai/oferta/pipeline-machine",
+    name: "Content Machine",
+    url: "https://www.lessmanual.ai/oferta/content-machine",
     description:
-      "System AI umawiający kwalifikowane spotkania B2B. Pay-per-meeting od 500 PLN.",
+      "System planowania, przygotowania, publikacji i dystrybucji contentu dla firm B2B.",
   },
   {
-    name: "Content Machine - Blog na Autopilocie",
-    url: "https://lessmanual.ai/oferta/content-machine",
+    name: "Customer Operations AI",
+    url: "https://www.lessmanual.ai/oferta/obsluga-klienta",
     description:
-      "Done-for-you system produkcji artykułów SEO. 10-30 artykułów miesięcznie od 1,000 PLN/mies.",
+      "Agent AI do obsługi pytań, spraw i eskalacji w wielu kanałach.",
   },
   {
-    name: "Obsługa Klienta AI - Chatbot 24/7",
-    url: "https://lessmanual.ai/oferta/obsluga-klienta",
+    name: "Premium Cold Email+",
+    url: "https://www.lessmanual.ai/oferta/pipeline-machine",
     description:
-      "Chatbot i voiceagent na bazie wiedzy firmy. 60-80% zapytań automatycznie. Od 900 PLN/mies.",
+      "Sprzedaż B2B oparta na sygnałach, źródłach i konkretnym kontekście.",
   },
   {
     name: "Generator Ofert AI - Wycena w 5 Minut",
-    url: "https://lessmanual.ai/oferta/generator-ofert",
+    url: "https://www.lessmanual.ai/oferta/generator-ofert",
     description:
-      "Konfigurator wycen na stronie. Klient sam wycenia, dostaje PDF automatycznie. Setup od 4,000 PLN.",
+      "Drafty ofert przygotowane na podstawie danych i cennika firmy.",
+  },
+  {
+    name: "Hot Lead Catcher",
+    url: "https://www.lessmanual.ai/oferta/hot-lead-catcher",
+    description:
+      "Monitoring sygnałów zakupowych z podaniem źródła i kontekstu.",
+  },
+  {
+    name: "Indywidualne wdrożenia AI",
+    url: "https://www.lessmanual.ai/oferta/indywidualne-wdrozenia",
+    description:
+      "Agent AI dopasowany do niestandardowego procesu, danych i integracji firmy.",
   },
 ]);
 
 const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: "Strona główna", url: "https://lessmanual.ai" },
-  { name: "Oferta", url: "https://lessmanual.ai/oferta" },
+  { name: "Strona główna", url: "https://www.lessmanual.ai" },
+  { name: "Oferta", url: "https://www.lessmanual.ai/oferta" },
 ]);
 
 export default function OfertaPage() {
@@ -66,11 +82,11 @@ export default function OfertaPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <Header />
       <main className="pt-16 pb-16 md:pb-0">

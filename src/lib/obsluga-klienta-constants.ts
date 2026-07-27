@@ -1,4 +1,5 @@
-export const OBS_KLIENTA_CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
+export const OBS_KLIENTA_CALENDLY_URL =
+  "https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min";
 export const OBS_KLIENTA_EMAIL = "kontakt@lessmanual.ai";
 
 export const OBS_KLIENTA_ROTATOR_WORDS = ["zatrudniania", "nadgodzin", "stresu"];

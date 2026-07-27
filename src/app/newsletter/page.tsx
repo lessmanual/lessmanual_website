@@ -8,20 +8,20 @@ import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 import { BarChart3, Wrench, TrendingUp, Zap, Headphones } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Insider - Newsletter AI dla firm B2B | LessManual.ai",
+  title: "AI Insider: newsletter AI dla firm B2B",
   description:
     "Najważniejsze newsy ze świata AI w 5 minut. Co środę o 7:30. Biznes, narzędzia, trendy + audio MP3 do słuchania w aucie. Redagowane przez praktyka.",
   openGraph: {
     title: "AI Insider - Newsletter AI dla firm B2B",
     description:
       "AI robi research. Bartek daje kontekst. Co środę o 7:30 + audio MP3.",
-    url: "https://lessmanual.ai/newsletter",
+    url: "https://www.lessmanual.ai/newsletter",
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
   },
   alternates: {
-    canonical: "https://lessmanual.ai/newsletter",
+    canonical: "https://www.lessmanual.ai/newsletter",
   },
 };
 

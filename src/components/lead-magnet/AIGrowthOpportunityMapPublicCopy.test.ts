@@ -29,21 +29,30 @@ const forbiddenPublicPhrases = [
   "Zobacz ofertę",
   "odblokuj",
   "unlock",
+  "Gotowy PDF",
+  "Raport wyślemy",
+  "otrzymanie PDF",
   "—",
 ];
 
 describe("AI Growth Opportunity Map public copy V11", () => {
   it("states the core promise and delivery without internal jargon", () => {
-    expect(pageSource).toContain("Znajdź pierwszy proces, który AI może przejąć w Twojej firmie.");
-    expect(pageSource).toContain("spersonalizowany");
-    expect(pageSource).toContain("raport PDF");
+    expect(pageSource).toContain(
+      "Znajdź pierwszy proces, w którym AI może zdjąć ręczną pracę z zespołu."
+    );
+    expect(pageSource).toContain("spersonalizowaną mapę pierwszego wdrożenia");
     expect(pageSource).toContain("formularza oraz publicznych źródeł firmy");
-    expect(pageSource).toContain("wyślemy na podany email");
-    expect(formSource).toContain("Gotowy PDF przyjdzie na email.");
+    expect(pageSource).toContain("Po wysłaniu formularza");
+    expect(pageSource).toContain("od razu zobaczysz status analizy.");
+    expect(formSource).toContain(
+      "Po wysłaniu formularza zobaczysz status analizy."
+    );
+    expect(formSource).toContain("Uruchom analizę procesu");
     expect(formSource).not.toContain("2-stronicowy PDF");
     expect(formSource).not.toContain("Raport będzie miał 2 strony");
     expect(pageSource).not.toContain("2-stronicowy");
     expect(pageSource).not.toContain("2 strony");
+    expect(combinedSource).not.toContain("raport PDF");
 
     for (const phrase of forbiddenPublicPhrases) {
       expect(combinedSource).not.toContain(phrase);
@@ -51,7 +60,7 @@ describe("AI Growth Opportunity Map public copy V11", () => {
   });
 
   it("shows a truthful preview of the four report contents", () => {
-    expect(pageSource).toContain('aria-label="Podgląd czterech stron raportu"');
+    expect(pageSource).toContain('aria-label="Podgląd czterech stron mapy"');
     for (const pageNumber of ["01 / 04", "02 / 04", "03 / 04", "04 / 04"]) {
       expect(pageSource).toContain(pageNumber);
     }

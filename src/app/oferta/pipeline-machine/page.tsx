@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import PipelineMachineContent from "./_content";
+import { PremiumOfferPage } from "@/components/sections/PremiumOfferPage";
+import { PREMIUM_OFFERS } from "@/lib/premium-offers";
 
 export const metadata: Metadata = {
-  title: "Pipeline Machine · pay-per-meeting · LessManual",
+  title: "Cold email B2B oparty na sygnałach i źródłach",
   description:
-    "System który umawia spotkania z Twoimi idealnymi klientami B2B. 76% open rate. 61% positive reply. Pay-per-meeting od 500 PLN - zero stałych opłat. 3 warstwy gwarancji.",
+    "Kampanie cold email B2B oparte na selekcji firm, publicznym powodzie kontaktu, kontroli faktów i ręcznej akceptacji wiadomości.",
   alternates: {
     canonical: "/oferta/pipeline-machine",
   },
   openGraph: {
-    title: "Pipeline Machine · pay-per-meeting · LessManual",
+    title: "Cold email B2B oparty na sygnałach i źródłach | LessManual",
     description:
-      "Spotkania z decydentami B2B. 76% open rate. 61% positive reply. Pay-per-meeting od 500 PLN. Zero stałych opłat. 3 warstwy gwarancji.",
+      "Selekcja firm, publiczny powód kontaktu, kontrola faktów i iteracje na podstawie odpowiedzi.",
     url: "/oferta/pipeline-machine",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pipeline Machine · pay-per-meeting · LessManual",
+    title: "Cold email B2B oparty na sygnałach i źródłach | LessManual",
     description:
-      "System który umawia spotkania B2B. 76% open rate. 61% positive reply. Zero stałych opłat. 3 warstwy gwarancji.",
+      "Sprzedaż B2B z konkretnym kontekstem, źródłami i kontrolą języka.",
   },
 };
 
 export default function PipelineMachinePage() {
-  return <PipelineMachineContent />;
+  return <PremiumOfferPage {...PREMIUM_OFFERS.premiumColdEmail} />;
 }

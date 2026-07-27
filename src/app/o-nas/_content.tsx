@@ -19,22 +19,22 @@ const TIMELINE_ITEMS = [
   {
     date: "2018-2025",
     title: "Optymalizacja procesów B2B",
-    desc: "8 lat w transporcie i logistyce międzynarodowej. Projektowanie i wdrażanie procesów operacyjnych, integracje systemów ERP, redukcja ręcznej pracy w zespołach 20+ osób. Ten sam wzorzec: tam gdzie ludzie powtarzają tę samą czynność setki razy, zawsze jest lepszy system.",
+    desc: "8 lat w transporcie i logistyce międzynarodowej. Praca z procesami operacyjnymi, integracjami ERP, wyjątkami i odpowiedzialnością za działający system.",
   },
   {
-    date: "03-09.2025",
-    title: "Pełne przejście na AI",
-    desc: "Intensywna budowa kompetencji technicznych: LLM agents, RAG, vector databases, Next.js, Supabase, Vercel, AWS. Od pierwszych prototypów do produkcyjnych workflow z klientami.",
+    date: "2025",
+    title: "Budowa kompetencji AI",
+    desc: "Agenci AI, bazy wiedzy, aplikacje webowe i infrastruktura chmurowa. Od pierwszych prototypów do systemów pracujących na danych firm.",
   },
   {
     date: "10.2025",
     title: "Start LessManual",
-    desc: "Rejestracja działalności. Pięć produktów core: Hot Lead Catcher, Pipeline Machine, Content Machine, Obsługa Klienta, Generator Ofert. Każdy to gotowy system z 7-dniowym sprintem developmentu (po wcześniejszym discovery, scope locku i przygotowaniu bazy wiedzy).",
+    desc: "Powstała firma skupiona na automatyzacji sprzedaży, contentu, obsługi klienta i ofertowania. Każdy projekt zaczyna się od jednego procesu i mierzalnego kryterium wyniku.",
   },
   {
-    date: "11-12.2025",
-    title: "Pierwsze wdrożenia",
-    desc: "Projekty dla klientów z sektora logistyki, legal tech, e-commerce i SaaS. Od PoC po pełne wdrożenia MRR. Wszystkie dowiezione w zadeklarowanym terminie.",
+    date: "2025-2026",
+    title: "Wdrożenia dla firm B2B",
+    desc: "Projekty od diagnozy do uruchomienia. Osobiście odpowiadam za architekturę, budowę, testy oraz dalsze utrzymanie systemu.",
   },
 ];
 
@@ -43,17 +43,22 @@ const MANIFEST_ITEMS = [
   {
     label: "01",
     title: "Praktyczność ponad wszystko",
-    desc: "Buduję tylko to, co rozwiązuje realny problem. Żaden system nie wychodzi z mojej pracowni, jeśli nie redukuje powtarzalnych czynności o minimum 70%. Efekt musi być mierzalny i widoczny w ciągu dni, nie miesięcy.",
+    desc: "Zaczynam od kosztu ręcznej pracy i wyniku, który da się zmierzyć. Jeśli automatyzacja nie ma sensu, mówię to przed rozpoczęciem projektu.",
   },
   {
     label: "02",
     title: "Jakość bez kompromisów",
-    desc: "Nie robię rzeczy których się wstydzę. Każdy system który wdrażam, mógłbym pokazać publicznie z nazwą klienta. Jeśli coś nie działa - naprawiam, nie ukrywam. Gwarancja wyników albo zwrot.",
+    desc: "System pracuje na zatwierdzonych źródłach, ma reguły działania, kontrolę wyniku i ścieżkę do człowieka. Kryteria odbioru ustalamy przed startem.",
   },
   {
     label: "03",
-    title: "Szybkość, która dostarcza",
-    desc: "Proces: 1-2 spotkania discovery (ICP, zakres, integracje, narzędzia, workflow) → scope lock i PRD → 2-5 dni baza wiedzy i prompty → 7-dniowy sprint developmentu → handover. Razem 3-4 tygodnie od pierwszego calla do live. Bez projektów, które ciągną się miesiącami.",
+    title: "Mały zakres na początek",
+    desc: "Projekt dzielę na diagnozę, pilotaż, uruchomienie i utrzymanie. Termin zależy od danych, integracji, liczby wyjątków oraz zakresu testów.",
+  },
+  {
+    label: "04",
+    title: "Odpowiedzialność po wdrożeniu",
+    desc: "Po uruchomieniu sprawdzamy ustalone miary, logi i przypadki wymagające poprawy. System ma właściciela, plan utrzymania i jasne zasady eskalacji.",
   },
 ];
 
@@ -61,18 +66,23 @@ const MANIFEST_ITEMS = [
 const HOW_ITEMS = [
   {
     label: "ZASADA 01",
-    title: "Zero godzin",
-    desc: "Nie wyceniam czasu, wyceniam efekt. Klient płaci za działający system z konkretnymi wynikami, nie za moje godziny. Cena jest stała i ustalona przed startem. Żadnych niespodzianek na fakturze.",
+    title: "Cena przed startem",
+    desc: "Po diagnozie dostajesz zakres, wycenę, kryteria wyniku i sposób utrzymania. Zmiany uzgadniamy przed rozpoczęciem dodatkowych prac.",
   },
   {
     label: "ZASADA 02",
-    title: "Szybko, a nie kiedyś",
-    desc: "Sam sprint developmentu zamykam w 7 dni po dogranym zakresie. Cały proces od kontraktu do live: 3-4 tygodnie kalendarzowo. Nie ma u mnie projektów, które czekają w kolejce miesiącami. Jeśli biorę temat, daję mu pełną uwagę i dostarczam na czas.",
+    title: "Jeden proces na początek",
+    desc: "Najpierw uruchamiamy ograniczony pilotaż i sprawdzamy wynik. Kolejne elementy dokładamy dopiero wtedy, gdy pierwszy zakres działa.",
   },
   {
     label: "ZASADA 03",
-    title: "Gwarancja albo zwrot",
-    desc: "Jeśli system nie działa zgodnie z ustaleniami w 14 dni od wdrożenia, oddaję pieniądze. Bez dyskusji, bez kar, bez okresu wypowiedzenia. Ryzyko jest po mojej stronie, nie po stronie klienta.",
+    title: "Kontrola po uruchomieniu",
+    desc: "Mierzymy uzgodnione kryteria, analizujemy błędy i poprawiamy system w ramach ustalonej opieki. Przypadki o większym ryzyku trafiają do człowieka.",
+  },
+  {
+    label: "ZASADA 04",
+    title: "Jasne granice działania",
+    desc: "Agent działa tylko w uzgodnionym zakresie. Nie podejmuje samodzielnie decyzji, których nie obejmują reguły i dane przygotowane do wdrożenia.",
   },
 ];
 
@@ -91,8 +101,8 @@ export default function ONasContent() {
                 <SectionLabel>O NAS</SectionLabel>
                 <h1>
                   Buduję systemy,<br />
-                  które nie wymagają<br />
-                  <span className="text-[#B87333]">obsługi.</span>
+                  które zdejmują<br />
+                  <span className="text-[#B87333]">ręczną pracę.</span>
                 </h1>
                 <p className="mt-8 max-w-[560px] text-[17px] leading-[1.6] text-[#525252]">
                   Bartłomiej Chudzik. Solo founder, architekt automatyzacji AI.
@@ -101,8 +111,8 @@ export default function ONasContent() {
                   które zdejmują z ludzi ręczne, powtarzalne zadania.
                 </p>
                 <p className="mt-4 max-w-[560px] text-[16px] leading-[1.6] text-[#525252]">
-                  Misja: "Make your business Less Manual". Każde rozwiązanie, które wychodzi
-                  z mojej pracowni, redukuje ręczne operacje o minimum 70%.
+                  Misja LessManual jest prosta: mniej ręcznego przekładania danych,
+                  więcej czasu na decyzje, klientów i rozwój firmy.
                 </p>
               </div>
 
@@ -135,7 +145,7 @@ export default function ONasContent() {
               <h2>Mniej manual. Więcej efektu.</h2>
             </header>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5E5E5] border border-[#E5E5E5]">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px bg-[#E5E5E5] border border-[#E5E5E5]">
               {MANIFEST_ITEMS.map((item) => (
                 <div key={item.label} className="bg-[#FAFAFA] p-8 md:p-10">
                   <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513] mb-4">
@@ -190,10 +200,10 @@ export default function ONasContent() {
           <div className="mx-auto max-w-[1440px]">
             <header className="mb-16 max-w-[720px]">
               <SectionLabel>JAK</SectionLabel>
-              <h2>Trzy zasady. Bez wyjątków.</h2>
+              <h2>Zasady współpracy.</h2>
             </header>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
               {HOW_ITEMS.map((item) => (
                 <div
                   key={item.label}

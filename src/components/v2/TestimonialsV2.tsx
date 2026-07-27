@@ -27,7 +27,7 @@ export function TestimonialsV2() {
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#737373] mb-4">
             {SOCIAL_PROOF.googleRating.toFixed(1)} · Google Reviews · {SOCIAL_PROOF.googleReviews} opinii
           </div>
-          <h2>Klienci nie oglądają demo. Oglądają wyniki.</h2>
+          <h2>Klienci chcą wiedzieć, co system zmieni w codziennej pracy.</h2>
         </header>
 
         <motion.div
@@ -69,13 +69,6 @@ export function TestimonialsV2() {
                 {r.text}
               </p>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-[#E5E5E5] pt-5">
-                <span className="font-mono text-[11px] text-[#737373]">przed</span>
-                <span className="text-[13px] text-[#525252]">{r.before}</span>
-                <span className="text-[#B87333]">→</span>
-                <span className="font-mono text-[11px] text-[#737373]">po</span>
-                <span className="text-[13px] text-[#0A0A0A]">{r.after}</span>
-              </div>
             </motion.article>
           ))}
         </motion.div>

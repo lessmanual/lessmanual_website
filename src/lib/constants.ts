@@ -11,16 +11,18 @@ export function getNextMonthPL() {
   return POLISH_MONTHS[(new Date().getMonth() + 1) % 12];
 }
 
-export const CALENDLY_URL = "https://cal.com/bartłomiej-chudzik-2en6pt";
+export const CALENDLY_URL =
+  "https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min";
 export const EMAIL = "kontakt@lessmanual.ai";
 export const GOOGLE_REVIEWS_URL = "https://g.page/r/lessmanual/review";
+export const AI_GROWTH_MAP_URL = "/ai-growth-opportunity-map";
 
 export const HERO_ROTATOR_WORDS = ["klienci", "wyniki", "zyski"];
 
 export const PROOF_METRICS = [
-  { value: "20-40h", label: "tyle oszczędzają nasi klienci", countFrom: 0, countTo: 40, suffix: "h", prefix: "" },
-  { value: "7-21 dni", label: "do działającego systemu" },
-  { value: "Gwarancja wyników", label: "lub pełny zwrot kosztów" },
+  { value: "quality gate", label: "research, copy, QA i utrzymanie" },
+  { value: "setup + MRR", label: "wdrożenie i miesięczna obsługa" },
+  { value: "diagnoza", label: "zakres i wycena po sprawdzeniu procesu" },
 ];
 
 export { PROOF_WITH_CAPACITY as PROOF_META } from "./social-proof";
@@ -35,99 +37,98 @@ export const NAVIGATION = [
 
 export const PRODUCTS = [
   {
-    title: "Hot Lead Catcher",
-    badge: "NAJCZĘŚCIEJ WYBIERANY",
+    title: "Content Machine",
+    badge: "PRIMARY",
     description:
-      "Agent AI który wychwytuje gorące leady zanim konkurencja je zauważy. Monitoruje 4 źródła sygnałów zakupowych (newsy, oferty pracy, opinie, social media) i alertuje gdy ktoś z Twojego ICP właśnie rozważa zakup.",
+      "System wybiera tematy na podstawie pytań klientów, przygotowuje teksty, publikuje je i rozdziela na kolejne formaty. Jakość sprawdza człowiek.",
     metrics: [
-      "Setup 3 000 PLN + od 800 PLN/mies",
-      "4 źródła sygnałów (newsy, oferty pracy, opinie, social media)",
-      "Alert Telegram + gotowy draft maila w Instantly",
+      "wdrożenie i stała opieka",
+      "regularny content bez budowania własnego działu",
     ],
     bonus:
-      "Bonus: CRM integration + scoring agent w cenie setupu GROWTH (wartość 2 000 PLN)",
-    landingHref: "/oferta/hot-lead-catcher",
-  },
-  {
-    title: "Spotkania z decydentami",
-    description:
-      "System który umawia spotkania z Twoimi idealnymi klientami. Płacisz tylko za wynik - zero stałych opłat. 3 warstwy gwarancji. Bonusy o wartości do 10,000 PLN w cenie.",
-    metrics: [
-      "76% open rate, 61% positive reply rate",
-      "Pay-per-meeting od 500 PLN. Zero stałych opłat",
-      "3 warstwy gwarancji. 0 spotkań w 45 dni = zwrot setup",
-    ],
-    bonus:
-      "Bonus: Warsztat ICP (2,500 PLN), Sprawdzone Szablony z 76% open rate (1,500 PLN), Auto-Reply AI (3,000 PLN) - w cenie setupu",
-    landingHref: "/oferta/pipeline-machine",
-  },
-  {
-    title: "Blog który pisze się sam",
-    description:
-      "10-30 artykułów SEO miesięcznie. Keyword research, klastry tematyczne, linkowanie wewnętrzne. Ty nie robisz nic. Ruch rośnie.",
-    metrics: [
-      "Od 83 PLN za artykuł (vs 300-800 PLN copywriter)",
-      "+150-400% ruchu organicznego w 6 miesięcy",
-    ],
-    bonus:
-      "Bonus: ruch z Google to klienci którzy sami Cię szukają, zero kosztów per lead",
+      "AI Growth Map pokazuje, gdzie content może najszybciej przełożyć się na popyt.",
     landingHref: "/oferta/content-machine",
   },
   {
-    title: "Odpowiedź w 30 sekund, 24/7",
+    title: "Obsługa Klienta AI",
+    badge: "PRIMARY",
     description:
-      "System który odpowiada klientom na stronie, WhatsApp i mailu. Wytrenowany na Twojej bazie wiedzy. Jak czegoś nie wie, przekazuje do Ciebie z pełnym kontekstem.",
+      "System odpowiada na powtarzalne pytania na podstawie wiedzy firmy. Zespół dostaje tylko sprawy wymagające decyzji, razem z pełnym kontekstem.",
     metrics: [
-      "60-80% zapytań obsłużonych automatycznie",
-      "System od 900 PLN/mies vs pracownik 8-9k PLN/mies",
+      "wdrożenie i stała opieka",
+      "kanały i integracje dobierane po diagnozie",
     ],
     bonus:
-      "Bonus: klient dostaje odpowiedź o 2 w nocy, w weekend, w święta, nigdy nie czeka",
+      "AI Growth Map pokazuje, które kanały i typy spraw warto automatyzować jako pierwsze.",
     landingHref: "/oferta/obsluga-klienta",
   },
   {
-    title: "Wycena w 5 minut zamiast 2 godzin",
+    title: "Premium Cold Email+",
+    badge: "PRIMARY",
     description:
-      "Klient sam wycenia na Twojej stronie lub w chacie. System generuje profesjonalny PDF z Twoim logo i wysyła mailem. Z auto follow-upem i cotygodniowym raportem.",
+      "Kampania sprzedażowa B2B oparta na sprawdzonych danych o firmie i konkretnym powodzie kontaktu. Każdą wiadomość sprawdzamy przed wysyłką.",
     metrics: [
-      "2h → 5 min (oszczędność 96% czasu)",
-      "+25-40% win rate dzięki szybkości odpowiedzi",
+      "uruchomienie i stała obsługa",
+      "dla firm, w których wartość kontraktu uzasadnia dokładne przygotowanie",
     ],
     bonus:
-      "Bonus: klient wycenia sam o 23:00, w weekend, w święta. Ty rano masz gotowe zapytanie",
+      "AI Growth Map wybiera, czy outbound ma prowadzić content, obsługę, ofertowanie czy lead gen.",
+    landingHref: "/oferta/pipeline-machine",
+  },
+  {
+    title: "Generator Ofert",
+    description:
+      "System przygotowuje draft oferty na podstawie zatwierdzonego cennika, danych klienta i reguł firmy. Handlowiec sprawdza wynik przed wysyłką.",
+    metrics: [
+      "ceny wyłącznie z danych firmy",
+      "akceptacja handlowca przed wysyłką",
+    ],
+    bonus:
+      "Dobieramy po diagnozie, jeśli ofertowanie blokuje sprzedaż mocniej niż pozyskiwanie leadów.",
     landingHref: "/oferta/generator-ofert",
+  },
+  {
+    title: "Hot Lead Catcher",
+    description:
+      "Agent monitoruje uzgodnione źródła i wskazuje sygnały, które mogą oznaczać moment zakupowy. Każdy alert zawiera źródło i kontekst do weryfikacji.",
+    metrics: [
+      "sygnał, źródło i szkic kontaktu",
+      "dane do sprawdzenia przed kontaktem z firmą",
+    ],
+    bonus:
+      "Nie sprzedajemy go jako tani skrót do leadów. Używamy, gdy sygnały mają sens w danej branży.",
+    landingHref: "/oferta/hot-lead-catcher",
   },
   {
     title: "Indywidualne Wdrożenia",
     badge: "DLA NON-STANDARD",
     description:
-      "Agent AI dopasowany pod Twój unikalny workflow - gdy żaden z 5 produktów nie pasuje. Discovery bezpłatne. Wycena projektowa po scoping.",
+      "Agent AI dopasowany do niestandardowego procesu, gdy gotowa ścieżka nie pasuje. Zakres i wycena powstają po diagnozie.",
     metrics: [
-      "Wdrożenie 4-12 tyg",
-      "Wycena po Discovery",
-      "4h SLA",
+      "zakres po diagnozie procesu",
+      "wycena przed rozpoczęciem prac",
     ],
     bonus:
-      "Bonus: Discovery Workshop (2 000 PLN), Architecture Spec (2 500 PLN), 3 mies. Production Support (8 000 PLN) - w cenie projektu",
+      "Dane, integracje, reguły i sposób utrzymania opisujemy przed rozpoczęciem budowy.",
     landingHref: "/oferta/indywidualne-wdrozenia",
   },
 ];
 
 export const COST_TABLE = [
   {
-    task: "Szukanie klientów (handlowiec / agencja / ads)",
-    currentCost: "5,000-22,000 PLN",
-    ourCost: "od 500 PLN/spotkanie",
+    task: "Regularny content i dystrybucja",
+    currentCost: "copywriter, SEO, social i ręczny publishing",
+    ourCost: "Content Machine po diagnozie",
   },
   {
-    task: "Obsługa zapytań (pracownik / Ty sam)",
-    currentCost: "8,000-9,000 PLN",
-    ourCost: "od 900 PLN/mies",
+    task: "Obsługa zapytań i eskalacji",
+    currentCost: "kolejna osoba albo właściciel gaszący tematy",
+    ourCost: "Customer Operations AI po diagnozie",
   },
   {
-    task: "Content marketing (copywriter / agencja)",
-    currentCost: "5,000-8,000 PLN",
-    ourCost: "od 1,000 PLN/mies",
+    task: "Pozyskiwanie klientów outbound",
+    currentCost: "lista, research, copy, wysyłka, follow-up i QA osobno",
+    ourCost: "Premium Cold Email+ setup + MRR",
   },
   {
     task: "Generowanie ofert (ręcznie)",
@@ -232,15 +233,15 @@ export const FAQ_ITEMS = [
     items: [
       {
         q: "Czy to zadziała w mojej branży?",
-        a: "80% problemów które rozwiązujemy jest identycznych niezależnie od branży: odpowiadanie na zapytania, tworzenie ofert, szukanie klientów, publikacja contentu. Pracujemy z firmami z IT, logistyki, OZE, e-commerce, HoReCa i usług B2B. Jeśli masz powtarzalne procesy które zjadają czas Twojego zespołu, zadziała.",
+        a: "Nie zakładamy tego bez diagnozy. Sprawdzamy proces, liczbę powtórzeń, dostępne dane, integracje i koszt obecnego sposobu pracy. Jeśli automatyzacja nie ma sensu, mówimy to wprost.",
       },
       {
         q: "Jak szybko zobaczę wyniki?",
-        a: "Wdrożenie trwa 7-21 dni. System obsługi klienta zaczyna odpowiadać od dnia 1. Pipeline Machine - pierwsze spotkania w 3-4 tygodniu. Content Machine - ruch zaczyna rosnąć w 60 dni.",
+        a: "Najpierw robimy diagnozę i wybieramy jeden proces. Termin zależy od integracji, jakości danych, liczby wyjątków oraz zakresu testów. Konkretny harmonogram dostajesz przed rozpoczęciem prac.",
       },
       {
         q: "Czy potrzebuję wiedzy technicznej?",
-        a: "Zero. Jeśli potrafisz otworzyć maila, dasz radę. Wdrażam, konfiguruję i utrzymuję. Twój czas przy setup: 1-2 godziny. Reszta to moja praca.",
+        a: "Nie. Potrzebujemy od Ciebie wiedzy o procesie, wyjątkach i oczekiwanym wyniku. LessManual odpowiada za projekt, wdrożenie, testy oraz utrzymanie systemu.",
       },
     ],
   },
@@ -249,15 +250,15 @@ export const FAQ_ITEMS = [
     items: [
       {
         q: "Ile to kosztuje?",
-        a: "Zależy od produktu. Inwestycja zaczyna się od 900 PLN/mies - mniej niż 1 dzień pracy pracownika. Pipeline Machine działa w modelu pay-per-meeting - zero stałych opłat, płacisz tylko za spotkania które się odbędą. Szczegóły na stronach poszczególnych produktów.",
+        a: "Pracujemy w modelu wdrożenie + miesięczna obsługa. Nie pokazujemy publicznego cennika jako głównego kryterium, bo zakres zależy od procesu, wolumenu, danych, integracji i poziomu utrzymania. Konkretne kwoty podajemy po diagnozie.",
       },
       {
         q: "Czy muszę mieć duży budżet żeby zacząć?",
-        a: "Nie. Zaczynasz od jednego systemu który rozwiązuje Twój największy problem. Widzisz wyniki, dodajesz kolejne. 50% zaliczki na start, reszta po wdrożeniu. Przy 2+ produktach rabat 15%.",
+        a: "Potrzebujesz problemu, którego koszt da się zmierzyć. Jeśli temat jest zbyt mały, powiemy to wprost. Jeśli ma sens, zaczynamy od jednego procesu i dopiero po wyniku rozważamy kolejny.",
       },
       {
         q: "Co jeśli nie zadziała?",
-        a: "Gwarancja wyników lub pełny zwrot kosztów. Wyniki definiujemy razem przed startem, konkretne liczby, konkretny termin. Nie dowieziemy? Zwracamy pieniądze. 50% zaliczki, reszta po wdrożeniu. Ryzyko jest po mojej stronie.",
+        a: "Przed startem zapisujemy zakres, kryteria wyniku, odpowiedzialności i sposób odbioru. Warunki rozliczenia oraz ewentualnej gwarancji wynikają z konkretnej oferty i umowy.",
       },
     ],
   },
@@ -266,15 +267,15 @@ export const FAQ_ITEMS = [
     items: [
       {
         q: "Czy AI nie pomyli się i nie zrazi moich klientów?",
-        a: "System odpowiada tylko na podstawie Twojej bazy wiedzy, nie wymyśla. Jeśli nie zna odpowiedzi, przekazuje do Twojego zespołu z pełnym kontekstem rozmowy. Masz pełną kontrolę nad tym co system mówi.",
+        a: "Ryzyko błędu ograniczamy przez zatwierdzone źródła, reguły, testy i przekazywanie wyjątków do człowieka. W procesach o większym ryzyku człowiek zatwierdza wynik przed działaniem.",
       },
       {
         q: "A co z RODO i bezpieczeństwem danych?",
-        a: "Dane przetwarzane na serwerach w EU. System zgodny z RODO i AI Act. Dane Twoich klientów nie trenują AI, zostają w Twoim systemie.",
+        a: "Przed wdrożeniem ustalamy, jakie dane są potrzebne, kto ma do nich dostęp, gdzie są przetwarzane i jak długo są przechowywane. Architekturę oraz umowy dobieramy do rodzaju danych i wymagań firmy.",
       },
       {
         q: "Ktoś mnie już oszukał z AI. Czemu mam Ci zaufać?",
-        a: "Dlatego: 50% zaliczki, reszta po wdrożeniu. Gwarancja wyników lub pełny zwrot. 5.0 na Google. Na rozmowie pokażę dokładnie co dostajesz i jaki wynik jest realny. 15 minut, sam ocenisz.",
+        a: "Zaczynamy od konkretnego procesu, kryterium wyniku i jasnego zakresu odpowiedzialności. Możesz sprawdzić publiczne opinie o LessManual, a przed decyzją zobaczysz sposób kontroli systemu i zasady odbioru.",
       },
     ],
   },
@@ -318,28 +319,28 @@ export const PROCESS_STEPS = [
 export const GUARANTEE_POINTS = [
   "50% zaliczki, reszta po wdrożeniu, nie płacisz za coś czego nie ma",
   "Nie wdrożymy na czas, zwrot setup",
-  "Pipeline Machine: 0 spotkań w 45 dni - zwrot setup",
+  "Zakres, miary sukcesu i utrzymanie ustalone przed startem",
   "Wyniki poniżej ustaleń, zwrot kosztów",
   "Chcesz zrezygnować? Jeden mail, bez kar, bez okresu wypowiedzenia",
 ];
 
-export const COST_TABLE_SUMMARY = "Suma: 18,000-39,000 PLN miesięcznie na ręczne czynności. Z nami: od 2,400 PLN. Reszta zostaje w Twojej kieszeni.";
+export const COST_TABLE_SUMMARY = "Najpierw liczymy koszt ręcznej pracy i ryzyko rekrutacji. Dopiero potem wybieramy workflow, zakres i model obsługi.";
 
 export const VALUE_STACK_SAVINGS = [
   {
     area: "Sprzedaż",
-    before: "Handlowiec + agencja + ads = 100-300k PLN/rok",
-    after: "Pipeline Machine od 500 PLN/spotkanie, zero stałych opłat",
+    before: "masowy outbound, słaby research i ręczne follow-upy",
+    after: "Premium Cold Email+ z research-backed personalizacją",
   },
   {
     area: "Obsługa klienta",
-    before: "pracownik = 96-108k PLN/rok",
-    after: "system od 10,800 PLN/rok (oszczędność 85-90%)",
+    before: "kolejna osoba albo właściciel gaszący powtarzalne sprawy",
+    after: "Customer Operations AI z eskalacją do człowieka",
   },
   {
     area: "Content",
-    before: "copywriter = 60-96k PLN/rok",
-    after: "system od 12,000 PLN/rok (3x więcej artykułów)",
+    before: "teksty bez researchu, publikacja ad hoc, brak dystrybucji",
+    after: "Content Machine jako pipeline od researchu do publikacji",
   },
   {
     area: "Oferty",

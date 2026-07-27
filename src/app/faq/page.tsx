@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import FaqContent from "./_content";
 import { FAQ_ITEMS } from "@/lib/constants";
-import { generateFAQSchema } from "@/lib/schema";
+import { generateFAQSchema, serializeJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Najczęstsze pytania | LessManual",
+  title: "Najczęstsze pytania o wdrożenia AI",
   description:
     "Odpowiedzi na najczęstsze pytania o systemy AI LessManual. Dowiedz się jak działamy, ile to kosztuje i jak zadbamy o bezpieczeństwo Twoich danych.",
   alternates: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FAQ | LessManual",
     description:
-      "Najczęstsze pytania o agentów AI dla firm B2B. Jak działamy, ile kosztuje, gwarancja wyników.",
+      "Najczęstsze pytania o agentów AI dla firm B2B, wycenę, bezpieczeństwo i sposób wdrożenia.",
   },
 };
 
@@ -33,7 +33,7 @@ export default function FaqPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />
       <FaqContent />
     </>

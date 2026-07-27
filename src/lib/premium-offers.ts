@@ -1,0 +1,222 @@
+import type { PremiumOfferPageProps } from "@/components/sections/PremiumOfferPage";
+
+export type PremiumOfferKey =
+  | "contentMachine"
+  | "customerOperations"
+  | "premiumColdEmail"
+  | "generatorOfert"
+  | "hotLeadCatcher"
+  | "customWorkflow";
+
+export const PREMIUM_OFFERS: Record<PremiumOfferKey, PremiumOfferPageProps> = {
+  contentMachine: {
+    path: "/oferta/content-machine",
+    eyebrow: "Content i SEO",
+    title: "Content Machine",
+    intro:
+      "System do planowania, przygotowania, publikacji i dystrybucji treści. Zamienia wiedzę firmy w regularny content zgodny z jej językiem.",
+    fit:
+      "Firmy z e-commerce, usług B2B albo produkcji, które potrzebują regularnych treści bez zatrudniania kolejnych osób.",
+    promise:
+      "Mniej ręcznej pracy, więcej publikacji i stała kontrola jakości zamiast generycznych tekstów z AI.",
+    workflow: [
+      "Zbieramy źródła: oferta, katalog, FAQ, rozmowy sprzedażowe, komentarze klientów i realne pytania z rynku.",
+      "Budujemy klastry tematów pod SEO, wyszukiwarki AI i social media, a potem wybieramy kolejność publikacji.",
+      "Tworzymy plan tekstu, wersję roboczą, redakcję, kontrolę faktów i materiał gotowy do publikacji.",
+      "Co miesiąc sprawdzamy jakość, pokrycie tematów, sygnały z rynku i następne priorytety contentowe.",
+    ],
+    qualityGate: [
+      "Każdy tekst powstaje na podstawie pakietu źródeł.",
+      "Plan oddziela fakty od hipotez i oznacza miejsca, których nie wolno dopowiadać.",
+      "Redakcja usuwa sztuczny język, przesadzone obietnice i fragmenty bez konkretu.",
+      "Publikacja jest częścią procesu, więc materiał trafia do właściwego kanału po akceptacji.",
+    ],
+    outcomes: [
+      "Publikacje wychodzą w ustalonym rytmie, bez zaczynania każdego tekstu od pustej kartki.",
+      "Każdy materiał ma wskazane źródła i status kontroli faktów.",
+      "Mierzymy czas od wyboru tematu do wersji gotowej do akceptacji.",
+      "Zespół widzi, co jest w analizie, co w redakcji i co czeka na publikację.",
+    ],
+    notes: [
+      "Dobre dla firm, gdzie jeden dobry temat może pracować w SEO, social i sprzedaży.",
+      "Wycena zależy od liczby źródeł, kanałów, tempa publikacji i poziomu redakcji.",
+      "Potencjał ruchu szacujemy po sprawdzeniu domeny, konkurencji i obecnych zasobów.",
+      "Pierwszeństwo mają tematy z sensem biznesowym i potwierdzonym popytem.",
+    ],
+  },
+  customerOperations: {
+    path: "/oferta/obsluga-klienta",
+    eyebrow: "Obsługa klienta",
+    title: "Customer Operations AI",
+    intro:
+      "Agent AI do obsługi pytań i powtarzalnych spraw. Działa na źródłach firmy, zbiera kontekst i przekazuje ludziom tematy, które naprawdę wymagają decyzji.",
+    fit:
+      "Firmy, które rosną szybciej niż zespół obsługi, mają wiele kanałów kontaktu albo tracą czas na powtarzalne pytania.",
+    promise:
+      "Mniej gaszenia tematów, szybsza odpowiedź i uporządkowana obsługa bez automatyzacji na ślepo.",
+    workflow: [
+      "Mapujemy kanały kontaktu, typy spraw, bazę wiedzy, ryzyka i momenty, w których człowiek musi wejść do procesu.",
+      "Budujemy źródła odpowiedzi: dokumenty, FAQ, regulaminy, historię spraw, dane z CRM i ograniczenia językowe.",
+      "Projektujemy ścieżki odpowiedzi, zbierania braków, przekazania do człowieka i zapisu statusu w systemie.",
+      "Po wdrożeniu monitorujemy jakość odpowiedzi, błędy, eskalacje i tematy do dopisania w bazie wiedzy.",
+    ],
+    qualityGate: [
+      "Przy braku źródła system prosi o dane albo eskaluje sprawę.",
+      "Odpowiedzi są sprawdzane pod ton firmy, zgodność z bazą wiedzy i ryzyko błędnej obietnicy.",
+      "Każda automatyzacja ma granice odpowiedzialności, żeby AI nie podejmowało decyzji biznesowych za zespół.",
+      "Raport pokazuje liczbę spraw oraz luki w procesie, źródłach i komunikacji.",
+    ],
+    outcomes: [
+      "Mierzymy czas od pytania klienta do pierwszej poprawnej odpowiedzi.",
+      "Zespół dostaje sprawy wymagające decyzji albo brakujących danych.",
+      "Każda sprawa ma status, kontekst i wskazaną ścieżkę eskalacji.",
+      "Raport pokazuje pytania, które najczęściej wracają do człowieka.",
+    ],
+    notes: [
+      "Dobre dla sklepów, usług B2B, edukacji, usług lokalnych i firm z dużą liczbą powtarzalnych pytań.",
+      "Zakres zależy od kanałów, jakości bazy wiedzy, integracji i wymaganych eskalacji.",
+      "Kryterium wdrożenia stanowi jakość obsłużonej sprawy.",
+      "Najpierw sprawdzamy, gdzie automatyzacja naprawdę odciąży zespół.",
+    ],
+  },
+  premiumColdEmail: {
+    path: "/oferta/pipeline-machine",
+    eyebrow: "Sprzedaż B2B",
+    title: "Premium Cold Email+",
+    intro:
+      "Wybieramy firmy z realnym powodem do kontaktu. Sprawdzamy źródła, przygotowujemy wiadomości i prowadzimy kampanię na podstawie odpowiedzi.",
+    fit:
+      "Firmy B2B, w których wartość kontraktu uzasadnia dokładniejszą analizę, lepszy język i lepszą selekcję kont.",
+    promise:
+      "Kampania prowadzona jako system: strategia, dane, treść, wysyłka, odpowiedzi i stałe utrzymanie.",
+    workflow: [
+      "Budujemy listę kont i oceniamy, czy firma pasuje do oferty, ma właściwy profil i sensowny powód do kontaktu.",
+      "Dla najlepszych kont zbieramy źródła: stronę, ofertę, rolę decydenta, sygnały zmiany i możliwy moment zakupu.",
+      "Na tej podstawie powstaje jeden jasny powód kontaktu i proste wezwanie do działania.",
+      "Kampania ma kontrolę faktów, listę wykluczeń, monitoring odpowiedzi i plan zmian oparty na danych.",
+    ],
+    qualityGate: [
+      "Każda obietnica ma źródło albo jasno opisany logiczny wniosek.",
+      "Personalizacja dotyczy biznesu odbiorcy i konkretnego powodu kontaktu.",
+      "Język jest prosty, konkretny i naturalny.",
+      "Model współpracy obejmuje wdrożenie i stałą obsługę kampanii.",
+    ],
+    outcomes: [
+      "Każda firma na liście ma zapisany powód kontaktu i źródło.",
+      "Wiadomość przechodzi kontrolę faktów oraz języka przed wysyłką.",
+      "Porównujemy odpowiedzi między segmentami i powodami kontaktu.",
+      "Wnioski z odpowiedzi trafiają do kolejnych iteracji kampanii.",
+    ],
+    notes: [
+      "Dobre dla ofert premium, gdzie masowa kampania psuje pozycjonowanie.",
+      "Zakres zależy od jakości danych, liczby segmentów, poziomu analizy i liczby skrzynek.",
+      "Prognozę kampanii przygotowujemy po sprawdzeniu rynku, listy, oferty i dotychczasowych danych.",
+      "Najpierw kalibrujemy segmenty na mniejszej próbie, potem skalujemy zwycięskie kąty.",
+    ],
+  },
+  generatorOfert: {
+    path: "/oferta/generator-ofert",
+    eyebrow: "Ofertowanie",
+    title: "Generator Ofert",
+    intro:
+      "System zbiera dane od klienta, porządkuje zakres i przygotowuje wersję roboczą oferty w formie PDF albo maila. Dobry tam, gdzie wycena blokuje sprzedaż.",
+    fit:
+      "Firmy, w których handlowiec albo właściciel traci dużo czasu na powtarzalne oferty, konfiguracje i doprecyzowania.",
+    promise:
+      "Szybsze ofertowanie, mniej ręcznego przepisywania i bardziej spójny standard propozycji dla klienta.",
+    workflow: [
+      "Mapujemy typy zapytań, wymagane dane wejściowe, wyjątki, widełki decyzyjne i format finalnej oferty.",
+      "Projektujemy formularz, chat albo proces mailowy, który zbiera brakujące informacje bez długiej wymiany wiadomości.",
+      "System generuje strukturę oferty, zakres, założenia, elementy ryzyka i wersję do sprawdzenia przez człowieka.",
+      "Po akceptacji oferta trafia do klienta, a status i follow-up zostają zapisane w procesie sprzedaży.",
+    ],
+    qualityGate: [
+      "Zakres, ceny i terminy pochodzą wyłącznie z zatwierdzonych reguł oraz danych firmy.",
+      "Wersja dla klienta ma być czytelna, elegancka i wolna od technicznego języka automatyzacji.",
+      "Człowiek widzi założenia oraz braki, zanim dokument wyjdzie do klienta.",
+      "System uczy się na typowych poprawkach, ale nie przejmuje decyzji cenowej bez zgody.",
+    ],
+    outcomes: [
+      "Mierzymy czas od zebrania danych do draftu gotowego do kontroli.",
+      "Ceny i warunki pochodzą z zatwierdzonych źródeł firmy.",
+      "System pokazuje braki w zapytaniu przed przygotowaniem dokumentu.",
+      "Status oferty i termin kolejnego kontaktu są zapisane w procesie sprzedaży.",
+    ],
+    notes: [
+      "Dobre jako dodatek do obsługi klienta, sprzedaży albo contentu produktowego.",
+      "Zakres zależy od wariantów oferty, integracji, danych wejściowych i poziomu akceptacji.",
+      "Strategia cenowa zostaje po stronie firmy. System automatyzuje przygotowanie i kontrolę.",
+      "Najpierw wybieramy najczęstszy typ oferty, potem dokładamy kolejne przypadki.",
+    ],
+  },
+  hotLeadCatcher: {
+    path: "/oferta/hot-lead-catcher",
+    eyebrow: "Sygnały zakupowe",
+    title: "Hot Lead Catcher",
+    intro:
+      "Warstwa sygnałów zakupowych dla sprzedaży B2B. System monitoruje zdarzenia, ocenia ich znaczenie i przygotowuje kontekst do kontaktu.",
+    fit:
+      "Firmy, które mają jasno opisany idealny profil klienta i wiedzą, jakie zdarzenia zwiększają szansę zakupu.",
+    promise:
+      "Szybsze zauważanie okazji, lepszy moment kontaktu i mniej ręcznego przeglądania źródeł.",
+    workflow: [
+      "Ustalamy sygnały, które naprawdę mają znaczenie: zmiany w firmie, rekrutacje, ekspansja, nowe projekty albo publiczne wzmianki.",
+      "System zbiera dane z uzgodnionych źródeł i odrzuca szum, który nie pasuje do profilu klienta albo scenariusza sprzedaży.",
+      "Każdy mocny sygnał dostaje kontekst: co się stało, dlaczego to może mieć znaczenie i jaki kierunek kontaktu warto sprawdzić.",
+      "Najlepsze sygnały mogą trafiać do Premium Cold Email+ jako powód kontaktu i materiał do personalizacji.",
+    ],
+    qualityGate: [
+      "Sygnał ma związek z realnym problemem albo zmianą w firmie.",
+      "Źródła są jawne w notatce, więc handlowiec zna pochodzenie kontekstu.",
+      "Kwalifikacja konta zostaje po stronie sprzedaży.",
+      "Każdy alert wskazuje konkretną akcję do sprawdzenia.",
+    ],
+    outcomes: [
+      "Każdy alert wskazuje zdarzenie, źródło i możliwy związek z ofertą.",
+      "Mierzymy, które typy sygnałów prowadzą do kontaktu zaakceptowanego przez sprzedaż.",
+      "Zespół odrzuca szum i zapisuje powód odrzucenia do dalszej kalibracji.",
+      "Raport pokazuje źródła, które dostarczają wartościowy kontekst.",
+    ],
+    notes: [
+      "Dobre, gdy branża ma widoczne sygnały zakupu albo zmiany operacyjnej.",
+      "Zakres zależy od źródeł, częstotliwości monitoringu, scoringu i integracji ze sprzedażą.",
+      "Jakość sygnałów sprawdzamy na ograniczonej próbie przed skalowaniem.",
+      "Najlepiej działa jako warstwa danych dla kampanii sprzedażowej.",
+    ],
+  },
+  customWorkflow: {
+    path: "/oferta/indywidualne-wdrozenia",
+    eyebrow: "Indywidualny proces",
+    title: "Indywidualne Wdrożenia",
+    intro:
+      "Dedykowany agent AI dla procesu, którego nie da się uczciwie zamknąć w gotowym pakiecie. Zaczynamy od diagnozy, a potem projektujemy system pod realny sposób pracy firmy.",
+    fit:
+      "Firmy z nietypowym procesem sprzedaży, obsługi, ofertowania, dokumentów albo danych, gdzie gotowy produkt byłby zbyt ciasny.",
+    promise:
+      "Projekt dopasowany do procesu, integracji i odpowiedzialności zespołu, bez publicznego cennika oderwanego od zakresu.",
+    workflow: [
+      "Rozpisujemy proces, role, źródła danych, decyzje, wyjątki i miejsca, w których dziś znika czas albo jakość.",
+      "Projektujemy najmniejszy sensowny proces, który da się wdrożyć, utrzymać i mierzyć po realnym użyciu.",
+      "Budujemy integracje, logikę agenta, kontrolę jakości, widoczność statusów i ścieżki eskalacji.",
+      "Po starcie utrzymujemy system, poprawiamy go na danych i oddzielamy dobre automatyzacje od tych, które nie mają ROI.",
+    ],
+    qualityGate: [
+      "Zakres wynika z procesu, kosztu błędów i realnej wartości biznesowej.",
+      "Każda integracja ma właściciela, dane wejściowe, status błędu i plan bezpiecznej eskalacji.",
+      "Agent nie podejmuje decyzji, których firma nie umie opisać regułą albo źródłem.",
+      "Dokumentujemy działanie systemu, jego granice i miejsca wymagające decyzji człowieka.",
+    ],
+    outcomes: [
+      "Przed pilotem ustalamy kryterium wyniku i sposób jego kontroli.",
+      "Zespół widzi status procesu, błędy i miejsca wymagające decyzji.",
+      "Wyjątki mają wskazanego właściciela oraz ścieżkę bezpiecznej eskalacji.",
+      "Plan utrzymania określa, kto reaguje na błędy i jak rozwijamy system.",
+    ],
+    notes: [
+      "Dobre dla procesów, które mają wysoki koszt ręcznej pracy albo błędu.",
+      "Zakres i cena zależą od integracji, danych, ryzyka i poziomu utrzymania.",
+      "Pierwszy proces ma możliwie mały zakres i szybko potwierdza wartość.",
+      "Najpierw diagnozujemy proces, potem decydujemy, czy indywidualne wdrożenie ma sens.",
+    ],
+  },
+};

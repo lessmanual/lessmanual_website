@@ -17,7 +17,6 @@ export const PROOF_FULL = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIA
 
 export const PROOF_COMPACT = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google`;
 
-// TODO 2026-05-18: CTO zmień copy scarcity gdy maj kończy się. Patrz context/reminders.md
-export const PROOF_WITH_CAPACITY = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google · Max ${SOCIAL_PROOF.maxProjectsMonthly} klientów miesięcznie. Ostatnie miejsce w maju.`;
+export const PROOF_WITH_CAPACITY = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google · Max ${SOCIAL_PROOF.maxProjectsMonthly} jakościowych projektów miesięcznie.`;
 
-export const PROOF_OFFER_META = `${SOCIAL_PROOF.implementationsDelivered} wdrożeń | ${SOCIAL_PROOF.googleRating} na Google | Max ${SOCIAL_PROOF.maxProjectsMonthly} klientów miesięcznie. Ostatnie miejsce w maju.`;
+export const PROOF_OFFER_META = `${SOCIAL_PROOF.implementationsDelivered} wdrożeń | ${SOCIAL_PROOF.googleRating} na Google | Max ${SOCIAL_PROOF.maxProjectsMonthly} jakościowych projektów miesięcznie.`;

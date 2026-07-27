@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import KontaktContent from "./_content";
 
 export const metadata: Metadata = {
-  title: "Kontakt | LessManual",
+  title: "Kontakt",
   description:
-    "Porozmawiajmy o Twoim projekcie. Zarezerwuj 15-minutową rozmowę lub napisz na kontakt@lessmanual.ai. Średni czas odpowiedzi: 4h w dni robocze.",
+    "Porozmawiajmy o procesie, który zabiera czas Twojemu zespołowi. Zarezerwuj rozmowę lub napisz na kontakt@lessmanual.ai.",
   alternates: {
     canonical: "/kontakt",
   },
   openGraph: {
     title: "Kontakt | LessManual",
     description:
-      "Zarezerwuj 15-minutową rozmowę z Bartkiem. Sprawdzimy czy agenci AI pasują do Twojego biznesu.",
+      "Zarezerwuj rozmowę z Bartkiem. Sprawdzimy, czy automatyzacja ma sens w wybranym procesie.",
     url: "/kontakt",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kontakt | LessManual",
     description:
-      "15 minut rozmowy. Konkretna propozycja. Zero stawki godzinowej.",
+      "Rozmowa o procesie, danych, wyniku i możliwym zakresie wdrożenia.",
   },
 };
 

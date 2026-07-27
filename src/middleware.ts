@@ -6,6 +6,7 @@ const MARKDOWNABLE_ROUTES = new Set([
   "/faq",
   "/o-nas",
   "/kontakt",
+  "/ai-growth-opportunity-map",
   "/oferta",
   "/oferta/hot-lead-catcher",
   "/oferta/pipeline-machine",

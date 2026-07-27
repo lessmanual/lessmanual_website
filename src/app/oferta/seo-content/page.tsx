@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import SeoContentContent from "./_content";
+import { PremiumOfferPage } from "@/components/sections/PremiumOfferPage";
+import { PREMIUM_OFFERS } from "@/lib/premium-offers";
 
 export const metadata: Metadata = {
-  title: "SEO Content System · blog który pisze się sam · LessManual",
+  title: "Content Machine: treści SEO i social",
   description:
-    "10 do 30 artykułów SEO miesięcznie. Bez copywritera, bez Twojego czasu. Dajesz branżę - my robimy resztę. +150-400% ruchu organicznego w 6 miesięcy. Od 83 PLN za artykuł.",
+    "Pipeline do researchu, pisania, publikacji i dystrybucji treści. LessManual buduje Content Machine z kontrolą jakości, źródłami i miesięczną obsługą.",
   alternates: {
-    canonical: "/oferta/seo-content",
+    canonical: "/oferta/content-machine",
   },
   openGraph: {
-    title: "SEO Content System · blog który pisze się sam · LessManual",
+    title: "Content Machine · LessManual",
     description:
-      "10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. Bez copywritera, bez Twojego czasu. +150-400% ruchu organicznego.",
+      "Jakościowy pipeline treści: research, brief, redakcja, publikacja, dystrybucja i miesięczna kontrola jakości.",
     url: "/oferta/seo-content",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO Content System · LessManual",
+    title: "Content Machine · LessManual",
     description:
-      "10-30 artykułów SEO miesięcznie. Od 83 PLN za artykuł. Bez copywritera. +150-400% ruchu organicznego.",
+      "Research, briefy, redakcja, publikacja i dystrybucja treści w jednym workflow.",
   },
 };
 
 export default function SeoContentPage() {
-  return <SeoContentContent />;
+  return <PremiumOfferPage {...PREMIUM_OFFERS.contentMachine} />;
 }

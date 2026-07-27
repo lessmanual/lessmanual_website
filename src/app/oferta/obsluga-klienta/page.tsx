@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import ObslugaKlientaContent from "./_content";
+import { PremiumOfferPage } from "@/components/sections/PremiumOfferPage";
+import { PREMIUM_OFFERS } from "@/lib/premium-offers";
 
 export const metadata: Metadata = {
-  title: "System Obsługi Klienta · chatbot AI + multi-channel · LessManual",
+  title: "Automatyzacja obsługi klienta z AI",
   description:
-    "Chatbot RAG na web, WhatsApp i email. 60-80% zapytań obsługiwanych automatycznie. Odpowiedź w 30 sekund, 24/7. Voice Agent w tierze SCALE. Od 5 000 PLN setup + 900 PLN/mies. Wdrożenie w 14 dni.",
+    "Agent AI odpowiada na podstawie bazy wiedzy, zbiera kontekst sprawy i przekazuje człowiekowi wyjątki wymagające decyzji.",
   alternates: {
     canonical: "/oferta/obsluga-klienta",
   },
   openGraph: {
-    title: "System Obsługi Klienta · chatbot AI + multi-channel",
+    title: "Automatyzacja obsługi klienta z AI | LessManual",
     description:
-      "60-80% zapytań automatycznie. Odpowiedź w 30 sekund, 24/7. Web + WhatsApp + email w jednym systemie. Wdrożenie w 14 dni.",
+      "Obsługa pytań i spraw na danych firmy, z kontrolą jakości oraz eskalacją do zespołu.",
     url: "/oferta/obsluga-klienta",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "System Obsługi Klienta · LessManual",
+    title: "Automatyzacja obsługi klienta z AI | LessManual",
     description:
-      "Chatbot RAG na web, WhatsApp i email. 60-80% zapytań automatycznie. Od 900 PLN/mies. vs pracownik 8-9 tys. PLN/mies.",
+      "Agent AI do obsługi pytań, zbierania kontekstu i eskalacji do zespołu.",
   },
 };
 
 export default function ObslugaKlientaPage() {
-  return <ObslugaKlientaContent />;
+  return <PremiumOfferPage {...PREMIUM_OFFERS.customerOperations} />;
 }

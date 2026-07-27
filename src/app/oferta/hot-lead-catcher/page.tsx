@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import HotLeadCatcherContent from "./_content";
+import { PremiumOfferPage } from "@/components/sections/PremiumOfferPage";
+import { PREMIUM_OFFERS } from "@/lib/premium-offers";
 
 export const metadata: Metadata = {
-  title: "Hot Lead Catcher · agent AI łapie gorące leady · LessManual",
+  title: "Sygnały zakupowe dla sprzedaży B2B",
   description:
-    "Agent AI monitoruje 4 źródła sygnałów zakupowych (newsy, oferty pracy, recenzje, wzmianki). Scoring intent, alert na Telegram, draft maila w Instantly. 24h od sygnału do kontaktu. Cennik: STARTER, GROWTH, SCALE.",
+    "Warstwa sygnałów zakupowych dla outboundu i sprzedaży. System monitoruje zdarzenia, ocenia intencję i przygotowuje kontekst do kontaktu.",
   alternates: {
     canonical: "/oferta/hot-lead-catcher",
   },
   openGraph: {
-    title: "Hot Lead Catcher · agent AI łapie gorące leady",
+    title: "Sygnały zakupowe dla sprzedaży B2B | LessManual",
     description:
-      "Monitoring 4 źródeł sygnałów zakupowych. Scoring intent. Alert na Telegram + draft maila w Instantly. 24h od sygnału do kontaktu.",
+      "Sygnały zakupowe, kontekst biznesowy i materiał do personalizowanego kontaktu.",
     url: "/oferta/hot-lead-catcher",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hot Lead Catcher · LessManual",
+    title: "Sygnały zakupowe dla sprzedaży B2B | LessManual",
     description:
-      "Agent AI łapie gorące leady zanim konkurencja je zauważy. 4 źródła, scoring intent, 24h od sygnału do kontaktu.",
+      "Monitoring źródeł i kontekst do kontaktu z właściwą firmą.",
   },
 };
 
 export default function HotLeadCatcherPage() {
-  return <HotLeadCatcherContent />;
+  return <PremiumOfferPage {...PREMIUM_OFFERS.hotLeadCatcher} />;
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { BlogPost } from "@/lib/supabase";
+import { normalizePublicProse } from "@/lib/public-prose";
 
 function formatDate(dateString: string | null): string {
   if (!dateString) return "";
@@ -18,7 +19,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
           <div className="aspect-[16/9] overflow-hidden">
             <img
               src={post.featured_image}
-              alt={post.title_pl}
+              alt={normalizePublicProse(post.title_pl)}
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>
@@ -34,12 +35,12 @@ export function BlogCard({ post }: { post: BlogPost }) {
           )}
 
           <h2 className="font-serif text-xl text-text leading-snug mb-2 group-hover:text-accent transition-colors duration-300">
-            {post.title_pl}
+            {normalizePublicProse(post.title_pl)}
           </h2>
 
           {post.description_pl && (
             <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-2">
-              {post.description_pl}
+              {normalizePublicProse(post.description_pl)}
             </p>
           )}
 

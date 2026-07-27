@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CALENDLY_URL, EMAIL } from "@/lib/constants";
+import { AI_GROWTH_MAP_URL, CALENDLY_URL, EMAIL } from "@/lib/constants";
 
 export function FooterV2() {
   return (
@@ -24,7 +24,7 @@ export function FooterV2() {
               </span>
             </Link>
             <p className="text-[13px] leading-[1.55] text-[#525252]">
-              Agenci AI dla firm B2B.
+              Automatyzacja AI dla sprzedaży, contentu i obsługi klienta.
             </p>
             <p className="font-mono text-[11px] text-[#737373]">
               © 2026 LessManual.ai
@@ -36,11 +36,11 @@ export function FooterV2() {
             <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#525252] mb-1">
               Systemy
             </div>
-            <FooterLink href="/oferta/hot-lead-catcher">Hot Lead Catcher</FooterLink>
-            <FooterLink href="/oferta/pipeline-machine">Pipeline Machine</FooterLink>
             <FooterLink href="/oferta/content-machine">Content Machine</FooterLink>
-            <FooterLink href="/oferta/obsluga-klienta">Obsługa Klienta</FooterLink>
+            <FooterLink href="/oferta/obsluga-klienta">Customer Operations AI</FooterLink>
+            <FooterLink href="/oferta/pipeline-machine">Premium Cold Email+</FooterLink>
             <FooterLink href="/oferta/generator-ofert">Generator Ofert</FooterLink>
+            <FooterLink href="/oferta/hot-lead-catcher">Hot Lead Catcher</FooterLink>
           </div>
 
           {/* Kolumna 3: Firma */}
@@ -49,6 +49,7 @@ export function FooterV2() {
               Firma
             </div>
             <FooterLink href="/o-nas">O nas</FooterLink>
+            <FooterLink href={AI_GROWTH_MAP_URL}>AI Growth Map</FooterLink>
             <FooterLink href="/blog">Blog</FooterLink>
             <FooterLink href="/faq">FAQ</FooterLink>
             <FooterLink href="/kontakt">Kontakt</FooterLink>

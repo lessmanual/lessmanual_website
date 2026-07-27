@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import IndywidualneContent from "./_content";
+import { PremiumOfferPage } from "@/components/sections/PremiumOfferPage";
+import { PREMIUM_OFFERS } from "@/lib/premium-offers";
 
 export const metadata: Metadata = {
-  title: "Indywidualne Wdrożenia · LessManual.ai",
+  title: "Indywidualne wdrożenia agentów AI",
   description:
-    "Twój proces jest zbyt specyficzny na standardowy produkt. Budujemy agenty AI od zera - dedykowane pod Twój workflow, integracje i branżę. Wycena projektowa po Discovery. 3 warstwy gwarancji.",
+    "Agent AI dopasowany do niestandardowego procesu, danych i integracji firmy. Diagnoza, projekt, wdrożenie i utrzymanie.",
   alternates: {
     canonical: "/oferta/indywidualne-wdrozenia",
   },
   openGraph: {
-    title: "Indywidualne Wdrożenia · LessManual.ai",
+    title: "Indywidualne wdrożenia agentów AI | LessManual",
     description:
-      "Twój workflow nie pasuje do żadnego gotowego produktu. Budujemy system agentów AI od zera - pod Twoje systemy, procesy i branżę. Wycena projektowa. 3 warstwy gwarancji.",
+      "System dopasowany do procesu, integracji, danych i odpowiedzialności zespołu.",
     url: "/oferta/indywidualne-wdrozenia",
     siteName: "LessManual",
     locale: "pl_PL",
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Indywidualne Wdrożenia · LessManual.ai",
+    title: "Indywidualne wdrożenia agentów AI | LessManual",
     description:
-      "Buduję agenty AI od zera pod Twój specyficzny workflow. Wycena projektowa po Discovery Workshop.",
+      "Dedykowany agent AI z diagnozą, wdrożeniem, kontrolą i utrzymaniem.",
   },
 };
 
 export default function IndywidualneWdrozeniaPage() {
-  return <IndywidualneContent />;
+  return <PremiumOfferPage {...PREMIUM_OFFERS.customWorkflow} />;
 }
