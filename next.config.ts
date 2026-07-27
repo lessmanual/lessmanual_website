@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import path from "path";
+import { buildSecurityHeaders } from "./src/lib/security-headers";
 
 const AGENT_LINK_HEADER = [
   '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
@@ -7,6 +8,10 @@ const AGENT_LINK_HEADER = [
   '</openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json;version=3.1"',
   '</.well-known/mcp/server-card.json>; rel="https://modelcontextprotocol.io/rel/server-card"',
 ].join(", ");
+const SECURITY_HEADERS = buildSecurityHeaders(
+  process.env.NODE_ENV === "development",
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+);
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -41,6 +46,10 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/(.*)",
+        headers: SECURITY_HEADERS,
+      },
       // Link response headers (RFC 8288) on key pages
       {
         source: "/",
