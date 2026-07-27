@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { FormEvent, ReactNode } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -22,6 +22,12 @@ import {
   parseGrowthMapSubmission,
   requiresAfterHoursCallHandling,
 } from "@/lib/lead-magnet/growth-map";
+import {
+  buildGrowthMapAnalyticsEvent,
+  type GrowthMapAnalyticsEvent,
+  type GrowthMapDeliveryMode,
+} from "@/lib/lead-magnet/growth-map-analytics";
+import { trackEvent } from "@/lib/analytics";
 import type {
   GrowthMapAfterHoursCallHandling,
   GrowthMapPriority,
@@ -95,9 +101,12 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [validationMessage, setValidationMessage] = useState("");
+  const hasTrackedFormStart = useRef(false);
+  const deliveryMode: GrowthMapDeliveryMode = automationEnabled ? "cloudcso" : "manual_email";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    trackFormStartedOnce();
 
     if (step === 1) {
       continueToProcessStep();
@@ -109,6 +118,12 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
     if (!parsed.ok) {
       setFieldErrors(parsed.fieldErrors);
       setValidationMessage("Uzupełnij oznaczone pola, żebyśmy mogli przygotować mapę na podstawie realnej skali procesu.");
+      emitGrowthMapEvent(
+        buildGrowthMapAnalyticsEvent("validation_failed", deliveryMode, {
+          errorCount: countFieldErrors(parsed.fieldErrors),
+          stepNumber: 2,
+        }),
+      );
       focusFirstError(parsed.fieldErrors);
       return;
     }
@@ -122,6 +137,7 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
         `mailto:${EMAIL}?subject=${encodeURIComponent(email.subject)}` +
         `&body=${encodeURIComponent(email.body)}`;
       setSubmitState({ status: "manual_ready", mailtoHref });
+      emitGrowthMapEvent(buildGrowthMapAnalyticsEvent("submission_prepared", deliveryMode));
       return;
     }
 
@@ -143,6 +159,7 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
           status: "error",
           message: intake.message || "Nie udało się przyjąć zgłoszenia. Spróbuj ponownie albo napisz bezpośrednio.",
         });
+        emitGrowthMapEvent(buildGrowthMapAnalyticsEvent("submission_failed", deliveryMode));
         focusFirstError(intake.fieldErrors);
         return;
       }
@@ -153,11 +170,13 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
         requestId: intake.requestId,
         intakeStatus: intake.status,
       });
+      emitGrowthMapEvent(buildGrowthMapAnalyticsEvent("submission_accepted", deliveryMode));
     } catch {
       setSubmitState({
         status: "error",
         message: "Formularz jest chwilowo niedostępny. Spróbuj ponownie albo napisz bezpośrednio.",
       });
+      emitGrowthMapEvent(buildGrowthMapAnalyticsEvent("submission_failed", deliveryMode));
     }
   }
 
@@ -168,6 +187,12 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
     if (Object.keys(contactErrors).length > 0) {
       setFieldErrors(contactErrors);
       setValidationMessage("Uzupełnij dane firmy i kontakt, zanim przejdziesz dalej.");
+      emitGrowthMapEvent(
+        buildGrowthMapAnalyticsEvent("validation_failed", deliveryMode, {
+          errorCount: countFieldErrors(contactErrors),
+          stepNumber: 1,
+        }),
+      );
       focusFirstError(contactErrors);
       return;
     }
@@ -175,6 +200,11 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
     setFieldErrors({});
     setValidationMessage("");
     setStep(2);
+    emitGrowthMapEvent(
+      buildGrowthMapAnalyticsEvent("step_completed", deliveryMode, {
+        stepNumber: 1,
+      }),
+    );
     focusStepHeading();
   }
 
@@ -187,6 +217,7 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
   }
 
   function updateTextField(field: TextField, value: string) {
+    trackFormStartedOnce();
     setValues((current) => ({ ...current, [field]: value }));
     clearFieldError(field);
     if (field === "bottleneck") {
@@ -195,21 +226,25 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
   }
 
   function updateNumericField(field: NumericField, value: number) {
+    trackFormStartedOnce();
     setValues((current) => ({ ...current, [field]: value }));
     clearFieldError(field);
   }
 
   function updatePriority(value: GrowthMapPriority) {
+    trackFormStartedOnce();
     setValues((current) => ({ ...current, priority: value }));
     clearFieldError("priority");
   }
 
   function updateAfterHoursCallHandling(value: TelephoneAfterHoursCallHandling) {
+    trackFormStartedOnce();
     setValues((current) => ({ ...current, afterHoursCallHandling: value }));
     clearFieldError("afterHoursCallHandling");
   }
 
   function updateConsent(field: "privacyConsent" | "researchConsent", checked: boolean) {
+    trackFormStartedOnce();
     setValues((current) => ({ ...current, [field]: checked }));
     clearFieldError(field);
   }
@@ -218,6 +253,16 @@ export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEn
     setFieldErrors((current) => ({ ...current, [field]: "" }));
     setValidationMessage("");
     setSubmitState({ status: "idle" });
+  }
+
+  function trackFormStartedOnce() {
+    if (hasTrackedFormStart.current) {
+      return;
+    }
+
+    hasTrackedFormStart.current = emitGrowthMapEvent(
+      buildGrowthMapAnalyticsEvent("form_started", deliveryMode),
+    );
   }
 
   return (
@@ -838,6 +883,11 @@ function StatusMessage({ state }: { state: SubmitState }) {
             </p>
             <a
               href={state.mailtoHref}
+              onClick={() =>
+                emitGrowthMapEvent(
+                  buildGrowthMapAnalyticsEvent("email_draft_link_clicked", "manual_email"),
+                )
+              }
               className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 bg-[#0A0A0A] px-4 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-[#B87333]"
               style={{ borderRadius: 4 }}
             >
@@ -872,6 +922,14 @@ function pickErrors(fieldErrors: Record<string, string>, fields: ReadonlyArray<s
       .map((field) => [field, fieldErrors[field]])
       .filter((entry): entry is [string, string] => typeof entry[1] === "string" && entry[1].length > 0),
   );
+}
+
+function countFieldErrors(fieldErrors: Record<string, string>): number {
+  return Object.values(fieldErrors).filter((message) => message.length > 0).length;
+}
+
+function emitGrowthMapEvent(event: GrowthMapAnalyticsEvent): boolean {
+  return trackEvent(event.name, event.params);
 }
 
 function focusFirstError(fieldErrors: Record<string, string>) {

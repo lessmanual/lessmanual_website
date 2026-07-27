@@ -1,5 +1,7 @@
 # PLAN: Analytics Tracking Setup
 
+> **Status 2026-07-27:** bazowy GA4, zgoda cookies i tracking głównych CTA są wdrożone. Aktualny kontrakt zdarzeń Growth Map: `docs/GROWTH-MAP-TRACKING.md`. Sekcja poniżej zachowuje historyczny plan wdrożenia z 2026-02-25.
+
 > **Data:** 2026-02-25
 > **Autor audytu:** CMO
 > **Wykonawca:** CTO
