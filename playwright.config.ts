@@ -4,7 +4,8 @@ import { realpathSync } from "node:fs";
 const configDirectory = realpathSync(process.cwd());
 
 export default defineConfig({
-  testDir: "./src/features/safedraft/browser",
+  testDir: "./src/features",
+  testMatch: "**/browser/*.spec.ts",
   timeout: 30_000,
   expect: {
     timeout: 5_000,

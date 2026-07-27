@@ -19,6 +19,21 @@ type IntakeResponse =
     };
 
 export async function POST(request: Request) {
+  const isProduction =
+    process.env.NODE_ENV === "production" ||
+    process.env.VERCEL_ENV === "production";
+
+  if (isProduction) {
+    return jsonResponse(
+      {
+        ok: false,
+        message:
+          "Analiza formularza nie jest jeszcze uruchamiana automatycznie. Wróć do formularza i przygotuj gotową wiadomość albo napisz na kontakt@lessmanual.ai.",
+      },
+      503,
+    );
+  }
+
   let body: unknown;
 
   try {
@@ -49,9 +64,6 @@ export async function POST(request: Request) {
   const requestId = createRequestId();
   const submittedAt = new Date().toISOString();
   const payload = buildCloudCsoGrowthMapPayload(parsed.value, requestId, submittedAt);
-  const isProduction =
-    process.env.NODE_ENV === "production" ||
-    process.env.VERCEL_ENV === "production";
   const requireWebhook =
     process.env.CLOUDCSO_LEAD_MAGNET_REQUIRE_WEBHOOK === "1";
   const allowLocalPreview =
@@ -147,7 +159,7 @@ export async function POST(request: Request) {
           ok: true,
           requestId,
           status: "local_preview_ready",
-          message: "Tryb testowy: CloudCSO przygotowuje raport lokalnie. W tym trybie email nie jest wysyłany.",
+          message: "Tryb testowy: raport jest przygotowywany lokalnie. W tym trybie wiadomość e-mail nie jest wysyłana.",
         },
         202,
       );

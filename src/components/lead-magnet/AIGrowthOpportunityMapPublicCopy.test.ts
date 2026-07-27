@@ -42,12 +42,14 @@ describe("AI Growth Opportunity Map public copy V11", () => {
     );
     expect(pageSource).toContain("spersonalizowaną mapę pierwszego wdrożenia");
     expect(pageSource).toContain("formularza oraz publicznych źródeł firmy");
-    expect(pageSource).toContain("Po wysłaniu formularza");
-    expect(pageSource).toContain("od razu zobaczysz status analizy.");
+    expect(pageSource).toContain("Po uzupełnieniu formularza");
+    expect(pageSource).toContain("dostaniesz jasny następny krok.");
     expect(formSource).toContain(
-      "Po wysłaniu formularza zobaczysz status analizy."
+      "Po sprawdzeniu danych otworzysz gotową wiadomość w swoim programie pocztowym."
     );
-    expect(formSource).toContain("Uruchom analizę procesu");
+    expect(formSource).toContain("Przygotuj wiadomość e-mail");
+    expect(formSource).toContain("Zgłoszenie gotowe do wysłania");
+    expect(formSource).toContain("Zostanie wysłana dopiero po Twoim potwierdzeniu");
     expect(formSource).not.toContain("2-stronicowy PDF");
     expect(formSource).not.toContain("Raport będzie miał 2 strony");
     expect(pageSource).not.toContain("2-stronicowy");

@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildGrowthMapManualEmail,
   buildCloudCsoGrowthMapPayload,
+  GROWTH_MAP_TEXT_LIMITS,
   parseGrowthMapSubmission,
   requiresAfterHoursCallHandling,
 } from "./growth-map";
@@ -127,6 +129,28 @@ describe("Growth Map lead magnet contract V11", () => {
   });
 
   it.each([
+    ["name", GROWTH_MAP_TEXT_LIMITS.name + 1],
+    ["email", GROWTH_MAP_TEXT_LIMITS.email + 1],
+    ["company", GROWTH_MAP_TEXT_LIMITS.company + 1],
+    ["website", GROWTH_MAP_TEXT_LIMITS.website + 1],
+    ["industry", GROWTH_MAP_TEXT_LIMITS.industry + 1],
+    ["currentSystems", GROWTH_MAP_TEXT_LIMITS.currentSystems + 1],
+    ["bottleneck", GROWTH_MAP_TEXT_LIMITS.bottleneck + 1],
+    ["notes", GROWTH_MAP_TEXT_LIMITS.notes + 1],
+  ])("rejects an overlong %s value", (field, length) => {
+    const result = parseGrowthMapSubmission({
+      ...baseSubmission,
+      [field]: "x".repeat(length),
+    });
+
+    if (result.ok) {
+      throw new Error(`Expected overlong ${field} to be rejected`);
+    }
+
+    expect(result.fieldErrors[field]).toContain("maksymalnie");
+  });
+
+  it.each([
     ["telefon", "Telefony po zamknięciu recepcji często nie mają obsługi."],
     ["połączenie", "Każde połączenie po zamknięciu recepcji może przepaść."],
     ["dzwonienie", "Dzwonienie po zamknięciu recepcji nie ma jasnej obsługi."],
@@ -225,5 +249,26 @@ describe("Growth Map lead magnet contract V11", () => {
     expect(payload.request.minutesPerOccurrence).toBe(12);
     expect(payload.delivery.expectedDocument).toBe("branded_pdf");
     expect(payload.delivery.cta).toBe("cal_com_button_inside_pdf");
+  });
+
+  it("builds a bounded manual email fallback from a validated submission", () => {
+    const parsed = parseGrowthMapSubmission({
+      ...baseSubmission,
+      priority: "systemise_content",
+    });
+
+    if (!parsed.ok) {
+      throw new Error("Expected submission to be valid");
+    }
+
+    const email = buildGrowthMapManualEmail(parsed.value);
+
+    expect(email.subject).toBe("Mapa pierwszego procesu AI: Example SA");
+    expect(email.body).toContain("Adres kontaktowy: bartek@example.com");
+    expect(email.body).toContain("Priorytet: Uporządkować tworzenie treści");
+    expect(email.body).toContain("Systemy: ClickUp, Google Sheets, ChatGPT, Google Docs, Asana");
+    expect(email.body).toContain("Skala tygodniowa: 125");
+    expect(email.body).toContain("Czas jednego przypadku: 12 min");
+    expect(email.body).not.toContain("undefined");
   });
 });

@@ -51,6 +51,11 @@ export type GrowthMapValidationResult =
   | { ok: true; value: GrowthMapSubmission }
   | { ok: false; fieldErrors: Record<string, string> };
 
+export type GrowthMapManualEmail = {
+  subject: string;
+  body: string;
+};
+
 export type CloudCsoGrowthMapPayload = {
   recordType: "cloudcso_lead_magnet_request";
   source: "lessmanual_website";
@@ -130,6 +135,25 @@ const TELEPHONE_AFTER_HOURS_CALL_HANDLING_VALUES: ReadonlyArray<
 
 export const GROWTH_MAP_MAX_WEEKLY_PROCESS_VOLUME = 1_000_000;
 export const GROWTH_MAP_MAX_MINUTES_PER_OCCURRENCE = 1_440;
+export const GROWTH_MAP_TEXT_LIMITS: Readonly<{
+  name: number;
+  email: number;
+  company: number;
+  website: number;
+  industry: number;
+  currentSystems: number;
+  bottleneck: number;
+  notes: number;
+}> = {
+  name: 100,
+  email: 254,
+  company: 160,
+  website: 500,
+  industry: 160,
+  currentSystems: 500,
+  bottleneck: 1_200,
+  notes: 800,
+};
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SENSITIVE_PATTERN = /\b(hasło|password|token|api key|apikey|secret|sekret|pesel|dowód|dowodu|karta|card number)\b/i;
@@ -164,22 +188,31 @@ export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationRes
   const notes = readString(input, "notes");
   const privacyConsent = input.privacyConsent === true;
   const researchConsent = input.researchConsent === true;
-  const website = normaliseWebsite(rawWebsite);
+  addTextLengthError(fieldErrors, "name", name, GROWTH_MAP_TEXT_LIMITS.name);
+  addTextLengthError(fieldErrors, "email", email, GROWTH_MAP_TEXT_LIMITS.email);
+  addTextLengthError(fieldErrors, "company", company, GROWTH_MAP_TEXT_LIMITS.company);
+  addTextLengthError(fieldErrors, "website", rawWebsite, GROWTH_MAP_TEXT_LIMITS.website);
+  addTextLengthError(fieldErrors, "industry", industry, GROWTH_MAP_TEXT_LIMITS.industry);
+  addTextLengthError(fieldErrors, "currentSystems", currentSystems, GROWTH_MAP_TEXT_LIMITS.currentSystems);
+  addTextLengthError(fieldErrors, "bottleneck", bottleneck, GROWTH_MAP_TEXT_LIMITS.bottleneck);
+  addTextLengthError(fieldErrors, "notes", notes, GROWTH_MAP_TEXT_LIMITS.notes);
+
+  const website = fieldErrors.website ? "" : normaliseWebsite(rawWebsite);
   let afterHoursCallHandling: GrowthMapAfterHoursCallHandling = "not_applicable";
 
-  if (!EMAIL_PATTERN.test(email)) {
-    fieldErrors.email = "Podaj poprawny email.";
+  if (!fieldErrors.email && !EMAIL_PATTERN.test(email)) {
+    fieldErrors.email = "Podaj poprawny adres e-mail.";
   }
 
-  if (company.length < 2) {
+  if (!fieldErrors.company && company.length < 2) {
     fieldErrors.company = "Podaj nazwę firmy.";
   }
 
-  if (!website) {
+  if (!fieldErrors.website && !website) {
     fieldErrors.website = "Podaj poprawny adres strony firmowej.";
   }
 
-  if (parseCurrentSystems(currentSystems).length === 0) {
+  if (!fieldErrors.currentSystems && parseCurrentSystems(currentSystems).length === 0) {
     fieldErrors.currentSystems = "Wymień systemy używane w firmie albo wpisz „brak”.";
   }
 
@@ -187,11 +220,11 @@ export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationRes
     fieldErrors.priority = "Wybierz priorytet.";
   }
 
-  if (bottleneck.length < 12) {
+  if (!fieldErrors.bottleneck && bottleneck.length < 12) {
     fieldErrors.bottleneck = "Opisz krótko, co dziś najbardziej blokuje wzrost.";
   }
 
-  if (requiresAfterHoursCallHandling(bottleneck)) {
+  if (!fieldErrors.bottleneck && requiresAfterHoursCallHandling(bottleneck)) {
     if (isOneOf(rawAfterHoursCallHandling, TELEPHONE_AFTER_HOURS_CALL_HANDLING_VALUES)) {
       afterHoursCallHandling = rawAfterHoursCallHandling;
     } else {
@@ -215,7 +248,12 @@ export function parseGrowthMapSubmission(input: unknown): GrowthMapValidationRes
     fieldErrors.researchConsent = "Potwierdź zgodę na sprawdzenie publicznych źródeł firmy.";
   }
 
-  if (SENSITIVE_PATTERN.test(`${currentSystems}\n${bottleneck}\n${notes}`)) {
+  if (
+    !fieldErrors.currentSystems &&
+    !fieldErrors.bottleneck &&
+    !fieldErrors.notes &&
+    SENSITIVE_PATTERN.test(`${currentSystems}\n${bottleneck}\n${notes}`)
+  ) {
     fieldErrors.notes = "Nie wklejaj haseł, tokenów, danych dokumentów ani danych płatniczych.";
   }
 
@@ -283,6 +321,64 @@ export function buildCloudCsoGrowthMapPayload(
       cta: "cal_com_button_inside_pdf",
     },
   };
+}
+
+export function buildGrowthMapManualEmail(submission: GrowthMapSubmission): GrowthMapManualEmail {
+  const priorityLabel =
+    GROWTH_MAP_PRIORITY_OPTIONS.find((option) => option.value === submission.priority)?.label ??
+    "Usprawnić proces";
+  const afterHoursLine =
+    submission.afterHoursCallHandling === "not_applicable"
+      ? ""
+      : `\nTelefony poza godzinami pracy: ${afterHoursCallHandlingLabel(submission.afterHoursCallHandling)}`;
+
+  return {
+    subject: `Mapa pierwszego procesu AI: ${submission.company}`,
+    body: [
+      "Cześć,",
+      "",
+      "chcę otrzymać mapę pierwszego procesu AI dla mojej firmy.",
+      "",
+      `Firma: ${submission.company}`,
+      `Strona: ${submission.website}`,
+      `Branża: ${submission.industry || "nie podano"}`,
+      `Osoba kontaktowa: ${submission.name || "nie podano"}`,
+      `Adres kontaktowy: ${submission.email}`,
+      "",
+      `Priorytet: ${priorityLabel}`,
+      `Systemy: ${submission.currentSystems}`,
+      `Największe ograniczenie: ${submission.bottleneck}${afterHoursLine}`,
+      `Skala tygodniowa: ${submission.weeklyProcessVolume}`,
+      `Czas jednego przypadku: ${submission.minutesPerOccurrence} min`,
+      `Dodatkowy kontekst: ${submission.notes || "brak"}`,
+      "",
+      "Potwierdzam zgodę na kontakt w sprawie mapy oraz sprawdzenie publicznych źródeł firmy.",
+    ].join("\n"),
+  };
+}
+
+function addTextLengthError(
+  fieldErrors: Record<string, string>,
+  field: string,
+  value: string,
+  maximum: number,
+) {
+  if (value.length > maximum) {
+    fieldErrors[field] = `To pole może mieć maksymalnie ${maximum} znaków.`;
+  }
+}
+
+function afterHoursCallHandlingLabel(value: Exclude<GrowthMapAfterHoursCallHandling, "not_applicable">): string {
+  switch (value) {
+    case "answered_by_owner_or_team":
+      return "odbiera właściciel lub zespół";
+    case "mostly_missed":
+      return "zwykle pozostają nieodebrane";
+    case "mixed":
+      return "część jest odbierana, część pozostaje nieodebrana";
+    case "unknown":
+      return "nie wiem, chcę to zmierzyć";
+  }
 }
 
 function readString(input: Record<string, unknown>, field: string): string {

@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   },
 };
 
+const automationEnabled =
+  process.env.NODE_ENV !== "production" &&
+  (Boolean(process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL?.trim()) ||
+    process.env.CLOUDCSO_LEAD_MAGNET_ALLOW_LOCAL_PREVIEW === "1");
+
 const reportPages = [
   {
     page: "01 / 04",
@@ -117,8 +122,8 @@ export default function AIGrowthOpportunityMapPage() {
 
               <p className="mt-6 max-w-[680px] text-[18px] leading-[1.6] text-[#525252]">
                 Na podstawie formularza oraz publicznych źródeł firmy przygotujemy
-                spersonalizowaną mapę pierwszego wdrożenia. Po wysłaniu formularza
-                od razu zobaczysz status analizy.
+                spersonalizowaną mapę pierwszego wdrożenia. Po uzupełnieniu formularza
+                dostaniesz jasny następny krok.
               </p>
 
               <div className="mt-7 grid max-w-[680px] grid-cols-1 gap-3 sm:grid-cols-2">
@@ -143,7 +148,7 @@ export default function AIGrowthOpportunityMapPage() {
                   className="group inline-flex min-h-[52px] w-full items-center justify-center gap-2 bg-[#0A0A0A] px-6 py-3.5 text-[15px] font-medium text-white transition-[background-color,transform] duration-200 hover:-translate-y-[1px] hover:bg-[#B87333] sm:w-auto"
                   style={{ borderRadius: 4 }}
                 >
-                  Uruchom analizę procesu
+                  {automationEnabled ? "Uruchom analizę procesu" : "Przygotuj zgłoszenie"}
                   <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
                 </Link>
                 <p className="mt-3 text-[12px] leading-[1.5] text-[#737373]">
@@ -207,7 +212,7 @@ export default function AIGrowthOpportunityMapPage() {
               </div>
 
               <p className="mt-3 text-[11px] leading-[1.5] text-[#737373]">
-                Przykładowy układ. Wnioski i rekomendacje będą wynikać z danych Twojej firmy.
+                Przykładowy układ. Wnioski i rekomendacje będą wynikać z formularza i publicznych źródeł firmy.
               </p>
             </div>
           </div>
@@ -223,7 +228,7 @@ export default function AIGrowthOpportunityMapPage() {
                 <h2 className="mt-4 max-w-[520px]">Mapa ma prowadzić do decyzji, którą można sprawdzić w praktyce.</h2>
               </div>
               <p className="max-w-[600px] text-[16px] leading-[1.65] text-[#525252] md:justify-self-end">
-                Każdy etap porządkuje kolejną decyzję. Celem nie jest zbieranie punktów ani kolejnych materiałów, tylko wybór jednego procesu i pomiar pierwszego wyniku.
+                Każdy etap porządkuje kolejną decyzję. Wybierasz jeden proces i sposób pomiaru pierwszego wyniku.
               </p>
             </div>
 
@@ -247,7 +252,7 @@ export default function AIGrowthOpportunityMapPage() {
               </div>
               <h2 className="mt-4 max-w-[460px]">Opisz jeden proces. Resztę oprzemy na faktach.</h2>
               <p className="mt-5 max-w-[500px] text-[16px] leading-[1.65] text-[#525252]">
-                Podaj przybliżony tygodniowy wolumen i czas ręcznej pracy. Dzięki temu rekomendacja zacznie się od realnego punktu odniesienia, a nie ogólnej listy pomysłów.
+                Podaj przybliżoną liczbę powtórzeń w tygodniu i czas ręcznej pracy. Dzięki temu rekomendacja zacznie się od realnego punktu odniesienia.
               </p>
 
               <div className="mt-7 space-y-4 border-t border-[#E5E5E5] pt-6">
@@ -279,7 +284,7 @@ export default function AIGrowthOpportunityMapPage() {
               </div>
             </div>
 
-            <AIGrowthOpportunityMapForm />
+            <AIGrowthOpportunityMapForm automationEnabled={automationEnabled} />
           </div>
         </section>
       </main>

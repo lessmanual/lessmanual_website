@@ -14,9 +14,11 @@ import {
 } from "lucide-react";
 import { EMAIL } from "@/lib/constants";
 import {
+  buildGrowthMapManualEmail,
   GROWTH_MAP_MAX_MINUTES_PER_OCCURRENCE,
   GROWTH_MAP_MAX_WEEKLY_PROCESS_VOLUME,
   GROWTH_MAP_PRIORITY_OPTIONS,
+  GROWTH_MAP_TEXT_LIMITS,
   parseGrowthMapSubmission,
   requiresAfterHoursCallHandling,
 } from "@/lib/lead-magnet/growth-map";
@@ -46,6 +48,7 @@ type NumericField = "weeklyProcessVolume" | "minutesPerOccurrence";
 type SubmitState =
   | { status: "idle" }
   | { status: "submitting" }
+  | { status: "manual_ready"; mailtoHref: string }
   | { status: "success"; message: string; requestId: string; intakeStatus: string }
   | { status: "error"; message: string };
 
@@ -86,7 +89,7 @@ const initialState: GrowthMapFormValues = {
   researchConsent: false,
 };
 
-export function AIGrowthOpportunityMapForm() {
+export function AIGrowthOpportunityMapForm({ automationEnabled }: { automationEnabled: boolean }) {
   const [step, setStep] = useState<FormStep>(1);
   const [values, setValues] = useState<GrowthMapFormValues>(initialState);
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
@@ -112,6 +115,16 @@ export function AIGrowthOpportunityMapForm() {
 
     setFieldErrors({});
     setValidationMessage("");
+
+    if (!automationEnabled) {
+      const email = buildGrowthMapManualEmail(parsed.value);
+      const mailtoHref =
+        `mailto:${EMAIL}?subject=${encodeURIComponent(email.subject)}` +
+        `&body=${encodeURIComponent(email.body)}`;
+      setSubmitState({ status: "manual_ready", mailtoHref });
+      return;
+    }
+
     setSubmitState({ status: "submitting" });
 
     try {
@@ -204,6 +217,7 @@ export function AIGrowthOpportunityMapForm() {
   function clearFieldError(field: string) {
     setFieldErrors((current) => ({ ...current, [field]: "" }));
     setValidationMessage("");
+    setSubmitState({ status: "idle" });
   }
 
   return (
@@ -218,9 +232,13 @@ export function AIGrowthOpportunityMapForm() {
           <Sparkles size={18} aria-hidden="true" />
         </span>
         <div>
-          <h2 className="text-[24px] leading-[1.15] text-[#0A0A0A]">Uruchom analizę procesu</h2>
+          <h2 className="text-[24px] leading-[1.15] text-[#0A0A0A]">
+            {automationEnabled ? "Uruchom analizę procesu" : "Przygotuj zgłoszenie"}
+          </h2>
           <p className="mt-2 text-[14px] leading-[1.55] text-[#525252]">
-            Po wysłaniu formularza zobaczysz status analizy.
+            {automationEnabled
+              ? "Po wysłaniu formularza zobaczysz status analizy."
+              : "Po sprawdzeniu danych otworzysz gotową wiadomość w swoim programie pocztowym."}
           </p>
         </div>
       </div>
@@ -253,6 +271,7 @@ export function AIGrowthOpportunityMapForm() {
               label="Imię (opcjonalnie)"
               name="name"
               autoComplete="name"
+              maxLength={GROWTH_MAP_TEXT_LIMITS.name}
               value={values.name}
               onChange={(value) => updateTextField("name", value)}
             />
@@ -261,6 +280,7 @@ export function AIGrowthOpportunityMapForm() {
               name="email"
               type="email"
               autoComplete="email"
+              maxLength={GROWTH_MAP_TEXT_LIMITS.email}
               required
               error={fieldErrors.email}
               value={values.email}
@@ -270,6 +290,7 @@ export function AIGrowthOpportunityMapForm() {
               label="Firma"
               name="company"
               autoComplete="organization"
+              maxLength={GROWTH_MAP_TEXT_LIMITS.company}
               required
               error={fieldErrors.company}
               value={values.company}
@@ -280,6 +301,7 @@ export function AIGrowthOpportunityMapForm() {
               name="website"
               autoComplete="url"
               inputMode="url"
+              maxLength={GROWTH_MAP_TEXT_LIMITS.website}
               placeholder="np. twojafirma.pl"
               required
               error={fieldErrors.website}
@@ -291,6 +313,7 @@ export function AIGrowthOpportunityMapForm() {
                 label="Branża (opcjonalnie)"
                 name="industry"
                 autoComplete="organization-title"
+                maxLength={GROWTH_MAP_TEXT_LIMITS.industry}
                 placeholder="np. produkcja, usługi B2B, e-commerce"
                 value={values.industry}
                 onChange={(value) => updateTextField("industry", value)}
@@ -319,6 +342,7 @@ export function AIGrowthOpportunityMapForm() {
             <Field
               label="Na jakich systemach pracuje dziś firma?"
               name="currentSystems"
+              maxLength={GROWTH_MAP_TEXT_LIMITS.currentSystems}
               required
               error={fieldErrors.currentSystems}
               placeholder="np. ClickUp, Google Sheets, HubSpot"
@@ -328,6 +352,7 @@ export function AIGrowthOpportunityMapForm() {
             <TextAreaField
               label="Co dziś najbardziej blokuje pracę lub wzrost?"
               name="bottleneck"
+              maxLength={GROWTH_MAP_TEXT_LIMITS.bottleneck}
               required
               error={fieldErrors.bottleneck}
               placeholder="np. każde zapytanie trzeba ręcznie przepisać, sprawdzić i przekazać dalej"
@@ -438,7 +463,7 @@ export function AIGrowthOpportunityMapForm() {
             </>
           ) : (
             <>
-              Uruchom analizę procesu
+              {automationEnabled ? "Uruchom analizę procesu" : "Przygotuj wiadomość e-mail"}
               <ArrowRight size={16} aria-hidden="true" />
             </>
           )}
@@ -454,7 +479,11 @@ export function AIGrowthOpportunityMapForm() {
         </div>
         <div className="flex items-start gap-2">
           <FileText size={16} className="mt-0.5 shrink-0 text-[#8B4513]" aria-hidden="true" />
-          <p>Po wysłaniu formularza od razu zobaczysz status analizy.</p>
+          <p>
+            {automationEnabled
+              ? "Po wysłaniu formularza od razu zobaczysz status analizy."
+              : "Wiadomość zostanie wysłana dopiero po Twoim potwierdzeniu w programie pocztowym."}
+          </p>
         </div>
       </div>
     </form>
@@ -470,6 +499,7 @@ function Field({
   required = false,
   autoComplete,
   inputMode,
+  maxLength,
   placeholder,
   error,
 }: {
@@ -481,6 +511,7 @@ function Field({
   required?: boolean;
   autoComplete?: string;
   inputMode?: "url";
+  maxLength?: number;
   placeholder?: string;
   error?: string;
 }) {
@@ -500,6 +531,7 @@ function Field({
         required={required}
         autoComplete={autoComplete}
         inputMode={inputMode}
+        maxLength={maxLength}
         placeholder={placeholder}
         value={value}
         aria-describedby={errorId}
@@ -570,6 +602,7 @@ function TextAreaField({
   name,
   value,
   onChange,
+  maxLength,
   placeholder,
   required = false,
   error,
@@ -578,6 +611,7 @@ function TextAreaField({
   name: "bottleneck";
   value: string;
   onChange: (value: string) => void;
+  maxLength?: number;
   placeholder?: string;
   required?: boolean;
   error?: string;
@@ -596,6 +630,7 @@ function TextAreaField({
         name={name}
         required={required}
         rows={3}
+        maxLength={maxLength}
         placeholder={placeholder}
         value={value}
         aria-describedby={errorId}
@@ -780,6 +815,35 @@ function StatusMessage({ state }: { state: SubmitState }) {
               Droga do pierwszego mierzalnego wdrożenia: analiza, mapa, decyzja, pilotaż i wynik.
             </p>
             <p className="mt-2 font-mono text-[11px] text-[#737373]">ID zgłoszenia: {state.requestId}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (state.status === "manual_ready") {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        className="mt-5 border border-[#B87333]/40 bg-[#F5EDE6] p-4"
+        style={{ borderRadius: 6 }}
+      >
+        <div className="flex items-start gap-3">
+          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#8B4513]" aria-hidden="true" />
+          <div>
+            <h3 className="text-[14px] font-medium text-[#0A0A0A]">Zgłoszenie gotowe do wysłania</h3>
+            <p className="mt-1 text-[12px] leading-[1.5] text-[#525252]">
+              Sprawdź przygotowaną wiadomość. Zostanie wysłana dopiero po Twoim potwierdzeniu w programie pocztowym.
+            </p>
+            <a
+              href={state.mailtoHref}
+              className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 bg-[#0A0A0A] px-4 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-[#B87333]"
+              style={{ borderRadius: 4 }}
+            >
+              Otwórz gotową wiadomość e-mail
+              <ArrowRight size={15} aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>

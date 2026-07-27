@@ -65,6 +65,29 @@ describe("Growth Map intake route V11", () => {
     expect(body.message).toContain("Analiza formularza");
   });
 
+  it("keeps production automation disabled even when a webhook URL is present", async () => {
+    const originalFetch = globalThis.fetch;
+    vi.stubEnv("NODE_ENV", "production");
+    process.env.CLOUDCSO_LEAD_MAGNET_WEBHOOK_URL = "https://example.com/lead-magnet";
+    globalThis.fetch = vi.fn() as typeof fetch;
+
+    try {
+      const response = await POST(new Request("https://www.lessmanual.ai/api/lead-magnet/growth-map", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: "{malformed-json",
+      }));
+      const body = await jsonBody(response);
+
+      expect(response.status).toBe(503);
+      expect(body.ok).toBe(false);
+      expect(body.message).toContain("napisz na kontakt@lessmanual.ai");
+      expect(globalThis.fetch).not.toHaveBeenCalled();
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
   it("uses the local V18 webhook only in development", async () => {
     const originalFetch = globalThis.fetch;
     const calls: Array<{ input: RequestInfo | URL }> = [];
@@ -214,7 +237,7 @@ describe("Growth Map intake route V11", () => {
     expect(response.status).toBe(400);
     expect(body.ok).toBe(false);
     const fieldErrors = readRecord(body.fieldErrors);
-    expect(readString(fieldErrors, "email")).toContain("email");
+    expect(readString(fieldErrors, "email")).toContain("e-mail");
     expect(readString(fieldErrors, "website")).toContain("strony");
     expect(readString(fieldErrors, "currentSystems")).toContain("systemy");
     expect(readString(fieldErrors, "weeklyProcessVolume")).toContain("tygodniu");
