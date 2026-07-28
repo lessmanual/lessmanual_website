@@ -139,7 +139,7 @@ export function ProductsV2() {
               <motion.article
                 key={p.title}
                 variants={cardVariants}
-                className={`relative bg-[#FAFAFA] p-8 md:p-10 transition-colors duration-200 group ${i === 0 ? "lg:col-span-2" : ""} ${i === 5 ? "lg:col-span-3" : ""}`}
+                className={`relative bg-[#FAFAFA] p-8 md:p-10 transition-colors duration-200 group ${i === 0 ? "lg:col-span-2" : ""}`}
                 style={
                   isPopular
                     ? { boxShadow: "inset 0 0 0 1px #B87333" }
@@ -203,7 +203,7 @@ export function ProductsV2() {
 
           <motion.article
             variants={cardVariants}
-            className="relative bg-[#FAFAFA] p-8 transition-colors duration-200 group md:p-10 lg:col-span-3"
+            className="relative bg-[#FAFAFA] p-8 transition-colors duration-200 group md:p-10 lg:col-span-2"
           >
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
               <ProductVisual kind="custom" />
