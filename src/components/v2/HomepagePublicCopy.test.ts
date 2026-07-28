@@ -55,6 +55,12 @@ describe("homepage public copy and SEO contract", () => {
     }
   });
 
+  it("fills both desktop rows in the implementation-area grid", () => {
+    expect(productsSource).toContain('i === 0 ? "lg:col-span-2" : ""');
+    expect(productsSource).toContain('group md:p-10 lg:col-span-2"');
+    expect(productsSource).not.toContain("lg:col-span-3");
+  });
+
   it("removes dated scarcity, internal jargon and mixed-language sales copy", () => {
     for (const phrase of [
       "w lipcu",
