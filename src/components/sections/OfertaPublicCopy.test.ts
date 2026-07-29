@@ -82,6 +82,23 @@ describe("offer overview public copy", () => {
     expect(offerPageSource).toContain("Kontrola wyniku i kryteria odbioru");
   });
 
+  it("makes tool ownership and bounded development explicit", () => {
+    for (const source of [offerGridSource, offerPageSource]) {
+      expect(source).toContain(
+        "Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania.",
+      );
+      expect(source).toContain(
+        "Utrzymujemy hosting oraz uzgodnione narzędzia",
+      );
+      expect(source).toContain(
+        "Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie.",
+      );
+      expect(source).toContain(
+        "Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.",
+      );
+    }
+  });
+
   it("makes the first verified outbound dataset part of delivery and care", () => {
     const outbound = PREMIUM_OFFERS.premiumColdEmail;
 

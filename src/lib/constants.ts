@@ -257,6 +257,10 @@ export const FAQ_ITEMS = [
         a: "Potrzebujesz problemu, którego koszt da się zmierzyć. Jeśli temat jest zbyt mały, powiemy to wprost. Jeśli ma sens, zaczynamy od jednego procesu i dopiero po wyniku rozważamy kolejny.",
       },
       {
+        q: "Co obejmuje miesięczna opieka po wdrożeniu?",
+        a: "Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.",
+      },
+      {
         q: "Co jeśli nie zadziała?",
         a: "Przed startem zapisujemy zakres, kryteria wyniku, odpowiedzialności i sposób odbioru. Warunki rozliczenia oraz ewentualnej gwarancji wynikają z konkretnej oferty i umowy.",
       },

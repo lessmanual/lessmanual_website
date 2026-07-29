@@ -69,9 +69,10 @@ export function OfertaGrid() {
                 Utrzymujemy ciągłość i jakość
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-                Monitorujemy działanie, naprawiamy błędy w istniejącym
-                zakresie, aktualizujemy wiedzę i integracje oraz raportujemy
-                jakość i wyjątki.
+                Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
               </p>
             </div>
           </div>

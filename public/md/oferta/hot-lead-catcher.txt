@@ -3,7 +3,7 @@
 > Warstwa sygnałów zakupowych dla outboundu i sprzedaży. System monitoruje zdarzenia, ocenia intencję i przygotowuje kontekst do kontaktu.
 
 > Source: https://www.lessmanual.ai/oferta/hot-lead-catcher
-> Generated: 2026-07-29T06:52:52.339Z
+> Generated: 2026-07-29T11:34:07.176Z
 
 ---
 
@@ -69,6 +69,8 @@ Co miesiąc
 Nowe źródło płatne, kolejny rynek, inny profil klienta, automatyczny kontakt z firmą albo integracja z nowym systemem sprzedaży wymagają osobnej wyceny.
 
 ### Warunki miesięcznej opieki
+
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
 

@@ -17,6 +17,7 @@ const ALLOWED = new Set([
   "oferta/content-machine",
   "oferta/obsluga-klienta",
   "oferta/generator-ofert",
+  "oferta/indywidualne-wdrozenia",
   "blog",
 ]);
 

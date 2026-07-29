@@ -3,7 +3,7 @@
 > Wdrażamy agentów AI do sprzedaży, contentu i obsługi klienta. Zaczynamy od diagnozy procesu, potem budujemy, uruchamiamy i utrzymujemy system.
 
 > Source: https://www.lessmanual.ai/
-> Generated: 2026-07-29T06:52:52.178Z
+> Generated: 2026-07-29T11:34:07.012Z
 
 ---
 
@@ -15,7 +15,9 @@ Audytujemy proces i KPI, porządkujemy źródła, dobieramy integracje, budujemy
 
 dane Twojej firmy·jasne reguły·kontrola człowieka·wdrożenie i utrzymanie
 
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
+
+[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
 
 MDMPCA
 
@@ -337,6 +339,8 @@ utrzymanie
 
 gdy trzeba połączyć dane, narzędzia i decyzje w jeden proces
 
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
+
 **Granica zakresu:** Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.
 
 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
@@ -375,7 +379,7 @@ Zespół dostarcza materiały źródłowe, dostęp do potrzebnych systemów i fe
 
 Co obejmuje miesięczna opieka po wdrożeniu?+
 
-Obejmuje monitoring, naprawy w istniejącym zakresie, aktualizacje zatwierdzonych źródeł, dostosowanie istniejących integracji do zmian w API, kontrolę jakości oraz uzgodniony raport. Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Pierwszy krok: diagnoza procesu
 
@@ -383,8 +387,20 @@ Pierwszy krok: diagnoza procesu
 
 Mapa pokaże pierwszy proces do automatyzacji, źródła potrzebne do działania agenta i sposób kontroli wyniku. Jeśli wdrożenie nie ma sensu, powiem Ci to wprost.
 
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
+
+[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
 
 LessManual.ai · Bartłomiej Chudzik
 
-[Oferta](/oferta)[Blog](/blog)[FAQ](/faq)[Polityka prywatności](/legal/polityka-prywatnosci)[Cookies](/legal/polityka-cookies)[Regulamin](/legal/regulamin)
+[Oferta](/oferta)
+
+[Blog](/blog)
+
+[FAQ](/faq)
+
+[Polityka prywatności](/legal/polityka-prywatnosci)
+
+[Cookies](/legal/polityka-cookies)
+
+[Regulamin](/legal/regulamin)

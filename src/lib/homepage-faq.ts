@@ -24,7 +24,7 @@ export const HOME_FAQ_ITEMS = [
       },
       {
         q: "Co obejmuje miesięczna opieka po wdrożeniu?",
-        a: "Obejmuje monitoring, naprawy w istniejącym zakresie, aktualizacje zatwierdzonych źródeł, dostosowanie istniejących integracji do zmian w API, kontrolę jakości oraz uzgodniony raport. Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.",
+        a: "Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.",
       },
     ],
   },

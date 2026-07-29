@@ -3,7 +3,7 @@
 > Wdrażamy agentów AI do sprzedaży B2B, contentu, SEO i obsługi klienta. Zakres, termin i wycena powstają po diagnozie procesu.
 
 > Source: https://www.lessmanual.ai/oferta
-> Generated: 2026-07-29T06:52:52.313Z
+> Generated: 2026-07-29T11:34:07.149Z
 
 ---
 
@@ -25,7 +25,9 @@ Miesięczna opieka
 
 ## Utrzymujemy ciągłość i jakość
 
-Monitorujemy działanie, naprawiamy błędy w istniejącym zakresie, aktualizujemy wiedzę i integracje oraz raportujemy jakość i wyjątki.
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania.
+
+Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Nowe funkcje, kanały, integracje, migracje do innego dostawcy i większe przebudowy dostają osobny zakres oraz wycenę przed startem.
 

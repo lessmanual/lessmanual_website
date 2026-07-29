@@ -86,6 +86,15 @@ describe("homepage public copy and SEO contract", () => {
     expect(homepageSource).toContain(
       "Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.",
     );
+    expect(pricingSource).toContain(
+      "Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania.",
+    );
+    expect(pricingSource).toContain(
+      "Utrzymujemy hosting oraz uzgodnione narzędzia",
+    );
+    expect(pricingSource).toContain(
+      "Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.",
+    );
   });
 
   it("fills both desktop rows in the implementation-area grid", () => {
@@ -128,6 +137,12 @@ describe("homepage public copy and SEO contract", () => {
     ]) {
       expect(faqSource).toContain(question);
     }
+    expect(faqSource).toContain(
+      "Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania.",
+    );
+    expect(faqSource).toContain(
+      "Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie.",
+    );
   });
 
   it("keeps crawl and entity signals consistent", () => {

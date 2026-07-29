@@ -3,7 +3,7 @@
 > Agent AI odpowiada na podstawie bazy wiedzy, zbiera kontekst sprawy i przekazuje człowiekowi wyjątki wymagające decyzji.
 
 > Source: https://www.lessmanual.ai/oferta/obsluga-klienta
-> Generated: 2026-07-29T06:52:52.432Z
+> Generated: 2026-07-29T11:34:07.268Z
 
 ---
 
@@ -69,6 +69,8 @@ Co miesiąc
 Nowy kanał kontaktu, kolejny język, nowe źródło danych, integracja z innym systemem albo automatyzacja nowego typu spraw wymagają osobnego zakresu.
 
 ### Warunki miesięcznej opieki
+
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
 

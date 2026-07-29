@@ -229,6 +229,9 @@ export function PremiumOfferPage({
             <div className="rounded-[8px] border border-border bg-white p-6">
               <h3 className="font-serif text-2xl">Warunki miesięcznej opieki</h3>
               <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
               </p>
             </div>
