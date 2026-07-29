@@ -15,7 +15,9 @@ Ofertowanie
 
 System zbiera dane od klienta, porządkuje zakres i przygotowuje wersję roboczą oferty w formie PDF albo maila. Dobry tam, gdzie wycena blokuje sprzedaż.
 
-[Umów diagnozę ofertowania](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę ofertowania](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
 
 Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
@@ -102,7 +104,7 @@ System pokazuje braki w zapytaniu przed przygotowaniem dokumentu.
 
 Status oferty i termin kolejnego kontaktu są zapisane w procesie sprzedaży.
 
-20+ firm B2B · 24 wdrożeń · 5 na Google
+20+ firm B2B · 24 wdrożenia · 5 na Google
 
 ## Sprawdź, czy Generator Ofert skróci ofertowanie
 
@@ -116,4 +118,6 @@ Strategia cenowa zostaje po stronie firmy. System automatyzuje przygotowanie i k
 
 Najpierw wybieramy najczęstszy typ oferty, potem dokładamy kolejne przypadki.
 
-[Umów diagnozę ofertowania](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)
+[Umów diagnozę ofertowania](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)

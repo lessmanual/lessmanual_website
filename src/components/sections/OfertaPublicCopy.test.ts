@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { PREMIUM_OFFERS } from "@/lib/premium-offers";
+import { PROOF_COMPACT } from "@/lib/social-proof";
 
 const offerGridSource = readSource("src/components/sections/OfertaGrid.tsx");
 const offerPageSource = readSource("src/components/sections/PremiumOfferPage.tsx");
@@ -116,11 +117,13 @@ describe("offer overview public copy", () => {
     expect(offerPageSource).toContain(
       "Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.",
     );
+    expect(PROOF_COMPACT).toContain("24 wdrożenia");
   });
 
   it("generates the markdown variant for every active product route", () => {
     for (const route of Object.values(PREMIUM_OFFERS).map((offer) => offer.path)) {
       expect(markdownGeneratorSource).toContain(`"${route}"`);
+      expect(readSource(`public/md${route}.txt`)).not.toMatch(/\]\([^)]+\)\[/);
     }
   });
 });

@@ -15,7 +15,9 @@ Indywidualny proces
 
 Dedykowany agent AI dla procesu, którego nie da się uczciwie zamknąć w gotowym pakiecie. Zaczynamy od diagnozy, a potem projektujemy system pod realny sposób pracy firmy.
 
-[Umów diagnozę własnego procesu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę własnego procesu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
 
 Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
@@ -102,7 +104,7 @@ Wyjątki mają wskazanego właściciela oraz ścieżkę bezpiecznej eskalacji.
 
 Plan opieki określa, kto reaguje na błędy i jak utrzymujemy uzgodniony zakres.
 
-20+ firm B2B · 24 wdrożeń · 5 na Google
+20+ firm B2B · 24 wdrożenia · 5 na Google
 
 ## Sprawdź, czy indywidualne wdrożenie ma sens
 
@@ -116,4 +118,6 @@ Pierwszy proces ma możliwie mały zakres i szybko potwierdza wartość.
 
 Najpierw diagnozujemy proces, potem decydujemy, czy indywidualne wdrożenie ma sens.
 
-[Umów diagnozę własnego procesu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)
+[Umów diagnozę własnego procesu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)

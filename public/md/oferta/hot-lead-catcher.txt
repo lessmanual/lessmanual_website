@@ -15,7 +15,9 @@ Sygnały zakupowe
 
 Warstwa sygnałów zakupowych dla sprzedaży B2B. System monitoruje zdarzenia, ocenia ich znaczenie i przygotowuje kontekst do kontaktu.
 
-[Umów diagnozę sygnałów zakupowych](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę sygnałów zakupowych](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
 
 Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
@@ -102,7 +104,7 @@ Zespół odrzuca szum i zapisuje powód odrzucenia do dalszej kalibracji.
 
 Raport pokazuje źródła, które dostarczają wartościowy kontekst.
 
-20+ firm B2B · 24 wdrożeń · 5 na Google
+20+ firm B2B · 24 wdrożenia · 5 na Google
 
 ## Sprawdź, czy Hot Lead Catcher znajdzie właściwe sygnały
 
@@ -116,4 +118,6 @@ Jakość sygnałów sprawdzamy na ograniczonej próbie przed skalowaniem.
 
 Najlepiej działa jako warstwa danych dla kampanii sprzedażowej.
 
-[Umów diagnozę sygnałów zakupowych](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)
+[Umów diagnozę sygnałów zakupowych](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)

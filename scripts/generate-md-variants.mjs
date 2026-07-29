@@ -50,7 +50,9 @@ async function generate(route) {
   const dom = new JSDOM(html);
   const doc = dom.window.document;
   const main = doc.querySelector("main") || doc.body;
-  const md = turndown.turndown(main.innerHTML);
+  const md = turndown
+    .turndown(main.innerHTML)
+    .replace(/\]\(([^)\n]+)\)(?=\[)/g, "]($1)\n\n");
 
   const title = doc.querySelector("title")?.textContent || "LessManual";
   const desc = doc.querySelector('meta[name="description"]')?.getAttribute("content") || "";

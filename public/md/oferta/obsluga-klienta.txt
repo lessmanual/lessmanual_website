@@ -15,7 +15,9 @@ Obsługa klienta
 
 Agent AI do obsługi pytań i powtarzalnych spraw. Działa na źródłach firmy, zbiera kontekst i przekazuje ludziom tematy, które naprawdę wymagają decyzji.
 
-[Umów diagnozę obsługi klienta](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę obsługi klienta](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
 
 Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
@@ -102,7 +104,7 @@ Każda sprawa ma status, kontekst i wskazaną ścieżkę eskalacji.
 
 Raport pokazuje pytania, które najczęściej wracają do człowieka.
 
-20+ firm B2B · 24 wdrożeń · 5 na Google
+20+ firm B2B · 24 wdrożenia · 5 na Google
 
 ## Sprawdź, czy Customer Operations AI odciąży obsługę
 
@@ -116,4 +118,6 @@ Kryterium wdrożenia stanowi jakość obsłużonej sprawy.
 
 Najpierw sprawdzamy, gdzie automatyzacja naprawdę odciąży zespół.
 
-[Umów diagnozę obsługi klienta](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)
+[Umów diagnozę obsługi klienta](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)
