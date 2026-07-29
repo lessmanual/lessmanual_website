@@ -22,6 +22,10 @@ export const HOME_FAQ_ITEMS = [
         q: "Ile czasu zespół musi poświęcić na wdrożenie?",
         a: "Zespół dostarcza materiały źródłowe, dostęp do potrzebnych systemów i feedback z pilota. LessManual odpowiada za projekt procesu, budowę, testy, uruchomienie i późniejsze utrzymanie.",
       },
+      {
+        q: "Co obejmuje miesięczna opieka po wdrożeniu?",
+        a: "Obejmuje monitoring, naprawy w istniejącym zakresie, aktualizacje zatwierdzonych źródeł, dostosowanie istniejących integracji do zmian w API, kontrolę jakości oraz uzgodniony raport. Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.",
+      },
     ],
   },
 ] as const;

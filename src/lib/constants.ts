@@ -20,8 +20,8 @@ export const AI_GROWTH_MAP_URL = "/ai-growth-opportunity-map";
 export const HERO_ROTATOR_WORDS = ["klienci", "wyniki", "zyski"];
 
 export const PROOF_METRICS = [
-  { value: "quality gate", label: "research, copy, QA i utrzymanie" },
-  { value: "setup + MRR", label: "wdrożenie i miesięczna obsługa" },
+  { value: "kontrola wyniku", label: "źródła, redakcja, testy i utrzymanie" },
+  { value: "2 zakresy", label: "wdrożenie i miesięczna opieka" },
   { value: "diagnoza", label: "zakres i wycena po sprawdzeniu procesu" },
 ];
 
@@ -128,7 +128,7 @@ export const COST_TABLE = [
   {
     task: "Pozyskiwanie klientów outbound",
     currentCost: "lista, research, copy, wysyłka, follow-up i QA osobno",
-    ourCost: "Premium Cold Email+ setup + MRR",
+    ourCost: "Premium Cold Email+ po diagnozie",
   },
   {
     task: "Generowanie ofert (ręcznie)",
@@ -330,7 +330,7 @@ export const VALUE_STACK_SAVINGS = [
   {
     area: "Sprzedaż",
     before: "masowy outbound, słaby research i ręczne follow-upy",
-    after: "Premium Cold Email+ z research-backed personalizacją",
+    after: "Premium Cold Email+ z personalizacją opartą na źródłach",
   },
   {
     area: "Obsługa klienta",

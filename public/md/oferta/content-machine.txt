@@ -3,7 +3,7 @@
 > System regularnie przygotowuje treści na podstawie źródeł firmy, sprawdza fakty i prowadzi materiał do akceptacji, publikacji oraz dystrybucji.
 
 > Source: https://www.lessmanual.ai/oferta/content-machine
-> Generated: 2026-07-27T08:27:45.492Z
+> Generated: 2026-07-29T06:52:52.401Z
 
 ---
 
@@ -15,7 +15,11 @@ Content i SEO
 
 System do planowania, przygotowania, publikacji i dystrybucji treści. Zamienia wiedzę firmy w regularny content zgodny z jej językiem.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+[Umów diagnozę Content Machine](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+
+Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
 ## Model współpracy
 
@@ -34,17 +38,59 @@ Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 -   Tworzymy plan tekstu, wersję roboczą, redakcję, kontrolę faktów i materiał gotowy do publikacji.
 -   Co miesiąc sprawdzamy jakość, pokrycie tematów, sygnały z rynku i następne priorytety contentowe.
 
-## Kontrola wyniku
+Odpowiedzialność LessManual
+
+## Wdrożenie i opieka to dwa osobne zakresy
+
+Wdrożenie kończy się działającym systemem. Opieka utrzymuje jego ciągłość i jakość po uruchomieniu.
+
+Jednorazowo
+
+### Co dostajesz we wdrożeniu
+
+-   Audyt obecnego procesu contentowego, kanałów i kryteriów dobrej publikacji.
+-   Uporządkowanie zatwierdzonych materiałów, języka marki i bazy wiedzy.
+-   Konfiguracja ścieżki od wyboru tematu przez redakcję do akceptacji.
+-   Połączenie uzgodnionych kanałów publikacji i statusów pracy.
+-   Testy pełnego cyklu na realnych materiałach firmy oraz dokumentacja obsługi.
+
+Co miesiąc
+
+### Co obejmuje miesięczna opieka
+
+-   Monitoring przygotowania, akceptacji i publikacji materiałów.
+-   Naprawy błędów w istniejących ścieżkach i kanałach.
+-   Aktualizacje bazy wiedzy, źródeł i reguł języka marki.
+-   Dostosowanie istniejących połączeń do zmian w API wydawców.
+-   Kontrola faktów, wyjątków oraz raport z tematów i jakości.
+
+### Co rozliczamy osobno
+
+Nowy kanał, dodatkowa marka, nowy typ materiału, migracja narzędzia publikacji albo przebudowa procesu redakcyjnego dostają osobny zakres i wycenę.
+
+### Warunki miesięcznej opieki
+
+Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+
+## Kontrola wyniku i kryteria odbioru
 
 Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Każdy tekst powstaje na podstawie pakietu źródeł.
+### Jak kontrolujemy jakość
 
-Plan oddziela fakty od hipotez i oznacza miejsca, których nie wolno dopowiadać.
+-   Każdy tekst powstaje na podstawie pakietu źródeł.
+-   Plan oddziela fakty od hipotez i oznacza miejsca, których nie wolno dopowiadać.
+-   Redakcja usuwa sztuczny język, przesadzone obietnice i fragmenty bez konkretu.
+-   Publikacja jest częścią procesu, więc materiał trafia do właściwego kanału po akceptacji.
 
-Redakcja usuwa sztuczny język, przesadzone obietnice i fragmenty bez konkretu.
+### Kryteria odbioru
 
-Publikacja jest częścią procesu, więc materiał trafia do właściwego kanału po akceptacji.
+-   Materiał korzysta wyłącznie z zatwierdzonych źródeł i oznacza braki do decyzji.
+-   Pełna ścieżka od tematu do akceptacji działa na uzgodnionym przykładzie.
+-   Publikacja trafia do właściwego kanału dopiero po wymaganej akceptacji.
+-   Zespół otrzymuje dokumentację statusów, wyjątków i codziennej obsługi.
+
+Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
 
 Efekt biznesowy
 
@@ -58,9 +104,11 @@ Mierzymy czas od wyboru tematu do wersji gotowej do akceptacji.
 
 Zespół widzi, co jest w analizie, co w redakcji i co czeka na publikację.
 
-## Najpierw znajdź proces, który warto automatyzować
+20+ firm B2B · 24 wdrożenia · 5 na Google
 
-Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
+## Sprawdź, czy Content Machine pasuje do Twojego procesu
+
+Na krótkiej diagnozie sprawdzimy proces, dane, ryzyko i oczekiwany wynik. Jeśli to rozwiązanie nie ma sensu, powiemy to wprost.
 
 Dobre dla firm, gdzie jeden dobry temat może pracować w SEO, social i sprzedaży.
 
@@ -70,4 +118,6 @@ Potencjał ruchu szacujemy po sprawdzeniu domeny, konkurencji i obecnych zasobó
 
 Pierwszeństwo mają tematy z sensem biznesowym i potwierdzonym popytem.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę Content Machine](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)

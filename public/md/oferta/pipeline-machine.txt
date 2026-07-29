@@ -3,7 +3,7 @@
 > Kampanie cold email B2B oparte na selekcji firm, publicznym powodzie kontaktu, kontroli faktów i ręcznej akceptacji wiadomości.
 
 > Source: https://www.lessmanual.ai/oferta/pipeline-machine
-> Generated: 2026-07-27T08:27:45.013Z
+> Generated: 2026-07-29T06:52:52.369Z
 
 ---
 
@@ -15,7 +15,11 @@ Sprzedaż B2B
 
 Wybieramy firmy z realnym powodem do kontaktu. Sprawdzamy źródła, przygotowujemy wiadomości i prowadzimy kampanię na podstawie odpowiedzi.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+[Umów diagnozę kampanii B2B](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+
+Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
 ## Model współpracy
 
@@ -29,22 +33,66 @@ Cel wdrożeniaKampania prowadzona jako system: strategia, dane, treść, wysyłk
 
 Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 
--   Budujemy listę kont i oceniamy, czy firma pasuje do oferty, ma właściwy profil i sensowny powód do kontaktu.
+-   Wybieramy firmy i oceniamy, czy pasują do oferty, mają właściwy profil i sensowny powód do kontaktu.
 -   Dla najlepszych kont zbieramy źródła: stronę, ofertę, rolę decydenta, sygnały zmiany i możliwy moment zakupu.
 -   Na tej podstawie powstaje jeden jasny powód kontaktu i proste wezwanie do działania.
 -   Kampania ma kontrolę faktów, listę wykluczeń, monitoring odpowiedzi i plan zmian oparty na danych.
 
-## Kontrola wyniku
+Odpowiedzialność LessManual
+
+## Wdrożenie i opieka to dwa osobne zakresy
+
+Wdrożenie kończy się działającym systemem. Opieka utrzymuje jego ciągłość i jakość po uruchomieniu.
+
+Jednorazowo
+
+### Co dostajesz we wdrożeniu
+
+-   Audyt oferty, rynku, dotychczasowych kampanii i kryteriów właściwego kontaktu.
+-   Ustalenie profilu firm, osób decyzyjnych, wykluczeń i źródeł do weryfikacji.
+-   Pierwszy zweryfikowany zestaw firm i kontaktów gotowych do zatwierdzenia.
+-   Przygotowanie infrastruktury wysyłkowej, segmentów i bezpiecznych limitów.
+-   Budowa procesu researchu, redakcji, akceptacji oraz obsługi odpowiedzi.
+-   Test na ograniczonej próbie i uruchomienie po zatwierdzeniu wiadomości.
+
+Co miesiąc
+
+### Co obejmuje miesięczna opieka
+
+-   Monitoring dostarczalności, odpowiedzi, błędów i wykluczeń.
+-   Naprawy działających sekwencji, skrzynek i połączeń.
+-   Odświeżanie i uzupełnianie zatwierdzonego zestawu firm w uzgodnionym wolumenie.
+-   Aktualizacja listy wykluczeń, źródeł i danych o kampanii.
+-   Dostosowanie istniejących integracji do zmian w API dostawców.
+-   Optymalizacja segmentów i wiadomości na podstawie odpowiedzi oraz raport.
+
+### Co rozliczamy osobno
+
+Dodatkowy wolumen, nowy rynek, język, oferta, kanał kontaktu, infrastruktura wysyłkowa albo migracja dostawcy wymagają nowej diagnozy i osobnej wyceny.
+
+### Warunki miesięcznej opieki
+
+Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+
+## Kontrola wyniku i kryteria odbioru
 
 Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Każda obietnica ma źródło albo jasno opisany logiczny wniosek.
+### Jak kontrolujemy jakość
 
-Personalizacja dotyczy biznesu odbiorcy i konkretnego powodu kontaktu.
+-   Każda obietnica ma źródło albo jasno opisany logiczny wniosek.
+-   Personalizacja dotyczy biznesu odbiorcy i konkretnego powodu kontaktu.
+-   Język jest prosty, konkretny i naturalny.
+-   Model współpracy obejmuje wdrożenie i stałą obsługę kampanii.
 
-Język jest prosty, konkretny i naturalny.
+### Kryteria odbioru
 
-Model współpracy obejmuje wdrożenie i stałą obsługę kampanii.
+-   Każdy kontakt ma zweryfikowaną firmę, rolę, źródło i powód wiadomości.
+-   Sekwencja przechodzi kontrolę faktów, języka, wykluczeń i limitów wysyłki.
+-   Próba kampanii działa na zatwierdzonych skrzynkach bez błędów krytycznych.
+-   Odpowiedzi mają status, właściciela i ustaloną ścieżkę dalszej obsługi.
+
+Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
 
 Efekt biznesowy
 
@@ -58,9 +106,11 @@ Porównujemy odpowiedzi między segmentami i powodami kontaktu.
 
 Wnioski z odpowiedzi trafiają do kolejnych iteracji kampanii.
 
-## Najpierw znajdź proces, który warto automatyzować
+20+ firm B2B · 24 wdrożenia · 5 na Google
 
-Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
+## Sprawdź, czy Premium Cold Email+ pasuje do sprzedaży
+
+Na krótkiej diagnozie sprawdzimy proces, dane, ryzyko i oczekiwany wynik. Jeśli to rozwiązanie nie ma sensu, powiemy to wprost.
 
 Dobre dla ofert premium, gdzie masowa kampania psuje pozycjonowanie.
 
@@ -70,4 +120,6 @@ Prognozę kampanii przygotowujemy po sprawdzeniu rynku, listy, oferty i dotychcz
 
 Najpierw kalibrujemy segmenty na mniejszej próbie, potem skalujemy zwycięskie kąty.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę kampanii B2B](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)

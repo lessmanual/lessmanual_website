@@ -3,7 +3,7 @@
 > System zbiera dane, porządkuje zakres i przygotowuje draft oferty do sprawdzenia. Ceny pochodzą z zatwierdzonego cennika firmy.
 
 > Source: https://www.lessmanual.ai/oferta/generator-ofert
-> Generated: 2026-07-27T08:27:46.623Z
+> Generated: 2026-07-29T06:52:52.457Z
 
 ---
 
@@ -15,7 +15,11 @@ Ofertowanie
 
 System zbiera dane od klienta, porządkuje zakres i przygotowuje wersję roboczą oferty w formie PDF albo maila. Dobry tam, gdzie wycena blokuje sprzedaż.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+[Umów diagnozę ofertowania](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+
+Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
 ## Model współpracy
 
@@ -34,17 +38,59 @@ Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 -   System generuje strukturę oferty, zakres, założenia, elementy ryzyka i wersję do sprawdzenia przez człowieka.
 -   Po akceptacji oferta trafia do klienta, a status i follow-up zostają zapisane w procesie sprzedaży.
 
-## Kontrola wyniku
+Odpowiedzialność LessManual
+
+## Wdrożenie i opieka to dwa osobne zakresy
+
+Wdrożenie kończy się działającym systemem. Opieka utrzymuje jego ciągłość i jakość po uruchomieniu.
+
+Jednorazowo
+
+### Co dostajesz we wdrożeniu
+
+-   Audyt typów ofert, danych wejściowych, cennika i reguł akceptacji.
+-   Uporządkowanie zatwierdzonych zakresów, warunków i szablonów dokumentów.
+-   Budowa formularza albo rozmowy, która zbiera wymagane dane i wykrywa braki.
+-   Połączenie generatora z uzgodnionym CRM, mailem lub miejscem zapisu.
+-   Testy ofert standardowych i wyjątków oraz dokumentacja dla handlowców.
+
+Co miesiąc
+
+### Co obejmuje miesięczna opieka
+
+-   Monitoring generowania, błędów dokumentów i statusów ofert.
+-   Naprawy w istniejących szablonach oraz połączeniach.
+-   Aktualizacje zatwierdzonego cennika, zakresów i reguł ofertowania.
+-   Dostosowanie istniejących integracji do zmian w API.
+-   Kontrola wyjątków i raport z braków oraz czasu przygotowania.
+
+### Co rozliczamy osobno
+
+Nowa linia produktowa, dodatkowy kalkulator, inny format dokumentu, nowa integracja albo zmiana logiki cenowej poza uzgodnionymi regułami są wyceniane osobno.
+
+### Warunki miesięcznej opieki
+
+Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+
+## Kontrola wyniku i kryteria odbioru
 
 Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Zakres, ceny i terminy pochodzą wyłącznie z zatwierdzonych reguł oraz danych firmy.
+### Jak kontrolujemy jakość
 
-Wersja dla klienta ma być czytelna, elegancka i wolna od technicznego języka automatyzacji.
+-   Zakres, ceny i terminy pochodzą wyłącznie z zatwierdzonych reguł oraz danych firmy.
+-   Wersja dla klienta ma być czytelna, elegancka i wolna od technicznego języka automatyzacji.
+-   Człowiek widzi założenia oraz braki, zanim dokument wyjdzie do klienta.
+-   System uczy się na typowych poprawkach, ale nie przejmuje decyzji cenowej bez zgody.
 
-Człowiek widzi założenia oraz braki, zanim dokument wyjdzie do klienta.
+### Kryteria odbioru
 
-System uczy się na typowych poprawkach, ale nie przejmuje decyzji cenowej bez zgody.
+-   System blokuje dokument, gdy brakuje danych wymaganych dla danego typu oferty.
+-   Cena, zakres i warunki pochodzą z zatwierdzonych źródeł firmy.
+-   Uzgodnione przykłady generują poprawny dokument gotowy do akceptacji.
+-   Handlowiec widzi założenia, wyjątki i status przed wysłaniem oferty.
+
+Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
 
 Efekt biznesowy
 
@@ -58,9 +104,11 @@ System pokazuje braki w zapytaniu przed przygotowaniem dokumentu.
 
 Status oferty i termin kolejnego kontaktu są zapisane w procesie sprzedaży.
 
-## Najpierw znajdź proces, który warto automatyzować
+20+ firm B2B · 24 wdrożenia · 5 na Google
 
-Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
+## Sprawdź, czy Generator Ofert skróci ofertowanie
+
+Na krótkiej diagnozie sprawdzimy proces, dane, ryzyko i oczekiwany wynik. Jeśli to rozwiązanie nie ma sensu, powiemy to wprost.
 
 Dobre jako dodatek do obsługi klienta, sprzedaży albo contentu produktowego.
 
@@ -70,4 +118,6 @@ Strategia cenowa zostaje po stronie firmy. System automatyzuje przygotowanie i k
 
 Najpierw wybieramy najczęstszy typ oferty, potem dokładamy kolejne przypadki.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę ofertowania](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+
+[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)

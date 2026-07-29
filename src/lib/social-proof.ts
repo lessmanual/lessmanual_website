@@ -15,7 +15,7 @@ export const SOCIAL_PROOF = {
 // Helper strings - importowane przez komponenty
 export const PROOF_FULL = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.systemsLive} systemów live · ${SOCIAL_PROOF.googleRating} na Google`;
 
-export const PROOF_COMPACT = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google`;
+export const PROOF_COMPACT = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożenia · ${SOCIAL_PROOF.googleRating} na Google`;
 
 export const PROOF_WITH_CAPACITY = `${SOCIAL_PROOF.companiesEngaged}+ firm B2B · ${SOCIAL_PROOF.implementationsDelivered} wdrożeń · ${SOCIAL_PROOF.googleRating} na Google · Max ${SOCIAL_PROOF.maxProjectsMonthly} jakościowych projektów miesięcznie.`;
 

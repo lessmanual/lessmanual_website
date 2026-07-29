@@ -16,6 +16,7 @@ import {
   generateServiceSchema,
   serializeJsonLd,
 } from "@/lib/schema";
+import { PROOF_COMPACT } from "@/lib/social-proof";
 
 export type PremiumOfferPageProps = {
   path: string;
@@ -27,6 +28,12 @@ export type PremiumOfferPageProps = {
   workflow: string[];
   qualityGate: string[];
   outcomes: string[];
+  implementationItems: string[];
+  monthlyCareItems: string[];
+  scopeBoundary: string;
+  acceptanceCriteria: string[];
+  diagnosisTitle: string;
+  diagnosisCtaLabel: string;
   notes: string[];
 };
 
@@ -53,6 +60,12 @@ export function PremiumOfferPage({
   workflow,
   qualityGate,
   outcomes,
+  implementationItems,
+  monthlyCareItems,
+  scopeBoundary,
+  acceptanceCriteria,
+  diagnosisTitle,
+  diagnosisCtaLabel,
   notes,
 }: PremiumOfferPageProps) {
   const canonicalUrl = `https://www.lessmanual.ai${path}`;
@@ -109,22 +122,25 @@ export function PremiumOfferPage({
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href={AI_GROWTH_MAP_URL}
-                  className="inline-flex items-center gap-2 rounded-[4px] bg-text px-6 py-3.5 text-sm font-medium text-white transition-all hover:-translate-y-[1px] hover:bg-accent"
-                >
-                  Sprawdź pierwszy proces do automatyzacji
-                  <ArrowRight size={16} />
-                </Link>
                 <a
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-[4px] bg-text px-6 py-3.5 text-sm font-medium text-white transition-all hover:-translate-y-[1px] hover:bg-accent"
+                >
+                  {diagnosisCtaLabel}
+                  <ArrowRight size={16} />
+                </a>
+                <Link
+                  href={AI_GROWTH_MAP_URL}
                   className="inline-flex items-center gap-2 rounded-[4px] border border-border bg-white px-6 py-3.5 text-sm font-medium text-text transition-all hover:-translate-y-[1px] hover:border-accent hover:text-accent"
                 >
-                  Porozmawiaj o wdrożeniu
-                </a>
+                  Sprawdź pierwszy proces do automatyzacji
+                </Link>
               </div>
+              <p className="mt-4 text-sm text-text-secondary">
+                Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
+              </p>
             </div>
 
             <div className="rounded-[8px] border border-border bg-white p-6 shadow-[0_24px_60px_rgba(10,10,10,0.06)] md:p-8">
@@ -173,24 +189,86 @@ export function PremiumOfferPage({
       </section>
 
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto grid max-w-[1160px] gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
+        <div className="mx-auto max-w-[1160px]">
+          <div className="mb-10 max-w-[760px]">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-[2px] w-8 bg-accent" />
+              <span className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+                Odpowiedzialność LessManual
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Wdrożenie i opieka to dwa osobne zakresy
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-text-secondary">
+              Wdrożenie kończy się działającym systemem. Opieka utrzymuje jego
+              ciągłość i jakość po uruchomieniu.
+            </p>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-2">
+            <CooperationCard
+              eyebrow="Jednorazowo"
+              title="Co dostajesz we wdrożeniu"
+              items={implementationItems}
+            />
+            <CooperationCard
+              eyebrow="Co miesiąc"
+              title="Co obejmuje miesięczna opieka"
+              items={monthlyCareItems}
+            />
+          </div>
+
+          <div className="mt-5 grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="rounded-[8px] border border-accent/40 bg-accent/5 p-6">
+              <h3 className="font-serif text-2xl">Co rozliczamy osobno</h3>
+              <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                {scopeBoundary}
+              </p>
+            </div>
+            <div className="rounded-[8px] border border-border bg-white p-6">
+              <h3 className="font-serif text-2xl">Warunki miesięcznej opieki</h3>
+              <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[1160px]">
+          <div className="mb-10 max-w-[760px]">
             <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-[6px] bg-accent/10 text-accent">
               <ShieldCheck size={22} />
             </div>
-            <h2 className="font-serif text-2xl">Kontrola wyniku</h2>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Kontrola wyniku i kryteria odbioru
+            </h2>
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">
               Agent nie powinien dopowiadać brakujących faktów ani podejmować
               decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed
               działaniem o większym ryzyku.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {qualityGate.map((item) => (
-              <div key={item} className="rounded-[8px] border border-border bg-white p-5">
-                <p className="text-sm leading-relaxed text-text-secondary">{item}</p>
+          <div className="grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[8px] border border-border bg-white p-6 md:p-8">
+              <h3 className="font-serif text-2xl">Jak kontrolujemy jakość</h3>
+              <div className="mt-5">
+                <BulletList items={qualityGate} />
               </div>
-            ))}
+            </div>
+            <div className="rounded-[8px] border border-border bg-white p-6 md:p-8">
+              <h3 className="font-serif text-2xl">Kryteria odbioru</h3>
+              <div className="mt-5">
+                <BulletList items={acceptanceCriteria} />
+              </div>
+            </div>
+          </div>
+          <div className="mt-5 rounded-[8px] border border-accent/40 bg-accent/5 p-5">
+            <p className="text-sm leading-relaxed text-text-secondary">
+              Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
+            </p>
           </div>
         </div>
       </section>
@@ -219,14 +297,22 @@ export function PremiumOfferPage({
         </div>
       </section>
 
+      <section className="border-y border-border bg-white px-6 py-8">
+        <div className="mx-auto max-w-[900px] text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.12em] text-text-muted">
+            {PROOF_COMPACT}
+          </p>
+        </div>
+      </section>
+
       <section className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-[900px] text-center">
           <h2 className="font-serif text-3xl md:text-4xl">
-            Najpierw znajdź proces, który warto automatyzować
+            {diagnosisTitle}
           </h2>
           <p className="mx-auto mt-5 max-w-[680px] text-base leading-relaxed text-text-secondary">
-            Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym
-            automatyzacja ma największy sens. Dopiero potem dobieramy system.
+            Na krótkiej diagnozie sprawdzimy proces, dane, ryzyko i oczekiwany
+            wynik. Jeśli to rozwiązanie nie ma sensu, powiemy to wprost.
           </p>
           <div className="mx-auto mt-8 grid max-w-[720px] gap-3 text-left md:grid-cols-2">
             {notes.map((note) => (
@@ -235,17 +321,49 @@ export function PremiumOfferPage({
               </div>
             ))}
           </div>
-          <Link
-            href={AI_GROWTH_MAP_URL}
-            className="mt-8 inline-flex items-center gap-2 rounded-[4px] bg-text px-6 py-3.5 text-sm font-medium text-white transition-all hover:-translate-y-[1px] hover:bg-accent"
-          >
-            Sprawdź pierwszy proces do automatyzacji
-            <ArrowRight size={16} />
-          </Link>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-[4px] bg-text px-6 py-3.5 text-sm font-medium text-white transition-all hover:-translate-y-[1px] hover:bg-accent"
+            >
+              {diagnosisCtaLabel}
+              <ArrowRight size={16} />
+            </a>
+            <Link
+              href={AI_GROWTH_MAP_URL}
+              className="inline-flex items-center gap-2 rounded-[4px] border border-border bg-white px-6 py-3.5 text-sm font-medium text-text transition-all hover:-translate-y-[1px] hover:border-accent hover:text-accent"
+            >
+              Otwórz AI Growth Opportunity Map
+            </Link>
+          </div>
         </div>
       </section>
       </main>
       <FooterV2 />
     </div>
+  );
+}
+
+function CooperationCard({
+  eyebrow,
+  title,
+  items,
+}: {
+  eyebrow: string;
+  title: string;
+  items: string[];
+}) {
+  return (
+    <article className="rounded-[8px] border border-border bg-white p-6 md:p-8">
+      <span className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+        {eyebrow}
+      </span>
+      <h3 className="mt-3 font-serif text-2xl">{title}</h3>
+      <div className="mt-6">
+        <BulletList items={items} />
+      </div>
+    </article>
   );
 }

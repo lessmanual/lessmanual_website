@@ -1,50 +1,43 @@
-"use client";
-
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
-
 const STEPS = [
   {
     num: "01",
-    title: "Diagnoza procesu",
-    duration: "punkt startu",
-    desc: "Sprawdzamy, gdzie znika czas, ile kosztuje obecny sposób pracy i po czym poznamy, że wdrożenie ma sens.",
+    title: "Audyt procesu i KPI",
+    duration: "diagnoza",
+    desc: "Liczymy koszt obecnej pracy, ryzyko błędu i ustalamy mierzalne kryteria odbioru.",
   },
   {
     num: "02",
-    title: "Źródła i reguły",
-    duration: "zakres",
-    desc: "Ustalamy, z jakich danych agent korzysta, co może zrobić sam i które decyzje zawsze zostają po stronie człowieka.",
+    title: "Źródła i baza wiedzy",
+    duration: "dane",
+    desc: "Zbieramy zatwierdzone materiały, porządkujemy dostęp i zapisujemy granice działania systemu.",
   },
   {
     num: "03",
-    title: "Pilot na realnych danych",
-    duration: "sprawdzenie",
-    desc: "Uruchamiamy ograniczony zakres, mierzymy jakość wyniku i poprawiamy reguły przed przejściem na produkcję.",
+    title: "Narzędzia i integracje",
+    duration: "projekt",
+    desc: "Dobieramy technologię do procesu i łączymy tylko systemy potrzebne w uzgodnionym zakresie.",
   },
   {
     num: "04",
-    title: "Produkcja i utrzymanie",
-    duration: "stała opieka",
-    desc: "Wdrażamy system do codziennej pracy, monitorujemy błędy i rozwijamy go wraz ze zmianą procesu.",
+    title: "Budowa systemu",
+    duration: "wdrożenie",
+    desc: "Budujemy działający przepływ z regułami, kontrolą wyniku i bezpiecznym przekazaniem wyjątków.",
+  },
+  {
+    num: "05",
+    title: "Testy na realnych danych",
+    duration: "odbiór",
+    desc: "Sprawdzamy typowe sprawy, błędy i wyjątki na przykładach z firmy, a wynik porównujemy z KPI.",
+  },
+  {
+    num: "06",
+    title: "Uruchomienie i dokumentacja",
+    duration: "start",
+    desc: "Włączamy system do codziennej pracy, opisujemy obsługę i przekazujemy plan miesięcznej opieki.",
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.2 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0 },
-};
-
 export function ProcessV2() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-  const reducedMotion = useReducedMotion();
-
   return (
     <section id="proces" className="px-6 md:px-10 py-32 md:py-48">
       <div className="mx-auto max-w-[1440px]">
@@ -54,24 +47,16 @@ export function ProcessV2() {
           </div>
           <h2>Od procesu do działającego systemu.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
-            Najpierw sprawdzamy sens wdrożenia. Dopiero potem dobieramy
-            technologię, zakres pilota i sposób utrzymania.
+            Wdrożenie ma zamknięty zakres i wynik, który da się sprawdzić.
+            Każdy etap kończy się konkretną decyzją albo materiałem do odbioru.
           </p>
         </header>
 
-        <motion.div
-          ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E5E5E5] border border-[#E5E5E5]"
-          initial={reducedMotion ? "visible" : "hidden"}
-          animate={reducedMotion || inView ? "visible" : "hidden"}
-          variants={containerVariants}
-        >
+        <div className="grid grid-cols-1 gap-px border border-[#E5E5E5] bg-[#E5E5E5] md:grid-cols-2 lg:grid-cols-3">
           {STEPS.map((s) => (
-            <motion.div
+            <article
               key={s.num}
               className="bg-[#FAFAFA] p-8 md:p-10"
-              variants={itemVariants}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="flex items-baseline justify-between mb-6">
                 <span className="font-mono text-[56px] font-medium leading-none tracking-tight text-[#B87333]">
@@ -85,9 +70,9 @@ export function ProcessV2() {
               <p className="mt-3 text-[15px] leading-[1.55] text-[#525252]">
                 {s.desc}
               </p>
-            </motion.div>
+            </article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
