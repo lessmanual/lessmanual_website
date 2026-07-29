@@ -24,6 +24,7 @@ const ROUTES = [
   "/oferta/content-machine",
   "/oferta/obsluga-klienta",
   "/oferta/generator-ofert",
+  "/oferta/indywidualne-wdrozenia",
   "/blog",
 ];
 

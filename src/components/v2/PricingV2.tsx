@@ -1,8 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
 import { AI_GROWTH_MAP_URL } from "@/lib/constants";
 
 const ROWS = [
@@ -36,21 +32,23 @@ const ROWS = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-};
+const IMPLEMENTATION_ITEMS = [
+  "Audyt procesu, kosztu obecnej pracy i KPI",
+  "Zatwierdzone źródła, baza wiedzy i reguły",
+  "Dobór narzędzi oraz istniejących integracji",
+  "Budowa, testy na realnych danych i uruchomienie",
+  "Dokumentacja oraz kryteria odbioru",
+];
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0 },
-};
+const MONTHLY_CARE_ITEMS = [
+  "Monitoring i naprawy w istniejącym zakresie",
+  "Aktualizacje wiedzy i zatwierdzonych źródeł",
+  "Zmiany w API dla istniejących integracji",
+  "Kontrola jakości i wyjątków",
+  "Optymalizacja i raport z działania",
+];
 
 export function PricingV2() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-  const reducedMotion = useReducedMotion();
-
   return (
     <section id="pricing" className="bg-white border-y border-[#E5E5E5] px-6 md:px-10 py-32 md:py-48">
       <div className="mx-auto max-w-[1440px]">
@@ -60,12 +58,24 @@ export function PricingV2() {
           </div>
           <h2>Zakres i wycena po diagnozie procesu.</h2>
           <p className="mt-5 text-[17px] leading-[1.55] text-[#525252]">
-            Pracujemy w modelu wdrożenie + miesięczna obsługa. Na koszt
-            wpływają dane, integracje, wolumen, ryzyko błędu i poziom
-            utrzymania. Najpierw sprawdzamy opłacalność, potem podajemy
-            konkretny zakres, termin i cenę.
+            Jednorazowe wdrożenie kupuje działający i przetestowany system.
+            Miesięczna opieka kupuje ciągłość działania w ustalonym zakresie.
+            Konkretne warunki i cenę podajemy po diagnozie.
           </p>
         </header>
+
+        <div className="mb-10 grid gap-px border border-[#E5E5E5] bg-[#E5E5E5] lg:grid-cols-2">
+          <CooperationColumn
+            eyebrow="Jednorazowe wdrożenie"
+            title="Działający system z zamkniętym zakresem"
+            items={IMPLEMENTATION_ITEMS}
+          />
+          <CooperationColumn
+            eyebrow="Miesięczna opieka"
+            title="Ciągłość i jakość istniejącego systemu"
+            items={MONTHLY_CARE_ITEMS}
+          />
+        </div>
 
         <div className="border border-[#E5E5E5] bg-[#FAFAFA]">
           {/* Header row */}
@@ -76,18 +86,11 @@ export function PricingV2() {
             <div>Kiedy pasuje</div>
           </div>
 
-          <motion.div
-            ref={ref}
-            initial={reducedMotion ? "visible" : "hidden"}
-            animate={reducedMotion || inView ? "visible" : "hidden"}
-            variants={containerVariants}
-          >
+          <div>
             {ROWS.map((r) => (
-              <motion.div
+              <div
                 key={r.name}
                 className="grid grid-cols-1 md:grid-cols-[2fr_1.2fr_1fr_1.2fr] gap-2 md:gap-6 px-6 py-5 md:py-6 border-b border-[#E5E5E5] last:border-b-0 transition-colors duration-200 hover:bg-white"
-                variants={itemVariants}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div>
                   <div className="text-[15px] font-medium text-[#0A0A0A]">{r.name}</div>
@@ -96,9 +99,22 @@ export function PricingV2() {
                 <div className="font-mono text-[14px] text-[#0A0A0A]">{r.setup}</div>
                 <div className="font-mono text-[14px] text-[#0A0A0A]">{r.monthly}</div>
                 <div className="text-[13px] text-[#525252]">{r.note}</div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
+        </div>
+
+        <div className="mt-6 border-l-2 border-[#B87333] bg-[#F5EDE6] px-5 py-4">
+          <p className="text-[14px] leading-relaxed text-[#525252]">
+            <strong className="text-[#0A0A0A]">Granica zakresu:</strong>{" "}
+            Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.
+          </p>
+          <p className="mt-3 text-[14px] leading-relaxed text-[#525252]">
+            Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+          </p>
+          <p className="mt-3 text-[14px] leading-relaxed text-[#525252]">
+            Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
+          </p>
         </div>
 
         <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -116,5 +132,32 @@ export function PricingV2() {
         </div>
       </div>
     </section>
+  );
+}
+
+function CooperationColumn({
+  eyebrow,
+  title,
+  items,
+}: {
+  eyebrow: string;
+  title: string;
+  items: string[];
+}) {
+  return (
+    <article className="bg-[#FAFAFA] p-8 md:p-10">
+      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#8B4513]">
+        {eyebrow}
+      </div>
+      <h3 className="mt-3 text-[#0A0A0A]">{title}</h3>
+      <ul className="mt-6 space-y-3">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3 text-[14px] leading-relaxed text-[#525252]">
+            <span className="text-[#B87333]" aria-hidden="true">✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </article>
   );
 }

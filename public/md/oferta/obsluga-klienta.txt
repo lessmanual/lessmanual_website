@@ -3,7 +3,7 @@
 > Agent AI odpowiada na podstawie bazy wiedzy, zbiera kontekst sprawy i przekazuje człowiekowi wyjątki wymagające decyzji.
 
 > Source: https://www.lessmanual.ai/oferta/obsluga-klienta
-> Generated: 2026-07-27T08:27:45.991Z
+> Generated: 2026-07-29T06:52:52.432Z
 
 ---
 
@@ -15,7 +15,9 @@ Obsługa klienta
 
 Agent AI do obsługi pytań i powtarzalnych spraw. Działa na źródłach firmy, zbiera kontekst i przekazuje ludziom tematy, które naprawdę wymagają decyzji.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+[Umów diagnozę obsługi klienta](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+
+Jeśli diagnoza nie potwierdzi sensu tego rozwiązania, powiemy to wprost.
 
 ## Model współpracy
 
@@ -34,17 +36,59 @@ Zaczynamy od źródeł, reguł i wyniku, który da się sprawdzić.
 -   Projektujemy ścieżki odpowiedzi, zbierania braków, przekazania do człowieka i zapisu statusu w systemie.
 -   Po wdrożeniu monitorujemy jakość odpowiedzi, błędy, eskalacje i tematy do dopisania w bazie wiedzy.
 
-## Kontrola wyniku
+Odpowiedzialność LessManual
+
+## Wdrożenie i opieka to dwa osobne zakresy
+
+Wdrożenie kończy się działającym systemem. Opieka utrzymuje jego ciągłość i jakość po uruchomieniu.
+
+Jednorazowo
+
+### Co dostajesz we wdrożeniu
+
+-   Audyt kanałów, typów spraw, czasu odpowiedzi i ryzyka błędnej odpowiedzi.
+-   Budowa zatwierdzonej bazy wiedzy z zasadami dostępu i aktualizacji.
+-   Projekt odpowiedzi, dopytywania o braki oraz eskalacji do człowieka.
+-   Połączenie uzgodnionych kanałów z CRM albo systemem obsługi.
+-   Testy typowych spraw i wyjątków na danych firmy oraz instrukcja dla zespołu.
+
+Co miesiąc
+
+### Co obejmuje miesięczna opieka
+
+-   Monitoring odpowiedzi, eskalacji, błędów i uzgodnionych limitów.
+-   Naprawy w działających kanałach oraz istniejących integracjach.
+-   Aktualizacje FAQ, dokumentów i reguł odpowiedzi.
+-   Dostosowanie istniejących integracji do zmian w API kanałów.
+-   Przegląd wyjątków oraz raport z jakości i braków w wiedzy.
+
+### Co rozliczamy osobno
+
+Nowy kanał kontaktu, kolejny język, nowe źródło danych, integracja z innym systemem albo automatyzacja nowego typu spraw wymagają osobnego zakresu.
+
+### Warunki miesięcznej opieki
+
+Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+
+## Kontrola wyniku i kryteria odbioru
 
 Agent nie powinien dopowiadać brakujących faktów ani podejmować decyzji poza ustalonym zakresem. Wynik przechodzi kontrolę przed działaniem o większym ryzyku.
 
-Przy braku źródła system prosi o dane albo eskaluje sprawę.
+### Jak kontrolujemy jakość
 
-Odpowiedzi są sprawdzane pod ton firmy, zgodność z bazą wiedzy i ryzyko błędnej obietnicy.
+-   Przy braku źródła system prosi o dane albo eskaluje sprawę.
+-   Odpowiedzi są sprawdzane pod ton firmy, zgodność z bazą wiedzy i ryzyko błędnej obietnicy.
+-   Każda automatyzacja ma granice odpowiedzialności, żeby AI nie podejmowało decyzji biznesowych za zespół.
+-   Raport pokazuje liczbę spraw oraz luki w procesie, źródłach i komunikacji.
 
-Każda automatyzacja ma granice odpowiedzialności, żeby AI nie podejmowało decyzji biznesowych za zespół.
+### Kryteria odbioru
 
-Raport pokazuje liczbę spraw oraz luki w procesie, źródłach i komunikacji.
+-   System odpowiada zgodnie z zatwierdzoną wiedzą albo bezpiecznie eskaluje brak.
+-   Każda przekazana sprawa zawiera kontekst i powód decyzji człowieka.
+-   Uzgodnione kanały zapisują status sprawy we właściwym systemie.
+-   Testy obejmują typowe pytania, brak danych, wyjątek i błąd integracji.
+
+Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
 
 Efekt biznesowy
 
@@ -58,9 +102,11 @@ Każda sprawa ma status, kontekst i wskazaną ścieżkę eskalacji.
 
 Raport pokazuje pytania, które najczęściej wracają do człowieka.
 
-## Najpierw znajdź proces, który warto automatyzować
+20+ firm B2B · 24 wdrożeń · 5 na Google
 
-Mapa porównuje powtarzalne procesy i wskazuje miejsce, w którym automatyzacja ma największy sens. Dopiero potem dobieramy system.
+## Sprawdź, czy Customer Operations AI odciąży obsługę
+
+Na krótkiej diagnozie sprawdzimy proces, dane, ryzyko i oczekiwany wynik. Jeśli to rozwiązanie nie ma sensu, powiemy to wprost.
 
 Dobre dla sklepów, usług B2B, edukacji, usług lokalnych i firm z dużą liczbą powtarzalnych pytań.
 
@@ -70,4 +116,4 @@ Kryterium wdrożenia stanowi jakość obsłużonej sprawy.
 
 Najpierw sprawdzamy, gdzie automatyzacja naprawdę odciąży zespół.
 
-[Sprawdź pierwszy proces do automatyzacji](/ai-growth-opportunity-map)
+[Umów diagnozę obsługi klienta](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)[Otwórz AI Growth Opportunity Map](/ai-growth-opportunity-map)

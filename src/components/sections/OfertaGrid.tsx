@@ -6,6 +6,7 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { FadeUp } from "@/components/animations/FadeUp";
 import { Button } from "@/components/ui/Button";
 import { AI_GROWTH_MAP_URL, PRODUCTS } from "@/lib/constants";
+import { PROOF_COMPACT } from "@/lib/social-proof";
 
 const PRODUCT_NUMBERS = ["01", "02", "03", "04", "05", "06"];
 
@@ -41,6 +42,46 @@ export function OfertaGrid() {
             </p>
           </FadeUp>
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-bg py-14 md:py-18">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="rounded-[6px] border border-border bg-white p-6 md:p-8">
+              <span className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+                Jednorazowe wdrożenie
+              </span>
+              <h2 className="mt-3 font-serif text-2xl">
+                Budujemy i uruchamiamy system
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                Audytujemy proces i KPI, porządkujemy źródła, dobieramy
+                integracje, budujemy, testujemy na realnych danych i
+                przekazujemy dokumentację.
+              </p>
+            </div>
+            <div className="rounded-[6px] border border-border bg-white p-6 md:p-8">
+              <span className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+                Miesięczna opieka
+              </span>
+              <h2 className="mt-3 font-serif text-2xl">
+                Utrzymujemy ciągłość i jakość
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                Monitorujemy działanie, naprawiamy błędy w istniejącym
+                zakresie, aktualizujemy wiedzę i integracje oraz raportujemy
+                jakość i wyjątki.
+              </p>
+            </div>
+          </div>
+          <p className="mt-5 text-sm leading-relaxed text-text-secondary">
+            Nowe funkcje, kanały, integracje, migracje do innego dostawcy i
+            większe przebudowy dostają osobny zakres oraz wycenę przed startem.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+            Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+          </p>
         </div>
       </section>
 
@@ -117,6 +158,12 @@ export function OfertaGrid() {
               );
             })}
           </StaggerContainer>
+
+          <div className="mb-10 border-y border-border py-6 text-center">
+            <p className="font-mono text-xs uppercase tracking-[0.12em] text-text-muted">
+              {PROOF_COMPACT}
+            </p>
+          </div>
 
           <FadeUp>
             <div className="text-center">

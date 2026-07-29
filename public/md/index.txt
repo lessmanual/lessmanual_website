@@ -3,7 +3,7 @@
 > Wdrażamy agentów AI do sprzedaży, contentu i obsługi klienta. Zaczynamy od diagnozy procesu, potem budujemy, uruchamiamy i utrzymujemy system.
 
 > Source: https://www.lessmanual.ai/
-> Generated: 2026-07-27T08:27:41.524Z
+> Generated: 2026-07-29T06:52:52.178Z
 
 ---
 
@@ -11,7 +11,7 @@ Automatyzacja AI dla firm B2B
 
 # Zdejmujemy ręczną pracę ze sprzedaży, contentu i obsługi klienta.
 
-Najpierw liczymy, gdzie firma traci czas i pieniądze. Potem wdrażamy agenta AI, który pracuje na zatwierdzonych danych, przechodzi kontrolę jakości i przekazuje wyjątki człowiekowi.
+Audytujemy proces i KPI, porządkujemy źródła, dobieramy integracje, budujemy system i testujemy go na realnych danych. Potem uruchamiamy całość, przekazujemy dokumentację i możemy odpowiadać za dalszą opiekę. System pracuje na zatwierdzonych danych i przekazuje wyjątki człowiekowi.
 
 dane Twojej firmy·jasne reguły·kontrola człowieka·wdrożenie i utrzymanie
 
@@ -225,37 +225,69 @@ Proces
 
 ## Od procesu do działającego systemu.
 
-Najpierw sprawdzamy sens wdrożenia. Dopiero potem dobieramy technologię, zakres pilota i sposób utrzymania.
+Wdrożenie ma zamknięty zakres i wynik, który da się sprawdzić. Każdy etap kończy się konkretną decyzją albo materiałem do odbioru.
 
-01punkt startu
+01diagnoza
 
-### Diagnoza procesu
+### Audyt procesu i KPI
 
-Sprawdzamy, gdzie znika czas, ile kosztuje obecny sposób pracy i po czym poznamy, że wdrożenie ma sens.
+Liczymy koszt obecnej pracy, ryzyko błędu i ustalamy mierzalne kryteria odbioru.
 
-02zakres
+02dane
 
-### Źródła i reguły
+### Źródła i baza wiedzy
 
-Ustalamy, z jakich danych agent korzysta, co może zrobić sam i które decyzje zawsze zostają po stronie człowieka.
+Zbieramy zatwierdzone materiały, porządkujemy dostęp i zapisujemy granice działania systemu.
 
-03sprawdzenie
+03projekt
 
-### Pilot na realnych danych
+### Narzędzia i integracje
 
-Uruchamiamy ograniczony zakres, mierzymy jakość wyniku i poprawiamy reguły przed przejściem na produkcję.
+Dobieramy technologię do procesu i łączymy tylko systemy potrzebne w uzgodnionym zakresie.
 
-04stała opieka
+04wdrożenie
 
-### Produkcja i utrzymanie
+### Budowa systemu
 
-Wdrażamy system do codziennej pracy, monitorujemy błędy i rozwijamy go wraz ze zmianą procesu.
+Budujemy działający przepływ z regułami, kontrolą wyniku i bezpiecznym przekazaniem wyjątków.
+
+05odbiór
+
+### Testy na realnych danych
+
+Sprawdzamy typowe sprawy, błędy i wyjątki na przykładach z firmy, a wynik porównujemy z KPI.
+
+06start
+
+### Uruchomienie i dokumentacja
+
+Włączamy system do codziennej pracy, opisujemy obsługę i przekazujemy plan miesięcznej opieki.
 
 Model współpracy
 
 ## Zakres i wycena po diagnozie procesu.
 
-Pracujemy w modelu wdrożenie + miesięczna obsługa. Na koszt wpływają dane, integracje, wolumen, ryzyko błędu i poziom utrzymania. Najpierw sprawdzamy opłacalność, potem podajemy konkretny zakres, termin i cenę.
+Jednorazowe wdrożenie kupuje działający i przetestowany system. Miesięczna opieka kupuje ciągłość działania w ustalonym zakresie. Konkretne warunki i cenę podajemy po diagnozie.
+
+Jednorazowe wdrożenie
+
+### Działający system z zamkniętym zakresem
+
+-   ✓Audyt procesu, kosztu obecnej pracy i KPI
+-   ✓Zatwierdzone źródła, baza wiedzy i reguły
+-   ✓Dobór narzędzi oraz istniejących integracji
+-   ✓Budowa, testy na realnych danych i uruchomienie
+-   ✓Dokumentacja oraz kryteria odbioru
+
+Miesięczna opieka
+
+### Ciągłość i jakość istniejącego systemu
+
+-   ✓Monitoring i naprawy w istniejącym zakresie
+-   ✓Aktualizacje wiedzy i zatwierdzonych źródeł
+-   ✓Zmiany w API dla istniejących integracji
+-   ✓Kontrola jakości i wyjątków
+-   ✓Optymalizacja i raport z działania
 
 System
 
@@ -305,6 +337,12 @@ utrzymanie
 
 gdy trzeba połączyć dane, narzędzia i decyzje w jeden proces
 
+**Granica zakresu:** Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.
+
+Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
+
+Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
+
 Jasny zakres · cena po diagnozie · utrzymanie systemu w zakresie
 
 [Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
@@ -334,6 +372,10 @@ System nie powinien zgadywać. Może dopytać, oznaczyć brak danych albo przeka
 Ile czasu zespół musi poświęcić na wdrożenie?+
 
 Zespół dostarcza materiały źródłowe, dostęp do potrzebnych systemów i feedback z pilota. LessManual odpowiada za projekt procesu, budowę, testy, uruchomienie i późniejsze utrzymanie.
+
+Co obejmuje miesięczna opieka po wdrożeniu?+
+
+Obejmuje monitoring, naprawy w istniejącym zakresie, aktualizacje zatwierdzonych źródeł, dostosowanie istniejących integracji do zmian w API, kontrolę jakości oraz uzgodniony raport. Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.
 
 Pierwszy krok: diagnoza procesu
 

@@ -25,9 +25,10 @@ export function HeroV2() {
             </h1>
 
             <p className="mt-8 max-w-[560px] text-[17px] leading-[1.55] text-[#525252]">
-              Najpierw liczymy, gdzie firma traci czas i pieniądze. Potem
-              wdrażamy agenta AI, który pracuje na zatwierdzonych danych,
-              przechodzi kontrolę jakości i przekazuje wyjątki człowiekowi.
+              Audytujemy proces i KPI, porządkujemy źródła, dobieramy
+              integracje, budujemy system i testujemy go na realnych danych.
+              Potem uruchamiamy całość, przekazujemy dokumentację i możemy
+              odpowiadać za dalszą opiekę. System pracuje na zatwierdzonych danych i przekazuje wyjątki człowiekowi.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[12px] text-[#525252]">

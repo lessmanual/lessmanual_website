@@ -55,6 +55,39 @@ describe("homepage public copy and SEO contract", () => {
     }
   });
 
+  it("separates the delivered implementation from monthly care and scope changes", () => {
+    for (const implementationItem of [
+      "Audyt procesu i KPI",
+      "Źródła i baza wiedzy",
+      "Narzędzia i integracje",
+      "Budowa systemu",
+      "Testy na realnych danych",
+      "Uruchomienie i dokumentacja",
+    ]) {
+      expect(homepageSource).toContain(implementationItem);
+    }
+
+    for (const careItem of [
+      "Monitoring i naprawy",
+      "Aktualizacje wiedzy",
+      "Zmiany w API",
+      "Kontrola jakości i wyjątków",
+      "Optymalizacja i raport",
+    ]) {
+      expect(homepageSource).toContain(careItem);
+    }
+
+    expect(homepageSource).toContain(
+      "Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.",
+    );
+    expect(homepageSource).toContain(
+      "Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.",
+    );
+    expect(homepageSource).toContain(
+      "Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.",
+    );
+  });
+
   it("fills both desktop rows in the implementation-area grid", () => {
     expect(productsSource).toContain('i === 0 ? "lg:col-span-2" : ""');
     expect(productsSource).toContain('group md:p-10 lg:col-span-2"');
@@ -91,6 +124,7 @@ describe("homepage public copy and SEO contract", () => {
       "Czy agent AI może pracować na danych naszej firmy?",
       "Co dzieje się, gdy AI nie zna odpowiedzi?",
       "Ile czasu zespół musi poświęcić na wdrożenie?",
+      "Co obejmuje miesięczna opieka po wdrożeniu?",
     ]) {
       expect(faqSource).toContain(question);
     }

@@ -3,7 +3,7 @@
 > Wdrażamy agentów AI do sprzedaży B2B, contentu, SEO i obsługi klienta. Zakres, termin i wycena powstają po diagnozie procesu.
 
 > Source: https://www.lessmanual.ai/oferta
-> Generated: 2026-07-27T08:27:44.120Z
+> Generated: 2026-07-29T06:52:52.313Z
 
 ---
 
@@ -14,6 +14,22 @@ Oferta
 # Wdrożenia AI dla firm, które chcą rosnąć bez dokładania ręcznej pracy.
 
 Najpierw sprawdzamy, gdzie znika czas i pieniądze. Potem dostajesz konkretny zakres, termin i sposób utrzymania.
+
+Jednorazowe wdrożenie
+
+## Budujemy i uruchamiamy system
+
+Audytujemy proces i KPI, porządkujemy źródła, dobieramy integracje, budujemy, testujemy na realnych danych i przekazujemy dokumentację.
+
+Miesięczna opieka
+
+## Utrzymujemy ciągłość i jakość
+
+Monitorujemy działanie, naprawiamy błędy w istniejącym zakresie, aktualizujemy wiedzę i integracje oraz raportujemy jakość i wyjątki.
+
+Nowe funkcje, kanały, integracje, migracje do innego dostawcy i większe przebudowy dostają osobny zakres oraz wycenę przed startem.
+
+Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
 
 Primary01
 
@@ -86,6 +102,8 @@ zakres po diagnozie procesu
 wycena przed rozpoczęciem prac
 
 [Zobacz zakres](/oferta/indywidualne-wdrozenia)
+
+20+ firm B2B · 24 wdrożeń · 5 na Google
 
 **Nie wiesz od czego zacząć?** Zaczniemy od AI Growth Opportunity Map i wybierzemy pierwszy system, który ma największą szansę szybko dowieźć wynik.
 
