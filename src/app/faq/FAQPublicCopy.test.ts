@@ -19,6 +19,22 @@ describe("FAQ public copy", () => {
     expect(faqBlock).toContain("W procesach o większym ryzyku człowiek zatwierdza wynik");
   });
 
+  it("explains tool ownership and bounded development in monthly care", () => {
+    expect(faqBlock).toContain("Co obejmuje miesięczna opieka po wdrożeniu?");
+    expect(faqBlock).toContain(
+      "Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania.",
+    );
+    expect(faqBlock).toContain(
+      "Utrzymujemy hosting oraz uzgodnione narzędzia",
+    );
+    expect(faqBlock).toContain(
+      "Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie.",
+    );
+    expect(faqBlock).toContain(
+      "Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.",
+    );
+  });
+
   it("does not publish absolute compliance or outcome claims", () => {
     for (const phrase of [
       "80% problemów",

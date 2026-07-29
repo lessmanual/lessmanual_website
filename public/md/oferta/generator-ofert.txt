@@ -3,7 +3,7 @@
 > System zbiera dane, porządkuje zakres i przygotowuje draft oferty do sprawdzenia. Ceny pochodzą z zatwierdzonego cennika firmy.
 
 > Source: https://www.lessmanual.ai/oferta/generator-ofert
-> Generated: 2026-07-29T06:52:52.457Z
+> Generated: 2026-07-29T11:34:07.291Z
 
 ---
 
@@ -69,6 +69,8 @@ Co miesiąc
 Nowa linia produktowa, dodatkowy kalkulator, inny format dokumentu, nowa integracja albo zmiana logiki cenowej poza uzgodnionymi regułami są wyceniane osobno.
 
 ### Warunki miesięcznej opieki
+
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
 

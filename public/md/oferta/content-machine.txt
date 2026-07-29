@@ -3,7 +3,7 @@
 > System regularnie przygotowuje treści na podstawie źródeł firmy, sprawdza fakty i prowadzi materiał do akceptacji, publikacji oraz dystrybucji.
 
 > Source: https://www.lessmanual.ai/oferta/content-machine
-> Generated: 2026-07-29T06:52:52.401Z
+> Generated: 2026-07-29T11:34:07.238Z
 
 ---
 
@@ -69,6 +69,8 @@ Co miesiąc
 Nowy kanał, dodatkowa marka, nowy typ materiału, migracja narzędzia publikacji albo przebudowa procesu redakcyjnego dostają osobny zakres i wycenę.
 
 ### Warunki miesięcznej opieki
+
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
 

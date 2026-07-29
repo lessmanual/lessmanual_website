@@ -106,6 +106,9 @@ export function PricingV2() {
 
         <div className="mt-6 border-l-2 border-[#B87333] bg-[#F5EDE6] px-5 py-4">
           <p className="text-[14px] leading-relaxed text-[#525252]">
+            Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
+          </p>
+          <p className="mt-3 text-[14px] leading-relaxed text-[#525252]">
             <strong className="text-[#0A0A0A]">Granica zakresu:</strong>{" "}
             Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.
           </p>

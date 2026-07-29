@@ -3,7 +3,7 @@
 > Odpowiedzi na najczęstsze pytania o systemy AI LessManual. Dowiedz się jak działamy, ile to kosztuje i jak zadbamy o bezpieczeństwo Twoich danych.
 
 > Source: https://www.lessmanual.ai/faq
-> Generated: 2026-07-27T08:27:42.019Z
+> Generated: 2026-07-29T11:34:07.043Z
 
 ---
 
@@ -22,9 +22,15 @@ Odpowiedzi na pytania o to jak działają nasze systemy, ile trwa wdrożenie i c
 
 Czy to zadziała w mojej branży?+
 
+Nie zakładamy tego bez diagnozy. Sprawdzamy proces, liczbę powtórzeń, dostępne dane, integracje i koszt obecnego sposobu pracy. Jeśli automatyzacja nie ma sensu, mówimy to wprost.
+
 Jak szybko zobaczę wyniki?+
 
+Najpierw robimy diagnozę i wybieramy jeden proces. Termin zależy od integracji, jakości danych, liczby wyjątków oraz zakresu testów. Konkretny harmonogram dostajesz przed rozpoczęciem prac.
+
 Czy potrzebuję wiedzy technicznej?+
+
+Nie. Potrzebujemy od Ciebie wiedzy o procesie, wyjątkach i oczekiwanym wyniku. LessManual odpowiada za projekt, wdrożenie, testy oraz utrzymanie systemu.
 
 CENY I WARUNKI
 
@@ -34,9 +40,19 @@ Szczegóły dotyczące wyceny, warunków współpracy i sposobu odbioru wdrożen
 
 Ile to kosztuje?+
 
+Pracujemy w modelu wdrożenie + miesięczna obsługa. Nie pokazujemy publicznego cennika jako głównego kryterium, bo zakres zależy od procesu, wolumenu, danych, integracji i poziomu utrzymania. Konkretne kwoty podajemy po diagnozie.
+
 Czy muszę mieć duży budżet żeby zacząć?+
 
+Potrzebujesz problemu, którego koszt da się zmierzyć. Jeśli temat jest zbyt mały, powiemy to wprost. Jeśli ma sens, zaczynamy od jednego procesu i dopiero po wyniku rozważamy kolejny.
+
+Co obejmuje miesięczna opieka po wdrożeniu?+
+
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
+
 Co jeśli nie zadziała?+
+
+Przed startem zapisujemy zakres, kryteria wyniku, odpowiedzialności i sposób odbioru. Warunki rozliczenia oraz ewentualnej gwarancji wynikają z konkretnej oferty i umowy.
 
 BEZPIECZEŃSTWO I ZAUFANIE
 
@@ -46,9 +62,15 @@ Pytania o bezpieczeństwo danych, zakres odpowiedzialności i kontrolę człowie
 
 Czy AI nie pomyli się i nie zrazi moich klientów?+
 
+Ryzyko błędu ograniczamy przez zatwierdzone źródła, reguły, testy i przekazywanie wyjątków do człowieka. W procesach o większym ryzyku człowiek zatwierdza wynik przed działaniem.
+
 A co z RODO i bezpieczeństwem danych?+
 
+Przed wdrożeniem ustalamy, jakie dane są potrzebne, kto ma do nich dostęp, gdzie są przetwarzane i jak długo są przechowywane. Architekturę oraz umowy dobieramy do rodzaju danych i wymagań firmy.
+
 Ktoś mnie już oszukał z AI. Czemu mam Ci zaufać?+
+
+Zaczynamy od konkretnego procesu, kryterium wyniku i jasnego zakresu odpowiedzialności. Możesz sprawdzić publiczne opinie o LessManual, a przed decyzją zobaczysz sposób kontroli systemu i zasady odbioru.
 
 Pierwszy krok: diagnoza procesu
 
@@ -56,8 +78,20 @@ Pierwszy krok: diagnoza procesu
 
 Mapa pokaże pierwszy proces do automatyzacji, źródła potrzebne do działania agenta i sposób kontroli wyniku. Jeśli wdrożenie nie ma sensu, powiem Ci to wprost.
 
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
+
+[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
 
 LessManual.ai · Bartłomiej Chudzik
 
-[Oferta](/oferta)[Blog](/blog)[FAQ](/faq)[Polityka prywatności](/legal/polityka-prywatnosci)[Cookies](/legal/polityka-cookies)[Regulamin](/legal/regulamin)
+[Oferta](/oferta)
+
+[Blog](/blog)
+
+[FAQ](/faq)
+
+[Polityka prywatności](/legal/polityka-prywatnosci)
+
+[Cookies](/legal/polityka-cookies)
+
+[Regulamin](/legal/regulamin)

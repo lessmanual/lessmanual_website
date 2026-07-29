@@ -3,7 +3,7 @@
 > Kampanie cold email B2B oparte na selekcji firm, publicznym powodzie kontaktu, kontroli faktów i ręcznej akceptacji wiadomości.
 
 > Source: https://www.lessmanual.ai/oferta/pipeline-machine
-> Generated: 2026-07-29T06:52:52.369Z
+> Generated: 2026-07-29T11:34:07.207Z
 
 ---
 
@@ -71,6 +71,8 @@ Co miesiąc
 Dodatkowy wolumen, nowy rynek, język, oferta, kanał kontaktu, infrastruktura wysyłkowa albo migracja dostawcy wymagają nowej diagnozy i osobnej wyceny.
 
 ### Warunki miesięcznej opieki
+
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
 

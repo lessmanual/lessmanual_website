@@ -3,7 +3,7 @@
 > Agent AI dopasowany do niestandardowego procesu, danych i integracji firmy. Diagnoza, projekt, wdrożenie i utrzymanie.
 
 > Source: https://www.lessmanual.ai/oferta/indywidualne-wdrozenia
-> Generated: 2026-07-29T06:52:52.479Z
+> Generated: 2026-07-29T11:34:07.314Z
 
 ---
 
@@ -69,6 +69,8 @@ Co miesiąc
 Nowy dział, proces, źródło danych, kanał, dostawca albo istotna zmiana logiki biznesowej oznaczają rozszerzenie projektu z osobnym terminem i wyceną.
 
 ### Warunki miesięcznej opieki
+
+Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
 
 Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
 

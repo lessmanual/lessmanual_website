@@ -38,11 +38,13 @@ function FAQItem({ q, a, idx }: { q: string; a: string; idx: number }) {
           +
         </span>
       </button>
-      {open && (
-        <p id={panelId} className="pb-5 text-[15px] leading-[1.65] text-[#525252]">
-          {a}
-        </p>
-      )}
+      <p
+        id={panelId}
+        hidden={!open}
+        className="pb-5 text-[15px] leading-[1.65] text-[#525252]"
+      >
+        {a}
+      </p>
     </div>
   );
 }
