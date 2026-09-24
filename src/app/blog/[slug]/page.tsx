@@ -167,7 +167,7 @@ export default async function BlogPostPage({
               </h1>
 
               <div className="flex flex-wrap items-center gap-3 text-sm text-text-muted">
-                <span>Bartłomiej Chudzik</span>
+                <span>Redaktor: Bartłomiej Chudzik</span>
                 <span aria-hidden="true">·</span>
                 <span className="text-text-muted/70">Founder & CTO, LessManual.ai</span>
                 {post.published_at && (
