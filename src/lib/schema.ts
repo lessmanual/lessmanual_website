@@ -39,6 +39,12 @@ export function generateBlogPostSchema(post: BlogPost) {
       url: "https://www.lessmanual.ai",
       jobTitle: "Founder & CTO",
     },
+    // Redaktor = człowiek z odpowiedzialnością redakcyjną za tekst (AI Act art. 50 ust. 4).
+    editor: {
+      "@type": "Person",
+      name: "Bartłomiej Chudzik",
+      url: "https://www.lessmanual.ai",
+    },
     publisher: {
       "@type": "Organization",
       name: "LessManual.ai",
