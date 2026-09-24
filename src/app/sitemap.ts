@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 import { getPublishedPosts } from "@/lib/supabase";
 
+// Bez tego Next buduje sitemapę raz przy deployu (Route Handler jest cache'owany
+// domyślnie), więc post opublikowany z bazy nie trafiał do sitemap.xml aż do
+// następnego wdrożenia strony. 60 s jak na /blog i /blog/[slug] (24.09.2026).
+export const revalidate = 60;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://www.lessmanual.ai";
 

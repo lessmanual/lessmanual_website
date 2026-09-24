@@ -10,6 +10,7 @@ import {
   generateBreadcrumbSchema,
   serializeJsonLd,
 } from "@/lib/schema";
+import { extractFaqSchema } from "@/lib/blog-faq-schema";
 import { normalizePublicProse } from "@/lib/public-prose";
 
 export const revalidate = 60;
@@ -106,6 +107,8 @@ export default async function BlogPostPage({
       url: `https://www.lessmanual.ai/blog/${post.slug}`,
     },
   ]);
+  // FAQPage siedzi w <head> treści posta, którego sanitizer nie przepuszcza.
+  const faqSchema = post.content_pl ? extractFaqSchema(post.content_pl) : null;
 
   return (
     <div className="v2-scope">
@@ -144,6 +147,12 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
+        />
+      )}
       <HeaderV2 />
       <main className="pt-16 pb-16 md:pb-0">
         <article className="py-20 md:py-28">
