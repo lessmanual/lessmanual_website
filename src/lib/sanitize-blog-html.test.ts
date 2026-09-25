@@ -27,4 +27,19 @@ describe("sanitizeBlogHtml", () => {
     expect(result).toContain("<strong>ważnym</strong>");
     expect(result).toContain('href="https://www.lessmanual.ai/oferta"');
   });
+
+  // Treść posta w bazie to pełny dokument HTML z <head><title> i własnym <h1>. Strona renderuje
+  // tytuł sama, a sanitizer zostawiał tekst z <title> i spłaszczonego <h1>, więc na każdym
+  // poście tytuł stał nad pierwszym akapitem jeszcze dwa razy (znalezione 25.09.2026).
+  it("drops the document title and the article h1, which the page renders itself", () => {
+    const html =
+      "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title>Tytuł posta</title></head>" +
+      "<body><article><h1>Tytuł posta</h1><p>Pierwszy akapit.</p></article></body></html>";
+
+    const result = sanitizeBlogHtml(html);
+
+    expect(result).not.toContain("Tytuł posta");
+    expect(result).toContain("<p>Pierwszy akapit.</p>");
+  });
 });
+
