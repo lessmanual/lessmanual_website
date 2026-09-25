@@ -68,15 +68,15 @@ export function CookieBanner() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="flex-1">
               <h3 className="font-serif text-lg text-text mb-1">
-                Ta strona uzywa plikow cookies
+                Ta strona używa plików cookies
               </h3>
               <p className="text-sm text-text-secondary">
-                Uzywamy cookies aby zapewnic prawidlowe dzialanie strony.{" "}
+                Używamy cookies, aby zapewnić prawidłowe działanie strony.{" "}
                 <Link
                   href="/legal/polityka-cookies"
                   className="text-[#8B4513] underline"
                 >
-                  Dowiedz sie wiecej
+                  Dowiedz się więcej
                 </Link>
               </p>
             </div>
@@ -92,7 +92,7 @@ export function CookieBanner() {
                 onClick={acceptNecessary}
                 className="px-5 py-2.5 text-sm border border-border rounded-[6px] text-text-secondary hover:border-accent hover:text-accent transition-colors"
               >
-                Tylko niezbedne
+                Tylko niezbędne
               </button>
               <button
                 onClick={acceptAll}
@@ -109,7 +109,7 @@ export function CookieBanner() {
                 Ustawienia cookies
               </h3>
               <p className="text-sm text-text-secondary">
-                Wybierz, ktore kategorie cookies chcesz zaakceptowac.{" "}
+                Wybierz, które kategorie cookies chcesz zaakceptować.{" "}
                 <Link
                   href="/legal/polityka-cookies"
                   className="text-[#8B4513] underline"
@@ -129,11 +129,11 @@ export function CookieBanner() {
                 />
                 <div className="flex-1">
                   <div className="text-sm font-medium text-text">
-                    Niezbedne cookies (wymagane)
+                    Niezbędne cookies (wymagane)
                   </div>
                   <p className="text-xs text-text-muted mt-0.5">
-                    Niezbedne do prawidlowego dzialania strony. Nie moga byc
-                    wylaczone.
+                    Niezbędne do prawidłowego działania strony. Nie mogą być
+                    wyłączone.
                   </p>
                 </div>
               </label>
@@ -155,7 +155,7 @@ export function CookieBanner() {
                     Funkcjonalne cookies
                   </div>
                   <p className="text-xs text-text-muted mt-0.5">
-                    Zapamietanie preferencji uzytkownika (np. jezyk, strefa
+                    Zapamiętanie preferencji użytkownika (np. język, strefa
                     czasowa).
                   </p>
                 </div>
@@ -217,7 +217,7 @@ export function CookieBanner() {
                 onClick={acceptNecessary}
                 className="px-5 py-2.5 text-sm border border-border rounded-[6px] text-text-secondary hover:border-accent hover:text-accent transition-colors"
               >
-                Tylko niezbedne
+                Tylko niezbędne
               </button>
               <button
                 onClick={saveCustom}

@@ -31,6 +31,10 @@ const ALLOWED_TAGS = [
 export function sanitizeBlogHtml(html: string): string {
   return sanitizeHtml(html, {
     allowedTags: [...ALLOWED_TAGS],
+    // Tagi usuwane razem z tekstem. Domyślnie sanitize-html zostawia tekst niedozwolonych
+    // tagów, więc <title> z <head> i <h1> artykułu lądowały w treści jako goły tytuł.
+    // Tytuł renderuje strona posta, więc z treści wypada w całości.
+    nonTextTags: ["script", "style", "textarea", "option", "noscript", "head", "title", "h1"],
     allowedAttributes: {
       a: ["href", "title", "rel"],
       img: ["src", "alt", "title", "width", "height", "loading"],
