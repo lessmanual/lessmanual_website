@@ -137,7 +137,7 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | Google Ireland Limited i Google LLC | statystyki odwiedzin (Google Analytics 4), tylko po zgodzie | dane z § 4.9 |
 | Cal.com, Inc. (USA) | kalendarz rezerwacji rozmów | dane z § 4.4 |
 | inFakt spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie | wystawianie faktur | dane z § 4.10 |
-| [DO UZUPEŁNIENIA: biuro rachunkowe, jeśli jest] | księgowość | dane z § 4.10 |
+| osoba prowadząca księgowość, w systemie inFakt | księgowość | dane z § 4.10 |
 | Anthropic PBC (USA) | model AI Claude, z którego korzystają nasi agenci przy przygotowaniu rozmowy (§ 4.5) | dane ze zgłoszenia i notatki z CRM |
 
 2. Cal.com w ramce kalendarza używa też własnych narzędzi statystycznych (Google Analytics Cal.com). W tym zakresie Cal.com działa jako osobny administrator według własnej polityki prywatności (cal.com/privacy). Ramka ładuje się dopiero po Twojej zgodzie (zobacz Politykę cookies).
@@ -221,7 +221,7 @@ Po upływie okresu usuwamy dane albo nieodwracalnie je anonimizujemy.
 1. Strona działa wyłącznie przez szyfrowane połączenie HTTPS.
 2. Zgłoszenia zapisuje do bazy tylko serwer. Klucz z pełnym dostępem do bazy nie trafia do przeglądarki.
 3. Formularz ma zabezpieczenia przed botami i masowymi zgłoszeniami. Adres IP nie trafia do bazy zgłoszeń.
-4. Dostęp do danych mają tylko osoby, które ich potrzebują do pracy: [DO UZUPEŁNIENIA: Bartłomiej Chudzik oraz ewentualnie inne osoby z upoważnieniem].
+4. Dostęp do danych z formularza ma wyłącznie Bartłomiej Chudzik.
 
 ## § 13. Pliki cookies
 
