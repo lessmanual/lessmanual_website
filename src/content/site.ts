@@ -19,9 +19,9 @@ export const LINKS = {
   linkedinBartek: "https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197",
   linkedinRecommendations:
     "https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197/details/recommendations/",
-  // W kodzie produkcji (main) jest tylko g.page/r/lessmanual/review, który przekierowuje na
-  // google.com (sprawdzone 11.11). Do czasu dokładnego adresu wizytówki: Mapy z wyszukiwaniem.
-  googleProfile: "https://www.google.com/maps/search/?api=1&query=LessManual",
+  // Stały link wizytówki „LessManual - Agencja Automatyzacji AI” w Mapach Google (Bartek 11.11;
+  // stary g.page/r/lessmanual/review kończył się na google.com).
+  googleProfile: "https://www.google.com/maps?cid=10191824326439953363",
   privacy: "/legal/polityka-prywatnosci",
   email: "kontakt@lessmanual.ai",
 } as const;
@@ -33,10 +33,11 @@ export function formHref(path: "A" | "B" | "C"): string {
 
 export type GoogleRating = { rating: string; ratingValue: number; reviews: number; readOn: string };
 
-const GOOGLE_RATING: GoogleRating | null = { rating: "5,0", ratingValue: 5, reviews: 6, readOn: "2026-11-11" };
+// 11.11 publicznie 4 opinie (stan Map Google), schema musi zgadzać się z tym, co widzi użytkownik.
+const GOOGLE_RATING: GoogleRating | null = { rating: "5,0", ratingValue: 5, reviews: 4, readOn: "2026-11-11" };
 
 export const PROOF = {
-  // Pasek dowodów, decyzja Bartka 11.11: „24+ firm · 31 wdrożeń · 5,0 w Google (6 opinii)”.
+  // Pasek dowodów, decyzja Bartka 11.11: „24+ firm · 31 wdrożeń · 5,0 w Google”; liczba opinii z Map Google (4).
   // Jedno miejsce na liczby; hero, OG i dane strukturalne czytają stąd.
   companies: "24+",
   implementations: 31,
@@ -44,7 +45,7 @@ export const PROOF = {
   oneClient:
     "U jednego klienta od grudnia 2025 uruchomiliśmy 9 systemów, 7 z nich pracuje (stan na 11.11.2026).",
   asOf: "2026-11-11",
-  // Ocena jak na obecnej stronie (5.0, 6 opinii; dwie od tej samej osoby, więc kart byłoby 5).
+  // Ocena z wizytówki „LessManual - Agencja Automatyzacji AI” (Mapy Google, odczyt Bartka 11.11).
   // Zatwierdzone przez Bartka 11.11; ustawienie null zdejmuje ocenę i AggregateRating.
   google: GOOGLE_RATING,
 } as const;
@@ -448,3 +449,12 @@ export const FOOTER = {
     "LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Budujemy systemy AI, które ograniczają ręczną pracę, i opiekujemy się nimi po wdrożeniu.",
   note: "Przyjmujemy maksymalnie 4 nowe firmy miesięcznie.",
 } as const;
+
+/** Polska odmiana: 1 opinia, 2-4 opinie (bez 12-14), 5+ opinii. */
+export function opinieLabel(liczba: number): string {
+  if (liczba === 1) return "1 opinia";
+  const reszta10 = liczba % 10;
+  const reszta100 = liczba % 100;
+  if (reszta10 >= 2 && reszta10 <= 4 && (reszta100 < 12 || reszta100 > 14)) return `${liczba} opinie`;
+  return `${liczba} opinii`;
+}

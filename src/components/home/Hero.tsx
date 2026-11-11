@@ -1,6 +1,6 @@
 import { Bzyk } from "@/components/site/Bzyk";
 import { ArrowRight, Star } from "@/components/site/Icons";
-import { BZYK_LINES, HERO, LINKS, PROOF } from "@/content/site";
+import { BZYK_LINES, HERO, LINKS, PROOF, opinieLabel } from "@/content/site";
 import { HeroScene } from "./HeroScene";
 import styles from "./Hero.module.css";
 
@@ -50,7 +50,7 @@ export function Hero() {
                   <Star />
                 </span>
                 <strong>{PROOF.google.rating}</strong>
-                <span className={styles.ratingLabel}>{PROOF.google.reviews} opinii w Google</span>
+                <span className={styles.ratingLabel}>{opinieLabel(PROOF.google.reviews)} w Google</span>
               </a>
             ) : null}
             <span>{PROOF.bar}</span>

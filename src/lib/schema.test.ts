@@ -23,7 +23,7 @@ describe("ORGANIZATION_SCHEMA", () => {
     expect(organization.founder.name).toBe("Bartłomiej Chudzik");
   });
 
-  // AggregateRating tylko z prawdziwą oceną Google (decyzja Bartka 11.11: 5,0 i 6 opinii);
+  // AggregateRating tylko z prawdziwą oceną Google (11.11 publicznie 5,0 i 4 opinie w Mapach Google);
   // PROOF.google = null musi zdjąć pole, bo Google karze za ocenę bez pokrycia.
   it("carries the Google rating from PROOF as aggregateRating, or none when it is null", () => {
     const rating = PROOF.google;
