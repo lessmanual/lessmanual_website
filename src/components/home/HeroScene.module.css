@@ -104,9 +104,9 @@
 
 /* Mobile: dokumenty u góry w dwóch rzędach, Bzyk pod nimi (projekt v3, klatki mobile). */
 .doc[data-i="0"] { left: 10px; top: 14px; --r: -3deg; --dx: 96px; --dy: 132px; }
-.doc[data-i="1"] { left: 176px; top: 18px; --r: 2deg; --dx: -70px; --dy: 128px; }
+.doc[data-i="1"] { right: 10px; top: 18px; --r: 2deg; --dx: -70px; --dy: 128px; }
 .doc[data-i="2"] { left: 18px; top: 66px; --r: 2deg; --dx: 88px; --dy: 80px; }
-.doc[data-i="3"] { left: 172px; top: 72px; --r: -2deg; --dx: -66px; --dy: 74px; }
+.doc[data-i="3"] { right: 14px; top: 72px; --r: -2deg; --dx: -66px; --dy: 74px; }
 
 .bzyk {
   position: absolute;

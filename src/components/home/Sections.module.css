@@ -535,3 +535,10 @@
   color: var(--ink);
   font-size: 17px;
 }
+
+/* Długie etykiety przycisków dróg („Umów rozmowę o pilocie”) łamią się na wąskich ekranach (320 px). */
+.pathCta {
+  white-space: normal;
+  text-align: left;
+  max-width: 100%;
+}
