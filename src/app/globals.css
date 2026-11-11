@@ -424,3 +424,15 @@ summary:focus-visible {
 html[data-zgoda-cookies="ok"] .lm-cookie-banner {
   display: none;
 }
+
+/* Przyciski banera na telefonie: niskie (44 px, cel dotyku WCAG 2.5.8 z zapasem), tekst może się
+   złamać w dwie linie zamiast rozpychać pasek. */
+@media (max-width: 767px) {
+  .lm-cookie-btn {
+    min-height: 44px;
+    padding: 4px 10px;
+    font-size: 15px;
+    line-height: 1.15;
+    white-space: normal;
+  }
+}

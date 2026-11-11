@@ -172,3 +172,25 @@
   gap: 2px;
   color: var(--copper);
 }
+
+/* Niski ekran telefonu (np. 375 x 553 z paskami przeglądarki): zwarty hero, żeby „Umów rozmowę”
+   był widoczny nad paskiem cookies (delta QA 11.11). */
+@media (max-width: 767px) and (max-height: 700px) {
+  .hero {
+    padding-block: 14px 40px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .ctaRow {
+    margin-top: 16px;
+  }
+}

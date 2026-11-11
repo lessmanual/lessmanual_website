@@ -2,7 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: color-mix(in srgb, var(--bg) 96%, transparent);
+  /* Pełne tło: przy przewijaniu tekst nie prześwituje za logo i menu (delta QA 11.11). */
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
 

@@ -103,29 +103,43 @@ export function CookieBanner() {
       aria-label="Zgoda na pliki cookies"
       className="lm-cookie-banner fixed bottom-0 left-0 right-0 z-[60] max-h-[100dvh] overflow-y-auto border-t border-line bg-surface shadow-[0_-8px_24px_#0a0a0a14] focus:outline-none"
     >
-      <div className="lm-container py-5">
+      <div className={`lm-container ${druga ? "py-5" : "py-2.5 md:py-5"}`}>
         {!druga ? (
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+          // Telefon: niski pasek (delta QA 11.11: pełny baner 314-394 px zasłaniał „Umów rozmowę”).
+          // Krótki tekst z linkiem do szczegółów, dwa równorzędne przyciski i „Ustawienia” obok.
+          // Desktop: pełna treść pierwszej warstwy z treść-zgód.md § 4.
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-4">
             <div className="flex-1">
-              <p className="text-[17px] font-semibold text-ink">Ta strona używa plików cookies</p>
-              <p className="mt-1 text-[15px] leading-relaxed text-ink-2">
+              <p className="hidden text-[17px] font-semibold text-ink md:block">Ta strona używa plików cookies</p>
+              <p className="hidden text-[15px] leading-relaxed text-ink-2 md:mt-1 md:block">
                 Niezbędne cookies zapamiętują Twój wybór. Statystyki Google Analytics i kalendarz Cal.com włączamy
                 tylko po Twojej zgodzie. Zgodę zmienisz w każdej chwili w „Ustawieniach cookies” w stopce.{" "}
                 <Link href="/legal/polityka-cookies" className="lm-link">
                   Polityka cookies
                 </Link>
               </p>
+              <p className="text-[15px] leading-snug text-ink-2 md:hidden">
+                Cookies: statystyki i kalendarz tylko za zgodą.{" "}
+                <Link href="/legal/polityka-cookies" className="lm-link">
+                  Szczegóły
+                </Link>
+              </p>
             </div>
-            <div className="flex w-full flex-wrap gap-2 md:w-auto">
-              <button type="button" onClick={() => zapisz(BRAK_ZGODY)} className="lm-btn lm-btn--secondary lm-btn--sm">
+            <div className="grid grid-cols-[1fr_1fr_auto] gap-2 md:flex md:w-auto">
+              <button
+                type="button"
+                onClick={() => zapisz(BRAK_ZGODY)}
+                className="lm-btn lm-btn--secondary lm-btn--sm lm-cookie-btn"
+              >
                 Odrzuć opcjonalne
               </button>
               <button
                 type="button"
                 onClick={() => zapisz({ analityczne: true, kalendarz: true })}
-                className="lm-btn lm-btn--secondary lm-btn--sm"
+                className="lm-btn lm-btn--secondary lm-btn--sm lm-cookie-btn"
               >
-                Akceptuj wszystkie
+                <span className="md:hidden">Akceptuj</span>
+                <span className="hidden md:inline">Akceptuj wszystkie</span>
               </button>
               <button
                 type="button"
@@ -133,7 +147,7 @@ export function CookieBanner() {
                   setWybor(czytajZgodeCookies());
                   setDruga(true);
                 }}
-                className="lm-btn lm-btn--secondary lm-btn--sm"
+                className="lm-btn lm-btn--secondary lm-btn--sm lm-cookie-btn"
               >
                 Ustawienia
               </button>
