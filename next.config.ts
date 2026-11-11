@@ -2,12 +2,6 @@ import type { NextConfig } from "next";
 import path from "path";
 import { buildSecurityHeaders } from "./src/lib/security-headers";
 
-const AGENT_LINK_HEADER = [
-  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
-  '</.well-known/agent-skills/index.json>; rel="https://agentskills.io/rel/index"',
-  '</openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json;version=3.1"',
-  '</.well-known/mcp/server-card.json>; rel="https://modelcontextprotocol.io/rel/server-card"',
-].join(", ");
 const SECURITY_HEADERS = buildSecurityHeaders(
   process.env.NODE_ENV === "development",
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -68,55 +62,21 @@ const nextConfig: NextConfig = {
       { source: "/demo-hero", destination: "/", statusCode: 301 },
       { source: "/demo-hero-final", destination: "/", statusCode: 301 },
       { source: "/demo-layouts", destination: "/", statusCode: 301 },
+      // Narzędzia wycofane przed publikacją v3 (audyt zgodności P11): SafeDraft i lead magnet
+      // przetwarzały dane bez opisu w polityce prywatności.
+      { source: "/safedraft", destination: "/", statusCode: 301 },
+      { source: "/safedraft/:path*", destination: "/", statusCode: 301 },
+      { source: "/ai-growth-opportunity-map", destination: "/", statusCode: 301 },
+      { source: "/ai-growth-opportunity-map/:path*", destination: "/", statusCode: 301 },
     ];
   },
-  async rewrites() {
-    return [
-      // RFC-mandated paths without file extension -> serve static .json
-      { source: "/.well-known/api-catalog", destination: "/.well-known/api-catalog.json" },
-      { source: "/.well-known/oauth-authorization-server", destination: "/.well-known/oauth-authorization-server.json" },
-      { source: "/.well-known/oauth-protected-resource", destination: "/.well-known/oauth-protected-resource.json" },
-    ];
-  },
+  // Pliki dla agentów AI (api-catalog, openapi, agent-skills, mcp, oauth) opisywały usunięte
+  // /api/generate-email i /api/offers, więc zniknęły razem z nagłówkiem Link. Dla czatbotów zostaje llms.txt.
   async headers() {
     return [
       {
         source: "/(.*)",
         headers: SECURITY_HEADERS,
-      },
-      // Link response headers (RFC 8288) on key pages
-      {
-        source: "/",
-        headers: [{ key: "Link", value: AGENT_LINK_HEADER }],
-      },
-      // Content-Type overrides for well-known (Vercel defaults do not cover linkset/vendored openapi)
-      {
-        source: "/.well-known/api-catalog",
-        headers: [
-          { key: "Content-Type", value: "application/linkset+json; charset=utf-8" },
-          { key: "Cache-Control", value: "public, max-age=3600" },
-        ],
-      },
-      {
-        source: "/.well-known/oauth-authorization-server",
-        headers: [
-          { key: "Content-Type", value: "application/json; charset=utf-8" },
-          { key: "Cache-Control", value: "public, max-age=3600" },
-        ],
-      },
-      {
-        source: "/.well-known/oauth-protected-resource",
-        headers: [
-          { key: "Content-Type", value: "application/json; charset=utf-8" },
-          { key: "Cache-Control", value: "public, max-age=3600" },
-        ],
-      },
-      {
-        source: "/openapi.json",
-        headers: [
-          { key: "Content-Type", value: "application/vnd.oai.openapi+json;version=3.1" },
-          { key: "Cache-Control", value: "public, max-age=3600" },
-        ],
       },
     ];
   },

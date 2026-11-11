@@ -15,7 +15,7 @@ test.describe("website security headers", () => {
       }
     });
 
-    for (const path of ["/", "/kontakt", "/ai-growth-opportunity-map"]) {
+    for (const path of ["/", "/kontakt", "/systemy"]) {
       const response = await page.goto(path);
       if (!response) {
         throw new Error(`Expected an HTTP response for ${path}`);

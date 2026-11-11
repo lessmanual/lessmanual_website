@@ -46,6 +46,10 @@ describe("redirects from the retired offer pages", () => {
     ["/demo-hero", "/"],
     ["/demo-hero-final", "/"],
     ["/demo-layouts", "/"],
+    ["/safedraft", "/"],
+    ["/safedraft/cokolwiek", "/"],
+    ["/ai-growth-opportunity-map", "/"],
+    ["/ai-growth-opportunity-map/x/y", "/"],
   ])("sends %s to %s", async (from, to) => {
     expect(resolve(await redirectMap(), from)).toBe(to);
   });

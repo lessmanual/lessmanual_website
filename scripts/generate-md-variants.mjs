@@ -17,7 +17,6 @@ const ROUTES = [
   "/faq",
   "/o-nas",
   "/kontakt",
-  "/ai-growth-opportunity-map",
   "/oferta",
   "/oferta/hot-lead-catcher",
   "/oferta/pipeline-machine",

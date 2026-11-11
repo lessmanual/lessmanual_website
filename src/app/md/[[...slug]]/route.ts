@@ -10,7 +10,6 @@ const ALLOWED = new Set([
   "faq",
   "o-nas",
   "kontakt",
-  "ai-growth-opportunity-map",
   "systemy",
   "systemy/odczyt-dokumentow",
   "systemy/okazje-sprzedazowe-i-przetargi",

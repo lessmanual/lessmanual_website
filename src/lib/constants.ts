@@ -15,7 +15,6 @@ export const CALENDLY_URL =
   "https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min";
 export const EMAIL = "kontakt@lessmanual.ai";
 export const GOOGLE_REVIEWS_URL = "https://g.page/r/lessmanual/review";
-export const AI_GROWTH_MAP_URL = "/ai-growth-opportunity-map";
 
 export const HERO_ROTATOR_WORDS = ["klienci", "wyniki", "zyski"];
 
