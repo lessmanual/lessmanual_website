@@ -116,6 +116,9 @@ html {
   }
 }
 
+/* Style elementów w warstwie base, żeby klasy Tailwinda (warstwa utilities) na blogu
+   i w legal mogły je nadpisać; poza warstwą wygrywałyby z każdą klasą. */
+@layer base {
 body {
   background: var(--bg);
   color: var(--ink);
@@ -166,6 +169,7 @@ p {
   background: var(--copper);
   color: #fff;
 }
+}
 
 /* Reduced motion: animacje wyłączone; komponenty z ruchem mają własny stan końcowy. */
 @media (prefers-reduced-motion: reduce) {
@@ -194,7 +198,10 @@ summary:focus-visible {
 
 /* ============================================
    Komponenty lm-* (z design-system-komponenty.css, skala 10.11)
+   W warstwie components: klasy Tailwinda mogą je doprecyzować, moduły CSS (poza warstwą) też.
    ============================================ */
+
+@layer components {
 
 .lm-container {
   width: 100%;
@@ -396,4 +403,5 @@ summary:focus-visible {
 .bzyk path,
 .bzyk ellipse {
   transition: opacity 160ms var(--ease-out);
+}
 }
