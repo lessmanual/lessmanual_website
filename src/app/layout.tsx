@@ -25,10 +25,6 @@ const inter = Inter({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
   display: "swap",
-  // Bez preloadu: 130 kB Inter (latin + latin-ext) nie konkuruje o pasmo z HTML i JS przed pierwszym
-  // malowaniem; tekst LCP rysuje się od razu fontem zastępczym z dopasowanymi metrykami
-  // (adjustFontFallback), więc podmiana nie przesuwa układu.
-  preload: false,
 });
 
 export const viewport: Viewport = {
