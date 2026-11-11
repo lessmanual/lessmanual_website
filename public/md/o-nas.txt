@@ -1,118 +1,19 @@
-# O nas | LessManual
+# Kim jesteśmy | LessManual.ai
 
-> Bartłomiej Chudzik projektuje, wdraża i utrzymuje agentów AI, które zdejmują ręczną pracę z procesów firm B2B.
+> LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Firmę prowadzi Bartłomiej Chudzik. Budujemy systemy AI i opiekujemy się nimi po wdrożeniu.
 
 > Source: https://www.lessmanual.ai/o-nas
-> Generated: 2026-07-27T08:27:42.344Z
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
 
 ---
 
-O NAS
+# Kim jesteśmy
 
-# Buduję systemy,
-które zdejmują
-ręczną pracę.
+LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Budujemy systemy AI, które ograniczają ręczną pracę, i opiekujemy się nimi po wdrożeniu.
 
-Bartłomiej Chudzik. Solo founder, architekt automatyzacji AI. Przez 8 lat pracowałem w transporcie i logistyce, optymalizowałem procesy i zarządzałem projektami. Dziś buduję systemy AI dla firm B2B w Polsce, które zdejmują z ludzi ręczne, powtarzalne zadania.
+Firmę prowadzi Bartłomiej Chudzik. Od 2017 do 2025 roku pracował w transporcie i logistyce: zaczynał jako dyspozytor, potem był specjalistą do spraw transportu w dużych firmach produkcyjnych. Dlatego zaczynamy od procesu i liczb, a technologię dobieramy do nich.
 
-Misja LessManual jest prosta: mniej ręcznego przekładania danych, więcej czasu na decyzje, klientów i rozwój firmy.
+Część systemów budujemy dla dużych firm razem z partnerem wdrożeniowym. Nazw tych firm nie podajemy, bo obowiązuje nas poufność.
 
-![Bartłomiej Chudzik - LessManual](/_next/image?url=%2Fbartek.jpg&w=640&q=75)
-
-DLACZEGO
-
-## Mniej manual. Więcej efektu.
-
-01
-
-### Praktyczność ponad wszystko
-
-Zaczynam od kosztu ręcznej pracy i wyniku, który da się zmierzyć. Jeśli automatyzacja nie ma sensu, mówię to przed rozpoczęciem projektu.
-
-02
-
-### Jakość bez kompromisów
-
-System pracuje na zatwierdzonych źródłach, ma reguły działania, kontrolę wyniku i ścieżkę do człowieka. Kryteria odbioru ustalamy przed startem.
-
-03
-
-### Mały zakres na początek
-
-Projekt dzielę na diagnozę, pilotaż, uruchomienie i utrzymanie. Termin zależy od danych, integracji, liczby wyjątków oraz zakresu testów.
-
-04
-
-### Odpowiedzialność po wdrożeniu
-
-Po uruchomieniu sprawdzamy ustalone miary, logi i przypadki wymagające poprawy. System ma właściciela, plan utrzymania i jasne zasady eskalacji.
-
-KONTEKST
-
-## Skąd to doświadczenie.
-
-2018-2025
-
-### Optymalizacja procesów B2B
-
-8 lat w transporcie i logistyce międzynarodowej. Praca z procesami operacyjnymi, integracjami ERP, wyjątkami i odpowiedzialnością za działający system.
-
-2025
-
-### Budowa kompetencji AI
-
-Agenci AI, bazy wiedzy, aplikacje webowe i infrastruktura chmurowa. Od pierwszych prototypów do systemów pracujących na danych firm.
-
-10.2025
-
-### Start LessManual
-
-Powstała firma skupiona na automatyzacji sprzedaży, contentu, obsługi klienta i ofertowania. Każdy projekt zaczyna się od jednego procesu i mierzalnego kryterium wyniku.
-
-2025-2026
-
-### Wdrożenia dla firm B2B
-
-Projekty od diagnozy do uruchomienia. Osobiście odpowiadam za architekturę, budowę, testy oraz dalsze utrzymanie systemu.
-
-JAK
-
-## Zasady współpracy.
-
-ZASADA 01
-
-### Cena przed startem
-
-Po diagnozie dostajesz zakres, wycenę, kryteria wyniku i sposób utrzymania. Zmiany uzgadniamy przed rozpoczęciem dodatkowych prac.
-
-ZASADA 02
-
-### Jeden proces na początek
-
-Najpierw uruchamiamy ograniczony pilotaż i sprawdzamy wynik. Kolejne elementy dokładamy dopiero wtedy, gdy pierwszy zakres działa.
-
-ZASADA 03
-
-### Kontrola po uruchomieniu
-
-Mierzymy uzgodnione kryteria, analizujemy błędy i poprawiamy system w ramach ustalonej opieki. Przypadki o większym ryzyku trafiają do człowieka.
-
-ZASADA 04
-
-### Jasne granice działania
-
-Agent działa tylko w uzgodnionym zakresie. Nie podejmuje samodzielnie decyzji, których nie obejmują reguły i dane przygotowane do wdrożenia.
-
-Pierwszy krok: diagnoza procesu
-
-## Zacznij od procesu, który zabiera najwięcej czasu.
-
-Mapa pokaże pierwszy proces do automatyzacji, źródła potrzebne do działania agenta i sposób kontroli wyniku. Jeśli wdrożenie nie ma sensu, powiem Ci to wprost.
-
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
-
-LessManual.ai · Bartłomiej Chudzik
-
-[Oferta](/oferta)[Blog](/blog)[FAQ](/faq)[Polityka prywatności](/legal/polityka-prywatnosci)[Cookies](/legal/polityka-cookies)[Regulamin](/legal/regulamin)
-
-LessManual Bartłomiej Chudzik | NIP 1231589909 | Cendrowice, ul. Długa 33 | JDG od 09.10.2025
+- LinkedIn: https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197
+- [Umów rozmowę](https://www.lessmanual.ai/#formularz)

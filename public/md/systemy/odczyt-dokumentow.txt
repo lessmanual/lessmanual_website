@@ -1,0 +1,59 @@
+# System AI do odczytu dokumentów i faktur | LessManual
+
+> Bot odczytuje dokumenty z maila i wpisuje dane do arkusza albo programu firmy. Przykład: 215 dokumentów w pół roku, każdy bez błędu przetwarzania.
+
+> Source: https://www.lessmanual.ai/systemy/odczyt-dokumentow
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
+
+---
+
+# System, który przepisuje dokumenty z maila do arkusza
+
+Bot odbiera dokumenty wysłane mailem, odczytuje z nich dane i wpisuje je tam, gdzie pracuje Twój zespół. U jednego z klientów wpisał 215 dokumentów przyjęcia od kwietnia do października 2026, każdy bez błędu przetwarzania.
+
+## Problem
+
+W wielu firmach ktoś codziennie przepisuje te same pola z zamówień, faktur albo dokumentów przyjęcia. To praca, która nie wymaga decyzji, a zajmuje czas i daje literówki. Gdy ta osoba jest na urlopie, dokumenty czekają.
+
+## Jak działa
+
+- pracownik wysyła dokument mailem na jeden adres, tak jak dziś przekazuje go osobie, która go przepisuje;
+- bot odczytuje dokument i wpisuje dane do właściwego arkusza;
+- gdy brakuje danych, bot niczego nie zgaduje: odsyła mail z informacją, co uzupełnić;
+- dokument wysłany drugi raz nie trafia do arkusza ponownie.
+
+W przykładzie dane trafiają do arkuszy handlowców i do wspólnego rejestru zakładu. Jeśli Twój program księgowy albo ERP przyjmuje dane z zewnątrz, system można połączyć bezpośrednio z nim; sprawdzamy to na pierwszej rozmowie.
+
+## Efekt
+
+215 dokumentów przyjęcia wpisanych od kwietnia do października 2026, każdy bez błędu przetwarzania (zakład recyklingu).
+
+## Pytania o ten system
+
+### Jakie dokumenty odczyta system?
+
+Te, które dziś ktoś przepisuje ręcznie, na przykład zamówienia, faktury albo dokumenty przyjęcia. Przed startem sprawdzamy kilka Twoich dokumentów i ustalamy, które pola system ma odczytywać.
+
+### Czy zespół musi zmienić sposób pracy?
+
+W niewielkim stopniu. Dokumenty wysyła się mailem na jeden adres, a dane pojawiają się w arkuszu albo programie, z którego już korzystacie.
+
+### Co, jeśli dokument jest niepełny albo nieczytelny?
+
+System go nie wpisuje. Odsyła mail z informacją, czego brakuje, i czeka na poprawiony dokument.
+
+### Ile kosztuje taki system?
+
+Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. Cenę każdego etapu dostajesz przed startem.
+
+## Jak zaczynamy
+
+- Droga A, wiem, co mnie najbardziej boli: rozmowa z Bartkiem (45 minut) o Twoich programach. Dostajesz spisany zakres z efektem systemu i ceną każdego etapu. Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. [Umów rozmowę](https://www.lessmanual.ai/?droga=A#formularz)
+- Droga B, nie wiem, od czego zacząć: Mapa AI firmy. Plan systemów na kwartał i na rok, wynik w ciągu 5 dni roboczych od ostatniej rozmowy. 6 900 zł netto, w całości odliczane od pierwszego wdrożenia. [Umów rozmowę o Mapie](https://www.lessmanual.ai/?droga=B#formularz)
+- Droga C, najpierw chcę zobaczyć, że to działa: szybki pilot, dwa tygodnie, jeden proces na próbce Twoich spraw. Koszt podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu. [Umów rozmowę o pilocie](https://www.lessmanual.ai/?droga=C#formularz)
+
+## Inne systemy
+
+- [System, który codziennie szuka okazji sprzedażowych](https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi)
+- [Panel: wszystkie boty w jednym miejscu](https://www.lessmanual.ai/systemy/panel-firmy)
+- [System, który pisze treści sklepu pod Google](https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google)

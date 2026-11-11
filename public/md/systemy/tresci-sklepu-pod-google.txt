@@ -1,0 +1,53 @@
+# System AI do treści sklepu internetowego pod Google
+
+> Agent AI przygotowuje poradniki i rankingi produktów na danych sklepu, a właściciel zatwierdza plan. Przykład: 2 906 kliknięć z Google z artykułów z 2026.
+
+> Source: https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
+
+---
+
+# System, który pisze poradniki i rankingi produktów sklepu
+
+Agent AI przygotowuje poradniki i rankingi produktów na danych Twojego sklepu, a Ty zatwierdzasz plan publikacji. W sklepie z oświetleniem LED artykuły opublikowane w 2026 roku dały 2 906 kliknięć z Google.
+
+## Problem
+
+Poradniki i rankingi produktów przyciągają klientów z Google, ale ich pisanie i aktualizacja zajmują dużo czasu. Stare wpisy tracą ruch, bo Google coraz częściej sam odpowiada na pytania.
+
+## Jak działa
+
+- agent sprawdza dane produktów w sklepie, zanim zacznie pisać;
+- przygotowuje plan wpisów, a właściciel go zatwierdza;
+- poradniki i rankingi publikujemy według harmonogramu, pod dotychczasowymi adresami, jeśli wpis już istnieje;
+- co miesiąc pokazujemy, co weszło na stronę.
+
+## Efekt
+
+Artykuły opublikowane w 2026 roku dały 2 906 kliknięć z Google (raport z 21.09.2026). W listopadzie 6 przebudowanych poradników i 14 odświeżonych rankingów jest już online; wcześniej sprawdziliśmy dane 140 produktów.
+
+## Pytania o ten system
+
+### Czy treści publikują się bez mojej wiedzy?
+
+Nie. Plan wpisów zatwierdzasz Ty, a publikacja idzie według uzgodnionego harmonogramu.
+
+### Skąd agent bierze informacje o produktach?
+
+Z danych Twojego sklepu i z kryteriów, które nam przekażesz. Przed publikacją sprawdzamy dane produktów.
+
+### Ile kosztuje taki system?
+
+Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. Cenę każdego etapu dostajesz przed startem.
+
+## Jak zaczynamy
+
+- Droga A, wiem, co mnie najbardziej boli: rozmowa z Bartkiem (45 minut) o Twoich programach. Dostajesz spisany zakres z efektem systemu i ceną każdego etapu. Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. [Umów rozmowę](https://www.lessmanual.ai/?droga=A#formularz)
+- Droga B, nie wiem, od czego zacząć: Mapa AI firmy. Plan systemów na kwartał i na rok, wynik w ciągu 5 dni roboczych od ostatniej rozmowy. 6 900 zł netto, w całości odliczane od pierwszego wdrożenia. [Umów rozmowę o Mapie](https://www.lessmanual.ai/?droga=B#formularz)
+- Droga C, najpierw chcę zobaczyć, że to działa: szybki pilot, dwa tygodnie, jeden proces na próbce Twoich spraw. Koszt podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu. [Umów rozmowę o pilocie](https://www.lessmanual.ai/?droga=C#formularz)
+
+## Inne systemy
+
+- [System, który przepisuje dokumenty z maila do arkusza](https://www.lessmanual.ai/systemy/odczyt-dokumentow)
+- [System, który codziennie szuka okazji sprzedażowych](https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi)
+- [Panel: wszystkie boty w jednym miejscu](https://www.lessmanual.ai/systemy/panel-firmy)

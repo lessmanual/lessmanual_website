@@ -1,0 +1,407 @@
+/* Wspólne style podstron (systemy, o-nas, FAQ, blog, legal). Tokeny z globals.css. */
+
+.main {
+  background: var(--bg);
+}
+
+.head {
+  padding-block: 56px 48px;
+}
+
+@media (min-width: 768px) {
+  .head {
+    padding-block: 88px 64px;
+  }
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-small);
+  color: var(--ink-3);
+}
+
+.crumbs li + li::before {
+  content: "/";
+  margin-right: 8px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+  margin: 0 0 24px;
+}
+
+.titleWide {
+  max-width: 28ch;
+}
+
+.narrow {
+  max-width: 68ch;
+}
+
+.section {
+  padding-block: 56px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 80px;
+  }
+}
+
+.h2 {
+  font-size: clamp(26px, 3.4vw, 36px);
+  line-height: 1.15;
+  margin: 0 0 24px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 28px;
+  max-width: 760px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 40px;
+  }
+}
+
+.facts {
+  display: grid;
+  gap: 24px;
+  margin: 0;
+}
+
+.fact dt {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--ink-3);
+  margin: 0 0 6px;
+}
+
+.fact dd {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.factEffect dd {
+  font-weight: 500;
+}
+
+.paths {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .paths {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.path {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+}
+
+.path h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.path p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.pathLabel {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--copper-strong);
+  margin-bottom: 8px;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 32px;
+}
+
+.ctaNote {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.linkCards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .linkCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .linkCards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.systemCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+}
+
+.systemCard h2,
+.systemCard h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.systemCard p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.systemCard .cardLink {
+  margin-top: auto;
+  padding-top: 4px;
+  font-weight: 500;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.systemCard .cardLink:hover {
+  color: var(--sea);
+}
+
+/* O nas */
+.about {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 72px;
+  }
+}
+
+.aboutText p {
+  margin: 0 0 20px;
+  max-width: 62ch;
+  line-height: 1.65;
+}
+
+.photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  max-width: 320px;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photoCaption {
+  margin: 12px 0 0;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+/* FAQ bez JS */
+.faq {
+  max-width: 780px;
+  border-top: 1px solid var(--line);
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--line);
+}
+
+.faqItem summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 22px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqIcon {
+  flex: none;
+  margin-top: 4px;
+  transition: transform 150ms var(--ease-out);
+}
+
+.faqItem[open] .faqIcon {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  margin: 0 0 24px;
+  max-width: 64ch;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+
+/* Blog */
+.postGrid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .postGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .postGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.articleHead h1 {
+  font-size: clamp(30px, 4.5vw, 46px);
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.category {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--copper-strong);
+}
+
+.cover {
+  margin-block: 0 40px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ctaBox {
+  margin-top: 64px;
+  padding: 32px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.ctaBox h2 {
+  font-size: 28px;
+  margin: 0 0 12px;
+}
+
+.ctaBox p {
+  margin: 0;
+  color: var(--ink-2);
+  max-width: 56ch;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 10px;
+  max-width: 720px;
+  color: var(--ink-2);
+  font-size: var(--fs-body, 17px);
+  line-height: 1.6;
+}
+
+.afterList {
+  margin: 20px 0 0;
+  max-width: 720px;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.effectText {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.path .pathButton {
+  margin-top: 16px;
+}

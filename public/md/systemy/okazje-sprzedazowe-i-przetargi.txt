@@ -1,0 +1,59 @@
+# System AI do wyszukiwania przetargów i klientów | LessManual
+
+> Bot codziennie przegląda przetargi i wiadomości o firmach i wysyła handlowcom trafne sprawy. Przykład: 62 tematy w tydzień, 11 z 13 sygnałów trafnych.
+
+> Source: https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
+
+---
+
+# System, który codziennie szuka okazji sprzedażowych dla handlowców
+
+Bot codziennie przegląda ogłoszenia przetargowe i wiadomości o firmach z Twojego rynku, a trafne sprawy wysyła mailem handlowcom. U jednego z klientów handlowcy dostali 62 tematy w tydzień i ocenili 11 z 13 sygnałów od firm jako trafne.
+
+## Problem
+
+Informacja o zakupie, przetargu albo zmianie w firmie klienta jest publiczna, ale rozproszona po wielu stronach. Handlowcy nie mają czasu ich codziennie przeglądać, więc o okazji dowiadują się za późno albo wcale.
+
+## Jak działa
+
+- razem ustalamy, jakie sprawy są dla Ciebie okazją i w jakich krajach sprzedajesz;
+- bot codziennie przegląda wskazane źródła, także zagraniczne;
+- trafne sprawy trafiają mailem do handlowca odpowiedzialnego za dany rynek;
+- handlowiec ocenia każdą sprawę, a odrzucone z powodem pomagają zawęzić wyszukiwanie.
+
+W przykładzie handlowcy odrzucili przetargi spoza branży firmy, więc ten typ ogłoszeń wyłączyliśmy z wyszukiwania.
+
+## Efekt
+
+W tygodniu od 19 do 26 października 2026 handlowcy dostali 62 tematy. W kolejnym tygodniu ocenili 11 z 13 sygnałów od firm jako trafne (firma recyklingowa).
+
+## Pytania o ten system
+
+### Skąd system bierze informacje?
+
+Z publicznych źródeł, które wybieramy razem: serwisów z ogłoszeniami przetargowymi, rejestrów i wiadomości branżowych z krajów, w których sprzedajesz.
+
+### Czy działa poza Polską?
+
+Tak. W przykładzie bot szuka też okazji w Niemczech i w Czechach.
+
+### Co, jeśli bot przysyła nietrafione sprawy?
+
+Handlowiec odrzuca sprawę i podaje powód. Na tej podstawie zawężamy wyszukiwanie w ramach opieki.
+
+### Ile kosztuje taki system?
+
+Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. Cenę każdego etapu dostajesz przed startem.
+
+## Jak zaczynamy
+
+- Droga A, wiem, co mnie najbardziej boli: rozmowa z Bartkiem (45 minut) o Twoich programach. Dostajesz spisany zakres z efektem systemu i ceną każdego etapu. Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. [Umów rozmowę](https://www.lessmanual.ai/?droga=A#formularz)
+- Droga B, nie wiem, od czego zacząć: Mapa AI firmy. Plan systemów na kwartał i na rok, wynik w ciągu 5 dni roboczych od ostatniej rozmowy. 6 900 zł netto, w całości odliczane od pierwszego wdrożenia. [Umów rozmowę o Mapie](https://www.lessmanual.ai/?droga=B#formularz)
+- Droga C, najpierw chcę zobaczyć, że to działa: szybki pilot, dwa tygodnie, jeden proces na próbce Twoich spraw. Koszt podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu. [Umów rozmowę o pilocie](https://www.lessmanual.ai/?droga=C#formularz)
+
+## Inne systemy
+
+- [System, który przepisuje dokumenty z maila do arkusza](https://www.lessmanual.ai/systemy/odczyt-dokumentow)
+- [Panel: wszystkie boty w jednym miejscu](https://www.lessmanual.ai/systemy/panel-firmy)
+- [System, który pisze treści sklepu pod Google](https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google)

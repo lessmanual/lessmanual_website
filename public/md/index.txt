@@ -1,406 +1,87 @@
-# Automatyzacja AI dla firm B2B | LessManual
+# Systemy AI szyte na miarę dla firm | LessManual
 
-> Wdrażamy agentów AI do sprzedaży, contentu i obsługi klienta. Zaczynamy od diagnozy procesu, potem budujemy, uruchamiamy i utrzymujemy system.
+> LessManual to partner technologiczny, który buduje systemy AI szyte na miarę polskich firm 10-100 osób prowadzonych przez właściciela, odpowiada za efekt spisany przed startem i opiekuje się systemami po wdrożeniu.
 
 > Source: https://www.lessmanual.ai/
-> Generated: 2026-07-29T11:34:07.012Z
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
 
 ---
 
-Automatyzacja AI dla firm B2B
+# Mniej ręcznej pracy, więcej kontroli nad firmą.
 
-# Zdejmujemy ręczną pracę ze sprzedaży, contentu i obsługi klienta.
+Systemy AI szyte na miarę firm od 10 do 100 osób. Efekt zapisujemy liczbą przed startem. Jeśli system go nie daje, poprawiamy na nasz koszt.
 
-Audytujemy proces i KPI, porządkujemy źródła, dobieramy integracje, budujemy system i testujemy go na realnych danych. Potem uruchamiamy całość, przekazujemy dokumentację i możemy odpowiadać za dalszą opiekę. System pracuje na zatwierdzonych danych i przekazuje wyjątki człowiekowi.
+[Umów rozmowę](https://www.lessmanual.ai/#formularz). Pierwszy krok to 45 minut rozmowy z Bartkiem. Przed nią 10 pytań, około 2 minut.
 
-dane Twojej firmy·jasne reguły·kontrola człowieka·wdrożenie i utrzymanie
+Systemy dla 18 firm · 31 wdrożeń (stan na 11.11.2026). U jednego klienta od grudnia 2025 uruchomiliśmy 9 systemów, 7 z nich pracuje.
 
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
+## Dla kogo budujemy systemy AI
 
-[Porozmawiaj o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
+To dla Ciebie, jeśli:
 
-MDMPCA
+- prowadzisz firmę, która ma od 10 do 100 osób, i decydujesz sam albo ze wspólnikiem;
+- Twoi ludzie ręcznie przepisują zamówienia, dokumenty albo maile;
+- pracujecie na kilku programach, które się ze sobą nie łączą;
+- osobiście pilnujesz spraw, które powinny dziać się bez Ciebie;
+- chcesz zacząć od prostego etapu, który realnie działa, i potem dokładać kolejne.
 
-5.0·6 opinii Google · 20\+ firm B2B · 24 wdrożenia
+To nie dla Ciebie, jeśli:
 
-lessmanual-cli · hot-lead-catcher● live
+- zakup musi przejść przez dział zakupów i przetarg;
+- budżet na start to 2-3 tys. zł albo szukasz najtańszego wykonawcy;
+- chcesz kupić gotowe narzędzie i nie planujesz zmieniać sposobu pracy w firmie;
+- potrzebujesz dyżuru technicznego przez całą dobę.
 
-$
+## Jak wygląda współpraca, krok po kroku
 
-Mapa pierwszego procesu AIdiagnoza przed wdrożeniem
+1. Rozmowa i spisany zakres: pytamy o Twoje programy z nazwy i o to, co boli najbardziej. Potem spisujemy zakres z efektem systemu i ceną każdego etapu.
+2. Pierwszy etap, który realnie działa: budujemy możliwie prosty etap i pokazujemy go w działaniu na Twoich sprawach.
+3. Testy na nowych sprawach: system pracuje obok, a dotychczasowy sposób pracy działa bez zmian do odbioru. Twoje uwagi poprawiamy na bieżąco.
+4. Odbiór: mierzymy efekt tak, jak zapisaliśmy go przed startem. Przekazujemy dokumentację z instrukcją dla zespołu.
+5. Opieka i plan na kwartał: przejmujemy system, pilnujemy go, aktualizujemy i serwisujemy. Co kwartał pokazujemy, co działa, i proponujemy następny etap z ceną.
 
-![Arek Skuza](/_next/image?url=%2Farek-skuza.jpg&w=96&q=75)
+## Co dostajesz na piśmie przed startem systemu
 
-LinkedIn · 2026
+- efekt systemu zapisany liczbą i sposób, w jaki go zmierzymy;
+- etapy z ceną i terminem każdego etapu;
+- podział zadań: co robimy my, a co jest po Twojej stronie;
+- czego zakres nie obejmuje;
+- płatność: 35% przy zamówieniu, 35% po działającej demonstracji, 30% po odbiorze.
 
-“Focus. Precision. Excellent time management, and AI agents' knowledge are what make Bartek an exceptional architect and engineer.” \- Arek Skuza, CEO and boards advisor on AI Powered Growth
+Zakres akceptujemy oboje przed startem. Zmiana po akceptacji to nowy etap z własną ceną, więc cena nie rośnie bez Twojej zgody.
 
-Gdzie znika czas
+## Przykłady systemów, które już pracują
 
-## Firma rośnie. Ręczna praca rośnie razem z nią.
+- [System, który przepisuje dokumenty z maila do arkusza](https://www.lessmanual.ai/systemy/odczyt-dokumentow): 215 dokumentów wpisanych od kwietnia do października 2026, każdy bez błędu przetwarzania (zakład recyklingu).
+- [System, który codziennie szuka okazji sprzedażowych](https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi): w tygodniu od 19 do 26 października handlowcy dostali 62 tematy, w kolejnym ocenili 11 z 13 sygnałów od firm jako trafne (firma recyklingowa).
+- [Panel: wszystkie boty w jednym miejscu](https://www.lessmanual.ai/systemy/panel-firmy): w pierwszym tygodniu panel pokazał 38 spraw przekazanych handlowcom, a przy 8 trwa już przygotowanie oferty (firma recyklingowa).
+- [System, który pisze treści sklepu pod Google](https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google): artykuły opublikowane w 2026 roku dały 2 906 kliknięć z Google (sklep z oświetleniem LED).
 
-Automatyzujemy jeden proces na raz, zaczynając tam, gdzie powtarzalna praca kosztuje najwięcej czasu albo tworzy największe ryzyko błędu.
+## Od czego zacząć: trzy drogi do pierwszego systemu
 
-### Sprzedaż
+- Droga A, wiem, co mnie najbardziej boli: rozmowa z Bartkiem (45 minut) o Twoich programach. Dostajesz spisany zakres z efektem systemu i ceną każdego etapu. Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto.
+- Droga B, nie wiem, od czego zacząć: Mapa AI firmy. Plan systemów na kwartał i na rok, wynik w ciągu 5 dni roboczych od ostatniej rozmowy. 6 900 zł netto, w całości odliczane od pierwszego wdrożenia.
+- Droga C, najpierw chcę zobaczyć, że to działa: szybki pilot, dwa tygodnie, jeden proces na próbce Twoich spraw. Koszt podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu.
 
-Handlowcy uzupełniają CRM, składają podsumowania i poprawiają wyceny zamiast rozmawiać z klientami.
+## Odpowiadamy za efekt systemu, a dane zostają u Ciebie
 
-### Obsługa klienta
+- Efekt spisany przed startem: zapisujemy liczbą, jaki efekt ma dawać system i jak go zmierzymy. Jeżeli odebrany system tego efektu nie daje, poprawiamy go na nasz koszt, aż zacznie go dawać.
+- Dane i system należą do Ciebie: przy zakończeniu współpracy dostajesz pełną dokumentację i wszystkie dostępy, a także eksport danych. System możesz przekazać własnemu informatykowi albo innej firmie.
+- Testy obok obecnej pracy: nowy system testujemy na nowych sprawach, a obecny sposób pracy działa bez zmian do dnia odbioru.
 
-Te same pytania wracają przez email, chat i telefon, a trudne sprawy giną między kanałami.
+## Ile kosztuje system AI dla firmy
 
-### Content i SEO
+- Wdrożenie systemu: projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. Płatność w trzech częściach: 35% przy zamówieniu, 35% po działającej demonstracji, 30% po odbiorze.
+- Opieka co miesiąc: stała miesięczna kwota według pakietu, podana w ofercie. Opłaty za narzędzia i modele AI pokrywasz bezpośrednio; ich poziom znasz z oferty.
+- Mapa AI firmy: 6 900 zł netto, w całości odliczane od pierwszego wdrożenia.
+- Szybki pilot: dwa tygodnie, jeden proces. Koszt podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu.
+- Plan na kwartał: co kwartał sprawdzamy razem, co działa. Każdy kolejny etap ma cenę podaną przed startem.
+- Limit miejsc: przyjmujemy maksymalnie 4 nowe firmy miesięcznie.
 
-Pomysły czekają w notatkach, publikacje są nieregularne, a tekst z AI wymaga pisania od nowa.
+## Więcej
 
-### Operacje
-
-Dane z maili i dokumentów są ręcznie przepisywane do systemów, choć reguły procesu są powtarzalne.
-
-Obszary wdrożeń AI
-
-## System dopasowany do procesu, nie gotowy bot do wszystkiego.
-
-Najczęściej pomagamy firmom w regularnym contencie, obsłudze zapytań i sprzedaży B2B. Inne procesy bierzemy na warsztat, gdy diagnoza pokazuje większą oszczędność czasu albo mniejsze ryzyko błędu.
-
-· GŁÓWNY OBSZAR
-
-### Content i SEO
-
-System przygotowuje treści na podstawie źródeł firmy, sprawdza fakty i prowadzi materiał do akceptacji oraz publikacji.
-
-regularnośćźródła, publikacja, dystrybucja
-
-[Zobacz system→](/oferta/content-machine)
-
-· GŁÓWNY OBSZAR
-
-online · 23:47
-
-Czy muszę zatrudnić kolejną osobę?
-
-Najpierw sprawdzimy wolumen spraw i kanały. Potem dobierzemy proces.
-
-### Obsługa klienta
-
-Agent odpowiada na podstawie bazy wiedzy, zbiera kontekst sprawy i przekazuje człowiekowi to, co wymaga decyzji.
-
-mniej kolejekemail, chat, telefon, eskalacje
-
-[Zobacz system→](/oferta/obsluga-klienta)
-
-· GŁÓWNY OBSZAR
-
-kontekst-konta.json
-
-sygnał firmy: potwierdzony
-
-powód kontaktu: konkretny
-
-→ wiadomość oparta na źródle
-
-→ redakcja języka
-
-→ gotowe do kontroli
-
-### Sprzedaż B2B
-
-System wybiera właściwe firmy, sprawdza publiczny powód kontaktu i przygotowuje wiadomość do kontroli przed wysyłką.
-
-trafnośćwłaściwa firma, powód kontaktu, źródło
-
-[Zobacz system→](/oferta/pipeline-machine)
-
-diagnoza-procesu.yml
-
-proces: niestandardowyzakres
-
-integracje: ERP + CRM + bazazmapowane
-
-wycena: po diagnoziegotowa
-
-→ jasny zakres i cena
-
-### Inne procesy w firmie
-
-Jeśli największy problem leży w ofertowaniu, obiegu dokumentów, danych lub integracji systemów, zaczynamy od diagnozy i projektujemy rozwiązanie pod ten proces.
-
-[Zobacz wszystkie możliwości→](/oferta)
-
-Jak agent dochodzi do wyniku
-
-## Agent AI nie powinien zgadywać. Powinien działać według reguł firmy.
-
-Nie oddajemy Ci kolejnego okna do wpisywania promptów. Budujemy kontrolowany proces, który łączy dane, reguły i odpowiedzialność.
-
-01
-
-### Źródła
-
-Agent korzysta z bazy wiedzy, cennika, CRM i innych zatwierdzonych źródeł firmy.
-
-02
-
-### Reguły
-
-Proces określa, co system może zrobić sam, kiedy ma dopytać i czego nie wolno mu zgadywać.
-
-03
-
-### Kontrola
-
-Wynik przechodzi sprawdzenie faktów, danych i ustalonych kryteriów jakości.
-
-04
-
-### Człowiek
-
-Wyjątki, decyzje i działania o większym ryzyku trafiają do właściwej osoby.
-
-5.0 · Google Reviews · 6 opinii
-
-## Klienci chcą wiedzieć, co system zmieni w codziennej pracy.
-
-M
-
-Marcin Pietrasik
-
-Google Review · Lokalny przewodnik · 129 opinii
-
-Polecam LessManual – Agencję Automatyzacji AI! Zleciliśmy im automatyzację procesów na naszych mediach społecznościowych i efekt przerósł oczekiwania. Wszystko zostało świetnie pospinane: publikacje, powiadomienia, przekazywanie zadań i szybkie reakcje na wiadomości działają praktycznie „same". Największy plus? To, co wcześniej zajmowało nam długie godziny, teraz trwa dosłownie chwilę.
-
-D
-
-Dawid Kar
-
-Google Review · 1 opinia
-
-Bartek wykazuje się dużą samodzielnością i dobrą orientacją w automatyzacjach oraz integracjach systemowych. Szybko reaguje na zgłaszane problemy i sprawnie wprowadza zmiany w działających workflow. Współpraca przebiega konkretnie i technicznie na dobrym poziomie.
-
-M
-
-Maciej Osiecki
-
-Google Review · 7 opinii
-
-Polecam z całego serca, zleciłem stworzenie strony internetowej a dostałem dużo więcej nowe Logo nową wizję na marketing i dobre pozycjonowanie w Google. Naprawdę bez zastrzeżeń 5/5!
-
-P
-
-Paweł Muchewicz
-
-Google Review · 3 opinie
-
-Pełen profesjonalizm i konkretne podejście do biznesu – współpraca z Bartkiem to czysta przyjemność. Dzięki wdrożeniom LessManual.ai zaoszczędziliśmy mnóstwo czasu, który wcześniej marnowaliśmy na powtarzalne zadania. Zdecydowanie polecam każdemu, kto chce usprawnić swoją firmę!
-
-C
-
-CreativeDanceRumia
-
-Google Review · 15 opinii
-
-Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę" i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.
-
-KTO BUDUJE
-
-![Bartłomiej Chudzik - LessManual](/_next/image?url=%2Fbartek.jpg&w=256&q=75)
-
-Bartłomiej Chudzik
-
-CEO & Solution Architect
-
-LessManual prowadzę osobiście. Łączę doświadczenie z operacji B2B z projektowaniem agentów AI, które mają działać w codziennej pracy firmy, a nie tylko dobrze wyglądać na prezentacji.
-
-Każde wdrożenie zaczynam od procesu i kosztu błędu. Dopiero potem dobieram technologię, zakres pilota i sposób utrzymania. Przez 8 lat w logistyce B2B widziałem, ile czasu zjada ręczne przenoszenie danych i pilnowanie powtarzalnych kroków.
-
-20+firm B2B
-
-24wdrożeń
-
-5★ Google
-
-8 latoperacji B2B
-
-[Więcej o firmie →](/o-nas)
-
-Proces
-
-## Od procesu do działającego systemu.
-
-Wdrożenie ma zamknięty zakres i wynik, który da się sprawdzić. Każdy etap kończy się konkretną decyzją albo materiałem do odbioru.
-
-01diagnoza
-
-### Audyt procesu i KPI
-
-Liczymy koszt obecnej pracy, ryzyko błędu i ustalamy mierzalne kryteria odbioru.
-
-02dane
-
-### Źródła i baza wiedzy
-
-Zbieramy zatwierdzone materiały, porządkujemy dostęp i zapisujemy granice działania systemu.
-
-03projekt
-
-### Narzędzia i integracje
-
-Dobieramy technologię do procesu i łączymy tylko systemy potrzebne w uzgodnionym zakresie.
-
-04wdrożenie
-
-### Budowa systemu
-
-Budujemy działający przepływ z regułami, kontrolą wyniku i bezpiecznym przekazaniem wyjątków.
-
-05odbiór
-
-### Testy na realnych danych
-
-Sprawdzamy typowe sprawy, błędy i wyjątki na przykładach z firmy, a wynik porównujemy z KPI.
-
-06start
-
-### Uruchomienie i dokumentacja
-
-Włączamy system do codziennej pracy, opisujemy obsługę i przekazujemy plan miesięcznej opieki.
-
-Model współpracy
-
-## Zakres i wycena po diagnozie procesu.
-
-Jednorazowe wdrożenie kupuje działający i przetestowany system. Miesięczna opieka kupuje ciągłość działania w ustalonym zakresie. Konkretne warunki i cenę podajemy po diagnozie.
-
-Jednorazowe wdrożenie
-
-### Działający system z zamkniętym zakresem
-
--   ✓Audyt procesu, kosztu obecnej pracy i KPI
--   ✓Zatwierdzone źródła, baza wiedzy i reguły
--   ✓Dobór narzędzi oraz istniejących integracji
--   ✓Budowa, testy na realnych danych i uruchomienie
--   ✓Dokumentacja oraz kryteria odbioru
-
-Miesięczna opieka
-
-### Ciągłość i jakość istniejącego systemu
-
--   ✓Monitoring i naprawy w istniejącym zakresie
--   ✓Aktualizacje wiedzy i zatwierdzonych źródeł
--   ✓Zmiany w API dla istniejących integracji
--   ✓Kontrola jakości i wyjątków
--   ✓Optymalizacja i raport z działania
-
-System
-
-Start
-
-Dalej
-
-Kiedy pasuje
-
-Content Machine
-
-content i SEO
-
-wdrożenie
-
-miesięczna obsługa
-
-dla firm, które chcą stały content bez zatrudniania zespołu
-
-Customer Operations AI
-
-obsługa zapytań i spraw
-
-wdrożenie
-
-miesięczna obsługa
-
-dla firm z rosnącym wolumenem pytań, maili i spraw
-
-Premium Cold Email+
-
-sprzedaż B2B
-
-wdrożenie
-
-miesięczna obsługa
-
-dla kampanii, gdzie jakość listy i personalizacji ma wygrać z wolumenem
-
-Indywidualne wdrożenie
-
-niestandardowy proces
-
-po diagnozie
-
-utrzymanie
-
-gdy trzeba połączyć dane, narzędzia i decyzje w jeden proces
-
-Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
-
-**Granica zakresu:** Nowe funkcje, kanały, integracje, migracje i większe przebudowy wyceniamy osobno.
-
-Dokładną częstotliwość monitoringu i raportowania, czas reakcji, limity narzędzi oraz zakres zmian zapisujemy w indywidualnej ofercie i umowie.
-
-Próbkę testową, progi jakości, wolumen i definicję błędu krytycznego ustalamy przed startem.
-
-Jasny zakres · cena po diagnozie · utrzymanie systemu w zakresie
-
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
-
-Pytania przed wdrożeniem
-
-## Co warto wiedzieć, zanim wybierzesz pierwszy proces.
-
-Technologia jest dopiero drugim krokiem. Najpierw trzeba ustalić źródła, granice działania i wynik, który da się sprawdzić.
-
-Ile kosztuje wdrożenie AI w firmie?+
-
-Wycena powstaje po diagnozie procesu. Na koszt wpływają źródła danych, integracje, wolumen spraw, ryzyko błędu i zakres utrzymania. Przed startem dostajesz konkretny zakres, termin i cenę.
-
-Od którego procesu zacząć automatyzację?+
-
-Najlepszy pierwszy proces jest powtarzalny, zabiera mierzalny czas i ma jasny wynik. AI Growth Opportunity Map pomaga porównać możliwości i wybrać miejsce, w którym wdrożenie ma największy sens.
-
-Czy agent AI może pracować na danych naszej firmy?+
-
-Tak. Przed wdrożeniem ustalamy zatwierdzone źródła, dostęp i granice działania. Agent korzysta z danych potrzebnych do danego procesu, a uprawnienia dobieramy do jego roli.
-
-Co dzieje się, gdy AI nie zna odpowiedzi?+
-
-System nie powinien zgadywać. Może dopytać, oznaczyć brak danych albo przekazać sprawę człowiekowi. Zasady eskalacji ustalamy przed uruchomieniem na produkcji.
-
-Ile czasu zespół musi poświęcić na wdrożenie?+
-
-Zespół dostarcza materiały źródłowe, dostęp do potrzebnych systemów i feedback z pilota. LessManual odpowiada za projekt procesu, budowę, testy, uruchomienie i późniejsze utrzymanie.
-
-Co obejmuje miesięczna opieka po wdrożeniu?+
-
-Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
-
-Pierwszy krok: diagnoza procesu
-
-## Zacznij od procesu, który zabiera najwięcej czasu.
-
-Mapa pokaże pierwszy proces do automatyzacji, źródła potrzebne do działania agenta i sposób kontroli wyniku. Jeśli wdrożenie nie ma sensu, powiem Ci to wprost.
-
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
-
-[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
-
-LessManual.ai · Bartłomiej Chudzik
-
-[Oferta](/oferta)
-
-[Blog](/blog)
-
-[FAQ](/faq)
-
-[Polityka prywatności](/legal/polityka-prywatnosci)
-
-[Cookies](/legal/polityka-cookies)
-
-[Regulamin](/legal/regulamin)
+- [Systemy](https://www.lessmanual.ai/systemy)
+- [Najczęstsze pytania](https://www.lessmanual.ai/faq)
+- [Kim jesteśmy](https://www.lessmanual.ai/o-nas)
+- [Blog](https://www.lessmanual.ai/blog)
+- [Kontakt](https://www.lessmanual.ai/kontakt)

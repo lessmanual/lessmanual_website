@@ -1,0 +1,19 @@
+# Systemy AI dla firm: przykłady z wdrożeń | LessManual
+
+> Systemy AI, które pracują w polskich firmach: przetargi, dokumenty, treści sklepu i panel właściciela. Zobacz przykłady z liczbami.
+
+> Source: https://www.lessmanual.ai/systemy
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
+
+---
+
+# Systemy AI dla firm, które już pracują u klientów
+
+Każda firma pracuje na innych programach, więc każdy system budujemy pod konkretną firmę. Poniżej przykłady z naszych wdrożeń.
+
+- [System, który przepisuje dokumenty z maila do arkusza](https://www.lessmanual.ai/systemy/odczyt-dokumentow): Zakład recyklingu. 215 dokumentów wpisanych od kwietnia do października 2026, każdy bez błędu przetwarzania.
+- [System, który codziennie szuka okazji sprzedażowych](https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi): Firma recyklingowa. W tygodniu od 19 do 26 października handlowcy dostali 62 tematy. W kolejnym tygodniu ocenili 11 z 13 sygnałów od firm jako trafne.
+- [Panel: wszystkie boty w jednym miejscu](https://www.lessmanual.ai/systemy/panel-firmy): Firma recyklingowa. W pierwszym tygodniu panel pokazał 38 spraw przekazanych handlowcom. Ocenili 24 z nich, a przy 8 trwa już przygotowanie oferty.
+- [System, który pisze treści sklepu pod Google](https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google): Sklep z oświetleniem LED. Artykuły opublikowane w 2026 roku dały 2 906 kliknięć z Google. W listopadzie 6 przebudowanych poradników i 14 odświeżonych rankingów jest już online.
+
+[Umów rozmowę](https://www.lessmanual.ai/#formularz) (formularz ma 10 pytań i zajmuje około 2 minut)

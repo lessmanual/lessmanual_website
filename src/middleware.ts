@@ -7,12 +7,11 @@ const MARKDOWNABLE_ROUTES = new Set([
   "/o-nas",
   "/kontakt",
   "/ai-growth-opportunity-map",
-  "/oferta",
-  "/oferta/hot-lead-catcher",
-  "/oferta/pipeline-machine",
-  "/oferta/content-machine",
-  "/oferta/obsluga-klienta",
-  "/oferta/generator-ofert",
+  "/systemy",
+  "/systemy/odczyt-dokumentow",
+  "/systemy/okazje-sprzedazowe-i-przetargi",
+  "/systemy/panel-firmy",
+  "/systemy/tresci-sklepu-pod-google",
   "/blog",
 ]);
 

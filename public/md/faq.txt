@@ -1,97 +1,56 @@
-# Najczęstsze pytania o wdrożenia AI | LessManual
+# Najczęstsze pytania o systemy AI dla firm | LessManual
 
-> Odpowiedzi na najczęstsze pytania o systemy AI LessManual. Dowiedz się jak działamy, ile to kosztuje i jak zadbamy o bezpieczeństwo Twoich danych.
+> Ile kosztuje system AI, co jeśli nie zadziała, co z danymi i RODO oraz ile zajmie uruchomienie. Odpowiedzi na pytania, które słyszymy od właścicieli firm.
 
 > Source: https://www.lessmanual.ai/faq
-> Generated: 2026-07-29T11:34:07.043Z
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
 
 ---
 
-FAQ
+# Pytania o systemy AI, które słyszymy najczęściej
 
-# Najczęstsze pytania
-o systemy AI LessManual
+## Ile kosztuje system AI dla mojej firmy?
 
-Wszystko co chcesz wiedzieć zanim zarezerwujesz rozmowę. Jeżeli nie znajdziesz odpowiedzi, napisz na [kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai).
+Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto, a dokładną cenę każdego etapu dostajesz przed startem. Jeśli nie wiesz, od czego zacząć, Mapa AI firmy kosztuje 6 900 zł netto i odliczamy ją w całości od pierwszego wdrożenia.
 
-PRODUKT I WDROŻENIE
+## Moja firma jest specyficzna. Macie gotowe rozwiązanie?
 
-## Produkt i wdrożenie
+Nie sprzedajemy gotowców, bo każda firma pracuje na innych programach. Na pierwszej rozmowie pytamy o Twoje programy i procesy z nazwy, a system budujemy pod nie.
 
-Odpowiedzi na pytania o to jak działają nasze systemy, ile trwa wdrożenie i czego możesz się spodziewać.
+## Co, jeśli system nie zadziała?
 
-Czy to zadziała w mojej branży?+
+Efekt zapisujemy liczbą przed startem. Jeżeli odebrany system go nie daje, poprawiamy go na nasz koszt, aż zacznie działać tak, jak zapisaliśmy.
 
-Nie zakładamy tego bez diagnozy. Sprawdzamy proces, liczbę powtórzeń, dostępne dane, integracje i koszt obecnego sposobu pracy. Jeśli automatyzacja nie ma sensu, mówimy to wprost.
+## Czego ta obietnica nie obejmuje?
 
-Jak szybko zobaczę wyniki?+
+Nowych wymagań dodanych po akceptacji zakresu, bo to nowy etap z własną ceną. Opóźnień z powodu brakujących danych, dostępów albo decyzji po Twojej stronie. Opłat za narzędzia i modele AI, z których korzysta system: pokrywasz je Ty, a ich poziom znasz z oferty.
 
-Najpierw robimy diagnozę i wybieramy jeden proces. Termin zależy od integracji, jakości danych, liczby wyjątków oraz zakresu testów. Konkretny harmonogram dostajesz przed rozpoczęciem prac.
+## Co, jeśli zechcę zakończyć współpracę?
 
-Czy potrzebuję wiedzy technicznej?+
+Dane i system są Twoje. Dostajesz pełną dokumentację i wszystkie dostępy, a do tego eksport danych. System możesz przekazać własnemu informatykowi.
 
-Nie. Potrzebujemy od Ciebie wiedzy o procesie, wyjątkach i oczekiwanym wyniku. LessManual odpowiada za projekt, wdrożenie, testy oraz utrzymanie systemu.
+## Ile trwa uruchomienie pierwszego systemu?
 
-CENY I WARUNKI
+Szybki pilot trwa dwa tygodnie. Mapę AI firmy oddajemy w ciągu 5 dni roboczych od ostatniej rozmowy. Termin wdrożenia zapisujemy w zakresie, osobno dla tego, co zależy od nas, i tego, co zależy od Ciebie.
 
-## Ceny i warunki
+## Czy wdrożenie zakłóci bieżącą pracę?
 
-Szczegóły dotyczące wyceny, warunków współpracy i sposobu odbioru wdrożenia.
+Nie. Nowy system testujemy na nowych sprawach, a obecny sposób pracy działa bez zmian do odbioru.
 
-Ile to kosztuje?+
+## Ile mojego czasu to zajmie?
 
-Pracujemy w modelu wdrożenie + miesięczna obsługa. Nie pokazujemy publicznego cennika jako głównego kryterium, bo zakres zależy od procesu, wolumenu, danych, integracji i poziomu utrzymania. Konkretne kwoty podajemy po diagnozie.
+Na start rozmowa i kilka przykładowych dokumentów. W trakcie wdrożenia krótkie spotkanie raz w tygodniu, a Twoje zadania są na jednej liście. Po odbiorze jedno spotkanie na kwartał.
 
-Czy muszę mieć duży budżet żeby zacząć?+
+## Czy AI nie popełni kosztownego błędu?
 
-Potrzebujesz problemu, którego koszt da się zmierzyć. Jeśli temat jest zbyt mały, powiemy to wprost. Jeśli ma sens, zaczynamy od jednego procesu i dopiero po wyniku rozważamy kolejny.
+Tam, gdzie błąd kosztuje pieniądze, na przykład kary albo reklamacje, system przygotowuje decyzję, a zatwierdza ją człowiek. Takie miejsca ustalamy w zakresie przed startem.
 
-Co obejmuje miesięczna opieka po wdrożeniu?+
+## Co z moimi danymi i RODO?
 
-Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania. Utrzymujemy hosting oraz uzgodnione narzędzia, monitorujemy jakość, naprawiamy błędy, aktualizujemy bazę wiedzy i ulepszamy istniejący workflow. Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie. Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.
+Przed przekazaniem danych podpisujemy umowę powierzenia przetwarzania. Do pilota wystarczy ograniczona próbka spraw.
 
-Co jeśli nie zadziała?+
+## Czym różni się Mapa AI firmy od szybkiego pilota?
 
-Przed startem zapisujemy zakres, kryteria wyniku, odpowiedzialności i sposób odbioru. Warunki rozliczenia oraz ewentualnej gwarancji wynikają z konkretnej oferty i umowy.
+Mapa pokazuje całą firmę i daje plan systemów na kwartał i rok. Pilot sprawdza jeden system na próbce Twoich spraw. Jeśli nie wiesz, od czego zacząć, wybierz Mapę. Jeśli wiesz, ale chcesz najpierw zobaczyć efekt, wybierz pilota.
 
-BEZPIECZEŃSTWO I ZAUFANIE
-
-## Bezpieczeństwo i zaufanie
-
-Pytania o bezpieczeństwo danych, zakres odpowiedzialności i kontrolę człowieka.
-
-Czy AI nie pomyli się i nie zrazi moich klientów?+
-
-Ryzyko błędu ograniczamy przez zatwierdzone źródła, reguły, testy i przekazywanie wyjątków do człowieka. W procesach o większym ryzyku człowiek zatwierdza wynik przed działaniem.
-
-A co z RODO i bezpieczeństwem danych?+
-
-Przed wdrożeniem ustalamy, jakie dane są potrzebne, kto ma do nich dostęp, gdzie są przetwarzane i jak długo są przechowywane. Architekturę oraz umowy dobieramy do rodzaju danych i wymagań firmy.
-
-Ktoś mnie już oszukał z AI. Czemu mam Ci zaufać?+
-
-Zaczynamy od konkretnego procesu, kryterium wyniku i jasnego zakresu odpowiedzialności. Możesz sprawdzić publiczne opinie o LessManual, a przed decyzją zobaczysz sposób kontroli systemu i zasady odbioru.
-
-Pierwszy krok: diagnoza procesu
-
-## Zacznij od procesu, który zabiera najwięcej czasu.
-
-Mapa pokaże pierwszy proces do automatyzacji, źródła potrzebne do działania agenta i sposób kontroli wyniku. Jeśli wdrożenie nie ma sensu, powiem Ci to wprost.
-
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)
-
-[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
-
-LessManual.ai · Bartłomiej Chudzik
-
-[Oferta](/oferta)
-
-[Blog](/blog)
-
-[FAQ](/faq)
-
-[Polityka prywatności](/legal/polityka-prywatnosci)
-
-[Cookies](/legal/polityka-cookies)
-
-[Regulamin](/legal/regulamin)
+[Umów rozmowę](https://www.lessmanual.ai/#formularz)

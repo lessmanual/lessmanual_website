@@ -1,0 +1,53 @@
+# Panel firmy: wszystkie boty i systemy AI w jednym miejscu
+
+> Jeden panel dla właściciela: co zrobił każdy bot, które sprawy trafiły do handlowców i co czeka. Przykład: 38 spraw w pierwszym tygodniu, 8 ofert w toku.
+
+> Source: https://www.lessmanual.ai/systemy/panel-firmy
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
+
+---
+
+# Panel firmy: system, który pokazuje pracę wszystkich botów
+
+Panel pokazuje właścicielowi w jednym miejscu, co zrobił każdy bot i co stało się dalej ze sprawą. W pierwszym tygodniu u jednego z klientów pokazał 38 spraw przekazanych handlowcom, a przy 8 z nich trwała już praca nad ofertą.
+
+## Problem
+
+Gdy w firmie pracuje kilka botów, każdy wysyła wyniki w inne miejsce. Właściciel nie wie, co faktycznie działa, ile spraw trafiło do handlowców i co się z nimi stało.
+
+## Jak działa
+
+- panel zbiera wyniki ze wszystkich botów połączonych z nim;
+- przy każdej sprawie widać handlowca i jego ocenę: oferta, kontakt albo odrzucenie z powodem;
+- sprawy, które czekają na ocenę, są widoczne przy konkretnej osobie;
+- właściciel widzi stan bez pytania zespołu.
+
+## Efekt
+
+W pierwszym tygodniu panel pokazał 38 spraw przekazanych handlowcom. Handlowcy ocenili 24 z nich: przy 8 trwa przygotowanie oferty, 10 odrzucili z podanym powodem (firma recyklingowa).
+
+## Pytania o ten system
+
+### Kiedy warto zbudować panel?
+
+Gdy w firmie działa więcej niż jeden bot albo system i chcesz widzieć ich wyniki w jednym miejscu. U naszego klienta panel powstał jako kolejny etap po pierwszych botach.
+
+### Czy panel pokazuje tylko liczby?
+
+Pokazuje konkretne sprawy z oceną handlowca, więc widać, co z nich wynikło.
+
+### Ile kosztuje taki system?
+
+Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. Cenę każdego etapu dostajesz przed startem.
+
+## Jak zaczynamy
+
+- Droga A, wiem, co mnie najbardziej boli: rozmowa z Bartkiem (45 minut) o Twoich programach. Dostajesz spisany zakres z efektem systemu i ceną każdego etapu. Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. [Umów rozmowę](https://www.lessmanual.ai/?droga=A#formularz)
+- Droga B, nie wiem, od czego zacząć: Mapa AI firmy. Plan systemów na kwartał i na rok, wynik w ciągu 5 dni roboczych od ostatniej rozmowy. 6 900 zł netto, w całości odliczane od pierwszego wdrożenia. [Umów rozmowę o Mapie](https://www.lessmanual.ai/?droga=B#formularz)
+- Droga C, najpierw chcę zobaczyć, że to działa: szybki pilot, dwa tygodnie, jeden proces na próbce Twoich spraw. Koszt podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu. [Umów rozmowę o pilocie](https://www.lessmanual.ai/?droga=C#formularz)
+
+## Inne systemy
+
+- [System, który przepisuje dokumenty z maila do arkusza](https://www.lessmanual.ai/systemy/odczyt-dokumentow)
+- [System, który codziennie szuka okazji sprzedażowych](https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi)
+- [System, który pisze treści sklepu pod Google](https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google)

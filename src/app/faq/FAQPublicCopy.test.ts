@@ -1,50 +1,47 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { FAQ } from "@/content/site";
+import { generateFaqPageSchema } from "@/lib/schema";
 
-const constantsSource = readFileSync(
-  join(process.cwd(), "src/lib/constants.ts"),
-  "utf-8",
-);
-const faqBlock = constantsSource.slice(
-  constantsSource.indexOf("export const FAQ_ITEMS"),
-  constantsSource.indexOf("export const PROCESS_STEPS"),
-);
+// Stare nazwy produktów i ceny z poprzedniej oferty nie mogą wracać do FAQ (strona v3, 11.11.2026).
+const FORBIDDEN = [
+  "Pipeline Machine",
+  "Content Machine",
+  "Hot Lead Catcher",
+  "STARTER",
+  "GROWTH",
+  "Claude Code",
+  "agentic workflows",
+  "transformacja",
+  "rewolucja",
+  "innowacyjn",
+  "—",
+];
 
 describe("FAQ public copy", () => {
-  it("uses conditional, verifiable delivery promises", () => {
-    expect(faqBlock).toContain("Nie zakładamy tego bez diagnozy.");
-    expect(faqBlock).toContain("Konkretny harmonogram dostajesz przed rozpoczęciem prac.");
-    expect(faqBlock).toContain("Warunki rozliczenia oraz ewentualnej gwarancji");
-    expect(faqBlock).toContain("W procesach o większym ryzyku człowiek zatwierdza wynik");
+  it("has the eleven questions from TEKSTY v3", () => {
+    expect(FAQ.items).toHaveLength(11);
   });
 
-  it("explains tool ownership and bounded development in monthly care", () => {
-    expect(faqBlock).toContain("Co obejmuje miesięczna opieka po wdrożeniu?");
-    expect(faqBlock).toContain(
-      "Po wdrożeniu bierzemy odpowiedzialność za działanie i rozwój rozwiązania.",
-    );
-    expect(faqBlock).toContain(
-      "Utrzymujemy hosting oraz uzgodnione narzędzia",
-    );
-    expect(faqBlock).toContain(
-      "Koszty mieszczą się w miesięcznej opiece do limitów zapisanych w ofercie.",
-    );
-    expect(faqBlock).toContain(
-      "Nowy moduł, kanał lub integracja dostaje osobny zakres i wycenę.",
-    );
+  it("exposes every question and answer in the FAQPage schema", () => {
+    const schema = generateFaqPageSchema(FAQ.items);
+    expect(schema["@type"]).toBe("FAQPage");
+    expect(schema.mainEntity).toHaveLength(FAQ.items.length);
+    FAQ.items.forEach((item, index) => {
+      expect(schema.mainEntity[index]?.name).toBe(item.q);
+      expect(schema.mainEntity[index]?.acceptedAnswer.text).toBe(item.a);
+    });
   });
 
-  it("does not publish absolute compliance or outcome claims", () => {
-    for (const phrase of [
-      "80% problemów",
-      "Gwarancja wyników lub pełny zwrot kosztów",
-      "System zgodny z RODO i AI Act",
-      "Dane przetwarzane na serwerach w EU",
-      "nie wymyśla",
-      "—",
-    ]) {
-      expect(faqBlock).not.toContain(phrase);
+  it("does not mention old products, banned words or em-dash", () => {
+    const text = FAQ.items.map((item) => `${item.q} ${item.a}`).join("\n");
+    for (const phrase of FORBIDDEN) {
+      expect(text).not.toContain(phrase);
     }
+  });
+
+  it("keeps the single price the site allows: Mapa AI firmy 6 900 zł netto", () => {
+    const text = FAQ.items.map((item) => item.a).join("\n");
+    const amounts = text.match(/\d[\d ]*\s?zł/g) ?? [];
+    expect(amounts.every((amount) => amount.replace(/\s/g, "").includes("6900"))).toBe(true);
   });
 });

@@ -1,44 +1,61 @@
 # LessManual.ai
 
-> Automatyzacja AI dla firm B2B. Projektujemy, wdrażamy i utrzymujemy agentów AI do sprzedaży, contentu i obsługi klienta.
+> LessManual to partner technologiczny, który buduje systemy AI szyte na miarę polskich firm 10-100 osób prowadzonych przez właściciela, odpowiada za efekt spisany przed startem i opiekuje się systemami po wdrożeniu.
 
-LessManual.ai to firma Bartłomieja Chudzika. Pomagamy firmom zdejmować z zespołów powtarzalną pracę przez agentów AI, integracje i kontrolowane procesy.
+Strona: https://www.lessmanual.ai/
+Firmę prowadzi Bartłomiej Chudzik. Systemy dla 18 firm, 31 wdrożeń (stan na 11.11.2026). Budujemy je etapami, a cenę każdego etapu podajemy przed startem.
 
-## Jak pracujemy
+## Dla kogo
 
-- Zaczynamy od procesu, kosztu ręcznej pracy i ryzyka błędu.
-- Ustalamy zatwierdzone źródła oraz granice działania agenta.
-- Testujemy system na realnych danych przed uruchomieniem produkcyjnym.
-- Utrzymujemy wdrożenie i poprawiamy je wraz ze zmianą procesu.
+- Dla właściciela firmy z 10-100 osobami, który decyduje sam albo ze wspólnikiem.
+- Dla firm, w których ludzie ręcznie przepisują zamówienia, dokumenty albo maile i pracują na kilku programach, które się ze sobą nie łączą.
+- Nie dla firm, w których zakup musi przejść przez dział zakupów i przetarg, ani dla budżetu na start rzędu 2-3 tys. zł, ani dla kogoś, kto potrzebuje dyżuru technicznego przez całą dobę.
 
-## Główne obszary
+## Trzy drogi wejścia
 
-- [Content Machine](https://www.lessmanual.ai/oferta/content-machine): regularny content oparty na źródłach firmy, z kontrolą faktów, akceptacją i dystrybucją.
-- [Customer Operations AI](https://www.lessmanual.ai/oferta/obsluga-klienta): obsługa powtarzalnych pytań i spraw z przekazywaniem wyjątków człowiekowi.
-- [Premium Cold Email+](https://www.lessmanual.ai/oferta/pipeline-machine): sprzedaż B2B oparta na sygnałach, źródłach i konkretnym kontekście.
-- [Indywidualne wdrożenia](https://www.lessmanual.ai/oferta/indywidualne-wdrozenia): agent AI dopasowany do niestandardowego procesu, danych i integracji firmy.
+- Droga A, wiem, co mnie najbardziej boli: rozmowa z Bartkiem (45 minut), potem spisany zakres z efektem systemu i ceną każdego etapu. Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto.
+- Droga B, nie wiem, od czego zacząć: Mapa AI firmy, czyli plan systemów na kwartał i na rok, wynik w ciągu 5 dni roboczych od ostatniej rozmowy. Koszt: 6 900 zł netto, w całości odliczane od pierwszego wdrożenia.
+- Droga C, najpierw chcę zobaczyć, że to działa: szybki pilot, dwa tygodnie, jeden proces na próbce spraw klienta. Koszt podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu.
 
-## Pierwszy krok
+## Przykłady systemów, które już pracują
 
-- [AI Growth Opportunity Map](https://www.lessmanual.ai/ai-growth-opportunity-map): spersonalizowana mapa pierwszego procesu do automatyzacji.
-- Zakres i wycena powstają po diagnozie procesu.
-- Na koszt wpływają dane, integracje, wolumen, ryzyko błędu i poziom utrzymania.
-- Jeśli automatyzacja nie ma sensu, LessManual mówi o tym przed rozpoczęciem budowy.
+- [System, który przepisuje dokumenty z maila do arkusza](https://www.lessmanual.ai/systemy/odczyt-dokumentow): 215 dokumentów wpisanych od kwietnia do października 2026, każdy bez błędu przetwarzania (zakład recyklingu).
+- [System, który codziennie szuka okazji sprzedażowych dla handlowców](https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi): w tygodniu od 19 do 26 października handlowcy dostali 62 tematy, w kolejnym ocenili 11 z 13 sygnałów od firm jako trafne (firma recyklingowa).
+- [Panel firmy: system, który pokazuje pracę wszystkich botów](https://www.lessmanual.ai/systemy/panel-firmy): w pierwszym tygodniu panel pokazał 38 spraw przekazanych handlowcom, a przy 8 trwa już przygotowanie oferty (firma recyklingowa).
+- [System, który pisze poradniki i rankingi produktów sklepu](https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google): artykuły opublikowane w 2026 roku dały 2 906 kliknięć z Google (sklep z oświetleniem LED).
 
-## Inne możliwości
+## Gwarancja efektu i wolność wyjścia
 
-- [Generator Ofert](https://www.lessmanual.ai/oferta/generator-ofert): drafty ofert oparte na danych i cenniku firmy, z akceptacją handlowca.
-- [Hot Lead Catcher](https://www.lessmanual.ai/oferta/hot-lead-catcher): monitoring uzgodnionych sygnałów zakupowych z podaniem źródła.
-- [Oferta](https://www.lessmanual.ai/oferta): pełna lista obszarów wdrożeń AI.
-- [Blog](https://www.lessmanual.ai/blog): praktyczne materiały o automatyzacji procesów i agentach AI.
+- Efekt spisany przed startem: zapisujemy liczbą, jaki efekt ma dawać system i jak go zmierzymy. Jeżeli odebrany system tego efektu nie daje, poprawiamy go na nasz koszt, aż zacznie go dawać.
+- Dane i system należą do klienta: przy zakończeniu współpracy klient dostaje pełną dokumentację, wszystkie dostępy i eksport danych.
+- Nowy system testujemy na nowych sprawach, a obecny sposób pracy działa bez zmian do dnia odbioru.
+
+## Najczęstsze pytania (skrót, pełne odpowiedzi: https://www.lessmanual.ai/faq)
+
+- Ile kosztuje system AI? Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto, cenę każdego etapu klient zna przed startem. Mapa AI firmy: 6 900 zł netto, odliczana od pierwszego wdrożenia.
+- Co, jeśli system nie zadziała? Jeżeli odebrany system nie daje zapisanego efektu, poprawiamy go na nasz koszt, aż zacznie go dawać.
+- Czego obietnica nie obejmuje? Nowych wymagań po akceptacji zakresu, opóźnień z powodu brakujących danych lub decyzji klienta oraz opłat za narzędzia i modele AI.
+- Ile trwa uruchomienie? Szybki pilot dwa tygodnie, Mapa AI firmy do 5 dni roboczych od ostatniej rozmowy.
+- Czy wdrożenie zakłóci pracę? Nie, nowy system testujemy na nowych sprawach.
+- Co z danymi i RODO? Przed przekazaniem danych podpisujemy umowę powierzenia przetwarzania.
 
 ## Kontakt
 
+- Formularz (około 2 minuty, 10 pytań, potem wybór terminu rozmowy): https://www.lessmanual.ai/#formularz
 - Email: kontakt@lessmanual.ai
-- Rozmowa o wdrożeniu: https://cal.com/bartlomiej-chudzik-2en6pt
+- Przyjmujemy maksymalnie 4 nowe firmy miesięcznie.
 
-## Informacje prawne
+## Strony
 
+- [Systemy](https://www.lessmanual.ai/systemy)
+- [Odczyt dokumentów](https://www.lessmanual.ai/systemy/odczyt-dokumentow)
+- [Okazje sprzedażowe i przetargi](https://www.lessmanual.ai/systemy/okazje-sprzedazowe-i-przetargi)
+- [Panel firmy](https://www.lessmanual.ai/systemy/panel-firmy)
+- [Treści sklepu pod Google](https://www.lessmanual.ai/systemy/tresci-sklepu-pod-google)
+- [Kim jesteśmy](https://www.lessmanual.ai/o-nas)
+- [FAQ](https://www.lessmanual.ai/faq)
+- [Blog](https://www.lessmanual.ai/blog)
+- [Kontakt](https://www.lessmanual.ai/kontakt)
 - [Regulamin](https://www.lessmanual.ai/legal/regulamin)
 - [Polityka prywatności](https://www.lessmanual.ai/legal/polityka-prywatnosci)
 - [Polityka cookies](https://www.lessmanual.ai/legal/polityka-cookies)

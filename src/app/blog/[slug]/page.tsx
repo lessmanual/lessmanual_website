@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { HeaderV2 } from "@/components/v2/HeaderV2";
-import { FooterV2 } from "@/components/v2/FooterV2";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { Breadcrumbs } from "@/components/pages/Breadcrumbs";
+import { FormCta } from "@/components/pages/FormCta";
+import styles from "@/components/pages/pages.module.css";
 import { BlogContent } from "@/components/sections/blog/BlogContent";
 import { getPostBySlug, getAllSlugs } from "@/lib/supabase";
 import {
@@ -111,34 +113,7 @@ export default async function BlogPostPage({
   const faqSchema = post.content_pl ? extractFaqSchema(post.content_pl) : null;
 
   return (
-    <div className="v2-scope">
-      <style>{`
-        .v2-scope {
-          background: #FAFAFA;
-          color: #0A0A0A;
-          font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-          min-height: 100vh;
-        }
-        .v2-scope h1 {
-          font-family: var(--font-inter), system-ui, sans-serif;
-          font-weight: 600;
-          letter-spacing: -0.035em;
-          line-height: 1.05;
-          color: #0A0A0A;
-          font-size: clamp(2.75rem, 6vw, 4.75rem);
-        }
-        .v2-scope h2 {
-          font-family: var(--font-inter), system-ui, sans-serif;
-          font-weight: 600;
-          letter-spacing: -0.02em;
-          line-height: 1.25;
-          color: #0A0A0A;
-          font-size: clamp(1.5rem, 3vw, 2rem);
-        }
-        .v2-scope .font-mono { font-family: var(--font-jetbrains-mono), ui-monospace, monospace; }
-        .v2-scope .v2-link { color: #0A0A0A; transition: color 150ms ease; }
-        .v2-scope .v2-link:hover { color: #B87333; }
-      `}</style>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(blogSchema) }}
@@ -153,46 +128,37 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
         />
       )}
-      <HeaderV2 />
-      <main className="pt-16 pb-16 md:pb-0">
-        <article className="py-20 md:py-28">
-          <div className="max-w-[760px] mx-auto px-6">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-accent transition-colors mb-8"
-            >
-              &larr; Blog
-            </Link>
+      <SiteHeader />
+      <main className={styles.main}>
+        <article className={`lm-container ${styles.head}`}>
+          <div className={styles.narrow}>
+            <Breadcrumbs
+              items={[
+                { label: "Strona główna", href: "/" },
+                { label: "Blog", href: "/blog" },
+                { label: normalizePublicProse(post.title_pl) },
+              ]}
+            />
 
-            <header className="mb-12">
-              {post.category && (
-                <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent bg-accent/10 rounded-full mb-4">
-                  {post.category}
-                </span>
-              )}
+            <header className={styles.articleHead}>
+              {post.category && <span className={styles.category}>{post.category}</span>}
 
-              <h1 className="font-serif text-text mb-6">
-                {normalizePublicProse(post.title_pl)}
-              </h1>
+              <h1>{normalizePublicProse(post.title_pl)}</h1>
 
-              <div className="flex flex-wrap items-center gap-3 text-sm text-text-muted">
+              <div className={styles.meta}>
                 <span>Redaktor: Bartłomiej Chudzik</span>
                 <span aria-hidden="true">·</span>
-                <span className="text-text-muted/70">Founder & CTO, LessManual.ai</span>
+                <span>Founder &amp; CTO, LessManual.ai</span>
                 {post.published_at && (
                   <>
                     <span aria-hidden="true">·</span>
-                    <time dateTime={post.published_at}>
-                      {formatDate(post.published_at)}
-                    </time>
+                    <time dateTime={post.published_at}>{formatDate(post.published_at)}</time>
                   </>
                 )}
                 {post.updated_at && post.updated_at !== post.published_at && (
                   <>
                     <span aria-hidden="true">·</span>
-                    <span>
-                      Zaktualizowano: {formatDate(post.updated_at)}
-                    </span>
+                    <span>Zaktualizowano: {formatDate(post.updated_at)}</span>
                   </>
                 )}
                 {post.reading_time_minutes && (
@@ -205,20 +171,25 @@ export default async function BlogPostPage({
             </header>
 
             {post.featured_image && (
-              <div className="mb-12 rounded-[6px] overflow-hidden">
-                <img
-                  src={post.featured_image}
-                  alt={normalizePublicProse(post.title_pl)}
-                  className="w-full"
-                />
+              <div className={styles.cover}>
+                {/* eslint-disable-next-line @next/next/no-img-element -- adres z Supabase Storage, wymiary nieznane */}
+                <img src={post.featured_image} alt={normalizePublicProse(post.title_pl)} />
               </div>
             )}
 
             {post.content_pl && <BlogContent html={post.content_pl} />}
+
+            <aside className={styles.ctaBox} aria-labelledby="blog-cta">
+              <h2 id="blog-cta">Umów rozmowę</h2>
+              <p>
+                Opowiedz nam, jakie programy i procesy masz w firmie. Po rozmowie dostajesz spisany zakres: efekt, etapy i cenę każdego etapu.
+              </p>
+              <FormCta />
+            </aside>
           </div>
         </article>
       </main>
-      <FooterV2 />
-    </div>
+      <SiteFooter />
+    </>
   );
 }

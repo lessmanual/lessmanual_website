@@ -11,13 +11,11 @@ const ALLOWED = new Set([
   "o-nas",
   "kontakt",
   "ai-growth-opportunity-map",
-  "oferta",
-  "oferta/hot-lead-catcher",
-  "oferta/pipeline-machine",
-  "oferta/content-machine",
-  "oferta/obsluga-klienta",
-  "oferta/generator-ofert",
-  "oferta/indywidualne-wdrozenia",
+  "systemy",
+  "systemy/odczyt-dokumentow",
+  "systemy/okazje-sprzedazowe-i-przetargi",
+  "systemy/panel-firmy",
+  "systemy/tresci-sklepu-pod-google",
   "blog",
 ]);
 

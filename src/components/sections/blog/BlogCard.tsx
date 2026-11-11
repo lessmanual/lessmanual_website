@@ -13,49 +13,42 @@ function formatDate(dateString: string | null): string {
 
 export function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
-      <article className="h-full bg-white border border-border rounded-[6px] overflow-hidden transition-all duration-300 hover:border-accent hover:scale-[1.01]">
-        {post.featured_image ? (
-          <div className="aspect-[16/9] overflow-hidden">
+    <Link href={`/blog/${post.slug}`} className="group block h-full">
+      <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-surface shadow-[var(--shadow-card)] transition-shadow duration-150 group-hover:shadow-[0_0_0_1px_var(--ink)]">
+        {post.featured_image && (
+          <div className="aspect-[16/9] overflow-hidden bg-sunken">
+            {/* eslint-disable-next-line @next/next/no-img-element -- adres z Supabase Storage, wymiary nieznane */}
             <img
               src={post.featured_image}
               alt={normalizePublicProse(post.title_pl)}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="h-full w-full object-cover"
             />
           </div>
-        ) : (
-          <div className="aspect-[16/9] bg-gradient-to-br from-accent/10 via-accent/5 to-bg" />
         )}
 
-        <div className="p-6">
+        <div className="flex flex-1 flex-col gap-3 p-6">
           {post.category && (
-            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent bg-accent/10 rounded-full mb-3">
-              {post.category}
-            </span>
+            <span className="text-[15px] font-semibold text-copper-strong">{post.category}</span>
           )}
 
-          <h2 className="font-serif text-xl text-text leading-snug mb-2 group-hover:text-accent transition-colors duration-300">
+          <h2 className="text-[20px] font-semibold leading-snug text-ink group-hover:text-sea">
             {normalizePublicProse(post.title_pl)}
           </h2>
 
           {post.description_pl && (
-            <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-2">
+            <p className="line-clamp-3 text-[15px] leading-relaxed text-ink-2">
               {normalizePublicProse(post.description_pl)}
             </p>
           )}
 
-          <div className="flex items-center gap-3 text-xs text-text-muted">
+          <div className="mt-auto flex items-center gap-3 pt-2 text-[15px] text-ink-3">
             {post.published_at && (
-              <time dateTime={post.published_at}>
-                {formatDate(post.published_at)}
-              </time>
+              <time dateTime={post.published_at}>{formatDate(post.published_at)}</time>
             )}
             {post.published_at && post.reading_time_minutes && (
               <span aria-hidden="true">·</span>
             )}
-            {post.reading_time_minutes && (
-              <span>{post.reading_time_minutes} min czytania</span>
-            )}
+            {post.reading_time_minutes && <span>{post.reading_time_minutes} min czytania</span>}
           </div>
         </div>
       </article>
