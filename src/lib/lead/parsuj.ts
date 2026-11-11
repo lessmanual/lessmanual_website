@@ -177,8 +177,9 @@ function parsujKontakt(surowy: unknown): Wynik<DaneKontaktowe> {
 
 /**
  * Parse, don't validate: z nieznanego JSON-a robimy typ, którego reszta kodu nie musi
- * już sprawdzać. Zgoda jest wymagana w obu rodzajach zgłoszeń, bo zapis do CRM bez niej
- * byłby przetwarzaniem danych bez podstawy.
+ * już sprawdzać. Pole `zgoda` jest zgodą z art. 398 PKE na kontakt (albo na jednorazową wysyłkę
+ * przykładów) i warunkiem wysłania formularza. Podstawą zapisu danych do CRM nie jest ona, tylko
+ * art. 6 ust. 1 lit. b i f RODO (audyt P19). `zgodaMarketing` jest osobna i dobrowolna.
  */
 export function parsujZgloszenie(surowe: unknown): Wynik<Zgloszenie> {
   if (!jestObiektem(surowe)) {
@@ -195,6 +196,7 @@ export function parsujZgloszenie(surowe: unknown): Wynik<Zgloszenie> {
   if (!odpowiedzi.ok) {
     return odpowiedzi;
   }
+  const zgodaMarketing = surowe.zgodaMarketing === true;
 
   if (surowe.rodzaj === "odsiew") {
     const email = tekst(surowe.email);
@@ -203,7 +205,7 @@ export function parsujZgloszenie(surowe: unknown): Wynik<Zgloszenie> {
     }
     return {
       ok: true,
-      wartosc: { rodzaj: "odsiew", wersja, odpowiedzi: odpowiedzi.wartosc, email: email.toLowerCase() },
+      wartosc: { rodzaj: "odsiew", wersja, odpowiedzi: odpowiedzi.wartosc, email: email.toLowerCase(), zgodaMarketing },
     };
   }
   if (surowe.rodzaj === "zgloszenie") {
@@ -213,7 +215,7 @@ export function parsujZgloszenie(surowe: unknown): Wynik<Zgloszenie> {
     }
     return {
       ok: true,
-      wartosc: { rodzaj: "zgloszenie", wersja, odpowiedzi: odpowiedzi.wartosc, kontakt: kontakt.wartosc },
+      wartosc: { rodzaj: "zgloszenie", wersja, odpowiedzi: odpowiedzi.wartosc, kontakt: kontakt.wartosc, zgodaMarketing },
     };
   }
   return { ok: false, blad: "Nieznany rodzaj zgłoszenia." };

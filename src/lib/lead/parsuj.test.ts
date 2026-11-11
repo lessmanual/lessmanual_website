@@ -130,3 +130,17 @@ describe("odczytajZnacznikiBota", () => {
     expect(odczytajZnacznikiBota({}).wypelnianieMs).toBeNull();
   });
 });
+
+describe("zgoda marketingowa", () => {
+  it("jest dobrowolna: brak pola albo wartość inna niż true daje false, bo domyślnie nie ma zgody", () => {
+    for (const surowe of [poprawneZgloszenie(), poprawneZgloszenie({ zgodaMarketing: "true" }), poprawneZgloszenie({ zgodaMarketing: false })]) {
+      const wynik = parsujZgloszenie(surowe);
+      expect(wynik.ok && wynik.wartosc.zgodaMarketing).toBe(false);
+    }
+  });
+
+  it("zaznaczona jest przekazywana dalej i nie jest warunkiem wysłania", () => {
+    const wynik = parsujZgloszenie(poprawneZgloszenie({ zgodaMarketing: true }));
+    expect(wynik.ok && wynik.wartosc.zgodaMarketing).toBe(true);
+  });
+});

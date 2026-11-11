@@ -1,7 +1,9 @@
 import {
   PYTANIA,
   PYTANIE_ZRODLO,
+  WERSJA_ZGOD,
   type Decyzja,
+  type RodzajZgody,
   type Trasa,
   type TrasaZKalendarzem,
 } from "@/content/formularz";
@@ -22,7 +24,29 @@ export type MetadataZgloszenia = {
     Record<string, { ids: readonly string[]; etykiety: readonly string[]; teksty: Readonly<Record<string, string>> }>
   >;
   user_agent: string;
+  /** Dowód zgód (art. 7 ust. 1 RODO): treść-zgód.md § 5. */
+  zgody: readonly ZgodaWpis[];
 };
+
+export type ZgodaWpis = {
+  rodzaj: RodzajZgody;
+  wersja: string;
+  /** Czy pole zostało zaznaczone. Zgoda na kontakt jest zawsze true (bez niej formularz nie przechodzi). */
+  udzielona: boolean;
+  czas: string;
+};
+
+/**
+ * Zgody z formularza: pierwsza to wymagana (kontakt albo jednorazowe przykłady), druga to opcjonalna
+ * marketingowa, zapisywana też gdy niezaznaczona, żeby w CRM był ślad, że o nią pytaliśmy.
+ */
+export function zbudujZgody(zgloszenie: Zgloszenie, terazIso: string): readonly ZgodaWpis[] {
+  const wymagana: RodzajZgody = zgloszenie.rodzaj === "odsiew" ? "przyklady_jednorazowo" : "kontakt_zgloszenie";
+  return [
+    { rodzaj: wymagana, wersja: WERSJA_ZGOD, udzielona: true, czas: terazIso },
+    { rodzaj: "marketing_email", wersja: WERSJA_ZGOD, udzielona: zgloszenie.zgodaMarketing, czas: terazIso },
+  ];
+}
 
 export type FirmaDoZapisu = {
   tenant_id: string;
@@ -97,7 +121,12 @@ export function produktDlaTrasy(trasa: Trasa): string {
 }
 
 /** User agent skrócony do 120 znaków; IP nie trafia do CRM. */
-export function zbudujMetadata(zgloszenie: Zgloszenie, decyzja: Decyzja, userAgent: string): MetadataZgloszenia {
+export function zbudujMetadata(
+  zgloszenie: Zgloszenie,
+  decyzja: Decyzja,
+  userAgent: string,
+  terazIso: string,
+): MetadataZgloszenia {
   return {
     wersja_formularza: zgloszenie.wersja,
     rodzaj: zgloszenie.rodzaj,
@@ -113,6 +142,7 @@ export function zbudujMetadata(zgloszenie: Zgloszenie, decyzja: Decyzja, userAge
       }),
     ),
     user_agent: userAgent.slice(0, 120),
+    zgody: zbudujZgody(zgloszenie, terazIso),
   };
 }
 
@@ -173,8 +203,9 @@ export function zbudujSzanse(
   companyId: string | null,
   contactId: string,
   userAgent: string,
+  terazIso: string,
 ): SzansaDoZapisu {
-  const metadata = zbudujMetadata(zgloszenie, decyzja, userAgent);
+  const metadata = zbudujMetadata(zgloszenie, decyzja, userAgent, terazIso);
   const source = zrodloZgloszenia(zgloszenie.odpowiedzi);
   if (zgloszenie.rodzaj === "odsiew") {
     return {
@@ -225,6 +256,6 @@ export function zbudujInterakcje(
     title: "Formularz www",
     summary: podsumowanie,
     occurred_at: terazIso,
-    metadata: zbudujMetadata(zgloszenie, decyzja, userAgent),
+    metadata: zbudujMetadata(zgloszenie, decyzja, userAgent, terazIso),
   };
 }

@@ -110,6 +110,30 @@ export async function znajdzKontakt(
   return null;
 }
 
+/**
+ * Dopisuje termin rozmowy do jednej szansy (PATCH po `id` i `tenant_id`). Zwraca true tylko, gdy
+ * zmieniono dokładnie jeden wiersz, więc nieistniejące `id` nie daje fałszywego sukcesu.
+ */
+export async function zapiszTerminSzansy(
+  konfiguracja: KonfiguracjaCrm,
+  dealId: string,
+  nextStep: string,
+  nextStepDue: string,
+): Promise<boolean> {
+  const zapytanie = `id=eq.${encodeURIComponent(dealId)}&tenant_id=eq.${TENANT_ID}`;
+  const odpowiedz = await fetch(`${konfiguracja.url}/rest/v1/crm_deals?${zapytanie}`, {
+    method: "PATCH",
+    headers: naglowki(konfiguracja, true),
+    body: JSON.stringify({ next_step: nextStep, next_step_due: nextStepDue }),
+    signal: AbortSignal.timeout(LIMIT_CZASU_MS),
+  });
+  if (!odpowiedz.ok) {
+    throw new BladCrm("crm_deals", odpowiedz.status);
+  }
+  const wiersze: unknown = await odpowiedz.json();
+  return Array.isArray(wiersze) && wiersze.length === 1;
+}
+
 /** Dopisuje `resend_id` do metadata interakcji (PATCH po `id=eq.<uuid>`, całe metadata, bo kolumna to jsonb). */
 export async function zaktualizujMetadata(
   konfiguracja: KonfiguracjaCrm,

@@ -24,6 +24,8 @@ export type ZgloszeniePelne = {
   wersja: string;
   odpowiedzi: OdpowiedziZgloszenia;
   kontakt: DaneKontaktowe;
+  /** Opcjonalna zgoda na e-mailowe informacje o systemach; brak pola w żądaniu = false. */
+  zgodaMarketing: boolean;
 };
 
 export type ZgloszenieOdsiew = {
@@ -31,9 +33,10 @@ export type ZgloszenieOdsiew = {
   wersja: string;
   odpowiedzi: OdpowiedziZgloszenia;
   email: string;
+  zgodaMarketing: boolean;
 };
 
-export type Zgloszenie = ZgloszeniePelne | ZgloszenieOdsiew;
+export type Zgloszenie= ZgloszeniePelne | ZgloszenieOdsiew;
 
 export type Wynik<T> = { ok: true; wartosc: T } | { ok: false; blad: string };
 

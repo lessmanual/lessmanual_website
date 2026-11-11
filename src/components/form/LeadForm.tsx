@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
 import {
   DROGI,
+  KALENDARZ_ZGODA,
   KOMUNIKATY,
   KONTAKT,
   NIE_TERAZ,
@@ -12,6 +13,7 @@ import {
   PYTANIE_DROGA,
   START,
   WERSJA_FORMULARZA,
+  ZGODA_MARKETING,
   odpowiedzDlaDrogi,
   zdecyduj,
   type PytanieKonfig,
@@ -20,7 +22,12 @@ import {
 } from "@/content/formularz";
 import { LINKS } from "@/content/site";
 import { trackEvent } from "@/lib/analytics";
-import { adresKalendarza } from "@/lib/lead/kalendarz";
+import {
+  ZDARZENIE_ZGODY_COOKIES,
+  czytajZgodeCookies,
+  zapiszZgodeCookies,
+} from "@/lib/consent";
+import { adresKalendarza, terminZKomunikatu } from "@/lib/lead/kalendarz";
 import { jestPoprawnymEmailem, sprawdzKontakt, type SurowyKontakt } from "@/lib/lead/parsuj";
 import type { PoleKontaktu, WybranaOdpowiedz } from "@/lib/lead/typy";
 import { Bzyk, type BzykMood } from "@/components/site/Bzyk";
@@ -50,8 +57,21 @@ function jestTrasaZKalendarzem(wartosc: unknown): wartosc is TrasaZKalendarzem {
 }
 
 type WynikWyslania =
-  | { ok: true; trasa: Trasa }
+  | { ok: true; trasa: Trasa; rezerwacja: string | null }
   | { ok: false; komunikat: string };
+
+/** Fire-and-forget: brak zapisu terminu nie może psuć rezerwacji, którą klient już zrobił w Cal.com. */
+async function wyslijTermin(rezerwacja: string, termin: string): Promise<void> {
+  try {
+    await fetch("/api/formularz/termin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rezerwacja, termin }),
+    });
+  } catch {
+    // Zgłoszenie jest już w CRM, a Bartek zobaczy rezerwację w Cal.com.
+  }
+}
 
 async function wyslijZgloszenie(tresc: object): Promise<WynikWyslania> {
   try {
@@ -63,7 +83,7 @@ async function wyslijZgloszenie(tresc: object): Promise<WynikWyslania> {
     const json: unknown = await odpowiedz.json().catch(() => null);
     if (odpowiedz.ok && jestObiektem(json) && json.ok === true) {
       if (jestTrasaZKalendarzem(json.route) || json.route === "odsiew") {
-        return { ok: true, trasa: json.route };
+        return { ok: true, trasa: json.route, rezerwacja: typeof json.rezerwacja === "string" ? json.rezerwacja : null };
       }
     }
     // Jedna kwestia błędu dla każdej przyczyny (TEKSTY v3, sekcja 13); szczegół jest w logu serwera.
@@ -122,7 +142,12 @@ export function LeadForm() {
   const [kontakt, setKontakt] = useState<SurowyKontakt>(PUSTY_KONTAKT);
   const [bledyKontaktu, setBledyKontaktu] = useState<BledyKontaktu>({});
   const [zgoda, setZgoda] = useState(false);
+  const [zgodaMarketing, setZgodaMarketing] = useState(false);
   const [bladZgody, setBladZgody] = useState<string | null>(null);
+  const [pokazKalendarz, setPokazKalendarz] = useState(false);
+  const [rezerwacja, setRezerwacja] = useState<string | null>(null);
+  const ramkaRef = useRef<HTMLIFrameElement | null>(null);
+  const terminWyslanyRef = useRef(false);
   const [emailOdsiewu, setEmailOdsiewu] = useState("");
   const [bladEmailaOdsiewu, setBladEmailaOdsiewu] = useState<string | null>(null);
   const [pulapka, setPulapka] = useState("");
@@ -155,6 +180,72 @@ export function LeadForm() {
     }
     setOdpowiedzi((poprzednie) => ({ ...poprzednie, [PYTANIE_DROGA]: { ids: [idOdpowiedzi], teksty: {} } }));
   }, []);
+
+  // Ramka Cal.com ładuje się tylko za zgodą (audyt P1): zapisana zgoda na kategorię „kalendarz”
+  // odsłania ją od razu, a zmiana zgody w banerze w trakcie wizyty działa bez przeładowania.
+  const naEkranieDrogi = ekran.rodzaj === "droga";
+  useEffect(() => {
+    if (!naEkranieDrogi) {
+      return;
+    }
+    const odczytaj = () => setPokazKalendarz(czytajZgodeCookies().kalendarz);
+    odczytaj();
+    window.addEventListener(ZDARZENIE_ZGODY_COOKIES, odczytaj);
+    return () => window.removeEventListener(ZDARZENIE_ZGODY_COOKIES, odczytaj);
+  }, [naEkranieDrogi]);
+
+  // Po rezerwacji w ramce Cal.com przysyła `postMessage` z datą startu; przekazujemy ją do CRM.
+  // Tylko wiadomości z okna tej ramki i z domeny Cal.com; jeden zapis na wizytę na ekranie.
+  useEffect(() => {
+    if (!naEkranieDrogi || !pokazKalendarz || rezerwacja === null) {
+      return;
+    }
+    const naWiadomosc = (zdarzenie: MessageEvent) => {
+      if (terminWyslanyRef.current || zdarzenie.source !== ramkaRef.current?.contentWindow) {
+        return;
+      }
+      const termin = terminZKomunikatu(zdarzenie.origin, zdarzenie.data);
+      if (termin === null) {
+        return;
+      }
+      terminWyslanyRef.current = true;
+      void wyslijTermin(rezerwacja, termin);
+    };
+    window.addEventListener("message", naWiadomosc);
+    return () => window.removeEventListener("message", naWiadomosc);
+  }, [naEkranieDrogi, pokazKalendarz, rezerwacja]);
+
+  function pokazKalendarzPoKliknieciu() {
+    // Kliknięcie to świadomy wybór: zapisujemy zgodę na „kalendarz”, zachowując wybór analityki.
+    zapiszZgodeCookies({ analityczne: czytajZgodeCookies().analityczne, kalendarz: true });
+    setPokazKalendarz(true);
+  }
+
+  // Walidacja przy zmianie tylko dla pola, które już ma błąd: błąd gaśnie po poprawie, a nowe
+  // błędy nie pojawiają się w trakcie pisania (QA 11.11).
+  function zmienPoleKontaktu(pole: PoleKontaktu, wartosc: string) {
+    const nowy = { ...kontakt, [pole]: wartosc };
+    setKontakt(nowy);
+    if (bledyKontaktu[pole] !== undefined) {
+      const aktualny = sprawdzKontakt(nowy)[pole];
+      setBledyKontaktu((poprzednie) => {
+        const reszta = { ...poprzednie };
+        if (aktualny === undefined) {
+          delete reszta[pole];
+        } else {
+          reszta[pole] = aktualny;
+        }
+        return reszta;
+      });
+    }
+  }
+
+  function zmienEmailOdsiewu(wartosc: string) {
+    setEmailOdsiewu(wartosc);
+    if (bladEmailaOdsiewu !== null && jestPoprawnymEmailem(wartosc.trim())) {
+      setBladEmailaOdsiewu(null);
+    }
+  }
 
   function przejdzDo(nowy: Ekran) {
     setNastroj("neutral");
@@ -264,12 +355,15 @@ export function LeadForm() {
       wypelnianieMs: Date.now() - startRef.current,
       pole_kontrolne: pulapka,
       zgoda,
+      zgodaMarketing,
       odpowiedzi,
       kontakt,
     });
     setWysylanie(false);
     if (wynik.ok && jestTrasaZKalendarzem(wynik.trasa)) {
       trackEvent("form_submit", { route: wynik.trasa });
+      setRezerwacja(wynik.rezerwacja);
+      terminWyslanyRef.current = false;
       przejdzDo({ rodzaj: "droga", trasa: wynik.trasa });
       return;
     }
@@ -298,6 +392,7 @@ export function LeadForm() {
       wypelnianieMs: Date.now() - startRef.current,
       pole_kontrolne: pulapka,
       zgoda,
+      zgodaMarketing,
       odpowiedzi,
       email,
     });
@@ -448,7 +543,7 @@ export function LeadForm() {
             wartosc={kontakt.imie}
             blad={bledyKontaktu.imie}
             autoComplete="name"
-            onZmiana={(imie) => setKontakt((k) => ({ ...k, imie }))}
+            onZmiana={(wartosc) => zmienPoleKontaktu("imie", wartosc)}
           />
           <PoleTekstowe
             id={`${identyfikator}-firma`}
@@ -456,7 +551,7 @@ export function LeadForm() {
             wartosc={kontakt.firma}
             blad={bledyKontaktu.firma}
             autoComplete="organization"
-            onZmiana={(firma) => setKontakt((k) => ({ ...k, firma }))}
+            onZmiana={(wartosc) => zmienPoleKontaktu("firma", wartosc)}
           />
           <PoleTekstowe
             id={`${identyfikator}-strona`}
@@ -464,7 +559,7 @@ export function LeadForm() {
             wartosc={kontakt.strona}
             blad={bledyKontaktu.strona}
             autoComplete="url"
-            onZmiana={(strona) => setKontakt((k) => ({ ...k, strona }))}
+            onZmiana={(wartosc) => zmienPoleKontaktu("strona", wartosc)}
           />
           <PoleTekstowe
             id={`${identyfikator}-email`}
@@ -473,7 +568,7 @@ export function LeadForm() {
             blad={bledyKontaktu.email}
             typ="email"
             autoComplete="email"
-            onZmiana={(email) => setKontakt((k) => ({ ...k, email }))}
+            onZmiana={(wartosc) => zmienPoleKontaktu("email", wartosc)}
           />
           <PoleTekstowe
             id={`${identyfikator}-telefon`}
@@ -482,10 +577,11 @@ export function LeadForm() {
             blad={bledyKontaktu.telefon}
             typ="tel"
             autoComplete="tel"
-            onZmiana={(telefon) => setKontakt((k) => ({ ...k, telefon }))}
+            onZmiana={(wartosc) => zmienPoleKontaktu("telefon", wartosc)}
           />
         </div>
-        {renderZgoda(KONTAKT.zgoda, true)}
+        {renderZgoda(KONTAKT.zgoda)}
+        {renderMarketing()}
         {pulapkaPole}
         <div className={styles.akcje}>
           <button type="submit" className="lm-btn lm-btn--primary" aria-disabled={wysylanie}>
@@ -493,11 +589,42 @@ export function LeadForm() {
           </button>
           {przyciskWstecz}
         </div>
+        {renderKlauzula(KONTAKT.klauzula)}
       </form>
     );
   }
 
-  function renderZgoda(tekstZgody: string, zLinkiem: boolean) {
+  // Klauzula informacyjna stoi bezpośrednio pod przyciskiem wysyłki (treść-zgód.md, zasada 4).
+  function renderKlauzula(poczatek: string) {
+    return (
+      <p className={styles.klauzula}>
+        {poczatek}{" "}
+        <a href={LINKS.privacy} className="lm-link" target="_blank" rel="noopener noreferrer">
+          Polityce prywatności
+        </a>
+        .
+      </p>
+    );
+  }
+
+  // Zgoda marketingowa: osobne pole, niezaznaczone, nie blokuje wysłania.
+  function renderMarketing() {
+    return (
+      <div className={styles.zgoda}>
+        <label className={styles.zgodaEtykieta}>
+          <input
+            type="checkbox"
+            checked={zgodaMarketing}
+            className={styles.checkbox}
+            onChange={(zdarzenie) => setZgodaMarketing(zdarzenie.target.checked)}
+          />
+          <span>{ZGODA_MARKETING}</span>
+        </label>
+      </div>
+    );
+  }
+
+  function renderZgoda(tekstZgody: string) {
     const opisId = `${identyfikator}-zgoda-blad`;
     return (
       <div className={styles.zgoda}>
@@ -513,17 +640,7 @@ export function LeadForm() {
               setBladZgody(null);
             }}
           />
-          <span>
-            {tekstZgody}
-            {zLinkiem ? (
-              <>
-                {" "}
-                <a href={LINKS.privacy} className="lm-link" target="_blank" rel="noopener noreferrer">
-                  {KONTAKT.zgodaLink}
-                </a>
-              </>
-            ) : null}
-          </span>
+          <span>{tekstZgody}</span>
         </label>
         {bladZgody ? (
           <p id={opisId} className={styles.blad}>
@@ -541,6 +658,7 @@ export function LeadForm() {
           {NIE_TERAZ.naglowek}
         </h2>
         <p className={styles.tekst}>{NIE_TERAZ.tekst}</p>
+        <p className={styles.tekst}>{NIE_TERAZ.pomylka}</p>
         <PoleTekstowe
           id={`${identyfikator}-email-odsiew`}
           etykieta={NIE_TERAZ.poleEmail}
@@ -548,9 +666,10 @@ export function LeadForm() {
           blad={bladEmailaOdsiewu ?? undefined}
           typ="email"
           autoComplete="email"
-          onZmiana={setEmailOdsiewu}
+          onZmiana={zmienEmailOdsiewu}
         />
-        {renderZgoda(NIE_TERAZ.zgoda, true)}
+        {renderZgoda(NIE_TERAZ.zgoda)}
+        {renderMarketing()}
         {pulapkaPole}
         <div className={styles.akcje}>
           <button type="submit" className="lm-btn lm-btn--primary" aria-disabled={wysylanie}>
@@ -558,13 +677,19 @@ export function LeadForm() {
           </button>
           {przyciskWstecz}
         </div>
+        {renderKlauzula(NIE_TERAZ.klauzula)}
       </form>
     );
   }
 
   function renderDroga(trasa: TrasaZKalendarzem) {
     const droga = DROGI[trasa];
-    const adres = adresKalendarza(trasa, { imie: kontakt.imie.trim(), email: kontakt.email.trim().toLowerCase(), firma: kontakt.firma.trim() });
+    const znaczniki = zdecyduj(odpowiedzi).znaczniki;
+    // Dane osoby w adresie tylko po kliknięciu albo przy zapisanej zgodzie (P1); link „nowa karta”
+    // to też kliknięcie, więc zawsze ma prefill.
+    const osoba = { imie: kontakt.imie.trim(), email: kontakt.email.trim().toLowerCase(), firma: kontakt.firma.trim() };
+    const adresRamki = adresKalendarza(trasa, znaczniki, pokazKalendarz ? osoba : null);
+    const adresLinku = adresKalendarza(trasa, znaczniki, osoba);
     return (
       <div>
         <h2 ref={naglowekRef} tabIndex={-1} className={styles.naglowek}>
@@ -572,17 +697,30 @@ export function LeadForm() {
         </h2>
         <p className={styles.tekst}>{droga.tekst}</p>
         <p className={styles.tekst}>{PO_WYSLANIU}</p>
-        <iframe
-          src={adres}
-          title={KOMUNIKATY.kalendarzTytul}
-          loading="lazy"
-          className={styles.kalendarz}
-        />
+        {pokazKalendarz ? (
+          <iframe
+            ref={ramkaRef}
+            src={adresRamki}
+            title={KOMUNIKATY.kalendarzTytul}
+            loading="lazy"
+            className={styles.kalendarz}
+          />
+        ) : (
+          <div>
+            <p className={styles.tekst}>{KALENDARZ_ZGODA.informacja}</p>
+            <div className={styles.akcje}>
+              <button type="button" className="lm-btn lm-btn--primary" onClick={pokazKalendarzPoKliknieciu}>
+                {KALENDARZ_ZGODA.przycisk} <ArrowRight className="lm-btn__arrow" />
+              </button>
+            </div>
+          </div>
+        )}
         <p className={styles.tekst}>
-          <a href={adres} className="lm-link" target="_blank" rel="noopener noreferrer">
+          <a href={adresLinku} className="lm-link" target="_blank" rel="noopener noreferrer">
             {KOMUNIKATY.kalendarzLink}
           </a>
         </p>
+        {pokazKalendarz ? null : <p className={styles.tekst}>{KALENDARZ_ZGODA.bezKalendarza}</p>}
       </div>
     );
   }

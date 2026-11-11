@@ -239,27 +239,56 @@ export const KONTAKT = {
     email: "E-mail służbowy",
     telefon: "Telefon (opcjonalnie)",
   },
-  zgoda: "Zgadzam się na kontakt w sprawie zgłoszenia.",
+  // Treści zgód i klauzul: materialy/cto/strona-2026-11-11/prawne/treść-zgód.md § 1-3.
+  zgoda:
+    "Zgadzam się na kontakt e-mailowy i telefoniczny od LessManual w sprawie mojego zgłoszenia, w tym na przesłanie zakresu i wyceny.",
   zgodaLink: "Polityka prywatności",
+  klauzula:
+    "Administratorem danych jest Bartłomiej Chudzik, LessManual, ul. Długa 33, 05-530 Cendrowice. Dane z formularza wykorzystamy, żeby odpowiedzieć na zgłoszenie, dobrać rodzaj rozmowy i ją umówić (art. 6 ust. 1 lit. b i f RODO). Rodzaj rozmowy dobierają automatycznie Twoje odpowiedzi, a każde zgłoszenie czyta człowiek. Przed rozmową zgłoszenie analizują też nasze narzędzia AI oparte na modelu Claude (Anthropic). Dane przekazujemy naszym dostawcom, w tym Vercel, Supabase, Resend, Google, Cal.com i Anthropic, także w USA. Masz prawo do dostępu, poprawienia i usunięcia danych, sprzeciwu oraz skargi do Prezesa UODO. Więcej w",
 } as const;
+
+/** Wersja treści zgód zapisywana w CRM przy każdej zgodzie (treść-zgód.md, początek). */
+export const WERSJA_ZGOD = "2026-11-11";
+
+/** Opcjonalna zgoda marketingowa: niezaznaczona, nie blokuje wysłania (treść-zgód.md, zasada 2). */
+export const ZGODA_MARKETING =
+  "Chcę dostawać e-mailem informacje o nowych systemach i przykładach wdrożeń LessManual. Mogę zrezygnować w każdej chwili.";
+
+export type RodzajZgody = "kontakt_zgloszenie" | "przyklady_jednorazowo" | "marketing_email";
 
 export type EkranDrogi = {
   bzyk: string;
   tytul: string;
   tekst: string;
-  /** Slug typu spotkania w Cal.com. */
-  kalendarz: string;
 };
 
 export const KALENDARZ_BAZA = "https://cal.com/bart%C5%82omiej-chudzik-2en6pt";
 
 /**
- * Jedyne miejsce z typem 45 min (droga A i duża firma, FORMULARZ.md sekcja 2). Typ zakłada root
- * w Cal.com (decyzja 11.11). Stan 11.11 ok. 11:00: /45min zwraca 404, więc do założenia typu
- * ramka kalendarza na tych drogach pokaże błąd Cal.com; awaryjnie wystarczy wpisać tu "30min".
+ * Jedyne miejsce ze slugami typów spotkań Cal.com (decyzja Bartka 11.11, wszystkie 4 typy istnieją
+ * i dają 200). `priorytet45` dostają zgłoszenia ze znacznikiem `priorytet` (W tym miesiącu i budżet
+ * od 15 tys. zł), czyli tylko drogi z rozmową 45 min: A i duża firma. Droga B i C mają jeden typ
+ * 30 min, bo FORMULARZ.md sekcja 2 nie przewiduje dla nich osobnego typu priorytetowego.
  */
-export const KALENDARZ_45_MIN = "45min";
-const KALENDARZ_30_MIN = "30min";
+export const SLUGI_KALENDARZA = {
+  rozmowa45: "45min",
+  priorytet45: "45min-priorytet",
+  mapaAi30: "mapa-ai-30min",
+  pilot30: "pilot-30min",
+} as const;
+
+/** Czysta reguła wyboru typu spotkania: droga plus znaczniki z `zdecyduj`. */
+export function slugKalendarza(trasa: TrasaZKalendarzem, znaczniki: readonly Znacznik[]): string {
+  switch (trasa) {
+    case "A":
+    case "duza_firma":
+      return znaczniki.includes("priorytet") ? SLUGI_KALENDARZA.priorytet45 : SLUGI_KALENDARZA.rozmowa45;
+    case "B":
+      return SLUGI_KALENDARZA.mapaAi30;
+    case "C":
+      return SLUGI_KALENDARZA.pilot30;
+  }
+}
 
 export const DROGI: Readonly<Record<TrasaZKalendarzem, EkranDrogi>> = {
   A: {
@@ -267,21 +296,18 @@ export const DROGI: Readonly<Record<TrasaZKalendarzem, EkranDrogi>> = {
     tytul: "Rozmowa z Bartkiem, 45 minut",
     tekst:
       "Na rozmowie przejdziemy przez to, co boli najbardziej. Potem dostaniesz spisany zakres: etapy z ceną i efekt, który ma dawać system.",
-    kalendarz: KALENDARZ_45_MIN,
   },
   B: {
     bzyk: "Wybierz termin rozmowy o Mapie AI firmy, potrwa 30 minut.",
     tytul: "Rozmowa o Mapie AI firmy, 30 minut",
     tekst:
       "Mapa AI firmy to pełny obraz Twojej firmy i plan systemów na kwartał i rok. Cena: 6 900 zł netto, w całości odliczana od pierwszego wdrożenia.",
-    kalendarz: KALENDARZ_30_MIN,
   },
   C: {
     bzyk: "Wybierz termin rozmowy o pilocie, potrwa 30 minut.",
     tytul: "Rozmowa o pilocie, 30 minut",
     tekst:
       "W szybkim pilocie przez dwa tygodnie budujemy jeden proces na próbce Twoich danych i uruchamiamy go na naszej infrastrukturze. Szczegóły i koszt omówimy na rozmowie.",
-    kalendarz: KALENDARZ_30_MIN,
   },
   duza_firma: {
     bzyk: "Wybierz termin pierwszej rozmowy z Bartkiem, potrwa 45 minut.",
@@ -289,7 +315,6 @@ export const DROGI: Readonly<Record<TrasaZKalendarzem, EkranDrogi>> = {
     // FORMULARZ.md: kalendarz „jak droga A”, więc ten sam tekst co przy drodze A.
     tekst:
       "Na rozmowie przejdziemy przez to, co boli najbardziej. Potem dostaniesz spisany zakres: etapy z ceną i efekt, który ma dawać system.",
-    kalendarz: KALENDARZ_45_MIN,
   },
 };
 
@@ -299,7 +324,10 @@ export const NIE_TERAZ = {
   tekst:
     "Nasze projekty zwykle zaczynają się od kilkunastu tysięcy zł netto. Zostaw maila, a wyślemy Ci krótkie filmiki z przykładami systemów.",
   poleEmail: "E-mail",
-  zgoda: "Zgadzam się na wysłanie przykładów na ten adres.",
+  zgoda: "Proszę o jednorazowe wysłanie przykładów systemów LessManual na ten adres e-mail.",
+  pomylka: "Uważasz, że to pomyłka? Napisz na kontakt@lessmanual.ai, a przeczytamy Twoje odpowiedzi.",
+  klauzula:
+    "Administratorem danych jest Bartłomiej Chudzik, LessManual, ul. Długa 33, 05-530 Cendrowice. Adres e-mail i Twoje odpowiedzi wykorzystamy, żeby raz wysłać przykłady (art. 6 ust. 1 lit. b RODO). Przechowujemy je najdłużej 12 miesięcy. Masz prawo do dostępu, poprawienia i usunięcia danych, sprzeciwu oraz skargi do Prezesa UODO. Więcej w",
   przycisk: "Wyślij mi przykłady",
   potwierdzenieBzyk: "Dzięki. Przykłady wyślemy na podany adres.",
 } as const;
@@ -319,6 +347,14 @@ export const KOMUNIKATY = {
   bladEmaila: "Wpisz pełny adres, np. jan@firma.pl.",
   kalendarzLink: "Otwórz kalendarz w nowej karcie",
   kalendarzTytul: "Kalendarz rezerwacji rozmowy z Bartkiem",
+} as const;
+
+/** Ekran przed załadowaniem ramki Cal.com (treść-zgód.md § 3). */
+export const KALENDARZ_ZGODA = {
+  informacja:
+    "Kalendarz wyświetla firma Cal.com, Inc. z USA. Po kliknięciu przekażemy jej Twoje imię, e-mail i nazwę firmy, żeby nie trzeba było ich wpisywać drugi raz. Cal.com zapisze też własne cookies, w tym statystyki Google Analytics.",
+  przycisk: "Pokaż kalendarz",
+  bezKalendarza: "Wolisz bez kalendarza? Napisz na kontakt@lessmanual.ai i podaj dwa, trzy dogodne terminy.",
 } as const;
 
 // ---------------------------------------------------------------------------

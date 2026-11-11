@@ -278,6 +278,12 @@
   margin-bottom: 16px;
 }
 
+.klauzula {
+  margin: 16px 0 0;
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
 .zgodaEtykieta {
   display: flex;
   align-items: flex-start;

@@ -13,6 +13,7 @@ import {
 import { LIMIT_ZGLOSZEN, wyczyscWygasle, zajmijMiejsce, type StanLimitu } from "@/lib/lead/limit";
 import { odczytajZnacznikiBota, parsujZgloszenie } from "@/lib/lead/parsuj";
 import { zbudujMail, zbudujPodsumowanie, type IdentyfikatoryCrm } from "@/lib/lead/podsumowanie";
+import { wystawToken } from "@/lib/lead/token";
 import type { Zgloszenie } from "@/lib/lead/typy";
 import {
   BladCrm,
@@ -23,12 +24,15 @@ import {
   type KonfiguracjaCrm,
 } from "./crm-klient";
 import { wyslijMail } from "./poczta";
+import { ADRES_AWARYJNY, czyZadanieZWlasnejStrony, kluczKlienta } from "./zadanie";
 
 export const runtime = "nodejs";
+// Dane formularza zostają w UE (audyt P9). Uwaga: dokumentacja Next dla Vercel wymienia tę opcję
+// przy runtime edge; dla funkcji Node region ustawia też projekt Vercel (Settings, Functions).
+export const preferredRegion = "fra1";
 
 const MINIMALNY_CZAS_WYPELNIENIA_MS = 4000;
 const MAKSYMALNY_ROZMIAR_CIALA = 20_000;
-const ADRES_AWARYJNY = "kontakt@lessmanual.ai";
 
 // Limit w pamięci instancji: ochrona per instancja serverless, nie globalna (patrz lib/lead/limit.ts).
 const stanLimitu: StanLimitu = new Map();
@@ -40,12 +44,6 @@ function blad(status: number, komunikat: string, zMailto = false): Response {
     ? { ok: false, blad: komunikat, mailto: `mailto:${ADRES_AWARYJNY}` }
     : { ok: false, blad: komunikat };
   return Response.json(tresc, { status });
-}
-
-function kluczKlienta(zadanie: Request): string {
-  const przekazane = zadanie.headers.get("x-forwarded-for");
-  const pierwszy = przekazane?.split(",")[0]?.trim();
-  return pierwszy && pierwszy.length > 0 ? pierwszy : "nieznany";
 }
 
 type ZapisCrm = {
@@ -64,6 +62,7 @@ async function zapiszWCrm(
   decyzja: Decyzja,
   podsumowanie: string,
   userAgent: string,
+  terazIso: string,
 ): Promise<ZapisCrm> {
   const email = zgloszenie.rodzaj === "odsiew" ? zgloszenie.email : zgloszenie.kontakt.email;
   const istniejacy = await znajdzKontakt(konfiguracja, email);
@@ -78,14 +77,14 @@ async function zapiszWCrm(
   const dealId = await wstaw(
     konfiguracja,
     "crm_deals",
-    zbudujSzanse(zgloszenie, decyzja, companyId, contactId, userAgent),
+    zbudujSzanse(zgloszenie, decyzja, companyId, contactId, userAgent, terazIso),
   );
   const interakcja = zbudujInterakcje(
     zgloszenie,
     decyzja,
     { companyId, contactId, dealId },
     podsumowanie,
-    new Date().toISOString(),
+    terazIso,
     userAgent,
   );
   const interactionId = await wstaw(konfiguracja, "crm_interactions", interakcja);
@@ -100,13 +99,11 @@ export async function POST(zadanie: Request): Promise<Response> {
     return blad(429, "Za dużo zgłoszeń z tego adresu. Spróbuj za kilka minut albo napisz na kontakt@lessmanual.ai");
   }
 
-  // Tylko JSON z własnej strony: bez tego obca strona mogłaby wysyłać zgłoszenia z przeglądarek
-  // gości jako „prosty” POST text/plain (bez preflight CORS).
-  if (!(zadanie.headers.get("content-type") ?? "").toLowerCase().startsWith("application/json")) {
+  const kontrola = czyZadanieZWlasnejStrony(zadanie);
+  if (kontrola === "typ") {
     return blad(415, "Nieprawidłowe zgłoszenie.");
   }
-  const zrodlo = zadanie.headers.get("origin");
-  if (zrodlo !== null && !zTejSamejStrony(zrodlo, zadanie)) {
+  if (kontrola === "origin") {
     console.info("[formularz] Odrzucone: obcy Origin");
     return blad(403, "Nieprawidłowe zgłoszenie.");
   }
@@ -156,7 +153,7 @@ export async function POST(zadanie: Request): Promise<Response> {
 
   let zapis: ZapisCrm;
   try {
-    zapis = await zapiszWCrm(konfiguracja, zgloszenie, decyzja, podsumowanie, userAgent);
+    zapis = await zapiszWCrm(konfiguracja, zgloszenie, decyzja, podsumowanie, userAgent, new Date(teraz).toISOString());
   } catch (przyczyna) {
     const kod = przyczyna instanceof BladCrm ? `${przyczyna.tabela} HTTP ${przyczyna.status}` : "błąd sieci";
     console.error(`[formularz] Zapis do CRM nie powiódł się: ${kod}`);
@@ -178,16 +175,15 @@ export async function POST(zadanie: Request): Promise<Response> {
   }
 
   console.info(`[formularz] Zapisano zgłoszenie: droga ${decyzja.trasa}, mail ${mailId === null ? "nie" : "tak"}`);
-  // Bez identyfikatorów CRM w odpowiedzi: inaczej każdy mógłby sprawdzić, czy dany adres jest w CRM.
-  // Identyfikatory są w mailu do Bartka i w logach readbacku.
-  return Response.json({ ok: true, route: decyzja.trasa });
-}
-
-function zTejSamejStrony(zrodlo: string, zadanie: Request): boolean {
-  try {
-    const host = zadanie.headers.get("x-forwarded-host") ?? zadanie.headers.get("host") ?? new URL(zadanie.url).host;
-    return new URL(zrodlo).host === host;
-  } catch {
-    return false;
+  // Identyfikatory CRM idą tylko w mailu do Bartka. Odpowiedź zawiera co najwyżej token rezerwacji
+  // (podpisany HMAC, ważny 24 h) do dopisania terminu z kalendarza w /api/formularz/termin. Token
+  // dotyczy zawsze świeżo utworzonej szansy, więc nie pozwala sprawdzić, czy adres był już w CRM.
+  if (zgloszenie.rodzaj === "zgloszenie") {
+    return Response.json({
+      ok: true,
+      route: decyzja.trasa,
+      rezerwacja: wystawToken(zapis.identyfikatory.dealId, teraz, konfiguracja.klucz),
+    });
   }
+  return Response.json({ ok: true, route: decyzja.trasa });
 }

@@ -1,18 +1,21 @@
 import { describe, expect, it } from "vitest";
-import { zdecyduj } from "@/content/formularz";
+import { slugKalendarza, zdecyduj } from "@/content/formularz";
 import {
   zbudujFirme,
   zbudujInterakcje,
   zbudujKontakt,
   zbudujSzanse,
+  zbudujZgody,
   zrodloZgloszenia,
 } from "./crm";
-import { adresKalendarza } from "./kalendarz";
+import { adresKalendarza, terminZKomunikatu } from "./kalendarz";
 import { zajmijMiejsce, type StanLimitu } from "./limit";
 import { KONTAKT_PRZYKLADOWY, odpowiedz, odpowiedziPodstawowe } from "./przyklady";
 import { parsujZgloszenie } from "./parsuj";
 import { zbudujMail, zbudujPodsumowanie } from "./podsumowanie";
 import type { Zgloszenie, ZgloszeniePelne } from "./typy";
+
+const TERAZ = "2026-11-11T10:15:00.000Z";
 
 function zgloszenie(zmiany: Parameters<typeof odpowiedziPodstawowe>[0] = {}): ZgloszeniePelne {
   const wynik = parsujZgloszenie({
@@ -68,7 +71,7 @@ describe("rekordy CRM", () => {
   });
 
   it("szansa ma stage formularz, produkt z drogi i metadata bez IP z surowymi odpowiedziami", () => {
-    const szansa = zbudujSzanse(z, decyzja, "firma-1", "kontakt-1", "Mozilla/5.0");
+    const szansa = zbudujSzanse(z, decyzja, "firma-1", "kontakt-1", "Mozilla/5.0", TERAZ);
     expect(szansa).toMatchObject({
       title: "Kowalski Logistyka: droga A",
       stage: "formularz",
@@ -82,7 +85,7 @@ describe("rekordy CRM", () => {
 
   it("duża firma dostaje tytuł, produkt i notatkę zgodne z decyzją Bartka z 10.11", () => {
     const duza = zgloszenie({ wielkosc: odpowiedz("os_250_plus") });
-    const szansa = zbudujSzanse(duza, zdecyduj(duza.odpowiedzi), null, "k", "ua");
+    const szansa = zbudujSzanse(duza, zdecyduj(duza.odpowiedzi), null, "k", "ua", TERAZ);
     expect(szansa.title).toBe("Kowalski Logistyka: duża firma, droga A");
     expect(szansa.product).toBe("droga_A");
     expect(szansa.notes).toBe("duża firma, decyzja po 1. rozmowie");
@@ -91,8 +94,8 @@ describe("rekordy CRM", () => {
   it("droga B i C mapują się na produkty mapa_ai i pilot", () => {
     const b = zgloszenie({ etap: odpowiedz("nie_wiem_od_czego") });
     const c = zgloszenie({ etap: odpowiedz("najpierw_zobaczyc") });
-    expect(zbudujSzanse(b, zdecyduj(b.odpowiedzi), null, "k", "ua").product).toBe("mapa_ai");
-    expect(zbudujSzanse(c, zdecyduj(c.odpowiedzi), null, "k", "ua").product).toBe("pilot");
+    expect(zbudujSzanse(b, zdecyduj(b.odpowiedzi), null, "k", "ua", TERAZ).product).toBe("mapa_ai");
+    expect(zbudujSzanse(c, zdecyduj(c.odpowiedzi), null, "k", "ua", TERAZ).product).toBe("pilot");
   });
 
   it("interakcja jest przychodząca, z kanału strona, z podsumowaniem i znacznikiem czasu", () => {
@@ -120,12 +123,13 @@ describe("rekordy CRM", () => {
       rodzaj: "odsiew",
       wersja: "2026-11-11-v1",
       email: "ola@firma.pl",
+      zgodaMarketing: false,
       odpowiedzi: odpowiedziPodstawowe({ wielkosc: odpowiedz("os_1_9"), budzet: odpowiedz("do_5k") }),
     };
     const d = zdecyduj(odsiew.odpowiedzi);
     expect(d.trasa).toBe("odsiew");
     expect(zbudujKontakt(odsiew, d, null).full_name).toBe("ola@firma.pl");
-    const szansa = zbudujSzanse(odsiew, d, null, "k", "ua");
+    const szansa = zbudujSzanse(odsiew, d, null, "k", "ua", TERAZ);
     expect(szansa.stage).toBe("formularz_odsiew");
     expect(szansa.title).toBe("ola@firma.pl: odsiew, prośba o przykłady");
     expect(zrodloZgloszenia(odsiew.odpowiedzi)).toBe("formularz_www:chatgpt");
@@ -172,6 +176,7 @@ describe("mail do Bartka", () => {
       rodzaj: "odsiew",
       wersja: "v",
       email: "ola@firma.pl",
+      zgodaMarketing: false,
       odpowiedzi: odpowiedziPodstawowe(),
     };
     const mail = zbudujMail(odsiew, { trasa: "odsiew", znaczniki: [], decydent: false }, "s", {
@@ -184,9 +189,76 @@ describe("mail do Bartka", () => {
   });
 });
 
+describe("zgody w CRM (treść-zgód.md § 5)", () => {
+  it("zapisuje zgodę na kontakt i niezaznaczoną marketingową z wersją i czasem, bo to dowód z art. 7 RODO", () => {
+    const szansa = zbudujSzanse(zgloszenie(), zdecyduj(zgloszenie().odpowiedzi), null, "k", "ua", TERAZ);
+    expect(szansa.metadata.zgody).toEqual([
+      { rodzaj: "kontakt_zgloszenie", wersja: "2026-11-11", udzielona: true, czas: TERAZ },
+      { rodzaj: "marketing_email", wersja: "2026-11-11", udzielona: false, czas: TERAZ },
+    ]);
+  });
+
+  it("interakcja niesie te same zgody co szansa", () => {
+    const z = zgloszenie();
+    const interakcja = zbudujInterakcje(z, zdecyduj(z.odpowiedzi), { companyId: null, contactId: "k", dealId: "d" }, "s", TERAZ, "ua");
+    expect(interakcja.metadata.zgody).toHaveLength(2);
+  });
+
+  it("zaznaczona marketingowa ma udzielona=true, a na ekranie „Nie teraz” pierwsza zgoda to przyklady_jednorazowo", () => {
+    const odsiew: Zgloszenie = {
+      rodzaj: "odsiew",
+      wersja: "v",
+      email: "ola@firma.pl",
+      zgodaMarketing: true,
+      odpowiedzi: odpowiedziPodstawowe(),
+    };
+    const rodzaje = zbudujZgody(odsiew, TERAZ).map((wpis) => [wpis.rodzaj, wpis.udzielona]);
+    expect(rodzaje).toEqual([
+      ["przyklady_jednorazowo", true],
+      ["marketing_email", true],
+    ]);
+  });
+});
+
 describe("kalendarz", () => {
+  it("wybiera typ spotkania: A i duża firma 45min, z priorytetem 45min-priorytet, B i C własne typy 30 min", () => {
+    expect(slugKalendarza("A", [])).toBe("45min");
+    expect(slugKalendarza("duza_firma", [])).toBe("45min");
+    expect(slugKalendarza("A", ["priorytet"])).toBe("45min-priorytet");
+    expect(slugKalendarza("duza_firma", ["priorytet", "budzet_ponizej_S"])).toBe("45min-priorytet");
+    expect(slugKalendarza("A", ["budzet_ponizej_S"])).toBe("45min");
+    expect(slugKalendarza("B", ["priorytet"])).toBe("mapa-ai-30min");
+    expect(slugKalendarza("C", [])).toBe("pilot-30min");
+  });
+
+  it("bez zgody nie dopisuje do adresu żadnych danych osoby (art. 399 PKE, audyt P1)", () => {
+    const adres = adresKalendarza("B", [], null);
+    expect(adres).toBe("https://cal.com/bart%C5%82omiej-chudzik-2en6pt/mapa-ai-30min?embed=true");
+    expect(adres).not.toMatch(/name=|email=|notes=/);
+  });
+
+  it("zgłoszenie z „W tym miesiącu” i budżetem od 15 tys. dostaje kalendarz priorytetowy, bo tak działa decyzja", () => {
+    const z = zgloszenie({ termin: odpowiedz("w_tym_miesiacu") });
+    expect(slugKalendarza("A", zdecyduj(z.odpowiedzi).znaczniki)).toBe("45min-priorytet");
+  });
+
+  it("czyta datę z komunikatu Cal.com tylko z jej domeny i tylko dla zdarzenia rezerwacji", () => {
+    const komunikat = {
+      originator: "CAL",
+      type: "bookingSuccessfulV2",
+      data: { startTime: "2026-11-16T09:00:00.000Z" },
+    };
+    expect(terminZKomunikatu("https://cal.com", komunikat)).toBe("2026-11-16T09:00:00.000Z");
+    expect(terminZKomunikatu("https://app.cal.com", komunikat)).toBe("2026-11-16T09:00:00.000Z");
+    expect(terminZKomunikatu("https://evil.example", komunikat)).toBeNull();
+    expect(terminZKomunikatu("https://cal.com", { ...komunikat, type: "linkReady" })).toBeNull();
+    expect(terminZKomunikatu("https://cal.com", { ...komunikat, originator: "X" })).toBeNull();
+    expect(terminZKomunikatu("https://cal.com", { originator: "CAL", type: "bookingSuccessful", data: { date: "2026-11-16T09:00:00Z" } })).toBe("2026-11-16T09:00:00Z");
+    expect(terminZKomunikatu("https://cal.com", "tekst")).toBeNull();
+  });
+
   it("koduje parametry prefill, bo imię i firma mogą zawierać spacje i znaki specjalne", () => {
-    const adres = adresKalendarza("A", { imie: "Zażółć Gęślą", email: "a+b@firma.pl", firma: "R&D Sp. z o.o." });
+    const adres = adresKalendarza("A", [], { imie: "Zażółć Gęślą", email: "a+b@firma.pl", firma: "R&D Sp. z o.o." });
     expect(adres).toContain("https://cal.com/bart%C5%82omiej-chudzik-2en6pt/45min?embed=true");
     expect(adres).toContain("name=Za%C5%BC%C3%B3%C5%82%C4%87%20G%C4%99%C5%9Bl%C4%85");
     expect(adres).toContain("email=a%2Bb%40firma.pl");
