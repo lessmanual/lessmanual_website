@@ -1,3 +1,4 @@
+import "server-only";
 // Mail do Bartka przez Resend (POST /emails, dokumentacja: resend.com/docs/api-reference/emails/send-email).
 // Błąd maila nie może zepsuć odpowiedzi dla klienta, bo zapis w CRM jest ważniejszy.
 

@@ -97,7 +97,7 @@ export function zbudujMail(
   zgloszenie: Zgloszenie,
   decyzja: Decyzja,
   podsumowanie: string,
-  identyfikatory: IdentyfikatoryCrm,
+  identyfikatory: IdentyfikatoryCrm | null,
 ): TrescMaila {
   const wiersze: string[] = [podsumowanie, ""];
   let temat: string;
@@ -126,15 +126,18 @@ export function zbudujMail(
   opiszOdpowiedzi(zgloszenie.odpowiedzi).forEach(({ pytanie, odpowiedz }, indeks) => {
     wiersze.push(`${indeks + 1}. ${pytanie} ${odpowiedz}`);
   });
-  wiersze.push(
-    "",
-    "CRM",
-    `company_id: ${identyfikatory.companyId ?? "brak"}`,
-    `contact_id: ${identyfikatory.contactId}`,
-    `deal_id: ${identyfikatory.dealId}`,
-    `interaction_id: ${identyfikatory.interactionId}`,
-    "",
-    `Wersja formularza: ${zgloszenie.wersja}`,
-  );
-  return { temat, tekst: wiersze.join("\n") };
+  wiersze.push("", "CRM");
+  if (identyfikatory === null) {
+    // Zapis do CRM się nie udał: mail jest jedynym śladem zgłoszenia, więc mówi to wprost.
+    wiersze.push("ZAPIS DO CRM NIE POWIÓDŁ SIĘ. Dopisz zgłoszenie ręcznie z tego maila.");
+  } else {
+    wiersze.push(
+      `company_id: ${identyfikatory.companyId ?? "brak"}`,
+      `contact_id: ${identyfikatory.contactId}`,
+      `deal_id: ${identyfikatory.dealId}`,
+      `interaction_id: ${identyfikatory.interactionId}`,
+    );
+  }
+  wiersze.push("", `Wersja formularza: ${zgloszenie.wersja}`);
+  return { temat: identyfikatory === null ? `[BRAK ZAPISU W CRM] ${temat}` : temat, tekst: wiersze.join("\n") };
 }

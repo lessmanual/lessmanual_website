@@ -100,6 +100,17 @@ export async function POST(zadanie: Request): Promise<Response> {
     return blad(429, "Za dużo zgłoszeń z tego adresu. Spróbuj za kilka minut albo napisz na kontakt@lessmanual.ai");
   }
 
+  // Tylko JSON z własnej strony: bez tego obca strona mogłaby wysyłać zgłoszenia z przeglądarek
+  // gości jako „prosty” POST text/plain (bez preflight CORS).
+  if (!(zadanie.headers.get("content-type") ?? "").toLowerCase().startsWith("application/json")) {
+    return blad(415, "Nieprawidłowe zgłoszenie.");
+  }
+  const zrodlo = zadanie.headers.get("origin");
+  if (zrodlo !== null && !zTejSamejStrony(zrodlo, zadanie)) {
+    console.info("[formularz] Odrzucone: obcy Origin");
+    return blad(403, "Nieprawidłowe zgłoszenie.");
+  }
+
   const tekstCiala = await zadanie.text();
   if (tekstCiala.length > MAKSYMALNY_ROZMIAR_CIALA) {
     return blad(413, "Zgłoszenie jest za duże.");
@@ -115,7 +126,7 @@ export async function POST(zadanie: Request): Promise<Response> {
   if (znaczniki.pulapka.length > 0) {
     // Bot wypełnił ukryte pole: odpowiadamy sukcesem, żeby nie uczyć go, co go zdradza.
     console.info("[formularz] Honeypot: zgłoszenie odrzucone bez zapisu");
-    return Response.json({ ok: true, route: "A", ids: null, mailId: null });
+    return Response.json({ ok: true, route: "A" });
   }
   if (znaczniki.wypelnianieMs === null || znaczniki.wypelnianieMs < MINIMALNY_CZAS_WYPELNIENIA_MS) {
     console.info("[formularz] Zbyt szybkie wypełnienie: odrzucone bez zapisu");
@@ -149,6 +160,9 @@ export async function POST(zadanie: Request): Promise<Response> {
   } catch (przyczyna) {
     const kod = przyczyna instanceof BladCrm ? `${przyczyna.tabela} HTTP ${przyczyna.status}` : "błąd sieci";
     console.error(`[formularz] Zapis do CRM nie powiódł się: ${kod}`);
+    // Zgłoszenie nie może zginąć: mail z odpowiedziami idzie mimo braku zapisu.
+    const mailAwaryjny = await wyslijMail(zbudujMail(zgloszenie, decyzja, podsumowanie, null), email);
+    console.info(`[formularz] Mail awaryjny bez zapisu w CRM: ${mailAwaryjny === null ? "nie" : "tak"}`);
     return blad(502, `Nie udało się zapisać zgłoszenia. Napisz na ${ADRES_AWARYJNY}`, true);
   }
 
@@ -164,5 +178,16 @@ export async function POST(zadanie: Request): Promise<Response> {
   }
 
   console.info(`[formularz] Zapisano zgłoszenie: droga ${decyzja.trasa}, mail ${mailId === null ? "nie" : "tak"}`);
-  return Response.json({ ok: true, route: decyzja.trasa, ids: zapis.identyfikatory, mailId });
+  // Bez identyfikatorów CRM w odpowiedzi: inaczej każdy mógłby sprawdzić, czy dany adres jest w CRM.
+  // Identyfikatory są w mailu do Bartka i w logach readbacku.
+  return Response.json({ ok: true, route: decyzja.trasa });
+}
+
+function zTejSamejStrony(zrodlo: string, zadanie: Request): boolean {
+  try {
+    const host = zadanie.headers.get("x-forwarded-host") ?? zadanie.headers.get("host") ?? new URL(zadanie.url).host;
+    return new URL(zrodlo).host === host;
+  } catch {
+    return false;
+  }
 }

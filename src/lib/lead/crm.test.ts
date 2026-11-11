@@ -147,6 +147,16 @@ describe("mail do Bartka", () => {
     expect(mail.tekst).toContain("Subiekt");
   });
 
+  // Gdy CRM nie przyjmie zapisu, mail jest jedynym śladem zgłoszenia: Bartek musi to zobaczyć w temacie.
+  it("bez zapisu w CRM temat i treść mówią, że zgłoszenie trzeba dopisać ręcznie", () => {
+    const z = zgloszenie();
+    const mail = zbudujMail(z, zdecyduj(z.odpowiedzi), "podsumowanie", null);
+    expect(mail.temat).toBe("[BRAK ZAPISU W CRM] Formularz www: Kowalski Logistyka, droga A");
+    expect(mail.tekst).toContain("ZAPIS DO CRM NIE POWIÓDŁ SIĘ");
+    expect(mail.tekst).not.toContain("deal_id");
+    expect(mail.tekst).toContain("Subiekt");
+  });
+
   it("mail „Nie teraz” ma stały temat z prośbą o przykłady", () => {
     const odsiew: Zgloszenie = {
       rodzaj: "odsiew",

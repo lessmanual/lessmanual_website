@@ -144,24 +144,16 @@ export function LeadForm() {
     naglowekRef.current?.focus();
   }, [kluczEkranu]);
 
-  // Wstępne zaznaczenie pytania 6 z `?droga=A|B|C`. Czytamy window.location po zamontowaniu (bez
-  // useSearchParams, żeby strona nie traciła statycznego renderu); popstate i hashchange łapią
-  // zmianę adresu bez przeładowania. Odpowiedź można potem zmienić.
+  // Wstępne zaznaczenie pytania 6 z `?droga=A|B|C`, raz po zamontowaniu (bez useSearchParams, żeby
+  // strona nie traciła statycznego renderu). Tylko raz: nasłuch hashchange nadpisywał własny wybór
+  // użytkownika po kliknięciu dowolnej kotwicy (QA 11.11). Przyciski dróg to zwykłe <a>, które
+  // przeładowują stronę, więc nowy parametr i tak trafia tutaj przy montowaniu.
   useEffect(() => {
-    function zastosujDroge() {
-      const idOdpowiedzi = odpowiedzDlaDrogi(new URLSearchParams(window.location.search).get("droga"));
-      if (idOdpowiedzi === null) {
-        return;
-      }
-      setOdpowiedzi((poprzednie) => ({ ...poprzednie, [PYTANIE_DROGA]: { ids: [idOdpowiedzi], teksty: {} } }));
+    const idOdpowiedzi = odpowiedzDlaDrogi(new URLSearchParams(window.location.search).get("droga"));
+    if (idOdpowiedzi === null) {
+      return;
     }
-    zastosujDroge();
-    window.addEventListener("popstate", zastosujDroge);
-    window.addEventListener("hashchange", zastosujDroge);
-    return () => {
-      window.removeEventListener("popstate", zastosujDroge);
-      window.removeEventListener("hashchange", zastosujDroge);
-    };
+    setOdpowiedzi((poprzednie) => ({ ...poprzednie, [PYTANIE_DROGA]: { ids: [idOdpowiedzi], teksty: {} } }));
   }, []);
 
   function przejdzDo(nowy: Ekran) {

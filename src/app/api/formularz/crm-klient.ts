@@ -1,3 +1,4 @@
+import "server-only";
 // Adapter PostgREST do tabel crm_*. Klucz service role istnieje wyłącznie po stronie serwera
 // (zmienne środowiskowe bez prefiksu NEXT_PUBLIC). Bez zależności npm: zwykły fetch.
 
