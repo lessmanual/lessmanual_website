@@ -22,6 +22,10 @@ export function GoogleAnalytics() {
         // (Consent Mode wysyła wtedy pingi bez cookies). Flaga ga-disable wyłącza każde żądanie
         // do Google natychmiast, zanim strona się przeładuje.
         if (GA_ID) Reflect.set(window, `ga-disable-${GA_ID}`, true);
+        // gtag trzyma w kolejce zdarzenia zebrane jeszcze przy zgodzie (np. scroll) i wysyła je
+        // przy opuszczaniu strony (sendBeacon/fetch), także przy naszym przeładowaniu. Do końca
+        // tej strony blokujemy więc wysyłkę do domen Google Analytics.
+        zablokujWysylkeGa();
         if (typeof window.gtag === "function") {
           window.gtag("consent", "update", { analytics_storage: "denied" });
         }
@@ -61,4 +65,25 @@ export function GoogleAnalytics() {
       />
     </>
   );
+}
+
+const DOMENY_GA = /(^|\.)(google-analytics\.com|googletagmanager\.com|analytics\.google\.com)$/;
+
+function doGa(adres: string | URL): boolean {
+  try {
+    return DOMENY_GA.test(new URL(String(adres), window.location.href).hostname);
+  } catch {
+    return false;
+  }
+}
+
+// Po cofnięciu zgody: żadne żądanie do Google do przeładowania strony (delta QA 11.11).
+function zablokujWysylkeGa(): void {
+  const beacon = navigator.sendBeacon.bind(navigator);
+  navigator.sendBeacon = (adres, dane) => (doGa(adres) ? true : beacon(adres, dane));
+  const pobierz = window.fetch.bind(window);
+  window.fetch = (wejscie, opcje) => {
+    const adres = wejscie instanceof Request ? wejscie.url : wejscie;
+    return doGa(adres) ? Promise.resolve(new Response(null, { status: 204 })) : pobierz(wejscie, opcje);
+  };
 }
