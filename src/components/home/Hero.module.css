@@ -21,8 +21,11 @@
   gap: 14px;
 }
 
+/* Mobile: przycisk nie na całą szerokość (patyna poniżej 5% pierwszego ekranu, QA 11.11). */
 .cta {
-  width: 100%;
+  width: auto;
+  justify-self: start;
+  min-height: 48px;
 }
 
 .note {

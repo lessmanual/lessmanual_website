@@ -3,11 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { ArrowRight, Plus } from "@/components/site/Icons";
+import { Plus } from "@/components/site/Icons";
+import { FormCta } from "@/components/pages/FormCta";
 import { Breadcrumbs } from "@/components/pages/Breadcrumbs";
 import { JsonLd } from "@/components/pages/JsonLd";
 import styles from "@/components/pages/pages.module.css";
-import { PATHS, SITE_URL, formHref } from "@/content/site";
+import { SITE_URL } from "@/content/site";
 import {
   SYSTEM_PAGES,
   SYSTEM_PAGE_LABELS,
@@ -149,22 +150,7 @@ export default async function SystemPageRoute({ params }: { params: Promise<Para
             <h2 id="start" className={styles.h2}>
               {labels.startTitle}
             </h2>
-            <div className={styles.paths}>
-              {PATHS.items.map((path) => (
-                <div key={path.id} className={styles.path}>
-                  <span className={styles.pathLabel}>{path.label}</span>
-                  <h3>{path.title}</h3>
-                  <p>{path.cost}</p>
-                  <a
-                    href={formHref(path.id)}
-                    className={`lm-btn ${path.primary ? "lm-btn--primary" : "lm-btn--secondary"} ${styles.pathButton}`}
-                  >
-                    {path.cta}
-                    <ArrowRight className="lm-btn__arrow" />
-                  </a>
-                </div>
-              ))}
-            </div>
+            <FormCta note={labels.startNote} />
           </div>
         </section>
 

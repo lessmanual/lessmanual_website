@@ -70,7 +70,7 @@ export default function SystemyPage() {
                       <strong>System:</strong> {card.system}
                     </p>
                     <p>
-                      <strong>Efekt:</strong> {card.effect} ({card.company.toLowerCase()})
+                      <strong>Efekt:</strong> {card.effect} ({card.company})
                     </p>
                     {card.pageHref ? (
                       <Link href={card.pageHref} className={styles.cardLink}>

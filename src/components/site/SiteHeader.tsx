@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { Menu } from "./Icons";
+import { SiteHeaderMenu } from "./SiteHeaderMenu";
 import { LINKS, NAV } from "@/content/site";
 import styles from "./SiteHeader.module.css";
 
-// Nagłówek bez JS: menu mobilne na <details>, więc działa przed hydratacją i nie dokłada bundla.
+// Nagłówek: menu mobilne na <details> (działa przed hydratacją); mały klient zamyka je po kliknięciu pozycji.
 export function SiteHeader() {
   return (
     <header className={styles.header}>
@@ -22,10 +23,13 @@ export function SiteHeader() {
             Umów rozmowę
           </a>
         </nav>
-        <details className={styles.mobile}>
-          <summary className={styles.burger} aria-label="Menu">
-            <Menu />
-          </summary>
+        <SiteHeaderMenu
+          burger={
+            <summary className={styles.burger} aria-label="Menu">
+              <Menu />
+            </summary>
+          }
+        >
           <div className={styles.sheet}>
             {NAV.map((item) => (
               <a key={item.href} href={item.href} className={styles.sheetLink}>
@@ -39,7 +43,7 @@ export function SiteHeader() {
               Umów rozmowę
             </a>
           </div>
-        </details>
+        </SiteHeaderMenu>
       </div>
     </header>
   );

@@ -108,6 +108,20 @@
 
 html {
   scroll-padding-top: 88px;
+  /* Zabezpieczenie: żadna strona nie przewija się w bok (QA 11.11, od 320 px). */
+  overflow-x: clip;
+}
+
+/* Tabele we wpisach bloga: przewijanie poziome w kontenerze, nie całej strony. */
+.lm-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: 1.5em;
+}
+
+.lm-table-scroll > table {
+  margin: 0;
+  min-width: 480px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
