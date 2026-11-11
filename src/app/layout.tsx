@@ -13,25 +13,27 @@ import { SKRYPT_ZGODY_PRZED_MALOWANIEM } from "@/lib/consent";
 // Inter 400-600 ma 44 kB zamiast 133 kB (latin + latin-ext z next/font/google), Instrument Serif
 // 16 kB zamiast 24 kB. Mniej bajtów przed pierwszym malowaniem = zapas LCP na telefonie (delta QA
 // 11.11). Znak spoza zestawu (np. w treści bloga) przeglądarka pokaże fontem zastępczym.
-// `optional`: bez podmiany fontu po malowaniu, więc bez przesunięć treści (CLS).
+// Decyzja CEO 11.11: fonty marki widoczne od pierwszej wizyty. Oba kroje są w pierwszym ekranie
+// (Inter w całym tekście, Instrument Serif w słowie „ręcznej”), więc oba z preloadem i `swap`;
+// font zastępczy ma metryki dopasowane do kroju (adjustFontFallback), żeby podmiana nie
+// przesuwała treści (CLS do 0,1).
 const instrumentSerif = localFont({
   src: "./fonts/instrument-serif-italic-pl.woff2",
   variable: "--font-instrument-serif",
   weight: "400",
   style: "italic",
-  display: "optional",
+  display: "swap",
   adjustFontFallback: "Times New Roman",
-  preload: false,
+  preload: true,
 });
 
 const inter = localFont({
   src: "./fonts/inter-pl-400-600.woff2",
   variable: "--font-inter",
   weight: "400 600",
-  display: "optional",
+  display: "swap",
   adjustFontFallback: "Arial",
-  // Bez preloadu: z preloadem Lighthouse liczył LCP 2,5-2,8 s, bez niego 1,1-1,5 s (11.11).
-  preload: false,
+  preload: true,
 });
 
 export const viewport: Viewport = {
