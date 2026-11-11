@@ -125,7 +125,7 @@ export function CookieBanner() {
                 </Link>
               </p>
             </div>
-            <div className="grid grid-cols-[1fr_1fr_auto] gap-2 md:flex md:w-auto">
+            <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] gap-2 md:flex md:w-auto">
               <button
                 type="button"
                 onClick={() => zapisz(BRAK_ZGODY)}

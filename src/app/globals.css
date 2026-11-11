@@ -436,3 +436,11 @@ html[data-zgoda-cookies="ok"] .lm-cookie-banner {
     white-space: normal;
   }
 }
+
+/* 320-359 px: węższe wypełnienie przycisków banera, żeby zostawał odstęp od prawej krawędzi. */
+@media (max-width: 359px) {
+  .lm-cookie-btn {
+    padding: 4px 8px;
+    font-size: 15px;
+  }
+}
