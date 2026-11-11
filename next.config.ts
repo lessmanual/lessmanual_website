@@ -11,11 +11,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
-  // CSS (ok. 20 kB) w <head> zamiast osobnych plików blokujących render: mniej zapytań przed
-  // pierwszym malowaniem na telefonie (zapas LCP, delta QA 11.11).
-  experimental: {
-    inlineCss: true,
-  },
   // Okładki bloga z Supabase Storage (PNG ok. 7 MB) idą przez optymalizację obrazów Next.
   images: {
     remotePatterns: [
