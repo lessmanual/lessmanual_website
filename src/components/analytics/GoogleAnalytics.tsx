@@ -18,6 +18,10 @@ export function GoogleAnalytics() {
     const odswiez = () => {
       const analityczne = czytajZgodeCookies().analityczne;
       if (byloZgody.current && !analityczne) {
+        // Delta QA 11.11: samo `consent update` na denied zostawiało jeszcze zdarzenie `scroll`
+        // (Consent Mode wysyła wtedy pingi bez cookies). Flaga ga-disable wyłącza każde żądanie
+        // do Google natychmiast, zanim strona się przeładuje.
+        if (GA_ID) Reflect.set(window, `ga-disable-${GA_ID}`, true);
         if (typeof window.gtag === "function") {
           window.gtag("consent", "update", { analytics_storage: "denied" });
         }
