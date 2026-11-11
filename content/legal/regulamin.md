@@ -6,7 +6,7 @@ Regulamin określa zasady korzystania z serwisu lessmanual.ai i z usług, które
 
 ## § 1. Usługodawca
 
-1. Serwis prowadzi Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909, REGON [DO UZUPEŁNIENIA: REGON z CEIDG].
+1. Serwis prowadzi Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909, REGON 542947850.
 2. Kontakt: kontakt@lessmanual.ai albo listownie na adres z ust. 1.
 
 ## § 2. Definicje

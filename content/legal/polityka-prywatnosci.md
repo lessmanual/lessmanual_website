@@ -16,7 +16,7 @@ Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po
 
 ## § 1. Administrator danych
 
-1. Administratorem Twoich danych osobowych jest Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909, REGON [DO UZUPEŁNIENIA: REGON z CEIDG].
+1. Administratorem Twoich danych osobowych jest Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909, REGON 542947850.
 2. W sprawach danych osobowych napisz na kontakt@lessmanual.ai albo listownie na adres z ust. 1.
 3. Nie wyznaczyliśmy inspektora ochrony danych. Nie mamy takiego obowiązku według art. 37 RODO. Wszystkie sprawy prowadzi bezpośrednio administrator.
 
