@@ -183,7 +183,8 @@ export default async function BlogPostPage({
                   alt={normalizePublicProse(post.title_pl)}
                   width={1600}
                   height={900}
-                  sizes="(min-width: 800px) 760px, 100vw"
+                  sizes="(min-width: 840px) 760px, (min-width: 768px) calc(100vw - 80px), calc(100vw - 40px)"
+                  quality={70}
                   loading="eager"
                   fetchPriority="high"
                   style={{ width: "100%", height: "auto" }}

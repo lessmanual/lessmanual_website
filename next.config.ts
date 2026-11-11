@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
   },
   // Okładki bloga z Supabase Storage (PNG ok. 7 MB) idą przez optymalizację obrazów Next.
   images: {
+    // Okładka wpisu to element LCP na telefonie (Paczka 4, 11.11). AVIF jest ok. 20-30% lżejszy
+    // od WebP; przeglądarka bez AVIF dostaje WebP. Mniejsze szerokości (360-680) pozwalają
+    // telefonowi pobrać plik pod swój ekran zamiast domyślnego minimum 640/750. 828 zostaje dla
+    // obrazów w treści (blog-content.ts). Jakości: 70 dla okładki, 75 domyślna (Next 16 wymaga listy).
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [360, 420, 480, 560, 640, 680, 750, 828, 1080, 1200, 1920, 2048],
+    qualities: [70, 75],
     remotePatterns: [
       {
         protocol: "https",
