@@ -21,6 +21,7 @@ const instrumentSerif = localFont({
   style: "italic",
   display: "optional",
   adjustFontFallback: "Times New Roman",
+  preload: false,
 });
 
 const inter = localFont({
@@ -29,6 +30,8 @@ const inter = localFont({
   weight: "400 600",
   display: "optional",
   adjustFontFallback: "Arial",
+  // Bez preloadu: z preloadem Lighthouse liczył LCP 2,5-2,8 s, bez niego 1,1-1,5 s (11.11).
+  preload: false,
 });
 
 export const viewport: Viewport = {
