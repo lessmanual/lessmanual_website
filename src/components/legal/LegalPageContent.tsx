@@ -13,7 +13,8 @@ interface LegalPageContentProps {
 
 export function LegalPageContent({ title, filename }: LegalPageContentProps) {
   const filePath = path.join(process.cwd(), "content/legal", filename);
-  const markdownContent = fs.readFileSync(filePath, "utf-8");
+  // Nagłówek h1 strony pochodzi z propsa `title`; usuwamy pierwszy nagłówek z pliku, żeby nie było dwóch h1.
+  const markdownContent = fs.readFileSync(filePath, "utf-8").replace(/^# .*\r?\n/, "");
 
   return (
     <>

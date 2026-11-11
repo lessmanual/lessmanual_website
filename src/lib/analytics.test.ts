@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { trackEvent } from "@/lib/analytics";
+import { nazwyCookiesGa, trackEvent, zbudujSkryptGa } from "@/lib/analytics";
 
 describe("trackEvent", () => {
   afterEach(() => {
@@ -33,5 +33,28 @@ describe("trackEvent", () => {
         },
       ],
     ]);
+  });
+});
+
+describe("zbudujSkryptGa", () => {
+  it("denies all consent types by default before config and never uses anonymize_ip", () => {
+    const skrypt = zbudujSkryptGa("G-TEST123");
+    expect(skrypt.indexOf("'consent','default'")).toBeLessThan(skrypt.indexOf("'config'"));
+    for (const klucz of ["analytics_storage", "ad_storage", "ad_user_data", "ad_personalization"]) {
+      expect(skrypt).toContain(`${klucz}:'denied'`);
+    }
+    expect(skrypt).not.toContain("anonymize_ip");
+    expect(skrypt).toContain('"G-TEST123"');
+  });
+});
+
+describe("nazwyCookiesGa", () => {
+  it("picks only Google Analytics cookie names", () => {
+    expect(nazwyCookiesGa("a=1; _ga=GA1.1.2; _ga_ABC123=x; _gid=3; inne=4")).toEqual([
+      "_ga",
+      "_ga_ABC123",
+      "_gid",
+    ]);
+    expect(nazwyCookiesGa("")).toEqual([]);
   });
 });

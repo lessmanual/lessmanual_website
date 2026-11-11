@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { CookieSettingsButton } from "@/components/legal/CookieSettingsButton";
 import { FOOTER, LINKS, SYSTEMS } from "@/content/site";
 import styles from "./SiteFooter.module.css";
 
@@ -72,12 +73,18 @@ export function SiteFooter() {
             <li>
               <Link href="/legal/regulamin">Regulamin</Link>
             </li>
+            <li>
+              <CookieSettingsButton className={styles.linkButton} />
+            </li>
           </ul>
         </div>
       </div>
       <div className={`lm-container ${styles.bottom}`}>
         <span>© 2026 LessManual.ai</span>
         <span>{FOOTER.note}</span>
+        <span className={styles.provider}>
+          LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909
+        </span>
       </div>
     </footer>
   );

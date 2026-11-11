@@ -3,18 +3,12 @@ import { LegalPageContent } from "@/components/legal/LegalPageContent";
 
 export const metadata: Metadata = {
   title: "Polityka cookies",
-  description:
-    "Polityka Cookies LessManual.ai — informacje o plikach cookies uzywanych w serwisie.",
+  description: "Polityka cookies serwisu lessmanual.ai: jakie cookies zapisujemy, po co i jak zmienić zgodę.",
   alternates: {
     canonical: "https://www.lessmanual.ai/legal/polityka-cookies",
   },
 };
 
 export default function PolitykaCookiesPage() {
-  return (
-    <LegalPageContent
-      title="Polityka Cookies"
-      filename="polityka-cookies.md"
-    />
-  );
+  return <LegalPageContent title="Polityka cookies" filename="polityka-cookies.md" />;
 }

@@ -1,107 +1,135 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import {
+  BRAK_ZGODY,
+  ZDARZENIE_USTAWIEN_COOKIES,
+  ZDARZENIE_ZGODY_COOKIES,
+  czytajZapisZgodyCookies,
+  czytajZgodeCookies,
+  zapiszZgodeCookies,
+  type WyborCookies,
+} from "@/lib/consent";
 
-interface CookiePreferences {
-  necessary: boolean;
-  functional: boolean;
-  analytics: boolean;
-  marketing: boolean;
-}
-
-const STORAGE_KEY = "cookie-consent";
-
-type Category = {
-  key: Exclude<keyof CookiePreferences, "necessary">;
-  title: string;
-  body: string;
+type Kategoria = {
+  klucz: keyof WyborCookies;
+  tytul: string;
+  opis: string;
 };
 
-const OPTIONAL_CATEGORIES: readonly Category[] = [
+// Tylko kategorie, które naprawdę istnieją na stronie (treść-zgód.md, § 4).
+const KATEGORIE_OPCJONALNE: readonly Kategoria[] = [
   {
-    key: "functional",
-    title: "Funkcjonalne cookies",
-    body: "Zapamiętanie preferencji użytkownika (np. język, strefa czasowa).",
+    klucz: "analityczne",
+    tytul: "Analityczne",
+    opis: "Statystyki odwiedzin w Google Analytics 4. Pomagają nam poprawiać stronę.",
   },
   {
-    key: "analytics",
-    title: "Analityczne cookies",
-    body: "Analiza ruchu na stronie (np. Google Analytics).",
-  },
-  {
-    key: "marketing",
-    title: "Marketingowe cookies",
-    body: "Personalizacja reklam (np. LinkedIn Ads, Meta Ads).",
+    klucz: "kalendarz",
+    tytul: "Treści zewnętrzne: kalendarz",
+    opis: "Kalendarz rezerwacji Cal.com w ramce na stronie. Cal.com zapisuje własne cookies.",
   },
 ];
 
-// Baner zgody w stylu strony v3 (QA 11.11: wcześniej bez polskich znaków, 14 px i stary brązowy przycisk).
-// Przycisk akceptacji jest czarny, a nie patynowy, żeby nie konkurował z głównym przyciskiem strony.
+// Baner zgody. „Odrzuć opcjonalne” i „Akceptuj wszystkie” mają ten sam styl (raport EDPB z 17.01.2023:
+// wyróżnienie akceptacji to wprowadzający w błąd projekt). Zapis i wygasanie zgody: `@/lib/consent`.
 export function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
-  const [preferences, setPreferences] = useState<CookiePreferences>({
-    necessary: true,
-    functional: false,
-    analytics: false,
-    marketing: false,
-  });
+  const [widoczny, setWidoczny] = useState(false);
+  const [druga, setDruga] = useState(false);
+  const [maZapis, setMaZapis] = useState(false);
+  const [wybor, setWybor] = useState<WyborCookies>(BRAK_ZGODY);
+  const kontener = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) {
-      setShowBanner(true);
-    }
+    const zapis = czytajZapisZgodyCookies();
+    setMaZapis(zapis !== null);
+    setWidoczny(zapis === null);
+
+    const otworzUstawienia = () => {
+      setWybor(czytajZgodeCookies());
+      setMaZapis(czytajZapisZgodyCookies() !== null);
+      setDruga(true);
+      setWidoczny(true);
+    };
+    // Zgoda zapisana poza banerem (np. „Pokaż kalendarz”) zamyka baner.
+    const naZmianieZgody = () => {
+      const aktualny = czytajZapisZgodyCookies();
+      setMaZapis(aktualny !== null);
+      if (aktualny !== null) setWidoczny(false);
+    };
+
+    window.addEventListener(ZDARZENIE_USTAWIEN_COOKIES, otworzUstawienia);
+    window.addEventListener(ZDARZENIE_ZGODY_COOKIES, naZmianieZgody);
+    return () => {
+      window.removeEventListener(ZDARZENIE_USTAWIEN_COOKIES, otworzUstawienia);
+      window.removeEventListener(ZDARZENIE_ZGODY_COOKIES, naZmianieZgody);
+    };
   }, []);
 
-  const saveConsent = (prefs: CookiePreferences) => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
-    window.dispatchEvent(new Event("cookie-consent-updated"));
-    setShowBanner(false);
+  // Po otwarciu z linku w stopce przenosimy fokus na baner, żeby czytnik ekranu i klawiatura go zauważyły.
+  useEffect(() => {
+    if (widoczny && maZapis) kontener.current?.focus();
+  }, [widoczny, maZapis]);
+
+  const zapisz = useCallback((nowy: WyborCookies) => {
+    zapiszZgodeCookies(nowy);
+    setWidoczny(false);
+    setDruga(false);
+  }, []);
+
+  const wstecz = () => {
+    if (maZapis) {
+      setWidoczny(false);
+      setDruga(false);
+    } else {
+      setDruga(false);
+    }
   };
 
-  const acceptAll = () => {
-    saveConsent({ necessary: true, functional: true, analytics: true, marketing: true });
-  };
-
-  const acceptNecessary = () => {
-    saveConsent({ necessary: true, functional: false, analytics: false, marketing: false });
-  };
-
-  const saveCustom = () => {
-    saveConsent(preferences);
-  };
-
-  if (!showBanner) return null;
+  if (!widoczny) return null;
 
   return (
     <div
+      ref={kontener}
+      tabIndex={-1}
       role="region"
       aria-label="Zgoda na pliki cookies"
-      className="fixed bottom-0 left-0 right-0 z-[60] border-t border-line bg-surface shadow-[0_-8px_24px_#0a0a0a14]"
+      className="fixed bottom-0 left-0 right-0 z-[60] max-h-[100dvh] overflow-y-auto border-t border-line bg-surface shadow-[0_-8px_24px_#0a0a0a14] focus:outline-none"
     >
       <div className="lm-container py-5">
-        {!showDetails ? (
+        {!druga ? (
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
             <div className="flex-1">
               <p className="text-[17px] font-semibold text-ink">Ta strona używa plików cookies</p>
               <p className="mt-1 text-[15px] leading-relaxed text-ink-2">
-                Używamy cookies, żeby strona działała poprawnie. Analityka włącza się tylko po Twojej zgodzie.{" "}
+                Niezbędne cookies zapamiętują Twój wybór. Statystyki Google Analytics i kalendarz Cal.com włączamy
+                tylko po Twojej zgodzie. Zgodę zmienisz w każdej chwili w „Ustawieniach cookies” w stopce.{" "}
                 <Link href="/legal/polityka-cookies" className="lm-link">
-                  Dowiedz się więcej
+                  Polityka cookies
                 </Link>
               </p>
             </div>
             <div className="flex w-full flex-wrap gap-2 md:w-auto">
-              <button type="button" onClick={() => setShowDetails(true)} className="lm-btn lm-btn--secondary lm-btn--sm">
-                Dostosuj
+              <button type="button" onClick={() => zapisz(BRAK_ZGODY)} className="lm-btn lm-btn--secondary lm-btn--sm">
+                Odrzuć opcjonalne
               </button>
-              <button type="button" onClick={acceptNecessary} className="lm-btn lm-btn--secondary lm-btn--sm">
-                Tylko niezbędne
-              </button>
-              <button type="button" onClick={acceptAll} className="lm-btn lm-btn--solid lm-btn--sm">
+              <button
+                type="button"
+                onClick={() => zapisz({ analityczne: true, kalendarz: true })}
+                className="lm-btn lm-btn--secondary lm-btn--sm"
+              >
                 Akceptuj wszystkie
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setWybor(czytajZgodeCookies());
+                  setDruga(true);
+                }}
+                className="lm-btn lm-btn--secondary lm-btn--sm"
+              >
+                Ustawienia
               </button>
             </div>
           </div>
@@ -121,40 +149,40 @@ export function CookieBanner() {
               <label className="flex items-start gap-3 rounded-[8px] border border-line bg-sunken p-4">
                 <input type="checkbox" checked disabled className="mt-1 h-4 w-4 cursor-not-allowed" />
                 <span className="flex-1">
-                  <span className="block text-[16px] font-medium text-ink">Niezbędne cookies (wymagane)</span>
+                  <span className="block text-[16px] font-medium text-ink">Niezbędne (zawsze włączone)</span>
                   <span className="mt-0.5 block text-[15px] text-ink-2">
-                    Potrzebne do prawidłowego działania strony. Nie można ich wyłączyć.
+                    Zapamiętują Twój wybór cookies i ustawienia strony. Nie da się ich wyłączyć.
                   </span>
                 </span>
               </label>
 
-              {OPTIONAL_CATEGORIES.map((category) => (
+              {KATEGORIE_OPCJONALNE.map((kategoria) => (
                 <label
-                  key={category.key}
+                  key={kategoria.klucz}
                   className="flex cursor-pointer items-start gap-3 rounded-[8px] border border-line p-4 hover:border-ink"
                 >
                   <input
                     type="checkbox"
-                    checked={preferences[category.key]}
-                    onChange={(e) => setPreferences({ ...preferences, [category.key]: e.target.checked })}
+                    checked={wybor[kategoria.klucz]}
+                    onChange={(e) => setWybor({ ...wybor, [kategoria.klucz]: e.target.checked })}
                     className="mt-1 h-4 w-4 cursor-pointer"
                   />
                   <span className="flex-1">
-                    <span className="block text-[16px] font-medium text-ink">{category.title}</span>
-                    <span className="mt-0.5 block text-[15px] text-ink-2">{category.body}</span>
+                    <span className="block text-[16px] font-medium text-ink">{kategoria.tytul}</span>
+                    <span className="mt-0.5 block text-[15px] text-ink-2">{kategoria.opis}</span>
                   </span>
                 </label>
               ))}
             </div>
 
             <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-              <button type="button" onClick={() => setShowDetails(false)} className="lm-btn lm-btn--secondary lm-btn--sm">
+              <button type="button" onClick={wstecz} className="lm-btn lm-btn--secondary lm-btn--sm">
                 Wstecz
               </button>
-              <button type="button" onClick={acceptNecessary} className="lm-btn lm-btn--secondary lm-btn--sm">
-                Tylko niezbędne
+              <button type="button" onClick={() => zapisz(BRAK_ZGODY)} className="lm-btn lm-btn--secondary lm-btn--sm">
+                Odrzuć opcjonalne
               </button>
-              <button type="button" onClick={saveCustom} className="lm-btn lm-btn--solid lm-btn--sm">
+              <button type="button" onClick={() => zapisz(wybor)} className="lm-btn lm-btn--secondary lm-btn--sm">
                 Zapisz wybrane
               </button>
             </div>

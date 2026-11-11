@@ -1,60 +1,60 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usunCookiesGa, zbudujSkryptGa } from "@/lib/analytics";
+import { KLUCZ_ZGODY_COOKIES, ZDARZENIE_ZGODY_COOKIES, czytajZgodeCookies } from "@/lib/consent";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
+// GA4 ładuje się wyłącznie po zgodzie na kategorię „analityczne” (skrypt gtag.js nie pobiera się
+// wcześniej). Cofnięcie zgody w trakcie wizyty: `consent update` na denied, usunięcie cookies `_ga*`
+// i przeładowanie strony, żeby załadowany już skrypt przestał działać.
 export function GoogleAnalytics() {
-  const [hasConsent, setHasConsent] = useState(false);
+  const [zgoda, setZgoda] = useState(false);
+  const byloZgody = useRef(false);
 
   useEffect(() => {
-    const checkConsent = () => {
-      const saved = localStorage.getItem("cookie-consent");
-      if (saved) {
-        const prefs = JSON.parse(saved);
-        setHasConsent(prefs.analytics === true);
+    const odswiez = () => {
+      const analityczne = czytajZgodeCookies().analityczne;
+      if (byloZgody.current && !analityczne) {
+        if (typeof window.gtag === "function") {
+          window.gtag("consent", "update", { analytics_storage: "denied" });
+        }
+        usunCookiesGa();
+        window.location.reload();
+        return;
       }
+      if (!analityczne) usunCookiesGa();
+      byloZgody.current = analityczne;
+      setZgoda(analityczne);
     };
 
-    checkConsent();
+    odswiez();
 
-    // Listen for consent changes
-    const handleStorage = (e: StorageEvent) => {
-      if (e.key === "cookie-consent") checkConsent();
+    const naZmianePamieci = (zdarzenie: StorageEvent) => {
+      if (zdarzenie.key === KLUCZ_ZGODY_COOKIES) odswiez();
     };
-    window.addEventListener("storage", handleStorage);
-
-    // Also listen for custom event from CookieBanner
-    const handleConsent = () => checkConsent();
-    window.addEventListener("cookie-consent-updated", handleConsent);
+    window.addEventListener("storage", naZmianePamieci);
+    window.addEventListener(ZDARZENIE_ZGODY_COOKIES, odswiez);
 
     return () => {
-      window.removeEventListener("storage", handleStorage);
-      window.removeEventListener("cookie-consent-updated", handleConsent);
+      window.removeEventListener("storage", naZmianePamieci);
+      window.removeEventListener(ZDARZENIE_ZGODY_COOKIES, odswiez);
     };
   }, []);
 
-  if (!GA_ID || !hasConsent) return null;
+  if (!GA_ID || !zgoda) return null;
 
   return (
     <>
+      <Script id="gtag-init" strategy="afterInteractive">
+        {zbudujSkryptGa(GA_ID)}
+      </Script>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
       />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
-            page_path: window.location.pathname,
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure'
-          });
-        `}
-      </Script>
     </>
   );
 }
