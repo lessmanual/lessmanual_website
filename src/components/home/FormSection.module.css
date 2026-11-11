@@ -1,0 +1,35 @@
+.grid {
+  display: grid;
+  gap: 32px;
+}
+
+.copy {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 64px;
+  }
+
+  .copy {
+    position: sticky;
+    top: 112px;
+  }
+}
+
+.bzyk {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bzyk {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
+}

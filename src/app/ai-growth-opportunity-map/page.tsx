@@ -12,7 +12,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { V2ShellStyles, v2FontClasses } from "@/components/v2/V2ShellStyles";
-import { FooterV2 } from "@/components/v2/FooterV2";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { AIGrowthOpportunityMapForm } from "@/components/lead-magnet/AIGrowthOpportunityMapForm";
 
 export const metadata: Metadata = {
@@ -289,7 +289,7 @@ export default function AIGrowthOpportunityMapPage() {
         </section>
       </main>
 
-      <FooterV2 />
+      <SiteFooter />
     </div>
   );
 }

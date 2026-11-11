@@ -1,0 +1,49 @@
+import { Bzyk } from "@/components/site/Bzyk";
+import { ArrowRight } from "@/components/site/Icons";
+import { BZYK_LINES, HERO, LINKS, PROOF } from "@/content/site";
+import { HeroScene } from "./HeroScene";
+import styles from "./Hero.module.css";
+
+// Pierwszy ekran: H1 i opis są w HTML z serwera i widoczne od pierwszej klatki (element LCP).
+// Na desktopie Bzyk przy przycisku przylatuje ze sceny na końcu pierwszej pętli (5,5 s)
+// i mówi jedno zdanie; na telefonie stoi przy przycisku od razu (ruch oszczędnie).
+// Nagłówek łamany ręcznie (lista anty-slop, pkt 15), tak jak w projekcie v3.
+export function Hero() {
+  return (
+    <section className={styles.hero} aria-labelledby="hero-title">
+      <div className={`lm-container ${styles.grid}`}>
+        <div className={styles.copy}>
+          <h1 id="hero-title" className={styles.title}>
+            <span className={styles.line}>
+              {HERO.titleBefore} <span className="lm-accent">{HERO.titleAccent}</span>
+            </span>{" "}
+            <span className={styles.line}>pracy,</span>{" "}
+            <span className={styles.line}>więcej kontroli</span>{" "}
+            <span className={styles.line}>nad firmą.</span>
+          </h1>
+          <p className={`lm-lead ${styles.subtitle}`}>{HERO.subtitle}</p>
+          <div className={styles.ctaRow}>
+            <a href={LINKS.form} className={`lm-btn lm-btn--primary ${styles.cta}`}>
+              {HERO.cta}
+              <ArrowRight className="lm-btn__arrow" />
+            </a>
+            <p className={styles.note}>{HERO.ctaNote}</p>
+            <div className={styles.guide}>
+              <div className={styles.guideBzyk}>
+                <Bzyk width={54} mood="happy" />
+              </div>
+              <p className={`lm-bubble ${styles.bubble}`}>
+                <span className="lm-bubble__who">Bzyk</span>
+                {BZYK_LINES.hero}
+              </p>
+            </div>
+          </div>
+          <p className={styles.proof}>{PROOF.bar}</p>
+        </div>
+        <div className={styles.visual}>
+          <HeroScene />
+        </div>
+      </div>
+    </section>
+  );
+}

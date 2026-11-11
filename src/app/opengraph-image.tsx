@@ -2,10 +2,12 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "LessManual.ai - Systemy AI dla firm B2B";
+export const alt = "LessManual.ai: systemy AI, które ograniczają ręczną pracę w firmie";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Grafika udostępniania w nowej palecie (tło #FAFAFA, tekst #0A0A0A, miedź #B87333).
+// Bez starych produktów i obietnic godzinowych; liczby jak pasek dowodów (TEKSTY v3, stan 11.11.2026).
 export default async function Image() {
   return new ImageResponse(
     (
@@ -15,85 +17,32 @@ export default async function Image() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          background: "#F0EDEE",
+          justifyContent: "space-between",
+          padding: "72px 80px",
+          background: "#FAFAFA",
+          color: "#0A0A0A",
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        {/* Copper accent line */}
-        <div
-          style={{
-            width: 80,
-            height: 3,
-            background: "#B87333",
-            marginBottom: 32,
-          }}
-        />
-
-        {/* Logo */}
-        <div
-          style={{
-            display: "flex",
-            fontSize: 48,
-            fontWeight: 500,
-            letterSpacing: "-0.02em",
-            marginBottom: 24,
-          }}
-        >
-          <span style={{ color: "#1E293B" }}>Less</span>
-          <span style={{ color: "#B87333" }}>Manual</span>
-          <span style={{ color: "#1E293B" }}>.ai</span>
+        <div style={{ display: "flex", fontSize: 36, fontWeight: 600, letterSpacing: "-0.02em" }}>
+          <span>LessManual</span>
+          <span style={{ color: "#B87333" }}>.ai</span>
         </div>
-
-        {/* Tagline */}
-        <div
-          style={{
-            fontSize: 28,
-            color: "#1E293B",
-            fontWeight: 400,
-            textAlign: "center",
-            maxWidth: 800,
-            lineHeight: 1.4,
-            marginBottom: 40,
-          }}
-        >
-          Systemy AI dla firm B2B
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ fontSize: 76, fontWeight: 500, lineHeight: 1.05, letterSpacing: "-0.03em", maxWidth: 900 }}>
+            Mniej ręcznej pracy, więcej kontroli nad firmą.
+          </div>
+          <div style={{ marginTop: 28, fontSize: 30, color: "#3F3F46", maxWidth: 940, lineHeight: 1.4 }}>
+            Systemy AI budowane etapami, z ceną każdego etapu podaną przed startem.
+          </div>
         </div>
-
-        {/* Subtitle */}
-        <div
-          style={{
-            fontSize: 18,
-            color: "#4B5563",
-            textAlign: "center",
-            maxWidth: 700,
-            lineHeight: 1.6,
-          }}
-        >
-          Pipeline Machine | Content Machine | Chatbot 24/7 | Generator Ofert
-        </div>
-
-        {/* Bottom bar */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 40,
-            display: "flex",
-            alignItems: "center",
-            gap: 32,
-            fontSize: 16,
-            color: "#6B7280",
-          }}
-        >
-          <span>Gwarancja wyników</span>
-          <span style={{ color: "#B87333" }}>|</span>
-          <span>20-40h oszczednosci/mies</span>
-          <span style={{ color: "#B87333" }}>|</span>
-          <span>5.0 na Google</span>
+        <div style={{ display: "flex", gap: 28, fontSize: 24, color: "#3F3F46" }}>
+          <span>Systemy dla 18 firm</span>
+          <span style={{ color: "#B87333" }}>·</span>
+          <span>31 wdrożeń</span>
         </div>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }

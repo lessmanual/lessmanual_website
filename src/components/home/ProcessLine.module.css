@@ -1,0 +1,266 @@
+.head {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.intro {
+  margin-top: 20px;
+}
+
+.table {
+  --line-col: 44px;
+}
+
+.headerRow {
+  display: none;
+}
+
+.body {
+  position: relative;
+}
+
+/* Tor linii: szara szyna, miedziane wypełnienie i Bzyk przyklejony do toru. */
+.track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--line-col);
+  pointer-events: none;
+}
+
+.rail,
+.fill {
+  position: absolute;
+  top: 34px;
+  bottom: 40px;
+  left: calc(var(--line-col) / 2 - 1px);
+  width: 2px;
+  background: var(--line);
+}
+
+.fill {
+  background: var(--copper);
+  transform-origin: top;
+}
+
+.rider {
+  position: sticky;
+  top: 42vh;
+  display: block;
+  width: 52px;
+  margin-left: calc(var(--line-col) / 2 - 26px);
+  margin-top: 4px;
+  z-index: 1;
+}
+
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--line-col) 1fr;
+  gap: 0 16px;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lineCell {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 2px var(--copper);
+}
+
+/* Wypełnienie kropki osobną warstwą, żeby animować tylko opacity. */
+.dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--copper);
+}
+
+.step {
+  grid-column: 2;
+}
+
+.num {
+  display: block;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--copper);
+}
+
+.stepTitle {
+  font-size: var(--fs-h3);
+  margin-top: 2px;
+}
+
+.cell {
+  grid-column: 2;
+  position: relative;
+  margin-top: 16px;
+}
+
+.cell p {
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+
+.label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.cell:nth-child(3) .label {
+  color: var(--copper-strong);
+}
+
+.bar {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--patina);
+  opacity: 0;
+  transform-origin: left;
+}
+
+/* Bez wsparcia scroll-driven animations: linia pełna, kropki pełne, kreska przy kroku 1. */
+.row[data-step="1"] .bar {
+  opacity: 1;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .fill {
+      animation: lineFill linear both;
+      animation-timeline: view();
+      animation-range: cover 10% cover 70%;
+    }
+
+    .dot::after {
+      animation: dotFill linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 58%;
+    }
+
+    .row[data-step="1"] .bar {
+      opacity: 0;
+    }
+
+    .bar {
+      animation: barActive linear both;
+      animation-timeline: view();
+      animation-range: cover 30% cover 75%;
+    }
+
+    .row[data-step="5"] .bar {
+      animation-name: barLast;
+    }
+  }
+}
+
+@keyframes lineFill {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes dotFill {
+  0%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes barActive {
+  0%, 20% { opacity: 0; transform: scaleX(0.3); }
+  35%, 70% { opacity: 1; transform: scaleX(1); }
+  85%, 100% { opacity: 0; transform: scaleX(1); }
+}
+
+/* Ostatni krok zostaje aktywny do końca sekcji (klatka 3 projektu). */
+@keyframes barLast {
+  0%, 20% { opacity: 0; transform: scaleX(0.3); }
+  35%, 100% { opacity: 1; transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rider {
+    position: absolute;
+    top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .head {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+    margin-bottom: 56px;
+  }
+
+  .table {
+    --line-col: 96px;
+    --cols: var(--line-col) minmax(0, 0.9fr) minmax(0, 1.25fr) minmax(0, 1fr);
+  }
+
+  .headerRow {
+    display: grid;
+    grid-template-columns: var(--cols);
+    gap: 0 32px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .oursHead {
+    color: var(--copper-strong);
+  }
+
+  .row {
+    grid-template-columns: var(--cols);
+    gap: 0 32px;
+    padding: 32px 0 36px;
+  }
+
+  .step,
+  .cell {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .bar {
+    top: -14px;
+  }
+
+  .rail,
+  .fill {
+    top: 46px;
+    bottom: 56px;
+  }
+
+  .dot {
+    top: 20px;
+  }
+}

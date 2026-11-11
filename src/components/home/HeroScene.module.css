@@ -1,0 +1,451 @@
+/* Scena hero. Pętla 5,5 s; klatki 0-4% to powrót do stanu początkowego (211, „czeka”),
+   67-100% to stan końcowy (215, wszystko „wpisano”, Bzyk radosny).
+   Stan bez animacji = stan końcowy, więc reduced motion, druk i Google widzą wynik.
+   Animujemy tylko transform i opacity. */
+
+.scene {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 12px;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-xl);
+  --cycle: 5.5s;
+}
+
+.stage {
+  position: relative;
+  height: 236px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.pause {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 0;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+}
+
+.docs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.doc {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 160px;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  font-size: 15px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(var(--dx), var(--dy)) scale(0.2);
+  animation-duration: var(--cycle);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.docName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Podpis sceny: widoczny pod sceną na telefonie, na desktopie tylko dla czytników ekranu (TEKSTY v3, sekcja 1). */
+.caption {
+  grid-column: 1 / -1;
+  padding: 4px 6px 2px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+@media (min-width: 1024px) {
+  .caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+.docIcon {
+  flex: none;
+  width: 13px;
+  height: 16px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1.5px var(--ink-3);
+}
+
+/* Mobile: dokumenty u góry w dwóch rzędach, Bzyk pod nimi (projekt v3, klatki mobile). */
+.doc[data-i="0"] { left: 10px; top: 14px; --r: -3deg; --dx: 96px; --dy: 132px; }
+.doc[data-i="1"] { left: 176px; top: 18px; --r: 2deg; --dx: -70px; --dy: 128px; }
+.doc[data-i="2"] { left: 18px; top: 66px; --r: 2deg; --dx: 88px; --dy: 80px; }
+.doc[data-i="3"] { left: 172px; top: 72px; --r: -2deg; --dx: -66px; --dy: 74px; }
+
+.bzyk {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  width: 92px;
+  height: 70px;
+  margin-left: -46px;
+}
+
+.bzyk :global(.bzyk) {
+  position: absolute;
+  inset: 0;
+  animation-duration: var(--cycle);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.bzykNeutral {
+  opacity: 0;
+}
+
+.sheet {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 18px 18px 6px;
+}
+
+.sheetTitle {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sheetSub {
+  font-size: 15px;
+  color: var(--ink-2);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.counterBlock {
+  display: grid;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.counter {
+  display: grid;
+  font-size: 48px;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.counter > span {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation-duration: var(--cycle);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.counter > span:last-child {
+  opacity: 1;
+}
+
+.counterLabel {
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.errors {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 16px;
+  color: var(--success);
+}
+
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+  font-size: 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.status {
+  display: grid;
+  justify-items: end;
+}
+
+.waiting,
+.done {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  animation-duration: var(--cycle);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.waiting {
+  color: var(--ink-2);
+  opacity: 0;
+}
+
+.done {
+  color: var(--success);
+}
+
+/* Ruch tylko bez prefers-reduced-motion. Telefon: jeden przebieg, potem stan końcowy.
+   Od 1024 px pętla (z przyciskiem pauzy, WCAG 2.2.2). */
+@media (prefers-reduced-motion: no-preference) {
+  .doc,
+  .counter > span,
+  .waiting,
+  .done,
+  .bzyk :global(.bzyk) {
+    animation-delay: 0.6s;
+  }
+
+  .bzyk {
+    animation: bzykBob 1.8s ease-in-out infinite;
+  }
+
+  .doc[data-i="0"] { animation-name: doc0; }
+  .doc[data-i="1"] { animation-name: doc1; }
+  .doc[data-i="2"] { animation-name: doc2; }
+  .doc[data-i="3"] { animation-name: doc3; }
+  .row[data-i="0"] .done { animation-name: rowDone0; }
+  .row[data-i="0"] .waiting { animation-name: rowWait0; }
+  .row[data-i="1"] .done { animation-name: rowDone1; }
+  .row[data-i="1"] .waiting { animation-name: rowWait1; }
+  .row[data-i="2"] .done { animation-name: rowDone2; }
+  .row[data-i="2"] .waiting { animation-name: rowWait2; }
+  .row[data-i="3"] .done { animation-name: rowDone3; }
+  .row[data-i="3"] .waiting { animation-name: rowWait3; }
+  .counter > span[data-i="0"] { animation-name: count0; }
+  .counter > span[data-i="1"] { animation-name: count1; }
+  .counter > span[data-i="2"] { animation-name: count2; }
+  .counter > span[data-i="3"] { animation-name: count3; }
+  .counter > span[data-i="4"] { animation-name: count4; }
+  .bzykHappy { animation-name: bzykHappy; }
+  .bzykNeutral { animation-name: bzykNeutral; }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+  .doc,
+  .counter > span,
+  .waiting,
+  .done,
+  .bzyk :global(.bzyk) {
+    animation-iteration-count: infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pause {
+    display: none;
+  }
+}
+
+/* Pauza działa na wszystko w scenie, także na zagnieżdżone SVG Bzyka. */
+.scene[data-paused="true"] *,
+.scene[data-paused="true"] .bzyk {
+  animation-play-state: paused !important;
+}
+
+@media (min-width: 1024px) {
+  .scene {
+    grid-template-columns: 1fr 290px;
+    padding: 14px;
+  }
+
+  .stage {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .pause {
+    left: 8px;
+    right: auto;
+  }
+
+  .doc[data-i="0"] { left: 16px; top: 72px; --r: -4deg; --dx: 120px; --dy: 112px; }
+  .doc[data-i="1"] { left: 30px; top: 134px; --r: 3deg; --dx: 106px; --dy: 50px; }
+  .doc[data-i="2"] { left: 12px; top: 196px; --r: -2deg; --dx: 124px; --dy: -12px; }
+  .doc[data-i="3"] { left: 36px; top: 258px; --r: 4deg; --dx: 100px; --dy: -74px; }
+
+  .bzyk {
+    left: auto;
+    right: 18px;
+    bottom: auto;
+    top: 172px;
+    margin-left: 0;
+  }
+}
+
+@keyframes bzykBob {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes bzykHappy {
+  0%, 3.9% { opacity: 1; }
+  4%, 66.9% { opacity: 0; }
+  67%, 100% { opacity: 1; }
+}
+
+@keyframes bzykNeutral {
+  0%, 3.9% { opacity: 0; }
+  4%, 66.9% { opacity: 1; }
+  67%, 100% { opacity: 0; }
+}
+
+@keyframes doc0 {
+  0% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2); }
+  0.1% { opacity: 0; transform: translate(0, 0) rotate(var(--r)); }
+  8%, 22% { opacity: 1; transform: translate(0, 0) rotate(var(--r)); }
+  29% { opacity: 1; }
+  32%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2) rotate(0deg); }
+}
+
+@keyframes doc1 {
+  0% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2); }
+  0.1% { opacity: 0; transform: translate(0, 0) rotate(var(--r)); }
+  8%, 33% { opacity: 1; transform: translate(0, 0) rotate(var(--r)); }
+  40% { opacity: 1; }
+  43%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2) rotate(0deg); }
+}
+
+@keyframes doc2 {
+  0% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2); }
+  0.1% { opacity: 0; transform: translate(0, 0) rotate(var(--r)); }
+  8%, 44% { opacity: 1; transform: translate(0, 0) rotate(var(--r)); }
+  51% { opacity: 1; }
+  54%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2) rotate(0deg); }
+}
+
+@keyframes doc3 {
+  0% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2); }
+  0.1% { opacity: 0; transform: translate(0, 0) rotate(var(--r)); }
+  8%, 55% { opacity: 1; transform: translate(0, 0) rotate(var(--r)); }
+  62% { opacity: 1; }
+  65%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2) rotate(0deg); }
+}
+
+@keyframes rowDone0 {
+  0%, 3.9% { opacity: 1; }
+  4%, 33.9% { opacity: 0; }
+  34%, 100% { opacity: 1; }
+}
+
+@keyframes rowWait0 {
+  0%, 3.9% { opacity: 0; }
+  4%, 33.9% { opacity: 1; }
+  34%, 100% { opacity: 0; }
+}
+
+@keyframes rowDone1 {
+  0%, 3.9% { opacity: 1; }
+  4%, 44.9% { opacity: 0; }
+  45%, 100% { opacity: 1; }
+}
+
+@keyframes rowWait1 {
+  0%, 3.9% { opacity: 0; }
+  4%, 44.9% { opacity: 1; }
+  45%, 100% { opacity: 0; }
+}
+
+@keyframes rowDone2 {
+  0%, 3.9% { opacity: 1; }
+  4%, 55.9% { opacity: 0; }
+  56%, 100% { opacity: 1; }
+}
+
+@keyframes rowWait2 {
+  0%, 3.9% { opacity: 0; }
+  4%, 55.9% { opacity: 1; }
+  56%, 100% { opacity: 0; }
+}
+
+@keyframes rowDone3 {
+  0%, 3.9% { opacity: 1; }
+  4%, 66.9% { opacity: 0; }
+  67%, 100% { opacity: 1; }
+}
+
+@keyframes rowWait3 {
+  0%, 3.9% { opacity: 0; }
+  4%, 66.9% { opacity: 1; }
+  67%, 100% { opacity: 0; }
+}
+
+@keyframes count0 {
+  0%, 3.9% { opacity: 0; }
+  4%, 33.9% { opacity: 1; }
+  34%, 100% { opacity: 0; }
+}
+
+@keyframes count1 {
+  0%, 33.9% { opacity: 0; }
+  34%, 44.9% { opacity: 1; }
+  45%, 100% { opacity: 0; }
+}
+
+@keyframes count2 {
+  0%, 44.9% { opacity: 0; }
+  45%, 55.9% { opacity: 1; }
+  56%, 100% { opacity: 0; }
+}
+
+@keyframes count3 {
+  0%, 55.9% { opacity: 0; }
+  56%, 66.9% { opacity: 1; }
+  67%, 100% { opacity: 0; }
+}
+
+@keyframes count4 {
+  0%, 3.9% { opacity: 1; }
+  4%, 66.9% { opacity: 0; }
+  67%, 100% { opacity: 1; }
+}

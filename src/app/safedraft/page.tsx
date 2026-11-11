@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import { FooterV2 } from "@/components/v2/FooterV2";
-import { HeaderV2 } from "@/components/v2/HeaderV2";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
 import { V2ShellStyles, v2FontClasses } from "@/components/v2/V2ShellStyles";
 import { SafeDraftTool } from "@/features/safedraft/components/safedraft-tool";
 
@@ -37,7 +37,7 @@ export default function SafeDraftPage() {
   return (
     <div className={`v2-scope ${v2FontClasses}`}>
       <V2ShellStyles />
-      <HeaderV2 />
+      <SiteHeader />
       <main>
         <section
           role="banner"
@@ -85,7 +85,7 @@ export default function SafeDraftPage() {
           </div>
         </section>
       </main>
-      <FooterV2 />
+      <SiteFooter />
     </div>
   );
 }

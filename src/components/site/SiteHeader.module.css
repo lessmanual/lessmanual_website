@@ -1,0 +1,91 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--bg) 96%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+
+.navLink {
+  font-size: var(--fs-ui);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.mobile {
+  position: relative;
+}
+
+.burger {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.burger::-webkit-details-marker {
+  display: none;
+}
+
+.sheet {
+  position: absolute;
+  right: 0;
+  top: 56px;
+  width: min(320px, calc(100vw - 2 * var(--gutter)));
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px #0a0a0a14, 0 0 0 1px #0a0a0a0f;
+}
+
+.sheetLink {
+  display: block;
+  padding: 12px 8px;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.sheet :global(.lm-btn) {
+  margin-top: 8px;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    display: flex;
+  }
+
+  .mobile {
+    display: none;
+  }
+}

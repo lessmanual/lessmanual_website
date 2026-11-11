@@ -1,16 +1,19 @@
-import type { Metadata } from "next";
-import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
-import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { CookieBanner } from "@/components/legal/CookieBanner";
-import ChatWidget from "@/components/chat/ChatWidget";
 import { ORGANIZATION_SCHEMA, serializeJsonLd } from "@/lib/schema";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { BzykDefs } from "@/components/site/Bzyk";
+import { META, SITE_URL } from "@/content/site";
 
+// next/font hostuje pliki z tej samej domeny (bez blokującego Google Fonts).
+// Instrument Serif tylko kursywą: używamy go wyłącznie do wyróżnionego słowa w nagłówku.
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: "400",
+  style: ["italic"],
   display: "swap",
 });
 
@@ -21,34 +24,28 @@ const inter = Inter({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-});
+export const viewport: Viewport = {
+  themeColor: "#FAFAFA",
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.lessmanual.ai"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "LessManual.ai",
+    default: META.title,
     template: "%s | LessManual",
   },
-  description:
-    "LessManual projektuje, wdraża i utrzymuje agentów AI dla firm B2B.",
+  description: META.description,
   openGraph: {
-    title: "LessManual.ai",
-    description:
-      "Projektujemy, wdrażamy i utrzymujemy agentów AI dla firm B2B.",
+    title: META.ogTitle,
+    description: META.ogDescription,
     siteName: "LessManual.ai",
     locale: "pl_PL",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LessManual.ai",
-    description:
-      "Projektujemy, wdrażamy i utrzymujemy agentów AI dla firm B2B.",
+    title: META.ogTitle,
+    description: META.ogDescription,
   },
   robots: {
     index: true,
@@ -70,9 +67,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body
-        className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
-      >
+      <body className={`${instrumentSerif.variable} ${inter.variable}`}>
+        <BzykDefs />
         <GoogleAnalytics />
         <script
           type="application/ld+json"
@@ -82,8 +78,6 @@ export default function RootLayout({
         />
         {children}
         <CookieBanner />
-        <ScrollToTop />
-        <ChatWidget />
       </body>
     </html>
   );

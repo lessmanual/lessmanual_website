@@ -1,0 +1,81 @@
+/* Domyślnie ukryty; pokazujemy tylko tam, gdzie lot ma sens i nie zasłania treści:
+   ekran od 1400 px szerokości (margines poza kontenerem 1200 px) i 720 px wysokości. */
+.lane {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) and (offset-path: path("M0 0")) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1400px) and (min-height: 720px) {
+    .lane {
+      display: block;
+      position: fixed;
+      top: 104px;
+      right: 18px;
+      width: 72px;
+      height: 600px;
+      z-index: 30;
+      pointer-events: none;
+    }
+
+    .flyer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: auto;
+      /* Łagodna fala w dół marginesu: od hero do formularza na końcu strony. */
+      offset-path: path("M 36 0 C 6 90, 66 150, 36 240 S 6 390, 36 480 S 60 560, 36 590");
+      offset-rotate: 0deg;
+      offset-anchor: 50% 50%;
+      animation: guideFlight linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+.hide {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.hide:hover,
+.hide:focus-visible {
+  opacity: 1;
+}
+
+@keyframes guideFlight {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+.show {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: auto;
+  white-space: nowrap;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 15px;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+}
