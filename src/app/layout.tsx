@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { CookieBanner } from "@/components/legal/CookieBanner";
 import { ORGANIZATION_SCHEMA, serializeJsonLd } from "@/lib/schema";
@@ -8,28 +8,27 @@ import { BzykDefs } from "@/components/site/Bzyk";
 import { META, SITE_URL } from "@/content/site";
 import { SKRYPT_ZGODY_PRZED_MALOWANIEM } from "@/lib/consent";
 
-// next/font hostuje pliki z tej samej domeny (bez blokującego Google Fonts).
-// Instrument Serif tylko kursywą: używamy go wyłącznie do wyróżnionego słowa w nagłówku.
-const instrumentSerif = Instrument_Serif({
+// Fonty z własnej domeny, przycięte do znaków strony (łacina podstawowa, Latin-1, polskie litery,
+// polskie cudzysłowy i myślniki; pliki z Google Fonts z parametrem text=, licencja SIL OFL).
+// Inter 400-600 ma 44 kB zamiast 133 kB (latin + latin-ext z next/font/google), Instrument Serif
+// 16 kB zamiast 24 kB. Mniej bajtów przed pierwszym malowaniem = zapas LCP na telefonie (delta QA
+// 11.11). Znak spoza zestawu (np. w treści bloga) przeglądarka pokaże fontem zastępczym.
+// `optional`: bez podmiany fontu po malowaniu, więc bez przesunięć treści (CLS).
+const instrumentSerif = localFont({
+  src: "./fonts/instrument-serif-italic-pl.woff2",
   variable: "--font-instrument-serif",
-  subsets: ["latin", "latin-ext"],
   weight: "400",
-  style: ["italic"],
-  display: "swap",
-  // Jedno wyróżnione słowo w H1: bez preloadu, żeby nie konkurowało z Inter o pasmo przed LCP.
-  preload: false,
+  style: "italic",
+  display: "optional",
+  adjustFontFallback: "Times New Roman",
 });
 
-const inter = Inter({
+const inter = localFont({
+  src: "./fonts/inter-pl-400-600.woff2",
   variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  // Pomiary Lighthouse na wersji testowej 11.11: preload 130 kB Inter podnosił LCP strony głównej
-  // do 3,2 s, a bez preloadu z `swap` podmiana fontu przesuwała nagłówek wpisu bloga (CLS 0,2).
-  // Bez preloadu i z `optional`: Inter, gdy zdąży (zwykle, i zawsze z pamięci podręcznej), inaczej
-  // font zastępczy z dopasowanymi metrykami do końca wizyty, bez podmiany i bez przesunięcia.
+  weight: "400 600",
   display: "optional",
-  preload: false,
+  adjustFontFallback: "Arial",
 });
 
 export const viewport: Viewport = {
