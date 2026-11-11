@@ -24,10 +24,12 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
-  // optional zamiast swap: preloadowany Inter zwykle zdąży przed malowaniem, a gdy nie zdąży
-  // (wolne łącze), strona zostaje przy foncie zastępczym bez podmiany. Przy swap podmiana
-  // przesuwała nagłówek wpisu bloga (CLS 0,2), a bez preloadu LCP strony głównej rósł.
+  // Pomiary Lighthouse na wersji testowej 11.11: preload 130 kB Inter podnosił LCP strony głównej
+  // do 3,2 s, a bez preloadu z `swap` podmiana fontu przesuwała nagłówek wpisu bloga (CLS 0,2).
+  // Bez preloadu i z `optional`: Inter, gdy zdąży (zwykle, i zawsze z pamięci podręcznej), inaczej
+  // font zastępczy z dopasowanymi metrykami do końca wizyty, bez podmiany i bez przesunięcia.
   display: "optional",
+  preload: false,
 });
 
 export const viewport: Viewport = {
