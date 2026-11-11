@@ -54,7 +54,7 @@ describe("parsujZgloszenie", () => {
   });
 
   it("odrzuca kilka odpowiedzi na pytanie jednokrotnego wyboru", () => {
-    const odpowiedzi = odpowiedziPodstawowe({ budzet: odpowiedz("5_15k", "15_30k") });
+    const odpowiedzi = odpowiedziPodstawowe({ budzet: odpowiedz("5_15k", "15_25k") });
     expect(parsujZgloszenie(poprawneZgloszenie({ odpowiedzi })).ok).toBe(false);
   });
 

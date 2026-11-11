@@ -32,7 +32,7 @@ describe("summary", () => {
   it("składa jedno zdanie jak wzór z FORMULARZ.md: rola, wielkość, ból, programy, powód, budżet, termin, droga", () => {
     const z = zgloszenie();
     expect(zbudujPodsumowanie(z, zdecyduj(z.odpowiedzi))).toBe(
-      "Właściciel, 31-100 osób, dokumenty i zamówienia, Subiekt, konkurencja już to robi, 15-30 tys. zł, start w 3 mies., droga A",
+      "Właściciel, 31-100 osób, dokumenty i zamówienia, Subiekt, konkurencja już to robi, 15-25 tys. zł, start w 3 mies., droga A",
     );
   });
 
@@ -75,7 +75,7 @@ describe("rekordy CRM", () => {
       product: "droga_A",
       source: "formularz_www:chatgpt",
     });
-    expect(szansa.metadata.odpowiedzi.budzet?.ids).toEqual(["15_30k"]);
+    expect(szansa.metadata.odpowiedzi.budzet?.ids).toEqual(["15_25k"]);
     expect(szansa.metadata.odpowiedzi.programy?.teksty).toEqual({ erp: "Subiekt" });
     expect(JSON.stringify(szansa.metadata)).not.toMatch(/\bip\b/i);
   });
@@ -132,6 +132,16 @@ describe("rekordy CRM", () => {
   });
 });
 
+describe("źródło zgłoszenia", () => {
+  // CEO liczy udział kanałów po 20 zgłoszeniach, więc nowe odpowiedzi z pyt. 10 muszą mieć stałe źródła.
+  it.each([
+    ["social", "formularz_www:social"],
+    ["mail_bartek", "formularz_www:mail_bartek"],
+  ])("odpowiedź %s zapisuje source %s", (id, zrodlo) => {
+    expect(zrodloZgloszenia(odpowiedziPodstawowe({ zrodlo: odpowiedz(id) }))).toBe(zrodlo);
+  });
+});
+
 describe("mail do Bartka", () => {
   it("temat zawiera firmę i drogę, a treść identyfikatory rekordów CRM", () => {
     const z = zgloszenie();
@@ -177,7 +187,7 @@ describe("mail do Bartka", () => {
 describe("kalendarz", () => {
   it("koduje parametry prefill, bo imię i firma mogą zawierać spacje i znaki specjalne", () => {
     const adres = adresKalendarza("A", { imie: "Zażółć Gęślą", email: "a+b@firma.pl", firma: "R&D Sp. z o.o." });
-    expect(adres).toContain("https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min?embed=true");
+    expect(adres).toContain("https://cal.com/bart%C5%82omiej-chudzik-2en6pt/45min?embed=true");
     expect(adres).toContain("name=Za%C5%BC%C3%B3%C5%82%C4%87%20G%C4%99%C5%9Bl%C4%85");
     expect(adres).toContain("email=a%2Bb%40firma.pl");
     expect(adres).toContain("R%26D");

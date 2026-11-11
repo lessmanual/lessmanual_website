@@ -17,7 +17,7 @@ export function odpowiedziPodstawowe(
     programy: { ids: ["erp"], teksty: { erp: "Subiekt" } },
     etap: odpowiedz("wiem_co_boli"),
     powod: odpowiedz("konkurencja"),
-    budzet: odpowiedz("15_30k"),
+    budzet: odpowiedz("15_25k"),
     termin: odpowiedz("3_miesiace"),
     zrodlo: odpowiedz("chatgpt"),
     ...zmiany,

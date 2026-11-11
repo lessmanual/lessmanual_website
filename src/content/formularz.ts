@@ -6,7 +6,7 @@
 // w CRM (metadata), więc po wdrożeniu nie zmieniamy ich bez migracji danych.
 // Poza FORMULARZ.md i TEKSTY v3 (sekcja 13) zostają tylko komunikaty techniczne (błędy pól, ładowanie).
 
-export const WERSJA_FORMULARZA = "2026-11-11-v3";
+export const WERSJA_FORMULARZA = "2026-11-11-zatwierdzony";
 
 export type Trasa = "A" | "B" | "C" | "duza_firma" | "odsiew";
 export type TrasaZKalendarzem = Exclude<Trasa, "odsiew">;
@@ -23,7 +23,7 @@ export type OdpowiedzKonfig = {
   /** Wersja do jednozdaniowego summary w CRM; brak = etykieta. */
   krotko?: string;
   pole?: PolePodrzedne;
-  /** Tylko pytanie „Gdzie dziś jesteś?”: do której drogi prowadzi odpowiedź. */
+  /** Tylko pytanie o etap wdrażania AI (pyt. 6): do której drogi prowadzi odpowiedź. */
   droga?: Extract<Trasa, "A" | "B" | "C">;
 };
 
@@ -91,6 +91,11 @@ export const PYTANIA: readonly PytanieKonfig[] = [
       { id: "zamowienia", etykieta: "Zamówienia i zapytania od klientów", krotko: "zamówienia" },
       { id: "oferty", etykieta: "Przygotowanie ofert i wycen", krotko: "oferty i wyceny" },
       { id: "raporty", etykieta: "Raporty i zestawienia dla mnie", krotko: "raporty" },
+      {
+        id: "szukanie_informacji",
+        etykieta: "Szukanie informacji w mailach, plikach i programach",
+        krotko: "szukanie informacji",
+      },
       { id: "szukanie_klientow", etykieta: "Szukanie klientów, zleceń i przetargów", krotko: "szukanie klientów i zleceń" },
       { id: "telefony", etykieta: "Odbieranie telefonów", krotko: "telefony" },
       { id: "programy_nie_lacza", etykieta: "Programy, które się nie łączą", krotko: "programy się nie łączą" },
@@ -119,17 +124,19 @@ export const PYTANIA: readonly PytanieKonfig[] = [
         krotko: "program branżowy",
         pole: { etykieta: "Nazwa programu", wymagane: false },
       },
-      { id: "nie_wiem", etykieta: "Nie wiem", krotko: "programy nieznane" },
+      { id: "inne", etykieta: "Inne", pole: { etykieta: "Jakie?", wymagane: true } },
     ],
   },
   {
     id: "etap",
     typ: "single",
-    tekst: "Gdzie dziś jesteś?",
+    // Klient widzi same odpowiedzi; droga A/B/C jest tylko w logice i w CRM (FORMULARZ.md v3).
+    tekst: "Na jakim etapie jest wdrażanie AI w Twojej firmie?",
     bzyk: "Od tej odpowiedzi zależy, jaką rozmowę zaproponujemy na końcu.",
     odpowiedzi: [
-      { id: "wiem_co_boli", etykieta: "Wiem, co mnie najbardziej boli", droga: "A" },
-      { id: "lista_pomyslow", etykieta: "Mam listę pomysłów albo własny plan", droga: "A" },
+      { id: "wiem_co_boli", etykieta: "Wiem, który proces chcę usprawnić jako pierwszy", droga: "A" },
+      { id: "lista_pomyslow", etykieta: "Mam listę pomysłów albo własny plan wdrożenia", droga: "A" },
+      { id: "juz_wdrozylismy", etykieta: "Już coś wdrożyliśmy i chcemy iść dalej", droga: "A" },
       { id: "nie_wiem_od_czego", etykieta: "Nie wiem, od czego zacząć", droga: "B" },
       { id: "najpierw_zobaczyc", etykieta: "Najpierw chcę zobaczyć, że to działa na moich danych", droga: "C" },
     ],
@@ -137,14 +144,14 @@ export const PYTANIA: readonly PytanieKonfig[] = [
   {
     id: "powod",
     typ: "single",
-    tekst: "Dlaczego teraz?",
+    tekst: "Co sprawia, że szukasz rozwiązania właśnie teraz?",
     bzyk: "Od tego zaczniemy rozmowę.",
     odpowiedzi: [
       { id: "konkurencja", etykieta: "Konkurencja już to robi", krotko: "konkurencja już to robi" },
       { id: "nie_nadazamy", etykieta: "Rośnie liczba spraw, a zespół nie nadąża", krotko: "zespół nie nadąża" },
       { id: "odchodza", etykieta: "Ludzie odchodzą i zabierają wiedzę ze sobą", krotko: "ludzie odchodzą z wiedzą" },
       { id: "pilnuje_osobiscie", etykieta: "Za dużo spraw muszę pilnować osobiście", krotko: "za dużo spraw pilnuje osobiście" },
-      { id: "zobaczylem_efekt", etykieta: "Zobaczyłem efekt w innej firmie", krotko: "widział efekt w innej firmie" },
+      { id: "zobaczylem_efekt", etykieta: "Widzę efekty AI w innej firmie", krotko: "widzi efekty AI w innej firmie" },
       { id: "sprawdzic_co_da_ai", etykieta: "Chcę sprawdzić, co AI da mojej firmie", krotko: "chce sprawdzić, co da AI" },
       { id: "inny", etykieta: "Inny powód", pole: { etykieta: "Jaki to powód?", wymagane: true } },
     ],
@@ -152,21 +159,21 @@ export const PYTANIA: readonly PytanieKonfig[] = [
   {
     id: "budzet",
     typ: "single",
-    tekst: "Ile planujesz przeznaczyć na pierwszy system?",
+    tekst: "Jaki budżet netto planujesz na pierwszy system?",
     bzyk: "Pytam, żeby zaproponować pierwszy krok w Twoim budżecie.",
     odpowiedzi: [
       { id: "do_5k", etykieta: "Do 5 tys. zł netto", krotko: "do 5 tys. zł" },
       { id: "5_15k", etykieta: "5-15 tys. zł netto", krotko: "5-15 tys. zł" },
-      { id: "15_30k", etykieta: "15-30 tys. zł netto", krotko: "15-30 tys. zł" },
-      { id: "30_60k", etykieta: "30-60 tys. zł netto", krotko: "30-60 tys. zł" },
-      { id: "ponad_60k", etykieta: "Ponad 60 tys. zł netto", krotko: "ponad 60 tys. zł" },
+      { id: "15_25k", etykieta: "15-25 tys. zł netto", krotko: "15-25 tys. zł" },
+      { id: "25_50k", etykieta: "25-50 tys. zł netto", krotko: "25-50 tys. zł" },
+      { id: "ponad_50k", etykieta: "Ponad 50 tys. zł netto", krotko: "ponad 50 tys. zł" },
       { id: "nie_wiem", etykieta: "Jeszcze nie wiem", krotko: "budżet nieznany" },
     ],
   },
   {
     id: "termin",
     typ: "single",
-    tekst: "Kiedy chcesz zacząć?",
+    tekst: "Kiedy chcesz zacząć prace nad pierwszym systemem?",
     bzyk: "Przyjmujemy maksymalnie 4 nowe firmy miesięcznie, dlatego pytam o termin.",
     odpowiedzi: [
       { id: "w_tym_miesiacu", etykieta: "W tym miesiącu", krotko: "start w tym miesiącu" },
@@ -188,6 +195,8 @@ export const PYTANIA: readonly PytanieKonfig[] = [
       { id: "google", etykieta: "Google" },
       { id: "polecenie", etykieta: "Polecenie", pole: { etykieta: "Od kogo?", wymagane: false } },
       { id: "linkedin", etykieta: "LinkedIn" },
+      { id: "social", etykieta: "Facebook, Instagram albo YouTube" },
+      { id: "mail_bartek", etykieta: "Mail albo wiadomość od Bartka" },
       { id: "inne", etykieta: "Inne", pole: { etykieta: "Skąd?", wymagane: true } },
     ],
   },
@@ -238,16 +247,19 @@ export type EkranDrogi = {
   bzyk: string;
   tytul: string;
   tekst: string;
-  /**
-   * Docelowy typ spotkania w Cal.com. Dziś istnieje tylko `30min` (sprawdzone 11.11.2026:
-   * /30min zwraca 200, /45min 404), więc `kalendarz` jest `30min` dla każdej drogi. Gdy Bartek
-   * założy typ 45 minut, wystarczy zmienić `kalendarz` w drogach A i duza_firma.
-   */
+  /** Slug typu spotkania w Cal.com. */
   kalendarz: string;
-  docelowyTyp: string;
 };
 
 export const KALENDARZ_BAZA = "https://cal.com/bart%C5%82omiej-chudzik-2en6pt";
+
+/**
+ * Jedyne miejsce z typem 45 min (droga A i duża firma, FORMULARZ.md sekcja 2). Typ zakłada root
+ * w Cal.com (decyzja 11.11). Stan 11.11 ok. 11:00: /45min zwraca 404, więc do założenia typu
+ * ramka kalendarza na tych drogach pokaże błąd Cal.com; awaryjnie wystarczy wpisać tu "30min".
+ */
+export const KALENDARZ_45_MIN = "45min";
+const KALENDARZ_30_MIN = "30min";
 
 export const DROGI: Readonly<Record<TrasaZKalendarzem, EkranDrogi>> = {
   A: {
@@ -255,24 +267,21 @@ export const DROGI: Readonly<Record<TrasaZKalendarzem, EkranDrogi>> = {
     tytul: "Rozmowa z Bartkiem, 45 minut",
     tekst:
       "Na rozmowie przejdziemy przez to, co boli najbardziej. Potem dostaniesz spisany zakres: etapy z ceną i efekt, który ma dawać system.",
-    kalendarz: "30min",
-    docelowyTyp: "45min",
+    kalendarz: KALENDARZ_45_MIN,
   },
   B: {
     bzyk: "Wybierz termin rozmowy o Mapie AI firmy, potrwa 30 minut.",
     tytul: "Rozmowa o Mapie AI firmy, 30 minut",
     tekst:
       "Mapa AI firmy to pełny obraz Twojej firmy i plan systemów na kwartał i rok. Cena: 6 900 zł netto, w całości odliczana od pierwszego wdrożenia.",
-    kalendarz: "30min",
-    docelowyTyp: "30min",
+    kalendarz: KALENDARZ_30_MIN,
   },
   C: {
     bzyk: "Wybierz termin rozmowy o pilocie, potrwa 30 minut.",
     tytul: "Rozmowa o pilocie, 30 minut",
     tekst:
       "W szybkim pilocie przez dwa tygodnie budujemy jeden proces na próbce Twoich danych i uruchamiamy go na naszej infrastrukturze. Szczegóły i koszt omówimy na rozmowie.",
-    kalendarz: "30min",
-    docelowyTyp: "30min",
+    kalendarz: KALENDARZ_30_MIN,
   },
   duza_firma: {
     bzyk: "Wybierz termin pierwszej rozmowy z Bartkiem, potrwa 45 minut.",
@@ -280,8 +289,7 @@ export const DROGI: Readonly<Record<TrasaZKalendarzem, EkranDrogi>> = {
     // FORMULARZ.md: kalendarz „jak droga A”, więc ten sam tekst co przy drodze A.
     tekst:
       "Na rozmowie przejdziemy przez to, co boli najbardziej. Potem dostaniesz spisany zakres: etapy z ceną i efekt, który ma dawać system.",
-    kalendarz: "30min",
-    docelowyTyp: "45min",
+    kalendarz: KALENDARZ_45_MIN,
   },
 };
 
@@ -355,7 +363,7 @@ export const REGULY_ZNACZNIKOW: readonly { znacznik: Znacznik; reguly: readonly 
       {
         warunki: [
           { pytanie: "termin", odpowiedzi: ["w_tym_miesiacu"] },
-          { pytanie: "budzet", odpowiedzi: ["15_30k", "30_60k", "ponad_60k"] },
+          { pytanie: "budzet", odpowiedzi: ["15_25k", "25_50k", "ponad_50k"] },
         ],
       },
     ],
@@ -398,7 +406,7 @@ function trasaZPytaniaDroga(odpowiedzi: OdpowiedziWybrane): Extract<Trasa, "A" |
 }
 
 /**
- * Kolejność: najpierw odsiew, potem duża firma, potem droga z odpowiedzi „Gdzie dziś jesteś?”.
+ * Kolejność: najpierw odsiew, potem duża firma, potem droga z odpowiedzi na pytanie 6 (etap wdrażania AI).
  * Odsiew idzie pierwszy, bo kalendarz Bartka ma chronić czas przed firmami spoza persony.
  */
 export function zdecyduj(odpowiedzi: OdpowiedziWybrane): Decyzja {

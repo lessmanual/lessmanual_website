@@ -26,7 +26,7 @@ describe("odsiew twardy", () => {
 
   it("nie odsiewa samej firmy 1-9 osób z większym budżetem", () => {
     const decyzja = zdecyduj(
-      odpowiedziPodstawowe({ wielkosc: odpowiedz("os_1_9"), budzet: odpowiedz("15_30k") }),
+      odpowiedziPodstawowe({ wielkosc: odpowiedz("os_1_9"), budzet: odpowiedz("15_25k") }),
     );
     expect(decyzja.trasa).toBe("A");
   });
@@ -86,9 +86,11 @@ describe("droga A, B, C", () => {
   it.each([
     ["wiem_co_boli", "A"],
     ["lista_pomyslow", "A"],
+    // Nowa odpowiedź zatwierdzona 11.11: firma z pierwszym wdrożeniem idzie na rozmowę 45 min (A).
+    ["juz_wdrozylismy", "A"],
     ["nie_wiem_od_czego", "B"],
     ["najpierw_zobaczyc", "C"],
-  ])("odpowiedź %s prowadzi do drogi %s, bo tak mapuje pytanie „Gdzie dziś jesteś?”", (etap, droga) => {
+  ])("odpowiedź %s prowadzi do drogi %s, bo tak mapuje pytanie 6 o etap wdrażania AI", (etap, droga) => {
     expect(zdecyduj(odpowiedziPodstawowe({ etap: odpowiedz(etap) })).trasa).toBe(droga);
   });
 });
@@ -115,7 +117,7 @@ describe("znaczniki", () => {
 
   it("„W tym miesiącu” z budżetem od 15 tys. zł dostaje priorytet (najbliższe 3 dni robocze)", () => {
     const decyzja = zdecyduj(
-      odpowiedziPodstawowe({ termin: odpowiedz("w_tym_miesiacu"), budzet: odpowiedz("30_60k") }),
+      odpowiedziPodstawowe({ termin: odpowiedz("w_tym_miesiacu"), budzet: odpowiedz("25_50k") }),
     );
     expect(decyzja.znaczniki).toContain("priorytet");
   });
@@ -128,7 +130,7 @@ describe("znaczniki", () => {
   });
 
   it("budżet od 15 tys. zł bez pilnego terminu nie dostaje priorytetu", () => {
-    const decyzja = zdecyduj(odpowiedziPodstawowe({ budzet: odpowiedz("ponad_60k") }));
+    const decyzja = zdecyduj(odpowiedziPodstawowe({ budzet: odpowiedz("ponad_50k") }));
     expect(decyzja.znaczniki).not.toContain("priorytet");
   });
 });
