@@ -184,7 +184,8 @@ export default async function BlogPostPage({
                   width={1600}
                   height={900}
                   sizes="(min-width: 800px) 760px, 100vw"
-                  priority
+                  loading="eager"
+                  fetchPriority="high"
                   style={{ width: "100%", height: "auto" }}
                 />
               </div>
