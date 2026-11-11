@@ -221,13 +221,16 @@ describe("zgody w CRM (treść-zgód.md § 5)", () => {
 });
 
 describe("kalendarz", () => {
-  it("wybiera typ spotkania: A i duża firma 45min, z priorytetem 45min-priorytet, B i C własne typy 30 min", () => {
+  // FORMULARZ.md linia 167 (zatwierdzone przez Bartka): priorytet obowiązuje na każdej drodze, także B i C.
+  it("wybiera typ spotkania: A i duża firma 45min, B i C własne typy 30 min, każda z wariantem priorytetowym", () => {
     expect(slugKalendarza("A", [])).toBe("45min");
     expect(slugKalendarza("duza_firma", [])).toBe("45min");
     expect(slugKalendarza("A", ["priorytet"])).toBe("45min-priorytet");
     expect(slugKalendarza("duza_firma", ["priorytet", "budzet_ponizej_S"])).toBe("45min-priorytet");
     expect(slugKalendarza("A", ["budzet_ponizej_S"])).toBe("45min");
-    expect(slugKalendarza("B", ["priorytet"])).toBe("mapa-ai-30min");
+    expect(slugKalendarza("B", ["priorytet"])).toBe("mapa-ai-30min-priorytet");
+    expect(slugKalendarza("B", [])).toBe("mapa-ai-30min");
+    expect(slugKalendarza("C", ["priorytet"])).toBe("pilot-30min-priorytet");
     expect(slugKalendarza("C", [])).toBe("pilot-30min");
   });
 

@@ -274,7 +274,9 @@ export const SLUGI_KALENDARZA = {
   rozmowa45: "45min",
   priorytet45: "45min-priorytet",
   mapaAi30: "mapa-ai-30min",
+  mapaAi30Priorytet: "mapa-ai-30min-priorytet",
   pilot30: "pilot-30min",
+  pilot30Priorytet: "pilot-30min-priorytet",
 } as const;
 
 /** Czysta reguła wyboru typu spotkania: droga plus znaczniki z `zdecyduj`. */
@@ -283,10 +285,11 @@ export function slugKalendarza(trasa: TrasaZKalendarzem, znaczniki: readonly Zna
     case "A":
     case "duza_firma":
       return znaczniki.includes("priorytet") ? SLUGI_KALENDARZA.priorytet45 : SLUGI_KALENDARZA.rozmowa45;
+    // FORMULARZ.md linia 167: „W tym miesiącu” + budżet od 15 tys. daje termin w 3 dni robocze na każdej drodze.
     case "B":
-      return SLUGI_KALENDARZA.mapaAi30;
+      return znaczniki.includes("priorytet") ? SLUGI_KALENDARZA.mapaAi30Priorytet : SLUGI_KALENDARZA.mapaAi30;
     case "C":
-      return SLUGI_KALENDARZA.pilot30;
+      return znaczniki.includes("priorytet") ? SLUGI_KALENDARZA.pilot30Priorytet : SLUGI_KALENDARZA.pilot30;
   }
 }
 
