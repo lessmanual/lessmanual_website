@@ -14,6 +14,8 @@ import {
 } from "@/lib/schema";
 import { extractFaqSchema } from "@/lib/blog-faq-schema";
 import { normalizePublicProse } from "@/lib/public-prose";
+import { categoryLabel } from "@/lib/blog-category";
+import { isNoindexBlogSlug } from "@/lib/blog-noindex";
 
 export const revalidate = 60;
 
@@ -45,6 +47,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    ...(isNoindexBlogSlug(post.slug) ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: socialTitle,
       description,
@@ -141,7 +144,7 @@ export default async function BlogPostPage({
             />
 
             <header className={styles.articleHead}>
-              {post.category && <span className={styles.category}>{post.category}</span>}
+              {post.category && <span className={styles.category}>{categoryLabel(post.category)}</span>}
 
               <h1>{normalizePublicProse(post.title_pl)}</h1>
 

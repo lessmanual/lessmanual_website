@@ -1,5 +1,6 @@
 import { sanitizeBlogHtml } from "@/lib/sanitize-blog-html";
 import { normalizePublicProse } from "@/lib/public-prose";
+import { prepareBlogHtml } from "@/lib/blog-content";
 
 // Prose v3: nagłówki Inter 600, linki morskie, tekst #0A0A0A / #3F3F46, 18 px (prose-lg).
 const PROSE_CLASSES = [
@@ -13,7 +14,7 @@ const PROSE_CLASSES = [
 ].join(" ");
 
 export function BlogContent({ html }: { html: string }) {
-  const safeHtml = normalizePublicProse(sanitizeBlogHtml(html));
+  const safeHtml = prepareBlogHtml(normalizePublicProse(sanitizeBlogHtml(html)));
 
   return (
     <div className={PROSE_CLASSES} dangerouslySetInnerHTML={{ __html: safeHtml }} />

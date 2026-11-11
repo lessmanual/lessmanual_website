@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { BlogPost } from "@/lib/supabase";
 import { normalizePublicProse } from "@/lib/public-prose";
+import { categoryLabel } from "@/lib/blog-category";
 
 function formatDate(dateString: string | null): string {
   if (!dateString) return "";
@@ -28,7 +29,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
 
         <div className="flex flex-1 flex-col gap-3 p-6">
           {post.category && (
-            <span className="text-[15px] font-semibold text-copper-strong">{post.category}</span>
+            <span className="text-[15px] font-semibold text-copper-strong">{categoryLabel(post.category)}</span>
           )}
 
           <h2 className="text-[20px] font-semibold leading-snug text-ink group-hover:text-sea">
