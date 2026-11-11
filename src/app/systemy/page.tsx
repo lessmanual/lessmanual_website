@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description: SYSTEMS_INDEX.metaDescription,
   alternates: { canonical: SYSTEMS_INDEX.url },
   openGraph: {
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     title: SYSTEMS_INDEX.metaTitle,
     description: SYSTEMS_INDEX.metaDescription,
     url: SYSTEMS_INDEX.url,
@@ -63,7 +64,13 @@ export default function SystemyPage() {
                       {card.pageHref ? <Link href={card.pageHref}>{card.title}</Link> : card.title}
                     </h3>
                     <p>
-                      {card.company}. {card.effect}
+                      <strong>Problem:</strong> {card.problem}
+                    </p>
+                    <p>
+                      <strong>System:</strong> {card.system}
+                    </p>
+                    <p>
+                      <strong>Efekt:</strong> {card.effect} ({card.company.toLowerCase()})
                     </p>
                     {card.pageHref ? (
                       <Link href={card.pageHref} className={styles.cardLink}>

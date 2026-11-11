@@ -25,5 +25,16 @@ const LeadForm = dynamic(() => import("@/components/form/LeadForm").then((m) => 
 });
 
 export function LeadFormLazy() {
-  return <LeadForm />;
+  return (
+    <>
+      <LeadForm />
+      {/* Bez JS formularz się nie załaduje: zostaje bezpośredni kontakt (QA 11.11). */}
+      <noscript>
+        <p className="lm-small">
+          Formularz wymaga JavaScriptu. Napisz na <a href="mailto:kontakt@lessmanual.ai">kontakt@lessmanual.ai</a>, a
+          odpiszemy z terminem rozmowy.
+        </p>
+      </noscript>
+    </>
+  );
 }

@@ -16,6 +16,7 @@ import {
   TESTIMONIALS,
   formHref,
 } from "@/content/site";
+import { OpenDetailsOnHash } from "./OpenDetailsOnHash";
 import styles from "./Sections.module.css";
 
 // Sekcje strony głównej bez ruchu (PLAN_BUDOWY pkt 3: „pozostałe sekcje bez ruchu”).
@@ -91,7 +92,14 @@ export function Systems() {
             <li key={card.slug} className={`lm-card ${styles.systemCard}`}>
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardMeta}>{card.company}</p>
-              <p className={styles.cardEffect}>{card.effect}</p>
+              <dl className={styles.cardFacts}>
+                <dt>Problem</dt>
+                <dd>{card.problem}</dd>
+                <dt>System</dt>
+                <dd>{card.system}</dd>
+                <dt>Efekt</dt>
+                <dd className={styles.cardEffect}>{card.effect}</dd>
+              </dl>
               {card.pageHref ? (
                 <Link href={card.pageHref} className={styles.cardLink}>
                   Zobacz, jak działa
@@ -233,6 +241,7 @@ export function Faq() {
           {FAQ.title}
         </h2>
         <div className={styles.faq}>
+          <OpenDetailsOnHash />
           {FAQ.items.map((item, i) => (
             <details key={item.q} id={`faq-${i + 1}`} open={i === 0}>
               <summary>
