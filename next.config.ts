@@ -11,6 +11,16 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  // Okładki bloga z Supabase Storage (PNG ok. 7 MB) idą przez optymalizację obrazów Next.
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "mpshzmbgsupznnyhpyyl.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
+  },
   async redirects() {
     // Stara oferta (/oferta/*) zastąpiona stroną systemów (11.11.2026). Kolejność ma znaczenie:
     // konkretne adresy przed catch-allem /oferta/:path*.

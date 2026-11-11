@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/supabase";
 import { normalizePublicProse } from "@/lib/public-prose";
@@ -17,12 +18,15 @@ export function BlogCard({ post }: { post: BlogPost }) {
     <Link href={`/blog/${post.slug}`} className="group block h-full">
       <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-surface shadow-[var(--shadow-card)] transition-shadow duration-150 group-hover:shadow-[0_0_0_1px_var(--ink)]">
         {post.featured_image && (
-          <div className="aspect-[16/9] overflow-hidden bg-sunken">
-            {/* eslint-disable-next-line @next/next/no-img-element -- adres z Supabase Storage, wymiary nieznane */}
-            <img
+          <div className="relative aspect-[16/9] overflow-hidden bg-sunken">
+            {/* Okładki w Supabase mają ok. 7 MB (PNG), a lista ma 60+ wpisów: next/image podaje
+                miniaturę WebP pod szerokość karty i ładuje ją leniwie. */}
+            <Image
               src={post.featured_image}
               alt={normalizePublicProse(post.title_pl)}
-              className="h-full w-full object-cover"
+              fill
+              sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
         )}

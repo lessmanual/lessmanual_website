@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -175,8 +176,17 @@ export default async function BlogPostPage({
 
             {post.featured_image && (
               <div className={styles.cover}>
-                {/* eslint-disable-next-line @next/next/no-img-element -- adres z Supabase Storage, wymiary nieznane */}
-                <img src={post.featured_image} alt={normalizePublicProse(post.title_pl)} />
+                {/* Okładki w Supabase mają ok. 7 MB (PNG); next/image zmniejsza je do WebP pod szerokość
+                    ekranu, a wymiary 16:9 rezerwują miejsce (bez skoku treści). Lighthouse 11.11: LCP 60 s. */}
+                <Image
+                  src={post.featured_image}
+                  alt={normalizePublicProse(post.title_pl)}
+                  width={1600}
+                  height={900}
+                  sizes="(min-width: 800px) 760px, 100vw"
+                  priority
+                  style={{ width: "100%", height: "auto" }}
+                />
               </div>
             )}
 

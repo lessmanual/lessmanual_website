@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { prepareBlogHtml, rewriteCalLinks, wrapTables } from "./blog-content";
+import { optimizeContentImages, prepareBlogHtml, rewriteCalLinks, wrapTables } from "./blog-content";
 
 describe("rewriteCalLinks", () => {
   it("kieruje każdy link cal.com na formularz, bo CTA bloga to formularz", () => {
@@ -25,5 +25,20 @@ describe("wrapTables", () => {
 
   it("zostawia treść bez tabel bez zmian", () => {
     expect(prepareBlogHtml("<p>x</p>")).toBe("<p>x</p>");
+  });
+});
+
+// Obraz z Supabase Storage ma iść przez /_next/image, inne adresy zostają bez zmian.
+describe("optimizeContentImages", () => {
+  it("kieruje obrazy z Supabase Storage przez optymalizację Next", () => {
+    const html = '<img src="https://mpshzmbgsupznnyhpyyl.supabase.co/storage/v1/object/public/blog-images/a b.png" alt="x">';
+    expect(optimizeContentImages(html)).toBe(
+      '<img src="/_next/image?url=https%3A%2F%2Fmpshzmbgsupznnyhpyyl.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fblog-images%2Fa%20b.png&amp;w=828&amp;q=75" alt="x">',
+    );
+  });
+
+  it("nie rusza obrazów z innych domen", () => {
+    const html = '<img src="https://example.com/a.png">';
+    expect(optimizeContentImages(html)).toBe(html);
   });
 });

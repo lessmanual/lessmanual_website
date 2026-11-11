@@ -18,5 +18,17 @@ export function wrapTables(html: string): string {
 }
 
 export function prepareBlogHtml(sanitizedHtml: string): string {
-  return wrapTables(rewriteCalLinks(sanitizedHtml));
+  return optimizeContentImages(wrapTables(rewriteCalLinks(sanitizedHtml)));
+}
+
+// Obrazy w treści wpisów to PNG z Supabase Storage po ok. 7 MB. Przy renderowaniu kierujemy je
+// przez optymalizację obrazów Next (WebP, szerokość 828 px, mieści kolumnę 760 px), bez zmian w bazie.
+const SUPABASE_IMG_SRC =
+  /src="(https:\/\/mpshzmbgsupznnyhpyyl\.supabase\.co\/storage\/v1\/object\/public\/[^"]+)"/gi;
+
+export function optimizeContentImages(html: string): string {
+  return html.replace(SUPABASE_IMG_SRC, (_match, url: string) => {
+    const decoded = url.replace(/&amp;/g, "&");
+    return `src="/_next/image?url=${encodeURIComponent(decoded)}&amp;w=828&amp;q=75"`;
+  });
 }
