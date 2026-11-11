@@ -24,7 +24,10 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
-  display: "swap",
+  // optional zamiast swap: preloadowany Inter zwykle zdąży przed malowaniem, a gdy nie zdąży
+  // (wolne łącze), strona zostaje przy foncie zastępczym bez podmiany. Przy swap podmiana
+  // przesuwała nagłówek wpisu bloga (CLS 0,2), a bez preloadu LCP strony głównej rósł.
+  display: "optional",
 });
 
 export const viewport: Viewport = {
