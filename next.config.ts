@@ -18,22 +18,56 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
   async redirects() {
+    // Stara oferta (/oferta/*) zastąpiona stroną systemów (11.11.2026). Kolejność ma znaczenie:
+    // konkretne adresy przed catch-allem /oferta/:path*.
     return [
+      { source: "/oferta", destination: "/systemy", statusCode: 301 },
       {
-        source: "/oferta/ai-sdr",
-        destination: "/oferta/pipeline-machine",
-        permanent: true,
+        source: "/oferta/hot-lead-catcher",
+        destination: "/systemy/okazje-sprzedazowe-i-przetargi",
+        statusCode: 301,
+      },
+      {
+        source: "/oferta/content-machine",
+        destination: "/systemy/tresci-sklepu-pod-google",
+        statusCode: 301,
+      },
+      {
+        source: "/oferta/content-machine/:path*",
+        destination: "/systemy/tresci-sklepu-pod-google",
+        statusCode: 301,
       },
       {
         source: "/oferta/seo-content",
-        destination: "/oferta/content-machine",
-        permanent: true,
+        destination: "/systemy/tresci-sklepu-pod-google",
+        statusCode: 301,
       },
       {
         source: "/oferta/seo-content/:path*",
-        destination: "/oferta/content-machine/:path*",
-        permanent: true,
+        destination: "/systemy/tresci-sklepu-pod-google",
+        statusCode: 301,
       },
+      { source: "/oferta/pipeline-machine", destination: "/systemy", statusCode: 301 },
+      { source: "/oferta/ai-sdr", destination: "/systemy", statusCode: 301 },
+      { source: "/oferta/obsluga-klienta", destination: "/systemy", statusCode: 301 },
+      { source: "/oferta/generator-ofert", destination: "/systemy", statusCode: 301 },
+      { source: "/oferta/indywidualne-wdrozenia", destination: "/", statusCode: 301 },
+      { source: "/oferta/:path*", destination: "/systemy", statusCode: 301 },
+      // Slugi z poprzedniej wersji podstron systemów (wersja 2 tekstów) przeniesione na slugi v3.
+      {
+        source: "/systemy/wyszukiwanie-przetargow",
+        destination: "/systemy/okazje-sprzedazowe-i-przetargi",
+        statusCode: 301,
+      },
+      {
+        source: "/systemy/tresci-sklepu",
+        destination: "/systemy/tresci-sklepu-pod-google",
+        statusCode: 301,
+      },
+      { source: "/systemy/zapytania-ofertowe", destination: "/systemy", statusCode: 301 },
+      { source: "/demo-hero", destination: "/", statusCode: 301 },
+      { source: "/demo-hero-final", destination: "/", statusCode: 301 },
+      { source: "/demo-layouts", destination: "/", statusCode: 301 },
     ];
   },
   async rewrites() {
