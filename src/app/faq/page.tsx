@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     title: `${TITLE} | LessManual`,
     description: DESCRIPTION,
     url: PAGE_URL,

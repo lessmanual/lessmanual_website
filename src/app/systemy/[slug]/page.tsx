@@ -42,6 +42,7 @@ export async function generateMetadata({
     description: page.metaDescription,
     alternates: { canonical: page.url },
     openGraph: {
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
       title: page.metaTitle,
       description: page.metaDescription,
       url: page.url,

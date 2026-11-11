@@ -11,13 +11,14 @@ import { generateAboutPageSchema, generateBreadcrumbSchema } from "@/lib/schema"
 
 const PAGE_URL = `${SITE_URL}/o-nas`;
 const DESCRIPTION =
-  "LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Firmę prowadzi Bartłomiej Chudzik. Budujemy systemy AI i opiekujemy się nimi po wdrożeniu.";
+  "Partner technologiczny dla firm prowadzonych przez właściciela. Firmę prowadzi Bartłomiej Chudzik. Budujemy systemy AI i opiekujemy się nimi po wdrożeniu.";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kim jesteśmy | LessManual.ai" },
+  title: { absolute: "Kim jesteśmy | LessManual" },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     title: "Kim jesteśmy | LessManual.ai",
     description: META.ogDescription,
     url: PAGE_URL,

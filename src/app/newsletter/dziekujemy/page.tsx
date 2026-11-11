@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { FadeUp } from "@/components/animations/FadeUp";
 import { TilesBackground } from "@/components/ui/TilesBackground";
 import { CopyLinkButton } from "@/components/newsletter/CopyLinkButton";
@@ -24,7 +24,7 @@ export default function ThankYouPage() {
 
   return (
     <>
-      <Header />
+      <SiteHeader />
       <main className="pt-16">
         {/* Hero */}
         <div className="relative overflow-hidden">
@@ -199,7 +199,7 @@ export default function ThankYouPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

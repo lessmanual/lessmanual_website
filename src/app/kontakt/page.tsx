@@ -8,11 +8,12 @@ const OPIS =
   "Odpowiedz na 10 krótkich pytań o firmę i wybierz termin rozmowy z Bartkiem. Formularz zajmuje około 2 minut.";
 
 export const metadata: Metadata = {
-  title: "Umów rozmowę | LessManual",
+  title: "Umów rozmowę",
   description: OPIS,
   alternates: { canonical: "https://www.lessmanual.ai/kontakt" },
   openGraph: {
-    title: "Umów rozmowę | LessManual",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+    title: "Umów rozmowę",
     description: OPIS,
     url: "https://www.lessmanual.ai/kontakt",
     siteName: "LessManual",

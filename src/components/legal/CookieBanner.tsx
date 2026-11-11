@@ -12,6 +12,32 @@ interface CookiePreferences {
 
 const STORAGE_KEY = "cookie-consent";
 
+type Category = {
+  key: Exclude<keyof CookiePreferences, "necessary">;
+  title: string;
+  body: string;
+};
+
+const OPTIONAL_CATEGORIES: readonly Category[] = [
+  {
+    key: "functional",
+    title: "Funkcjonalne cookies",
+    body: "Zapamiętanie preferencji użytkownika (np. język, strefa czasowa).",
+  },
+  {
+    key: "analytics",
+    title: "Analityczne cookies",
+    body: "Analiza ruchu na stronie (np. Google Analytics).",
+  },
+  {
+    key: "marketing",
+    title: "Marketingowe cookies",
+    body: "Personalizacja reklam (np. LinkedIn Ads, Meta Ads).",
+  },
+];
+
+// Baner zgody w stylu strony v3 (QA 11.11: wcześniej bez polskich znaków, 14 px i stary brązowy przycisk).
+// Przycisk akceptacji jest czarny, a nie patynowy, żeby nie konkurował z głównym przyciskiem strony.
 export function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
@@ -36,23 +62,11 @@ export function CookieBanner() {
   };
 
   const acceptAll = () => {
-    const all: CookiePreferences = {
-      necessary: true,
-      functional: true,
-      analytics: true,
-      marketing: true,
-    };
-    saveConsent(all);
+    saveConsent({ necessary: true, functional: true, analytics: true, marketing: true });
   };
 
   const acceptNecessary = () => {
-    const necessary: CookiePreferences = {
-      necessary: true,
-      functional: false,
-      analytics: false,
-      marketing: false,
-    };
-    saveConsent(necessary);
+    saveConsent({ necessary: true, functional: false, analytics: false, marketing: false });
   };
 
   const saveCustom = () => {
@@ -62,42 +76,31 @@ export function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-border shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
-      <div className="max-w-[1240px] mx-auto px-6 py-5">
+    <div
+      role="region"
+      aria-label="Zgoda na pliki cookies"
+      className="fixed bottom-0 left-0 right-0 z-[60] border-t border-line bg-surface shadow-[0_-8px_24px_#0a0a0a14]"
+    >
+      <div className="lm-container py-5">
         {!showDetails ? (
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
             <div className="flex-1">
-              <h3 className="font-serif text-lg text-text mb-1">
-                Ta strona uzywa plikow cookies
-              </h3>
-              <p className="text-sm text-text-secondary">
-                Uzywamy cookies aby zapewnic prawidlowe dzialanie strony.{" "}
-                <Link
-                  href="/legal/polityka-cookies"
-                  className="text-[#8B4513] underline"
-                >
-                  Dowiedz sie wiecej
+              <p className="text-[17px] font-semibold text-ink">Ta strona używa plików cookies</p>
+              <p className="mt-1 text-[15px] leading-relaxed text-ink-2">
+                Używamy cookies, żeby strona działała poprawnie. Analityka włącza się tylko po Twojej zgodzie.{" "}
+                <Link href="/legal/polityka-cookies" className="lm-link">
+                  Dowiedz się więcej
                 </Link>
               </p>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
-              <button
-                onClick={() => setShowDetails(true)}
-                className="px-5 py-2.5 text-sm border border-border rounded-[6px] text-text-secondary hover:border-accent hover:text-accent transition-colors"
-              >
+            <div className="flex w-full flex-wrap gap-2 md:w-auto">
+              <button type="button" onClick={() => setShowDetails(true)} className="lm-btn lm-btn--secondary lm-btn--sm">
                 Dostosuj
               </button>
-              <button
-                onClick={acceptNecessary}
-                className="px-5 py-2.5 text-sm border border-border rounded-[6px] text-text-secondary hover:border-accent hover:text-accent transition-colors"
-              >
-                Tylko niezbedne
+              <button type="button" onClick={acceptNecessary} className="lm-btn lm-btn--secondary lm-btn--sm">
+                Tylko niezbędne
               </button>
-              <button
-                onClick={acceptAll}
-                className="px-5 py-2.5 text-sm bg-[#8B4513] text-white rounded-[6px] hover:bg-[#6B3A10] transition-colors"
-              >
+              <button type="button" onClick={acceptAll} className="lm-btn lm-btn--solid lm-btn--sm">
                 Akceptuj wszystkie
               </button>
             </div>
@@ -105,124 +108,53 @@ export function CookieBanner() {
         ) : (
           <div>
             <div className="mb-5">
-              <h3 className="font-serif text-lg text-text mb-1">
-                Ustawienia cookies
-              </h3>
-              <p className="text-sm text-text-secondary">
-                Wybierz, ktore kategorie cookies chcesz zaakceptowac.{" "}
-                <Link
-                  href="/legal/polityka-cookies"
-                  className="text-[#8B4513] underline"
-                >
-                  Polityka Cookies
+              <p className="text-[17px] font-semibold text-ink">Ustawienia cookies</p>
+              <p className="mt-1 text-[15px] text-ink-2">
+                Wybierz, które kategorie cookies chcesz zaakceptować.{" "}
+                <Link href="/legal/polityka-cookies" className="lm-link">
+                  Polityka cookies
                 </Link>
               </p>
             </div>
 
             <div className="space-y-3">
-              <label className="flex items-start gap-3 p-4 border border-border rounded-[6px] bg-bg">
-                <input
-                  type="checkbox"
-                  checked={true}
-                  disabled
-                  className="mt-0.5 h-4 w-4 rounded accent-accent cursor-not-allowed"
-                />
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-text">
-                    Niezbedne cookies (wymagane)
-                  </div>
-                  <p className="text-xs text-text-muted mt-0.5">
-                    Niezbedne do prawidlowego dzialania strony. Nie moga byc
-                    wylaczone.
-                  </p>
-                </div>
+              <label className="flex items-start gap-3 rounded-[8px] border border-line bg-sunken p-4">
+                <input type="checkbox" checked disabled className="mt-1 h-4 w-4 cursor-not-allowed" />
+                <span className="flex-1">
+                  <span className="block text-[16px] font-medium text-ink">Niezbędne cookies (wymagane)</span>
+                  <span className="mt-0.5 block text-[15px] text-ink-2">
+                    Potrzebne do prawidłowego działania strony. Nie można ich wyłączyć.
+                  </span>
+                </span>
               </label>
 
-              <label className="flex items-start gap-3 p-4 border border-border rounded-[6px] hover:border-accent transition-colors cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={preferences.functional}
-                  onChange={(e) =>
-                    setPreferences({
-                      ...preferences,
-                      functional: e.target.checked,
-                    })
-                  }
-                  className="mt-0.5 h-4 w-4 rounded accent-accent cursor-pointer"
-                />
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-text">
-                    Funkcjonalne cookies
-                  </div>
-                  <p className="text-xs text-text-muted mt-0.5">
-                    Zapamietanie preferencji uzytkownika (np. jezyk, strefa
-                    czasowa).
-                  </p>
-                </div>
-              </label>
-
-              <label className="flex items-start gap-3 p-4 border border-border rounded-[6px] hover:border-accent transition-colors cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={preferences.analytics}
-                  onChange={(e) =>
-                    setPreferences({
-                      ...preferences,
-                      analytics: e.target.checked,
-                    })
-                  }
-                  className="mt-0.5 h-4 w-4 rounded accent-accent cursor-pointer"
-                />
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-text">
-                    Analityczne cookies
-                  </div>
-                  <p className="text-xs text-text-muted mt-0.5">
-                    Analiza ruchu na stronie (np. Google Analytics).
-                  </p>
-                </div>
-              </label>
-
-              <label className="flex items-start gap-3 p-4 border border-border rounded-[6px] hover:border-accent transition-colors cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={preferences.marketing}
-                  onChange={(e) =>
-                    setPreferences({
-                      ...preferences,
-                      marketing: e.target.checked,
-                    })
-                  }
-                  className="mt-0.5 h-4 w-4 rounded accent-accent cursor-pointer"
-                />
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-text">
-                    Marketingowe cookies
-                  </div>
-                  <p className="text-xs text-text-muted mt-0.5">
-                    Personalizacja reklam (np. LinkedIn Ads, Meta Ads).
-                  </p>
-                </div>
-              </label>
+              {OPTIONAL_CATEGORIES.map((category) => (
+                <label
+                  key={category.key}
+                  className="flex cursor-pointer items-start gap-3 rounded-[8px] border border-line p-4 hover:border-ink"
+                >
+                  <input
+                    type="checkbox"
+                    checked={preferences[category.key]}
+                    onChange={(e) => setPreferences({ ...preferences, [category.key]: e.target.checked })}
+                    className="mt-1 h-4 w-4 cursor-pointer"
+                  />
+                  <span className="flex-1">
+                    <span className="block text-[16px] font-medium text-ink">{category.title}</span>
+                    <span className="mt-0.5 block text-[15px] text-ink-2">{category.body}</span>
+                  </span>
+                </label>
+              ))}
             </div>
 
-            <div className="mt-5 flex flex-col sm:flex-row gap-2">
-              <button
-                onClick={() => setShowDetails(false)}
-                className="px-5 py-2.5 text-sm border border-border rounded-[6px] text-text-secondary hover:border-accent hover:text-accent transition-colors"
-              >
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+              <button type="button" onClick={() => setShowDetails(false)} className="lm-btn lm-btn--secondary lm-btn--sm">
                 Wstecz
               </button>
-              <button
-                onClick={acceptNecessary}
-                className="px-5 py-2.5 text-sm border border-border rounded-[6px] text-text-secondary hover:border-accent hover:text-accent transition-colors"
-              >
-                Tylko niezbedne
+              <button type="button" onClick={acceptNecessary} className="lm-btn lm-btn--secondary lm-btn--sm">
+                Tylko niezbędne
               </button>
-              <button
-                onClick={saveCustom}
-                className="flex-1 px-5 py-2.5 text-sm bg-[#8B4513] text-white rounded-[6px] hover:bg-[#6B3A10] transition-colors"
-              >
+              <button type="button" onClick={saveCustom} className="lm-btn lm-btn--solid lm-btn--sm">
                 Zapisz wybrane
               </button>
             </div>
