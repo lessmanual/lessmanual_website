@@ -13,16 +13,16 @@ import { SKRYPT_ZGODY_PRZED_MALOWANIEM } from "@/lib/consent";
 // Inter 400-600 ma 44 kB zamiast 133 kB (latin + latin-ext z next/font/google), Instrument Serif
 // 16 kB zamiast 24 kB. Mniej bajtów przed pierwszym malowaniem = zapas LCP na telefonie (delta QA
 // 11.11). Znak spoza zestawu (np. w treści bloga) przeglądarka pokaże fontem zastępczym.
-// Decyzja CEO 11.11: fonty marki widoczne od pierwszej wizyty. Oba kroje są w pierwszym ekranie
-// (Inter w całym tekście, Instrument Serif w słowie „ręcznej”), więc oba z preloadem i `swap`;
-// font zastępczy ma metryki dopasowane do kroju (adjustFontFallback), żeby podmiana nie
-// przesuwała treści (CLS do 0,1).
+// Stan na czas decyzji CEO (11.11, tabela wariantów w RAPORT_BUDOWY.md, „Paczka 3”): `optional` bez
+// preloadu daje najlepsze LCP i CLS 0, ale nowy odwiedzający zwykle widzi font zastępczy.
+// Warianty z fontami marki od pierwszej wizyty: preload + swap (LCP do 2,9 s) albo swap bez
+// preloadu (CLS 0,14-0,20 na wpisie bloga). Zmiana wariantu = `display` i `preload` poniżej.
 const instrumentSerif = localFont({
   src: "./fonts/instrument-serif-italic-pl.woff2",
   variable: "--font-instrument-serif",
   weight: "400",
   style: "italic",
-  display: "swap",
+  display: "optional",
   adjustFontFallback: "Times New Roman",
   preload: false,
 });
@@ -31,7 +31,7 @@ const inter = localFont({
   src: "./fonts/inter-pl-400-600.woff2",
   variable: "--font-inter",
   weight: "400 600",
-  display: "swap",
+  display: "optional",
   adjustFontFallback: "Arial",
   preload: false,
 });
