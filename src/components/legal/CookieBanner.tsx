@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
+  ATRYBUT_ZGODY,
   BRAK_ZGODY,
   ZDARZENIE_USTAWIEN_COOKIES,
   ZDARZENIE_ZGODY_COOKIES,
@@ -34,8 +35,11 @@ const KATEGORIE_OPCJONALNE: readonly Kategoria[] = [
 
 // Baner zgody. „Odrzuć opcjonalne” i „Akceptuj wszystkie” mają ten sam styl (raport EDPB z 17.01.2023:
 // wyróżnienie akceptacji to wprowadzający w błąd projekt). Zapis i wygasanie zgody: `@/lib/consent`.
+// Baner jest w HTML z serwera od pierwszej klatki (wcześniej pojawiał się po hydratacji i jego tekst
+// był elementem LCP zależnym od całego JS). Osobom z ważną zgodą chowa go atrybut ustawiany w <head>
+// przed malowaniem (SKRYPT_ZGODY_PRZED_MALOWANIEM), a po hydratacji stan React to potwierdza.
 export function CookieBanner() {
-  const [widoczny, setWidoczny] = useState(false);
+  const [widoczny, setWidoczny] = useState(true);
   const [druga, setDruga] = useState(false);
   const [maZapis, setMaZapis] = useState(false);
   const [wybor, setWybor] = useState<WyborCookies>(BRAK_ZGODY);
@@ -47,6 +51,8 @@ export function CookieBanner() {
     setWidoczny(zapis === null);
 
     const otworzUstawienia = () => {
+      // Atrybut z <head> chowa baner w CSS; przy otwarciu ustawień musi zniknąć.
+      document.documentElement.removeAttribute(ATRYBUT_ZGODY);
       setWybor(czytajZgodeCookies());
       setMaZapis(czytajZapisZgodyCookies() !== null);
       setDruga(true);
@@ -95,7 +101,7 @@ export function CookieBanner() {
       tabIndex={-1}
       role="region"
       aria-label="Zgoda na pliki cookies"
-      className="fixed bottom-0 left-0 right-0 z-[60] max-h-[100dvh] overflow-y-auto border-t border-line bg-surface shadow-[0_-8px_24px_#0a0a0a14] focus:outline-none"
+      className="lm-cookie-banner fixed bottom-0 left-0 right-0 z-[60] max-h-[100dvh] overflow-y-auto border-t border-line bg-surface shadow-[0_-8px_24px_#0a0a0a14] focus:outline-none"
     >
       <div className="lm-container py-5">
         {!druga ? (

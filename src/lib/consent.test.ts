@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { WERSJA_ZGODY_COOKIES, parsujZgodeCookies } from "@/lib/consent";
+import { ATRYBUT_ZGODY, SKRYPT_ZGODY_PRZED_MALOWANIEM, WERSJA_ZGODY_COOKIES, parsujZgodeCookies } from "@/lib/consent";
 
 const TERAZ = new Date("2026-11-11T12:00:00.000Z");
 
@@ -54,5 +54,33 @@ describe("parsujZgodeCookies", () => {
     const rok = zapis({ czas: "2025-11-11T12:00:00.000Z" });
     expect(parsujZgodeCookies(prawieRok, TERAZ)).not.toBeNull();
     expect(parsujZgodeCookies(rok, TERAZ)).toBeNull();
+  });
+});
+
+// Skrypt z <head> musi chować baner dokładnie wtedy, gdy React uzna zgodę za ważną; inaczej baner
+// mignąłby osobom po wyborze albo zniknąłby osobom ze starą zgodą.
+describe("SKRYPT_ZGODY_PRZED_MALOWANIEM", () => {
+  function uruchom(surowy: string | null): string | null {
+    const atrybuty = new Map<string, string>();
+    const srodowisko = {
+      localStorage: { getItem: () => surowy },
+      document: { documentElement: { setAttribute: (k: string, v: string) => atrybuty.set(k, v) } },
+    };
+    new Function("localStorage", "document", SKRYPT_ZGODY_PRZED_MALOWANIEM)(
+      srodowisko.localStorage,
+      srodowisko.document,
+    );
+    return atrybuty.get(ATRYBUT_ZGODY) ?? null;
+  }
+
+  it("ustawia atrybut dla ważnej zgody", () => {
+    expect(uruchom(JSON.stringify({ wersja: WERSJA_ZGODY_COOKIES, czas: new Date().toISOString(), analityczne: false, kalendarz: false }))).toBe("ok");
+  });
+
+  it("nie ustawia atrybutu bez zapisu, przy starej wersji i po 12 miesiącach", () => {
+    expect(uruchom(null)).toBeNull();
+    expect(uruchom(JSON.stringify({ wersja: "stara", czas: new Date().toISOString(), analityczne: true, kalendarz: true }))).toBeNull();
+    expect(uruchom(JSON.stringify({ wersja: WERSJA_ZGODY_COOKIES, czas: "2020-01-01T00:00:00.000Z", analityczne: true, kalendarz: true }))).toBeNull();
+    expect(uruchom("{zepsute")).toBeNull();
   });
 });

@@ -6,6 +6,7 @@ import { ORGANIZATION_SCHEMA, serializeJsonLd } from "@/lib/schema";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { BzykDefs } from "@/components/site/Bzyk";
 import { META, SITE_URL } from "@/content/site";
+import { SKRYPT_ZGODY_PRZED_MALOWANIEM } from "@/lib/consent";
 
 // next/font hostuje pliki z tej samej domeny (bez blokującego Google Fonts).
 // Instrument Serif tylko kursywą: używamy go wyłącznie do wyróżnionego słowa w nagłówku.
@@ -72,7 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="pl" suppressHydrationWarning>
+      <head>
+        {/* Przed malowaniem: chowa baner cookies u osób z ważną zgodą (bez czekania na JS). */}
+        <script dangerouslySetInnerHTML={{ __html: SKRYPT_ZGODY_PRZED_MALOWANIEM }} />
+      </head>
       <body className={`${instrumentSerif.variable} ${inter.variable}`}>
         <BzykDefs />
         <GoogleAnalytics />

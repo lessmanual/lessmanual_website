@@ -97,3 +97,14 @@ export function zapiszZgodeCookies(wybor: WyborCookies): ZgodaCookies {
   window.dispatchEvent(new Event(ZDARZENIE_ZGODY_COOKIES));
   return zgoda;
 }
+
+// Atrybut na <html>, gdy zapisana zgoda jest ważna. Baner renderuje się w HTML z serwera (żeby jego
+// tekst nie czekał na JS i nie przesuwał LCP), a ten atrybut chowa go przed pierwszym malowaniem
+// u osób, które już wybrały. Logika jak w parsujZgodeCookies, w wersji do wstrzyknięcia w <head>.
+export const ATRYBUT_ZGODY = "data-zgoda-cookies";
+
+export const SKRYPT_ZGODY_PRZED_MALOWANIEM = `try{var z=JSON.parse(localStorage.getItem(${JSON.stringify(
+  KLUCZ_ZGODY_COOKIES,
+)})||"null");if(z&&z.wersja===${JSON.stringify(WERSJA_ZGODY_COOKIES)}&&typeof z.analityczne==="boolean"&&typeof z.kalendarz==="boolean"){var t=new Date(z.czas);t.setUTCMonth(t.getUTCMonth()+${WAZNOSC_ZGODY_MIESIECY});if(!isNaN(t.getTime())&&t.getTime()>Date.now()){document.documentElement.setAttribute(${JSON.stringify(
+  ATRYBUT_ZGODY,
+)},"ok")}}}catch(e){}`;

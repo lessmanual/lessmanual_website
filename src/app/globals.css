@@ -419,3 +419,8 @@ summary:focus-visible {
   transition: opacity 160ms var(--ease-out);
 }
 }
+
+/* Baner cookies jest w HTML z serwera; ważna zgoda w localStorage chowa go przed pierwszym malowaniem. */
+html[data-zgoda-cookies="ok"] .lm-cookie-banner {
+  display: none;
+}
