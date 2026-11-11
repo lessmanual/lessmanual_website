@@ -1,5 +1,5 @@
 import { Bzyk } from "@/components/site/Bzyk";
-import { ArrowRight } from "@/components/site/Icons";
+import { ArrowRight, Star } from "@/components/site/Icons";
 import { BZYK_LINES, HERO, LINKS, PROOF } from "@/content/site";
 import { HeroScene } from "./HeroScene";
 import styles from "./Hero.module.css";
@@ -38,7 +38,23 @@ export function Hero() {
               </p>
             </div>
           </div>
-          <p className={styles.proof}>{PROOF.bar}</p>
+          {/* Kolejność i format jak w projekcie v3: gwiazdki i ocena Google z linkiem, potem liczby. */}
+          <p className={styles.proof}>
+            {PROOF.google !== null ? (
+              <a href={LINKS.googleProfile} className={styles.rating} target="_blank" rel="noopener">
+                <span className={styles.stars} aria-hidden="true">
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                </span>
+                <strong>{PROOF.google.rating}</strong>
+                <span className={styles.ratingLabel}>{PROOF.google.reviews} opinii w Google</span>
+              </a>
+            ) : null}
+            <span>{PROOF.bar}</span>
+          </p>
         </div>
         <div className={styles.visual}>
           <HeroScene />

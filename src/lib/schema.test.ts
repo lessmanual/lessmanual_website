@@ -23,10 +23,17 @@ describe("ORGANIZATION_SCHEMA", () => {
     expect(organization.founder.name).toBe("Bartłomiej Chudzik");
   });
 
-  it("has no aggregateRating until the Google profile has been read (PROOF.google is null)", () => {
-    expect(PROOF.google).toBeNull();
-    expect("aggregateRating" in organization).toBe(false);
-    expect(serializeJsonLd(ORGANIZATION_SCHEMA)).not.toContain("AggregateRating");
+  // AggregateRating tylko z prawdziwą oceną Google (decyzja Bartka 11.11: 5,0 i 6 opinii);
+  // PROOF.google = null musi zdjąć pole, bo Google karze za ocenę bez pokrycia.
+  it("carries the Google rating from PROOF as aggregateRating, or none when it is null", () => {
+    const rating = PROOF.google;
+    if (rating === null) {
+      expect("aggregateRating" in organization).toBe(false);
+      return;
+    }
+    expect(serializeJsonLd(ORGANIZATION_SCHEMA)).toContain("AggregateRating");
+    expect(JSON.stringify(organization)).toContain(`"ratingValue":${rating.ratingValue}`);
+    expect(JSON.stringify(organization)).toContain(`"reviewCount":${rating.reviews}`);
   });
 });
 

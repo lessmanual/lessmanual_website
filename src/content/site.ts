@@ -19,9 +19,9 @@ export const LINKS = {
   linkedinBartek: "https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197",
   linkedinRecommendations:
     "https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197/details/recommendations/",
-  // Stary link g.page/r/lessmanual/review przekierowuje na google.com (sprawdzone 11.11).
-  // Właściwy adres profilu podaje Bartek; do tego czasu ocena Google nie jest pokazywana.
-  googleProfile: "",
+  // W kodzie produkcji (main) jest tylko g.page/r/lessmanual/review, który przekierowuje na
+  // google.com (sprawdzone 11.11). Do czasu dokładnego adresu wizytówki: Mapy z wyszukiwaniem.
+  googleProfile: "https://www.google.com/maps/search/?api=1&query=LessManual",
   privacy: "/legal/polityka-prywatnosci",
   email: "kontakt@lessmanual.ai",
 } as const;
@@ -31,17 +31,22 @@ export function formHref(path: "A" | "B" | "C"): string {
   return `/?droga=${path}#formularz`;
 }
 
+export type GoogleRating = { rating: string; ratingValue: number; reviews: number; readOn: string };
+
+const GOOGLE_RATING: GoogleRating | null = { rating: "5,0", ratingValue: 5, reviews: 6, readOn: "2026-11-11" };
+
 export const PROOF = {
-  // TEKSTY v3 sekcja 8: liczby z SYSTEMY_ZBUDOWANE.md, stan 11.11.2026.
-  companies: 18,
+  // Pasek dowodów, decyzja Bartka 11.11: „24+ firm · 31 wdrożeń · 5,0 w Google (6 opinii)”.
+  // Jedno miejsce na liczby; hero, OG i dane strukturalne czytają stąd.
+  companies: "24+",
   implementations: 31,
-  bar: "Systemy dla 18 firm · 31 wdrożeń",
+  bar: "24+ firm · 31 wdrożeń",
   oneClient:
     "U jednego klienta od grudnia 2025 uruchomiliśmy 9 systemów, 7 z nich pracuje (stan na 11.11.2026).",
   asOf: "2026-11-11",
-  // Ocena Google tylko z odczytu profilu w dniu publikacji. Bez odczytu: brak oceny na stronie
-  // i brak AggregateRating w danych strukturalnych (CSO: repo pokazuje 5 opinii, nie 6).
-  google: null as null | { rating: string; ratingValue: number; reviews: number; readOn: string },
+  // Ocena jak na obecnej stronie (5.0, 6 opinii; dwie od tej samej osoby, więc kart byłoby 5).
+  // Zatwierdzone przez Bartka 11.11; ustawienie null zdejmuje ocenę i AggregateRating.
+  google: GOOGLE_RATING,
 } as const;
 
 export const META = {

@@ -37,7 +37,9 @@ export default async function Image() {
           </div>
         </div>
         <div style={{ display: "flex", gap: 28, fontSize: 24, color: "#3F3F46" }}>
-          <span>Systemy dla 18 firm</span>
+          <span>5,0 w Google (6 opinii)</span>
+          <span style={{ color: "#B87333" }}>·</span>
+          <span>24+ firm</span>
           <span style={{ color: "#B87333" }}>·</span>
           <span>31 wdrożeń</span>
         </div>

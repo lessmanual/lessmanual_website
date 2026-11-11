@@ -137,3 +137,35 @@
     transform: translateX(0);
   }
 }
+
+/* Pasek dowodów: ocena Google (link do wizytówki) i liczby, jak w projekcie v3. */
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.rating strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.rating:hover .ratingLabel {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--copper);
+}
