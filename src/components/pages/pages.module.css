@@ -400,3 +400,22 @@
 .path .pathButton {
   margin-top: 16px;
 }
+
+/* Ścieżka w jednej linii: przy podmianie fontu (swap) długi tytuł wpisu łamał się inaczej i
+   przesuwał nagłówek (CLS 0,2 na wpisie bloga, 11.11). Ostatni element skraca się wielokropkiem. */
+.crumbs {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.crumbs li {
+  flex: none;
+}
+
+.crumbs li:last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
