@@ -136,7 +136,7 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | Google Ireland Limited i Google LLC | poczta kontakt@lessmanual.ai, kalendarz i rozmowy wideo w Google Meet (Google Workspace) | korespondencja, terminy rozmów |
 | Google Ireland Limited i Google LLC | statystyki odwiedzin (Google Analytics 4), tylko po zgodzie | dane z § 4.9 |
 | Cal.com, Inc. (USA) | kalendarz rezerwacji rozmów | dane z § 4.4 |
-| inFakt [DO UZUPEŁNIENIA: pełna nazwa podmiotu z umowy] | wystawianie faktur | dane z § 4.10 |
+| inFakt spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie | wystawianie faktur | dane z § 4.10 |
 | [DO UZUPEŁNIENIA: biuro rachunkowe, jeśli jest] | księgowość | dane z § 4.10 |
 | Anthropic PBC (USA) | model AI Claude, z którego korzystają nasi agenci przy przygotowaniu rozmowy (§ 4.5) | dane ze zgłoszenia i notatki z CRM |
 
@@ -152,15 +152,15 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 
 | Dostawca | Mechanizm | Stan sprawdzenia |
 |---|---|---|
-| Google LLC | decyzja Komisji (UE) 2023/1795 w sprawie EU-US Data Privacy Framework (DPF) i standardowe klauzule umowne | DPF: aktywny [DO UZUPEŁNIENIA: data ręcznego sprawdzenia na dataprivacyframework.gov] |
-| Vercel Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Vercel | DPF: aktywny [DO UZUPEŁNIENIA: data sprawdzenia] |
-| Cal.com, Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Cal.com | DPF: aktywny według Cal.com [DO UZUPEŁNIENIA: data sprawdzenia] |
-| PLUS FIVE FIVE, Inc. (Resend) | DPF i standardowe klauzule umowne w umowie powierzenia Resend | DPF: „Active, re-certification under review” według wyników wyszukiwania [DO UZUPEŁNIENIA: data sprawdzenia] |
-| Anthropic PBC | standardowe klauzule umowne w umowie powierzenia włączonej do warunków komercyjnych Anthropic (Anthropic nie występuje na liście DPF) | [DO UZUPEŁNIENIA: data ręcznego sprawdzenia listy DPF] |
-| Supabase | standardowe klauzule umowne (Supabase nie występuje na liście DPF) | baza w regionie [DO UZUPEŁNIENIA: region projektu, np. Frankfurt eu-central-1] |
+| Google LLC | decyzja Komisji (UE) 2023/1795 w sprawie EU-US Data Privacy Framework (DPF) i standardowe klauzule umowne | DPF: aktywny (sprawdzono na dataprivacyframework.gov 11.11.2026) |
+| Vercel Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Vercel | DPF: aktywny (sprawdzono na dataprivacyframework.gov 11.11.2026) |
+| Cal.com, Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Cal.com | DPF: aktywny (sprawdzono na dataprivacyframework.gov 11.11.2026) |
+| PLUS FIVE FIVE, Inc. (Resend) | DPF i standardowe klauzule umowne w umowie powierzenia Resend | DPF: „Active - Re-certification under Review” (sprawdzono na dataprivacyframework.gov 11.11.2026) |
+| Anthropic PBC | standardowe klauzule umowne w umowie powierzenia włączonej do warunków komercyjnych Anthropic (Anthropic nie występuje na liście DPF) | nie występuje na liście aktywnych ani nieaktywnych uczestników DPF (sprawdzono 11.11.2026) |
+| Supabase | standardowe klauzule umowne (Supabase nie występuje na liście DPF) | baza w regionie eu-north-1 (Sztokholm, Szwecja) |
 
 3. Standardowe klauzule umowne to wzór umowy przyjęty przez Komisję Europejską (decyzja wykonawcza (UE) 2021/914). Kopię zabezpieczeń dostaniesz na prośbę wysłaną na kontakt@lessmanual.ai.
-4. Serwer obsługujący formularz działa w regionie [DO UZUPEŁNIENIA: fra1 Frankfurt po zmianie ustawień Vercel; dziś domyślnie iad1 Waszyngton].
+4. Serwer obsługujący formularz działa w regionie Vercel fra1 (Frankfurt, Niemcy).
 
 ## § 8. Automatyczne dobieranie rozmowy i profilowanie
 
@@ -209,9 +209,9 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | Zgoda na marketing e-mailowy | do cofnięcia zgody albo sprzeciwu |
 | Umowy, faktury i korespondencja dotycząca umowy | przez czas umowy, potem do przedawnienia roszczeń (co do zasady 3 lata dla roszczeń związanych z działalnością gospodarczą, liczone do końca roku kalendarzowego); dokumenty księgowe przez okres wymagany przepisami podatkowymi i rachunkowymi |
 | Google Analytics | [DO UZUPEŁNIENIA: 2 albo 14 miesięcy, zgodnie z ustawieniem przechowywania danych w GA4]; pliki cookie do 2 lat |
-| Logi serwera Vercel | [DO UZUPEŁNIENIA: okres przechowywania logów w planie Vercel] |
-| Kopie powiadomień w Resend | [DO UZUPEŁNIENIA: okres przechowywania w Resend] |
-| Dane przekazane do Anthropic | [DO UZUPEŁNIENIA: okres przechowywania danych z API według warunków komercyjnych Anthropic] |
+| Logi serwera Vercel | do 1 godziny (logi funkcji w planie Hobby, według dokumentacji Vercel) |
+| Kopie powiadomień w Resend | 30 dni (plany Free, Pro i Scale według dokumentacji Resend) |
+| Dane przekazane do Anthropic | do 30 dni od otrzymania lub wygenerowania, z wyjątkami m.in. dla wymogów prawa i egzekwowania zasad korzystania z usługi Anthropic |
 | Zapis zgód i ich cofnięcia | 3 lata od cofnięcia zgody albo od końca przetwarzania, liczone do końca roku kalendarzowego |
 
 Po upływie okresu usuwamy dane albo nieodwracalnie je anonimizujemy.
