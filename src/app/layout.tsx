@@ -24,7 +24,7 @@ const instrumentSerif = localFont({
   style: "italic",
   display: "swap",
   adjustFontFallback: "Times New Roman",
-  preload: true,
+  preload: false,
 });
 
 const inter = localFont({
@@ -33,7 +33,7 @@ const inter = localFont({
   weight: "400 600",
   display: "swap",
   adjustFontFallback: "Arial",
-  preload: true,
+  preload: false,
 });
 
 export const viewport: Viewport = {
