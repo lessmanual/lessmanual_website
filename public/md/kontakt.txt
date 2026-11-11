@@ -1,73 +1,18 @@
 # Kontakt | LessManual
 
-> Porozmawiajmy o procesie, który zabiera czas Twojemu zespołowi. Zarezerwuj rozmowę lub napisz na kontakt@lessmanual.ai.
+> Umów rozmowę przez formularz (około 2 minut) albo napisz na kontakt@lessmanual.ai.
 
 > Source: https://www.lessmanual.ai/kontakt
-> Generated: 2026-07-27T08:27:42.947Z
+> Updated: 2026-11-11 (edytowane ręcznie, nie generowane skryptem md:gen)
 
 ---
 
-KONTAKT
+# Kontakt
 
-# Porozmawiajmy
-o Twoim projekcie.
+- Formularz: https://www.lessmanual.ai/#formularz (10 pytań, potem wybierasz termin rozmowy z Bartkiem)
+- Email: [kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
+- LinkedIn: https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197
 
-Zarezerwuj rozmowę. Sprawdzimy, który proces zabiera najwięcej czasu i czy automatyzacja ma w nim sens.
+Przyjmujemy maksymalnie 4 nowe firmy miesięcznie.
 
-DANE KONTAKTOWE
-
-## Napisz lub zarezerwuj slot.
-
-Wolisz maila? Napisz bezpośrednio. Wolisz rozmowę? Wybierz termin w kalendarzu po prawej.
-
-EMAIL
-
-[kontakt@lessmanual.ai](mailto:kontakt@lessmanual.ai)
-
-ADRES
-
-Cendrowice, ul. Długa 33
-
-LINKEDIN
-
-[linkedin.com/in/bartlomiej-chudzik-7aa740197](https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197)
-
-CZAS ODPOWIEDZI
-
-Odpowiadam osobiście
-
-LessManual Bartłomiej Chudzik
-NIP 1231589909
-JDG od 09.10.2025
-
-[Zarezerwuj rozmowę (15 min)→](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
-
-REZERWACJA ROZMOWY
-
-SZYBKIE ODPOWIEDZI
-
-## Najczęściej pytasz o...
-
-Kilka pytań które pojawiają się na każdej rozmowie. Pełna lista odpowiedzi dostępna na stronie FAQ.
-
-Czy to zadziała w mojej branży?+
-
-Jak szybko zobaczę wyniki?+
-
-Czy potrzebuję wiedzy technicznej?+
-
-[Wszystkie pytania i odpowiedzi →](/faq)
-
-Masz inne pytanie? Napisz na kontakt@lessmanual.ai lub zarezerwuj rozmowę wyżej.
-
-Pierwszy krok: diagnoza procesu
-
-## Zacznij od procesu, który zabiera najwięcej czasu.
-
-Mapa pokaże pierwszy proces do automatyzacji, źródła potrzebne do działania agenta i sposób kontroli wyniku. Jeśli wdrożenie nie ma sensu, powiem Ci to wprost.
-
-[Sprawdź pierwszy proces do automatyzacji→](/ai-growth-opportunity-map)[Umów rozmowę o wdrożeniu](https://cal.com/bart%C5%82omiej-chudzik-2en6pt/30min)
-
-LessManual.ai · Bartłomiej Chudzik
-
-[Oferta](/oferta)[Blog](/blog)[FAQ](/faq)[Polityka prywatności](/legal/polityka-prywatnosci)[Cookies](/legal/polityka-cookies)[Regulamin](/legal/regulamin)
+LessManual Bartłomiej Chudzik, NIP 1231589909

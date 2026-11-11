@@ -1,30 +1,35 @@
 import type { Metadata } from "next";
-import KontaktContent from "./_content";
+import { LeadForm } from "@/components/form/LeadForm";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import styles from "./kontakt.module.css";
+
+const OPIS =
+  "Odpowiedz na 10 krótkich pytań o firmę i wybierz termin rozmowy z Bartkiem. Formularz zajmuje około 2 minut.";
 
 export const metadata: Metadata = {
-  title: "Kontakt",
-  description:
-    "Porozmawiajmy o procesie, który zabiera czas Twojemu zespołowi. Zarezerwuj rozmowę lub napisz na kontakt@lessmanual.ai.",
-  alternates: {
-    canonical: "/kontakt",
-  },
+  title: "Umów rozmowę | LessManual",
+  description: OPIS,
+  alternates: { canonical: "https://www.lessmanual.ai/kontakt" },
   openGraph: {
-    title: "Kontakt | LessManual",
-    description:
-      "Zarezerwuj rozmowę z Bartkiem. Sprawdzimy, czy automatyzacja ma sens w wybranym procesie.",
-    url: "/kontakt",
+    title: "Umów rozmowę | LessManual",
+    description: OPIS,
+    url: "https://www.lessmanual.ai/kontakt",
     siteName: "LessManual",
     locale: "pl_PL",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kontakt | LessManual",
-    description:
-      "Rozmowa o procesie, danych, wyniku i możliwym zakresie wdrożenia.",
-  },
 };
 
 export default function KontaktPage() {
-  return <KontaktContent />;
+  return (
+    <>
+      <SiteHeader />
+      <main className={`lm-container ${styles.strona}`}>
+        <h1 className={styles.naglowek}>Umów rozmowę</h1>
+        <LeadForm />
+      </main>
+      <SiteFooter />
+    </>
+  );
 }
