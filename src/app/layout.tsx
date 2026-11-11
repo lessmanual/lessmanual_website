@@ -15,6 +15,8 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
   style: ["italic"],
   display: "swap",
+  // Jedno wyróżnione słowo w H1: bez preloadu, żeby nie konkurowało z Inter o pasmo przed LCP.
+  preload: false,
 });
 
 const inter = Inter({

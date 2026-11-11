@@ -1,6 +1,6 @@
 import { Bzyk } from "@/components/site/Bzyk";
 import { BZYK_LINES, FINAL_CTA } from "@/content/site";
-import { LeadForm } from "@/components/form/LeadForm";
+import { LeadFormLazy } from "./LeadFormLazy";
 import styles from "./FormSection.module.css";
 
 // Koniec strony: formularz kwalifikujący (TEKSTY v3, sekcje 10 i 13).
@@ -21,7 +21,7 @@ export function FormSection() {
           </div>
         </div>
         <div>
-          <LeadForm />
+          <LeadFormLazy />
         </div>
       </div>
     </section>

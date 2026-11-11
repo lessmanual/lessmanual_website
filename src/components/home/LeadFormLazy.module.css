@@ -1,0 +1,22 @@
+.placeholder {
+  width: 100%;
+  max-width: 700px;
+  min-height: 190px;
+  margin-inline: auto;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 20px 16px 24px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .placeholder {
+    padding: 28px 32px 32px;
+  }
+}
