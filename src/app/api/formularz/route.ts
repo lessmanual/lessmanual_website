@@ -13,7 +13,7 @@ import {
 import { LIMIT_ZGLOSZEN, wyczyscWygasle, zajmijMiejsce, type StanLimitu } from "@/lib/lead/limit";
 import { odczytajZnacznikiBota, parsujZgloszenie } from "@/lib/lead/parsuj";
 import { zbudujMail, zbudujPodsumowanie, type IdentyfikatoryCrm } from "@/lib/lead/podsumowanie";
-import { wystawToken } from "@/lib/lead/token";
+import { czytajSekretTokenu, wystawToken } from "@/lib/lead/token";
 import type { Zgloszenie } from "@/lib/lead/typy";
 import {
   BladCrm,
@@ -176,13 +176,14 @@ export async function POST(zadanie: Request): Promise<Response> {
 
   console.info(`[formularz] Zapisano zgłoszenie: droga ${decyzja.trasa}, mail ${mailId === null ? "nie" : "tak"}`);
   // Identyfikatory CRM idą tylko w mailu do Bartka. Odpowiedź zawiera co najwyżej token rezerwacji
-  // (podpisany HMAC, ważny 24 h) do dopisania terminu z kalendarza w /api/formularz/termin. Token
+  // (zaszyfrowany AES-GCM osobnym sekretem, ważny 24 h) do dopisania terminu w /api/formularz/termin. Token
   // dotyczy zawsze świeżo utworzonej szansy, więc nie pozwala sprawdzić, czy adres był już w CRM.
+  const sekretTokenu = czytajSekretTokenu();
   if (zgloszenie.rodzaj === "zgloszenie") {
     return Response.json({
       ok: true,
       route: decyzja.trasa,
-      rezerwacja: wystawToken(zapis.identyfikatory.dealId, teraz, konfiguracja.klucz),
+      rezerwacja: sekretTokenu === null ? null : wystawToken(zapis.identyfikatory.dealId, teraz, sekretTokenu),
     });
   }
   return Response.json({ ok: true, route: decyzja.trasa });

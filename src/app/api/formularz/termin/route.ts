@@ -5,7 +5,7 @@
 
 import { LIMIT_ZGLOSZEN, wyczyscWygasle, zajmijMiejsce, type StanLimitu } from "@/lib/lead/limit";
 import { opisTerminu, parsujTermin } from "@/lib/lead/termin";
-import { sprawdzToken } from "@/lib/lead/token";
+import { czytajSekretTokenu, sprawdzToken } from "@/lib/lead/token";
 import { BladCrm, czytajKonfiguracjeCrm, zapiszTerminSzansy } from "../crm-klient";
 import { czyZadanieZWlasnejStrony, kluczKlienta } from "../zadanie";
 
@@ -60,8 +60,13 @@ export async function POST(zadanie: Request): Promise<Response> {
     console.error("[formularz/termin] Brak konfiguracji zapisu (zmienne środowiskowe serwera)");
     return blad(503);
   }
-  // Podpis przed parsowaniem daty: bez ważnego tokenu nic więcej nie jest sprawdzane.
-  const dealId = sprawdzToken(surowe.rezerwacja, teraz, konfiguracja.klucz);
+  const sekretTokenu = czytajSekretTokenu();
+  if (sekretTokenu === null) {
+    console.error("[formularz/termin] Brak sekretu tokenu rezerwacji (zmienna środowiskowa serwera)");
+    return blad(503);
+  }
+  // Token przed parsowaniem daty: bez ważnego tokenu nic więcej nie jest sprawdzane.
+  const dealId = sprawdzToken(surowe.rezerwacja, teraz, sekretTokenu);
   if (dealId === null) {
     console.info("[formularz/termin] Odrzucone: nieprawidłowy token rezerwacji");
     return blad(403);
