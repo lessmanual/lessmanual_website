@@ -179,6 +179,10 @@ export async function POST(zadanie: Request): Promise<Response> {
   // (zaszyfrowany AES-GCM osobnym sekretem, ważny 24 h) do dopisania terminu w /api/formularz/termin. Token
   // dotyczy zawsze świeżo utworzonej szansy, więc nie pozwala sprawdzić, czy adres był już w CRM.
   const sekretTokenu = czytajSekretTokenu();
+  if (sekretTokenu === null && zgloszenie.rodzaj === "zgloszenie") {
+    // Bez sekretu zgłoszenie jest zapisane, ale termin z kalendarza nie trafi do CRM: to błąd konfiguracji.
+    console.error("[formularz] Brak FORMULARZ_TOKEN_SECRET (min. 32 znaki): termin rozmowy nie zostanie zapisany w CRM");
+  }
   if (zgloszenie.rodzaj === "zgloszenie") {
     return Response.json({
       ok: true,

@@ -1,6 +1,6 @@
 // POST /api/formularz/termin: dopisuje datę rozmowy z kalendarza Cal.com do szansy w CRM
 // (`next_step`, `next_step_due`). Wywołuje ją przeglądarka po zdarzeniu rezerwacji z ramki.
-// Autoryzacja: token rezerwacji z /api/formularz (podpis HMAC), bez identyfikatorów CRM od klienta.
+// Autoryzacja: token rezerwacji z /api/formularz (AES-256-GCM, sekret FORMULARZ_TOKEN_SECRET), bez jawnych ID z CRM.
 // Kontrakt: { rezerwacja: string, termin: string (ISO ze strefą) } -> { ok: true } albo { ok: false }.
 
 import { LIMIT_ZGLOSZEN, wyczyscWygasle, zajmijMiejsce, type StanLimitu } from "@/lib/lead/limit";

@@ -265,10 +265,9 @@ export type EkranDrogi = {
 export const KALENDARZ_BAZA = "https://cal.com/bart%C5%82omiej-chudzik-2en6pt";
 
 /**
- * Jedyne miejsce ze slugami typów spotkań Cal.com (decyzja Bartka 11.11, wszystkie 4 typy istnieją
- * i dają 200). `priorytet45` dostają zgłoszenia ze znacznikiem `priorytet` (W tym miesiącu i budżet
- * od 15 tys. zł), czyli tylko drogi z rozmową 45 min: A i duża firma. Droga B i C mają jeden typ
- * 30 min, bo FORMULARZ.md sekcja 2 nie przewiduje dla nich osobnego typu priorytetowego.
+ * Jedyne miejsce ze slugami typów spotkań Cal.com (6 typów, wszystkie dają 200, stan 11.11).
+ * Zgłoszenia ze znacznikiem `priorytet` („W tym miesiącu” i budżet od 15 tys. zł) dostają ukryty
+ * typ priorytetowy na każdej drodze (FORMULARZ.md linia 167): termin od 1 dnia, okno 3 dni robocze.
  */
 export const SLUGI_KALENDARZA = {
   rozmowa45: "45min",
