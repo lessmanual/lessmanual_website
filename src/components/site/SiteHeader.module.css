@@ -18,6 +18,8 @@
 .logo {
   display: inline-flex;
   align-items: center;
+  /* Cel dotyku min. 44 px (logo ma 24 px wysokości); nagłówek ma 72 px, więc układ się nie zmienia. */
+  min-height: 44px;
 }
 
 /* Na telefonie logo 24 px wysokości: razem z przyciskiem i Menu mieści się w 350 px. */

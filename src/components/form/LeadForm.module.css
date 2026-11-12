@@ -337,3 +337,10 @@
     transition: none;
   }
 }
+
+/* Link stojący sam w akapicie (nie w zdaniu): cel dotyku min. 44 px (WCAG 2.5.5, QA 390 px). */
+.linkSamodzielny {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}

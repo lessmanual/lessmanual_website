@@ -731,7 +731,7 @@ export function LeadForm() {
           </div>
         )}
         <p className={styles.tekst}>
-          <a href={adresLinku} className="lm-link" target="_blank" rel="noopener noreferrer">
+          <a href={adresLinku} className={`lm-link ${styles.linkSamodzielny}`} target="_blank" rel="noopener noreferrer">
             {KOMUNIKATY.kalendarzLink}
           </a>
         </p>
