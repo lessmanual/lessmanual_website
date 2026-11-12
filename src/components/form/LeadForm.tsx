@@ -30,6 +30,12 @@ import {
 import { adresKalendarza, terminZKomunikatu } from "@/lib/lead/kalendarz";
 import { jestPoprawnymEmailem, sprawdzKontakt, type SurowyKontakt } from "@/lib/lead/parsuj";
 import type { PoleKontaktu, WybranaOdpowiedz } from "@/lib/lead/typy";
+import {
+  nasluchujPrefill,
+  odbierzOczekujace,
+  zastosujPrefill,
+  type PrefillFormularza,
+} from "@/lib/home/prefill";
 import { Bzyk, type BzykMood } from "@/components/site/Bzyk";
 import { ArrowRight } from "@/components/site/Icons";
 import styles from "./LeadForm.module.css";
@@ -159,6 +165,8 @@ export function LeadForm() {
   const pierwszyRenderRef = useRef(true);
 
   const kluczEkranu = ekran.rodzaj === "pytanie" ? `pytanie-${ekran.indeks}` : ekran.rodzaj;
+  // Stały identyfikator kroku dla testów i pomiaru: id pytania albo nazwa ekranu (kontakt, droga, nie_teraz...).
+  const idKroku = ekran.rodzaj === "pytanie" ? (PYTANIA[ekran.indeks]?.id ?? kluczEkranu) : ekran.rodzaj;
 
   // Po zmianie ekranu fokus trafia na nagłówek, żeby czytnik ekranu i klawiatura zaczęły od nowego kroku.
   useEffect(() => {
@@ -179,6 +187,13 @@ export function LeadForm() {
       return;
     }
     setOdpowiedzi((poprzednie) => ({ ...poprzednie, [PYTANIE_DROGA]: { ids: [idOdpowiedzi], teksty: {} } }));
+  }, []);
+
+  // Prefill z kart działów („Tak, to u nas”): najpierw to, co kliknięto przed montażem formularza, potem nasłuch.
+  useEffect(() => {
+    const zastosuj = (p: PrefillFormularza) => setOdpowiedzi((poprzednie) => zastosujPrefill(poprzednie, p));
+    odbierzOczekujace().forEach(zastosuj);
+    return nasluchujPrefill(zastosuj);
   }, []);
 
   // Ramka Cal.com ładuje się tylko za zgodą (audyt P1): zapisana zgoda na kategorię „kalendarz”
@@ -789,7 +804,13 @@ export function LeadForm() {
           </div>
         </div>
 
-        <m.div key={kluczEkranu} className={styles.ekran} {...przejscie}>
+        <m.div
+          key={kluczEkranu}
+          className={styles.ekran}
+          data-qa="krok-formularza"
+          data-krok={idKroku}
+          {...przejscie}
+        >
           {renderEkran()}
         </m.div>
       </section>

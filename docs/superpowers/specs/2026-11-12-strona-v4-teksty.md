@@ -522,9 +522,9 @@ Miejsce: Logistyka → karta 2 → plakietka przy fakturze i zleceniu · limit 6
 
 Ten sam mechanizm, przykład możliwości
 
-Miejsce: Logistyka → karta 2 → plakietka wspólna · limit 60 zn. · długość 40 zn.
+Miejsce: Logistyka → karta 2 → plakietka wspólna · limit 60 zn. · długość 39 zn.
 
-Firmy i kwoty w przykładzie są wymyślone
+Firmy i dane w przykładzie są wymyślone
 
 Miejsce: Logistyka → karta 2 → drugi dowód pod przykładem · limit 160 zn. · długość 98 zn.
 

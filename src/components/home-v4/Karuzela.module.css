@@ -123,3 +123,8 @@
     transition: none;
   }
 }
+
+/* „Tak, to u nas”: stały przycisk pod karuzelą, widoczny na każdej karcie, nie tylko na czwartej. */
+.takToUNas {
+  margin-top: 16px;
+}

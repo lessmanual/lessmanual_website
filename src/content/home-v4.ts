@@ -357,7 +357,7 @@ const LOGISTYKA = {
       tytul: "Dokument z maila trafia do arkusza",
       opis: "Wybierz dokument i zobacz pola, które system z niego odczytał.",
       zakladki: PRZYKLADY.logistyka,
-      plakietkaWspolna: "Firmy i kwoty w przykładzie są wymyślone",
+      plakietkaWspolna: "Firmy i dane w przykładzie są wymyślone",
       drugiDowod: "U klienta pod NDA system uporządkował 9 674 z 9 674 plików dokumentacji technicznej (lipiec 2026).",
     },
     {

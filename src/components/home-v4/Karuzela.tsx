@@ -1,13 +1,25 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useLayoutEffect, useRef, useState, type JSX, type MouseEvent, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type JSX, type MouseEvent, type ReactNode } from "react";
 import { useDzial } from "@/components/home-v4/DzialProvider";
+import { TakToUNas } from "@/components/home-v4/TakToUNas";
 import { etykietaKarty, HOME_V4, type DzialId, type NrKarty } from "@/content/home-v4";
+import { trackEvent } from "@/lib/analytics";
+import {
+  CZAS_WIDOCZNOSCI_MS,
+  NAZWA_KARTY,
+  PROG_WIDOCZNOSCI,
+  utworzRejestrWidokow,
+  type SposobKarty,
+} from "@/lib/home/pomiar";
 import { kartaZPrzewiniecia } from "@/lib/home/ruch";
 import styles from "./Karuzela.module.css";
 
-export type SposobKarty = "strzalka" | "palec" | "klawiatura" | "wejscie";
+export type { SposobKarty };
+
+// Jeden rejestr na widok strony: karta_view leci raz dla pary dział + karta.
+const rejestrWidokow = utworzRejestrWidokow();
 
 const RODZAJE = ["film", "przyklad", "opinia", "pomysly"] as const;
 const NUMERY: readonly NrKarty[] = [0, 1, 2, 3];
@@ -38,7 +50,7 @@ export function Karuzela(props: {
   const { stan, ustawKarte } = useDzial();
   const aktywny = stan.aktywny === dzial;
   const torRef = useRef<HTMLDivElement>(null);
-  const sposobRef = useRef<SposobKarty>("palec");
+  const sposobRef = useRef<SposobKarty>("wejscie");
   const klatkaRef = useRef(0);
   // Ostatnia zgłoszona karta: zamknięcia ze starego renderu (scroll + rAF) nie zgłaszają tej samej karty drugi raz.
   const zgloszonaRef = useRef<NrKarty>(0);
@@ -60,10 +72,46 @@ export function Karuzela(props: {
     if (tor) tor.scrollTo({ left: 0, behavior: "instant" });
     zgloszonaRef.current = 0;
     celRef.current = 0;
-    onKartaWidoczna?.(0, "wejscie");
-    // onKartaWidoczna celowo poza zależnościami: zdarzenie wejścia liczy się raz na odsłonięcie działu.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Karta 1 po wejściu w dział (zakładka, rzut, hero) jest „wejściem”, dopóki czytelnik nie poruszy karuzelą.
+    sposobRef.current = "wejscie";
   }, [aktywny]);
+
+  // karta_view: dopiero po prawdziwej widoczności (>= 60% karty przez 1 s bez przerwy), raz na widok strony.
+  // Panel ukryty (`hidden`) ani karta poza ekranem nie liczą się, więc nic nie leci przy montażu.
+  useEffect(() => {
+    const karta = torRef.current?.children[nr];
+    if (!aktywny || !karta) return;
+    let czasomierz: ReturnType<typeof setTimeout> | null = null;
+    const wyczysc = () => {
+      if (czasomierz !== null) clearTimeout(czasomierz);
+      czasomierz = null;
+    };
+    const obserwator = new IntersectionObserver(
+      (wpisy) => {
+        // Paczka może mieć kilka wpisów (przewijanie); liczy się najnowszy, bo stary stan bywa „niewidoczny”.
+        const wpis = wpisy[wpisy.length - 1];
+        wyczysc();
+        if (!wpis?.isIntersecting) return;
+        // Karta wyższa niż ekran nie osiągnie 60% swojej wysokości, więc wystarcza 60% wysokości okna.
+        const wystarczy =
+          wpis.intersectionRatio >= PROG_WIDOCZNOSCI ||
+          wpis.intersectionRect.height >= PROG_WIDOCZNOSCI * window.innerHeight;
+        if (!wystarczy) return;
+        czasomierz = setTimeout(() => {
+          czasomierz = null;
+          if (!rejestrWidokow.pierwszyRaz(dzial, nr)) return;
+          trackEvent("karta_view", { dzial, karta: NAZWA_KARTY[nr], nr: nr + 1, sposob: sposobRef.current });
+        }, CZAS_WIDOCZNOSCI_MS);
+      },
+      // Gęste progi, żeby przekroczenie 60% (karty albo okna) zawsze wywołało sprawdzenie.
+      { threshold: Array.from({ length: 21 }, (_, i) => i / 20) },
+    );
+    obserwator.observe(karta);
+    return () => {
+      wyczysc();
+      obserwator.disconnect();
+    };
+  }, [aktywny, dzial, nr]);
 
   const poPrzewinieciu = () => {
     cancelAnimationFrame(klatkaRef.current);
@@ -160,6 +208,7 @@ export function Karuzela(props: {
           <ChevronRight size={22} aria-hidden="true" />
         </button>
       </div>
+      <TakToUNas dzial={dzial} />
     </div>
   );
 }
