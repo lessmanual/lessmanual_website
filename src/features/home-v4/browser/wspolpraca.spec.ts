@@ -141,6 +141,26 @@ for (const vp of [
         await expect(k).toHaveAttribute("data-pod-opieka", "true");
       }
       await expect(page.locator('[data-qa="polka"]')).toContainText(HOME_V4.wspolpraca.polka.klamra);
+      // Kafelki nic nie ucinają, a „System N” i „pod opieką” stoją każde w jednej linii.
+      const miary = await page.locator('[data-qa="polka-system"]').evaluateAll((els) =>
+        els.map((el) => {
+          const napis = (el.querySelector("span:last-child") ?? el).getBoundingClientRect().height;
+          const nazwa = (el.querySelector("span:first-child") ?? el).getBoundingClientRect().height;
+          return {
+            ucieteWPionie: el.scrollHeight > el.clientHeight,
+            ucieteWPoziomie: el.scrollWidth > el.clientWidth,
+            napis,
+            nazwa,
+          };
+        }),
+      );
+      expect(miary).toHaveLength(3);
+      for (const m of miary) {
+        expect(m.ucieteWPionie).toBe(false);
+        expect(m.ucieteWPoziomie).toBe(false);
+        expect(m.napis).toBeLessThanOrEqual(15 * 1.2 * 1.5);
+        expect(m.nazwa).toBeLessThanOrEqual(17 * 1.2 * 1.5);
+      }
     });
 
     test("kafel Mapa AI prowadzi do formularza z zaznaczoną odpowiedzią Nie wiem, od czego zacząć w pytaniu 6", async ({

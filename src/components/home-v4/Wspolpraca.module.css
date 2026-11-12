@@ -232,7 +232,7 @@
 .system {
   display: grid;
   gap: 4px;
-  padding: 12px 10px;
+  padding: 12px 6px;
   border: 2px dashed var(--line-control);
   border-radius: var(--radius-md);
   background: transparent;
@@ -241,10 +241,12 @@
 }
 
 .systemNazwa {
+  white-space: nowrap;
   font: 600 17px/1.2 var(--font-sans);
 }
 
 .systemOpieka {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -634,7 +636,7 @@
   }
 
   .system {
-    padding: 12px 10px;
+    padding: 12px 6px;
   }
 
   .karty {
