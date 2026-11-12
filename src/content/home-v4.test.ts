@@ -193,6 +193,23 @@ describe("przykłady działania na kartach 2", () => {
     expect(PRZYKLADY.marketing[2].dane.wynik.podpis).toBe("Plan do zatwierdzenia");
   });
 
+  it("firmy w przykładach mają opisowe nazwy, nie marki, bo marka ze szkicu mogła należeć do prawdziwej firmy", () => {
+    const tekst = JSON.stringify(PRZYKLADY);
+    for (const marka of ["Logipak", "Termo-Bud", "Meblar", "Złomex", "Bruk-Pol", "Bistro Przykład", "delikatesy-przyklad", "sp. z o.o."]) {
+      expect(tekst).not.toContain(marka);
+    }
+    // Wiadomości z rynku są jawnie przykładowe.
+    for (const z of PRZYKLADY.sprzedaz) expect(z.dane.zrodlo.naglowek ?? "").toMatch(/^Przykładow/);
+  });
+
+  it("PDF w Zamówieniach to zamówienie blach, bo plakietka mówi o hurtowni blach", () => {
+    expect(PRZYKLADY.zamowienia[2].dane.zrodlo.linie.join(" ")).toMatch(/[Bb]lach/);
+  });
+
+  it("żadne zaznaczenie nie jest puste, bo pusty napis zapętliłby podział tekstu na zaznaczenia", () => {
+    for (const id of DZIALY) for (const z of PRZYKLADY[id]) for (const s of z.dane.zrodlo.zaznaczenia) expect(s.trim()).not.toBe("");
+  });
+
   it("żaden przykład nie ma kwoty, bo jedyna kwota na stronie to cena Mapy AI firmy", () => {
     expect(JSON.stringify(PRZYKLADY)).not.toMatch(/\d\s?(zł|PLN|EUR|€)/);
   });

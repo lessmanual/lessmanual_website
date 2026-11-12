@@ -186,13 +186,27 @@
   color: var(--ink-2);
 }
 
+/* Na 390 zakładki stoją w jednej linii; gdy się nie mieszczą, pasek przewija się w bok we własnym kontenerze
+   (strona nie przewija się w bok). Krótkie etykiety tam, gdzie teksty je mają. */
 .zakladkiPrzykladu {
   display: flex;
-  flex-wrap: wrap;
   gap: 6px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 2px;
+  margin: -2px;
+}
+
+.zakladkiPrzykladu::-webkit-scrollbar {
+  display: none;
 }
 
 .zakladkaPrzykladu {
+  flex: none;
+  white-space: nowrap;
+  scroll-snap-align: start;
   min-height: 44px;
   padding: 0 14px;
   border: 2px solid var(--line-control);
@@ -219,7 +233,30 @@
   display: none;
 }
 
+/* Trzy panele w jednej komórce: wysokość = najwyższa zakładka, więc zmiana zakładki nie zmienia wysokości karty. */
+.panele {
+  display: grid;
+}
+
 .demo {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.demo[data-wybrany="false"] {
+  visibility: hidden;
+}
+
+.demo:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.demoUklad {
   display: grid;
   gap: 12px;
 }
@@ -252,8 +289,10 @@
   min-width: 0;
 }
 
+/* Etykieta może się zawinąć (długie pozycje zamówienia, np. „Blacha ocynkowana 1,0 mm, 1250×2500”). */
 .zrodloLinia > .zrodloEtykieta {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .wyglad_dokument .zrodloLinia > span:last-child {
@@ -417,10 +456,15 @@
     display: none;
   }
 
-  .demo {
+  .demoUklad {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: start;
     gap: 20px;
+  }
+
+  .zakladkiPrzykladu {
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 }
 

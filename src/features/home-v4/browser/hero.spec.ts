@@ -57,6 +57,23 @@ for (const vp of [
       expect(styl.styl).toBe("normal");
     });
 
+    test("cytat stoi prosto: font-style normal i wczytany prosty krój Instrument Serif", async ({ page }) => {
+      // Wcześniej rodzina miała tylko kursywę, więc computed style mówił „normal”, a litery i tak były pochylone.
+      await page.goto("/");
+      const cytat = page.locator('[data-qa="hero-cytat"] p');
+      expect(await cytat.evaluate((el) => getComputedStyle(el).fontStyle)).toBe("normal");
+      await expect
+        .poll(() =>
+          page.evaluate(async () => {
+            await document.fonts.ready;
+            return [...document.fonts].some(
+              (f) => /instrument/i.test(f.family) && !/fallback/i.test(f.family) && f.style === "normal" && f.status === "loaded",
+            );
+          }),
+        )
+        .toBe(true);
+    });
+
     test("bez przewijania w bok", async ({ page }) => {
       await page.goto("/");
       const [szer, okno] = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);

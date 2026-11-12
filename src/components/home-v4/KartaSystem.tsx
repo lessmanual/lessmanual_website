@@ -3,7 +3,7 @@
 import { Phone } from "lucide-react";
 import { useRef, useState } from "react";
 import { Play } from "@/components/site/Icons";
-import type { Film, KartaFilm } from "@/content/home-v4";
+import { HOME_V4, type Film, type KartaFilm } from "@/content/home-v4";
 import styles from "./Karty.module.css";
 
 // Film karty: preload="none", start dopiero kliknięciem. Bez filmu (null) poster CSS z tytułem i bez przycisku.
@@ -40,10 +40,13 @@ function FilmKarty({ film, tytul }: { film: Film | null; tytul: string }) {
           type="button"
           className={styles.odtworz}
           data-qa="odtworz"
-          aria-label={tytul}
+          aria-label={`${HOME_V4.dzialy.dostepnosc.odtworzFilm}: ${tytul}`}
           onClick={() => {
             setGra(true);
-            void wideoRef.current?.play();
+            const wideo = wideoRef.current;
+            // Przycisk znika po kliknięciu, więc fokus przechodzi na film (z kontrolkami), a nie na body.
+            wideo?.focus();
+            void wideo?.play();
           }}
         >
           <Play size={28} />

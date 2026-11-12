@@ -23,7 +23,8 @@ function zZaznaczeniami(tekst: string, zaznaczenia: readonly string[], swieci: r
   while (reszta.length > 0) {
     const trafienia = zaznaczenia
       .map((z, i) => ({ i, z, gdzie: reszta.indexOf(z) }))
-      .filter((t) => t.gdzie >= 0)
+      // Pusty napis trafia zawsze w pozycję 0 i nie skraca reszty: pętla nigdy by się nie skończyła.
+      .filter((t) => t.z.length > 0 && t.gdzie >= 0)
       .sort((a, b) => a.gdzie - b.gdzie);
     const pierwsze = trafienia[0];
     if (!pierwsze) {
@@ -74,13 +75,14 @@ export function KartaPrzyklad({ karta, dzial }: { karta: DaneKarty; dzial: Dzial
   const [skanuje, setSkanuje] = useState(false);
   const [prep, setPrep] = useState(false);
   const [swieci, setSwieci] = useState<readonly number[]>([]);
-  const timery = useRef<number[]>([]);
+  // Lista w obiekcie: sprzątanie efektu czyta listę z chwili sprzątania, nie z chwili montażu.
+  const timery = useRef<{ lista: number[] }>({ lista: [] });
   const kartaRef = useRef<HTMLElement>(null);
   const zakladkiRef = useRef<HTMLDivElement>(null);
 
   const wybierz = (nr: Nr, animuj: boolean) => {
-    timery.current.forEach((t) => window.clearTimeout(t));
-    timery.current = [];
+    timery.current.lista.forEach((t) => window.clearTimeout(t));
+    timery.current.lista = [];
     setWybrana(nr);
     setSwieci([]);
     if (!animuj || bezRuchu()) {
@@ -88,7 +90,7 @@ export function KartaPrzyklad({ karta, dzial }: { karta: DaneKarty; dzial: Dzial
       setPrep(false);
       return;
     }
-    const po = (ms: number, fn: () => void) => timery.current.push(window.setTimeout(fn, ms));
+    const po = (ms: number, fn: () => void) => timery.current.lista.push(window.setTimeout(fn, ms));
     setPrep(true);
     setSkanuje(true);
     po(START_WYNIKU_MS, () => {
@@ -117,23 +119,24 @@ export function KartaPrzyklad({ karta, dzial }: { karta: DaneKarty; dzial: Dzial
       { threshold: 0.5 },
     );
     obserwator.observe(el);
-    const lista = timery.current;
+    const magazyn = timery.current;
     return () => {
       obserwator.disconnect();
-      lista.forEach((t) => window.clearTimeout(t));
+      magazyn.lista.forEach((t) => window.clearTimeout(t));
     };
   }, []);
 
   const naKlawisz = (zdarzenie: KeyboardEvent<HTMLButtonElement>) => {
     if (zdarzenie.altKey || zdarzenie.metaKey || zdarzenie.ctrlKey) return;
-    if (zdarzenie.key !== "ArrowRight" && zdarzenie.key !== "ArrowLeft") return;
+    const przesuniecie: Record<string, number> = { ArrowRight: wybrana + 1, ArrowLeft: wybrana + 2, Home: 0, End: 2 };
+    const surowy = przesuniecie[zdarzenie.key];
+    if (surowy === undefined) return;
     zdarzenie.preventDefault();
-    const cel = NUMERY[(wybrana + (zdarzenie.key === "ArrowRight" ? 1 : 2)) % 3] ?? 0;
+    const cel = NUMERY[surowy % 3] ?? 0;
     wybierz(cel, true);
     zakladkiRef.current?.querySelector<HTMLElement>(`[data-nr="${cel}"]`)?.focus({ preventScroll: true });
   };
 
-  const aktywna = karta.zakladki[wybrana];
   const id = (nr: number) => `przyklad-${dzial}-${nr}`;
   return (
     <article className={styles.przyklad} ref={kartaRef}>
@@ -166,31 +169,45 @@ export function KartaPrzyklad({ karta, dzial }: { karta: DaneKarty; dzial: Dzial
           </button>
         ))}
       </div>
-      <div
-        className={styles.demo}
-        role="tabpanel"
-        id={`${id(wybrana)}-panel`}
-        aria-labelledby={id(wybrana)}
-        data-skanuje={skanuje ? "true" : undefined}
-      >
-        <Zrodlo dane={aktywna.dane} swieci={swieci} />
-        <table className={styles.wynik} data-prep={prep ? "true" : undefined}>
-          <caption>{aktywna.dane.wynik.podpis}</caption>
-          <tbody>
-            {aktywna.dane.wynik.wiersze.map(([etykieta, wartosc], i) => (
-              <tr
-                key={etykieta}
-                data-swieci={swieci.includes(i) ? "true" : undefined}
-                style={{ transitionDelay: `${i * KROK_WIERSZA_MS}ms` }}
-              >
-                <th scope="row">{etykieta}</th>
-                <td>{wartosc}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Wszystkie trzy panele leżą w jednej komórce siatki; widoczny jest wybrany, pozostałe mają visibility: hidden.
+          Wysokość karty to więc wysokość najwyższej zakładki i zmiana zakładki nie przesuwa strony. */}
+      <div className={styles.panele}>
+        {karta.zakladki.map((z, nr) => {
+          const wybrany = nr === wybrana;
+          return (
+            <div
+              key={z.etykieta}
+              className={styles.demo}
+              role="tabpanel"
+              id={`${id(nr)}-panel`}
+              aria-labelledby={id(nr)}
+              tabIndex={wybrany ? 0 : -1}
+              data-wybrany={wybrany ? "true" : "false"}
+              data-skanuje={wybrany && skanuje ? "true" : undefined}
+            >
+              <div className={styles.demoUklad}>
+                <Zrodlo dane={z.dane} swieci={wybrany ? swieci : []} />
+                <table className={styles.wynik} data-prep={wybrany && prep ? "true" : undefined}>
+                  <caption>{z.dane.wynik.podpis}</caption>
+                  <tbody>
+                    {z.dane.wynik.wiersze.map(([etykieta, wartosc], i) => (
+                      <tr
+                        key={etykieta}
+                        data-swieci={wybrany && swieci.includes(i) ? "true" : undefined}
+                        style={{ transitionDelay: `${i * KROK_WIERSZA_MS}ms` }}
+                      >
+                        <th scope="row">{etykieta}</th>
+                        <td>{wartosc}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className={styles.plakietka}>{z.plakietka}</p>
+            </div>
+          );
+        })}
       </div>
-      <p className={styles.plakietka}>{aktywna.plakietka}</p>
       <p className={styles.plakietkaWspolna}>{karta.plakietkaWspolna}</p>
       {karta.drugiDowod ? <p className={styles.drugiDowod}>{karta.drugiDowod}</p> : null}
     </article>

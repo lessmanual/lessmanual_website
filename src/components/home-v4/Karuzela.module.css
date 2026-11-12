@@ -1,9 +1,9 @@
-/* Karuzela działu: 390 karta 88% toru (widać brzeg następnej), 1440 karta 920 px. Wysokość zarezerwowana (CLS 0). */
-/* --karta-wys: najwyższa karta ze wszystkich działów i zakładek przykładu (pomiar 12.11: 390 → 1056 px,
-   360 → 1100, 768 → 805, 1024 → 695, 1440 → 623). Jedna wysokość dla wszystkich działów, więc zmiana działu
-   ani zakładki przykładu nie zmienia wysokości toru (CLS 0). Po zmianie tekstów kart zmierz ponownie. */
+/* Karuzela działu: 390 karta 88% toru (widać brzeg następnej), 1440 karta 920 px.
+   Wysokość: karty w torze rozciągają się do najwyższej karty AKTYWNEGO działu (decyzja R12, 12.11). Treść kart
+   jest w HTML z SSR, więc pierwsze malowanie ma już wysokość Telefonów (CLS 0 przy wczytaniu); zmiana działu
+   może zmienić wysokość, ale to reakcja na klik, nie CLS. Wcześniejsza jedna stała rezerwa (1060 px na 390)
+   zostawiała w krótkich działach puste karty. Zakładki przykładu nie zmieniają wysokości (KartaPrzyklad). */
 .karuzela {
-  --karta-wys: 1060px;
   --odstep: 12px;
   overflow-anchor: none;
   animation: pojaw 150ms var(--ease-out);
@@ -36,7 +36,6 @@
 .karta {
   flex: 0 0 88%;
   min-width: 0;
-  min-height: var(--karta-wys);
   scroll-snap-align: start;
   scroll-snap-stop: always;
   border-radius: var(--radius-xl);
@@ -102,7 +101,6 @@
 
 @media (min-width: 768px) {
   .karuzela {
-    --karta-wys: 810px;
     --odstep: 24px;
   }
 
@@ -112,18 +110,6 @@
 
   .nawigacja {
     justify-content: flex-start;
-  }
-}
-
-@media (min-width: 1024px) {
-  .karuzela {
-    --karta-wys: 700px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .karuzela {
-    --karta-wys: 630px;
   }
 }
 

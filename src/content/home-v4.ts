@@ -134,6 +134,8 @@ const DZIALY_WSPOLNE = {
   dostepnosc: {
     poprzedniaKarta: "Poprzednia karta",
     nastepnaKarta: "Następna karta",
+    // Przycisk filmu na karcie 1; kod dopisuje „: <tytuł karty>”.
+    odtworzFilm: "Odtwórz film",
   },
 } as const;
 

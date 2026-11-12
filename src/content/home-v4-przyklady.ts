@@ -1,7 +1,9 @@
 // Zakładki przykładów na kartach 2 działów. Etykiety i plakietki są z pliku tekstów v4 (sekcja 4).
 // Dane (źródło i wynik) przeniesione z public/szkice/s4/index.html (.demo .src i .out-t); dwa zestawy dopisane
-// w tym samym formacie (Telefony „Umówienie wizyty”, Marketing „Stary wpis do odświeżenia”). Imiona i firmy są
-// wymyślone, kwot nie ma (jedyna kwota na stronie to cena Mapy AI firmy), stąd faktura i rejestr firm bez liczb w zł.
+// w tym samym formacie (Telefony „Umówienie wizyty”, Marketing „Stary wpis do odświeżenia”). Firmy mają opisowe,
+// wymyślone nazwy („Skup złomu spod Radomia”), nie marki: nazwy ze szkicu (np. Logipak, Termo-Bud) mogły należeć do
+// prawdziwych firm (przegląd 12.11). Wycinki z rynku są podpisane jako przykładowe. Kwot nie ma (jedyna kwota na stronie
+// to cena Mapy AI firmy), stąd faktura i rejestr firm bez liczb w zł.
 
 export type DzialId = "telefony" | "marketing" | "sprzedaz" | "zamowienia" | "logistyka";
 
@@ -166,17 +168,17 @@ const SPRZEDAZ: TrzyZakladki = [
   zakladka("Wiadomość z rynku", null, PLAKIETKA_NDA, {
     wyglad: "wycinek",
     zrodlo: {
-      naglowek: "Portal regionalny, 6.11.2026",
+      naglowek: "Przykładowa wiadomość z portalu regionalnego",
       linie: [
-        "Meblar z Ostrowa buduje nową halę produkcyjną, start w marcu 2027",
+        "Stolarnia spod Ostrowa buduje nową halę produkcyjną, start w marcu 2027",
         "Firma zatrudni 40 osób i planuje zakup nowej linii jeszcze w tym roku.",
       ],
-      zaznaczenia: ["Meblar z Ostrowa", "buduje nową halę produkcyjną", "zakup nowej linii"],
+      zaznaczenia: ["Stolarnia spod Ostrowa", "buduje nową halę produkcyjną", "zakup nowej linii"],
     },
     wynik: {
       podpis: KARTA_FIRMY,
       wiersze: [
-        ["Firma", "Meblar, Ostrów"],
+        ["Firma", "Stolarnia spod Ostrowa"],
         ["Sygnał", "Nowa hala produkcyjna"],
         ["Ocena", "9/10"],
         ["Następny krok", "Telefon do właściciela w tym tygodniu"],
@@ -186,14 +188,14 @@ const SPRZEDAZ: TrzyZakladki = [
   zakladka("Rejestr firm", null, PLAKIETKA_NDA, {
     wyglad: "wycinek",
     zrodlo: {
-      naglowek: "Rejestr firm, wpis z 4.11.2026",
-      linie: ["Termo-Bud sp. z o.o.", "Podwyższenie kapitału zakładowego, nowy wspólnik."],
-      zaznaczenia: ["Termo-Bud sp. z o.o.", "Podwyższenie kapitału zakładowego", "nowy wspólnik"],
+      naglowek: "Przykładowy wpis w rejestrze firm",
+      linie: ["Firma instalacyjna z Lublina", "Podwyższenie kapitału zakładowego, nowy wspólnik."],
+      zaznaczenia: ["Firma instalacyjna z Lublina", "Podwyższenie kapitału zakładowego", "nowy wspólnik"],
     },
     wynik: {
       podpis: KARTA_FIRMY,
       wiersze: [
-        ["Firma", "Termo-Bud"],
+        ["Firma", "Firma instalacyjna z Lublina"],
         ["Sygnał", "Wyższy kapitał, nowy wspólnik"],
         ["Ocena", "7/10"],
         ["Następny krok", "Mail z krótką ofertą"],
@@ -203,14 +205,14 @@ const SPRZEDAZ: TrzyZakladki = [
   zakladka("Ogłoszenie o pracę", null, PLAKIETKA_NDA, {
     wyglad: "wycinek",
     zrodlo: {
-      naglowek: "Ogłoszenie, 9.11.2026",
-      linie: ["Logipak szuka 12 magazynierów", "Praca od grudnia na nowej zmianie nocnej w drugim magazynie."],
-      zaznaczenia: ["Logipak", "nowej zmianie nocnej", "drugim magazynie"],
+      naglowek: "Przykładowe ogłoszenie o pracę",
+      linie: ["Magazyn pod Łodzią szuka 12 magazynierów", "Praca od grudnia na nowej zmianie nocnej w drugim magazynie."],
+      zaznaczenia: ["Magazyn pod Łodzią", "nowej zmianie nocnej", "drugim magazynie"],
     },
     wynik: {
       podpis: KARTA_FIRMY,
       wiersze: [
-        ["Firma", "Logipak"],
+        ["Firma", "Magazyn pod Łodzią"],
         ["Sygnał", "Nowa zmiana, drugi magazyn"],
         ["Ocena", "6/10"],
         ["Następny krok", "Obserwować, wrócić w grudniu"],
@@ -225,14 +227,14 @@ const ZAMOWIENIA: TrzyZakladki = [
     zrodlo: {
       naglowek: "SMS od +48 600 *** 214",
       linie: [
-        "Dzień dobry, na czwartek proszę 12 kartonów soku jabłkowego 1 l i 5 zgrzewek wody gazowanej 0,5. Sklep Długa 8, Marek",
+        "Dzień dobry, na czwartek proszę 12 kartonów soku jabłkowego 1 l i 5 zgrzewek wody gazowanej 0,5. Sklep przy Długiej, Marek",
       ],
-      zaznaczenia: ["Sklep Długa 8", "12 kartonów soku jabłkowego 1 l", "5 zgrzewek wody gazowanej 0,5", "czwartek"],
+      zaznaczenia: ["Sklep przy Długiej", "12 kartonów soku jabłkowego 1 l", "5 zgrzewek wody gazowanej 0,5", "czwartek"],
     },
     wynik: {
       podpis: IMPORT,
       wiersze: [
-        ["Klient", "Sklep Długa 8"],
+        ["Klient", "Sklep przy Długiej"],
         ["Pozycja 1", "Sok jabłkowy 1 l, 12 kart."],
         ["Pozycja 2", "Woda gazowana 0,5 l, 5 zgrz."],
         ["Dostawa", "czwartek"],
@@ -244,16 +246,16 @@ const ZAMOWIENIA: TrzyZakladki = [
     zrodlo: {
       naglowek: null,
       linie: [
-        "Od: zakupy@delikatesy-przyklad.pl",
+        "Od: Delikatesy na Osiedlu",
         "Temat: Zamówienie tygodniowe",
         "Proszę o 40 szt. kawy ziarnistej 1 kg i 24 szt. herbaty czarnej. Dostawa do piątku, faktura na firmę jak zawsze.",
       ],
-      zaznaczenia: ["zakupy@delikatesy-przyklad.pl", "40 szt. kawy ziarnistej 1 kg", "24 szt. herbaty czarnej", "do piątku"],
+      zaznaczenia: ["Delikatesy na Osiedlu", "40 szt. kawy ziarnistej 1 kg", "24 szt. herbaty czarnej", "do piątku"],
     },
     wynik: {
       podpis: IMPORT,
       wiersze: [
-        ["Klient", "Delikatesy Przykład"],
+        ["Klient", "Delikatesy na Osiedlu"],
         ["Pozycja 1", "Kawa ziarnista 1 kg, 40 szt."],
         ["Pozycja 2", "Herbata czarna, 24 szt."],
         ["Dostawa", "do piątku"],
@@ -267,20 +269,20 @@ const ZAMOWIENIA: TrzyZakladki = [
       naglowek: "Zamówienie od klienta (PDF)",
       linie: [
         "Numer: 2026/311",
-        "Zamawiający: Bistro Przykład",
-        "Olej rzepakowy 5 l: 6 szt.",
-        "Mąka typ 650, 25 kg: 4 szt.",
-        "Cukier 1 kg: 30 szt.",
+        "Zamawiający: Warsztat ślusarski spod Kielc",
+        "Blacha ocynkowana 1,0 mm, 1250×2500: 20 ark.",
+        "Blacha nierdzewna 2,0 mm, 1000×2000: 6 ark.",
+        "Cięcie na wymiar: 400×600 mm",
         "Dostawa: 20.11.2026",
       ],
-      zaznaczenia: ["2026/311", "Bistro Przykład", "Olej rzepakowy 5 l", "20.11.2026"],
+      zaznaczenia: ["2026/311", "Warsztat ślusarski spod Kielc", "Blacha ocynkowana 1,0 mm", "20.11.2026"],
     },
     wynik: {
       podpis: IMPORT,
       wiersze: [
         ["Numer", "2026/311"],
-        ["Klient", "Bistro Przykład"],
-        ["Pozycje", "3 produkty, 40 szt."],
+        ["Klient", "Warsztat ślusarski spod Kielc"],
+        ["Pozycje", "2 rodzaje blachy, 26 arkuszy, cięcie 400×600 mm"],
         ["Dostawa", "20.11.2026"],
       ],
     },
@@ -295,19 +297,19 @@ const LOGISTYKA: TrzyZakladki = [
       linie: [
         "Nr: PZ/0412/10/26",
         "Data: 14.10.2026",
-        "Dostawca: Złomex Bis sp. z o.o.",
+        "Dostawca: Skup złomu spod Radomia",
         "Kabel miedziany kat. 2: 1 284 kg",
         "Aluminium, profile: 362 kg",
         "Przyjął: A. Nowak",
       ],
-      zaznaczenia: ["PZ/0412/10/26", "14.10.2026", "Złomex Bis sp. z o.o.", "Kabel miedziany kat. 2", "A. Nowak"],
+      zaznaczenia: ["PZ/0412/10/26", "14.10.2026", "Skup złomu spod Radomia", "Kabel miedziany kat. 2", "A. Nowak"],
     },
     wynik: {
       podpis: "Wiersz w arkuszu handlowca",
       wiersze: [
         ["Numer", "PZ/0412/10/26"],
         ["Data przyjęcia", "14.10.2026"],
-        ["Dostawca", "Złomex Bis sp. z o.o."],
+        ["Dostawca", "Skup złomu spod Radomia"],
         ["Materiał", "2 pozycje, 1 646 kg"],
         ["Handlowiec", "A. Nowak"],
       ],
@@ -319,17 +321,17 @@ const LOGISTYKA: TrzyZakladki = [
       naglowek: "Faktura VAT",
       linie: [
         "Nr: FV/2026/10/118",
-        "Sprzedawca: Hurtownia Bruk-Pol",
+        "Sprzedawca: Hurtownia budowlana spod Płocka",
         "Pozycje: cement, klej, siatka",
         "Termin płatności: 23.10.2026",
       ],
-      zaznaczenia: ["FV/2026/10/118", "Hurtownia Bruk-Pol", "cement, klej, siatka", "23.10.2026"],
+      zaznaczenia: ["FV/2026/10/118", "Hurtownia budowlana spod Płocka", "cement, klej, siatka", "23.10.2026"],
     },
     wynik: {
       podpis: "Wiersz w rejestrze kosztów",
       wiersze: [
         ["Numer", "FV/2026/10/118"],
-        ["Sprzedawca", "Hurtownia Bruk-Pol"],
+        ["Sprzedawca", "Hurtownia budowlana spod Płocka"],
         ["Pozycje", "3, materiały budowlane"],
         ["Termin płatności", "23.10.2026"],
       ],

@@ -20,11 +20,19 @@ import { SKRYPT_ZGODY_PRZED_MALOWANIEM } from "@/lib/consent";
 // tylko w H1 strony głównej, ale preload per strona nie działa: Turbopack (Next 16.2) wpisuje font
 // do manifestu wszystkich tras także po deklaracji w app/page.tsx (sprawdzone 11.11, manifest
 // next-font). Dlatego oba fonty mają preload tutaj; serif to 16 kB.
+// Strona v4 (12.11) używa Instrument Serif także prosto: cytaty, liczby w miedzi, poster filmu. Bez prostego kroju
+// przeglądarka brała kursywę (jedyny krój w rodzinie). Proste pliki (latin + latin-ext z Google Fonts, SIL OFL) muszą
+// być w TEJ SAMEJ rodzinie co kursywa: osobne wywołanie localFont daje osobną nazwę rodziny, a wtedy tekst prosty
+// albo pochylony dostaje zły krój. Dwa proste pliki mają te same deskryptory, więc przeglądarka składa je w jeden
+// krój i brakujący znak (np. „ą” w pliku latin) bierze z drugiego. Koszt: preload działa na całe wywołanie, więc
+// proste pliki (15 + 8 kB) też są preloadowane.
 const instrumentSerif = localFont({
-  src: "./fonts/instrument-serif-italic-pl.woff2",
+  src: [
+    { path: "./fonts/instrument-serif-italic-pl.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/instrument-serif-regular-latin.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/instrument-serif-regular-latin-ext.woff2", weight: "400", style: "normal" },
+  ],
   variable: "--font-instrument-serif",
-  weight: "400",
-  style: "italic",
   display: "swap",
   adjustFontFallback: "Times New Roman",
   preload: true,

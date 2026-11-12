@@ -91,29 +91,75 @@ for (const vp of [
 
     test("każda zakładka przykładu każdego działu mieści się bez uciętego tekstu", async ({ page }) => {
       await doDzialow(page);
-      const wysokosci = new Set<number>();
       for (const dzial of DZIALY) {
         const karta = await pokazKarte(page, dzial, 2);
+        const wysokosci = new Set<number>();
         for (const nr of [0, 1, 2]) {
           const zakladka = karta.locator(`[data-qa="zakladka-przykladu"][data-nr="${nr}"]`);
           await zakladka.evaluate((el) => {
             if (el instanceof HTMLElement) el.click();
           });
           await expect(zakladka).toHaveAttribute("aria-selected", "true");
+          // Kontener przewijany w bok (pasek zakładek na 390) nie ucina tekstu, tylko go przewija; pomijamy go.
           const uciete = await karta.evaluate((root) =>
             [root, ...root.querySelectorAll("*")]
               .filter((el) => el instanceof HTMLElement && el.offsetParent !== null)
+              .filter((el) => !["auto", "scroll"].includes(getComputedStyle(el).overflowX))
               .filter((el) => el.scrollWidth > el.clientWidth + 1 || (el === root && el.scrollHeight > el.clientHeight + 1))
               .map((el) => `${el.tagName}.${el.className}: ${(el.textContent ?? "").slice(0, 40)}`),
           );
           expect(uciete, `${dzial} zakładka ${nr}`).toEqual([]);
           wysokosci.add(await page.locator(`${KARUZELA} > [data-qa="tor"]`).evaluate((el) => Math.round(el.getBoundingClientRect().height)));
         }
+        // R12: wysokość może się zmienić przy zmianie działu (klik), ale nie przy zmianie zakładki przykładu.
+        expect([...wysokosci], dzial).toHaveLength(1);
       }
-      // CLS 0: zarezerwowana wysokość karty mieści najwyższą treść, więc tor ma jedną wysokość w każdym dziale i zakładce.
-      expect([...wysokosci]).toHaveLength(1);
       const [szer, okno] = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
       expect(szer).toBeLessThanOrEqual(okno);
+    });
+
+    test("zakładki przykładu: jedna linia, ≥ 44 px, Home/End, aria-controls wskazuje istniejący panel", async ({ page }) => {
+      await doDzialow(page);
+      for (const dzial of DZIALY) {
+        const karta = await pokazKarte(page, dzial, 2);
+        const boxy = await karta
+          .locator('[data-qa="zakladka-przykladu"]')
+          .evaluateAll((els) => els.map((el) => ({ y: Math.round(el.getBoundingClientRect().top), h: el.getBoundingClientRect().height })));
+        expect(new Set(boxy.map((b) => b.y)).size, dzial).toBe(1);
+        for (const b of boxy) expect(b.h).toBeGreaterThanOrEqual(44);
+        const kontrolowane = await karta
+          .locator('[data-qa="zakladka-przykladu"]')
+          .evaluateAll((els) => els.map((el) => document.getElementById(el.getAttribute("aria-controls") ?? "") !== null));
+        expect(kontrolowane).toEqual([true, true, true]);
+      }
+      const karta = await pokazKarte(page, "telefony", 2);
+      await karta.locator('[data-qa="zakladka-przykladu"][data-nr="0"]').focus();
+      await page.keyboard.press("End");
+      await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]')).toHaveAttribute("aria-selected", "true");
+      await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]')).toBeFocused();
+      await page.keyboard.press("Home");
+      await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="0"]')).toHaveAttribute("aria-selected", "true");
+      const [szer, okno] = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
+      expect(szer).toBeLessThanOrEqual(okno);
+    });
+
+    test("wczytanie: zero przesunięć układu w sekcji działów", async ({ page }) => {
+      // R12: bez stałej rezerwy wysokość daje treść kart z SSR; po hydratacji nic w sekcji nie może się przesunąć.
+      await page.addInitScript(() => {
+        const okno: Window & { przesuniecia?: number } = window;
+        okno.przesuniecia = 0;
+        new PerformanceObserver((lista) => {
+          for (const wpis of lista.getEntries()) {
+            const zrodla: readonly { node?: Node | null }[] = Reflect.get(wpis, "sources") ?? [];
+            const wartosc = Number(Reflect.get(wpis, "value") ?? 0);
+            const wDzialach = zrodla.some((z) => z.node instanceof Element && z.node.closest("#dzialy") !== null);
+            if (wDzialach && !Reflect.get(wpis, "hadRecentInput")) okno.przesuniecia = (okno.przesuniecia ?? 0) + wartosc;
+          }
+        }).observe({ type: "layout-shift", buffered: true });
+      });
+      await doDzialow(page);
+      await page.waitForTimeout(2000);
+      expect(await page.evaluate(() => Number(Reflect.get(window, "przesuniecia") ?? 0))).toBe(0);
     });
 
     test("karta 4: nagłówek, plakietka, 5 pomysłów i dymek z tekstów", async ({ page }) => {
