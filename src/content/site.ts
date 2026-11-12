@@ -3,6 +3,8 @@
 // Teksty z eksportu Claude Design NIE obowiązują.
 // Liczby z datą stanu, aktualizacja raz w tygodniu (PLAN_BUDOWY_STRONY.md pkt 5).
 
+import { HOME_V4 } from "./home-v4";
+
 export const SITE_URL = "https://www.lessmanual.ai";
 
 /** Filmy dochodzą później. Dopóki są false, żadne miejsce na wideo się nie renderuje. */
@@ -61,13 +63,7 @@ export const META = {
     "LessManual to partner technologiczny, który buduje systemy AI szyte na miarę polskich firm 10-100 osób prowadzonych przez właściciela, odpowiada za efekt spisany przed startem i opiekuje się systemami po wdrożeniu.",
 } as const;
 
-export const NAV = [
-  { label: "Systemy", href: "/#systemy" },
-  { label: "Jak współpracujemy", href: "/#wspolpraca" },
-  { label: "Mapa AI firmy", href: "/#drogi" },
-  { label: "Ceny", href: "/#ceny" },
-  { label: "FAQ", href: "/#faq" },
-] as const;
+export const NAV = HOME_V4.nav.pozycje;
 
 export const BZYK_LINES = {
   hero: "Poprowadzę Cię przez formularz i wytłumaczę, o co pytamy.",

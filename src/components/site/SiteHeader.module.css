@@ -12,12 +12,24 @@
   align-items: center;
   justify-content: space-between;
   min-height: 72px;
-  gap: 24px;
+  gap: 8px;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
+}
+
+/* Na telefonie logo 24 px wysokości: razem z przyciskiem i Menu mieści się w 350 px. */
+.logo svg {
+  height: 24px;
+  width: auto;
+}
+
+@media (min-width: 1024px) {
+  .logo svg {
+    height: 30px;
+  }
 }
 
 .nav {
@@ -37,6 +49,20 @@
   text-underline-offset: 4px;
 }
 
+.mobileGroup {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+
+/* 44 px wysokości i 16 px tekstu: mieści się w jednym rzędzie z logo i Menu na 390 px. */
+.mobileCta {
+  min-height: 44px;
+  padding: 0 14px;
+  font-size: 16px;
+}
+
 .mobile {
   position: relative;
 }
@@ -46,8 +72,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   color: var(--ink);
 }
@@ -86,7 +112,7 @@
     display: flex;
   }
 
-  .mobile {
+  .mobileGroup {
     display: none;
   }
 }
