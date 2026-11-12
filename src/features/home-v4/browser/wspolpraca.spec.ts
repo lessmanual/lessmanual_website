@@ -77,7 +77,57 @@ for (const vp of [
         await expect(page.locator('[data-qa="kafel-drogi"]')).toHaveCount(3);
         for (const k of await ramki(page, '[data-qa="kafel-drogi"]')) expect(k.x).toBeLessThan(kroki[1].x);
       });
+
+      test("1440: tory wyrównane w poprzek kolumn, My gruby miedziany, Ty cienki, półka pod krokami 4 i 5", async ({
+        page,
+      }) => {
+        await doOsi(page);
+        // Jeden pomiar naraz (względem osi), bo układ strony może się jeszcze przesunąć między osobnymi odczytami.
+        const { my, ty } = await page.locator('[data-qa="os-krokow"]').evaluate((os) => {
+          const baza = os.getBoundingClientRect();
+          const zmierz = (sel: string) =>
+            Array.from(os.querySelectorAll(sel)).map((el) => {
+              const r = el.getBoundingClientRect();
+              return { x: r.x - baza.x, y: r.y - baza.y, w: r.width, h: r.height };
+            });
+          return { my: zmierz('[data-qa="tor-my"]'), ty: zmierz('[data-qa="tor-ty"]') };
+        });
+        expect(my).toHaveLength(6);
+        expect(ty).toHaveLength(6);
+        for (const b of my) expect(Math.abs(b.y - my[0].y)).toBeLessThanOrEqual(2);
+        for (const b of ty) expect(Math.abs(b.y - ty[0].y)).toBeLessThanOrEqual(2);
+        // Tor Ty leży pod torem My.
+        expect(ty[0].y).toBeGreaterThan(my[0].y + 20);
+        // Gruby pas miedzi pod blokami My: 6 px; cienkie obramowanie bloków Ty: 1 px.
+        const grubosc = await page.locator('[class*="kroki"]').evaluate((el) => getComputedStyle(el, "::after").borderTopWidth);
+        expect(grubosc).toBe("6px");
+        const cienki = await page.locator('[data-qa="tor-ty"]').first().evaluate((el) => getComputedStyle(el).borderTopWidth);
+        expect(cienki).toBe("1px");
+        // Półka stoi pod kolumnami kroków 4 i 5 (zapala się od kroku 4), nie pod 0-2.
+        const kroki = await ramki(page, KROK);
+        const [polka] = await ramki(page, '[data-qa="polka"]');
+        expect(polka.x).toBeGreaterThanOrEqual(kroki[4].x - 2);
+        expect(polka.x + polka.w).toBeLessThanOrEqual(kroki[5].x + kroki[5].w + 2);
+      });
     }
+
+    test("łuk powrotu leży poza listą kroków i ma min. 16 px", async ({ page }) => {
+      await doOsi(page);
+      await expect(page.locator(`${SEKCJA} ol [data-qa="luk-powrotu"]`)).toHaveCount(0);
+      await expect(page.locator(`${SEKCJA} [data-qa="luk-powrotu"]`)).toHaveCount(1);
+      const px = await page.locator('[data-qa="luk-powrotu"] span').evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+      expect(px).toBeGreaterThanOrEqual(16);
+    });
+
+    test("skok od razu do kroku 5 zapala też wcześniejsze kroki i półkę", async ({ page }) => {
+      await page.goto("/");
+      await expect(page.locator(`${SEKCJA} [data-qa="os-krokow"][data-gotowe="true"]`)).toBeAttached();
+      await page.locator(`${KROK}[data-nr="5"]`).evaluate((el) => el.scrollIntoView({ block: "center", behavior: "instant" }));
+      for (const nr of [0, 1, 2, 3, 4, 5]) {
+        await expect(page.locator(`${KROK}[data-nr="${nr}"]`)).toHaveAttribute("data-zapalony", "true");
+      }
+      await expect(page.locator('[data-qa="polka-system"]').first()).toHaveAttribute("data-pod-opieka", "true");
+    });
 
     test("półka zapala się od kroku 4: trzy kafelki pod opieką", async ({ page }) => {
       await doOsi(page);

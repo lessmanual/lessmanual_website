@@ -85,7 +85,7 @@ export function OsKrokow() {
           const nr = Number(wpis.target.getAttribute("data-nr"));
           obserwator.unobserve(wpis.target);
           czasomierze.push(
-            window.setTimeout(() => setZapalone((poprzednie) => poprzednie.map((z, i) => z || i === nr)), kolejnosc * ODSTEP_ZAPALANIA_MS),
+            window.setTimeout(() => setZapalone((poprzednie) => poprzednie.map((z, i) => z || i <= nr)), kolejnosc * ODSTEP_ZAPALANIA_MS),
           );
           kolejnosc += 1;
         }
@@ -106,10 +106,6 @@ export function OsKrokow() {
   return (
     <div ref={korzen} className={styles.os} data-qa="os-krokow" data-gotowe={gotowe ? "true" : "false"}>
       <ol className={styles.kroki}>
-        <li className={styles.luk} data-qa="luk-powrotu">
-          <RotateCcw className={styles.lukIkona} aria-hidden="true" size={18} />
-          <span className={styles.lukNapis}>{w.strzalkaPowrotu}</span>
-        </li>
         {w.kroki.map((krok) => (
           <li key={krok.nr} className={styles.krok} data-qa="krok-osi" data-nr={krok.nr} data-zapalony={zapalone[krok.nr] === true ? "true" : "false"}>
             <span className={styles.wezel} aria-hidden="true">
@@ -118,11 +114,11 @@ export function OsKrokow() {
             <div className={styles.karta}>
               {krok.nr === 0 ? <LacznikGora /> : null}
               <h3 className={styles.krokNaglowek}>{krok.naglowek}</h3>
-              <div className={styles.my}>
+              <div className={styles.my} data-qa="tor-my">
                 <span className={styles.tor}>{torMy}</span>
                 <p>{krok.my}</p>
               </div>
-              <div className={styles.ty}>
+              <div className={styles.ty} data-qa="tor-ty">
                 <span className={styles.tor}>{torTy}</span>
                 <Clock className={styles.zegar} aria-hidden="true" size={16} />
                 <p>{krok.ty}</p>
@@ -153,6 +149,12 @@ export function OsKrokow() {
           </li>
         ))}
       </ol>
+
+      {/* Poza listą, po kroku 5: czytnik ekranu nie zaczyna od niej, a na komputerze CSS rysuje łuk nad osią. */}
+      <p className={styles.luk} data-qa="luk-powrotu">
+        <RotateCcw className={styles.lukIkona} aria-hidden="true" size={18} />
+        <span className={styles.lukNapis}>{w.strzalkaPowrotu}</span>
+      </p>
 
       <div className={styles.polka} data-qa="polka" data-zapalona={polkaZapalona ? "true" : "false"}>
         <ul className={styles.polkaKafelki} role="list">
