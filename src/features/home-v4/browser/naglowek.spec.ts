@@ -50,7 +50,7 @@ test.describe("nagłówek 360", () => {
     await page.goto("/");
     const menu = await page.locator('[data-qa="menu"]').boundingBox();
     if (!menu) throw new Error("brak boundingBox");
-    expect(menu.right ?? menu.x + menu.width).toBeLessThanOrEqual(340);
+    expect(menu.x + menu.width).toBeLessThanOrEqual(340);
     expect(menu.width).toBeGreaterThanOrEqual(44);
     const cta = page.locator('[data-qa="naglowek-umow"]');
     const ctaBox = await cta.boundingBox();
