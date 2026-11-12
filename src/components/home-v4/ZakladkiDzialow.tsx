@@ -34,6 +34,8 @@ export function ZakladkiDzialow() {
   }, [stan.aktywny]);
 
   const naKlawisz = (zdarzenie: KeyboardEvent<HTMLButtonElement>) => {
+    // Alt/Cmd/Ctrl + strzałka to skróty przeglądarki (np. wstecz); nie przejmujemy ich.
+    if (zdarzenie.altKey || zdarzenie.metaKey || zdarzenie.ctrlKey) return;
     const cel = sasiad(stan.aktywny, zdarzenie.key);
     if (!cel) return;
     zdarzenie.preventDefault();

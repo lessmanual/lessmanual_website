@@ -63,7 +63,7 @@
   transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
 }
 
-.strzalka:hover:not(:disabled) {
+.strzalka:hover:not([aria-disabled="true"]) {
   border-color: var(--ink);
 }
 
@@ -72,7 +72,8 @@
   outline-offset: 2px;
 }
 
-.strzalka:disabled {
+/* aria-disabled zamiast disabled: przycisk zostaje w fokusie klawiatury na pierwszej i ostatniej karcie. */
+.strzalka[aria-disabled="true"] {
   opacity: 0.4;
   cursor: default;
 }

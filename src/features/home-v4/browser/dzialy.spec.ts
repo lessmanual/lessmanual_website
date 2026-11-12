@@ -141,6 +141,28 @@ for (const vp of [
       await expect
         .poll(() => page.locator('[role="tab"][aria-selected="true"]').evaluate((el) => getComputedStyle(el).backgroundColor))
         .toBe("rgb(63, 208, 194)");
+      // Alt+strzałka to „wstecz” w przeglądarce; zakładki nie mogą jej przejąć.
+      await page.keyboard.press("Alt+ArrowRight");
+      await expect(page.locator('[role="tab"][aria-selected="true"]')).toHaveAttribute("data-dzial", "marketing");
+    });
+
+    test("klawiatura: strzałka do ostatniej karty zostaje w fokusie", async ({ page }) => {
+      // Strzałka wyłączona atrybutem `disabled` zrzucała fokus na body; na krańcu ma być tylko aria-disabled.
+      await doDzialow(page);
+      const nastepna = page.locator(NASTEPNA);
+      await nastepna.focus();
+      for (const etykieta of ["2 z 4", "3 z 4", "4 z 4"]) {
+        await page.keyboard.press("Enter");
+        await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", etykieta);
+      }
+      await expect(nastepna).toHaveAttribute("aria-disabled", "true");
+      await page.keyboard.press("Enter");
+      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", "4 z 4");
+      const fokus = await page.evaluate(() => {
+        const el = document.activeElement;
+        return el?.closest('[data-qa="karuzela"]') !== null && el?.matches("[data-karuzela-next], [data-qa='strzalka-poprzednia']");
+      });
+      expect(fokus).toBe(true);
     });
   });
 }

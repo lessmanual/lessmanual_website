@@ -40,6 +40,8 @@ export function Karuzela(props: {
   const torRef = useRef<HTMLDivElement>(null);
   const sposobRef = useRef<SposobKarty>("palec");
   const klatkaRef = useRef(0);
+  // Ostatnia zgłoszona karta: zamknięcia ze starego renderu (scroll + rAF) nie zgłaszają tej samej karty drugi raz.
+  const zgloszonaRef = useRef<NrKarty>(0);
   const [nr, setNr] = useState<NrKarty>(0);
   const [bylAktywny, setBylAktywny] = useState(aktywny);
 
@@ -54,6 +56,7 @@ export function Karuzela(props: {
     if (!aktywny) return;
     const tor = torRef.current;
     if (tor) tor.scrollTo({ left: 0, behavior: "instant" });
+    zgloszonaRef.current = 0;
     onKartaWidoczna?.(0, "wejscie");
     // onKartaWidoczna celowo poza zależnościami: zdarzenie wejścia liczy się raz na odsłonięcie działu.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -66,7 +69,8 @@ export function Karuzela(props: {
       if (!tor) return;
       const { szerokosc, odstep } = wymiaryKarty(tor);
       const nowy = kartaZPrzewiniecia(tor.scrollLeft, szerokosc, odstep);
-      if (nowy === nr) return;
+      if (nowy === zgloszonaRef.current) return;
+      zgloszonaRef.current = nowy;
       setNr(nowy);
       if (aktywny) ustawKarte(nowy);
       onKartaWidoczna?.(nowy, sposobRef.current);
@@ -75,11 +79,12 @@ export function Karuzela(props: {
 
   const przewinO = (krok: -1 | 1) => (zdarzenie: MouseEvent<HTMLButtonElement>) => {
     const tor = torRef.current;
-    if (!tor) return;
+    const cel = przytnij(nr + krok);
+    // Na krańcu strzałka jest aria-disabled, a nie disabled: zostaje w fokusie, klik po prostu nic nie robi.
+    if (!tor || cel === nr) return;
     // detail === 0: przycisk uruchomiony z klawiatury (Enter, spacja), nie myszą ani palcem.
     sposobRef.current = zdarzenie.detail === 0 ? "klawiatura" : "strzalka";
     const { szerokosc, odstep } = wymiaryKarty(tor);
-    const cel = przytnij(nr + krok);
     tor.scrollTo({ left: cel * (szerokosc + odstep), behavior: bezRuchu() ? "instant" : "smooth" });
   };
 
@@ -127,7 +132,7 @@ export function Karuzela(props: {
           className={styles.strzalka}
           data-qa="strzalka-poprzednia"
           aria-label={dostepnosc.poprzedniaKarta}
-          disabled={nr === 0}
+          aria-disabled={nr === 0}
           onClick={przewinO(-1)}
         >
           <ChevronLeft size={22} aria-hidden="true" />
@@ -143,7 +148,7 @@ export function Karuzela(props: {
           data-qa="strzalka-nastepna"
           data-karuzela-next=""
           aria-label={dostepnosc.nastepnaKarta}
-          disabled={nr === 3}
+          aria-disabled={nr === 3}
           onClick={przewinO(1)}
         >
           <ChevronRight size={22} aria-hidden="true" />
