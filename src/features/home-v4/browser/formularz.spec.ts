@@ -1,6 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { DROGI, EKRAN_PROBA_NIEUDANA, KALENDARZ_ZGODA, KONTAKT, PYTANIA, START, WERSJA_FORMULARZA } from "../../../content/formularz";
 import { HOME_V4 } from "../../../content/home-v4";
+import { KLUCZ_ZGODY_COOKIES, WERSJA_ZGODY_COOKIES } from "../../../lib/consent";
 
 const KROK = '[data-qa="krok-formularza"]';
 const DYMEK = '#formularz .lm-bubble[aria-live="polite"]';
@@ -27,8 +28,23 @@ function jestZgloszeniem(x: unknown): x is Zgloszenie {
   return "wersja" in x && typeof x.wersja === "string" && "odpowiedzi" in x && typeof x.odpowiedzi === "object";
 }
 
+// Decyzja o cookies zapisana przed załadowaniem: baner zgody nie przykrywa przycisków pod obciążeniem całego zestawu.
+async function zDecyzjaOCookies(page: Page) {
+  await page.addInitScript(
+    ({ klucz, wersja }) => {
+      window.localStorage.setItem(
+        klucz,
+        JSON.stringify({ wersja, czas: new Date().toISOString(), analityczne: false, kalendarz: false }),
+      );
+    },
+    { klucz: KLUCZ_ZGODY_COOKIES, wersja: WERSJA_ZGODY_COOKIES },
+  );
+}
+
 async function przejdzDoPierwszegoPytania(page: Page) {
+  await zDecyzjaOCookies(page);
   await page.goto("/#formularz");
+  await page.waitForLoadState("load");
   // Klik przed hydratacją przepada: powtarzamy „Zaczynamy”, aż pojawi się pierwsze pytanie.
   await expect(async () => {
     await page.getByRole("button", { name: new RegExp(START.przycisk) }).click({ timeout: 1000 });
@@ -65,10 +81,12 @@ for (const vp of [
       await page.route("https://cal.com/**", (route) => route.fulfill({ status: 200, contentType: "text/html", body: "" }));
       await przejdzDoPierwszegoPytania(page);
       for (const pytanie of PYTANIA) {
-        await expect(page.locator(`${KROK}[data-krok="${pytanie.id}"]`)).toBeVisible();
+        // Wszystko w obrębie bieżącego kroku: poprzedni krok znika dopiero po animacji i nie może przejąć kliknięcia.
+        const krok = page.locator(`${KROK}[data-krok="${pytanie.id}"]`);
+        await expect(krok).toBeVisible();
         const wybor = pytanie.id === "etap" ? etap : WYBORY[pytanie.id];
-        await page.locator(`${KROK} label`, { hasText: new RegExp(`^\\s*${wybor}\\s*$`) }).first().click();
-        await page.getByRole("button", { name: /Dalej/ }).click();
+        await krok.locator("label", { hasText: new RegExp(`^\\s*${wybor}\\s*$`) }).first().click();
+        await krok.getByRole("button", { name: /Dalej/ }).click();
       }
       await expect(page.locator(`${KROK}[data-krok="kontakt"]`)).toBeVisible();
       await page.getByLabel(KONTAKT.pola.imie).fill("Test Testowy");

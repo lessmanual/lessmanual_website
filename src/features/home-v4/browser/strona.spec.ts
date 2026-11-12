@@ -40,6 +40,7 @@ for (const vp of [
         .locator('script[type="application/ld+json"]')
         .evaluateAll((els) => els.map((el) => JSON.parse(el.textContent ?? "null")?.["@type"]));
       expect(typy.filter((t) => t === "FAQPage")).toHaveLength(1);
+      expect(typy.filter((t) => t === "Service")).toHaveLength(1);
     });
 
     test("bez naruszeń CSP i błędów konsoli na /", async ({ page }) => {
