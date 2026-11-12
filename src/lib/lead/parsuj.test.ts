@@ -14,6 +14,11 @@ function poprawneZgloszenie(zmiany: Record<string, unknown> = {}): Record<string
 }
 
 describe("parsujZgloszenie", () => {
+  it("serwer przyjmuje proba_nieudana w pytaniu etap, bo to nowa odpowiedź formularza", () => {
+    const odpowiedzi = odpowiedziPodstawowe({ etap: odpowiedz("proba_nieudana") });
+    expect(parsujZgloszenie(poprawneZgloszenie({ odpowiedzi })).ok).toBe(true);
+  });
+
   it("przyjmuje poprawne zgłoszenie i normalizuje e-mail oraz stronę, bo CRM szuka kontaktu po małych literach", () => {
     const wynik = parsujZgloszenie(poprawneZgloszenie());
     expect(wynik.ok).toBe(true);

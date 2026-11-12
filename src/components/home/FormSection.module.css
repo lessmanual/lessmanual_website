@@ -21,15 +21,22 @@
   }
 }
 
-.bzyk {
-  display: none;
+.osoba {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
 }
 
-@media (min-width: 1024px) {
-  .bzyk {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 12px;
-  }
+.imie {
+  margin: 0;
+  font-weight: 600;
+}
+
+.rola {
+  margin: 0;
+}
+
+.opis {
+  margin: 8px 0 0;
+  max-width: 52ch;
 }

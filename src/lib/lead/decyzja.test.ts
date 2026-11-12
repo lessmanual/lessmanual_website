@@ -93,6 +93,20 @@ describe("droga A, B, C", () => {
   ])("odpowiedź %s prowadzi do drogi %s, bo tak mapuje pytanie 6 o etap wdrażania AI", (etap, droga) => {
     expect(zdecyduj(odpowiedziPodstawowe({ etap: odpowiedz(etap) })).trasa).toBe(droga);
   });
+
+  it("„Próbowaliśmy, ale nie wyszło” prowadzi do drogi C ze znacznikiem, bo zaczynamy od pilota", () => {
+    const d = zdecyduj(odpowiedziPodstawowe({ etap: odpowiedz("proba_nieudana") }));
+    expect(d.trasa).toBe("C");
+    expect(d.znaczniki).toContain("wczesniejsza_proba_nieudana");
+  });
+
+  it("duża firma z nieudaną próbą zostaje dużą firmą, ale znacznik idzie do CRM, bo Bartek ma znać historię", () => {
+    const d = zdecyduj(
+      odpowiedziPodstawowe({ etap: odpowiedz("proba_nieudana"), wielkosc: odpowiedz("os_250_plus") }),
+    );
+    expect(d.trasa).toBe("duza_firma");
+    expect(d.znaczniki).toContain("wczesniejsza_proba_nieudana");
+  });
 });
 
 describe("znaczniki", () => {

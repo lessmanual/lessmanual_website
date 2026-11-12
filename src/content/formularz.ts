@@ -6,11 +6,11 @@
 // w CRM (metadata), więc po wdrożeniu nie zmieniamy ich bez migracji danych.
 // Poza FORMULARZ.md i TEKSTY v3 (sekcja 13) zostają tylko komunikaty techniczne (błędy pól, ładowanie).
 
-export const WERSJA_FORMULARZA = "2026-11-11-zatwierdzony";
+export const WERSJA_FORMULARZA = "2026-11-12-proba-nieudana";
 
 export type Trasa = "A" | "B" | "C" | "duza_firma" | "odsiew";
 export type TrasaZKalendarzem = Exclude<Trasa, "odsiew">;
-export type Znacznik = "budzet_ponizej_S" | "priorytet";
+export type Znacznik = "budzet_ponizej_S" | "priorytet" | "wczesniejsza_proba_nieudana";
 
 export type PolePodrzedne = {
   etykieta: string;
@@ -137,6 +137,8 @@ export const PYTANIA: readonly PytanieKonfig[] = [
       { id: "wiem_co_boli", etykieta: "Wiem, który proces chcę usprawnić jako pierwszy", droga: "A" },
       { id: "lista_pomyslow", etykieta: "Mam listę pomysłów albo własny plan wdrożenia", droga: "A" },
       { id: "juz_wdrozylismy", etykieta: "Już coś wdrożyliśmy i chcemy iść dalej", droga: "A" },
+      // Droga C, bo po nieudanej próbie zaczynamy od krótkiego pilota; znacznik w REGULY_ZNACZNIKOW.
+      { id: "proba_nieudana", etykieta: "Próbowaliśmy, ale nie wyszło", droga: "C" },
       { id: "nie_wiem_od_czego", etykieta: "Nie wiem, od czego zacząć", droga: "B" },
       { id: "najpierw_zobaczyc", etykieta: "Najpierw chcę zobaczyć, że to działa na moich danych", droga: "C" },
     ],
@@ -320,6 +322,19 @@ export const DROGI: Readonly<Record<TrasaZKalendarzem, EkranDrogi>> = {
   },
 };
 
+/** Droga C po odpowiedzi „Próbowaliśmy, ale nie wyszło”: ten sam kalendarz pilota, inny dymek i tekst. */
+export const EKRAN_PROBA_NIEUDANA: EkranDrogi = {
+  bzyk: "Wybierz termin rozmowy o pilocie, potrwa 30 minut.",
+  tytul: DROGI.C.tytul,
+  tekst:
+    "Na rozmowie zaczniemy od tego, co poprzednio nie zadziałało. W szybkim pilocie przez dwa tygodnie budujemy jeden proces na próbce Twoich danych, więc wynik zobaczysz przed decyzją o większym projekcie.",
+};
+
+/** Ekran wyniku: jedyne miejsce, które wybiera między ekranem drogi a ekranem nieudanej próby. */
+export function ekranWynikuDrogi(trasa: TrasaZKalendarzem, znaczniki: readonly Znacznik[]): EkranDrogi {
+  return trasa === "C" && znaczniki.includes("wczesniejsza_proba_nieudana") ? EKRAN_PROBA_NIEUDANA : DROGI[trasa];
+}
+
 export const NIE_TERAZ = {
   bzyk: "Na dziś nie możemy Ci pomóc i wolimy to powiedzieć od razu.",
   naglowek: "Nie teraz",
@@ -394,6 +409,11 @@ export const REGULY_ZNACZNIKOW: readonly { znacznik: Znacznik; reguly: readonly 
   {
     znacznik: "budzet_ponizej_S",
     reguly: [{ drogi: ["A"], warunki: [{ pytanie: "budzet", odpowiedzi: ["5_15k"] }] }],
+  },
+  {
+    // Bez ograniczenia drogi: duża firma po nieudanej próbie zostaje dużą firmą, ale Bartek ma znać historię.
+    znacznik: "wczesniejsza_proba_nieudana",
+    reguly: [{ warunki: [{ pytanie: "etap", odpowiedzi: ["proba_nieudana"] }] }],
   },
   {
     znacznik: "priorytet",

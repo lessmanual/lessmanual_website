@@ -4,15 +4,10 @@ import { describe, expect, it } from "vitest";
 import { REVIEWS } from "@/lib/constants";
 import { DZIALY, HOME_V4, bzykPoWyborze, etykietaKarty, inicjal, type DzialId } from "./home-v4";
 import { PRZYKLADY } from "./home-v4-przyklady";
+import { EKRAN_PROBA_NIEUDANA, PYTANIA } from "./formularz";
 
 const DECK = resolve(process.cwd(), "docs/superpowers/specs/2026-11-12-strona-v4-teksty.md");
 
-// Trzy teksty formularza (P6 „Próbowaliśmy…”) wchodzą do modułu w Task 9, razem z formularzem.
-const PRZENIESIONE_DO_FORMULARZA = [
-  "Próbowaliśmy, ale nie wyszło",
-  "Wybierz termin rozmowy o pilocie, potrwa 30 minut.",
-  "Na rozmowie zaczniemy od tego, co poprzednio nie zadziałało. W szybkim pilocie przez dwa tygodnie budujemy jeden proces na próbce Twoich danych, więc wynik zobaczysz przed decyzją o większym projekcie.",
-];
 // Sprawdza go osobny test, bo w kodzie nazwa działu jest podstawiana.
 const DYMEK_Z_NAZWA = "Zaznaczone: Zamówienia i operacje. Kliknij „Pokaż”, a przeniosę Cię do kart tego działu.";
 
@@ -51,7 +46,14 @@ function wszystkieNapisy(wartosc: unknown): string[] {
 }
 
 function korpus(): Set<string> {
-  const napisy = [...wszystkieNapisy(HOME_V4), ...wszystkieNapisy(PRZYKLADY), etykietaKarty(1)];
+  // Napisy formularza (odpowiedź P6 „Próbowaliśmy…”, ekran wyniku) żyją w formularz.ts, nie w home-v4.ts.
+  const napisy = [
+    ...wszystkieNapisy(HOME_V4),
+    ...wszystkieNapisy(PRZYKLADY),
+    ...wszystkieNapisy(PYTANIA),
+    ...wszystkieNapisy(EKRAN_PROBA_NIEUDANA),
+    etykietaKarty(1),
+  ];
   for (const o of HOME_V4.opinie.karty) {
     if (o.zrodlo !== "linkedin") continue;
     const tl = `${HOME_V4.opinie.etykietaTlumaczenia} ${o.tlumaczenie}`;
@@ -62,7 +64,7 @@ function korpus(): Set<string> {
 
 describe("teksty v4 1:1", () => {
   it("każdy tekst z „Miejsce:” w sekcjach 1-11 jest w module treści, bo tekst zmieniamy tylko przez plik tekstów", () => {
-    const pomijane = new Set([...PRZENIESIONE_DO_FORMULARZA, DYMEK_Z_NAZWA].map(norm));
+    const pomijane = new Set([DYMEK_Z_NAZWA].map(norm));
     const k = korpus();
     const brakujace = wyciagnijTeksty(readFileSync(DECK, "utf8"))
       .filter((t) => !pomijane.has(norm(t)))

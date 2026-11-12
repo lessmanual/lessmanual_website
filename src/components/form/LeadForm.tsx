@@ -3,7 +3,6 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
 import {
-  DROGI,
   KALENDARZ_ZGODA,
   KOMUNIKATY,
   KONTAKT,
@@ -14,6 +13,7 @@ import {
   START,
   WERSJA_FORMULARZA,
   ZGODA_MARKETING,
+  ekranWynikuDrogi,
   odpowiedzDlaDrogi,
   zdecyduj,
   type PytanieKonfig,
@@ -443,7 +443,7 @@ export function LeadForm() {
       case "odsiew_gotowe":
         return NIE_TERAZ.potwierdzenieBzyk;
       case "droga":
-        return DROGI[ekran.trasa].bzyk;
+        return ekranWynikuDrogi(ekran.trasa, zdecyduj(odpowiedzi).znaczniki).bzyk;
     }
   }
 
@@ -698,8 +698,8 @@ export function LeadForm() {
   }
 
   function renderDroga(trasa: TrasaZKalendarzem) {
-    const droga = DROGI[trasa];
     const znaczniki = zdecyduj(odpowiedzi).znaczniki;
+    const droga = ekranWynikuDrogi(trasa, znaczniki);
     // Dane osoby w adresie tylko po kliknięciu albo przy zapisanej zgodzie (P1); link „nowa karta”
     // to też kliknięcie, więc zawsze ma prefill.
     const osoba = { imie: kontakt.imie.trim(), email: kontakt.email.trim().toLowerCase(), firma: kontakt.firma.trim() };

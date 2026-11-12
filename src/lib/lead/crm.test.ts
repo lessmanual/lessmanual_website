@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { slugKalendarza, zdecyduj } from "@/content/formularz";
+import { WERSJA_FORMULARZA, slugKalendarza, zdecyduj } from "@/content/formularz";
 import {
   zbudujFirme,
+  zbudujMetadata,
   zbudujInterakcje,
   zbudujKontakt,
   zbudujSzanse,
@@ -217,6 +218,33 @@ describe("zgody w CRM (treść-zgód.md § 5)", () => {
       ["przyklady_jednorazowo", true],
       ["marketing_email", true],
     ]);
+  });
+});
+
+describe("nieudana wcześniejsza próba", () => {
+  function zProba() {
+    const wynik = parsujZgloszenie({
+      rodzaj: "zgloszenie",
+      wersja: WERSJA_FORMULARZA,
+      zgoda: true,
+      odpowiedzi: odpowiedziPodstawowe({ etap: odpowiedz("proba_nieudana") }),
+      kontakt: { ...KONTAKT_PRZYKLADOWY },
+    });
+    if (!wynik.ok || wynik.wartosc.rodzaj !== "zgloszenie") throw new Error("Zgłoszenie powinno być poprawne");
+    return wynik.wartosc;
+  }
+
+  it("metadata zgłoszenia niesie znacznik wczesniejsza_proba_nieudana i nową wersję formularza", () => {
+    const z = zProba();
+    const m = zbudujMetadata(z, zdecyduj(z.odpowiedzi), "ua", TERAZ);
+    expect(m.znaczniki).toContain("wczesniejsza_proba_nieudana");
+    expect(m.wersja_formularza).toBe("2026-11-12-proba-nieudana");
+  });
+
+  it("mail do Bartka wypisuje znacznik, żeby zaczął rozmowę od tego, co nie zadziałało", () => {
+    const z = zProba();
+    const mail = zbudujMail(z, zdecyduj(z.odpowiedzi), "s", { companyId: null, contactId: "k", dealId: "d", interactionId: "i" });
+    expect(JSON.stringify(mail)).toContain("wczesniejsza_proba_nieudana");
   });
 });
 
