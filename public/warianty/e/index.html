@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Systemy AI szyte na miarę dla firm | LessManual (wariant E, podgląd)</title>
+<meta name="description" content="Partner technologiczny dla firm 10-100 osób. Budujemy systemy AI etapami, odpowiadamy za efekt spisany przed startem i opiekujemy się nimi po wdrożeniu.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Systemy AI, które ograniczają ręczną pracę w firmie">
+<meta property="og:description" content="Budujemy systemy etapami i każdy etap wyceniamy przed startem. Dane i system należą do Ciebie.">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32">
+<link rel="preload" as="image" href="../_assets/rolka4.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fonty nie blokują pierwszego malowania (LCP); tekst startuje w kroju zastępczym i podmienia się po wczytaniu -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<!-- Instrument Serif niesie nagłówek H1 (element LCP na telefonie): display=optional, żeby późna podmiana kroju nie przesuwała LCP -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400..600&display=swap"></noscript>
+<link rel="stylesheet" href="style.css">
+<script>
+  /* Ruch (przypięta teczka) tylko przy pełnym ruchu i ekranie dość wysokim, żeby dokument zmieścił się w kadrze.
+     Decyzja przed pierwszym malowaniem, więc układ nie skacze. */
+  (function () {
+    var rm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var force = /[?&]tryb=(ruch|statyczny)/.exec(location.search);
+    var motion = force ? force[1] === "ruch" : (!rm && innerHeight >= 600);
+    document.documentElement.className = (motion ? "motion" : "still") + (rm ? " rm" : "");
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <linearGradient id="bzyk-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDB27A"/><stop offset=".5" stop-color="#B87333"/><stop offset="1" stop-color="#8B4513"/>
+    </linearGradient>
+    <symbol id="bzyk" viewBox="0 0 240 182">
+      <rect x="46" y="34" width="10" height="56" rx="5" fill="#8B4513"/>
+      <rect x="184" y="34" width="10" height="56" rx="5" fill="#8B4513"/>
+      <rect x="46" y="80" width="148" height="12" rx="6" fill="#8B4513"/>
+      <ellipse cx="51" cy="32" rx="42" ry="7" fill="#6E3510" opacity=".85"/>
+      <ellipse cx="189" cy="32" rx="42" ry="7" fill="#6E3510" opacity=".85"/>
+      <circle cx="51" cy="32" r="7" fill="#E09A55"/><circle cx="189" cy="32" r="7" fill="#E09A55"/>
+      <rect x="92" y="150" width="12" height="24" rx="6" fill="#8B4513"/>
+      <rect x="136" y="150" width="12" height="24" rx="6" fill="#8B4513"/>
+      <ellipse cx="98" cy="176" rx="11" ry="6" fill="#3A1C08"/><ellipse cx="142" cy="176" rx="11" ry="6" fill="#3A1C08"/>
+      <rect x="62" y="66" width="116" height="92" rx="46" fill="url(#bzyk-g)"/>
+      <path d="M84 76 Q120 66 156 76" stroke="#F8D2AA" stroke-width="5" fill="none" stroke-linecap="round" opacity=".75"/>
+      <rect x="76" y="86" width="88" height="52" rx="26" fill="#141414"/>
+      <g fill="#3FD0C2"><rect x="94" y="98" width="16" height="24" rx="8"/><rect x="130" y="98" width="16" height="24" rx="8"/></g>
+      <path d="M112 128 Q120 133 128 128" stroke="#E09A55" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="logo-znak" viewBox="0 0 44 34">
+      <rect x="0" y="0" width="44" height="34" rx="17" fill="#B87333"/>
+      <rect x="6" y="7" width="32" height="20" rx="10" fill="#141414"/>
+      <rect x="14" y="11.5" width="5" height="11" rx="2.5" fill="#D9965A"/>
+      <rect x="25" y="11.5" width="5" height="11" rx="2.5" fill="#D9965A"/>
+    </symbol>
+    <symbol id="spinacz" viewBox="0 0 24 64">
+      <path d="M8 58V12a6 6 0 0 1 12 0v40a9 9 0 0 1-18 0V18" fill="none" stroke="#8A8580" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="bar" id="bar">
+  <a class="brand" href="/" aria-label="LessManual.ai, strona główna">
+    <svg width="36" height="28" aria-hidden="true"><use href="#logo-znak"/></svg>
+    <span>LessManual<em>.ai</em></span>
+  </a>
+  <a class="btn btn-sm bar-cta" href="/#formularz" tabindex="-1">Umów rozmowę</a>
+</header>
+
+<nav class="tabs" aria-label="Rozdziały teczki">
+  <ol>
+    <li><a href="#start" data-label="start">Start</a></li>
+    <li><a href="#czym" data-label="czym">Czym się zajmujemy</a></li>
+    <li><a href="#systemy" data-label="systemy">Systemy</a></li>
+    <li><a href="#opinie">Opinie</a></li>
+    <li><a href="#oferta">Oferta</a></li>
+    <li><a href="#rozmowa">Rozmowa</a></li>
+  </ol>
+</nav>
+
+<main id="tresc">
+  <!-- Scena teczki: hero, potem dokumenty wylatują z teczki (przypięte przy pełnym ruchu) -->
+  <!-- Własny pin-spacer: ScrollTrigger nie przenosi sceny w DOM, więc H1 nie maluje się drugi raz (LCP) -->
+  <div class="stage-spacer" id="stage-spacer">
+  <section id="start" class="stage" aria-labelledby="h1">
+    <div class="hero-copy">
+      <h1 id="h1">Mniej <em>ręcznej</em> pracy, więcej kontroli nad&nbsp;firmą.</h1>
+      <p class="lead">Systemy AI szyte na miarę firm od 10 do 100 osób. Efekt zapisujemy liczbą przed startem. Jeśli system go nie daje, poprawiamy na nasz koszt.</p>
+      <div class="cta-row">
+        <a class="btn btn-lg" href="/#formularz">Umów rozmowę</a>
+        <div class="bzyk-line">
+          <svg class="bzyk" width="44" height="34" aria-hidden="true"><use href="#bzyk"/></svg>
+          <p>Poprowadzę Cię przez formularz i wytłumaczę, o co pytamy.</p>
+        </div>
+      </div>
+      <p class="note">Pierwszy krok to 45 minut rozmowy z Bartkiem. Przed nią 10 pytań, około 2 minut.</p>
+      <p class="proof"><span>24+ firm</span><span>31 wdrożeń</span><a href="https://www.google.com/maps?cid=10191824326439953363" rel="noopener">5,0 w Google (6 opinii)</a></p>
+    </div>
+
+    <div class="desk">
+      <div class="desk-inner">
+        <div class="folder" aria-hidden="true">
+          <div class="f-back"><span class="f-tab"><svg width="22" height="17"><use href="#logo-znak"/></svg></span></div>
+          <div class="f-sheet s1"></div><div class="f-sheet s2"></div><div class="f-sheet s3"></div>
+          <div class="f-cover">
+            <div class="f-face f-front"><svg class="f-mark" width="88" height="68"><use href="#logo-znak"/></svg><span class="f-strap"></span></div>
+            <div class="f-face f-inner"></div>
+          </div>
+        </div>
+
+        <figure class="reel" id="reel">
+          <svg class="clip" width="18" height="48" aria-hidden="true"><use href="#spinacz"/></svg>
+          <div class="reel-frame">
+            <img src="../_assets/rolka4.jpg" width="540" height="960" alt="Bartek mówi do kamery, kadr z rolki" fetchpriority="high" decoding="sync">
+            <video class="vid" muted playsinline loop preload="none" poster="../_assets/rolka4.jpg" data-src="../_assets/rolka4.mp4" aria-label="Rolka: Bartek mówi do kamery (film zastępczy)"></video>
+            <div class="caps" aria-hidden="true">
+              <p class="cap-card" data-cap="0"><b>215</b> dokumentów wpisanych bez błędu przetwarzania</p>
+              <p class="cap" data-cap="1">Mniej ręcznej pracy,</p>
+              <p class="cap" data-cap="2">więcej kontroli nad firmą.</p>
+            </div>
+            <button class="play" type="button" aria-label="Odtwórz rolkę" hidden><span aria-hidden="true"></span></button>
+          </div>
+          <figcaption>Napisy na rolce są przykładowe</figcaption>
+        </figure>
+
+        <div class="docs">
+          <!-- Dokument 1: czym się zajmujemy -->
+          <article class="doc doc-about" id="czym" aria-labelledby="h-czym">
+            <header class="doc-head"><span>LessManual.ai</span><span>01</span></header>
+            <h2 id="h-czym">Czym się zajmujemy</h2>
+            <p class="doc-lead">LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Budujemy systemy AI, które ograniczają ręczną pracę, i&nbsp;opiekujemy się nimi po wdrożeniu.</p>
+            <h3>To dla Ciebie, jeśli:</h3>
+            <ul class="ticks">
+              <li>prowadzisz firmę, która ma od 10 do 100 osób, i decydujesz sam albo ze wspólnikiem;</li>
+              <li>Twoi ludzie ręcznie przepisują zamówienia, dokumenty albo maile;</li>
+              <li>pracujecie na kilku programach, które się ze sobą nie łączą;</li>
+              <li>osobiście pilnujesz spraw, które powinny dziać się bez Ciebie;</li>
+              <li>chcesz zacząć od prostego etapu, który realnie działa, i potem dokładać kolejne.</li>
+            </ul>
+          </article>
+
+          <!-- Przekładka: przykłady systemów -->
+          <article class="doc doc-divider" id="systemy" aria-labelledby="h-sys">
+            <span class="divider-tab" aria-hidden="true">02</span>
+            <h2 id="h-sys">Przykłady systemów, które już pracują</h2>
+            <p>Każda firma pracuje na innych programach, więc każdy system budujemy pod konkretną firmę. Poniżej przykłady z naszych wdrożeń.</p>
+          </article>
+
+          <article class="doc doc-sys" aria-labelledby="s1">
+            <header class="doc-head"><span>Zakład recyklingu</span><span>System 1 z 4</span></header>
+            <figure class="photo"><svg class="clip" width="16" height="44" aria-hidden="true"><use href="#spinacz"/></svg>
+              <img src="../_assets/rolka1.jpg" width="540" height="960" alt="" loading="lazy" decoding="async">
+              <video class="vid" muted playsinline loop preload="none" data-src="../_assets/rolka1.mp4" aria-label="Film o systemie (zastępczy)"></video>
+              <button class="play" type="button" aria-label="Odtwórz film" hidden><span aria-hidden="true"></span></button>
+            </figure>
+            <h3 id="s1">System, który przepisuje dokumenty z maila do arkusza</h3>
+            <dl class="fields">
+              <dt>Problem</dt><dd>Ktoś w zakładzie codziennie przepisuje te same pola z dokumentów przyjęcia do arkusza.</dd>
+              <dt>System</dt><dd>Pracownik wysyła dokument przyjęcia mailem na jeden adres. Bot odczytuje go i wpisuje dane do arkusza właściwego handlowca. Gdy w dokumencie czegoś brakuje, odsyła mail z informacją, co uzupełnić.</dd>
+              <dt>Efekt</dt><dd>215 dokumentów wpisanych od kwietnia do października 2026, każdy bez błędu przetwarzania.</dd>
+            </dl>
+            <p class="stamp" aria-hidden="true">215</p>
+          </article>
+
+          <article class="doc doc-sys" aria-labelledby="s2">
+            <header class="doc-head"><span>Firma recyklingowa</span><span>System 2 z 4</span></header>
+            <figure class="photo"><svg class="clip" width="16" height="44" aria-hidden="true"><use href="#spinacz"/></svg>
+              <img src="../_assets/rolka2.jpg" width="540" height="960" alt="" loading="lazy" decoding="async">
+              <video class="vid" muted playsinline loop preload="none" data-src="../_assets/rolka2.mp4" aria-label="Film o systemie (zastępczy)"></video>
+              <button class="play" type="button" aria-label="Odtwórz film" hidden><span aria-hidden="true"></span></button>
+            </figure>
+            <h3 id="s2">System, który codziennie szuka okazji sprzedażowych</h3>
+            <dl class="fields">
+              <dt>Problem</dt><dd>Przetargi i informacje o zakupach w firmach są publiczne, ale rozproszone po wielu stronach. Handlowcy dowiadują się o nich za późno albo wcale.</dd>
+              <dt>System</dt><dd>Bot codziennie przegląda ogłoszenia przetargowe i wiadomości o firmach z rynku klienta, także z Niemiec i Czech. Trafne sprawy wysyła mailem handlowcom.</dd>
+              <dt>Efekt</dt><dd>W tygodniu od 19 do 26 października handlowcy dostali 62 tematy. W kolejnym tygodniu ocenili 11 z 13 sygnałów od firm jako trafne.</dd>
+            </dl>
+            <p class="stamp" aria-hidden="true">11 z 13</p>
+          </article>
+
+          <article class="doc doc-sys" aria-labelledby="s3">
+            <header class="doc-head"><span>Firma recyklingowa</span><span>System 3 z 4</span></header>
+            <figure class="photo"><svg class="clip" width="16" height="44" aria-hidden="true"><use href="#spinacz"/></svg>
+              <img src="../_assets/rolka3.jpg" width="540" height="960" alt="" loading="lazy" decoding="async">
+              <video class="vid" muted playsinline loop preload="none" data-src="../_assets/rolka3.mp4" aria-label="Film o systemie (zastępczy)"></video>
+              <button class="play" type="button" aria-label="Odtwórz film" hidden><span aria-hidden="true"></span></button>
+            </figure>
+            <h3 id="s3">Panel: wszystkie boty w jednym miejscu</h3>
+            <dl class="fields">
+              <dt>Problem</dt><dd>W firmie pracuje kilka botów, każdy wysyła wyniki gdzie indziej, a właściciel nie widzi, co z nich wynika.</dd>
+              <dt>System</dt><dd>Jeden panel dla właściciela. Widać w nim, co zrobił każdy bot i które sprawy trafiły do handlowców. Przy każdym handlowcu widać sprawy, które czekają na jego ocenę.</dd>
+              <dt>Efekt</dt><dd>W pierwszym tygodniu panel pokazał 38 spraw przekazanych handlowcom. Ocenili 24 z nich, a przy 8 trwa już przygotowanie oferty.</dd>
+            </dl>
+            <p class="stamp" aria-hidden="true">38</p>
+          </article>
+
+          <article class="doc doc-sys" aria-labelledby="s4">
+            <header class="doc-head"><span>Sklep z oświetleniem LED</span><span>System 4 z 4</span></header>
+            <figure class="photo"><svg class="clip" width="16" height="44" aria-hidden="true"><use href="#spinacz"/></svg>
+              <img src="../_assets/rolka2.jpg" width="540" height="960" alt="" loading="lazy" decoding="async">
+              <video class="vid" muted playsinline loop preload="none" data-src="../_assets/rolka2.mp4" aria-label="Film o systemie (zastępczy)"></video>
+              <button class="play" type="button" aria-label="Odtwórz film" hidden><span aria-hidden="true"></span></button>
+            </figure>
+            <h3 id="s4">System, który pisze treści sklepu pod Google</h3>
+            <dl class="fields">
+              <dt>Problem</dt><dd>Ruch z Google spada, a na pisanie poradników i rankingów produktów brakuje czasu.</dd>
+              <dt>System</dt><dd>Agent AI przygotowuje poradniki i rankingi produktów na danych sklepu. Właściciel zatwierdza plan, a publikacja idzie według harmonogramu.</dd>
+              <dt>Efekt</dt><dd>Artykuły opublikowane w 2026 roku dały 2 906 kliknięć z Google. W listopadzie 6 przebudowanych poradników i 14 odświeżonych rankingów jest już online.</dd>
+            </dl>
+            <p class="stamp" aria-hidden="true">2 906</p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <span class="scroll-hint" aria-hidden="true"></span>
+  </section>
+  </div>
+
+  <!-- Opinie jako notatki -->
+  <section id="opinie" class="notes" aria-labelledby="h-op">
+    <header class="sec-head">
+      <h2 id="h-op">Co mówią właściciele firm, z którymi pracujemy</h2>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> <a href="https://www.google.com/maps?cid=10191824326439953363" rel="noopener">5,0 w Google (6 opinii)</a></p>
+    </header>
+    <div class="note-board">
+      <figure class="note-card" style="--r:-2.5deg">
+        <blockquote>Pełen profesjonalizm i konkretne podejście do biznesu – współpraca z Bartkiem to czysta przyjemność. Dzięki wdrożeniom LessManual.ai zaoszczędziliśmy mnóstwo czasu, który wcześniej marnowaliśmy na powtarzalne zadania. Zdecydowanie polecam każdemu, kto chce usprawnić swoją firmę!</blockquote>
+        <figcaption><b>Paweł Muchewicz</b><span>Opinia w Google · 3 opinie</span></figcaption>
+      </figure>
+      <figure class="note-card" style="--r:1.8deg">
+        <blockquote>Bartek wykazuje się dużą samodzielnością i dobrą orientacją w automatyzacjach oraz integracjach systemowych. Szybko reaguje na zgłaszane problemy i sprawnie wprowadza zmiany w działających workflow. Współpraca przebiega konkretnie i technicznie na dobrym poziomie.</blockquote>
+        <figcaption><b>Dawid Kar</b><span>Opinia w Google · 1 opinia</span></figcaption>
+      </figure>
+      <figure class="note-card" style="--r:-1deg">
+        <blockquote>Polecam LessManual – Agencję Automatyzacji AI! Zleciliśmy im automatyzację procesów na naszych mediach społecznościowych i efekt przerósł oczekiwania. Wszystko zostało świetnie pospinane: publikacje, powiadomienia, przekazywanie zadań i szybkie reakcje na wiadomości działają praktycznie „same". Największy plus? To, co wcześniej zajmowało nam długie godziny, teraz trwa dosłownie chwilę.</blockquote>
+        <figcaption><b>Marcin Pietrasik</b><span>Opinia w Google · Lokalny przewodnik</span></figcaption>
+      </figure>
+      <figure class="note-card" style="--r:2.6deg">
+        <blockquote>Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę" i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.</blockquote>
+        <figcaption><b>CreativeDanceRumia</b><span>Opinia w Google · 15 opinii</span></figcaption>
+      </figure>
+      <figure class="note-card" style="--r:-1.6deg">
+        <blockquote>Polecam z całego serca, zleciłem stworzenie strony internetowej a dostałem dużo więcej nowe Logo nową wizję na marketing i dobre pozycjonowanie w Google. Naprawdę bez zastrzeżeń 5/5!</blockquote>
+        <figcaption><b>Maciej Osiecki</b><span>Opinia w Google · 7 opinii</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Oferta jako umowa -->
+  <section id="oferta" class="contract-wrap" aria-labelledby="h-umowa">
+    <article class="contract">
+      <header class="contract-head">
+        <svg width="44" height="34" aria-hidden="true"><use href="#logo-znak"/></svg>
+        <span>LessManual.ai</span>
+      </header>
+      <h2 id="h-umowa">Co dostajesz na piśmie przed startem systemu</h2>
+      <ul class="clauses-list">
+        <li>efekt systemu zapisany liczbą i sposób, w jaki go zmierzymy;</li>
+        <li>etapy z ceną i terminem każdego etapu;</li>
+        <li>podział zadań: co robimy my, a co jest po Twojej stronie;</li>
+        <li>czego zakres nie obejmuje;</li>
+        <li>płatność: 35% przy zamówieniu, 35% po działającej demonstracji, 30% po odbiorze.</li>
+      </ul>
+      <p class="clause-note">Zakres akceptujemy oboje przed startem. Zmiana po akceptacji to nowy etap z własną ceną, więc cena nie rośnie bez Twojej zgody.</p>
+
+      <section class="clause" aria-labelledby="h-wsp">
+        <h3 id="h-wsp"><span class="par" aria-hidden="true">§ 1</span>Jak wygląda współpraca, krok po kroku</h3>
+        <p class="clause-intro">Przy każdym kroku widzisz, za co odpowiadamy my, a co należy do Ciebie. Ty podejmujesz decyzje i dajesz dostęp do danych. Techniczną pracę wykonujemy my.</p>
+        <table class="steps">
+          <thead><tr><th scope="col">Krok</th><th scope="col">Nasza odpowiedzialność</th><th scope="col">Twoja rola</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>1</span>Rozmowa i spisany zakres</th><td>Pytamy o Twoje programy z nazwy i o to, co boli najbardziej. Potem spisujemy zakres z efektem systemu i ceną każdego etapu.</td><td>Rozmowa (45 minut) i kilka przykładowych dokumentów albo maili.</td></tr>
+            <tr><th scope="row"><span>2</span>Pierwszy etap, który realnie działa</th><td>Budujemy możliwie prosty etap i pokazujemy go w działaniu na Twoich sprawach.</td><td>Wskazujesz osobę do kontaktu i dajesz dostępy w ustalonym terminie. Raz w tygodniu krótkie spotkanie.</td></tr>
+            <tr><th scope="row"><span>3</span>Testy na nowych sprawach</th><td>System pracuje obok, a dotychczasowy sposób pracy działa bez zmian do odbioru. Twoje uwagi poprawiamy na bieżąco.</td><td>Twój zespół sprawdza wyniki na prawdziwych sprawach i zgłasza, co poprawić.</td></tr>
+            <tr><th scope="row"><span>4</span>Odbiór</th><td>Mierzymy efekt tak, jak zapisaliśmy go przed startem. Przekazujemy dokumentację z instrukcją dla zespołu.</td><td>Sprawdzasz system na swoich danych i potwierdzasz odbiór.</td></tr>
+            <tr><th scope="row"><span>5</span>Opieka i plan na kwartał</th><td>Przejmujemy system, pilnujemy go, aktualizujemy i serwisujemy. Co kwartał pokazujemy, co działa, i proponujemy następny etap z ceną.</td><td>Jedno spotkanie na kwartał i decyzja o kolejnym etapie.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="clause" aria-labelledby="h-gw">
+        <h3 id="h-gw"><span class="par" aria-hidden="true">§ 2</span>Odpowiadamy za efekt systemu, a dane zostają u Ciebie</h3>
+        <div class="guarantees">
+          <div><h4>Efekt spisany przed startem</h4><p>Zanim zaczniemy, zapisujemy liczbą, jaki efekt ma dawać system i jak go zmierzymy. Jeżeli odebrany system tego efektu nie daje, poprawiamy go na nasz koszt, aż zacznie go dawać.</p></div>
+          <div><h4>Dane i system należą do Ciebie</h4><p>Przy zakończeniu współpracy dostajesz pełną dokumentację i wszystkie dostępy. Dostajesz też eksport danych. System możesz przekazać własnemu informatykowi albo innej firmie.</p></div>
+          <div><h4>Testy obok obecnej pracy</h4><p>Nowy system testujemy na nowych sprawach. Obecny sposób pracy działa bez zmian do dnia odbioru.</p></div>
+        </div>
+      </section>
+
+      <section class="clause" aria-labelledby="h-drogi">
+        <h3 id="h-drogi"><span class="par" aria-hidden="true">§ 3</span>Od czego zacząć: trzy drogi do pierwszego systemu</h3>
+        <p class="clause-intro">Wybierz drogę, która pasuje do tego, gdzie dziś jesteś. Każda zaczyna się od krótkiego formularza i rozmowy z Bartkiem.</p>
+        <div class="paths">
+          <article class="path path-main">
+            <p class="path-id"><span class="box" aria-hidden="true"></span>Droga A</p>
+            <h4>Wiem, co mnie najbardziej boli</h4>
+            <dl>
+              <dt>Dla kogo</dt><dd>Masz pomysł, listę spraw do zautomatyzowania albo własny plan.</dd>
+              <dt>Jak wygląda</dt><dd>Rozmowa z Bartkiem, 45 minut, o Twoich programach i o tym, co zabiera najwięcej czasu.</dd>
+              <dt>Co dostajesz</dt><dd>Spisany zakres z efektem systemu i ceną każdego etapu.</dd>
+              <dt>Koszt</dt><dd>Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto.</dd>
+            </dl>
+            <a class="btn" href="/?droga=A#formularz">Umów rozmowę</a>
+          </article>
+          <article class="path">
+            <p class="path-id"><span class="box" aria-hidden="true"></span>Droga B</p>
+            <h4>Nie wiem, od czego zacząć: Mapa AI firmy</h4>
+            <dl>
+              <dt>Dla kogo</dt><dd>Czujesz, że AI może odciążyć firmę, ale nie wiesz, od którego procesu zacząć.</dd>
+              <dt>Jak wygląda</dt><dd>Dłuższa rozmowa z Tobą i 2-3 krótsze, po około 30 minut, z osobami, które znają procesy na co dzień. Pracujemy na Twoich dokumentach i liczbach. Wynik dostajesz w ciągu 5 dni roboczych od ostatniej rozmowy.</dd>
+              <dt>Co dostajesz</dt><dd>Plan systemów na kwartał i na rok, ułożony w kolejności wdrażania. Przy każdym systemie jest efekt i cena każdego etapu.</dd>
+              <dt>Koszt</dt><dd>6 900 zł netto, w całości odliczane od pierwszego wdrożenia.</dd>
+            </dl>
+            <a class="btn btn-ghost" href="/?droga=B#formularz">Umów rozmowę o Mapie</a>
+          </article>
+          <article class="path">
+            <p class="path-id"><span class="box" aria-hidden="true"></span>Droga C</p>
+            <h4>Najpierw chcę zobaczyć, że to działa: szybki pilot</h4>
+            <dl>
+              <dt>Dla kogo</dt><dd>Chcesz sprawdzić jeden system na swoich sprawach, zanim zdecydujesz o większym projekcie.</dd>
+              <dt>Jak wygląda</dt><dd>Przez dwa tygodnie budujemy jeden proces na próbce Twoich spraw i uruchamiamy go na naszej infrastrukturze. Przed przekazaniem danych podpisujemy umowę powierzenia przetwarzania (RODO).</dd>
+              <dt>Co dostajesz</dt><dd>Działający system, który oglądasz na swoich sprawach.</dd>
+              <dt>Koszt</dt><dd>Podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu.</dd>
+            </dl>
+            <a class="btn btn-ghost" href="/?droga=C#formularz">Umów rozmowę o pilocie</a>
+          </article>
+        </div>
+        <div class="bzyk-line bzyk-paths">
+          <svg class="bzyk" width="44" height="34" aria-hidden="true"><use href="#bzyk"/></svg>
+          <p>Nie wiesz, którą drogę wybrać? Formularz wskaże ją po 10 pytaniach.</p>
+        </div>
+      </section>
+
+      <section class="sign" id="rozmowa" aria-labelledby="h-final">
+        <span class="seal" aria-hidden="true"><svg width="66" height="51"><use href="#logo-znak"/></svg></span>
+        <h2 id="h-final">Umów rozmowę o systemie dla Twojej firmy</h2>
+        <p>Formularz ma 10 pytań i zajmuje około 2 minut. Prowadzi przez niego Bzyk. Na końcu wybierasz termin rozmowy z Bartkiem.</p>
+        <div class="sign-line">
+          <a class="btn btn-lg" href="/#formularz">Umów rozmowę</a>
+        </div>
+        <p class="note">Przyjmujemy maksymalnie 4 nowe firmy miesięcznie.</p>
+      </section>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Budujemy systemy AI, które ograniczają ręczną pracę, i opiekujemy się nimi po wdrożeniu.</p>
+  <p><a href="mailto:kontakt@lessmanual.ai">kontakt@lessmanual.ai</a> · <a href="/legal/polityka-prywatnosci">Polityka prywatności</a></p>
+</footer>
+
+<p class="variant-tag">Wariant E, podgląd, filmy zastępcze</p>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>

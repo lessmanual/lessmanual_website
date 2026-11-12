@@ -1,0 +1,176 @@
+/* Wariant A: talia kart w perspektywie 3D.
+   Scena jest przyklejona (sticky) przez całą wysokość toru; JS przelicza przewinięcie na pozycję w talii.
+   Kolejna karta wjeżdża od dołu, bliżej widza i przechylona, i ląduje na wierzchu talii.
+   Karty pod spodem cofają się, maleją i wystają górną krawędzią jak w prawdziwej talii. */
+
+html.motion .track { position: relative; height: var(--track-h, 1400vh); }
+html.motion .stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  perspective: 1500px; perspective-origin: var(--deck-cx) 40%;
+  --card-h: min(600px, calc(100svh - 200px));
+  --card-w: min(760px, calc(100vw - 480px - 3 * var(--gutter)));
+  --deck-cx: calc(100% - var(--gutter) - var(--card-w) / 2);
+  --deck-top: calc(50% - var(--card-h) / 2 + 28px);
+}
+html.motion .ch, html.motion .ch-cards { display: contents; }
+
+/* ---------- tekst rozdziału (lewa kolumna) ---------- */
+html.motion .ch-copy {
+  position: absolute; left: var(--gutter); top: 50%; z-index: 20;
+  width: min(480px, calc(100vw - var(--card-w) - 3 * var(--gutter)));
+  display: grid; gap: 20px; margin: 0;
+  opacity: 0; transform: translateY(calc(-50% + 24px)); pointer-events: none;
+  transition: opacity 0.45s var(--ease), transform 0.7s var(--ease);
+}
+html.motion .ch-copy.is-on {
+  opacity: 1; transform: translateY(-50%); pointer-events: auto;
+  transition: opacity 0.6s var(--ease) 0.12s, transform 0.8s var(--ease) 0.12s;
+}
+html.motion .ch-copy[data-copy="0"] { gap: 32px; width: min(600px, calc(var(--deck-cx) - var(--card-w) * 0.42 - var(--gutter) - 24px)); }
+@media (min-width: 1280px) {
+  html.motion .ch-copy[data-copy="0"] .h1 { font-size: 64px; line-height: 64px; }
+}
+html.motion .ch-copy[data-copy="0"] .proof { padding-top: 8px; }
+html.motion .ch-copy .proof { font-size: 14px; }
+
+/* ---------- karty ---------- */
+html.motion .stage .card {
+  position: absolute; z-index: 1;
+  left: calc(var(--deck-cx) - var(--card-w) / 2); top: var(--deck-top);
+  width: var(--card-w); height: var(--card-h);
+  transform-origin: 50% 0%;
+  transform: translate3d(0, 110vh, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+html.motion #start .card { transform: none; }
+html.motion body:not(.deck-ready) .ch-copy[data-copy="0"] { opacity: 1; transform: translateY(-50%); pointer-events: auto; transition: none; }
+@media (max-width: 899px) {
+  html.motion body:not(.deck-ready) .ch-copy[data-copy="0"] { transform: none; }
+}
+html.motion .stage .card--reel {
+  width: calc(var(--card-h) * 0.5625);
+  left: calc(var(--deck-cx) - var(--card-h) * 0.28125);
+}
+.card-back {
+  position: absolute; inset: 0; z-index: 29; opacity: 0; pointer-events: none; border-radius: inherit;
+  background: #f4f1ec;
+  box-shadow: inset 0 0 0 10px #f4f1ec, inset 0 0 0 11px rgba(184, 115, 51, 0.35);
+}
+.card-back::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 44px; height: 34px; margin: -17px 0 0 -22px;
+  border-radius: 17px; background: #141414;
+  box-shadow: inset 0 0 0 6px #b87333;
+}
+.card-dim {
+  position: absolute; inset: 0; z-index: 30; background: #0a0a0a; opacity: 0;
+  pointer-events: none; border-radius: inherit;
+}
+
+/* układ kart poziomych (desktop) */
+@media (min-width: 900px) {
+  html.motion .card--system { flex-direction: row; }
+  html.motion .card--system .media { flex: 0 0 auto; width: calc(var(--card-h) * 0.5625); min-height: 0; }
+  html.motion .card--system .sheet { flex: 1; align-content: center; padding: 32px; gap: 16px; }
+  html.motion .card--system .card-h { font-size: 24px; line-height: 32px; }
+  html.motion .card--system .stat-n { font-size: 72px; line-height: 64px; }
+  html.motion .card--system .stat-t { font-size: 16px; line-height: 24px; }
+
+  html.motion .card--statement { padding: 48px; }
+  html.motion .statement { font-size: 48px; line-height: 52px; }
+  html.motion .card--list { padding: 48px; justify-content: center; }
+  html.motion .card--list .card-h { font-size: 30px; line-height: 36px; }
+  html.motion .card--quote { padding: 48px; }
+  html.motion .card--quote blockquote p { font-size: 30px; line-height: 38px; }
+  html.motion .card--quote figcaption { font-size: 16px; line-height: 24px; }
+  html.motion .card--process { padding: 40px 48px; }
+  html.motion .card--process .card-h { font-size: 30px; line-height: 36px; }
+  html.motion .steps li { grid-template-columns: 32px 232px 1fr; gap: 16px; padding: 14px 0; }
+  html.motion .steps li > div { display: contents; }
+  html.motion .steps li span:not(.step-n) { font-size: 15px; line-height: 24px; }
+  html.motion .card--path { grid-template-columns: 260px 1fr; gap: 40px; padding: 40px 48px; align-content: center; }
+  html.motion .card--final { flex-direction: row; }
+  html.motion .final-photo { flex: 0 0 40%; }
+  html.motion .final-body { padding: 48px; }
+  html.motion .statement { max-width: 15em; }
+  html.motion .stat-row { gap: 48px; }
+  html.motion .stat-row b { font-size: 56px; line-height: 56px; }
+  html.motion .stat-row span { font-size: 14px; line-height: 20px; }
+  html.motion .card--quote.is-short blockquote p { font-size: 38px; line-height: 44px; }
+  html.motion .card--path .card-h { font-size: 30px; line-height: 36px; }
+  html.motion .card--path .path-head { gap: 16px; align-content: start; }
+  html.motion .card--path .pairs { gap: 16px; }
+  html.motion .card--path .pairs dd { font-size: 16px; line-height: 24px; }
+  html.motion .card--final { padding: 48px; }
+  html.motion .card--final .bzyk { width: 160px; height: auto; }
+  html.motion .card--final .bzyk-line { font-size: 16px; line-height: 24px; }
+}
+
+/* ---------- indeks rozdziałów ---------- */
+html.motion .index {
+  position: absolute; left: var(--gutter); bottom: 32px; z-index: 25;
+}
+.index ol { display: flex; gap: 4px; }
+.index a {
+  display: flex; align-items: baseline; gap: 6px; padding: 6px 10px; border-radius: 8px;
+  text-decoration: none; font-size: 13px; line-height: 20px; color: var(--ink-3);
+  transition: color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.index a:hover { color: var(--ink); background: rgba(10, 10, 10, 0.04); }
+.index .nav-n { font-variant-numeric: tabular-nums; font-size: 11px; font-weight: 600; }
+.index a[aria-current="step"] { color: var(--ink); }
+.index a[aria-current="step"] .nav-n { color: var(--patina); }
+html.motion .deck-progress {
+  position: absolute; left: calc(var(--gutter) + 10px); bottom: 24px; z-index: 25;
+  width: 200px; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden;
+}
+.deck-progress span { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; transform: scaleX(0); }
+
+/* ---------- telefon ---------- */
+@media (max-width: 899px) {
+  html.motion .stage {
+    --card-w: calc(100vw - 2 * var(--gutter));
+    --card-h: calc(100svh - 236px);
+    --deck-cx: 50%;
+    --deck-top: 212px;
+    perspective: 1100px; perspective-origin: 50% 30%;
+  }
+  html.motion .ch-copy {
+    top: 76px; left: var(--gutter); right: var(--gutter); width: auto; gap: 8px;
+    transform: translateY(12px);
+  }
+  html.motion .ch-copy.is-on { transform: none; }
+  html.motion .ch-copy .h2 { font-size: 24px; line-height: 30px; }
+  html.motion .ch-copy .lead { font-size: 14px; line-height: 20px; }
+  html.motion .ch-copy[data-copy="0"] { gap: 16px; width: auto; }
+  html.motion .ch-copy[data-copy="0"] .proof { padding-top: 0; font-size: 13px; }
+  html.motion .ch-copy[data-copy="3"] .proof { display: none; }
+  /* Rolka na telefonie ma szerokość talii: szerokość niezależna od wysokości liczonej w JS,
+     więc karta nie przesuwa się w układzie po pierwszym malowaniu (CLS). */
+  html.motion .stage .card--reel { width: var(--card-w); left: calc(50% - var(--card-w) / 2); }
+  html.motion #start .card { transform: translateY(160px); }
+  html.motion .index { display: none; }
+  html.motion .deck-progress { left: var(--gutter); right: var(--gutter); width: auto; top: 64px; bottom: auto; }
+
+  html.motion .card--system .media { min-height: 120px; }
+  html.motion .card--system .sheet { padding: 16px 20px 20px; gap: 8px; }
+  html.motion .card--system .card-h { font-size: 18px; line-height: 24px; }
+  html.motion .card--system .stat-n { font-size: 44px; line-height: 44px; }
+  html.motion .card--system .pairs dd { font-size: 13px; line-height: 18px; }
+  /* Na telefonie karta pokazuje efekt i opis systemu; opis problemu zostaje w HTML i w układzie bez ruchu. */
+  html.motion .card--system .pairs > div:first-child { display: none; }
+  html.motion .card--system .stat-t { font-size: 14px; line-height: 20px; }
+  .variant-label { right: 8px; bottom: 6px; font-size: 11px; }
+  html.motion .card--quote { padding: 24px; }
+  html.motion .card--quote blockquote p { font-size: 22px; line-height: 28px; }
+  html.motion .card--statement, html.motion .card--list { padding: 24px; }
+  html.motion .card--list .ticks li, html.motion .card--list .paper-list li { font-size: 15px; line-height: 22px; }
+  html.motion .card--process { padding: 24px; gap: 8px; }
+  html.motion .card--process .card-h { font-size: 20px; line-height: 26px; }
+  html.motion .card--process .card-intro { display: none; }
+  html.motion .steps li { padding: 8px 0; }
+  html.motion .steps b { font-size: 15px; line-height: 20px; }
+  html.motion .steps li span:not(.step-n) { font-size: 13px; line-height: 18px; }
+  html.motion .card--path { padding: 24px; gap: 16px; }
+  html.motion .card--path .pairs dd { font-size: 13px; line-height: 18px; }
+}

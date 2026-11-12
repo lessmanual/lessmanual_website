@@ -1,0 +1,173 @@
+/* Wariant B: orbita. Karty stoją w pierścieniu 3D wokół środka ekranu; przewijanie obraca pierścień.
+   Karta z przodu gra film i pokazuje treść, sąsiednie odchodzą w głąb i bledną w tle strony.
+   Kompozycja symetryczna: nagłówek u góry na środku, pierścień w centrum, tarcza rozdziałów na dole. */
+
+html.motion .track { position: relative; height: var(--track-h, 1400vh); }
+html.motion .stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  perspective: 1700px; perspective-origin: 50% 38%;
+  --top-band: 236px;
+  --bottom-band: 92px;
+  --card-h: min(620px, calc(100svh - var(--top-band) - var(--bottom-band)));
+  --card-w: calc(var(--card-h) * 0.64);
+}
+html.motion .ch, html.motion .ch-cards { display: contents; }
+
+/* ---------- nagłówki rozdziałów: góra, środek ---------- */
+html.motion .ch-copy {
+  position: absolute; left: 50%; top: 84px; z-index: 40; margin: 0;
+  width: min(820px, calc(100vw - 2 * var(--gutter)));
+  display: grid; gap: 12px; justify-items: center; text-align: center;
+  opacity: 0; transform: translate(-50%, calc(var(--dy, 0px) - 12px)); pointer-events: none;
+  transition: opacity 0.4s var(--ease), transform 0.7s var(--ease);
+}
+html.motion .ch-copy.is-on {
+  opacity: 1; transform: translate(-50%, var(--dy, 0px)); pointer-events: auto;
+  transition: opacity 0.6s var(--ease) 0.1s, transform 0.8s var(--ease) 0.1s;
+}
+html.motion .ch-copy .h2 { font-size: 40px; line-height: 44px; max-width: 18em; }
+html.motion .ch-copy .lead { font-size: 16px; line-height: 24px; max-width: 40em; }
+html.motion .ch-copy[data-copy="3"] .proof { display: none; }
+
+/* hero: nagłówek u góry, przycisk i dowody pod pierścieniem */
+html.motion .ch-copy[data-copy="0"] {
+  top: 0; bottom: 0; width: calc(100vw - 2 * var(--gutter));
+  grid-template-rows: auto 1fr auto auto; gap: 0; padding: 84px 0 28px;
+  pointer-events: none;
+}
+html.motion .ch-copy[data-copy="0"] > * { pointer-events: auto; }
+html.motion .ch-copy[data-copy="0"] .h1 { font-size: 56px; line-height: 60px; max-width: 13em; grid-row: 1; }
+html.motion .ch-copy[data-copy="0"] .hero-cta { grid-row: 3; flex-direction: row; align-items: center; gap: 16px; justify-content: center; }
+html.motion .ch-copy[data-copy="0"] .hero-cta .note { text-align: left; max-width: 22em; }
+html.motion .ch-copy[data-copy="0"] .proof { grid-row: 4; justify-content: center; padding-top: 12px; }
+html.motion body:not(.orbit-ready) .ch-copy[data-copy="0"] { opacity: 1; transform: translate(-50%, 0); transition: none; }
+
+/* ---------- karty w pierścieniu ---------- */
+html.motion .stage .card {
+  position: absolute; z-index: 1;
+  left: 50%; top: calc(var(--top-band) + 4px);
+  width: var(--card-w); height: var(--card-h);
+  transform-origin: 50% 50%;
+  transform: translateX(-50%) translate3d(0, 0, -2000px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+html.motion #start .card { transform: translateX(-50%) translateY(-20px) scale(0.86); opacity: 1; }
+.card-fog { position: absolute; inset: 0; z-index: 30; background: #fafafa; opacity: 0; pointer-events: none; border-radius: inherit; }
+
+/* karty pionowe: mniej tekstu na raz, większe liczby */
+html.motion .card--system .media { flex: 1 1 auto; min-height: 120px; }
+html.motion .card--system .sheet { padding: 16px 20px 20px; gap: 8px; }
+html.motion .card--system .pairs > div:first-child { display: none; }
+html.motion .card--system .card-h { font-size: 18px; line-height: 24px; }
+html.motion .card--system .stat-n { font-size: 48px; line-height: 46px; }
+html.motion .card--system .pairs dd { font-size: 13px; line-height: 18px; }
+html.motion .card--statement { padding: 28px; }
+html.motion .statement { font-size: 30px; line-height: 34px; }
+html.motion .stat-row { gap: 20px; }
+html.motion .card--list { padding: 28px; gap: 16px; }
+html.motion .card--list .card-h { font-size: 22px; line-height: 28px; }
+html.motion .ticks li, html.motion .paper-list li { font-size: 15px; line-height: 22px; }
+html.motion .card--quote { padding: 28px; }
+html.motion .card--quote blockquote p { font-size: 20px; line-height: 26px; }
+html.motion .card--quote.is-short blockquote p { font-size: 26px; line-height: 32px; }
+html.motion .card--process { padding: 24px 28px; gap: 8px; }
+html.motion .card--process .card-h { font-size: 22px; line-height: 28px; }
+html.motion .steps li { padding: 8px 0; }
+/* Wstęp procesu zostaje w HTML i w układzie bez ruchu; na karcie pionowej liczą się kroki. */
+html.motion .card--process .card-intro { display: none; }
+html.motion .steps b { font-size: 15px; line-height: 20px; }
+html.motion .steps li span:not(.step-n) { font-size: 13px; line-height: 18px; }
+html.motion .card--path { padding: 24px 28px; gap: 16px; }
+html.motion .card--path .card-h { font-size: 22px; line-height: 28px; }
+html.motion .card--path .pairs dd { font-size: 13px; line-height: 18px; }
+html.motion .card--path .btn { min-height: 44px; padding: 10px 16px; font-size: 15px; }
+
+/* ---------- orbita na podłodze ---------- */
+html.motion .orbit-floor {
+  position: absolute; left: 50%; z-index: 0; color: rgba(184, 115, 51, 0.4);
+  top: calc(var(--top-band) + var(--card-h) - 120px);
+  width: 1600px; height: 140px; transform: translateX(-50%);
+  transition: opacity 0.6s var(--ease);
+}
+html.motion body:not(.past-hero) .orbit-floor { opacity: 0; }
+html.motion .variant-label { right: auto; left: 12px; }
+.orbit-floor svg { width: 100%; height: 100%; overflow: visible; }
+.orbit-dash { stroke-dasharray: 60 940; color: var(--copper); }
+
+/* ---------- tarcza rozdziałów i sterowanie ---------- */
+html.motion .dial, html.motion .orbit-ctrl {
+  transition: opacity 0.5s var(--ease), transform 0.6s var(--ease);
+}
+html.motion body:not(.past-hero) .dial,
+html.motion body:not(.past-hero) .orbit-ctrl { opacity: 0; transform: translateY(12px); pointer-events: none; visibility: hidden; }
+html.motion .dial { position: absolute; left: 50%; bottom: 24px; z-index: 45; transform: translateX(-50%); }
+html.motion body:not(.past-hero) .dial { transform: translate(-50%, 12px); }
+.dial ol { display: flex; gap: 2px; padding: 4px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+.dial a {
+  display: flex; align-items: baseline; gap: 6px; padding: 8px 12px; border-radius: 10px;
+  text-decoration: none; font-size: 13px; line-height: 20px; color: var(--ink-3);
+  transition: color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.dial a:hover { color: var(--ink); }
+.dial .nav-n { font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.dial a[aria-current="step"] { background: var(--ink); color: #fff; }
+.dial a[aria-current="step"] .nav-n { color: var(--patina-l); }
+html.motion .orbit-ctrl {
+  position: absolute; right: var(--gutter); bottom: 28px; z-index: 45;
+  display: flex; align-items: center; gap: 8px;
+}
+.orbit-ctrl button {
+  width: 40px; height: 40px; border-radius: 12px; border: 0; cursor: pointer; display: grid; place-items: center;
+  background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line);
+  transition: background-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.orbit-ctrl button:hover { background: #f1efec; }
+.orbit-ctrl button:active { transform: scale(0.96); }
+.oc-count { font-size: 13px; line-height: 20px; color: var(--ink-2); font-variant-numeric: tabular-nums; min-width: 4.5em; text-align: center; }
+
+/* ---------- telefon ---------- */
+@media (max-width: 899px) {
+  html.motion .stage {
+    --top-band: 196px;
+    --bottom-band: 76px;
+    --card-w: min(calc(100vw - 72px), calc((100svh - var(--top-band) - var(--bottom-band)) * 0.62));
+    --card-h: min(calc(100svh - var(--top-band) - var(--bottom-band)), calc(var(--card-w) / 0.6));
+    perspective: 1000px;
+  }
+  html.motion .ch-copy { top: 76px; gap: 8px; }
+  html.motion .ch-copy .h2 { font-size: 24px; line-height: 30px; }
+  html.motion .ch-copy .lead { font-size: 14px; line-height: 20px; }
+  html.motion .ch-copy[data-copy="0"] { padding: 76px 0 34px; }
+  html.motion .ch-copy[data-copy="0"] .h1 { font-size: 34px; line-height: 38px; }
+  html.motion .ch-copy[data-copy="0"] .hero-cta { flex-direction: column; gap: 8px; }
+  html.motion .ch-copy[data-copy="0"] .hero-cta .note { text-align: center; font-size: 13px; line-height: 18px; }
+  html.motion .ch-copy[data-copy="0"] .proof { font-size: 13px; padding-top: 8px; }
+  html.motion .dial { display: none; }
+  html.motion .orbit-ctrl { right: auto; left: 50%; bottom: 18px; transform: translateX(-50%); }
+  html.motion body:not(.past-hero) .orbit-ctrl { transform: translate(-50%, 12px); }
+  html.motion .card--quote { padding: 22px; }
+  html.motion .card--quote blockquote p { font-size: 17px; line-height: 23px; }
+  html.motion .card--quote.is-short blockquote p { font-size: 22px; line-height: 28px; }
+  html.motion .statement { font-size: 24px; line-height: 28px; }
+  html.motion .stat-row b { font-size: 30px; line-height: 32px; }
+  html.motion .card--statement, html.motion .card--list { padding: 22px; }
+  html.motion .ticks li, html.motion .paper-list li { font-size: 13px; line-height: 19px; }
+  html.motion .card--list .card-h, html.motion .card--process .card-h, html.motion .card--path .card-h { font-size: 18px; line-height: 24px; }
+  html.motion .card--process, html.motion .card--path { padding: 20px; gap: 10px; }
+  html.motion .card-intro { display: none; }
+  html.motion .steps b { font-size: 14px; line-height: 20px; }
+  html.motion .steps li span:not(.step-n) { font-size: 12px; line-height: 16px; }
+  html.motion .card--path .pairs { gap: 6px; }
+  html.motion .card--path .pairs dd { font-size: 12px; line-height: 16px; }
+  html.motion .card--system .stat-n { font-size: 40px; line-height: 40px; }
+  html.motion .card--system .stat-t { font-size: 13px; line-height: 18px; }
+  html.motion .card--system .pairs { display: none; }
+  html.motion .final-body { padding: 18px; gap: 12px; }
+  html.motion .card--final .bzyk { width: 72px; height: auto; }
+  html.motion .bzyk-line { font-size: 13px; line-height: 18px; }
+  html.motion .final-note { font-size: 12px; line-height: 16px; }
+  html.motion .variant-label { left: auto; right: 8px; bottom: 6px; font-size: 11px; }
+  html.motion body.past-hero .variant-label { top: 66px; bottom: auto; }
+  html.motion .ch-copy:not([data-copy="0"]) { top: 92px; }
+}

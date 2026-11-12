@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wariant A, talia kart | LessManual</title>
+<meta name="description" content="Partner technologiczny dla firm 10-100 osób. Budujemy systemy AI etapami, odpowiadamy za efekt spisany przed startem i opiekujemy się nimi po wdrożeniu.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/warianty/_assets/rolka4.jpg" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+<!-- CSS wpisany w stronę (base.css + deck.css): bez blokujących żądań przed pierwszym malowaniem; pliki .css zostają jako źródło. -->
+<style>@font-face {
+font-family: "Inter Fallback";
+src: local("Arial");
+ascent-override: 90.2%;
+descent-override: 22.48%;
+line-gap-override: 0%;
+size-adjust: 107.4%;
+}
+@font-face {
+font-family: "Serif Fallback";
+src: local("Times New Roman");
+size-adjust: 92%;
+}
+:root {
+--bg: #fafafa;
+--surface: #ffffff;
+--ink: #0a0a0a;
+--ink-2: #3f3f46;
+--ink-3: #6b7280;
+--line: #e7e5e4;
+--copper: #b87333;
+--copper-ink: #9a5b22;
+--patina: #00756f;
+--patina-l: #3fd0c2;
+--dark: #0a0a0a;
+--ease: cubic-bezier(0.22, 1, 0.36, 1);
+--sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+--serif: "Instrument Serif", "Serif Fallback", Georgia, serif;
+--gutter: 16px;
+--r-card: 24px;
+--shadow-card: 0 1px 2px rgba(10, 10, 10, 0.06), 0 12px 24px -12px rgba(10, 10, 10, 0.18),
+0 40px 64px -32px rgba(10, 10, 10, 0.28);
+}
+@media (min-width: 900px) {
+:root { --gutter: 48px; }
+}
+@media (min-width: 1280px) {
+:root { --gutter: 64px; }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--bg); }
+body {
+margin: 0;
+background: var(--bg);
+color: var(--ink);
+font: 400 16px/24px var(--sans);
+font-feature-settings: "ss01", "cv11";
+-webkit-font-smoothing: antialiased;
+overflow-x: clip;
+}
+img, video, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+p, h1, h2, h3, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+:focus-visible { outline: 2px solid var(--patina); outline-offset: 3px; border-radius: 6px; }
+.skip {
+position: fixed; left: 16px; top: 12px; z-index: 100;
+background: var(--ink); color: #fff; padding: 8px 12px; border-radius: 8px;
+transform: translateY(-160%); transition: transform 0.3s var(--ease);
+}
+.skip:focus { transform: none; }
+.h1 {
+font-weight: 600; font-size: 36px; line-height: 40px; letter-spacing: -0.035em;
+}
+.h1 em {
+font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em;
+color: var(--copper);
+}
+.h2 { font-weight: 600; font-size: 30px; line-height: 36px; letter-spacing: -0.03em; }
+.lead { color: var(--ink-2); font-size: 16px; line-height: 24px; max-width: 34em; }
+.kicker { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--copper-ink); letter-spacing: 0.02em; }
+.card-h { font-weight: 600; font-size: 20px; line-height: 28px; letter-spacing: -0.02em; }
+.note { font-size: 14px; line-height: 20px; color: var(--ink-3); max-width: 30em; }
+@media (min-width: 900px) {
+.h1 { font-size: 60px; line-height: 60px; }
+.h2 { font-size: 48px; line-height: 48px; }
+.lead { font-size: 18px; line-height: 28px; }
+}
+@media (min-width: 1280px) {
+.h1 { font-size: 72px; line-height: 72px; }
+}
+.btn {
+display: inline-flex; align-items: center; gap: 8px; min-height: 48px;
+padding: 12px 20px; border-radius: 12px; text-decoration: none;
+font-weight: 600; font-size: 16px; line-height: 24px; white-space: nowrap;
+transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.btn svg { transition: transform 0.3s var(--ease); }
+.btn:hover svg { transform: translateX(3px); }
+.btn:active { transform: scale(0.98); }
+.btn--primary { background: var(--ink); color: #fff; }
+.btn--primary:hover { background: #262626; }
+.btn--secondary { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn--secondary:hover { background: var(--ink); color: #fff; }
+.btn--light { background: #fff; color: var(--ink); }
+.btn--light:hover { background: #f1ede8; }
+.topbar {
+position: fixed; inset: 0 0 auto 0; z-index: 50; height: 64px;
+display: flex; align-items: center; justify-content: space-between;
+padding: env(safe-area-inset-top, 0px) var(--gutter) 0;
+pointer-events: none; background: rgba(250, 250, 250, 0.94);
+}
+.topbar > * { pointer-events: auto; }
+.topbar-logo { display: inline-flex; border-radius: 8px; }
+.logo-ink { fill: var(--ink); }
+.topbar-cta {
+font-size: 14px; line-height: 20px; font-weight: 600; text-decoration: none;
+padding: 8px 12px; border-radius: 10px; background: rgba(250, 250, 250, 0.92);
+box-shadow: inset 0 0 0 1px var(--line);
+transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), background-color 0.3s var(--ease);
+}
+.topbar-cta:hover { background: #fff; }
+html.motion .topbar-cta { opacity: 0; transform: translateY(-8px); pointer-events: none; visibility: hidden;
+transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), visibility 0s linear 0.4s; }
+html.motion body.past-hero .topbar-cta { opacity: 1; transform: none; pointer-events: auto; visibility: visible; transition-delay: 0s; }
+.foot { padding: 32px var(--gutter) 72px; color: var(--ink-3); font-size: 14px; line-height: 20px; }
+.foot a { color: var(--ink-2); }
+.variant-label {
+position: fixed; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 60;
+font-size: 12px; line-height: 16px; font-weight: 500; color: var(--ink-2);
+background: rgba(255, 255, 255, 0.94); padding: 4px 8px; border-radius: 6px;
+box-shadow: inset 0 0 0 1px var(--line); pointer-events: none;
+}
+.proof { display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 14px; line-height: 20px; color: var(--ink-2); font-weight: 500; }
+.proof li { font-variant-numeric: tabular-nums; }
+.proof li + li::before { content: "·"; padding: 0 8px; color: var(--ink-3); }
+.hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.card {
+position: relative; background: var(--surface); border-radius: var(--r-card);
+box-shadow: var(--shadow-card); overflow: hidden; isolation: isolate;
+}
+.media { position: relative; background: #1a1714; overflow: hidden; }
+.media-poster, .media-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.media-video { opacity: 0; transition: opacity 0.6s var(--ease); }
+.media.is-playing .media-video { opacity: 1; }
+.media-play {
+position: absolute; left: 16px; bottom: 16px; z-index: 3; display: none; align-items: center; gap: 8px;
+border: 0; cursor: pointer; font: 600 14px/20px var(--sans); color: var(--ink);
+background: #fff; padding: 8px 12px 8px 10px; border-radius: 10px;
+}
+html.rm .media-play { display: inline-flex; }
+html.rm .media.is-playing .media-play span::after { content: ""; }
+.card--reel { background: var(--dark); color: #fff; }
+.card--reel .media { position: absolute; inset: 0; }
+.reel-ui { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.reel-tag {
+position: absolute; left: 16px; top: 16px; font-size: 12px; line-height: 16px; font-weight: 500;
+background: rgba(10, 10, 10, 0.72); color: #fff; padding: 4px 8px; border-radius: 6px;
+}
+.reel-caps { position: absolute; left: 16px; right: 16px; top: 63%; text-align: center; }
+.cap {
+position: absolute; inset: 0 0 auto 0; font-weight: 600; font-size: 28px; line-height: 32px;
+letter-spacing: -0.02em; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45); opacity: 0;
+}
+.cap span { display: inline-block; transform: translateY(12px) scale(0.92); opacity: 0;
+transition: transform 0.45s var(--ease), opacity 0.3s var(--ease), color 0.3s var(--ease); }
+.cap.is-on { opacity: 1; }
+.cap.is-on span.in { transform: none; opacity: 1; }
+.cap span.hot { color: #f2b37a; }
+html.rm .cap:first-child, html.no-js .cap:first-child { opacity: 1; }
+html.rm .cap:first-child span, html.no-js .cap:first-child span { transform: none; opacity: 1; }
+.reel-chip {
+position: absolute; left: 50%; top: 9%; display: flex; align-items: center; gap: 12px;
+background: #fff; color: var(--ink); padding: 10px 14px; border-radius: 14px;
+box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.5);
+transform: translate(-50%, -16px) scale(0.9); opacity: 0;
+transition: transform 0.6s var(--ease), opacity 0.4s var(--ease);
+}
+.reel-chip.is-on { transform: translate(-50%, 0) scale(1); opacity: 1; }
+html.rm .reel-chip, html.no-js .reel-chip { transform: translate(-50%, 0); opacity: 1; }
+.reel-chip b { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 40px; color: var(--copper-ink); font-variant-numeric: tabular-nums; }
+.reel-chip span { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--ink-2); white-space: nowrap; }
+.reel-name {
+position: absolute; left: 16px; bottom: 16px; z-index: 2; font-size: 12px; line-height: 16px;
+font-weight: 500; color: rgba(255, 255, 255, 0.86);
+}
+html.rm .card--reel .reel-name { left: auto; right: 16px; }
+.card--statement { background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 32px; padding: 32px; }
+.statement { font-family: var(--serif); font-size: 32px; line-height: 36px; letter-spacing: -0.01em; }
+.stat-row { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 32px; padding-top: 20px; box-shadow: inset 0 1px 0 var(--line); }
+.stat-row li { display: grid; gap: 2px; }
+.stat-row b { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 40px; color: var(--copper); font-variant-numeric: tabular-nums; }
+.stat-row span { font-size: 13px; line-height: 18px; color: var(--ink-2); font-weight: 500; }
+.card--list { padding: 32px; display: flex; flex-direction: column; gap: 24px; }
+.ticks { display: grid; gap: 12px; }
+.ticks li { position: relative; padding-left: 28px; font-size: 16px; line-height: 24px; color: var(--ink-2); }
+.ticks li::before {
+content: ""; position: absolute; left: 0; top: 7px; width: 14px; height: 8px;
+border-left: 2px solid var(--patina); border-bottom: 2px solid var(--patina); transform: rotate(-45deg);
+}
+.card--paper { background: #fffdf9; }
+.paper-list { counter-reset: p; display: grid; gap: 12px; }
+.paper-list li { counter-increment: p; display: grid; grid-template-columns: 32px 1fr; font-size: 16px; line-height: 24px; color: var(--ink-2); }
+.paper-list li::before { content: counter(p, decimal-leading-zero); font-variant-numeric: tabular-nums; color: var(--copper-ink); font-weight: 600; font-size: 14px; }
+.card-note { font-size: 14px; line-height: 20px; color: var(--ink); padding-top: 16px; box-shadow: inset 0 1px 0 var(--line); margin-top: auto; }
+.card--system { display: flex; flex-direction: column; }
+.card--system .media { flex: 1 1 auto; min-height: 160px; }
+.card--system .media-poster, .card--system .media-video { object-position: 50% 20%; }
+.sheet { position: relative; z-index: 2; background: var(--surface); padding: 20px 24px 24px; display: grid; gap: 12px; }
+.stat { display: grid; gap: 4px; }
+.stat-n { font-family: var(--serif); font-size: 56px; line-height: 52px; color: var(--copper); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.stat-t { font-size: 14px; line-height: 20px; color: var(--ink); font-weight: 500; }
+.pairs { display: grid; gap: 8px; }
+.pairs dt { font-size: 12px; line-height: 16px; font-weight: 600; color: var(--ink-3); }
+.pairs dd { font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.card--quote { padding: 32px; display: flex; }
+.card--quote figure { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.stars { display: flex; gap: 2px; color: var(--copper); }
+.card--quote blockquote p { font-family: var(--serif); font-size: 24px; line-height: 30px; letter-spacing: -0.005em; }
+.card--quote figcaption { margin-top: auto; display: grid; gap: 2px; font-size: 14px; line-height: 20px; }
+.card--quote figcaption span { color: var(--ink-3); }
+.card--process { padding: 28px 32px; display: flex; flex-direction: column; gap: 12px; }
+.card-intro { font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.steps { display: grid; margin-top: 8px; }
+.steps li { display: grid; grid-template-columns: 32px 1fr; gap: 8px; align-items: start; padding: 10px 0; box-shadow: inset 0 1px 0 var(--line); }
+.step-n {
+width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+font-size: 12px; font-weight: 600; background: var(--ink); color: #fff; font-variant-numeric: tabular-nums;
+}
+.steps b { display: block; font-size: 16px; line-height: 24px; font-weight: 600; }
+.steps li span:not(.step-n) { display: block; font-size: 14px; line-height: 20px; color: var(--ink-2); }
+.card--path { padding: 28px 32px; display: grid; gap: 20px; align-content: start; }
+.path-head { display: grid; gap: 12px; justify-items: start; }
+.card--path.is-primary { box-shadow: var(--shadow-card), inset 0 0 0 2px var(--ink); }
+.card--path .btn { white-space: normal; }
+.card--path .pairs > div:last-child dd { color: var(--ink); font-weight: 600; }
+.card--quote.is-short blockquote p { font-size: 28px; line-height: 34px; }
+.card--final { background: var(--dark); color: #fff; display: flex; flex-direction: column; }
+.final-photo { position: relative; flex: 0 0 38%; min-height: 0; overflow: hidden; background: #ece9e4; }
+.final-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.final-photo figcaption {
+position: absolute; left: 12px; bottom: 12px; font-size: 12px; line-height: 16px; font-weight: 500;
+background: rgba(255, 255, 255, 0.92); color: var(--ink); padding: 4px 8px; border-radius: 6px;
+}
+.final-body { flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.bzyk-row { display: flex; align-items: flex-end; gap: 16px; }
+.bzyk { flex: none; }
+.bzyk-rotor { transform-box: fill-box; transform-origin: center; }
+html.motion .bzyk-rotor { animation: rotor 0.18s linear infinite alternate; }
+@keyframes rotor { to { transform: scaleX(0.55); } }
+.bzyk-line {
+position: relative; background: #fff; color: var(--ink); font-size: 14px; line-height: 20px;
+padding: 12px 14px; border-radius: 14px 14px 14px 4px; max-width: 18em;
+}
+.final-cta { display: grid; gap: 12px; justify-items: start; }
+.final-note { font-size: 14px; line-height: 20px; color: rgba(255, 255, 255, 0.72); }
+.ch { padding: 96px var(--gutter) 32px; max-width: 1240px; margin: 0 auto; }
+.ch:first-child { padding-top: 96px; }
+.ch-copy { display: grid; gap: 16px; margin-bottom: 32px; max-width: 760px; }
+.ch-cards { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+html:not(.motion) .card--reel { aspect-ratio: 9 / 16; max-width: 420px; }
+html:not(.motion) .card--system .media { aspect-ratio: 4 / 3; flex: none; }
+html:not(.motion) #start .ch-cards { grid-template-columns: minmax(0, 420px); }
+html:not(.motion) .final-photo { aspect-ratio: 4 / 3; flex: none; }
+html:not(.motion) #rozmowa .ch-cards { grid-template-columns: minmax(0, 560px); }
+html:not(.motion) .index, html:not(.motion) .dial, html:not(.motion) .orbit-ctrl,
+html:not(.motion) .orbit-floor, html:not(.motion) .deck-progress { display: none; }
+@media (min-width: 900px) {
+html:not(.motion) #start { display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center; min-height: 100svh; }
+html:not(.motion) #start .ch-copy { margin: 0; gap: 24px; }
+}
+html.motion .track { position: relative; height: var(--track-h, 1400vh); }
+html.motion .stage {
+position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+perspective: 1500px; perspective-origin: var(--deck-cx) 40%;
+--card-h: min(600px, calc(100svh - 200px));
+--card-w: min(760px, calc(100vw - 480px - 3 * var(--gutter)));
+--deck-cx: calc(100% - var(--gutter) - var(--card-w) / 2);
+--deck-top: calc(50% - var(--card-h) / 2 + 28px);
+}
+html.motion .ch, html.motion .ch-cards { display: contents; }
+html.motion .ch-copy {
+position: absolute; left: var(--gutter); top: 50%; z-index: 20;
+width: min(480px, calc(100vw - var(--card-w) - 3 * var(--gutter)));
+display: grid; gap: 20px; margin: 0;
+opacity: 0; transform: translateY(calc(-50% + 24px)); pointer-events: none;
+transition: opacity 0.45s var(--ease), transform 0.7s var(--ease);
+}
+html.motion .ch-copy.is-on {
+opacity: 1; transform: translateY(-50%); pointer-events: auto;
+transition: opacity 0.6s var(--ease) 0.12s, transform 0.8s var(--ease) 0.12s;
+}
+html.motion .ch-copy[data-copy="0"] { gap: 32px; width: min(600px, calc(var(--deck-cx) - var(--card-w) * 0.42 - var(--gutter) - 24px)); }
+@media (min-width: 1280px) {
+html.motion .ch-copy[data-copy="0"] .h1 { font-size: 64px; line-height: 64px; }
+}
+html.motion .ch-copy[data-copy="0"] .proof { padding-top: 8px; }
+html.motion .ch-copy .proof { font-size: 14px; }
+html.motion .stage .card {
+position: absolute; z-index: 1;
+left: calc(var(--deck-cx) - var(--card-w) / 2); top: var(--deck-top);
+width: var(--card-w); height: var(--card-h);
+transform-origin: 50% 0%;
+transform: translate3d(0, 110vh, 0);
+will-change: transform;
+backface-visibility: hidden;
+}
+html.motion #start .card { transform: none; }
+html.motion body:not(.deck-ready) .ch-copy[data-copy="0"] { opacity: 1; transform: translateY(-50%); pointer-events: auto; transition: none; }
+@media (max-width: 899px) {
+html.motion body:not(.deck-ready) .ch-copy[data-copy="0"] { transform: none; }
+}
+html.motion .stage .card--reel {
+width: calc(var(--card-h) * 0.5625);
+left: calc(var(--deck-cx) - var(--card-h) * 0.28125);
+}
+.card-back {
+position: absolute; inset: 0; z-index: 29; opacity: 0; pointer-events: none; border-radius: inherit;
+background: #f4f1ec;
+box-shadow: inset 0 0 0 10px #f4f1ec, inset 0 0 0 11px rgba(184, 115, 51, 0.35);
+}
+.card-back::after {
+content: ""; position: absolute; left: 50%; top: 50%; width: 44px; height: 34px; margin: -17px 0 0 -22px;
+border-radius: 17px; background: #141414;
+box-shadow: inset 0 0 0 6px #b87333;
+}
+.card-dim {
+position: absolute; inset: 0; z-index: 30; background: #0a0a0a; opacity: 0;
+pointer-events: none; border-radius: inherit;
+}
+@media (min-width: 900px) {
+html.motion .card--system { flex-direction: row; }
+html.motion .card--system .media { flex: 0 0 auto; width: calc(var(--card-h) * 0.5625); min-height: 0; }
+html.motion .card--system .sheet { flex: 1; align-content: center; padding: 32px; gap: 16px; }
+html.motion .card--system .card-h { font-size: 24px; line-height: 32px; }
+html.motion .card--system .stat-n { font-size: 72px; line-height: 64px; }
+html.motion .card--system .stat-t { font-size: 16px; line-height: 24px; }
+html.motion .card--statement { padding: 48px; }
+html.motion .statement { font-size: 48px; line-height: 52px; }
+html.motion .card--list { padding: 48px; justify-content: center; }
+html.motion .card--list .card-h { font-size: 30px; line-height: 36px; }
+html.motion .card--quote { padding: 48px; }
+html.motion .card--quote blockquote p { font-size: 30px; line-height: 38px; }
+html.motion .card--quote figcaption { font-size: 16px; line-height: 24px; }
+html.motion .card--process { padding: 40px 48px; }
+html.motion .card--process .card-h { font-size: 30px; line-height: 36px; }
+html.motion .steps li { grid-template-columns: 32px 232px 1fr; gap: 16px; padding: 14px 0; }
+html.motion .steps li > div { display: contents; }
+html.motion .steps li span:not(.step-n) { font-size: 15px; line-height: 24px; }
+html.motion .card--path { grid-template-columns: 260px 1fr; gap: 40px; padding: 40px 48px; align-content: center; }
+html.motion .card--final { flex-direction: row; }
+html.motion .final-photo { flex: 0 0 40%; }
+html.motion .final-body { padding: 48px; }
+html.motion .statement { max-width: 15em; }
+html.motion .stat-row { gap: 48px; }
+html.motion .stat-row b { font-size: 56px; line-height: 56px; }
+html.motion .stat-row span { font-size: 14px; line-height: 20px; }
+html.motion .card--quote.is-short blockquote p { font-size: 38px; line-height: 44px; }
+html.motion .card--path .card-h { font-size: 30px; line-height: 36px; }
+html.motion .card--path .path-head { gap: 16px; align-content: start; }
+html.motion .card--path .pairs { gap: 16px; }
+html.motion .card--path .pairs dd { font-size: 16px; line-height: 24px; }
+html.motion .card--final { padding: 48px; }
+html.motion .card--final .bzyk { width: 160px; height: auto; }
+html.motion .card--final .bzyk-line { font-size: 16px; line-height: 24px; }
+}
+html.motion .index {
+position: absolute; left: var(--gutter); bottom: 32px; z-index: 25;
+}
+.index ol { display: flex; gap: 4px; }
+.index a {
+display: flex; align-items: baseline; gap: 6px; padding: 6px 10px; border-radius: 8px;
+text-decoration: none; font-size: 13px; line-height: 20px; color: var(--ink-3);
+transition: color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.index a:hover { color: var(--ink); background: rgba(10, 10, 10, 0.04); }
+.index .nav-n { font-variant-numeric: tabular-nums; font-size: 11px; font-weight: 600; }
+.index a[aria-current="step"] { color: var(--ink); }
+.index a[aria-current="step"] .nav-n { color: var(--patina); }
+html.motion .deck-progress {
+position: absolute; left: calc(var(--gutter) + 10px); bottom: 24px; z-index: 25;
+width: 200px; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden;
+}
+.deck-progress span { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; transform: scaleX(0); }
+@media (max-width: 899px) {
+html.motion .stage {
+--card-w: calc(100vw - 2 * var(--gutter));
+--card-h: calc(100svh - 236px);
+--deck-cx: 50%;
+--deck-top: 212px;
+perspective: 1100px; perspective-origin: 50% 30%;
+}
+html.motion .ch-copy {
+top: 76px; left: var(--gutter); right: var(--gutter); width: auto; gap: 8px;
+transform: translateY(12px);
+}
+html.motion .ch-copy.is-on { transform: none; }
+html.motion .ch-copy .h2 { font-size: 24px; line-height: 30px; }
+html.motion .ch-copy .lead { font-size: 14px; line-height: 20px; }
+html.motion .ch-copy[data-copy="0"] { gap: 16px; width: auto; }
+html.motion .ch-copy[data-copy="0"] .proof { padding-top: 0; font-size: 13px; }
+html.motion .ch-copy[data-copy="3"] .proof { display: none; }
+html.motion .stage .card--reel { width: var(--card-w); left: calc(50% - var(--card-w) / 2); }
+html.motion #start .card { transform: translateY(160px); }
+html.motion .index { display: none; }
+html.motion .deck-progress { left: var(--gutter); right: var(--gutter); width: auto; top: 64px; bottom: auto; }
+html.motion .card--system .media { min-height: 120px; }
+html.motion .card--system .sheet { padding: 16px 20px 20px; gap: 8px; }
+html.motion .card--system .card-h { font-size: 18px; line-height: 24px; }
+html.motion .card--system .stat-n { font-size: 44px; line-height: 44px; }
+html.motion .card--system .pairs dd { font-size: 13px; line-height: 18px; }
+html.motion .card--system .pairs > div:first-child { display: none; }
+html.motion .card--system .stat-t { font-size: 14px; line-height: 20px; }
+.variant-label { right: 8px; bottom: 6px; font-size: 11px; }
+html.motion .card--quote { padding: 24px; }
+html.motion .card--quote blockquote p { font-size: 22px; line-height: 28px; }
+html.motion .card--statement, html.motion .card--list { padding: 24px; }
+html.motion .card--list .ticks li, html.motion .card--list .paper-list li { font-size: 15px; line-height: 22px; }
+html.motion .card--process { padding: 24px; gap: 8px; }
+html.motion .card--process .card-h { font-size: 20px; line-height: 26px; }
+html.motion .card--process .card-intro { display: none; }
+html.motion .steps li { padding: 8px 0; }
+html.motion .steps b { font-size: 15px; line-height: 20px; }
+html.motion .steps li span:not(.step-n) { font-size: 13px; line-height: 18px; }
+html.motion .card--path { padding: 24px; gap: 16px; }
+html.motion .card--path .pairs dd { font-size: 13px; line-height: 18px; }
+}</style>
+<script>
+(function(){var d=document.documentElement,q=location.search;
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]ruch=0/.test(q);
+var mem=navigator.deviceMemory,cpu=navigator.hardwareConcurrency;
+var weak=(mem&&mem<3)||(cpu&&cpu<3)||/[?&]slabe=1/.test(q);
+d.classList.remove('no-js');d.classList.add('js',(rm||weak)?'flow':'motion');if(rm)d.classList.add('rm');})();
+</script>
+<script>
+/* Skrypty ładujemy po zdarzeniu load: plakat rolki (LCP) maluje się bez konkurencji o łącze z CDN.
+   Pomiar 12.11: z defer w head symulowany LCP skakał 2,3-4,3 s, bo biblioteki trafiały na ścieżkę krytyczną. */
+(function(){var m=document.documentElement.classList.contains('motion');
+var list=(m?['https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js','https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js']:[]).concat(['common.js','deck.js']);
+function next(){var src=list.shift();if(!src)return;var s=document.createElement('script');s.src=src;s.async=false;
+s.onload=next;s.onerror=function(){if(/gsap/.test(src)){document.documentElement.classList.remove('motion');document.documentElement.classList.add('flow');list=['common.js','deck.js'];}next();};document.head.appendChild(s);}
+if(document.readyState==='complete')next();else addEventListener('load',next,{once:true});})();
+</script>
+</head>
+<body class="v-a">
+<a class="skip" href="#main">Przejdź do treści</a>
+<header class="topbar">
+<a class="topbar-logo" href="#start" aria-label="LessManual.ai, początek strony"><svg viewBox="0 0 235 40" width="164" height="28" role="img" aria-label="LessManual.ai"><g transform="translate(0 3)"><rect x="0" y="0" width="44" height="34" rx="17" fill="#B87333"/><rect x="6" y="7" width="32" height="20" rx="10" fill="#141414"/><rect x="14" y="11.5" width="5" height="11" rx="2.5" fill="#D9965A"/><rect x="25" y="11.5" width="5" height="11" rx="2.5" fill="#D9965A"/></g><path class="logo-ink" d="M57.76 30.55V9.45H61.49V27.31H71.28V30.55Z M79.4 30.89Q77.17 30.89 75.52 29.88Q73.88 28.88 73 27.12Q72.11 25.35 72.11 23.09Q72.11 20.81 73.02 19.04Q73.94 17.27 75.55 16.26Q77.17 15.26 79.26 15.26Q80.88 15.26 82.19 15.82Q83.51 16.39 84.46 17.43Q85.41 18.47 85.92 19.89Q86.43 21.32 86.43 23.03V24.01H73.53V21.54H84.64L83.04 22.21Q83.04 20.93 82.58 20.01Q82.12 19.09 81.29 18.59Q80.47 18.09 79.32 18.09Q78.19 18.09 77.35 18.59Q76.52 19.09 76.06 20.01Q75.61 20.93 75.61 22.21V23.75Q75.61 25.04 76.06 26.02Q76.52 27 77.39 27.53Q78.26 28.07 79.49 28.07Q80.38 28.07 81.07 27.8Q81.77 27.53 82.24 27.05Q82.7 26.57 82.9 25.93H86.24Q85.96 27.39 85 28.51Q84.05 29.63 82.6 30.26Q81.16 30.89 79.4 30.89Z M93.99 30.9Q92.17 30.9 90.73 30.33Q89.28 29.76 88.41 28.64Q87.53 27.53 87.42 25.93H90.94Q91.05 27.02 91.83 27.63Q92.6 28.23 93.93 28.23Q95.22 28.23 95.96 27.72Q96.7 27.21 96.7 26.41Q96.7 25.73 96.16 25.32Q95.61 24.91 94.67 24.72L92.12 24.19Q89.96 23.74 88.86 22.65Q87.76 21.56 87.76 19.87Q87.76 18.5 88.5 17.47Q89.24 16.43 90.59 15.85Q91.95 15.27 93.77 15.27Q95.59 15.27 96.97 15.88Q98.35 16.49 99.13 17.6Q99.92 18.71 99.96 20.25H96.61Q96.59 19.25 95.83 18.6Q95.08 17.95 93.86 17.95Q92.68 17.95 92 18.47Q91.32 18.99 91.32 19.76Q91.32 20.42 91.85 20.84Q92.37 21.26 93.31 21.47L96 22.02Q98.22 22.49 99.27 23.5Q100.33 24.5 100.33 26.15Q100.33 27.6 99.52 28.67Q98.7 29.74 97.27 30.32Q95.84 30.9 93.99 30.9Z M107.9 30.9Q106.09 30.9 104.65 30.33Q103.2 29.76 102.32 28.64Q101.45 27.53 101.33 25.93H104.86Q104.97 27.02 105.74 27.63Q106.51 28.23 107.85 28.23Q109.13 28.23 109.88 27.72Q110.62 27.21 110.62 26.41Q110.62 25.73 110.08 25.32Q109.53 24.91 108.58 24.72L106.03 24.19Q103.88 23.74 102.78 22.65Q101.67 21.56 101.67 19.87Q101.67 18.5 102.42 17.47Q103.16 16.43 104.51 15.85Q105.86 15.27 107.69 15.27Q109.5 15.27 110.88 15.88Q112.26 16.49 113.05 17.6Q113.84 18.71 113.88 20.25H110.52Q110.51 19.25 109.75 18.6Q108.99 17.95 107.78 17.95Q106.6 17.95 105.92 18.47Q105.24 18.99 105.24 19.76Q105.24 20.42 105.76 20.84Q106.29 21.26 107.22 21.47L109.91 22.02Q112.14 22.49 113.19 23.5Q114.25 24.5 114.25 26.15Q114.25 27.6 113.43 28.67Q112.62 29.74 111.19 30.32Q109.76 30.9 107.9 30.9Z M116.13 30.55V9.45H121.51L125.61 20.54Q125.83 21.15 126.1 22.01Q126.38 22.87 126.68 23.82Q126.97 24.77 127.24 25.62Q127.5 26.47 127.65 27.04H126.73Q126.89 26.47 127.14 25.62Q127.4 24.77 127.7 23.82Q127.99 22.87 128.27 22.01Q128.55 21.15 128.74 20.54L132.78 9.45H138.19V30.55H134.51V19.79Q134.51 19.09 134.52 18.18Q134.54 17.27 134.57 16.25Q134.61 15.24 134.63 14.2Q134.65 13.16 134.66 12.21H135.13Q134.79 13.29 134.45 14.39Q134.11 15.48 133.78 16.5Q133.46 17.51 133.18 18.35Q132.91 19.19 132.71 19.79L128.69 30.55H125.63L121.58 19.79Q121.38 19.19 121.09 18.35Q120.8 17.51 120.47 16.5Q120.15 15.48 119.79 14.39Q119.44 13.29 119.09 12.21H119.65Q119.68 13.16 119.7 14.2Q119.72 15.24 119.75 16.25Q119.78 17.27 119.79 18.18Q119.81 19.09 119.81 19.79V30.55Z M145.36 30.79Q143.88 30.79 142.71 30.29Q141.54 29.8 140.87 28.79Q140.2 27.79 140.2 26.3Q140.2 25.03 140.68 24.2Q141.16 23.37 141.98 22.87Q142.8 22.38 143.86 22.12Q144.93 21.85 146.07 21.74Q147.46 21.59 148.27 21.47Q149.09 21.35 149.44 21.11Q149.8 20.88 149.8 20.37V20.25Q149.8 19.6 149.47 19.11Q149.15 18.63 148.53 18.35Q147.91 18.07 147.06 18.07Q146.2 18.07 145.54 18.35Q144.88 18.63 144.5 19.11Q144.12 19.6 144.06 20.24H140.62Q140.72 18.75 141.52 17.64Q142.32 16.53 143.75 15.91Q145.18 15.3 147.13 15.3Q148.59 15.3 149.75 15.65Q150.9 15.99 151.7 16.66Q152.5 17.32 152.92 18.26Q153.34 19.19 153.34 20.35V30.55H149.83V28.44H149.77Q149.41 29.1 148.85 29.64Q148.28 30.17 147.43 30.48Q146.58 30.79 145.36 30.79ZM146.24 28.14Q147.42 28.14 148.21 27.72Q149 27.29 149.41 26.58Q149.81 25.88 149.81 25.01V23.4Q149.64 23.5 149.32 23.6Q148.99 23.7 148.54 23.79Q148.1 23.88 147.58 23.96Q147.06 24.05 146.51 24.13Q145.75 24.23 145.1 24.48Q144.46 24.73 144.07 25.16Q143.68 25.59 143.68 26.27Q143.68 26.85 144 27.28Q144.32 27.7 144.89 27.92Q145.46 28.14 146.24 28.14Z M159.34 22.1V30.55H155.77V15.6H159.28V19.41H158.59Q159.31 17.39 160.62 16.35Q161.93 15.3 163.87 15.3Q165.44 15.3 166.64 15.97Q167.85 16.64 168.53 17.96Q169.21 19.28 169.21 21.2V30.55H165.63V21.77Q165.63 20.13 164.84 19.28Q164.05 18.43 162.61 18.43Q161.67 18.43 160.94 18.81Q160.2 19.19 159.77 20Q159.34 20.81 159.34 22.1Z M176.98 30.85Q175.42 30.85 174.22 30.17Q173.01 29.5 172.33 28.18Q171.65 26.85 171.65 24.94V15.6H175.22V24.38Q175.22 26.02 176.02 26.87Q176.82 27.72 178.24 27.72Q179.19 27.72 179.92 27.33Q180.66 26.95 181.09 26.14Q181.51 25.32 181.51 24.05V15.6H185.09V30.55H181.58V26.74H182.27Q181.55 28.74 180.24 29.79Q178.93 30.85 176.98 30.85Z M192.1 30.79Q190.61 30.79 189.44 30.29Q188.28 29.8 187.6 28.79Q186.93 27.79 186.93 26.3Q186.93 25.03 187.41 24.2Q187.89 23.37 188.71 22.87Q189.54 22.38 190.6 22.12Q191.66 21.85 192.81 21.74Q194.19 21.59 195.01 21.47Q195.82 21.35 196.18 21.11Q196.53 20.88 196.53 20.37V20.25Q196.53 19.6 196.21 19.11Q195.88 18.63 195.26 18.35Q194.65 18.07 193.8 18.07Q192.93 18.07 192.28 18.35Q191.62 18.63 191.24 19.11Q190.85 19.6 190.8 20.24H187.36Q187.45 18.75 188.25 17.64Q189.05 16.53 190.48 15.91Q191.91 15.3 193.87 15.3Q195.33 15.3 196.48 15.65Q197.64 15.99 198.44 16.66Q199.24 17.32 199.65 18.26Q200.07 19.19 200.07 20.35V30.55H196.56V28.44H196.5Q196.15 29.1 195.58 29.64Q195.02 30.17 194.17 30.48Q193.32 30.79 192.1 30.79ZM192.98 28.14Q194.15 28.14 194.95 27.72Q195.74 27.29 196.14 26.58Q196.55 25.88 196.55 25.01V23.4Q196.38 23.5 196.05 23.6Q195.72 23.7 195.28 23.79Q194.83 23.88 194.31 23.96Q193.8 24.05 193.25 24.13Q192.48 24.23 191.84 24.48Q191.19 24.73 190.8 25.16Q190.41 25.59 190.41 26.27Q190.41 26.85 190.73 27.28Q191.05 27.7 191.62 27.92Q192.2 28.14 192.98 28.14Z M206.07 9.45V30.55H202.5V9.45Z"/><path d="M210.36 30.8Q209.45 30.8 208.81 30.16Q208.17 29.52 208.17 28.61Q208.17 27.69 208.81 27.05Q209.45 26.41 210.36 26.41Q211.28 26.41 211.92 27.05Q212.55 27.69 212.55 28.61Q212.55 29.52 211.92 30.16Q211.28 30.8 210.36 30.8Z M219.21 30.79Q217.72 30.79 216.55 30.29Q215.38 29.8 214.71 28.79Q214.04 27.79 214.04 26.3Q214.04 25.03 214.52 24.2Q215 23.37 215.82 22.87Q216.64 22.38 217.71 22.12Q218.77 21.85 219.92 21.74Q221.3 21.59 222.12 21.47Q222.93 21.35 223.29 21.11Q223.64 20.88 223.64 20.37V20.25Q223.64 19.6 223.31 19.11Q222.99 18.63 222.37 18.35Q221.76 18.07 220.91 18.07Q220.04 18.07 219.38 18.35Q218.73 18.63 218.34 19.11Q217.96 19.6 217.9 20.24H214.46Q214.56 18.75 215.36 17.64Q216.16 16.53 217.59 15.91Q219.02 15.3 220.98 15.3Q222.44 15.3 223.59 15.65Q224.74 15.99 225.54 16.66Q226.34 17.32 226.76 18.26Q227.18 19.19 227.18 20.35V30.55H223.67V28.44H223.61Q223.26 29.1 222.69 29.64Q222.12 30.17 221.27 30.48Q220.42 30.79 219.21 30.79ZM220.09 28.14Q221.26 28.14 222.05 27.72Q222.85 27.29 223.25 26.58Q223.65 25.88 223.65 25.01V23.4Q223.48 23.5 223.16 23.6Q222.83 23.7 222.39 23.79Q221.94 23.88 221.42 23.96Q220.91 24.05 220.35 24.13Q219.59 24.23 218.95 24.48Q218.3 24.73 217.91 25.16Q217.52 25.59 217.52 26.27Q217.52 26.85 217.84 27.28Q218.16 27.7 218.73 27.92Q219.31 28.14 220.09 28.14Z M229.61 30.55V15.6H233.18V30.55ZM231.4 13.37Q230.48 13.37 229.87 12.79Q229.26 12.2 229.26 11.33Q229.26 10.47 229.87 9.89Q230.48 9.31 231.38 9.31Q232.3 9.31 232.91 9.89Q233.52 10.47 233.52 11.35Q233.52 12.21 232.91 12.79Q232.3 13.37 231.4 13.37Z" fill="#B87333"/></svg></a>
+<a class="topbar-cta" href="/#formularz">Umów rozmowę</a>
+</header>
+<main id="main">
+<div class="track">
+<div class="stage">
+<nav class="index" aria-label="Rozdziały strony"><ol><li><a href="#start" data-go="0"><span class="nav-n">01</span><span class="nav-t">Rolka</span></a></li><li><a href="#dla-kogo" data-go="1"><span class="nav-n">02</span><span class="nav-t">Dla kogo</span></a></li><li><a href="#systemy" data-go="2"><span class="nav-n">03</span><span class="nav-t">Systemy</span></a></li><li><a href="#opinie" data-go="3"><span class="nav-n">04</span><span class="nav-t">Opinie</span></a></li><li><a href="#oferta" data-go="4"><span class="nav-n">05</span><span class="nav-t">Oferta</span></a></li><li><a href="#rozmowa" data-go="5"><span class="nav-n">06</span><span class="nav-t">Rozmowa</span></a></li></ol></nav><div class="deck-progress" aria-hidden="true"><span></span></div>
+<section id="start" class="ch" data-ch="0" aria-labelledby="h-start"><div class="ch-copy" data-copy="0"><h1 id="h-start" class="h1">Mniej <em>ręcznej</em> pracy, więcej kontroli nad firmą.</h1><div class="hero-cta"><a class="btn btn--primary" href="/#formularz"><span>Umów rozmowę</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="note">Pierwszy krok to 45 minut rozmowy z Bartkiem. Przed nią 10 pytań, około 2 minut.</p></div><ul class="proof" aria-label="Dowody"><li>24+ firm</li><li>31 wdrożeń</li><li>5,0 w Google (6 opinii)</li></ul></div><div class="ch-cards"><article class="card card--reel" aria-label="Rolka: Bartłomiej Chudzik mówi do kamery"><div class="media" data-video><img class="media-poster" src="/warianty/_assets/rolka4.jpg" alt="Bartłomiej Chudzik mówi do kamery, rolka z napisami" width="540" height="960" fetchpriority="high" decoding="async"><video class="media-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"><source src="/warianty/_assets/rolka4.mp4" type="video/mp4"></video><button class="media-play" type="button" aria-label="Odtwórz film: Bartłomiej Chudzik mówi do kamery, rolka z napisami"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg><span>Odtwórz film</span></button></div><div class="reel-ui" aria-hidden="true"><span class="reel-tag">Przykład napisów</span><div class="reel-chip"><b>215</b><span>dokumentów wpisanych<br>0 błędów przetwarzania</span></div><div class="reel-caps"><p class="cap" data-t="0.0"><span>Mniej</span> <span>ręcznej</span> <span>pracy,</span></p><p class="cap" data-t="2.2"><span>więcej</span> <span>kontroli</span> <span>nad</span> <span>firmą.</span></p><p class="cap" data-t="4.6"><span>Efekt</span> <span>zapisujemy</span> <span>liczbą</span></p><p class="cap" data-t="6.6"><span>przed</span> <span>startem.</span></p></div></div><p class="reel-name">Bartłomiej Chudzik, LessManual</p></article></div></section><section id="dla-kogo" class="ch" data-ch="1" aria-labelledby="h-dla-kogo"><div class="ch-copy" data-copy="1"><h2 id="h-dla-kogo" class="h2">Dla kogo budujemy systemy AI</h2></div><div class="ch-cards"><article class="card card--statement"><p class="statement">Systemy AI szyte na miarę firm od 10 do 100 osób. Efekt zapisujemy liczbą przed startem. Jeśli system go nie daje, poprawiamy na nasz koszt.</p><ul class="stat-row" aria-label="Dowody"><li><b>24+</b><span>firm</span></li><li><b>31</b><span>wdrożeń</span></li><li><b>5,0</b><span>w Google (6 opinii)</span></li></ul></article><article class="card card--list"><h3 class="card-h">To dla Ciebie, jeśli:</h3><ul class="ticks"><li>prowadzisz firmę, która ma od 10 do 100 osób, i decydujesz sam albo ze wspólnikiem;</li><li>Twoi ludzie ręcznie przepisują zamówienia, dokumenty albo maile;</li><li>pracujecie na kilku programach, które się ze sobą nie łączą;</li><li>osobiście pilnujesz spraw, które powinny dziać się bez Ciebie;</li><li>chcesz zacząć od prostego etapu, który realnie działa, i potem dokładać kolejne.</li></ul></article><article class="card card--list card--paper"><h3 class="card-h">Co dostajesz na piśmie przed startem systemu</h3><ol class="paper-list"><li>efekt systemu zapisany liczbą i sposób, w jaki go zmierzymy;</li><li>etapy z ceną i terminem każdego etapu;</li><li>podział zadań: co robimy my, a co jest po Twojej stronie;</li><li>czego zakres nie obejmuje;</li><li>płatność: 35% przy zamówieniu, 35% po działającej demonstracji, 30% po odbiorze.</li></ol><p class="card-note">Zakres akceptujemy oboje przed startem. Zmiana po akceptacji to nowy etap z własną ceną, więc cena nie rośnie bez Twojej zgody.</p></article></div></section><section id="systemy" class="ch" data-ch="2" aria-labelledby="h-systemy"><div class="ch-copy" data-copy="2"><h2 id="h-systemy" class="h2">Przykłady systemów, które już pracują</h2><p class="lead">Każda firma pracuje na innych programach, więc każdy system budujemy pod konkretną firmę. Poniżej przykłady z naszych wdrożeń.</p></div><div class="ch-cards"><article class="card card--system"><div class="media" data-video><img class="media-poster" src="/warianty/_assets/rolka2.jpg" alt="Film zastępczy do karty: System, który przepisuje dokumenty z maila do arkusza" width="540" height="960" loading="lazy" decoding="async"><video class="media-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"><source src="/warianty/_assets/rolka2.mp4" type="video/mp4"></video><button class="media-play" type="button" aria-label="Odtwórz film: Film zastępczy do karty: System, który przepisuje dokumenty z maila do arkusza"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg><span>Odtwórz film</span></button></div><div class="sheet"><p class="kicker">Zakład recyklingu</p><h3 class="card-h">System, który przepisuje dokumenty z maila do arkusza</h3><p class="stat"><span class="stat-n">215</span><span class="stat-t">215 dokumentów wpisanych od kwietnia do października 2026, każdy bez błędu przetwarzania.</span></p><dl class="pairs"><div><dt>Problem</dt><dd>Ktoś w zakładzie codziennie przepisuje te same pola z dokumentów przyjęcia do arkusza.</dd></div><div><dt>System</dt><dd>Pracownik wysyła dokument przyjęcia mailem na jeden adres. Bot odczytuje go i wpisuje dane do arkusza właściwego handlowca. Gdy w dokumencie czegoś brakuje, odsyła mail z informacją, co uzupełnić.</dd></div></dl></div></article><article class="card card--system"><div class="media" data-video><img class="media-poster" src="/warianty/_assets/rolka3.jpg" alt="Film zastępczy do karty: System, który codziennie szuka okazji sprzedażowych" width="540" height="960" loading="lazy" decoding="async"><video class="media-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"><source src="/warianty/_assets/rolka3.mp4" type="video/mp4"></video><button class="media-play" type="button" aria-label="Odtwórz film: Film zastępczy do karty: System, który codziennie szuka okazji sprzedażowych"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg><span>Odtwórz film</span></button></div><div class="sheet"><p class="kicker">Firma recyklingowa</p><h3 class="card-h">System, który codziennie szuka okazji sprzedażowych</h3><p class="stat"><span class="stat-n">11 z 13</span><span class="stat-t">W tygodniu od 19 do 26 października handlowcy dostali 62 tematy. W kolejnym tygodniu ocenili 11 z 13 sygnałów od firm jako trafne.</span></p><dl class="pairs"><div><dt>Problem</dt><dd>Przetargi i informacje o zakupach w firmach są publiczne, ale rozproszone po wielu stronach. Handlowcy dowiadują się o nich za późno albo wcale.</dd></div><div><dt>System</dt><dd>Bot codziennie przegląda ogłoszenia przetargowe i wiadomości o firmach z rynku klienta, także z Niemiec i Czech. Trafne sprawy wysyła mailem handlowcom.</dd></div></dl></div></article><article class="card card--system"><div class="media" data-video><img class="media-poster" src="/warianty/_assets/rolka1.jpg" alt="Film zastępczy do karty: Panel: wszystkie boty w jednym miejscu" width="540" height="960" loading="lazy" decoding="async"><video class="media-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"><source src="/warianty/_assets/rolka1.mp4" type="video/mp4"></video><button class="media-play" type="button" aria-label="Odtwórz film: Film zastępczy do karty: Panel: wszystkie boty w jednym miejscu"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg><span>Odtwórz film</span></button></div><div class="sheet"><p class="kicker">Firma recyklingowa</p><h3 class="card-h">Panel: wszystkie boty w jednym miejscu</h3><p class="stat"><span class="stat-n">38</span><span class="stat-t">W pierwszym tygodniu panel pokazał 38 spraw przekazanych handlowcom. Ocenili 24 z nich, a przy 8 trwa już przygotowanie oferty.</span></p><dl class="pairs"><div><dt>Problem</dt><dd>W firmie pracuje kilka botów, każdy wysyła wyniki gdzie indziej, a właściciel nie widzi, co z nich wynika.</dd></div><div><dt>System</dt><dd>Jeden panel dla właściciela. Widać w nim, co zrobił każdy bot i które sprawy trafiły do handlowców. Przy każdym handlowcu widać sprawy, które czekają na jego ocenę.</dd></div></dl></div></article><article class="card card--system"><div class="media" data-video><img class="media-poster" src="/warianty/_assets/rolka2.jpg" alt="Film zastępczy do karty: System, który pisze treści sklepu pod Google" width="540" height="960" loading="lazy" decoding="async"><video class="media-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"><source src="/warianty/_assets/rolka2.mp4" type="video/mp4"></video><button class="media-play" type="button" aria-label="Odtwórz film: Film zastępczy do karty: System, który pisze treści sklepu pod Google"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg><span>Odtwórz film</span></button></div><div class="sheet"><p class="kicker">Sklep z oświetleniem LED</p><h3 class="card-h">System, który pisze treści sklepu pod Google</h3><p class="stat"><span class="stat-n">2 906</span><span class="stat-t">Artykuły opublikowane w 2026 roku dały 2 906 kliknięć z Google. W listopadzie 6 przebudowanych poradników i 14 odświeżonych rankingów jest już online.</span></p><dl class="pairs"><div><dt>Problem</dt><dd>Ruch z Google spada, a na pisanie poradników i rankingów produktów brakuje czasu.</dd></div><div><dt>System</dt><dd>Agent AI przygotowuje poradniki i rankingi produktów na danych sklepu. Właściciel zatwierdza plan, a publikacja idzie według harmonogramu.</dd></div></dl></div></article></div></section><section id="opinie" class="ch" data-ch="3" aria-labelledby="h-opinie"><div class="ch-copy" data-copy="3"><h2 id="h-opinie" class="h2">Co mówią właściciele firm, z którymi pracujemy</h2><p class="lead">U jednego klienta od grudnia 2025 uruchomiliśmy 9 systemów, 7 z nich pracuje (stan na 11.11.2026).</p><ul class="proof" aria-label="Dowody"><li>24+ firm</li><li>31 wdrożeń</li><li>5,0 w Google (6 opinii)</li></ul></div><div class="ch-cards"><article class="card card--quote"><figure><div class="stars" role="img" aria-label="Ocena 5 na 5"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg></div><blockquote><p>Polecam LessManual – Agencję Automatyzacji AI! Zleciliśmy im automatyzację procesów na naszych mediach społecznościowych i efekt przerósł oczekiwania. Wszystko zostało świetnie pospinane: publikacje, powiadomienia, przekazywanie zadań i szybkie reakcje na wiadomości działają praktycznie „same&quot;. Największy plus? To, co wcześniej zajmowało nam długie godziny, teraz trwa dosłownie chwilę.</p></blockquote><figcaption><b>Marcin Pietrasik</b><span>Opinia w Google</span></figcaption></figure></article><article class="card card--quote"><figure><div class="stars" role="img" aria-label="Ocena 5 na 5"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg></div><blockquote><p>Pełen profesjonalizm i konkretne podejście do biznesu – współpraca z Bartkiem to czysta przyjemność. Dzięki wdrożeniom LessManual.ai zaoszczędziliśmy mnóstwo czasu, który wcześniej marnowaliśmy na powtarzalne zadania. Zdecydowanie polecam każdemu, kto chce usprawnić swoją firmę!</p></blockquote><figcaption><b>Paweł Muchewicz</b><span>Opinia w Google</span></figcaption></figure></article><article class="card card--quote"><figure><div class="stars" role="img" aria-label="Ocena 5 na 5"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg></div><blockquote><p>Bartek wykazuje się dużą samodzielnością i dobrą orientacją w automatyzacjach oraz integracjach systemowych. Szybko reaguje na zgłaszane problemy i sprawnie wprowadza zmiany w działających workflow. Współpraca przebiega konkretnie i technicznie na dobrym poziomie.</p></blockquote><figcaption><b>Dawid Kar</b><span>Opinia w Google</span></figcaption></figure></article><article class="card card--quote"><figure><div class="stars" role="img" aria-label="Ocena 5 na 5"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg></div><blockquote><p>Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę&quot; i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.</p></blockquote><figcaption><b>CreativeDanceRumia</b><span>Opinia w Google</span></figcaption></figure></article><article class="card card--quote is-short"><figure><div class="stars" role="img" aria-label="Ocena 5 na 5"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z" fill="currentColor"/></svg></div><blockquote><p>Polecam z całego serca, zleciłem stworzenie strony internetowej a dostałem dużo więcej nowe Logo nową wizję na marketing i dobre pozycjonowanie w Google. Naprawdę bez zastrzeżeń 5/5!</p></blockquote><figcaption><b>Maciej Osiecki</b><span>Opinia w Google</span></figcaption></figure></article></div></section><section id="oferta" class="ch" data-ch="4" aria-labelledby="h-oferta"><div class="ch-copy" data-copy="4"><h2 id="h-oferta" class="h2">Od czego zacząć: trzy drogi do pierwszego systemu</h2><p class="lead">Wybierz drogę, która pasuje do tego, gdzie dziś jesteś. Każda zaczyna się od krótkiego formularza i rozmowy z Bartkiem.</p></div><div class="ch-cards"><article class="card card--process"><h3 class="card-h">Jak wygląda współpraca, krok po kroku</h3><p class="card-intro">Przy każdym kroku widzisz, za co odpowiadamy my, a co należy do Ciebie. Ty podejmujesz decyzje i dajesz dostęp do danych. Techniczną pracę wykonujemy my.</p><ol class="steps"><li><span class="step-n">1</span><div><b>Rozmowa i spisany zakres</b><span>Twoja rola: Rozmowa (45 minut) i kilka przykładowych dokumentów albo maili.</span></div></li><li><span class="step-n">2</span><div><b>Pierwszy etap, który realnie działa</b><span>Twoja rola: Wskazujesz osobę do kontaktu i dajesz dostępy w ustalonym terminie. Raz w tygodniu krótkie spotkanie.</span></div></li><li><span class="step-n">3</span><div><b>Testy na nowych sprawach</b><span>Twoja rola: Twój zespół sprawdza wyniki na prawdziwych sprawach i zgłasza, co poprawić.</span></div></li><li><span class="step-n">4</span><div><b>Odbiór</b><span>Twoja rola: Sprawdzasz system na swoich danych i potwierdzasz odbiór.</span></div></li><li><span class="step-n">5</span><div><b>Opieka i plan na kwartał</b><span>Twoja rola: Jedno spotkanie na kwartał i decyzja o kolejnym etapie.</span></div></li></ol></article><article class="card card--path is-primary"><div class="path-head"><p class="kicker">Droga A</p><h3 class="card-h">Wiem, co mnie najbardziej boli</h3><a class="btn btn--primary" href="/?droga=A#formularz"><span>Umów rozmowę</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><dl class="pairs"><div><dt>Dla kogo</dt><dd>Masz pomysł, listę spraw do zautomatyzowania albo własny plan.</dd></div><div><dt>Jak wygląda</dt><dd>Rozmowa z Bartkiem, 45 minut, o Twoich programach i o tym, co zabiera najwięcej czasu.</dd></div><div><dt>Co dostajesz</dt><dd>Spisany zakres z efektem systemu i ceną każdego etapu.</dd></div><div><dt>Koszt</dt><dd>Rozmowa bez opłat. Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto.</dd></div></dl></article><article class="card card--path"><div class="path-head"><p class="kicker">Droga B</p><h3 class="card-h">Nie wiem, od czego zacząć: Mapa AI firmy</h3><a class="btn btn--secondary" href="/?droga=B#formularz"><span>Umów rozmowę o Mapie</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><dl class="pairs"><div><dt>Dla kogo</dt><dd>Czujesz, że AI może odciążyć firmę, ale nie wiesz, od którego procesu zacząć.</dd></div><div><dt>Jak wygląda</dt><dd>Dłuższa rozmowa z Tobą i 2-3 krótsze, po około 30 minut, z osobami, które znają procesy na co dzień. Pracujemy na Twoich dokumentach i liczbach. Wynik dostajesz w ciągu 5 dni roboczych od ostatniej rozmowy.</dd></div><div><dt>Co dostajesz</dt><dd>Plan systemów na kwartał i na rok, ułożony w kolejności wdrażania. Przy każdym systemie jest efekt i cena każdego etapu.</dd></div><div><dt>Koszt</dt><dd>6 900 zł netto, w całości odliczane od pierwszego wdrożenia.</dd></div></dl></article><article class="card card--path"><div class="path-head"><p class="kicker">Droga C</p><h3 class="card-h">Najpierw chcę zobaczyć, że to działa: szybki pilot</h3><a class="btn btn--secondary" href="/?droga=C#formularz"><span>Umów rozmowę o pilocie</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><dl class="pairs"><div><dt>Dla kogo</dt><dd>Chcesz sprawdzić jeden system na swoich sprawach, zanim zdecydujesz o większym projekcie.</dd></div><div><dt>Jak wygląda</dt><dd>Przez dwa tygodnie budujemy jeden proces na próbce Twoich spraw i uruchamiamy go na naszej infrastrukturze. Przed przekazaniem danych podpisujemy umowę powierzenia przetwarzania (RODO).</dd></div><div><dt>Co dostajesz</dt><dd>Działający system, który oglądasz na swoich sprawach.</dd></div><div><dt>Koszt</dt><dd>Podajemy na rozmowie i w całości odliczamy od wdrożenia tego systemu.</dd></div></dl></article></div></section><section id="rozmowa" class="ch" data-ch="5" aria-labelledby="h-rozmowa"><div class="ch-copy" data-copy="5"><h2 id="h-rozmowa" class="h2">Umów rozmowę o systemie dla Twojej firmy</h2><p class="lead">Formularz ma 10 pytań i zajmuje około 2 minut. Prowadzi przez niego Bzyk. Na końcu wybierasz termin rozmowy z Bartkiem.</p></div><div class="ch-cards"><article class="card card--final"><figure class="final-photo"><img src="bartek-640.jpg" alt="Bartłomiej Chudzik" width="640" height="960" loading="lazy" decoding="async"><figcaption>Bartłomiej Chudzik</figcaption></figure><div class="final-body"><div class="bzyk-row"><svg class="bzyk" viewBox="0 0 240 182" width="112" height="85" aria-hidden="true" focusable="false"><defs><linearGradient id="bzyk-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDB27A"/><stop offset=".5" stop-color="#B87333"/><stop offset="1" stop-color="#8B4513"/></linearGradient></defs><rect x="46" y="34" width="10" height="56" rx="5" fill="#8B4513"/><rect x="184" y="34" width="10" height="56" rx="5" fill="#8B4513"/><rect x="46" y="80" width="148" height="12" rx="6" fill="#8B4513"/><ellipse class="bzyk-rotor" cx="51" cy="32" rx="42" ry="7" fill="#6E3510" opacity=".85"/><ellipse class="bzyk-rotor" cx="189" cy="32" rx="42" ry="7" fill="#6E3510" opacity=".85"/><circle cx="51" cy="32" r="7" fill="#E09A55"/><circle cx="189" cy="32" r="7" fill="#E09A55"/><rect x="92" y="150" width="12" height="24" rx="6" fill="#8B4513"/><rect x="136" y="150" width="12" height="24" rx="6" fill="#8B4513"/><ellipse cx="98" cy="176" rx="11" ry="6" fill="#3A1C08"/><ellipse cx="142" cy="176" rx="11" ry="6" fill="#3A1C08"/><rect x="62" y="66" width="116" height="92" rx="46" fill="url(#bzyk-g)"/><path d="M84 76 Q120 66 156 76" stroke="#F8D2AA" stroke-width="5" fill="none" stroke-linecap="round" opacity=".75"/><rect x="76" y="86" width="88" height="52" rx="26" fill="#141414"/><g class="bzyk-eyes" fill="#3FD0C2"><rect x="94" y="98" width="16" height="24" rx="8"/><rect x="130" y="98" width="16" height="24" rx="8"/></g><path d="M112 128 Q120 133 128 128" stroke="#E09A55" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg><p class="bzyk-line">Poprowadzę Cię przez formularz i wytłumaczę, o co pytamy.</p></div><div class="final-cta"><a class="btn btn--light" href="/#formularz"><span>Umów rozmowę</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="final-note">Pierwszy krok to 45 minut rozmowy z Bartkiem. Przed nią 10 pytań, około 2 minut.</p><p class="final-note">Przyjmujemy maksymalnie 4 nowe firmy miesięcznie.</p></div></div></article></div></section>
+</div>
+</div>
+</main>
+<footer class="foot">
+<p>LessManual.ai · <span>kontakt@lessmanual.ai</span> · <a href="/legal/polityka-prywatnosci">Polityka prywatności</a></p>
+</footer>
+<p class="variant-label">Wariant A, podgląd, filmy zastępcze</p>
+</body>
+</html>
