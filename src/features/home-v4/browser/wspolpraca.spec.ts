@@ -6,6 +6,13 @@ const KROK = '[data-qa="krok-osi"]';
 const KROK_FORM = '[data-qa="krok-formularza"]';
 
 async function doOsi(page: Page) {
+  // Decyzja o cookies z góry: baner zgody nie zasłania przycisków pod obciążeniem całego zestawu.
+  await page.addInitScript(() => {
+    window.localStorage.setItem(
+      "cookie-consent",
+      JSON.stringify({ wersja: "2026-11-11", czas: new Date().toISOString(), analityczne: false, kalendarz: false }),
+    );
+  });
   await page.goto("/");
   // Klik i obserwatory działają dopiero po hydratacji; data-gotowe pojawia się po niej.
   await expect(page.locator(`${SEKCJA} [data-qa="os-krokow"][data-gotowe="true"]`)).toBeAttached();
@@ -179,9 +186,11 @@ for (const vp of [
         await expect(page.locator(`${KROK_FORM}[data-krok="rola"]`)).toBeVisible({ timeout: 1000 });
       }).toPass();
       for (const krok of ["rola", "wielkosc", "decyzja", "bol", "programy"]) {
-        await expect(page.locator(`${KROK_FORM}[data-krok="${krok}"]`)).toBeVisible();
-        await page.locator(`${KROK_FORM} label`).first().click();
-        await page.getByRole("button", { name: /Dalej/ }).click();
+        // W obrębie bieżącego kroku: poprzedni znika dopiero po animacji i nie może przejąć kliknięcia.
+        const biezacy = page.locator(`${KROK_FORM}[data-krok="${krok}"]`);
+        await expect(biezacy).toBeVisible();
+        await biezacy.locator("label").first().click();
+        await biezacy.getByRole("button", { name: /Dalej/ }).click();
       }
       await expect(page.locator(`${KROK_FORM}[data-krok="etap"]`)).toBeVisible();
       await expect(page.getByLabel("Nie wiem, od czego zacząć")).toBeChecked();
