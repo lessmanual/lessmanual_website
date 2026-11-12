@@ -1,4 +1,3 @@
-import { Bzyk } from "@/components/site/Bzyk";
 import { Check } from "@/components/site/Icons";
 import { HERO_SCENE } from "@/content/site";
 import { ScenePauseButton } from "./ScenePauseButton";
@@ -8,6 +7,7 @@ import styles from "./HeroScene.module.css";
 // Cały ruch w CSS (transform i opacity, pętla 5,5 s), bez JS poza przyciskiem pauzy.
 // Stan końcowy (215, wszystko „wpisano”) jest pierwszą klatką i stanem bez ruchu,
 // więc czytnik ekranu, Google i prefers-reduced-motion widzą ten sam przekaz.
+// Bez Bzyka w scenie (uwaga Bartka 12.11): w pierwszym ekranie jest jeden Bzyk, przy przycisku.
 export function HeroScene() {
   const counters = Array.from(
     { length: HERO_SCENE.counterTo - HERO_SCENE.counterFrom + 1 },
@@ -25,10 +25,6 @@ export function HeroScene() {
             </li>
           ))}
         </ul>
-        <div className={styles.bzyk} aria-hidden="true">
-          <Bzyk width={92} mood="happy" className={styles.bzykHappy} />
-          <Bzyk width={92} mood="neutral" className={styles.bzykNeutral} />
-        </div>
       </div>
       <div className={styles.sheet}>
         <p className={styles.sheetTitle}>{HERO_SCENE.title}</p>

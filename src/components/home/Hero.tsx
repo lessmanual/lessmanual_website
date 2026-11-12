@@ -5,8 +5,8 @@ import { HeroScene } from "./HeroScene";
 import styles from "./Hero.module.css";
 
 // Pierwszy ekran: H1 i opis są w HTML z serwera i widoczne od pierwszej klatki (element LCP).
-// Na desktopie Bzyk przy przycisku przylatuje ze sceny na końcu pierwszej pętli (5,5 s)
-// i mówi jedno zdanie; na telefonie stoi przy przycisku od razu (ruch oszczędnie).
+// Jeden Bzyk w pierwszym ekranie (uwaga Bartka 12.11): stoi przy przycisku od pierwszej klatki
+// i mówi jedno zdanie, bo prowadzi do formularza; ze sceny obok został usunięty.
 // Nagłówek łamany ręcznie (lista anty-slop, pkt 15), tak jak w projekcie v3.
 export function Hero() {
   return (

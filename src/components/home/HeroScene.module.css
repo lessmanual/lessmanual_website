@@ -1,5 +1,5 @@
 /* Scena hero. Pętla 5,5 s; klatki 0-4% to powrót do stanu początkowego (211, „czeka”),
-   67-100% to stan końcowy (215, wszystko „wpisano”, Bzyk radosny).
+   67-100% to stan końcowy (215, wszystko „wpisano”).
    Stan bez animacji = stan końcowy, więc reduced motion, druk i Google widzą wynik.
    Animujemy tylko transform i opacity. */
 
@@ -102,32 +102,11 @@
   box-shadow: inset 0 0 0 1.5px var(--ink-3);
 }
 
-/* Mobile: dokumenty u góry w dwóch rzędach, Bzyk pod nimi (projekt v3, klatki mobile). */
+/* Mobile: dokumenty u góry w dwóch rzędach (projekt v3, klatki mobile). */
 .doc[data-i="0"] { left: 10px; top: 14px; --r: -3deg; --dx: 96px; --dy: 132px; }
 .doc[data-i="1"] { right: 10px; top: 18px; --r: 2deg; --dx: -70px; --dy: 128px; }
 .doc[data-i="2"] { left: 18px; top: 66px; --r: 2deg; --dx: 88px; --dy: 80px; }
 .doc[data-i="3"] { right: 14px; top: 72px; --r: -2deg; --dx: -66px; --dy: 74px; }
-
-.bzyk {
-  position: absolute;
-  left: 50%;
-  bottom: 12px;
-  width: 92px;
-  height: 70px;
-  margin-left: -46px;
-}
-
-.bzyk :global(.bzyk) {
-  position: absolute;
-  inset: 0;
-  animation-duration: var(--cycle);
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-}
-
-.bzykNeutral {
-  opacity: 0;
-}
 
 .sheet {
   background: var(--surface);
@@ -240,13 +219,8 @@
   .doc,
   .counter > span,
   .waiting,
-  .done,
-  .bzyk :global(.bzyk) {
+  .done {
     animation-delay: 0.6s;
-  }
-
-  .bzyk {
-    animation: bzykBob 1.8s ease-in-out infinite;
   }
 
   .doc[data-i="0"] { animation-name: doc0; }
@@ -266,16 +240,13 @@
   .counter > span[data-i="2"] { animation-name: count2; }
   .counter > span[data-i="3"] { animation-name: count3; }
   .counter > span[data-i="4"] { animation-name: count4; }
-  .bzykHappy { animation-name: bzykHappy; }
-  .bzykNeutral { animation-name: bzykNeutral; }
 }
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
   .doc,
   .counter > span,
   .waiting,
-  .done,
-  .bzyk :global(.bzyk) {
+  .done {
     animation-iteration-count: infinite;
   }
 }
@@ -286,9 +257,8 @@
   }
 }
 
-/* Pauza działa na wszystko w scenie, także na zagnieżdżone SVG Bzyka. */
-.scene[data-paused="true"] *,
-.scene[data-paused="true"] .bzyk {
+/* Pauza działa na wszystko w scenie. */
+.scene[data-paused="true"] * {
   animation-play-state: paused !important;
 }
 
@@ -312,32 +282,6 @@
   .doc[data-i="1"] { left: 30px; top: 134px; --r: 3deg; --dx: 106px; --dy: 50px; }
   .doc[data-i="2"] { left: 12px; top: 196px; --r: -2deg; --dx: 124px; --dy: -12px; }
   .doc[data-i="3"] { left: 36px; top: 258px; --r: 4deg; --dx: 100px; --dy: -74px; }
-
-  .bzyk {
-    left: auto;
-    right: 18px;
-    bottom: auto;
-    top: 172px;
-    margin-left: 0;
-  }
-}
-
-@keyframes bzykBob {
-  0%,
-  100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-@keyframes bzykHappy {
-  0%, 3.9% { opacity: 1; }
-  4%, 66.9% { opacity: 0; }
-  67%, 100% { opacity: 1; }
-}
-
-@keyframes bzykNeutral {
-  0%, 3.9% { opacity: 0; }
-  4%, 66.9% { opacity: 1; }
-  67%, 100% { opacity: 0; }
 }
 
 @keyframes doc0 {

@@ -26,8 +26,11 @@
       offset-path: path("M 36 0 C 6 90, 66 150, 36 240 S 6 390, 36 480 S 60 560, 36 590");
       offset-rotate: 0deg;
       offset-anchor: 50% 50%;
-      animation: guideFlight linear both;
-      animation-timeline: scroll(root block);
+      /* Pojawia się dopiero po przewinięciu pierwszego ekranu (uwaga Bartka 12.11): w pierwszym
+         ekranie jest jeden Bzyk, ten przy przycisku „Umów rozmowę”. */
+      animation: guideFlight linear both, guideAppear linear both;
+      animation-timeline: scroll(root block), scroll(root block);
+      animation-range: normal, 60vh 100vh;
     }
   }
 }
@@ -61,6 +64,17 @@
   }
   to {
     offset-distance: 100%;
+  }
+}
+
+@keyframes guideAppear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
