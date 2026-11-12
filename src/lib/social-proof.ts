@@ -7,7 +7,7 @@ export const SOCIAL_PROOF = {
   companiesEngaged: 20,         // firm B2B z którymi współpracowaliśmy
   implementationsDelivered: 24, // dostarczonych projektów
   systemsLive: 24,              // obecnie w produkcji
-  googleReviews: 4,             // 11.11 publicznie 4 opinie (stan Map Google), schema musi zgadzać się z tym, co widzi użytkownik
+  googleReviews: 6,             // decyzja Bartka 11.11 i 12.11: 6 opinii (Search Console); widok Map bez logowania pokazuje 4
   googleRating: 5.0,            // średnia ocena
   maxProjectsMonthly: 5,        // kapacytet agencji (zmienione 2026-04-22: 3 -> 5, global)
 } as const;

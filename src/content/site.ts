@@ -33,11 +33,11 @@ export function formHref(path: "A" | "B" | "C"): string {
 
 export type GoogleRating = { rating: string; ratingValue: number; reviews: number; readOn: string };
 
-// 11.11 publicznie 4 opinie (stan Map Google), schema musi zgadzać się z tym, co widzi użytkownik.
-const GOOGLE_RATING: GoogleRating | null = { rating: "5,0", ratingValue: 5, reviews: 4, readOn: "2026-11-11" };
+// decyzja Bartka 11.11 i 12.11: 6 opinii (Search Console); widok Map bez logowania pokazuje 4.
+const GOOGLE_RATING: GoogleRating | null = { rating: "5,0", ratingValue: 5, reviews: 6, readOn: "2026-11-12" };
 
 export const PROOF = {
-  // Pasek dowodów, decyzja Bartka 11.11: „24+ firm · 31 wdrożeń · 5,0 w Google”; liczba opinii z Map Google (4).
+  // Pasek dowodów, decyzja Bartka 11.11: „24+ firm · 31 wdrożeń · 5,0 w Google”; liczba opinii 6 (Search Console, decyzja Bartka 12.11).
   // Jedno miejsce na liczby; hero, OG i dane strukturalne czytają stąd.
   companies: "24+",
   implementations: 31,

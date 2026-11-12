@@ -14,10 +14,10 @@ describe("opinieLabel", () => {
   });
 });
 
-// 11.11 publicznie 4 opinie (stan Map Google); dane dla Google muszą zgadzać się z wizytówką.
+// decyzja Bartka 11.11 i 12.11: 6 opinii (Search Console); widok Map bez logowania pokazuje 4.
 describe("ocena Google", () => {
-  it("ma 4 opinie i 5,0, jak wizytówka w Mapach Google 11.11", () => {
-    expect(PROOF.google?.reviews).toBe(4);
+  it("ma 6 opinii i 5,0 (decyzja Bartka 12.11, Search Console)", () => {
+    expect(PROOF.google?.reviews).toBe(6);
     expect(PROOF.google?.ratingValue).toBe(5);
   });
 });
