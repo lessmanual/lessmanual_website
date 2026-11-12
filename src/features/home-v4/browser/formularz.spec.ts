@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { EKRAN_PROBA_NIEUDANA, KONTAKT, PYTANIA, START, WERSJA_FORMULARZA } from "../../../content/formularz";
+import { DROGI, EKRAN_PROBA_NIEUDANA, KALENDARZ_ZGODA, KONTAKT, PYTANIA, START, WERSJA_FORMULARZA } from "../../../content/formularz";
 import { HOME_V4 } from "../../../content/home-v4";
 
 const KROK = '[data-qa="krok-formularza"]';
@@ -53,23 +53,23 @@ for (const vp of [
       await expect(page.locator("#formularz")).not.toContainText("Dane i kod są Twoje");
     });
 
-    test("odpowiedź „Próbowaliśmy, ale nie wyszło” daje ekran pilota z własnym tekstem i żądanie z nową wersją", async ({
-      page,
-    }) => {
+    // Wspólny przebieg: 10 pytań z wybraną odpowiedzią o etapie, kontakt testowy, odpowiedź serwera podstawiona.
+    async function przejdzDoWyniku(page: Page, etap: string, trasa: "A" | "C") {
       const wyslane: unknown[] = [];
       // Zapisu do CRM nie ma: żądanie przechwytujemy i zwracamy odpowiedź jak z serwera.
       await page.route("**/api/formularz", async (route) => {
         wyslane.push(route.request().postDataJSON());
-        await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true, route: "C" }) });
+        await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true, route: trasa }) });
       });
+      // Kalendarz Cal.com nie ładuje się naprawdę; sprawdzamy tylko adres ramki.
+      await page.route("https://cal.com/**", (route) => route.fulfill({ status: 200, contentType: "text/html", body: "" }));
       await przejdzDoPierwszegoPytania(page);
-
       for (const pytanie of PYTANIA) {
         await expect(page.locator(`${KROK}[data-krok="${pytanie.id}"]`)).toBeVisible();
-        await page.locator(`${KROK} label`, { hasText: new RegExp(`^\\s*${WYBORY[pytanie.id]}\\s*$`) }).first().click();
+        const wybor = pytanie.id === "etap" ? etap : WYBORY[pytanie.id];
+        await page.locator(`${KROK} label`, { hasText: new RegExp(`^\\s*${wybor}\\s*$`) }).first().click();
         await page.getByRole("button", { name: /Dalej/ }).click();
       }
-
       await expect(page.locator(`${KROK}[data-krok="kontakt"]`)).toBeVisible();
       await page.getByLabel(KONTAKT.pola.imie).fill("Test Testowy");
       await page.getByLabel(KONTAKT.pola.firma).fill("Testowa Firma");
@@ -77,9 +77,17 @@ for (const vp of [
       await page.getByLabel(KONTAKT.pola.email).fill("test@testowa-firma.example");
       await page.getByLabel(KONTAKT.zgoda).check();
       await page.getByRole("button", { name: new RegExp(KONTAKT.przycisk) }).click();
+      return wyslane;
+    }
 
+    test("odpowiedź „Próbowaliśmy, ale nie wyszło” daje ekran pilota z własnym tekstem, kalendarzem 30 minut i nową wersją", async ({
+      page,
+    }) => {
+      const wyslane = await przejdzDoWyniku(page, "Próbowaliśmy, ale nie wyszło", "C");
       await expect(page.locator(KROK)).toContainText(EKRAN_PROBA_NIEUDANA.tekst);
       await expect(page.locator(DYMEK)).toContainText(EKRAN_PROBA_NIEUDANA.bzyk);
+      await page.getByRole("button", { name: new RegExp(KALENDARZ_ZGODA.przycisk) }).click();
+      await expect(page.locator(`${KROK} iframe`)).toHaveAttribute("src", /\/pilot-30min\?/);
 
       expect(wyslane).toHaveLength(1);
       const tresc = wyslane[0];
@@ -88,6 +96,16 @@ for (const vp of [
       expect(tresc.wersja).toBe("2026-11-12-proba-nieudana");
       expect(tresc.wersja).toBe(WERSJA_FORMULARZA);
       expect(tresc.odpowiedzi.etap.ids).toEqual(["proba_nieudana"]);
+    });
+
+    // Kontrola negatywna: sąsiednia odpowiedź nie może dostać ekranu pilota po nieudanej próbie.
+    test("„Już coś wdrożyliśmy i chcemy iść dalej” zostaje przy ekranie drogi A i kalendarzu 45 minut", async ({ page }) => {
+      await przejdzDoWyniku(page, "Już coś wdrożyliśmy i chcemy iść dalej", "A");
+      await expect(page.locator(KROK)).toContainText(DROGI.A.tekst);
+      await expect(page.locator(KROK)).not.toContainText(EKRAN_PROBA_NIEUDANA.tekst);
+      await expect(page.locator(DYMEK)).toContainText(DROGI.A.bzyk);
+      await page.getByRole("button", { name: new RegExp(KALENDARZ_ZGODA.przycisk) }).click();
+      await expect(page.locator(`${KROK} iframe`)).toHaveAttribute("src", /\/45min\?/);
     });
   });
 }
