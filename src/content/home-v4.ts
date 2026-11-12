@@ -619,8 +619,21 @@ const STOPKA = {
     { label: NAZWY.zamowienia, dzial: "zamowienia" },
     { label: NAZWY.logistyka, dzial: "logistyka" },
   ] as const satisfies readonly { label: string; dzial: DzialId }[],
-  wspolpraca: ["Mapa AI firmy", "Szybki pilot", "Pytania", "Kim jesteśmy", "Blog"],
-  kontakt: ["Umów rozmowę", "kontakt@lessmanual.ai", "LinkedIn", "Wizytówka w Google"],
+  // Etykieta i cel w jednym obiekcie, żeby liczba linków nie rozjechała się z liczbą etykiet.
+  wspolpraca: [
+    { label: "Mapa AI firmy", href: "/#wejscie-mapa" },
+    { label: "Szybki pilot", href: "/#wejscie-pilot" },
+    { label: "Pytania", href: "/#pytania" },
+    { label: "Kim jesteśmy", href: "/o-nas" },
+    { label: "Blog", href: "/blog" },
+  ],
+  // Adresy kontaktu żyją w LINKS (site.ts importuje ten plik, więc tu tylko klucz); SiteFooter je rozwiązuje.
+  kontakt: [
+    { label: "Umów rozmowę", cel: "formularz" },
+    { label: "kontakt@lessmanual.ai", cel: "email" },
+    { label: "LinkedIn", cel: "linkedin" },
+    { label: "Wizytówka w Google", cel: "google" },
+  ] as const satisfies readonly { label: string; cel: "formularz" | "email" | "linkedin" | "google" }[],
   dane: "© 2026 LessManual.ai · LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909",
   prawne: ["Polityka prywatności", "Polityka cookies", "Regulamin", "Ustawienia cookies"],
   znakiTowarowe: "Microsoft, Azure i AWS są znakami towarowymi ich właścicieli.",

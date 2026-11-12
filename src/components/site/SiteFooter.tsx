@@ -5,18 +5,25 @@ import { HOME_V4 } from "@/content/home-v4";
 import { LINKS } from "@/content/site";
 import styles from "./SiteFooter.module.css";
 
-// Linki Współpracy w kolejności tekstów v4; kotwice `/#...` działają też z /blog i podstron prawnych.
-const HREFY_WSPOLPRACY = ["/#wejscie-mapa", "/#wejscie-pilot", "/#pytania", "/o-nas", "/blog"] as const;
+type CelKontaktu = (typeof HOME_V4.stopka.kontakt)[number]["cel"];
+
+// Adres i rodzaj linku dla klucza z tekstów v4; kotwice `/#...` działają też z /blog i podstron prawnych.
+function celKontaktu(cel: CelKontaktu): { href: string; zewnetrzny: boolean } {
+  switch (cel) {
+    case "formularz":
+      return { href: LINKS.form, zewnetrzny: false };
+    case "email":
+      return { href: `mailto:${LINKS.email}`, zewnetrzny: false };
+    case "linkedin":
+      return { href: LINKS.linkedinBartek, zewnetrzny: true };
+    case "google":
+      return { href: LINKS.googleProfile, zewnetrzny: true };
+  }
+}
 
 // Ciemna stopka jako jedyny ciemny pas (brief marki: „ciemna może być co najwyżej stopka”). Wspólna dla wszystkich stron.
 export function SiteFooter() {
   const s = HOME_V4.stopka;
-  const kontakt = [
-    { href: LINKS.form, zewnetrzny: false },
-    { href: `mailto:${LINKS.email}`, zewnetrzny: false },
-    { href: LINKS.linkedinBartek, zewnetrzny: true },
-    { href: LINKS.googleProfile, zewnetrzny: true },
-  ] as const;
   return (
     <footer className={styles.footer}>
       <div className={`lm-container ${styles.grid}`}>
@@ -39,9 +46,9 @@ export function SiteFooter() {
         <div>
           <h2 className={styles.heading}>{s.naglowki.wspolpraca}</h2>
           <ul className={styles.list}>
-            {s.wspolpraca.map((etykieta, i) => (
-              <li key={etykieta}>
-                <Link href={HREFY_WSPOLPRACY[i]}>{etykieta}</Link>
+            {s.wspolpraca.map((pozycja) => (
+              <li key={pozycja.label}>
+                <Link href={pozycja.href}>{pozycja.label}</Link>
               </li>
             ))}
           </ul>
@@ -49,17 +56,20 @@ export function SiteFooter() {
         <div>
           <h2 className={styles.heading}>{s.naglowki.kontakt}</h2>
           <ul className={styles.list}>
-            {s.kontakt.map((etykieta, i) => (
-              <li key={etykieta}>
-                {kontakt[i].zewnetrzny ? (
-                  <a href={kontakt[i].href} rel="noopener" target="_blank">
-                    {etykieta}
-                  </a>
-                ) : (
-                  <a href={kontakt[i].href}>{etykieta}</a>
-                )}
-              </li>
-            ))}
+            {s.kontakt.map((pozycja) => {
+              const { href, zewnetrzny } = celKontaktu(pozycja.cel);
+              return (
+                <li key={pozycja.label}>
+                  {zewnetrzny ? (
+                    <a href={href} rel="noopener" target="_blank">
+                      {pozycja.label}
+                    </a>
+                  ) : (
+                    <a href={href}>{pozycja.label}</a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

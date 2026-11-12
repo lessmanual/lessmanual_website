@@ -46,6 +46,24 @@ for (const vp of [
       expect(zaladowania).toBe(1);
     });
 
+    test("ten sam link działu działa drugi raz po zmianie działu zakładką", async ({ page }) => {
+      await zDecyzjaOCookies(page);
+      await page.goto("/");
+      await expect(page.locator('#dzialy-zakladki[data-gotowe="true"]')).toBeAttached();
+      const link = page.locator(STOPKA).getByRole("link", { name: logistyka?.label ?? "brak" });
+      const zakladka = (dzial: string) => page.locator(`[data-qa="zakladka-dzialu"][data-dzial="${dzial}"]`);
+      await link.click();
+      await expect(zakladka("logistyka")).toHaveAttribute("aria-selected", "true");
+      // Hash zostaje #dzial-logistyka, więc kolejny klik nie wywoła hashchange: obsługuje go klik.
+      await zakladka("marketing").evaluate((el) => {
+        if (el instanceof HTMLElement) el.click();
+      });
+      await expect(zakladka("marketing")).toHaveAttribute("aria-selected", "true");
+      await link.click();
+      await expect(zakladka("logistyka")).toHaveAttribute("aria-selected", "true");
+      await expect(page).toHaveURL(/\/#dzial-logistyka$/);
+    });
+
     test("z /blog link działu otwiera / z tym działem", async ({ page }) => {
       await zDecyzjaOCookies(page);
       await page.goto("/blog");
@@ -71,11 +89,11 @@ for (const vp of [
       }
       const wsp = ["/#wejscie-mapa", "/#wejscie-pilot", "/#pytania", "/o-nas", "/blog"];
       for (const [i, href] of wsp.entries()) {
-        await expect(stopka.getByRole("link", { name: s.wspolpraca[i], exact: true })).toHaveAttribute("href", href);
+        await expect(stopka.getByRole("link", { name: s.wspolpraca[i].label, exact: true })).toHaveAttribute("href", href);
       }
       const kontakt = ["/#formularz", `mailto:${LINKS.email}`, LINKS.linkedinBartek, LINKS.googleProfile];
       for (const [i, href] of kontakt.entries()) {
-        const link = stopka.getByRole("link", { name: s.kontakt[i], exact: true });
+        const link = stopka.getByRole("link", { name: s.kontakt[i].label, exact: true });
         await expect(link).toHaveAttribute("href", href);
         if (href.startsWith("https://")) {
           await expect(link).toHaveAttribute("target", "_blank");

@@ -56,9 +56,28 @@ export function DzialProvider({ children }: { children: ReactNode }) {
       wybierz(dzial, "kotwica");
       przewinDoDzialow();
     };
+    // Linki `/#dzial-<id>` spoza modułu (stopka) są poza providerem. Gdy hash już jest ten sam (np. po zmianie
+    // działu zakładką), przeglądarka nie wywoła hashchange, więc klik obsługujemy sami. Z innych stron zostaje zwykły link.
+    const naKliku = (zdarzenie: MouseEvent) => {
+      if (zdarzenie.defaultPrevented || zdarzenie.button !== 0) return;
+      if (zdarzenie.metaKey || zdarzenie.ctrlKey || zdarzenie.shiftKey || zdarzenie.altKey) return;
+      if (window.location.pathname !== "/" || !(zdarzenie.target instanceof Element)) return;
+      const link = zdarzenie.target.closest('a[href^="/#dzial-"]');
+      if (!link || (link instanceof HTMLAnchorElement && link.target === "_blank")) return;
+      const dzial = dzialZHasha(new URL(link.getAttribute("href") ?? "", window.location.origin).hash);
+      if (!dzial) return;
+      zdarzenie.preventDefault();
+      wybierz(dzial, "kotwica");
+      przewinDoDzialow();
+      window.history.replaceState(null, "", `/#dzial-${dzial}`);
+    };
     naKotwice();
     window.addEventListener("hashchange", naKotwice);
-    return () => window.removeEventListener("hashchange", naKotwice);
+    document.addEventListener("click", naKliku);
+    return () => {
+      window.removeEventListener("hashchange", naKotwice);
+      document.removeEventListener("click", naKliku);
+    };
   }, [wybierz]);
 
   const wartosc = useMemo(
