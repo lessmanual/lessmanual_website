@@ -41,10 +41,6 @@ for (const vp of [
 
     test("Pokaż bez wyboru przewija do działów z Telefonami", async ({ page }) => {
       await page.goto("/");
-      test.skip(
-        (await page.locator("#dzialy-zakladki").count()) === 0,
-        "sekcja działów dochodzi w kolejnym zadaniu",
-      );
       await page.locator('[data-qa="hero-pokaz"]').click();
       await expect(page.locator("#dzialy-zakladki")).toBeInViewport();
       await expect(page.locator('[role="tab"][aria-selected="true"]')).toContainText("Telefony");

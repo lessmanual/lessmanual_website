@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { DzialProvider } from "@/components/home-v4/DzialProvider";
 import { HeroV4 } from "@/components/home-v4/HeroV4";
 import { PrzejscieObiekt } from "@/components/home-v4/PrzejscieObiekt";
+import { ModulDzialow } from "@/components/home-v4/ModulDzialow";
 import { ProcessLine } from "@/components/home/ProcessLine";
 import { BzykGuide } from "@/components/home/BzykGuide";
 import { FormSection } from "@/components/home/FormSection";
@@ -64,6 +65,7 @@ export default function Home() {
         <main>
           <HeroV4 />
           <PrzejscieObiekt />
+          <ModulDzialow />
           <ForWhom />
           <ProcessLine />
           <ScopeCard />

@@ -130,6 +130,11 @@ const DZIALY_WSPOLNE = {
   plakietkaPomyslow: "Możliwe u Ciebie",
   bzykPomyslow: "Jeśli coś tu pasuje do Twojej firmy, kliknij „Tak, to u nas”. Zaznaczę to w formularzu.",
   liniaPomyslow: "System budujemy pod programy, na których pracujesz. Na rozmowie sprawdzamy, od którego zacząć.",
+  // Etykiety tylko dla czytników ekranu (przyciski bez tekstu na ekranie); nie ma ich w deku, bo nie są widoczne.
+  dostepnosc: {
+    poprzedniaKarta: "Poprzednia karta",
+    nastepnaKarta: "Następna karta",
+  },
 } as const;
 
 const TELEFONY = {

@@ -1,0 +1,123 @@
+/* Karuzela działu: 390 karta 88% toru (widać brzeg następnej), 1440 karta 920 px. Wysokość zarezerwowana (CLS 0). */
+.karuzela {
+  --karta-wys: 560px;
+  --odstep: 12px;
+  overflow-anchor: none;
+  animation: pojaw 150ms var(--ease-out);
+}
+
+.karuzela[hidden] {
+  display: none;
+}
+
+@keyframes pojaw {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tor {
+  display: flex;
+  gap: var(--odstep);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  /* Cień karty nie jest ucinany przez krawędź toru. */
+  padding-block: 4px 12px;
+}
+
+.tor::-webkit-scrollbar {
+  display: none;
+}
+
+.karta {
+  flex: 0 0 88%;
+  min-width: 0;
+  min-height: var(--karta-wys);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-card), 0 24px 48px -32px rgb(26 20 16 / 0.35);
+  overflow: hidden;
+}
+
+.nawigacja {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.strzalka {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--line-control);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+.strzalka:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+
+.strzalka:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.strzalka:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.kropki {
+  display: flex;
+  gap: 8px;
+}
+
+.kropka {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--line-control);
+  transition: background-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+
+.kropka[data-aktywna="true"] {
+  background: var(--patina);
+  box-shadow: inset 0 0 0 2px #1a1410;
+}
+
+@media (min-width: 768px) {
+  .karuzela {
+    --karta-wys: 480px;
+    --odstep: 24px;
+  }
+
+  .karta {
+    flex-basis: min(920px, 88%);
+  }
+
+  .nawigacja {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .karuzela {
+    animation: none;
+  }
+
+  .strzalka,
+  .kropka {
+    transition: none;
+  }
+}
