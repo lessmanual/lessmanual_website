@@ -146,6 +146,11 @@ describe("teksty v4 1:1", () => {
     expect(HOME_V4.wspolpraca.kafle.map((k) => k.droga)).toEqual(["A", "B", "C"]);
   });
 
+  it("pola cytatu w hero składają się na pełny podpis z deka", () => {
+    const { autor, zrodlo, ocena, podpis } = HOME_V4.hero.cytat;
+    expect(podpis).toBe(`${autor} · ${zrodlo} · ${"★".repeat(ocena)}`);
+  });
+
   it("inicjał to pierwsza wielka litera podpisu", () => {
     expect(inicjal("dawid Kar · 1 opinia")).toBe("D");
   });

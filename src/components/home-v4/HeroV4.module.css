@@ -192,7 +192,10 @@
   padding: 20px 20px 16px;
   background: #fff;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  /* Na ciepłej bazie #F4EFE8 sam pierścień 6% nie wystarcza: dodany miękki cień kontaktowy. */
+  box-shadow:
+    var(--shadow-card),
+    0 10px 24px -14px #46280f40;
 }
 
 .cytat blockquote {
@@ -224,7 +227,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 4px 10px;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--ink-2);
 }
 

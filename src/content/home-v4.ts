@@ -103,7 +103,12 @@ const HERO = {
   liniaPodPrzyciskiem: "Rozmowa bez opłat. Po niej dostajesz na piśmie pierwszy krok z ceną.",
   cytat: {
     tekst: "To, co wcześniej zajmowało nam długie godziny, teraz trwa dosłownie chwilę.",
+    // `podpis` to pełna linia z deka (pilnuje jej home-v4.test.ts); komponent renderuje z pól niżej.
     podpis: "Marcin Pietrasik · opinia w Google · ★★★★★",
+    autor: "Marcin Pietrasik",
+    zrodlo: "opinia w Google",
+    ocena: 5,
+    etykietaOceny: "Ocena 5 z 5",
   },
   paskLiczb: "24+ firm · 31 wdrożeń · 5,0 w Google (6 opinii)",
   // Miejsce na rolkę Bartka; null = bez miniatury.

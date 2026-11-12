@@ -40,7 +40,7 @@ const inter = localFont({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FAFAFA",
+  themeColor: "#F4EFE8",
 };
 
 export const metadata: Metadata = {

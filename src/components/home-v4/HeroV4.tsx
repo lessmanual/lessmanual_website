@@ -14,7 +14,7 @@ export function HeroV4() {
   const { hero } = HOME_V4;
   // Funkcja z jawnym typem: bez niej TS zawęża `rolka` do `null` (dziś w tekstach jest null) i gałąź z filmem staje się `never`.
   const rolka = rolkaZTekstow();
-  const [imie = "", zrodlo = "", ocena = ""] = hero.cytat.podpis.split(" · ");
+  const { autor, zrodlo, ocena, etykietaOceny } = hero.cytat;
 
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
@@ -38,11 +38,11 @@ export function HeroV4() {
             </blockquote>
             <figcaption className={styles.autor}>
               <span className={styles.inicjal} aria-hidden="true">
-                {imie.charAt(0)}
+                {autor.charAt(0)}
               </span>
-              <span className={styles.imie}>{imie}</span>
-              <span className={styles.gwiazdki} role="img" aria-label={`${ocena.length} z 5`}>
-                {Array.from(ocena, (_, i) => (
+              <span className={styles.imie}>{autor}</span>
+              <span className={styles.gwiazdki} role="img" aria-label={etykietaOceny}>
+                {Array.from({ length: ocena }, (_, i) => (
                   <Star key={i} size={14} />
                 ))}
               </span>
