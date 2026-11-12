@@ -134,7 +134,14 @@ export function KartaPrzyklad({ karta, dzial }: { karta: DaneKarty; dzial: Dzial
     zdarzenie.preventDefault();
     const cel = NUMERY[surowy % 3] ?? 0;
     wybierz(cel, true);
-    zakladkiRef.current?.querySelector<HTMLElement>(`[data-nr="${cel}"]`)?.focus({ preventScroll: true });
+    const pasek = zakladkiRef.current;
+    const zakladka = pasek?.querySelector<HTMLElement>(`[data-nr="${cel}"]`);
+    if (!pasek || !zakladka) return;
+    // Fokus bez przewijania strony; pasek (na 390 przewijany w bok, position: relative) dosuwamy sam, jak w ZakladkiDzialow.
+    zakladka.focus({ preventScroll: true });
+    const lewa = zakladka.offsetLeft;
+    const widac = lewa >= pasek.scrollLeft && lewa + zakladka.offsetWidth <= pasek.scrollLeft + pasek.clientWidth;
+    if (!widac) pasek.scrollTo({ left: Math.max(0, lewa - 8), behavior: bezRuchu() ? "instant" : "smooth" });
   };
 
   const id = (nr: number) => `przyklad-${dzial}-${nr}`;

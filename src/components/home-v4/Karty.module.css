@@ -189,6 +189,7 @@
 /* Na 390 zakładki stoją w jednej linii; gdy się nie mieszczą, pasek przewija się w bok we własnym kontenerze
    (strona nie przewija się w bok). Krótkie etykiety tam, gdzie teksty je mają. */
 .zakladkiPrzykladu {
+  position: relative;
   display: flex;
   gap: 6px;
   overflow-x: auto;

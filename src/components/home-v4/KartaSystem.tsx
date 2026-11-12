@@ -30,6 +30,8 @@ function FilmKarty({ film, tytul }: { film: Film | null; tytul: string }) {
         poster={film.poster}
         preload="none"
         playsInline
+        // tabIndex -1: film bez kontrolek nie przyjmuje fokusu, a focus() rusza przed nadaniem `controls` w renderze.
+        tabIndex={-1}
         controls={gra}
         aria-label={tytul}
       >

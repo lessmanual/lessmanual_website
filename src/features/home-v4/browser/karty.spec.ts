@@ -137,6 +137,18 @@ for (const vp of [
       await page.keyboard.press("End");
       await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]')).toHaveAttribute("aria-selected", "true");
       await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]')).toBeFocused();
+      // Na 390 „Status zamówienia” jest poza paskiem; po End pasek sam go pokazuje (strona się nie przewija).
+      await expect
+        .poll(() =>
+          karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]').evaluate((el) => {
+            const pasek = el.parentElement;
+            if (!pasek) return false;
+            const z = el.getBoundingClientRect();
+            const p = pasek.getBoundingClientRect();
+            return z.left >= p.left - 1 && z.right <= p.right + 1;
+          }),
+        )
+        .toBe(true);
       await page.keyboard.press("Home");
       await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="0"]')).toHaveAttribute("aria-selected", "true");
       const [szer, okno] = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
