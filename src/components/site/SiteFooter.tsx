@@ -1,90 +1,85 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { CookieSettingsButton } from "@/components/legal/CookieSettingsButton";
-import { FOOTER, LINKS, SYSTEMS } from "@/content/site";
+import { HOME_V4 } from "@/content/home-v4";
+import { LINKS } from "@/content/site";
 import styles from "./SiteFooter.module.css";
 
-// Ciemna stopka jako jedyny ciemny pas (brief marki: „ciemna może być co najwyżej stopka”).
+// Linki Współpracy w kolejności tekstów v4; kotwice `/#...` działają też z /blog i podstron prawnych.
+const HREFY_WSPOLPRACY = ["/#wejscie-mapa", "/#wejscie-pilot", "/#pytania", "/o-nas", "/blog"] as const;
+
+// Ciemna stopka jako jedyny ciemny pas (brief marki: „ciemna może być co najwyżej stopka”). Wspólna dla wszystkich stron.
 export function SiteFooter() {
-  const systemLinks = SYSTEMS.cards.filter((card) => card.visible && card.pageHref);
+  const s = HOME_V4.stopka;
+  const kontakt = [
+    { href: LINKS.form, zewnetrzny: false },
+    { href: `mailto:${LINKS.email}`, zewnetrzny: false },
+    { href: LINKS.linkedinBartek, zewnetrzny: true },
+    { href: LINKS.googleProfile, zewnetrzny: true },
+  ] as const;
   return (
     <footer className={styles.footer}>
       <div className={`lm-container ${styles.grid}`}>
         <div className={styles.brand}>
           <Logo variant="dark" height={30} />
-          <p>{FOOTER.about}</p>
+          <p>{s.zdanie}</p>
         </div>
         <div>
-          <h2 className={styles.heading}>Systemy</h2>
+          <h2 className={styles.heading}>{s.naglowki.dzialy}</h2>
           <ul className={styles.list}>
-            {systemLinks.map((card) => (
-              <li key={card.slug}>
-                <Link href={card.pageHref ?? "/systemy"}>{card.title}</Link>
+            {s.dzialy.map((d) => (
+              <li key={d.dzial}>
+                {/* Zwykły <a>, nie <Link>: nawigacja Next na tę samą stronę zmienia hash przez pushState i nie wywołuje
+                    hashchange, na którym DzialProvider przełącza dział. Z /blog to pełne wejście na / z hashem. */}
+                <a href={`/#dzial-${d.dzial}`}>{d.label}</a>
               </li>
             ))}
-            <li>
-              <Link href="/systemy">Wszystkie systemy</Link>
-            </li>
           </ul>
         </div>
         <div>
-          <h2 className={styles.heading}>Współpraca</h2>
+          <h2 className={styles.heading}>{s.naglowki.wspolpraca}</h2>
           <ul className={styles.list}>
-            <li>
-              <Link href="/#wspolpraca">Jak współpracujemy</Link>
-            </li>
-            <li>
-              <Link href="/#drogi">Mapa AI firmy</Link>
-            </li>
-            <li>
-              <Link href="/#drogi">Szybki pilot</Link>
-            </li>
-            <li>
-              <Link href="/faq">FAQ</Link>
-            </li>
-            <li>
-              <Link href="/o-nas">Kim jesteśmy</Link>
-            </li>
-            <li>
-              <Link href="/blog">Blog</Link>
-            </li>
+            {s.wspolpraca.map((etykieta, i) => (
+              <li key={etykieta}>
+                <Link href={HREFY_WSPOLPRACY[i]}>{etykieta}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
-          <h2 className={styles.heading}>Kontakt</h2>
+          <h2 className={styles.heading}>{s.naglowki.kontakt}</h2>
           <ul className={styles.list}>
-            <li>
-              <a href={LINKS.form}>Umów rozmowę</a>
-            </li>
-            <li>
-              <a href={`mailto:${LINKS.email}`}>{LINKS.email}</a>
-            </li>
-            <li>
-              <a href={LINKS.linkedinBartek} rel="noopener" target="_blank">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <Link href={LINKS.privacy}>Polityka prywatności</Link>
-            </li>
-            <li>
-              <Link href="/legal/polityka-cookies">Polityka cookies</Link>
-            </li>
-            <li>
-              <Link href="/legal/regulamin">Regulamin</Link>
-            </li>
-            <li>
-              <CookieSettingsButton className={styles.linkButton} />
-            </li>
+            {s.kontakt.map((etykieta, i) => (
+              <li key={etykieta}>
+                {kontakt[i].zewnetrzny ? (
+                  <a href={kontakt[i].href} rel="noopener" target="_blank">
+                    {etykieta}
+                  </a>
+                ) : (
+                  <a href={kontakt[i].href}>{etykieta}</a>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
       <div className={`lm-container ${styles.bottom}`}>
-        <span>© 2026 LessManual.ai</span>
-        <span>{FOOTER.note}</span>
-        <span className={styles.provider}>
-          LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909
-        </span>
+        <ul className={styles.prawne}>
+          <li>
+            <Link href={LINKS.privacy}>{s.prawne[0]}</Link>
+          </li>
+          <li>
+            <Link href="/legal/polityka-cookies">{s.prawne[1]}</Link>
+          </li>
+          <li>
+            <Link href="/legal/regulamin">{s.prawne[2]}</Link>
+          </li>
+          <li>
+            <CookieSettingsButton className={styles.linkButton} />
+          </li>
+        </ul>
+        <p className={styles.dane}>{s.dane}</p>
+        <p className={styles.dane}>{s.znakiTowarowe}</p>
       </div>
     </footer>
   );

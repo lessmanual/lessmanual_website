@@ -610,7 +610,15 @@ const CTA = {
 
 const STOPKA = {
   zdanie: "LessManual buduje systemy AI szyte na miarę firm od 10 do 100 osób i opiekuje się nimi po wdrożeniu.",
-  dzialy: [NAZWY.telefony, NAZWY.marketing, NAZWY.sprzedaz, NAZWY.zamowienia, NAZWY.logistyka],
+  naglowki: { dzialy: "Działy", wspolpraca: "Współpraca", kontakt: "Kontakt" },
+  // Dział w polu `dzial` buduje link `/#dzial-<id>`, który działa też spoza strony głównej.
+  dzialy: [
+    { label: NAZWY.telefony, dzial: "telefony" },
+    { label: NAZWY.marketing, dzial: "marketing" },
+    { label: NAZWY.sprzedaz, dzial: "sprzedaz" },
+    { label: NAZWY.zamowienia, dzial: "zamowienia" },
+    { label: NAZWY.logistyka, dzial: "logistyka" },
+  ] as const satisfies readonly { label: string; dzial: DzialId }[],
   wspolpraca: ["Mapa AI firmy", "Szybki pilot", "Pytania", "Kim jesteśmy", "Blog"],
   kontakt: ["Umów rozmowę", "kontakt@lessmanual.ai", "LinkedIn", "Wizytówka w Google"],
   dane: "© 2026 LessManual.ai · LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909",

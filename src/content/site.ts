@@ -440,12 +440,6 @@ export const ABOUT = {
   ],
 } as const;
 
-export const FOOTER = {
-  about:
-    "LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Budujemy systemy AI, które ograniczają ręczną pracę, i opiekujemy się nimi po wdrożeniu.",
-  note: "Przyjmujemy maksymalnie 4 nowe firmy miesięcznie.",
-} as const;
-
 /** Polska odmiana: 1 opinia, 2-4 opinie (bez 12-14), 5+ opinii. */
 export function opinieLabel(liczba: number): string {
   if (liczba === 1) return "1 opinia";
