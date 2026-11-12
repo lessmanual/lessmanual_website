@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="pl" data-motyw="jasny">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Szkic S4: Rozmowa z Bzykiem, system i plan firmy · LessManual</title>
+<meta name="description" content="Szkic S4 strony lessmanual.ai: pytanie Bzyka dobiera obszar, film, przykład i opinię. Systemy AI szyte na miarę firm od 10 do 100 osób.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F4EFE8">
+<link rel="icon" href="../../favicon-32x32.png" sizes="32x32">
+<!-- Motyw z ?motyw=jasny|ciemny: mały skrypt przed CSS, bo CSP nie pozwala na skrypt w stronie. Pobiera się równolegle z CSS. -->
+<script src="motyw.js"></script>
+<link rel="preload" href="../../warianty/_vendor/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../warianty/_vendor/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../warianty/_vendor/fonts/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7Motmp5g.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="s4.css">
+<script src="s4.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<!-- Bzyk: jeden symbol SVG (rysunek z src/components/site/Bzyk.tsx), mina przez zmienne CSS. -->
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="bzyk-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDB27A"/><stop offset=".5" stop-color="#B87333"/><stop offset="1" stop-color="#8B4513"/>
+    </linearGradient>
+    <symbol id="bzyk" viewBox="0 0 240 182">
+      <rect x="46" y="34" width="10" height="56" rx="5" fill="#8B4513"/>
+      <rect x="184" y="34" width="10" height="56" rx="5" fill="#8B4513"/>
+      <rect x="46" y="80" width="148" height="12" rx="6" fill="#8B4513"/>
+      <g class="bz-rotor-l"><ellipse cx="51" cy="32" rx="42" ry="7" fill="#6E3510" opacity=".85"/></g>
+      <g class="bz-rotor-r"><ellipse cx="189" cy="32" rx="42" ry="7" fill="#6E3510" opacity=".85"/></g>
+      <circle cx="51" cy="32" r="7" fill="#E09A55"/><circle cx="189" cy="32" r="7" fill="#E09A55"/>
+      <rect x="92" y="150" width="12" height="24" rx="6" fill="#8B4513"/><rect x="136" y="150" width="12" height="24" rx="6" fill="#8B4513"/>
+      <ellipse cx="98" cy="176" rx="11" ry="6" fill="#3A1C08"/><ellipse cx="142" cy="176" rx="11" ry="6" fill="#3A1C08"/>
+      <rect x="62" y="66" width="116" height="92" rx="46" fill="url(#bzyk-g)"/>
+      <path d="M84 76 Q120 66 156 76" stroke="#F8D2AA" stroke-width="5" fill="none" stroke-linecap="round" opacity=".75"/>
+      <rect x="76" y="86" width="88" height="52" rx="26" fill="#141414"/>
+      <g class="bz-eyes" fill="#3FD0C2"><rect x="94" y="98" width="16" height="24" rx="8"/><rect x="130" y="98" width="16" height="24" rx="8"/></g>
+      <g class="bz-happy" stroke="#3FD0C2" stroke-width="6" fill="none" stroke-linecap="round"><path d="M92 115 Q102 100 112 115"/><path d="M128 115 Q138 100 148 115"/></g>
+      <path d="M112 128 Q120 133 128 128" stroke="#E09A55" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="M8 5.6v12.8a.8.8 0 0 0 1.2.7l10-6.4a.8.8 0 0 0 0-1.4l-10-6.4A.8.8 0 0 0 8 5.6Z" fill="currentColor"/></symbol>
+    <symbol id="pause" viewBox="0 0 24 24"><rect x="6.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 17v-2a9.5 9.5 0 0 1 19 0v2"/><rect x="4.5" y="17" width="5" height="8" rx="2"/><rect x="22.5" y="17" width="5" height="8" rx="2"/><path d="M25 25c0 2.2-2.6 3.5-6 3.5h-2"/></g></symbol>
+    <symbol id="i-film" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="24" height="18" rx="3"/><path d="m13.5 12.5 6 3.5-6 3.5Z"/><path d="M4 11.5h3M4 20.5h3M25 11.5h3M25 20.5h3"/></g></symbol>
+    <symbol id="i-target" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="18" r="9.5"/><circle cx="14" cy="18" r="5"/><circle cx="14" cy="18" r="1" fill="currentColor"/><path d="M14 18 26 6M21.5 6H26v4.5"/></g></symbol>
+    <symbol id="i-box" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4.5 27 10v12L16 27.5 5 22V10Z"/><path d="M5 10l11 5.5L27 10M16 15.5v12"/><path d="m10.5 7.2 11 5.6"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5h11l6 6v17H8Z"/><path d="M19 4.5v6h6"/><path d="M12 16h9M12 20h9M12 24h5"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 5v13m-5-5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="chev-l" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="chev-r" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ext" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="star" viewBox="0 0 20 20"><path d="m10 1.8 2.5 5.3 5.7.7-4.2 4 1.1 5.7L10 14.7l-5.1 2.8L6 11.8l-4.2-4 5.7-.7Z" fill="currentColor"/></symbol>
+    <symbol id="sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></g></symbol>
+    <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <!-- Miniatura rzutu biura (lista pokoi na telefonie). Kolor pokoju przez zmienną CSS na elemencie. -->
+    <symbol id="mini-plan" viewBox="0 0 220 132">
+      <g transform="translate(110 8) scale(1 .56) rotate(45) translate(-6 -6)">
+        <rect x="0" y="0" width="64" height="66" rx="2" style="fill:var(--m-marketing,var(--mini-room))"/>
+        <rect x="64" y="0" width="66" height="66" rx="2" style="fill:var(--m-sprzedaz,var(--mini-room))"/>
+        <rect x="130" y="0" width="62" height="120" rx="2" style="fill:var(--m-logistyka,var(--mini-room))"/>
+        <rect x="0" y="66" width="64" height="54" rx="2" style="fill:var(--m-recepcja,var(--mini-room))"/>
+        <rect x="64" y="66" width="66" height="54" rx="2" style="fill:var(--m-operacje,var(--mini-room))"/>
+        <g fill="none" style="stroke:var(--mini-line)" stroke-width="2.4">
+          <rect x="0" y="0" width="192" height="120" rx="2"/>
+          <path d="M64 0v66M0 66h130M64 66v54M130 0v120"/>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="bar" id="top">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 28" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDB27A"/><stop offset="1" stop-color="#8B4513"/></linearGradient></defs><rect x="1" y="1" width="38" height="26" rx="13" fill="url(#bm)"/><rect x="7" y="6" width="26" height="16" rx="8" fill="#141414"/><rect x="13" y="9.5" width="4.5" height="9" rx="2.25" fill="#3FD0C2"/><rect x="22.5" y="9.5" width="4.5" height="9" rx="2.25" fill="#3FD0C2"/></svg>
+      <span>LessManual<span class="brand-ai">.ai</span></span>
+    </a>
+    <nav class="nav" aria-label="Sekcje">
+      <a href="#pokoje">Przykład</a>
+      <a href="#plan">Działy</a>
+      <a href="#drogi">Drogi</a>
+      <a href="#sekretariat">Opinie</a>
+      <a href="#faq">Pytania</a>
+    </nav>
+    <a class="btn btn-copper btn-sm bar-cta" href="#formularz">Umów rozmowę<span class="badge" id="badge" hidden role="img" aria-label="odpowiedzi zapisane w formularzu">0</span></a>
+  </div>
+</header>
+
+<main id="tresc">
+
+<!-- 1. HERO (z S3): rolka Bartka + pytanie Bzyka z pięcioma klawiszami -->
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-light" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+      <h1 id="h1" class="h1">Mniej ręcznej pracy, <em>więcej kontroli</em> nad&nbsp;firmą.</h1>
+      <p class="lead">Systemy AI szyte na miarę firm od 10 do 100 osób, z efektem zapisanym liczbą przed startem.</p>
+
+      <div class="rolka-mini">
+        <button class="rolka-mini-frame" type="button" data-player aria-label="Odtwórz rolkę: Bartek do kamery, 30 sekund">
+          <span class="screen-glow" aria-hidden="true"></span>
+          <span class="play play-sm" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span>
+        </button>
+        <p class="rolka-mini-txt"><strong>Rolka: Bartek do kamery, 30 s</strong><span>Mówi, co budujemy i dla kogo.</span></p>
+      </div>
+
+      <div class="ask" id="ask">
+        <div class="bz-line">
+          <svg class="bzyk bzyk-lg" id="hero-bzyk" aria-hidden="true"><use href="#bzyk"/></svg>
+          <p class="bubble bubble-q" id="hero-bubble"><span class="q">Gdzie u Ciebie ucieka najwięcej czasu?</span></p>
+        </div>
+        <div class="keys" role="group" aria-label="Wybierz obszar, w którym ucieka najwięcej czasu. Odpowiedź trafi do formularza.">
+          <button class="key" type="button" data-room="recepcja" aria-pressed="false"><span class="led" aria-hidden="true"></span><span class="key-ico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span><span class="key-lbl">Telefony i recepcja</span></button>
+          <button class="key" type="button" data-room="marketing" aria-pressed="false"><span class="led" aria-hidden="true"></span><span class="key-ico" aria-hidden="true"><svg><use href="#i-film"/></svg></span><span class="key-lbl">Marketing</span></button>
+          <button class="key" type="button" data-room="sprzedaz" aria-pressed="false"><span class="led" aria-hidden="true"></span><span class="key-ico" aria-hidden="true"><svg><use href="#i-target"/></svg></span><span class="key-lbl">Sprzedaż</span></button>
+          <button class="key" type="button" data-room="operacje" aria-pressed="false"><span class="led" aria-hidden="true"></span><span class="key-ico" aria-hidden="true"><svg><use href="#i-box"/></svg></span><span class="key-lbl">Zamówienia i operacje</span></button>
+          <button class="key" type="button" data-room="logistyka" aria-pressed="false"><span class="led" aria-hidden="true"></span><span class="key-ico" aria-hidden="true"><svg><use href="#i-doc"/></svg></span><span class="key-lbl">Logistyka i dokumenty</span></button>
+        </div>
+        <p class="ask-after" id="ask-after"><svg class="bzyk bzyk-xs" aria-hidden="true"><use href="#bzyk"/></svg><span class="ask-reply" id="ask-reply" aria-live="polite"></span><a class="link-down" href="#pokoje" tabindex="-1">Pokaż<svg aria-hidden="true"><use href="#arrow-down"/></svg></a></p>
+      </div>
+
+      <figure class="hero-proof">
+        <blockquote>„…zaoszczędziliśmy mnóstwo czasu, który wcześniej marnowaliśmy na powtarzalne zadania.”</blockquote>
+        <figcaption><span class="stars" role="img" aria-label="5 na 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span> Paweł Muchewicz, opinia w Google <span class="sep" aria-hidden="true">·</span> <span class="nums">24+ firm · 31 wdrożeń · 5,0 w Google (6 opinii)</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="hero-side">
+      <div class="rolka">
+        <button class="frame frame-916" type="button" data-player data-duration="30" aria-label="Odtwórz rolkę: Bartek do kamery, 30 sekund">
+          <span class="screen-glow" aria-hidden="true"></span>
+          <span class="frame-time" aria-hidden="true">0:30</span>
+          <span class="play" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span>
+          <span class="frame-cap">Rolka: Bartek do kamery, 30 s<small>pionowo 9:16, start kliknięciem</small></span>
+          <span class="frame-progress" aria-hidden="true"><i></i></span>
+        </button>
+        <span class="floor-shadow" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PRZEJŚCIE (z S1): obiekt „system” i zdanie, które zapala się słowo po słowie.
+     Desktop: scena przyklejona na ok. dwa ekrany, obiekt obraca się z przewijaniem (bez przejmowania przewijania).
+     Telefon i reduced motion: obiekt stoi, zdanie w zwykłym przepływie. -->
+<section class="sys" id="system" aria-label="Co robimy">
+  <div class="sys-sticky">
+    <div class="sys-light" aria-hidden="true"></div>
+    <div class="wrap sys-grid">
+      <p class="tagline" id="tagline">Budujemy systemy AI, które przejmują ręczną pracę w&nbsp;Twojej firmie. Po wdrożeniu to my się nimi opiekujemy.</p>
+      <div class="sys-stage">
+        <div class="obj" id="obj">
+          <div class="obj-glow" aria-hidden="true"></div>
+          <div class="obj-floor" aria-hidden="true"></div>
+          <div class="obj-shadow" aria-hidden="true"></div>
+          <div class="obj-reflect" aria-hidden="true"></div>
+          <div class="slab" aria-hidden="true">
+            <i style="--z:-14"></i><i style="--z:-12"></i><i style="--z:-10"></i><i style="--z:-8"></i><i style="--z:-6"></i><i style="--z:-4"></i><i style="--z:-2"></i><i style="--z:0"></i><i style="--z:2"></i><i style="--z:4"></i><i style="--z:6"></i><i style="--z:8"></i><i style="--z:10"></i><i style="--z:12"></i>
+            <div class="slab-face">
+              <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span>
+              <span class="slab-core"></span>
+              <span class="slab-spec"></span>
+            </div>
+          </div>
+          <p class="frame-note obj-note">Obiekt „system”: render 3D, 4:5, do wstawienia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. DOPASOWANIE (z S3): pokój, przykład, dowód i opinia z obszaru wybranego w hero -->
+<section class="rooms-sec" id="pokoje" aria-labelledby="rooms-h">
+  <div class="wrap rooms-head">
+    <h2 class="h2" id="rooms-h"><span id="rooms-h-txt">Jeden dział z bliska</span></h2>
+    <div class="bz-line bz-hint" id="rooms-hint"><svg class="bzyk" aria-hidden="true"><use href="#bzyk"/></svg><p class="bubble">Wybierz obszar na górze strony, a ułożę tę część pod Ciebie.</p></div>
+  </div>
+
+  <div class="wrap stage-fit" id="stage">
+    <div class="slot-featured" id="slot-featured"></div>
+
+    <div class="slot-demo" id="przyklad">
+      <section class="demo" data-room="logistyka" aria-labelledby="d-log-h">
+        <div class="demo-head">
+          <h3 class="h3" id="d-log-h">Dokument z maila trafia do arkusza</h3>
+          <p class="demo-sub">Wybierz dokument i zobacz pola, które system z niego odczytał.</p>
+          <p class="tag-ex">Przykład: firmy i kwoty są wymyślone</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Przykładowe dokumenty">
+          <button role="tab" aria-selected="true" data-ex="0">Dokument przyjęcia</button>
+          <button role="tab" aria-selected="false" data-ex="1">Faktura</button>
+          <button role="tab" aria-selected="false" data-ex="2">Zlecenie transportowe</button>
+        </div>
+        <div class="desk">
+          <div class="src-wrap">
+            <article class="src paper" data-ex="0">
+              <p class="p-title">Dokument przyjęcia PZ</p>
+              <p class="p-row"><span>Nr</span><mark data-f="a">PZ/0412/10/26</mark></p>
+              <p class="p-row"><span>Data</span><mark data-f="b">14.10.2026</mark></p>
+              <p class="p-row"><span>Dostawca</span><mark data-f="c">Złomex Bis sp. z o.o.</mark></p>
+              <div class="p-table"><p><mark data-f="d">Kabel miedziany kat. 2</mark><span>1 284 kg</span></p><p><span>Aluminium, profile</span><span>362 kg</span></p></div>
+              <p class="p-sign">Przyjął: <mark data-f="e">A. Nowak</mark></p>
+            </article>
+            <article class="src paper" data-ex="1" hidden>
+              <p class="p-title">Faktura VAT</p>
+              <p class="p-row"><span>Nr</span><mark data-f="a">FV/2026/10/118</mark></p>
+              <p class="p-row"><span>Sprzedawca</span><mark data-f="b">Hurtownia Bruk-Pol</mark></p>
+              <div class="p-table"><p><span>Netto</span><mark data-f="c">4 318,70 zł</mark></p><p><span>VAT 23%</span><mark data-f="d">993,30 zł</mark></p></div>
+              <p class="p-sign">Termin płatności: <mark data-f="e">23.10.2026</mark></p>
+            </article>
+            <article class="src paper" data-ex="2" hidden>
+              <p class="p-title">Zlecenie transportowe</p>
+              <p class="p-row"><span>Nr</span><mark data-f="a">ZT/77/10/26</mark></p>
+              <p class="p-row"><span>Trasa</span><mark data-f="b">Poznań → Ostrava (CZ)</mark></p>
+              <p class="p-row"><span>Załadunek</span><mark data-f="c">21.10.2026, 7:00</mark></p>
+              <div class="p-table"><p><span>Ładunek</span><mark data-f="d">18,4 t, 33 palety</mark></p><p><span>Nr rejestracyjny</span><span class="p-empty">nie wpisano</span></p></div>
+            </article>
+            <span class="scan" aria-hidden="true"></span>
+          </div>
+          <div class="out" aria-live="polite">
+            <table class="out-t" data-ex="0"><caption>Wiersz w arkuszu handlowca</caption><tbody>
+              <tr data-f="a"><th scope="row">Numer</th><td>PZ/0412/10/26</td></tr>
+              <tr data-f="b"><th scope="row">Data przyjęcia</th><td>14.10.2026</td></tr>
+              <tr data-f="c"><th scope="row">Dostawca</th><td>Złomex Bis sp. z o.o.</td></tr>
+              <tr data-f="d"><th scope="row">Materiał</th><td>2 pozycje, 1 646 kg</td></tr>
+              <tr data-f="e"><th scope="row">Handlowiec</th><td>A. Nowak</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="1" hidden><caption>Wiersz w rejestrze kosztów</caption><tbody>
+              <tr data-f="a"><th scope="row">Numer</th><td>FV/2026/10/118</td></tr>
+              <tr data-f="b"><th scope="row">Sprzedawca</th><td>Hurtownia Bruk-Pol</td></tr>
+              <tr data-f="c"><th scope="row">Netto</th><td>4 318,70 zł</td></tr>
+              <tr data-f="d"><th scope="row">VAT</th><td>993,30 zł</td></tr>
+              <tr data-f="e"><th scope="row">Termin płatności</th><td>23.10.2026</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="2" hidden><caption>Wiersz w planie transportów</caption><tbody>
+              <tr data-f="a"><th scope="row">Numer</th><td>ZT/77/10/26</td></tr>
+              <tr data-f="b"><th scope="row">Trasa</th><td>Poznań → Ostrava</td></tr>
+              <tr data-f="c"><th scope="row">Załadunek</th><td>21.10.2026, 7:00</td></tr>
+              <tr data-f="d"><th scope="row">Ładunek</th><td>18,4 t, 33 palety</td></tr>
+              <tr class="miss"><th scope="row">Nr rejestracyjny</th><td>Brak w dokumencie. System nie zgaduje, tylko wysyła mail z prośbą o uzupełnienie.</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo" data-room="operacje" aria-labelledby="d-op-h" hidden>
+        <div class="demo-head">
+          <h3 class="h3" id="d-op-h">Zamówienie z SMS, maila albo PDF trafia do programu</h3>
+          <p class="demo-sub">Wybierz wiadomość i zobacz zamówienie, które system z niej złożył.</p>
+          <p class="tag-ex">Przykład: klienci i produkty są wymyśleni</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Przykładowe zamówienia">
+          <button role="tab" aria-selected="true" data-ex="0">SMS</button>
+          <button role="tab" aria-selected="false" data-ex="1">Mail</button>
+          <button role="tab" aria-selected="false" data-ex="2">PDF</button>
+        </div>
+        <div class="desk">
+          <div class="src-wrap">
+            <article class="src phone" data-ex="0">
+              <p class="ph-from">SMS od +48 600 *** 214</p>
+              <p class="ph-msg">Dzień dobry, na <mark data-f="c">czwartek</mark> proszę <mark data-f="b">12 kartonów soku jabłkowego 1 l</mark> i <mark data-f="d">5 zgrzewek wody gazowanej 0,5</mark>. <mark data-f="a">Sklep Długa 8</mark>, Marek</p>
+            </article>
+            <article class="src mail" data-ex="1" hidden>
+              <p class="ml-h"><span>Od</span> <mark data-f="a">zakupy@delikatesy-przyklad.pl</mark></p>
+              <p class="ml-h"><span>Temat</span> Zamówienie tygodniowe</p>
+              <p class="ml-b">Proszę o <mark data-f="b">40 szt. kawy ziarnistej 1 kg</mark> i <mark data-f="d">24 szt. herbaty czarnej</mark>. Dostawa <mark data-f="c">do piątku</mark>, faktura na firmę jak zawsze.</p>
+            </article>
+            <article class="src paper" data-ex="2" hidden>
+              <p class="p-title">Zamówienie nr <mark data-f="e">2026/311</mark></p>
+              <p class="p-row"><span>Zamawiający</span><mark data-f="a">Bistro Przykład</mark></p>
+              <div class="p-table"><p><mark data-f="b">Olej rzepakowy 5 l</mark><span>6 szt.</span></p><p><span>Mąka typ 650, 25 kg</span><span>4 szt.</span></p><p><mark data-f="d">Cukier 1 kg</mark><span>30 szt.</span></p></div>
+              <p class="p-sign">Dostawa: <mark data-f="c">20.11.2026</mark></p>
+            </article>
+            <span class="scan" aria-hidden="true"></span>
+          </div>
+          <div class="out" aria-live="polite">
+            <table class="out-t" data-ex="0"><caption>Zamówienie gotowe do importu</caption><tbody>
+              <tr data-f="a"><th scope="row">Klient</th><td>Sklep Długa 8</td></tr>
+              <tr data-f="b"><th scope="row">Pozycja 1</th><td>Sok jabłkowy 1 l, 12 kart.</td></tr>
+              <tr data-f="d"><th scope="row">Pozycja 2</th><td>Woda gazowana 0,5 l, 5 zgrz.</td></tr>
+              <tr data-f="c"><th scope="row">Dostawa</th><td>czwartek</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="1" hidden><caption>Zamówienie gotowe do importu</caption><tbody>
+              <tr data-f="a"><th scope="row">Klient</th><td>Delikatesy Przykład</td></tr>
+              <tr data-f="b"><th scope="row">Pozycja 1</th><td>Kawa ziarnista 1 kg, 40 szt.</td></tr>
+              <tr data-f="d"><th scope="row">Pozycja 2</th><td>Herbata czarna, 24 szt.</td></tr>
+              <tr data-f="c"><th scope="row">Dostawa</th><td>do piątku</td></tr>
+              <tr><th scope="row">Faktura</th><td>dane z kartoteki klienta</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="2" hidden><caption>Zamówienie gotowe do importu</caption><tbody>
+              <tr data-f="e"><th scope="row">Numer</th><td>2026/311</td></tr>
+              <tr data-f="a"><th scope="row">Klient</th><td>Bistro Przykład</td></tr>
+              <tr data-f="b"><th scope="row">Pozycje</th><td>3 produkty, 40 szt.</td></tr>
+              <tr data-f="c"><th scope="row">Dostawa</th><td>20.11.2026</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo" data-room="sprzedaz" aria-labelledby="d-sp-h" hidden>
+        <div class="demo-head">
+          <h3 class="h3" id="d-sp-h">Sygnał zakupu zamienia się w kartę firmy dla handlowca</h3>
+          <p class="demo-sub">Wybierz sygnał i zobacz ocenę oraz następny krok.</p>
+          <p class="tag-ex">Przykład: firmy są wymyślone</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Przykładowe sygnały">
+          <button role="tab" aria-selected="true" data-ex="0">Wiadomość z rynku</button>
+          <button role="tab" aria-selected="false" data-ex="1">Rejestr firm</button>
+          <button role="tab" aria-selected="false" data-ex="2">Ogłoszenie o pracę</button>
+        </div>
+        <div class="desk">
+          <div class="src-wrap">
+            <article class="src clip" data-ex="0">
+              <p class="cl-src">Portal regionalny, 6.11.2026</p>
+              <p class="cl-h"><mark data-f="a">Meblar z Ostrowa</mark> <mark data-f="b">buduje nową halę produkcyjną</mark>, start w marcu 2027</p>
+              <p class="cl-b">Firma zatrudni 40 osób i planuje <mark data-f="c">zakup nowej linii</mark> jeszcze w tym roku.</p>
+            </article>
+            <article class="src clip" data-ex="1" hidden>
+              <p class="cl-src">Rejestr firm, wpis z 4.11.2026</p>
+              <p class="cl-h"><mark data-f="a">Termo-Bud sp. z o.o.</mark></p>
+              <p class="cl-b"><mark data-f="b">Podwyższenie kapitału zakładowego</mark> z 50 000 zł do 2 000 000 zł, <mark data-f="c">nowy wspólnik</mark>.</p>
+            </article>
+            <article class="src clip" data-ex="2" hidden>
+              <p class="cl-src">Ogłoszenie, 9.11.2026</p>
+              <p class="cl-h"><mark data-f="a">Logipak</mark> szuka 12 magazynierów</p>
+              <p class="cl-b">Praca od grudnia na <mark data-f="b">nowej zmianie nocnej</mark> w <mark data-f="c">drugim magazynie</mark>.</p>
+            </article>
+            <span class="scan" aria-hidden="true"></span>
+          </div>
+          <div class="out" aria-live="polite">
+            <table class="out-t" data-ex="0"><caption>Karta firmy dla handlowca</caption><tbody>
+              <tr data-f="a"><th scope="row">Firma</th><td>Meblar, Ostrów</td></tr>
+              <tr data-f="b"><th scope="row">Sygnał</th><td>Nowa hala produkcyjna</td></tr>
+              <tr data-f="c"><th scope="row">Ocena</th><td><span class="score" style="--s:.9">9/10</span></td></tr>
+              <tr><th scope="row">Następny krok</th><td>Telefon do właściciela w tym tygodniu</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="1" hidden><caption>Karta firmy dla handlowca</caption><tbody>
+              <tr data-f="a"><th scope="row">Firma</th><td>Termo-Bud</td></tr>
+              <tr data-f="b"><th scope="row">Sygnał</th><td>Wyższy kapitał, nowy wspólnik</td></tr>
+              <tr data-f="c"><th scope="row">Ocena</th><td><span class="score" style="--s:.7">7/10</span></td></tr>
+              <tr><th scope="row">Następny krok</th><td>Mail z krótką ofertą</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="2" hidden><caption>Karta firmy dla handlowca</caption><tbody>
+              <tr data-f="a"><th scope="row">Firma</th><td>Logipak</td></tr>
+              <tr data-f="b"><th scope="row">Sygnał</th><td>Nowa zmiana, drugi magazyn</td></tr>
+              <tr data-f="c"><th scope="row">Ocena</th><td><span class="score" style="--s:.6">6/10</span></td></tr>
+              <tr><th scope="row">Następny krok</th><td>Obserwować, wrócić w grudniu</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo" data-room="recepcja" aria-labelledby="d-rc-h" hidden>
+        <div class="demo-head">
+          <h3 class="h3" id="d-rc-h">Telefon zamienia się w zgłoszenie dla zespołu</h3>
+          <p class="demo-sub">Wybierz rozmowę i zobacz, co agent zapisał dla zespołu.</p>
+          <p class="tag-ex">Przykład: rozmowy są wymyślone</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Przykładowe rozmowy">
+          <button role="tab" aria-selected="true" data-ex="0">Przełożenie wizyty</button>
+          <button role="tab" aria-selected="false" data-ex="1">Status zamówienia</button>
+          <button role="tab" aria-selected="false" data-ex="2">Reklamacja</button>
+        </div>
+        <div class="desk">
+          <div class="src-wrap">
+            <article class="src call" data-ex="0">
+              <p class="cl-who">Agent</p><p class="cl-say">Dzień dobry, w czym mogę pomóc?</p>
+              <p class="cl-who">Klient</p><p class="cl-say">Chcę <mark data-f="b">przełożyć serwis</mark> z czwartku. Mówi <mark data-f="a">Jan Wiśniewski</mark>.</p>
+              <p class="cl-who">Agent</p><p class="cl-say">Mam wolny <mark data-f="c">poniedziałek o 10:00</mark>. Pasuje?</p>
+            </article>
+            <article class="src call" data-ex="1" hidden>
+              <p class="cl-who">Klient</p><p class="cl-say">Mówi <mark data-f="a">Ewa Lis</mark>. Kiedy przyjdzie <mark data-f="b">zamówienie 5120</mark>?</p>
+              <p class="cl-who">Agent</p><p class="cl-say">Wyjechało dziś rano, kurier będzie <mark data-f="c">jutro do 14:00</mark>. Wysłać numer przesyłki SMS?</p>
+              <p class="cl-who">Klient</p><p class="cl-say">Tak, poproszę.</p>
+            </article>
+            <article class="src call" data-ex="2" hidden>
+              <p class="cl-who">Klient</p><p class="cl-say">Dostawa przyszła niepełna, <mark data-f="c">brakuje dwóch kartonów</mark>.</p>
+              <p class="cl-who">Agent</p><p class="cl-say">Proszę o numer zamówienia.</p>
+              <p class="cl-who">Klient</p><p class="cl-say"><mark data-f="b">4471</mark>, firma <mark data-f="a">Gastro-Lux</mark>.</p>
+            </article>
+            <span class="scan" aria-hidden="true"></span>
+          </div>
+          <div class="out" aria-live="polite">
+            <table class="out-t" data-ex="0"><caption>Zgłoszenie dla zespołu</caption><tbody>
+              <tr data-f="a"><th scope="row">Dzwoni</th><td>Jan Wiśniewski</td></tr>
+              <tr data-f="b"><th scope="row">Sprawa</th><td>Przełożenie serwisu</td></tr>
+              <tr data-f="c"><th scope="row">Nowy termin</th><td>Poniedziałek, 10:00</td></tr>
+              <tr><th scope="row">Do kogo</th><td>Kalendarz serwisu</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="1" hidden><caption>Zgłoszenie dla zespołu</caption><tbody>
+              <tr data-f="a"><th scope="row">Dzwoni</th><td>Ewa Lis</td></tr>
+              <tr data-f="b"><th scope="row">Sprawa</th><td>Status zamówienia 5120</td></tr>
+              <tr data-f="c"><th scope="row">Odpowiedź</th><td>Dostawa jutro do 14:00</td></tr>
+              <tr><th scope="row">Zrobione</th><td>Numer przesyłki wysłany SMS</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="2" hidden><caption>Zgłoszenie dla zespołu</caption><tbody>
+              <tr data-f="a"><th scope="row">Firma</th><td>Gastro-Lux</td></tr>
+              <tr data-f="b"><th scope="row">Zamówienie</th><td>4471</td></tr>
+              <tr data-f="c"><th scope="row">Sprawa</th><td>Reklamacja: brak 2 kartonów</td></tr>
+              <tr><th scope="row">Do kogo</th><td>Obsługa klienta, pilne</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo" data-room="marketing" aria-labelledby="d-mk-h" hidden>
+        <div class="demo-head">
+          <h3 class="h3" id="d-mk-h">Jedno nagranie daje wpis na bloga i krótkie filmy</h3>
+          <p class="demo-sub">Wybierz materiał i zobacz plan publikacji, który zatwierdzasz.</p>
+          <p class="tag-ex">Przykład: tematy są wymyślone</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Przykładowe materiały">
+          <button role="tab" aria-selected="true" data-ex="0">Nagranie właściciela</button>
+          <button role="tab" aria-selected="false" data-ex="1">Pytanie klienta</button>
+          <button role="tab" aria-selected="false" data-ex="2">Nowy produkt</button>
+        </div>
+        <div class="desk">
+          <div class="src-wrap">
+            <article class="src call" data-ex="0">
+              <p class="cl-who">Nagranie, 4 min</p>
+              <p class="cl-say">Klienci pytają, <mark data-f="a">jak dobrać oświetlenie do hali magazynowej</mark>. Najczęściej mylą się przy <mark data-f="b">wysokości montażu</mark> i <mark data-f="c">rozstawie lamp</mark>.</p>
+            </article>
+            <article class="src mail" data-ex="1" hidden>
+              <p class="ml-h"><span>Od</span> klient sklepu</p>
+              <p class="ml-b">Czy <mark data-f="a">lampy biurowe można podłączyć do czujnika ruchu</mark>? <mark data-f="b">Ile to oszczędza</mark> w miesiącu?</p>
+            </article>
+            <article class="src paper" data-ex="2" hidden>
+              <p class="p-title">Nowy produkt w sklepie</p>
+              <p class="p-row"><span>Nazwa</span><mark data-f="a">Panel LED 60×60, 36 W</mark></p>
+              <p class="p-row"><span>Kategoria</span><mark data-f="b">Oświetlenie biurowe</mark></p>
+              <p class="p-row"><span>Cecha</span><mark data-f="c">Barwa neutralna 4000 K</mark></p>
+            </article>
+            <span class="scan" aria-hidden="true"></span>
+          </div>
+          <div class="out" aria-live="polite">
+            <table class="out-t" data-ex="0"><caption>Plan do zatwierdzenia</caption><tbody>
+              <tr data-f="a"><th scope="row">Wpis na bloga</th><td>Oświetlenie hali magazynowej: moc i rozstaw</td></tr>
+              <tr data-f="b"><th scope="row">Film 1, 30 s</th><td>Wysokość montażu</td></tr>
+              <tr data-f="c"><th scope="row">Film 2, 30 s</th><td>Rozstaw lamp</td></tr>
+              <tr><th scope="row">Publikacja</th><td>Wtorek i piątek, po zatwierdzeniu</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="1" hidden><caption>Plan do zatwierdzenia</caption><tbody>
+              <tr data-f="a"><th scope="row">Wpis na bloga</th><td>Czujnik ruchu w biurze: jak podłączyć</td></tr>
+              <tr data-f="b"><th scope="row">Film, 30 s</th><td>Ile oszczędza czujnik w miesiącu</td></tr>
+              <tr><th scope="row">Publikacja</th><td>Czwartek, po zatwierdzeniu</td></tr>
+            </tbody></table>
+            <table class="out-t" data-ex="2" hidden><caption>Plan do zatwierdzenia</caption><tbody>
+              <tr data-f="a"><th scope="row">Opis produktu</th><td>Panel LED 60×60, 36 W</td></tr>
+              <tr data-f="b"><th scope="row">Ranking</th><td>Dopisany do „Oświetlenie biurowe”</td></tr>
+              <tr data-f="c"><th scope="row">Film, 30 s</th><td>Barwa 4000 K w biurze</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Dowód: opinia i liczba z tego samego obszaru co pokój na górze -->
+    <div class="slot-proof" id="dowod">
+      <figure class="proof" data-room="logistyka">
+        <button class="frame frame-916 frame-sm" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Opinię wideo klienta"><span class="screen-glow" aria-hidden="true"></span><span class="play play-sm" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Opinia wideo: prezes firmy recyklingowej, 20-40 s<small>do nagrania po pokazie</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+        <div class="proof-txt">
+          <p class="proof-src">Opinia z tego obszaru</p>
+          <blockquote>„Szybko reaguje na zgłaszane problemy i sprawnie wprowadza zmiany w działających workflow.”</blockquote>
+          <figcaption>Dawid Kar, opinia w Google</figcaption>
+          <p class="proof-fact"><strong>127</strong> spraw w panelu firmy recyklingowej, stan na 26.10.2026</p>
+        </div>
+      </figure>
+      <figure class="proof" data-room="sprzedaz" hidden>
+        <button class="frame frame-916 frame-sm" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Film o systemie sprzedaży"><span class="screen-glow" aria-hidden="true"></span><span class="play play-sm" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Film: panel handlowca, 30 s<small>z fabryki wideo</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+        <div class="proof-txt">
+          <p class="proof-src">Rekomendacja z tego obszaru</p>
+          <blockquote lang="en">“Focus. Precision. Excellent time management, and AI agents' knowledge are what make Bartek an exceptional architect and engineer.”</blockquote>
+          <figcaption>Arek Skuza, rekomendacja na LinkedIn</figcaption>
+          <p class="proof-fact"><strong>131 z 134</strong> ocenionych leadów trafnych, pomiar z 20.10.2026</p>
+        </div>
+      </figure>
+      <figure class="proof" data-room="marketing" hidden>
+        <button class="frame frame-916 frame-sm" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Opinię wideo"><span class="screen-glow" aria-hidden="true"></span><span class="play play-sm" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Opinia wideo: Marcin, sklepy z oświetleniem LED<small>20-40 s, telefon w pionie</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+        <div class="proof-txt">
+          <p class="proof-src">Opinia z tego obszaru</p>
+          <blockquote>„To, co wcześniej zajmowało nam długie godziny, teraz trwa dosłownie chwilę.”</blockquote>
+          <figcaption>Marcin Pietrasik, opinia w Google</figcaption>
+          <p class="proof-fact"><strong>20</strong> stron poradników i rankingów online w listopadzie 2026</p>
+        </div>
+      </figure>
+      <figure class="proof" data-room="operacje" hidden>
+        <button class="frame frame-916 frame-sm" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Opinię wideo"><span class="screen-glow" aria-hidden="true"></span><span class="play play-sm" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Opinia wideo: Paweł Muchewicz<small>nagranie w przyszłym tygodniu</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+        <div class="proof-txt">
+          <p class="proof-src">Opinia z tego obszaru</p>
+          <blockquote>„Dzięki wdrożeniom LessManual.ai zaoszczędziliśmy mnóstwo czasu, który wcześniej marnowaliśmy na powtarzalne zadania.”</blockquote>
+          <figcaption>Paweł Muchewicz, opinia w Google</figcaption>
+          <p class="proof-fact">Zamówienia i operacje: liczbę pokażemy po pierwszych tygodniach w produkcji</p>
+        </div>
+      </figure>
+      <figure class="proof" data-room="recepcja" hidden>
+        <button class="frame frame-916 frame-sm" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Film: rozmowa z agentem głosowym"><span class="screen-glow" aria-hidden="true"></span><span class="play play-sm" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Film: rozmowa z agentem głosowym, 30 s<small>nagranie rozmowy z ekranem zgłoszenia</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+        <div class="proof-txt">
+          <p class="proof-src">Podpisany list referencyjny</p>
+          <blockquote>„Asystenci odbierają telefony klientów, podają status zamówienia, przyjmują nowe zamówienia i przekazują rozmowę do pracownika, gdy sprawa tego wymaga. (…) Z czystym sumieniem polecam Bartka jako wykonawcę projektów z agentami głosowymi.”</blockquote>
+          <figcaption>Paweł Muchewicz, właściciel CreativeSM, list z 23.10.2026</figcaption>
+          <p class="proof-fact">Druga referencja o agencie głosowym: Bartosz Łaskawiec, CEO Eighteen Studio. Obie są w sekretariacie niżej.</p>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Magazyn pokoi: pięć kart (jedno źródło treści). Karta wybranego obszaru idzie na górę, plan i lista klonują pozostałe. -->
+  <div class="room-store" id="room-store" hidden>
+
+    <article class="room" data-room="recepcja" id="pokoj-recepcja">
+      <button class="frame frame-169" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Film: Recepcja"><span class="screen-glow" aria-hidden="true"></span><span class="frame-time" aria-hidden="true">0:35</span><span class="play" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Film: Recepcja, 30-40 s<small>z fabryki wideo</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+      <div class="room-body">
+        <h3 class="room-t">Telefony i recepcja</h3>
+        <p class="room-n room-n-flow" aria-label="Odbiera telefony, umawia, odpowiada o status zamówienia"><span>odbiera</span><span>umawia</span><span>status zamówienia</span></p>
+        <p class="room-l">Agent głosowy odbiera telefony, umawia wizyty i odpowiada klientom o status zamówienia.</p>
+        <div class="bz-line bz-room"><svg class="bzyk" aria-hidden="true"><use href="#bzyk"/></svg><p class="bubble">Agent odbiera telefon o każdej porze, a sprawę zapisuje dla zespołu.</p></div>
+        <div class="room-actions"><button class="btn btn-copper" type="button" data-yes="recepcja">Tak, to u nas</button><button class="btn btn-ghost room-show" type="button" data-show="recepcja">Pokaż przykład z tego działu</button></div>
+      </div>
+    </article>
+
+    <article class="room" data-room="marketing" id="pokoj-marketing">
+      <button class="frame frame-169" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Film: Marketing"><span class="screen-glow" aria-hidden="true"></span><span class="frame-time" aria-hidden="true">0:40</span><span class="play" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Film: Marketing, 30-40 s<small>z fabryki wideo</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+      <div class="room-body">
+        <h3 class="room-t">Marketing</h3>
+        <p class="room-n">2&nbsp;906</p>
+        <p class="room-l">kliknięć z Google z artykułów opublikowanych w 2026 roku, sklep z oświetleniem LED</p>
+        <div class="bz-line bz-room"><svg class="bzyk" aria-hidden="true"><use href="#bzyk"/></svg><p class="bubble">System przygotowuje wpisy na bloga i krótkie filmy, a Ty zatwierdzasz plan publikacji.</p></div>
+        <div class="room-actions"><button class="btn btn-copper" type="button" data-yes="marketing">Tak, to u nas</button><button class="btn btn-ghost room-show" type="button" data-show="marketing">Pokaż przykład z tego działu</button></div>
+      </div>
+    </article>
+
+    <article class="room" data-room="sprzedaz" id="pokoj-sprzedaz">
+      <button class="frame frame-169" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Film: Sprzedaż"><span class="screen-glow" aria-hidden="true"></span><span class="frame-time" aria-hidden="true">0:38</span><span class="play" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Film: Sprzedaż, 30-40 s<small>z fabryki wideo</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+      <div class="room-body">
+        <h3 class="room-t">Sprzedaż</h3>
+        <p class="room-n">97,8%</p>
+        <p class="room-l">trafności przy 403 leadach, pomiar z 20.10.2026</p>
+        <div class="bz-line bz-room"><svg class="bzyk" aria-hidden="true"><use href="#bzyk"/></svg><p class="bubble">Bot codziennie szuka firm z sygnałem zakupu i daje handlowcowi kartę z oceną od 1 do 10.</p></div>
+        <div class="room-actions"><button class="btn btn-copper" type="button" data-yes="sprzedaz">Tak, to u nas</button><button class="btn btn-ghost room-show" type="button" data-show="sprzedaz">Pokaż przykład z tego działu</button></div>
+      </div>
+    </article>
+
+    <article class="room" data-room="operacje" id="pokoj-operacje">
+      <button class="frame frame-169" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Film: Zamówienia i operacje"><span class="screen-glow" aria-hidden="true"></span><span class="frame-time" aria-hidden="true">0:36</span><span class="play" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Film: Zamówienia i operacje, 30-40 s<small>z fabryki wideo</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+      <div class="room-body">
+        <h3 class="room-t">Zamówienia i operacje</h3>
+        <p class="room-n room-n-flow" aria-label="Mail, SMS i PDF do programu ERP"><span>mail</span><span>SMS</span><span>PDF</span><svg aria-hidden="true"><use href="#arrow"/></svg><span>ERP</span></p>
+        <p class="room-l">Proces. Liczbę pokażemy po pierwszych tygodniach w produkcji.</p>
+        <div class="bz-line bz-room"><svg class="bzyk" aria-hidden="true"><use href="#bzyk"/></svg><p class="bubble">Bot czyta zamówienia z maila, SMS i PDF i wpisuje je do programu, w którym je realizujecie.</p></div>
+        <div class="room-actions"><button class="btn btn-copper" type="button" data-yes="operacje">Tak, to u nas</button><button class="btn btn-ghost room-show" type="button" data-show="operacje">Pokaż przykład z tego działu</button></div>
+      </div>
+    </article>
+
+    <article class="room" data-room="logistyka" id="pokoj-logistyka">
+      <button class="frame frame-169" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Film: Logistyka i dokumenty"><span class="screen-glow" aria-hidden="true"></span><span class="frame-time" aria-hidden="true">0:34</span><span class="play" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Film: Logistyka, 30-40 s<small>z fabryki wideo</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+      <div class="room-body">
+        <h3 class="room-t">Logistyka i dokumenty</h3>
+        <p class="room-n">215</p>
+        <p class="room-l">dokumentów przyjęcia wpisanych bez błędu przetwarzania, od kwietnia do października 2026</p>
+        <div class="bz-line bz-room"><svg class="bzyk" aria-hidden="true"><use href="#bzyk"/></svg><p class="bubble">Dokumenty z maila trafiają do arkusza, a wszystkie systemy firmy widać w jednym panelu.</p></div>
+        <div class="room-actions"><button class="btn btn-copper" type="button" data-yes="logistyka">Tak, to u nas</button><button class="btn btn-ghost room-show" type="button" data-show="logistyka">Pokaż przykład z tego działu</button></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 4. RZUT FIRMY (z S2): izometryczny plan 5 pokoi; klik przybliża i otwiera panel. Telefon: lista z miniaturą rzutu. -->
+<section class="plan" id="plan" aria-labelledby="plan-h">
+  <div class="plan-stage" data-stage>
+    <div class="plan-head">
+      <h2 class="h2" id="plan-h">Zobacz pozostałe działy</h2>
+      <p>Kliknij pokój, a pokażę film i system, który w nim pracuje.</p>
+    </div>
+    <div class="world" data-world aria-hidden="true"></div>
+    <div class="stage-say" data-stage-say>
+      <p class="bubble">Twój dział świeci na planie. Kliknij inny pokój.</p>
+    </div>
+    <aside class="room-panel" data-panel aria-live="polite" hidden>
+      <div class="panel-top">
+        <button class="btn btn-text panel-back" type="button" data-panel-close><svg aria-hidden="true"><use href="#chev-l"/></svg>Cały plan</button>
+        <span class="panel-step" data-panel-step></span>
+        <div class="panel-nav">
+          <button class="arrow" type="button" data-panel-prev aria-label="Poprzedni pokój"><svg aria-hidden="true"><use href="#chev-l"/></svg></button>
+          <button class="arrow" type="button" data-panel-next aria-label="Następny pokój"><svg aria-hidden="true"><use href="#chev-r"/></svg></button>
+        </div>
+      </div>
+      <p class="panel-picked" data-panel-picked hidden>Twój wybór z góry strony</p>
+      <h3 class="panel-title" data-panel-title></h3>
+      <div class="panel-body" data-panel-body></div>
+    </aside>
+  </div>
+
+  <ol class="plan-list" data-rooms>
+    <li class="pl-item" data-room="recepcja"><button class="pl-btn" type="button" aria-expanded="false" aria-controls="pl-recepcja"><svg class="mini" viewBox="0 0 220 132" aria-hidden="true" style="--m-recepcja:var(--mini-on)"><use href="#mini-plan"/></svg><span class="pl-name">Recepcja</span><span class="pl-tag">Agent głosowy</span><span class="pl-picked">Twój wybór</span></button><div class="pl-detail" id="pl-recepcja" hidden></div></li>
+    <li class="pl-item" data-room="marketing"><button class="pl-btn" type="button" aria-expanded="false" aria-controls="pl-marketing"><svg class="mini" viewBox="0 0 220 132" aria-hidden="true" style="--m-marketing:var(--mini-on)"><use href="#mini-plan"/></svg><span class="pl-name">Marketing</span><span class="pl-tag">Blog i filmy</span><span class="pl-picked">Twój wybór</span></button><div class="pl-detail" id="pl-marketing" hidden></div></li>
+    <li class="pl-item" data-room="sprzedaz"><button class="pl-btn" type="button" aria-expanded="false" aria-controls="pl-sprzedaz"><svg class="mini" viewBox="0 0 220 132" aria-hidden="true" style="--m-sprzedaz:var(--mini-on)"><use href="#mini-plan"/></svg><span class="pl-name">Sprzedaż</span><span class="pl-tag">Firmy z sygnałem zakupu</span><span class="pl-picked">Twój wybór</span></button><div class="pl-detail" id="pl-sprzedaz" hidden></div></li>
+    <li class="pl-item" data-room="operacje"><button class="pl-btn" type="button" aria-expanded="false" aria-controls="pl-operacje"><svg class="mini" viewBox="0 0 220 132" aria-hidden="true" style="--m-operacje:var(--mini-on)"><use href="#mini-plan"/></svg><span class="pl-name">Operacje</span><span class="pl-tag">Zamówienia i PDF do ERP</span><span class="pl-picked">Twój wybór</span></button><div class="pl-detail" id="pl-operacje" hidden></div></li>
+    <li class="pl-item" data-room="logistyka"><button class="pl-btn" type="button" aria-expanded="false" aria-controls="pl-logistyka"><svg class="mini" viewBox="0 0 220 132" aria-hidden="true" style="--m-logistyka:var(--mini-on)"><use href="#mini-plan"/></svg><span class="pl-name">Logistyka</span><span class="pl-tag">Wszystko w jednym panelu</span><span class="pl-picked">Twój wybór</span></button><div class="pl-detail" id="pl-logistyka" hidden></div></li>
+  </ol>
+</section>
+
+<!-- 5. DROGI A / B / C -->
+<section class="paths-sec" id="drogi" aria-labelledby="paths-h">
+  <div class="wrap">
+    <div class="paths-head">
+      <h2 class="h2" id="paths-h">Od czego zacząć</h2>
+      <div class="bz-line"><svg class="bzyk" aria-hidden="true"><use href="#bzyk"/></svg><p class="bubble">Nie wiesz, którą drogę wybrać? Formularz wskaże ją po 10 pytaniach.</p></div>
+    </div>
+    <div class="paths">
+      <article class="path path-main">
+        <p class="path-l" aria-hidden="true">A</p>
+        <h3 class="path-t">Wiem, co mnie najbardziej boli</h3>
+        <p>Rozmowa z Bartkiem, 45 minut, a potem spisany zakres z ceną każdego etapu.</p>
+        <p class="path-cost">Rozmowa bez opłat. Projekty zwykle od kilkunastu tysięcy zł netto.</p>
+        <button class="btn btn-copper" type="button" data-path="A">Umów rozmowę</button>
+      </article>
+      <article class="path">
+        <p class="path-l" aria-hidden="true">B</p>
+        <h3 class="path-t">Nie wiem, od czego zacząć: Mapa AI firmy</h3>
+        <p>Plan systemów na kwartał i rok, w ciągu 5 dni roboczych od ostatniej rozmowy.</p>
+        <p class="path-cost">6&nbsp;900&nbsp;zł netto, w całości odliczane od pierwszego wdrożenia.</p>
+        <button class="btn btn-ghost" type="button" data-path="B">Umów rozmowę o Mapie</button>
+      </article>
+      <article class="path">
+        <p class="path-l" aria-hidden="true">C</p>
+        <h3 class="path-t">Najpierw chcę zobaczyć, że to działa: szybki pilot</h3>
+        <p>Dwa tygodnie, jeden proces na próbce Twoich spraw.</p>
+        <p class="path-cost">Koszt podajemy na rozmowie i odliczamy od wdrożenia.</p>
+        <button class="btn btn-ghost" type="button" data-path="C">Umów rozmowę o pilocie</button>
+      </article>
+    </div>
+
+    <div class="own">
+      <h2 class="h2 own-h" id="own-h">Dane i kod są <em>Twoje</em>.</h2>
+      <div class="own-txt">
+        <p class="lead">System działa na naszej infrastrukturze i to my się nim opiekujemy. Jeśli zakończysz opiekę, przekazujemy Ci całość: kod, dane, dostępy i dokumentację techniczną.</p>
+        <p class="own-plaque"><strong>Efekt zapisany liczbą przed startem.</strong> Jeśli odebrany system go nie daje, poprawiamy go na nasz koszt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FORMULARZ Z BZYKIEM (z S3); pytanie 4 wypełnione z hero -->
+<section class="form-sec" id="formularz" aria-labelledby="form-h">
+  <div class="wrap">
+    <h2 class="h2" id="form-h">Umów rozmowę o systemie dla Twojej firmy</h2>
+    <p class="sub">Na końcu formularza wybierasz termin rozmowy z Bartkiem.</p>
+    <div class="form-grid">
+      <aside class="host">
+        <img src="bartek-720.jpg" width="480" height="720" alt="Bartłomiej Chudzik" loading="lazy" decoding="async">
+        <div class="host-txt">
+          <p class="host-n">Bartłomiej Chudzik</p>
+          <p class="host-r">Założyciel LessManual</p>
+          <p>Przez 8 lat pracował w transporcie i logistyce, od dyspozytora po specjalistę do spraw transportu. Każdą rozmowę prowadzi sam i po niej spisuje zakres.</p>
+          <p class="host-own">Dane i kod są Twoje</p>
+        </div>
+      </aside>
+      <div class="console">
+        <div class="console-top">
+          <p class="step-n" id="step-n">10 pytań, około 2 minut</p>
+          <div class="prog" aria-hidden="true"><i id="prog"></i></div>
+        </div>
+        <div class="bz-line bz-form">
+          <svg class="bzyk bzyk-lg" id="form-bzyk" aria-hidden="true"><use href="#bzyk"/></svg>
+          <p class="bubble" id="form-bubble" aria-live="polite">Cześć, jestem Bzyk. Mam 10 pytań o Twoją firmę, to zajmie około 2 minut.</p>
+        </div>
+        <form id="lead" novalidate>
+          <div class="step" data-step="start">
+            <p class="prefill" id="prefill" hidden></p>
+            <button class="btn btn-copper btn-lg" type="button" data-next>Zaczynamy</button>
+          </div>
+          <fieldset class="step" data-step="q1" hidden>
+            <legend class="q-t">Jaka jest Twoja rola w firmie?</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="q1" value="Właściciel albo prezes"><span>Właściciel albo prezes</span></label>
+              <label class="opt"><input type="radio" name="q1" value="Wspólnik albo członek zarządu"><span>Wspólnik albo członek zarządu</span></label>
+              <label class="opt"><input type="radio" name="q1" value="Dyrektor albo kierownik działu"><span>Dyrektor albo kierownik działu</span></label>
+              <label class="opt"><input type="radio" name="q1" value="Zbieram oferty dla zarządu"><span>Zbieram oferty dla zarządu</span></label>
+              <label class="opt"><input type="radio" name="q1" value="Inna"><span>Inna</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="step" data-step="q2" hidden>
+            <legend class="q-t">Ile osób pracuje w Twojej firmie?</legend>
+            <div class="opts opts-row">
+              <label class="opt"><input type="radio" name="q2" value="1-9"><span>1-9</span></label>
+              <label class="opt"><input type="radio" name="q2" value="10-30"><span>10-30</span></label>
+              <label class="opt"><input type="radio" name="q2" value="31-100"><span>31-100</span></label>
+              <label class="opt"><input type="radio" name="q2" value="101-250"><span>101-250</span></label>
+              <label class="opt"><input type="radio" name="q2" value="Ponad 250"><span>Ponad 250</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="step" data-step="q4" hidden>
+            <legend class="q-t">Co dziś zabiera Wam najwięcej ręcznej pracy?<small>Można zaznaczyć kilka.</small></legend>
+            <div class="opts opts-chips">
+              <label class="opt"><input type="checkbox" name="q4" value="dokumenty"><span>Przepisywanie dokumentów i faktur</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="maile"><span>Maile i korespondencja</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="zamowienia"><span>Zamówienia i zapytania od klientów</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="oferty"><span>Przygotowanie ofert i wycen</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="raporty"><span>Raporty i zestawienia dla mnie</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="szukanie"><span>Szukanie informacji w mailach, plikach i programach</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="klienci"><span>Szukanie klientów, zleceń i przetargów</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="telefony"><span>Odbieranie telefonów</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="programy"><span>Programy, które się nie łączą</span></label>
+              <label class="opt"><input type="checkbox" name="q4" value="inne"><span>Inne</span></label>
+            </div>
+            <label class="other" id="q4-other-wrap" hidden><span>Inne, czyli co?</span><input type="text" name="q4-inne" id="q4-other" autocomplete="off"></label>
+            <button class="btn btn-copper" type="button" data-next>Dalej</button>
+          </fieldset>
+          <fieldset class="step" data-step="q6" hidden>
+            <legend class="q-t">Na jakim etapie jest wdrażanie AI w Twojej firmie?</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="q6" value="A1" data-path="A"><span>Wiem, który proces chcę usprawnić jako pierwszy</span></label>
+              <label class="opt"><input type="radio" name="q6" value="A2" data-path="A"><span>Mam listę pomysłów albo własny plan wdrożenia</span></label>
+              <label class="opt"><input type="radio" name="q6" value="A3" data-path="A"><span>Już coś wdrożyliśmy i chcemy iść dalej</span></label>
+              <!-- Nowa odpowiedź (Bartek 12.11). Droga C to propozycja do potwierdzenia: kto już się sparzył, chce zobaczyć działanie na swoich danych. -->
+              <label class="opt"><input type="radio" name="q6" value="C2" data-path="C"><span>Próbowaliśmy, ale nie wyszło</span></label>
+              <label class="opt"><input type="radio" name="q6" value="B" data-path="B"><span>Nie wiem, od czego zacząć</span></label>
+              <label class="opt"><input type="radio" name="q6" value="C" data-path="C"><span>Najpierw chcę zobaczyć, że to działa na moich danych</span></label>
+            </div>
+          </fieldset>
+          <div class="step step-end" data-step="end" hidden>
+            <h3 class="h3" id="end-t">Proponuję drogę A: rozmowa z Bartkiem</h3>
+            <p id="end-p">Na rozmowie przejdziemy przez to, co boli najbardziej. Potem dostaniesz spisany zakres: etapy z ceną i efekt, który ma dawać system.</p>
+            <ul class="answers" id="answers" aria-label="Twoje odpowiedzi"></ul>
+            <div class="cal" id="cal">
+              <div class="cal-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="cal-cap">
+                <p><strong id="cal-t">Kalendarz: rozmowa z Bartkiem, 45 min</strong><span>Osadzony w stronie, bez wychodzenia na inny adres.</span></p>
+                <button class="btn btn-copper" type="button" id="cal-btn">Pokaż kalendarz</button>
+                <p class="cal-note" id="cal-note" hidden>W wersji produkcyjnej tu ładuje się kalendarz po zgodzie na jego pliki cookies.</p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="console-foot">
+          <button class="btn btn-text" type="button" id="back" hidden>Wstecz</button>
+          <p class="skipnote">W szkicu są pytania 1, 2, 4 i 6 z 10.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SEKRETARIAT: wszystkie opinie Google i listy referencyjne, w przegródkach opisanych działami -->
+<section class="sec-sec" id="sekretariat" aria-labelledby="sec-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Sekretariat</p>
+        <h2 class="h2" id="sec-h">Wszystkie opinie o&nbsp;nas</h2>
+      </div>
+      <a class="g-plaque" href="https://www.google.com/maps?cid=10191824326439953363" rel="noopener" target="_blank">
+        <span class="g-score">5,0</span>
+        <span class="g-meta"><span class="stars" role="img" aria-label="5 na 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>6 opinii w Google</span><span class="g-link">Zobacz wizytówkę<svg aria-hidden="true"><use href="#ext"/></svg></span></span>
+      </a>
+    </div>
+
+    <div class="rack" role="list" aria-label="Opinie w Google">
+      <figure class="slot" role="listitem" data-area="marketing">
+        <div class="note">
+          <blockquote>„Polecam LessManual – Agencję Automatyzacji AI! Zleciliśmy im automatyzację procesów na naszych mediach społecznościowych i efekt przerósł oczekiwania. Wszystko zostało świetnie pospinane: publikacje, powiadomienia, przekazywanie zadań i szybkie reakcje na wiadomości działają praktycznie „same”. Największy plus? To, co wcześniej zajmowało nam długie godziny, teraz trwa dosłownie chwilę.”</blockquote>
+          <figcaption><strong>Marcin Pietrasik</strong><span>Lokalny przewodnik · 129 opinii</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Marketing<span>Google</span></p>
+      </figure>
+      <figure class="slot" role="listitem" data-area="logistyka">
+        <div class="note">
+          <blockquote>„Bartek wykazuje się dużą samodzielnością i dobrą orientacją w automatyzacjach oraz integracjach systemowych. Szybko reaguje na zgłaszane problemy i sprawnie wprowadza zmiany w działających workflow. Współpraca przebiega konkretnie i technicznie na dobrym poziomie.”</blockquote>
+          <figcaption><strong>Dawid Kar</strong><span>1 opinia</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Logistyka i dokumenty<span>Google</span></p>
+      </figure>
+      <figure class="slot" role="listitem" data-area="operacje">
+        <div class="note">
+          <blockquote>„Pełen profesjonalizm i konkretne podejście do biznesu – współpraca z Bartkiem to czysta przyjemność. Dzięki wdrożeniom LessManual.ai zaoszczędziliśmy mnóstwo czasu, który wcześniej marnowaliśmy na powtarzalne zadania. Zdecydowanie polecam każdemu, kto chce usprawnić swoją firmę!”</blockquote>
+          <figcaption><strong>Paweł Muchewicz</strong><span>3 opinie</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Zamówienia i operacje<span>Google</span></p>
+      </figure>
+      <figure class="slot" role="listitem" data-area="cala-firma">
+        <div class="note">
+          <blockquote>„Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę” i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.”</blockquote>
+          <figcaption><strong>CreativeDanceRumia</strong><span>15 opinii</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Cała firma<span>Google</span></p>
+      </figure>
+      <figure class="slot" role="listitem" data-area="marketing">
+        <div class="note">
+          <blockquote>„Polecam z całego serca, zleciłem stworzenie strony internetowej a dostałem dużo więcej nowe Logo nową wizję na marketing i dobre pozycjonowanie w Google. Naprawdę bez zastrzeżeń 5/5!”</blockquote>
+          <figcaption><strong>Maciej Osiecki</strong><span>7 opinii</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Marketing: strona i SEO<span>Google</span></p>
+      </figure>
+      <figure class="slot slot-video" role="listitem">
+        <button class="frame frame-916 frame-sm" type="button" data-player aria-label="Odtwórz (podgląd odtwarzacza). Opinie wideo właścicieli"><span class="screen-glow" aria-hidden="true"></span><span class="play play-sm" aria-hidden="true"><svg class="i-play"><use href="#play"/></svg><svg class="i-pause"><use href="#pause"/></svg></span><span class="frame-cap">Opinie wideo właścicieli<small>dodamy, gdy nagrają, 20-40 s</small></span><span class="frame-progress" aria-hidden="true"><i></i></span></button>
+        <p class="slot-label"><i aria-hidden="true"></i>Wideo<span>wkrótce</span></p>
+      </figure>
+    </div>
+
+    <h3 class="h4 rack-h">Listy referencyjne i rekomendacje</h3>
+    <div class="rack rack-letters" role="list" aria-label="Listy referencyjne i rekomendacje">
+      <figure class="slot" role="listitem" data-area="recepcja">
+        <div class="note letter">
+          <p class="letter-head">List referencyjny · Rumia, 23.10.2026</p>
+          <blockquote>„Asystenci odbierają telefony klientów, podają status zamówienia, przyjmują nowe zamówienia i przekazują rozmowę do pracownika, gdy sprawa tego wymaga. (…) Dotrzymuje ustaleń, sam zgłasza ryzyka i dobrze tłumaczy techniczne sprawy osobom bez technicznego przygotowania. Z czystym sumieniem polecam Bartka jako wykonawcę projektów z agentami głosowymi.”</blockquote>
+          <figcaption><strong>Paweł Muchewicz</strong><span>właściciel, CreativeSM · podpisany</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Recepcja: agent głosowy<span>list</span></p>
+      </figure>
+      <figure class="slot" role="listitem" data-area="recepcja">
+        <div class="note">
+          <blockquote>„W Eighteen Studio zleciliśmy LessManual budowę asystentki głosowej dla poradni Pain Clinic. Asystentka odbiera telefon, odpowiada na pytania pacjentów i umawia wizyty od razu w Medfile, a prośby o odwołanie lub przełożenie wizyty przekazuje mailem do recepcji. Bartek koordynował całość, od konfiguracji po poprawki po testach poradni. Zawsze jasno mówił, co da się zrobić w obecnym systemie, a co wymaga dodatkowej integracji, i to bardzo ułatwiało nam decyzje.”</blockquote>
+          <figcaption><strong>Bartosz Łaskawiec</strong><span>CEO Eighteen Studio · referencja</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Recepcja: agent głosowy<span>referencja</span></p>
+      </figure>
+      <figure class="slot" role="listitem" data-area="sprzedaz">
+        <div class="note">
+          <blockquote lang="en">“Focus. Precision. Excellent time management, and AI agents' knowledge are what make Bartek an exceptional architect and engineer.”</blockquote>
+          <figcaption><strong>Arek Skuza</strong><span>CEO and boards advisor on AI Powered Growth · LinkedIn</span></figcaption>
+        </div>
+        <p class="slot-label"><i aria-hidden="true"></i>Sprzedaż<span>LinkedIn</span></p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FAQ (skrótowo) -->
+<section class="faq-sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <h2 class="h2" id="faq-h">Pytania, które słyszymy najczęściej</h2>
+    <div class="faq">
+      <details><summary>Ile kosztuje system AI dla mojej firmy?</summary><p>Projekty zwykle zaczynają się od kilkunastu tysięcy zł netto, a cenę każdego etapu dostajesz przed startem. Mapa AI firmy kosztuje 6&nbsp;900&nbsp;zł netto i odliczamy ją od pierwszego wdrożenia.</p></details>
+      <details><summary>Co, jeśli system nie zadziała?</summary><p>Efekt zapisujemy liczbą przed startem. Jeżeli odebrany system go nie daje, poprawiamy go na nasz koszt.</p></details>
+      <details><summary>Co, jeśli zechcę zakończyć współpracę?</summary><p>Jeśli zakończysz opiekę, przekazujemy Ci całość: kod, dane, dostępy i dokumentację techniczną. System możesz przekazać własnemu informatykowi.</p></details>
+      <details><summary>Ile trwa uruchomienie pierwszego systemu?</summary><p>Szybki pilot trwa dwa tygodnie. Mapę AI firmy oddajemy w ciągu 5 dni roboczych od ostatniej rozmowy.</p></details>
+      <details><summary>Czy AI nie popełni kosztownego błędu?</summary><p>Tam, gdzie błąd kosztuje pieniądze, system przygotowuje decyzję, a zatwierdza ją człowiek. Takie miejsca ustalamy przed startem.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- STOPKA: dane i linki jak w obecnej stopce (src/components/site/SiteFooter.tsx), w kolorze bazowym motywu -->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <p class="foot-logo"><svg class="brand-mark" viewBox="0 0 40 28" aria-hidden="true"><rect x="1" y="1" width="38" height="26" rx="13" fill="url(#bm)"/><rect x="7" y="6" width="26" height="16" rx="8" fill="#141414"/><rect x="13" y="9.5" width="4.5" height="9" rx="2.25" fill="#3FD0C2"/><rect x="22.5" y="9.5" width="4.5" height="9" rx="2.25" fill="#3FD0C2"/></svg><span>LessManual<span class="brand-ai">.ai</span></span></p>
+      <p>LessManual to partner technologiczny dla firm prowadzonych przez właściciela. Budujemy systemy AI, które ograniczają ręczną pracę, i opiekujemy się nimi po wdrożeniu.</p>
+      <p class="foot-note">Przyjmujemy maksymalnie 4 nowe firmy miesięcznie.</p>
+    </div>
+    <nav class="foot-col" aria-labelledby="fc-sys">
+      <h2 id="fc-sys">Systemy</h2>
+      <ul>
+        <li><a href="/systemy/odczyt-dokumentow">Dokumenty z maila do arkusza</a></li>
+        <li><a href="/systemy/okazje-sprzedazowe-i-przetargi">Okazje sprzedażowe i przetargi</a></li>
+        <li><a href="/systemy/panel-firmy">Panel: wszystkie boty w jednym miejscu</a></li>
+        <li><a href="/systemy/tresci-sklepu-pod-google">Treści sklepu pod Google</a></li>
+        <li><a href="/systemy">Wszystkie systemy</a></li>
+      </ul>
+    </nav>
+    <nav class="foot-col" aria-labelledby="fc-wsp">
+      <h2 id="fc-wsp">Współpraca</h2>
+      <ul>
+        <li><a href="#drogi">Mapa AI firmy</a></li>
+        <li><a href="#drogi">Szybki pilot</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/o-nas">Kim jesteśmy</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+    <nav class="foot-col" aria-labelledby="fc-kon">
+      <h2 id="fc-kon">Kontakt</h2>
+      <ul>
+        <li><a href="#formularz">Umów rozmowę</a></li>
+        <li><a href="mailto:kontakt@lessmanual.ai">kontakt@lessmanual.ai</a></li>
+        <li><a href="https://www.linkedin.com/in/bartlomiej-chudzik-7aa740197" rel="noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.google.com/maps?cid=10191824326439953363" rel="noopener" target="_blank">Wizytówka w Google</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 LessManual.ai</span>
+    <span class="foot-addr">LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909</span>
+    <span class="foot-legal"><a href="/legal/polityka-prywatnosci">Polityka prywatności</a><a href="/legal/polityka-cookies">Polityka cookies</a><a href="/legal/regulamin">Regulamin</a><button class="linkbtn" type="button" id="cookie-btn">Ustawienia cookies</button></span>
+  </div>
+</footer>
+
+<div class="sketch">
+  <p class="sketch-tag">Szkic S4, motyw <span id="motyw-name">jasny</span>, puste ramki = filmy i zdjęcia do wstawienia</p>
+  <div class="motyw-switch" role="group" aria-label="Motyw szkicu">
+    <button type="button" data-motyw-set="jasny" aria-pressed="true"><svg aria-hidden="true"><use href="#sun"/></svg>Jasny</button>
+    <button type="button" data-motyw-set="ciemny" aria-pressed="false"><svg aria-hidden="true"><use href="#moon"/></svg>Ciemny</button>
+  </div>
+</div>
+</body>
+</html>
