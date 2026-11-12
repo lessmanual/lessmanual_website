@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Szkice nowej strony LessManual</title>
+<link rel="stylesheet" href="/warianty/_vendor/fonts.css">
+<style>
+:root { --bg:#0E0C0A; --surface:#1A1714; --ink:#F2ECE4; --muted:#A79C90; --line:#2C2722; --copper:#C9864A; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Inter", system-ui, sans-serif; padding: 48px max(16px, env(safe-area-inset-right,0px)) 64px max(16px, env(safe-area-inset-left,0px)); }
+.wrap { max-width: 980px; margin: 0 auto; display:flex; flex-direction:column; gap:28px; }
+h1 { font-family:"Instrument Serif", Georgia, serif; font-weight:400; font-size: clamp(38px,6vw,60px); line-height:1; margin:0; }
+p { color:var(--muted); margin:0; max-width:62ch; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; }
+a.card { display:flex; flex-direction:column; gap:10px; padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); color:inherit; text-decoration:none; transition: border-color .2s; }
+a.card:hover, a.card:focus-visible { border-color: var(--copper); outline:none; }
+.k { font-family:"Instrument Serif", Georgia, serif; font-size:44px; color:var(--copper); line-height:1; }
+.n { font-weight:600; font-size:18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Szkice nowej strony</h1>
+  <p>Ta sama treść i kolejność z burzy mózgów, trzy różne sposoby prowadzenia leada. Puste ramki to miejsca na rolkę, filmy z fabryki wideo i obraz systemu. Na telefonie każdy szkic działa inaczej niż na komputerze, warto zobaczyć oba.</p>
+  <div class="grid">
+    <a class="card" href="/szkice/s1/index.html"><span class="k">S1</span><span class="n">Produkt</span><p>Jak strona Apple: ciemna scena, system jako miedziana rzeźba w hero, pokoje jako galeria filmów, demo dokumentu jako produkt w akcji.</p></a>
+    <a class="card" href="/szkice/s2/index.html"><span class="k">S2</span><span class="n">Plan firmy</span><p>Rzut biura z góry: klikasz pokój, kamera się przybliża, otwiera się film, liczba i „To u Was?”. Na telefonie lista pokoi.</p></a>
+    <a class="card" href="/szkice/s3/index.html"><span class="k">S3</span><span class="n">Rozmowa z Bzykiem</span><p>Bzyk pyta, gdzie ucieka najwięcej czasu. Twoja odpowiedź układa resztę strony i wypełnia część formularza.</p></a>
+  </div>
+</div>
+</body>
+</html>
