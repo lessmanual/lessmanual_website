@@ -63,6 +63,17 @@
   font-size: 16px;
 }
 
+/* Wąskie telefony (360 px): ciaśniejszy przycisk, żeby rząd mieścił się bez przewijania w bok. */
+@media (max-width: 374px) {
+  .inner {
+    gap: 2px;
+  }
+
+  .mobileCta {
+    padding: 0 4px;
+  }
+}
+
 .mobile {
   position: relative;
 }

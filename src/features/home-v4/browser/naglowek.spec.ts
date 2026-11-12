@@ -42,3 +42,17 @@ for (const vp of [
     });
   });
 }
+
+test.describe("nagłówek 360", () => {
+  test.use({ viewport: { width: 360, height: 780 } });
+
+  test("mieści się w 360 px bez przewijania w bok", async ({ page }) => {
+    await page.goto("/");
+    const menu = await page.locator('[data-qa="menu"]').boundingBox();
+    if (!menu) throw new Error("brak boundingBox");
+    expect(menu.right ?? menu.x + menu.width).toBeLessThanOrEqual(340);
+    expect(menu.width).toBeGreaterThanOrEqual(44);
+    const szerokosc = await page.evaluate(() => document.documentElement.scrollWidth);
+    expect(szerokosc).toBeLessThanOrEqual(360);
+  });
+});
