@@ -12,6 +12,7 @@ export function PasekMobilny() {
   const [decyzja, setDecyzja] = useState(false);
   const [heroWidoczne, setHeroWidoczne] = useState(true);
   const [formularzWidoczny, setFormularzWidoczny] = useState(false);
+  const [banerOtwarty, setBanerOtwarty] = useState(false);
 
   useEffect(() => {
     const odczytaj = () => setDecyzja(czytajZapisZgodyCookies() !== null);
@@ -34,7 +35,38 @@ export function PasekMobilny() {
     return () => obserwator.disconnect();
   }, []);
 
-  const widoczny = decyzja && !heroWidoczne && !formularzWidoczny;
+  // Baner otwarty ponownie z „Ustawień cookies” leży przy dolnej krawędzi tak samo jak pasek, więc pasek ustępuje.
+  // Obserwujemy DOM, bo baner zamyka się też bez zapisu (Wstecz), a wtedy nie ma zdarzenia zgody.
+  useEffect(() => {
+    const sprawdz = () => {
+      const baner = document.querySelector(".lm-cookie-banner");
+      setBanerOtwarty(baner instanceof HTMLElement && baner.getClientRects().length > 0);
+    };
+    sprawdz();
+    const obserwator = new MutationObserver(sprawdz);
+    obserwator.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["data-zgoda-cookies"],
+    });
+    return () => obserwator.disconnect();
+  }, []);
+
+  const widoczny = decyzja && !heroWidoczne && !formularzWidoczny && !banerOtwarty;
+
+  // WCAG 2.4.11: element z fokusem klawiatury nie może zostać pod paskiem, więc przy widocznym pasku
+  // przewijanie do fokusu zostawia mu miejsce równe wysokości paska (12 + 48 + 12 + strefa bezpieczna).
+  useEffect(() => {
+    // Od 1024 px pasek jest ukryty w CSS, więc odstęp byłby pusty.
+    if (!widoczny || !window.matchMedia("(max-width: 1023px)").matches) return;
+    const html = document.documentElement;
+    html.style.scrollPaddingBottom = "calc(72px + env(safe-area-inset-bottom, 0px))";
+    return () => {
+      html.style.removeProperty("scroll-padding-bottom");
+    };
+  }, [widoczny]);
+
   return (
     <>
       <div

@@ -40,6 +40,47 @@ test.describe("pasek 390", () => {
     await expect(pasek).toHaveAttribute("data-widoczny", "true");
   });
 
+  test("fokus z klawiatury nie chowa się za paskiem (scroll-padding-bottom)", async ({ page }) => {
+    await zDecyzjaOCookies(page);
+    await page.goto("/");
+    await expect(page.locator("details#pytanie-czas summary")).toBeAttached();
+    // Kontrolka tuż pod dolną krawędzią ekranu: Tab przewija ją do widoku, ale nie pod pasek.
+    await page.evaluate(() => {
+      const spisy = Array.from(document.querySelectorAll("section#pytania summary"));
+      const cel = spisy[4];
+      const poprzedni = spisy[3];
+      if (!(cel instanceof HTMLElement) || !(poprzedni instanceof HTMLElement)) throw new Error("brak pytań");
+      // Kontrolka wystaje 30 px nad dolną krawędź: Chromium przewija wtedy minimalnie (do krawędzi), a nie na środek.
+      window.scrollTo({ top: cel.getBoundingClientRect().top + window.scrollY - window.innerHeight + 30, behavior: "instant" });
+      poprzedni.focus({ preventScroll: true });
+    });
+    await expect(page.locator(PASEK)).toHaveAttribute("data-widoczny", "true");
+    await page.keyboard.press("Tab");
+    // Przewijanie do fokusu jest płynne (scroll-behavior: smooth), więc czekamy, aż kontrolka dojedzie nad pasek.
+    const odstepOdPaska = () =>
+      page.evaluate(() => {
+        const aktywny = document.activeElement;
+        const pasek = document.querySelector('[data-qa="pasek-mobilny"]');
+        if (!aktywny || !pasek) return -9999;
+        return pasek.getBoundingClientRect().top - aktywny.getBoundingClientRect().bottom;
+      });
+    await expect.poll(odstepOdPaska, { timeout: 5000 }).toBeGreaterThanOrEqual(0);
+  });
+
+  test("ponownie otwarty baner zgody chowa pasek, po zamknięciu pasek wraca", async ({ page }) => {
+    await zDecyzjaOCookies(page);
+    await page.goto("/");
+    await przewinDo(page, "#pytania");
+    await expect(page.locator(PASEK)).toHaveAttribute("data-widoczny", "true");
+    await page.evaluate(() => window.dispatchEvent(new Event("open-cookie-settings")));
+    await expect(page.locator('[role="region"].lm-cookie-banner')).toBeVisible();
+    await expect(page.locator(PASEK)).toHaveAttribute("data-widoczny", "false");
+    // „Wstecz” zamyka baner bez zapisu, więc pasek musi wrócić bez zdarzenia zgody.
+    await page.getByRole("button", { name: "Wstecz" }).click();
+    await expect(page.locator('[role="region"].lm-cookie-banner')).toBeHidden();
+    await expect(page.locator(PASEK)).toHaveAttribute("data-widoczny", "true");
+  });
+
   test("pasek nie przykrywa banera zgody", async ({ page }) => {
     await page.goto("/");
     await przewinDo(page, "#dzialy");
