@@ -1,7 +1,13 @@
 import { expect, test, type Page } from "@playwright/test";
 import { HOME_V4 } from "../../../content/home-v4";
 
-const KARUZELA = '[data-qa="karuzela"]:visible';
+declare global {
+  interface Window {
+    ustawUkryta: (v: boolean) => void;
+  }
+}
+
+const KARUZELA ='[data-qa="karuzela"]:visible';
 const KROK = '[data-qa="krok-formularza"]';
 
 async function doDzialow(page: Page) {
@@ -45,6 +51,9 @@ for (const vp of [
       await wybierzDzial(page, "logistyka");
       await page.locator(`${KARUZELA} [data-qa="tak-to-u-nas"]`).click();
       await expect(page.locator("#formularz")).toBeInViewport();
+      // Fokus ląduje w formularzu (nagłówek sekcji), nie na przycisku, który został w karuzeli.
+      await expect(page.locator("#formularz-title")).toBeFocused();
+      expect(await page.evaluate(() => document.activeElement?.id)).toBe("formularz-title");
       // Formularz może nie być jeszcze zhydratowany: powtarzamy klik „Zaczynamy”, aż pojawi się pierwsze pytanie.
       await expect(async () => {
         await page.getByRole("button", { name: /Zaczynamy/ }).click({ timeout: 1000 });
@@ -108,6 +117,31 @@ for (const vp of [
         { nazwa: "review_click", params: { dzial: "marketing" } },
       ]);
       expect(HOME_V4.dzialy.lista.marketing.karty[2].opinia.zrodlo).toBe("google");
+    });
+
+    test("karta_view nie liczy czasu, gdy karta przeglądarki jest ukryta", async ({ page }) => {
+      await page.addInitScript(() => {
+        window.dataLayer = window.dataLayer ?? [];
+        window.gtag = (...a: unknown[]) => {
+          window.dataLayer.push(a);
+        };
+        let ukryta = false;
+        Object.defineProperty(document, "visibilityState", { get: () => (ukryta ? "hidden" : "visible") });
+        window.ustawUkryta = (v: boolean) => {
+          ukryta = v;
+          document.dispatchEvent(new Event("visibilitychange"));
+        };
+      });
+      await doDzialow(page);
+      await page.evaluate(() => window.ustawUkryta(true));
+      await wybierzDzial(page, "marketing");
+      await page.locator(KARUZELA).evaluate((el) => el.scrollIntoView({ block: "start", behavior: "instant" }));
+      await page.waitForTimeout(1600);
+      expect((await zdarzenia(page)).filter((z) => z.nazwa === "karta_view")).toEqual([]);
+      await page.evaluate(() => window.ustawUkryta(false));
+      await expect
+        .poll(async () => (await zdarzenia(page)).filter((z) => z.nazwa === "karta_view").length, { timeout: 4000 })
+        .toBe(1);
     });
   });
 }

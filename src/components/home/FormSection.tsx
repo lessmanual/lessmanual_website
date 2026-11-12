@@ -9,7 +9,8 @@ export function FormSection() {
     <section id="formularz" className="lm-section" aria-labelledby="formularz-title">
       <div className={`lm-container ${styles.grid}`}>
         <div className={styles.copy}>
-          <h2 id="formularz-title">{FINAL_CTA.title}</h2>
+          {/* tabIndex -1: cel fokusu po „Tak, to u nas” i kaflach dróg (przejdzDoFormularza). */}
+          <h2 id="formularz-title" tabIndex={-1}>{FINAL_CTA.title}</h2>
           <p className="lm-lead">{FINAL_CTA.body}</p>
           <p className="lm-small">{FINAL_CTA.note}</p>
           <div className={styles.bzyk}>

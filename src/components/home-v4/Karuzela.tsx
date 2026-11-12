@@ -82,34 +82,41 @@ export function Karuzela(props: {
     const karta = torRef.current?.children[nr];
     if (!aktywny || !karta) return;
     let czasomierz: ReturnType<typeof setTimeout> | null = null;
+    let widoczna = false;
     const wyczysc = () => {
       if (czasomierz !== null) clearTimeout(czasomierz);
       czasomierz = null;
+    };
+    // Licznik biegnie tylko przy widocznej karcie ORAZ widocznej karcie przeglądarki; zmiana któregokolwiek zaczyna od zera.
+    const przelicz = () => {
+      wyczysc();
+      if (!widoczna || document.visibilityState !== "visible") return;
+      czasomierz = setTimeout(() => {
+        czasomierz = null;
+        if (!rejestrWidokow.pierwszyRaz(dzial, nr)) return;
+        trackEvent("karta_view", { dzial, karta: NAZWA_KARTY[nr], nr: nr + 1, sposob: sposobRef.current });
+      }, CZAS_WIDOCZNOSCI_MS);
     };
     const obserwator = new IntersectionObserver(
       (wpisy) => {
         // Paczka może mieć kilka wpisów (przewijanie); liczy się najnowszy, bo stary stan bywa „niewidoczny”.
         const wpis = wpisy[wpisy.length - 1];
-        wyczysc();
-        if (!wpis?.isIntersecting) return;
         // Karta wyższa niż ekran nie osiągnie 60% swojej wysokości, więc wystarcza 60% wysokości okna.
-        const wystarczy =
-          wpis.intersectionRatio >= PROG_WIDOCZNOSCI ||
-          wpis.intersectionRect.height >= PROG_WIDOCZNOSCI * window.innerHeight;
-        if (!wystarczy) return;
-        czasomierz = setTimeout(() => {
-          czasomierz = null;
-          if (!rejestrWidokow.pierwszyRaz(dzial, nr)) return;
-          trackEvent("karta_view", { dzial, karta: NAZWA_KARTY[nr], nr: nr + 1, sposob: sposobRef.current });
-        }, CZAS_WIDOCZNOSCI_MS);
+        widoczna =
+          wpis?.isIntersecting === true &&
+          (wpis.intersectionRatio >= PROG_WIDOCZNOSCI ||
+            wpis.intersectionRect.height >= PROG_WIDOCZNOSCI * window.innerHeight);
+        przelicz();
       },
       // Gęste progi, żeby przekroczenie 60% (karty albo okna) zawsze wywołało sprawdzenie.
       { threshold: Array.from({ length: 21 }, (_, i) => i / 20) },
     );
     obserwator.observe(karta);
+    document.addEventListener("visibilitychange", przelicz);
     return () => {
       wyczysc();
       obserwator.disconnect();
+      document.removeEventListener("visibilitychange", przelicz);
     };
   }, [aktywny, dzial, nr]);
 
