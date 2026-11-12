@@ -191,6 +191,9 @@ for (const vp of [
       await doOsi(page);
       const link = page.locator(`${SEKCJA} a`, { hasText: HOME_V4.wspolpraca.gwarancja.link });
       await expect(link).toHaveAttribute("href", "#pytanie-obietnica");
+      await link.click();
+      // Pytanie 7 istnieje od Zadania 13 i rozwija się po wejściu na kotwicę.
+      await expect(page.locator("details#pytanie-obietnica")).toHaveAttribute("open", "");
     });
 
     test("jedyna kwota w sekcji to 6 900 zł netto", async ({ page }) => {

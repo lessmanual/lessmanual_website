@@ -8,6 +8,7 @@ import { ModulDzialow } from "@/components/home-v4/ModulDzialow";
 import { Wspolpraca } from "@/components/home-v4/Wspolpraca";
 import { Bezpieczenstwo } from "@/components/home-v4/Bezpieczenstwo";
 import { OpinieRzad } from "@/components/home-v4/OpinieRzad";
+import { FaqV4 } from "@/components/home-v4/FaqV4";
 import { BzykGuide } from "@/components/home/BzykGuide";
 import { FormSection } from "@/components/home/FormSection";
 import {
@@ -20,7 +21,8 @@ import {
   Systems,
   Testimonials,
 } from "@/components/home/Sections";
-import { FAQ, META, SITE_URL } from "@/content/site";
+import { HOME_V4 } from "@/content/home-v4";
+import { META, SITE_URL } from "@/content/site";
 import { generateFaqPageSchema, generateServiceSchema, serializeJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -44,7 +46,8 @@ export const metadata: Metadata = {
   },
 };
 
-const faqSchema = generateFaqPageSchema(FAQ.items);
+// Jedyny FAQPage na stronie: 7 pytań v4, te same, które widać w FaqV4.
+const faqSchema = generateFaqPageSchema(HOME_V4.faq.pytania);
 const serviceSchema = generateServiceSchema({
   name: "Systemy AI dla firm: wdrożenie etapami i opieka co miesiąc",
   description: META.description,
@@ -78,6 +81,7 @@ export default function Home() {
           <Pricing />
           <Testimonials />
           <Faq />
+          <FaqV4 />
           <OpinieRzad />
           <FormSection />
         </main>
