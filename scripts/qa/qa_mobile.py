@@ -137,7 +137,10 @@ CHECKS_JS = r"""
     }
     return false;
   };
-  const ariaHiddenUp = (e) => !!e.closest('[aria-hidden="true"]');
+  // Czysta dekoracja: w aria-hidden i bez przycisku/linku w drzewie (przyciski w scenie rzutu są prawdziwe,
+  // klikane myszą, więc kontrast się liczy).
+  const ariaHiddenUp = (e) => !!e.closest('[aria-hidden="true"]') && !e.closest('button, a, [role="button"]')
+    && !e.querySelector('button, a, [role="button"]');
   const clipAncestor = (e) => {
     for (let n = e.parentElement; n && n !== document.body; n = n.parentElement) {
       const s = cs(n);
