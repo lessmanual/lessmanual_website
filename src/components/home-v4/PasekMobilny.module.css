@@ -31,7 +31,7 @@
 
   .miejsce {
     display: block;
-    height: calc(72px + env(safe-area-inset-bottom, 0px));
+    height: calc(73px + env(safe-area-inset-bottom, 0px));
   }
 }
 

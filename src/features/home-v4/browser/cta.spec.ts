@@ -36,20 +36,19 @@ test.describe("pasek 390", () => {
     expect(przycisk?.height ?? 0).toBeGreaterThanOrEqual(44);
     await przewinDo(page, "#formularz");
     await expect(pasek).toHaveAttribute("data-widoczny", "false");
-    await przewinDo(page, "#pytania");
+    await przewinDo(page, "#wezwanie");
     await expect(pasek).toHaveAttribute("data-widoczny", "true");
   });
 
   test("fokus z klawiatury nie chowa się za paskiem (scroll-padding-bottom)", async ({ page }) => {
     await zDecyzjaOCookies(page);
     await page.goto("/");
-    await expect(page.locator("details#pytanie-czas summary")).toBeAttached();
     // Kontrolka tuż pod dolną krawędzią ekranu: Tab przewija ją do widoku, ale nie pod pasek.
     await page.evaluate(() => {
-      const spisy = Array.from(document.querySelectorAll("section#pytania summary"));
-      const cel = spisy[4];
-      const poprzedni = spisy[3];
-      if (!(cel instanceof HTMLElement) || !(poprzedni instanceof HTMLElement)) throw new Error("brak pytań");
+      const kontrolki = Array.from(document.querySelectorAll("footer a, footer button"));
+      const cel = kontrolki[kontrolki.length - 3];
+      const poprzedni = kontrolki[kontrolki.length - 4];
+      if (!(cel instanceof HTMLElement) || !(poprzedni instanceof HTMLElement)) throw new Error("brak kontrolek stopki");
       // Kontrolka wystaje 30 px nad dolną krawędź: Chromium przewija wtedy minimalnie (do krawędzi), a nie na środek.
       window.scrollTo({ top: cel.getBoundingClientRect().top + window.scrollY - window.innerHeight + 30, behavior: "instant" });
       poprzedni.focus({ preventScroll: true });
@@ -70,20 +69,22 @@ test.describe("pasek 390", () => {
   test("odstęp przewijania znika po przejściu przez 1024 px i wraca po powrocie", async ({ page }) => {
     await zDecyzjaOCookies(page);
     await page.goto("/");
-    await przewinDo(page, "#pytania");
+    await przewinDo(page, "#wezwanie");
     await expect(page.locator(PASEK)).toHaveAttribute("data-widoczny", "true");
     const odstep = () => page.evaluate(() => document.documentElement.style.scrollPaddingBottom);
-    await expect.poll(odstep).toContain("72px");
+    await expect.poll(odstep).toContain("73px");
     await page.setViewportSize({ width: 1200, height: 844 });
     await expect.poll(odstep).toBe("");
     await page.setViewportSize({ width: 390, height: 844 });
-    await expect.poll(odstep).toContain("72px");
+    // Zmiana szerokości przesuwa układ: wracamy do wezwania, żeby formularz nie wszedł do ekranu i nie schował paska.
+    await przewinDo(page, "#wezwanie");
+    await expect.poll(odstep).toContain("73px");
   });
 
   test("ponownie otwarty baner zgody chowa pasek, po zamknięciu pasek wraca", async ({ page }) => {
     await zDecyzjaOCookies(page);
     await page.goto("/");
-    await przewinDo(page, "#pytania");
+    await przewinDo(page, "#wezwanie");
     await expect(page.locator(PASEK)).toHaveAttribute("data-widoczny", "true");
     await page.evaluate(() => window.dispatchEvent(new Event("open-cookie-settings")));
     await expect(page.locator('[role="region"].lm-cookie-banner')).toBeVisible();
@@ -140,7 +141,7 @@ test.describe("pasek 1440", () => {
     // Pasek istnieje w DOM (komponent jest zamontowany), ale od 1024 px CSS go nie pokazuje.
     await expect(page.locator(PASEK)).toBeAttached();
     await expect(page.locator(PASEK)).toBeHidden();
-    await przewinDo(page, "#pytania");
+    await przewinDo(page, "#wezwanie");
     await expect(page.locator(PASEK)).toBeHidden();
   });
 

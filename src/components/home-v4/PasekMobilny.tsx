@@ -68,12 +68,12 @@ export function PasekMobilny() {
   const widoczny = decyzja && !heroWidoczne && !formularzWidoczny && !banerOtwarty;
 
   // WCAG 2.4.11: element z fokusem klawiatury nie może zostać pod paskiem, więc przy widocznym pasku
-  // przewijanie do fokusu zostawia mu miejsce równe wysokości paska (12 + 48 + 12 + strefa bezpieczna).
+  // przewijanie do fokusu zostawia mu miejsce równe wysokości paska (12 + 48 + 12 + 1 px ramki + strefa bezpieczna).
   useEffect(() => {
     // Od 1024 px pasek jest ukryty w CSS, więc odstęp byłby pusty.
     if (!widoczny || !waskiEkran) return;
     const html = document.documentElement;
-    html.style.scrollPaddingBottom = "calc(72px + env(safe-area-inset-bottom, 0px))";
+    html.style.scrollPaddingBottom = "calc(73px + env(safe-area-inset-bottom, 0px))";
     return () => {
       html.style.removeProperty("scroll-padding-bottom");
     };

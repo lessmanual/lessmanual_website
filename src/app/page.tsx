@@ -11,18 +11,7 @@ import { OpinieRzad } from "@/components/home-v4/OpinieRzad";
 import { FaqV4 } from "@/components/home-v4/FaqV4";
 import { WezwanieKoncowe } from "@/components/home-v4/WezwanieKoncowe";
 import { PasekMobilny } from "@/components/home-v4/PasekMobilny";
-import { BzykGuide } from "@/components/home/BzykGuide";
 import { FormSection } from "@/components/home/FormSection";
-import {
-  Faq,
-  ForWhom,
-  Guarantee,
-  Paths,
-  Pricing,
-  ScopeCard,
-  Systems,
-  Testimonials,
-} from "@/components/home/Sections";
 import { HOME_V4 } from "@/content/home-v4";
 import { META, SITE_URL } from "@/content/site";
 import { generateFaqPageSchema, generateServiceSchema, serializeJsonLd } from "@/lib/schema";
@@ -73,25 +62,16 @@ export default function Home() {
           <HeroV4 />
           <PrzejscieObiekt />
           <ModulDzialow />
-          <ForWhom />
           <Wspolpraca />
           <Bezpieczenstwo />
-          <ScopeCard />
-          <Systems />
-          <Paths />
-          <Guarantee />
-          <Pricing />
-          <Testimonials />
-          <Faq />
-          <FaqV4 />
           <OpinieRzad />
-          <WezwanieKoncowe />
           <FormSection />
+          <FaqV4 />
+          <WezwanieKoncowe />
         </main>
       </DzialProvider>
       <SiteFooter />
       <PasekMobilny />
-      <BzykGuide />
     </>
   );
 }
