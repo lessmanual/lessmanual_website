@@ -1,0 +1,623 @@
+/* Współpraca v4: oś kroków z dwoma torami (My gruby, miedź; Ty cienki, zegar) i półka systemów.
+   Telefon pierwszy (390): oś pionowa, rozszerzenie od 1100 px do osi poziomej. */
+.sekcja {
+  padding-block: 56px 72px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 72px;
+}
+
+.naglowek {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  text-wrap: balance;
+  max-width: 24ch;
+}
+
+.lead {
+  margin-top: 12px;
+  max-width: 62ch;
+}
+
+.film {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  background: var(--ink);
+}
+
+/* ------------------------------------------------------------------ oś (telefon) */
+.os {
+  margin-top: 36px;
+}
+
+.kroki {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Oś: 2 px, miedź; karty mają tło, więc linia widać tylko między nimi i łączy węzły. */
+.kroki::before {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 28px;
+  bottom: 56px;
+  width: 2px;
+  background: var(--copper);
+}
+
+.krok {
+  position: relative;
+}
+
+.wezel {
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  top: 14px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--line-control);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-2);
+  font: 700 15px/1 var(--font-sans);
+  transition: background-color 0.35s var(--ease-out), border-color 0.35s var(--ease-out), color 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+.krok[data-zapalony="true"] .wezel {
+  border-color: var(--copper-strong);
+  background: var(--copper-strong);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgb(184 115 51 / 0.22);
+}
+
+.karta {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px 16px 54px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.krokNaglowek {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tor {
+  display: block;
+  margin-bottom: 2px;
+  font: 700 15px/1.3 var(--font-sans);
+  letter-spacing: 0.02em;
+}
+
+.my {
+  padding-left: 12px;
+  border-left: 4px solid var(--copper);
+}
+
+.my p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.my .tor {
+  color: var(--copper-strong);
+}
+
+.ty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 8px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line-control);
+  color: var(--ink-2);
+}
+
+.ty .tor {
+  flex: 0 0 100%;
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.ty p {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.zegar {
+  flex: 0 0 auto;
+  color: var(--ink-2);
+}
+
+/* Kroki 0: trzy kafle jeden pod drugim, bez własnych przycisków. */
+.kafle {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kafelKomorka {
+  display: block;
+}
+
+.kafel {
+  display: block;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: 2px solid var(--line-control);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: border-color 0.15s var(--ease-out), background-color 0.15s var(--ease-out);
+}
+
+.kafel strong {
+  font-weight: 600;
+}
+
+.kafel:hover {
+  border-color: var(--copper-strong);
+  background: #fbf7f1;
+}
+
+.lacznik,
+.lacznikGora,
+.szynaTekst {
+  display: none;
+}
+
+/* Łuk powrotu: na telefonie wiersz pod osią, na komputerze łuk nad osią. */
+.luk {
+  order: 99;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 54px;
+  color: var(--copper-strong);
+  font: 600 16px/1.3 var(--font-sans);
+}
+
+.lukIkona {
+  flex: 0 0 auto;
+}
+
+/* ------------------------------------------------------------------ półka systemów */
+.polka {
+  margin-top: 28px;
+  max-width: 560px;
+}
+
+.polkaKafelki {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.system {
+  display: grid;
+  gap: 4px;
+  padding: 12px 10px;
+  border: 2px dashed var(--line-control);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--ink-2);
+  transition: background-color 0.45s var(--ease-out), border-color 0.45s var(--ease-out), color 0.45s var(--ease-out);
+}
+
+.systemNazwa {
+  font: 600 17px/1.2 var(--font-sans);
+}
+
+.systemOpieka {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 15px/1.2 var(--font-sans);
+}
+
+.kropka {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ink-3);
+  border-radius: 50%;
+  transition: background-color 0.45s var(--ease-out), border-color 0.45s var(--ease-out);
+}
+
+/* Patyna tylko jako wypełnienie z ciemnym znakiem (nigdy tekst na jasnym tle). */
+.system[data-pod-opieka="true"] {
+  border-style: solid;
+  border-color: var(--patina);
+  background: var(--patina);
+  color: var(--on-patina);
+}
+
+.system[data-pod-opieka="true"] .kropka {
+  border-color: var(--on-patina);
+  background: var(--on-patina);
+}
+
+/* Klamra obejmuje trzy kafelki i podpisuje wspólną opłatę. */
+.klamra {
+  height: 14px;
+  margin-top: 8px;
+  border: 2px solid var(--copper);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+}
+
+.klamraNapis {
+  margin: 8px 0 0;
+  color: var(--copper-strong);
+  font: 600 16px/1.35 var(--font-sans);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ dowód i karty */
+.dowod {
+  max-width: 62ch;
+  margin: 48px 0 0;
+  padding-left: 16px;
+  border-left: 4px solid var(--copper);
+  font-size: 20px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.karty {
+  display: grid;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+
+.kartaH3 {
+  margin: 0 0 12px;
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.kartaTekst {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.ceny {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cena {
+  display: grid;
+  gap: 2px;
+  padding-block: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.cena:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cena strong {
+  font-weight: 700;
+}
+
+.drobnyDruk {
+  margin: 12px 0 0;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 8px;
+  color: var(--sea);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  color: var(--sea-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wezel,
+  .system,
+  .kropka,
+  .kafel {
+    transition: none;
+  }
+}
+
+.kartaInfo {
+  padding: 22px 20px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.lacznik path,
+.lacznikGora path,
+.szynaTekst path {
+  fill: none;
+  stroke: var(--copper);
+  stroke-width: 2;
+}
+
+.lacznikGora .grot {
+  fill: var(--copper);
+  stroke: none;
+}
+
+@media (min-width: 768px) {
+  .kroki,
+  .polka {
+    max-width: 760px;
+  }
+}
+
+/* ------------------------------------------------------------------ oś (komputer) */
+@media (min-width: 1100px) {
+  .sekcja {
+    padding-block: 96px 112px;
+  }
+
+  .naglowek {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 48px;
+  }
+
+  .os {
+    margin-top: 56px;
+  }
+
+  /* Sześć kolumn (krok 0 szerszy na wachlarz kafli), wiersz 1 na łuk powrotu, wiersz 2 na kroki. */
+  .kroki {
+    max-width: none;
+    grid-template-columns: minmax(0, 1.7fr) repeat(5, minmax(0, 1fr));
+    grid-template-rows: 64px auto;
+    column-gap: 28px;
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .kroki::before {
+    left: 0;
+    right: 0;
+    top: 81px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+
+  .krok {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .wezel {
+    position: relative;
+    left: auto;
+    top: auto;
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  /* Elementy karty stają się bezpośrednimi dziećmi kroku, żeby tory My i Ty układały się w kolumnie. */
+  .karta {
+    display: contents;
+  }
+
+  .krokNaglowek {
+    font-size: 18px;
+  }
+
+  .my {
+    padding: 14px 14px 16px;
+    border-top: 4px solid var(--copper);
+    border-left: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .my p {
+    font-size: 16px;
+  }
+
+  .ty {
+    padding: 10px 14px;
+    border-top: 1px solid var(--line-control);
+    border-left: none;
+    border-radius: var(--radius-md);
+    background: var(--surface-sunken);
+  }
+
+  .ty p {
+    font-size: 15px;
+  }
+
+  /* Łuk z kroku 5 do kroku 2: końce nad węzłami (18 px od lewej krawędzi kolumny). */
+  .luk {
+    order: 0;
+    grid-row: 1;
+    grid-column: 3 / 7;
+    position: relative;
+    display: block;
+    height: 64px;
+    margin: 0 calc((100% - 84px) / 4 - 18px) 0 18px;
+  }
+
+  .lukIkona {
+    display: none;
+  }
+
+  .luk::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 40px;
+    border: 2px solid var(--copper);
+    border-bottom: none;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .luk::after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    bottom: 0;
+    border-inline: 7px solid transparent;
+    border-top: 9px solid var(--copper);
+  }
+
+  .lukNapis {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    padding-inline: 14px;
+    background: var(--bg);
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1100px) {
+  /* Krok 0: tekst u góry jak w innych kolumnach, pod nim wachlarz A/B/C scalony szyną z osią. */
+  .krok[data-nr="0"] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 28px;
+    grid-template-rows: 36px auto auto auto;
+    gap: 0;
+  }
+
+  .krok[data-nr="0"] .wezel {
+    grid-area: 1 / 1;
+  }
+
+  .krok[data-nr="0"] .krokNaglowek {
+    grid-area: 2 / 1;
+    margin-top: 12px;
+  }
+
+  .krok[data-nr="0"] .my {
+    grid-area: 3 / 1;
+    margin-top: 12px;
+  }
+
+  .krok[data-nr="0"] .ty {
+    grid-area: 4 / 1;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  .lacznikGora,
+  .szynaTekst,
+  .lacznik {
+    display: block;
+    width: 28px;
+    height: 100%;
+  }
+
+  .lacznikGora {
+    grid-area: 1 / 2;
+    height: 36px;
+    overflow: visible;
+  }
+
+  .szynaTekst {
+    grid-area: 2 / 2 / 5 / 3;
+  }
+
+  .kafle {
+    display: contents;
+  }
+
+  .kafelKomorka {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1fr) 28px;
+  }
+
+  .kafel {
+    margin-block: 8px;
+    font-size: 16px;
+  }
+
+  .karty {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .kartaInfo {
+    padding: 28px 26px 30px;
+  }
+
+  .dowod {
+    margin-top: 64px;
+    font-size: 22px;
+  }
+
+  .polka {
+    margin-top: 40px;
+  }
+
+  .system {
+    padding: 14px 14px;
+  }
+}

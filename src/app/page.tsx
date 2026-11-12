@@ -5,7 +5,7 @@ import { DzialProvider } from "@/components/home-v4/DzialProvider";
 import { HeroV4 } from "@/components/home-v4/HeroV4";
 import { PrzejscieObiekt } from "@/components/home-v4/PrzejscieObiekt";
 import { ModulDzialow } from "@/components/home-v4/ModulDzialow";
-import { ProcessLine } from "@/components/home/ProcessLine";
+import { Wspolpraca } from "@/components/home-v4/Wspolpraca";
 import { BzykGuide } from "@/components/home/BzykGuide";
 import { FormSection } from "@/components/home/FormSection";
 import {
@@ -67,7 +67,7 @@ export default function Home() {
           <PrzejscieObiekt />
           <ModulDzialow />
           <ForWhom />
-          <ProcessLine />
+          <Wspolpraca />
           <ScopeCard />
           <Systems />
           <Paths />
