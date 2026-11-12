@@ -134,6 +134,10 @@ Miejsce: Działy → dymek Bzyka przy pierwszym wejściu do działów · limit 9
 
 Każdy dział ma cztery karty. Przesuń je w bok albo kliknij strzałkę.
 
+Miejsce: Działy → etykieta dostępności karty (czytnik ekranu), w kodzie z numerem karty · limit 12 zn. · długość 5 zn.
+
+1 z 4
+
 Miejsce: Działy → etykiety na karcie 1 · limit 12 zn. · najdłuższy punkt 11 zn.
 
 - Problem
@@ -948,6 +952,10 @@ Czego nie obejmuje obietnica efektu?
 Miejsce: FAQ → odpowiedź 7 · limit 300 zn. · długość 261 zn.
 
 Obietnica dotyczy efektu zapisanego przed startem i mierzonego tak, jak go zapisaliśmy. Zmiana zakresu po akceptacji to nowa wycena. Nie obejmuje skutków braku danych, dostępów albo decyzji po Twojej stronie w uzgodnionym terminie ani kosztów narzędzi i chmury.
+
+Miejsce: FAQ → link pod ostatnim pytaniem · limit 30 zn. · długość 18 zn.
+
+Wróć do formularza
 
 Notatka: pytanie 7 dopisałem, bo karta Gwarancja ma link „Czego ta obietnica nie obejmuje”, a dodatek CSO nie miał pytania, do którego link prowadzi. Treść z granic gwarancji w `context/oferta.md`, sekcja 5. Odpowiedź 5 zaczyna się od zdania Bartka 1:1.
 
