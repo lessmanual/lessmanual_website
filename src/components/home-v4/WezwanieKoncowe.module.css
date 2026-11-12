@@ -1,0 +1,40 @@
+.sekcja {
+  padding-block: 56px 64px;
+  border-top: 1px solid var(--line);
+}
+
+.srodek {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+}
+
+.h2 {
+  margin: 0;
+  max-width: 20ch;
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.tekst {
+  margin: 0 0 8px;
+  max-width: 56ch;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.drobnyDruk {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+@media (min-width: 1100px) {
+  .sekcja {
+    padding-block: 96px 104px;
+  }
+}

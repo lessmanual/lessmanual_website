@@ -9,6 +9,8 @@ import { Wspolpraca } from "@/components/home-v4/Wspolpraca";
 import { Bezpieczenstwo } from "@/components/home-v4/Bezpieczenstwo";
 import { OpinieRzad } from "@/components/home-v4/OpinieRzad";
 import { FaqV4 } from "@/components/home-v4/FaqV4";
+import { WezwanieKoncowe } from "@/components/home-v4/WezwanieKoncowe";
+import { PasekMobilny } from "@/components/home-v4/PasekMobilny";
 import { BzykGuide } from "@/components/home/BzykGuide";
 import { FormSection } from "@/components/home/FormSection";
 import {
@@ -83,10 +85,12 @@ export default function Home() {
           <Faq />
           <FaqV4 />
           <OpinieRzad />
+          <WezwanieKoncowe />
           <FormSection />
         </main>
       </DzialProvider>
       <SiteFooter />
+      <PasekMobilny />
       <BzykGuide />
     </>
   );
