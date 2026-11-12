@@ -9,11 +9,9 @@
 <meta name="theme-color" content="#FAFAFA">
 <link rel="icon" href="/favicon-32x32.png" sizes="32x32">
 <link rel="preload" as="image" href="../_assets/rolka4.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Fonty nie blokują pierwszego malowania (LCP); przesunięcia po podmianie gasi zamiennik z dopasowanymi metrykami w style.css. -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap"></noscript>
+<link rel="preload" as="style" href="/warianty/_vendor/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/warianty/_vendor/fonts.css"></noscript>
 <link rel="stylesheet" href="style.css">
 <script>
 /* GSAP + ScrollTrigger tylko tam, gdzie działa scena (desktop z ruchem). Telefon ich nie pobiera, więc nie konkurują z plakatem hero (LCP). */
@@ -23,7 +21,7 @@
   window.__loadGsap = function () {
     if (window.__gsapLoading) return window.__gsapLoading;
     window.__gsapLoading = new Promise(function (ok, fail) {
-      var base = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/";
+      var base = "/warianty/_vendor/gsap-3.12.5/";
       var n = 0;
       ["gsap.min.js", "ScrollTrigger.min.js"].forEach(function (f) {
         var s = d.createElement("script");

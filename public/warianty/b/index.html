@@ -7,11 +7,9 @@
 <meta name="description" content="Partner technologiczny dla firm 10-100 osób. Budujemy systemy AI etapami, odpowiadamy za efekt spisany przed startem i opiekujemy się nimi po wdrożeniu.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon-32x32.png" sizes="32x32">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="/warianty/_assets/rolka4.jpg" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/warianty/_vendor/fonts.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/warianty/_vendor/fonts.css"></noscript>
 <!-- CSS wpisany w stronę (base.css + orbit.css): bez blokujących żądań przed pierwszym malowaniem; pliki .css zostają jako źródło. -->
 <style>@font-face {
 font-family: "Inter Fallback";
@@ -441,7 +439,7 @@ d.classList.remove('no-js');d.classList.add('js',(rm||weak)?'flow':'motion');if(
 /* Skrypty ładujemy po zdarzeniu load: plakat rolki (LCP) maluje się bez konkurencji o łącze z CDN.
    Pomiar 12.11: z defer w head symulowany LCP skakał 2,3-4,3 s, bo biblioteki trafiały na ścieżkę krytyczną. */
 (function(){var m=document.documentElement.classList.contains('motion');
-var list=(m?['https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js','https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js']:[]).concat(['common.js','orbit.js']);
+var list=(m?['/warianty/_vendor/gsap-3.12.5/gsap.min.js','/warianty/_vendor/gsap-3.12.5/ScrollTrigger.min.js']:[]).concat(['common.js','orbit.js']);
 function next(){var src=list.shift();if(!src)return;var s=document.createElement('script');s.src=src;s.async=false;
 s.onload=next;s.onerror=function(){if(/gsap/.test(src)){document.documentElement.classList.remove('motion');document.documentElement.classList.add('flow');list=['common.js','orbit.js'];}next();};document.head.appendChild(s);}
 if(document.readyState==='complete')next();else addEventListener('load',next,{once:true});})();

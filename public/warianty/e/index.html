@@ -10,13 +10,11 @@
 <meta property="og:description" content="Budujemy systemy etapami i każdy etap wyceniamy przed startem. Dane i system należą do Ciebie.">
 <link rel="icon" href="/favicon-32x32.png" sizes="32x32">
 <link rel="preload" as="image" href="../_assets/rolka4.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Fonty nie blokują pierwszego malowania (LCP); tekst startuje w kroju zastępczym i podmienia się po wczytaniu -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="style" href="/warianty/_vendor/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
 <!-- Instrument Serif niesie nagłówek H1 (element LCP na telefonie): display=optional, żeby późna podmiana kroju nie przesuwała LCP -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400..600&display=swap"></noscript>
+<link rel="preload" as="style" href="/warianty/_vendor/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/warianty/_vendor/fonts.css"></noscript>
 <link rel="stylesheet" href="style.css">
 <script>
   /* Ruch (przypięta teczka) tylko przy pełnym ruchu i ekranie dość wysokim, żeby dokument zmieścił się w kadrze.
@@ -357,8 +355,8 @@
 
 <p class="variant-tag">Wariant E, podgląd, filmy zastępcze</p>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="/warianty/_vendor/gsap-3.15.0/gsap.min.js" defer></script>
+<script src="/warianty/_vendor/gsap-3.15.0/ScrollTrigger.min.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>

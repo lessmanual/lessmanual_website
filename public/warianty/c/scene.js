@@ -1,7 +1,7 @@
 /* Wariant C: scena 3D. Kamera leci po krzywej, postęp lotu wynika z przewijania (jedno źródło: natywny scroll),
    stan liczony w pętli klatek z tłumieniem. Karty systemów stoją dokładnie tam, gdzie kamera jest przy ich tekście. */
 // Pakiet ESM z jsDelivr: jeden zminifikowany plik (build/three.module.min.js dociąga niezminifikowany three.core.js, +130 KiB)
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.186.1/+esm";
+import * as THREE from "/warianty/_vendor/three-0.186.1/three.module.min.js";
 
 const LIGHT = new THREE.Color("#F4F2EE");
 const DARK = new THREE.Color("#0A0A0A");
