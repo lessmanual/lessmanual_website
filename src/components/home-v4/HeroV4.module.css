@@ -1,0 +1,319 @@
+/* Hero v4, mobile first (390), układ rozszerzony od 1024 px. Klucz i LED z szkicu s4, uproszczone do tokenów strony. */
+.hero {
+  padding-block: 28px 48px;
+}
+
+.grid {
+  display: grid;
+  gap: 28px;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.nadtytul {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--sea);
+  margin-bottom: 12px;
+}
+
+.h1 {
+  font-size: var(--fs-hero);
+  line-height: var(--lh-hero);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.podtytul {
+  margin-top: 20px;
+}
+
+.pytanie {
+  margin-top: 28px;
+}
+
+.pytanieTekst {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.klawisze {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.klawisz {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 104px;
+  padding: 14px;
+  padding-right: 44px;
+  border: 0;
+  border-radius: 18px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink);
+  background: linear-gradient(180deg, #ffffff 0%, #f8f3ec 58%, #f0e9df 100%);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 -3px 0 #78502817,
+    inset 0 0 0 1px #8a4a1f1a,
+    0 2px 0 #b0927466,
+    0 14px 22px -12px #46280f52;
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out);
+}
+
+.klawisz:last-child {
+  grid-column: 1 / -1;
+  min-height: 76px;
+  align-items: center;
+}
+
+.klawisz:hover {
+  transform: translateY(-2px);
+}
+
+.klawisz:active {
+  transform: translateY(2px);
+}
+
+.klawisz[aria-pressed="true"] {
+  transform: translateY(3px);
+  background: linear-gradient(180deg, #f7e9da 0%, #f3e0cc 60%, #efd9c2 100%);
+  box-shadow:
+    inset 0 0 0 2px var(--patina),
+    inset 0 9px 18px #8c501e24,
+    0 6px 12px -6px #46280f4d;
+}
+
+.etykieta {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Pusty stan: obrys koła; wybór: koło patyny z ciemnym ptaszkiem (patyna tylko jako wypełnienie). */
+.kolo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--line-control);
+  background: transparent;
+}
+
+.klawisz:last-child .kolo {
+  top: 50%;
+  margin-top: -12px;
+}
+
+.ptaszek {
+  opacity: 0;
+  color: var(--on-patina);
+}
+
+.klawisz[aria-pressed="true"] .kolo {
+  border-color: var(--patina);
+  background: var(--patina);
+}
+
+.klawisz[aria-pressed="true"] .ptaszek {
+  opacity: 1;
+}
+
+.dymekRzad {
+  margin-top: 16px;
+  min-height: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+}
+
+.dymek {
+  flex: 1 1 14em;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.pokaz {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--sea);
+}
+
+.pokaz:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.cta {
+  margin-top: 28px;
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+
+.linia {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* Cytat w białej ramce w wyglądzie opinii Google: atrament, bez kursywy, cudzysłów w morskim. */
+.cytat {
+  position: relative;
+  margin: 32px 0 0;
+  padding: 20px 20px 16px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.cytat blockquote {
+  margin: 0;
+}
+
+.cytat p {
+  position: relative;
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #1a1410;
+}
+
+.cytat p::before {
+  content: "\201C";
+  display: block;
+  font-size: 56px;
+  line-height: 0.7;
+  height: 28px;
+  color: var(--sea);
+}
+
+.autor {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.inicjal {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--sea);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.imie {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.gwiazdki {
+  display: inline-flex;
+  color: var(--copper-strong);
+}
+
+.pasek {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--ink-2);
+}
+
+.rolka {
+  width: 64px;
+  aspect-ratio: 9 / 16;
+}
+
+.rolka video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .klawisz {
+    transition: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 48px 72px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .klawisze {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .klawisz {
+    min-height: 120px;
+    padding: 16px;
+    padding-right: 44px;
+    align-items: flex-end;
+    border-radius: 20px;
+  }
+
+  .klawisz:last-child {
+    grid-column: auto;
+    min-height: 120px;
+    align-items: flex-end;
+  }
+
+  .klawisz:last-child .kolo {
+    top: 12px;
+    margin-top: 0;
+  }
+
+  .cytat p {
+    font-size: 26px;
+  }
+
+  .rolka {
+    width: 280px;
+  }
+}

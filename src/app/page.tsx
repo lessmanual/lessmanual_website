@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { Hero } from "@/components/home/Hero";
+import { DzialProvider } from "@/components/home-v4/DzialProvider";
+import { HeroV4 } from "@/components/home-v4/HeroV4";
 import { ProcessLine } from "@/components/home/ProcessLine";
 import { BzykGuide } from "@/components/home/BzykGuide";
 import { FormSection } from "@/components/home/FormSection";
@@ -58,19 +59,21 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceSchema) }}
       />
       <SiteHeader />
-      <main>
-        <Hero />
-        <ForWhom />
-        <ProcessLine />
-        <ScopeCard />
-        <Systems />
-        <Paths />
-        <Guarantee />
-        <Pricing />
-        <Testimonials />
-        <Faq />
-        <FormSection />
-      </main>
+      <DzialProvider>
+        <main>
+          <HeroV4 />
+          <ForWhom />
+          <ProcessLine />
+          <ScopeCard />
+          <Systems />
+          <Paths />
+          <Guarantee />
+          <Pricing />
+          <Testimonials />
+          <Faq />
+          <FormSection />
+        </main>
+      </DzialProvider>
       <SiteFooter />
       <BzykGuide />
     </>

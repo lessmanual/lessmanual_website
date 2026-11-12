@@ -60,6 +60,12 @@ describe("stan modułu działu", () => {
     expect(przewinOdRazuPoKlawiszu(zmienStan(s, { typ: "przejscie_zaliczone" }))).toBe(true);
   });
 
+  it("ponowny wybór tego samego działu nie cofa karty", () => {
+    const na3 = { ...stanPoczatkowy(""), karta: 3 as const };
+    const s = zmienStan(na3, { typ: "wybierz", dzial: "telefony", z: "zakladka" });
+    expect(s.karta).toBe(3);
+  });
+
   it("akcja karta zmienia tylko kartę", () => {
     const s = zmienStan(stanPoczatkowy(""), { typ: "karta", nr: 2 });
     expect([s.aktywny, s.karta]).toEqual(["telefony", 2]);
