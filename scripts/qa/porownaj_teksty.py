@@ -81,21 +81,32 @@ def powod_wylaczenia(miejsce: str) -> str | None:
 
 # textContent nie wstawia odstępu między elementami blokowymi, a plik tekstów ma tam spację (np. oryginał
 # rekomendacji i „Tłumaczenie:” w osobnych elementach). Dlatego drugi odczyt: węzły tekstowe złączone spacją.
+# Skrypty (JSON-LD, ładunek Next), style, szablony i noscript nie są tekstem strony: bez nich teksty z pliku
+# nie mogą się „znaleźć” w danych strukturalnych, których czytelnik nie widzi.
 POBIERZ_JS = r"""() => {
+  const kopia = document.body.cloneNode(true);
+  kopia.querySelectorAll("script, style, template, noscript").forEach((e) => e.remove());
   const wezly = [];
-  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const w = document.createTreeWalker(kopia, NodeFilter.SHOW_TEXT);
   while (w.nextNode()) wezly.push(w.currentNode.textContent);
-  const aria = [...document.querySelectorAll("[aria-label]")].map((e) => e.getAttribute("aria-label") || "");
-  return { tekst: document.body.textContent || "", wezly: wezly.join(" "), aria };
+  const aria = [...kopia.querySelectorAll("[aria-label]")].map((e) => e.getAttribute("aria-label") || "");
+  const etykietyCen = [...kopia.querySelectorAll('[data-qa="cena-etykieta"]')].map((e) => e.textContent || "");
+  return { tekst: kopia.textContent || "", wezly: wezly.join(" "), aria, etykietyCen };
 }"""
+
+# Wiersze karty Ceny: w pliku tekstów „Etykieta: reszta”, w DOM <strong>Etykieta</strong><span>reszta</span>
+# bez widocznego „: ”. Dla tych wierszy (i tylko dla nich) etykieta i reszta są sprawdzane osobno,
+# a etykieta musi stać w elemencie data-qa="cena-etykieta".
+WIERSZ_CENY = "karta Ceny → wiersz"
 
 # Teksty, które na stronie są atrybutem aria-label (czytnik ekranu), a nie widocznym tekstem.
 W_ARIA_LABEL = ("etykieta dostępności karty",)
 
 
 class Strona:
-    def __init__(self, tekst: str, wezly: str, aria: list[str]) -> None:
+    def __init__(self, tekst: str, wezly: str, aria: list[str], etykiety_cen: list[str]) -> None:
         self.tekst, self.wezly, self.aria = norm(tekst), norm(wezly), {norm(x) for x in aria}
+        self.etykiety_cen = {norm(x) for x in etykiety_cen}
 
     def zawiera(self, t: str) -> bool:
         return norm(t) in self.tekst or norm(t) in self.wezly
@@ -123,12 +134,15 @@ def tekst_strony_po_ssr(base: str, naglowki: dict[str, str] | None) -> Strona:
             raise RuntimeError(f"strona zwróciła {odpowiedz.status if odpowiedz else 'brak odpowiedzi'}")
         dane = page.evaluate(POBIERZ_JS)
         br.close()
-    return Strona(dane["tekst"], dane["wezly"], dane["aria"])
+    return Strona(dane["tekst"], dane["wezly"], dane["aria"], dane["etykietyCen"])
 
 
 def jest_na_stronie(strona: Strona, miejsce: str, t: str) -> bool:
     if any(f in miejsce for f in W_ARIA_LABEL):
         return norm(t) in strona.aria
+    if WIERSZ_CENY in miejsce and ": " in t:
+        etykieta, reszta = t.split(": ", 1)
+        return norm(etykieta) in strona.etykiety_cen and strona.zawiera(reszta)
     if "★" in t:
         return strona.zawiera(t) or strona.zawiera_podpis_z_gwiazdkami(t)
     return strona.zawiera(t)

@@ -127,7 +127,9 @@ CHECKS_JS = r"""
   const text = (e) => (e.innerText || e.getAttribute("aria-label") || e.value || "").replace(/\s+/g, " ").trim().slice(0, 60);
   const hiddenUp = (e) => {
     for (let n = e; n && n !== document.documentElement; n = n.parentElement) {
-      if (n.hidden || n.getAttribute("aria-hidden") === "true" || n.inert) return true;
+      // aria-hidden i inert NIE oznaczają „niewidoczne”: dekoracje widać na ekranie, więc podlegają testom
+      // układu (poza-ekran, scroll-bok, ucięcie). Pomijamy tylko to, czego naprawdę nie widać.
+      if (n.hidden) return true;
       const up = n.parentElement;  // zamknięte <details>: poza summary nic nie widać, choć Chromium podaje prostokąty
       if (up && up.tagName === "DETAILS" && !up.open && n.tagName !== "SUMMARY") return true;
       const s = cs(n);
@@ -135,6 +137,7 @@ CHECKS_JS = r"""
     }
     return false;
   };
+  const ariaHiddenUp = (e) => !!e.closest('[aria-hidden="true"]');
   const clipAncestor = (e) => {
     for (let n = e.parentElement; n && n !== document.body; n = n.parentElement) {
       const s = cs(n);
@@ -224,7 +227,7 @@ CHECKS_JS = r"""
     if (hasText(e)) {
       const clips = /(hidden|clip)/.test(s.overflowX + s.overflowY) || s.textOverflow === "ellipsis" || (s.webkitLineClamp && s.webkitLineClamp !== "none");
       if (e.scrollWidth > e.clientWidth + 1 && e.clientWidth > 0 && s.display !== "inline")
-        add("tekst-uciety", clips ? "blad" : "blad", e, clips ? `tekst ucięty w poziomie (${e.scrollWidth} > ${e.clientWidth} px)` : `tekst wychodzi poza element (${e.scrollWidth} > ${e.clientWidth} px)`);
+        add("tekst-uciety", "blad", e, clips ? `tekst ucięty w poziomie (${e.scrollWidth} > ${e.clientWidth} px)` : `tekst wychodzi poza element (${e.scrollWidth} > ${e.clientWidth} px)`);
       else if (clips && e.scrollHeight > e.clientHeight + 2 && e.clientHeight > 0)
         add("tekst-uciety", "blad", e, `tekst ucięty w pionie (${e.scrollHeight} > ${e.clientHeight} px)`);
     }
@@ -257,7 +260,8 @@ CHECKS_JS = r"""
     }
 
     // 8. kontrast
-    if (hasText(e) && s.color && !(s.webkitTextFillColor === "rgba(0, 0, 0, 0)" || s.color === "rgba(0, 0, 0, 0)")) {
+    // Czysto dekoracyjny aria-hidden (bez przycisku/linku) jest poza kontrastem; reszta testów go obejmuje.
+    if (!ariaHiddenUp(e) && hasText(e) && s.color && !(s.webkitTextFillColor === "rgba(0, 0, 0, 0)" || s.color === "rgba(0, 0, 0, 0)")) {
       const parse = (v) => { const m = v.match(/[\d.]+/g); if (!m) return null; return { r: +m[0], g: +m[1], b: +m[2], a: m[3] === undefined ? 1 : +m[3] }; };
       let fg = parse(s.color), bg = null, unknown = false, op = 1;
       for (let n = e; n; n = n.parentElement) {
@@ -425,12 +429,29 @@ class Runner:
             tabs.nth(k).click()
             self.capture(f"{prefix}-karta-{k + 1}", SEL["cards_root"])
 
+    def zakladki_przykladu(self, prefix: str) -> None:
+        """Karta 2 działu: każda zakładka przykładu (3 stany) klikana i sprawdzana osobno."""
+        p = self.page
+        nxt = p.locator(SEL["carousel_next"]).first
+        nxt.click()  # z karty 1 na kartę 2 (przykład)
+        tabs = p.locator(SEL["tabs"])
+        tabs.first.wait_for(state="visible", timeout=5000)  # karta 2 staje się aktywna po przewinięciu
+        n = tabs.count()
+        if n < 2:
+            raise RuntimeError(f"{prefix}: karta 2 ma {n} zakładek przykładu, oczekiwano co najmniej 2")
+        for k in range(n):
+            tabs.nth(k).click()
+            self.capture(f"{prefix}-zakladka-{k + 1}", SEL["cards_root"])
+
     def departments(self) -> None:
         for room in ROOMS:
             self.load()
             self.page.locator(SEL["hero_key"].format(room=room)).click()
             self.capture(f"10-dzial-{room}", SEL["room_root"])
             self.cards(f"11-dzial-{room}")
+            self.load()
+            self.page.locator(SEL["hero_key"].format(room=room)).click()
+            self.zakladki_przykladu(f"12-dzial-{room}")
 
     def plan(self) -> None:
         """Rzut firmy w sekcji przejścia: każdy widoczny pokój (na telefonie mapka, na desktopie rzut 3D)."""
