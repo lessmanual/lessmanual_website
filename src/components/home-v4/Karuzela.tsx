@@ -42,6 +42,8 @@ export function Karuzela(props: {
   const klatkaRef = useRef(0);
   // Ostatnia zgłoszona karta: zamknięcia ze starego renderu (scroll + rAF) nie zgłaszają tej samej karty drugi raz.
   const zgloszonaRef = useRef<NrKarty>(0);
+  // Karta, do której jedzie płynne przewijanie strzałką: drugi szybki klik liczy się od niej, nie od karty sprzed ruchu.
+  const celRef = useRef<NrKarty>(0);
   const [nr, setNr] = useState<NrKarty>(0);
   const [bylAktywny, setBylAktywny] = useState(aktywny);
 
@@ -57,6 +59,7 @@ export function Karuzela(props: {
     const tor = torRef.current;
     if (tor) tor.scrollTo({ left: 0, behavior: "instant" });
     zgloszonaRef.current = 0;
+    celRef.current = 0;
     onKartaWidoczna?.(0, "wejscie");
     // onKartaWidoczna celowo poza zależnościami: zdarzenie wejścia liczy się raz na odsłonięcie działu.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -69,6 +72,8 @@ export function Karuzela(props: {
       if (!tor) return;
       const { szerokosc, odstep } = wymiaryKarty(tor);
       const nowy = kartaZPrzewiniecia(tor.scrollLeft, szerokosc, odstep);
+      // Palec ustala cel sam; przy strzałce cel ustawił klik, a karty pośrednie go nie zmieniają.
+      if (sposobRef.current === "palec") celRef.current = nowy;
       if (nowy === zgloszonaRef.current) return;
       zgloszonaRef.current = nowy;
       setNr(nowy);
@@ -79,9 +84,10 @@ export function Karuzela(props: {
 
   const przewinO = (krok: -1 | 1) => (zdarzenie: MouseEvent<HTMLButtonElement>) => {
     const tor = torRef.current;
-    const cel = przytnij(nr + krok);
+    const cel = przytnij(celRef.current + krok);
     // Na krańcu strzałka jest aria-disabled, a nie disabled: zostaje w fokusie, klik po prostu nic nie robi.
-    if (!tor || cel === nr) return;
+    if (!tor || cel === celRef.current) return;
+    celRef.current = cel;
     // detail === 0: przycisk uruchomiony z klawiatury (Enter, spacja), nie myszą ani palcem.
     sposobRef.current = zdarzenie.detail === 0 ? "klawiatura" : "strzalka";
     const { szerokosc, odstep } = wymiaryKarty(tor);

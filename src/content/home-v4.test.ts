@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { REVIEWS } from "@/lib/constants";
-import { DZIALY, HOME_V4, bzykPoWyborze, etykietaKarty, inicjal } from "./home-v4";
+import { DZIALY, HOME_V4, bzykPoWyborze, etykietaKarty, inicjal, type DzialId } from "./home-v4";
 import { PRZYKLADY } from "./home-v4-przyklady";
 
 const DECK = resolve(process.cwd(), "docs/superpowers/specs/2026-11-12-strona-v4-teksty.md");
@@ -153,5 +153,47 @@ describe("teksty v4 1:1", () => {
 
   it("inicjał to pierwsza wielka litera podpisu", () => {
     expect(inicjal("dawid Kar · 1 opinia")).toBe("D");
+  });
+});
+
+describe("przykłady działania na kartach 2", () => {
+  it("każdy dział ma 3 zakładki przykładu w kolejności z tekstów", () => {
+    const etykiety = (id: DzialId) => PRZYKLADY[id].map((z) => z.etykieta);
+    expect(etykiety("telefony")).toEqual(["Umówienie wizyty", "Przełożenie wizyty", "Status zamówienia"]);
+    expect(etykiety("marketing")).toEqual(["Pytanie klienta", "Nowy produkt", "Stary wpis do odświeżenia"]);
+    expect(etykiety("sprzedaz")).toEqual(["Wiadomość z rynku", "Rejestr firm", "Ogłoszenie o pracę"]);
+    expect(etykiety("zamowienia")).toEqual(["SMS", "Mail", "PDF"]);
+    expect(etykiety("logistyka")).toEqual(["Dokument przyjęcia", "Faktura", "Zlecenie transportowe"]);
+  });
+
+  it("każdy przykład ma co najmniej 3 wiersze wyniku i zaznaczenia obecne w źródle, bo animacja zapala zaznaczenie razem z wierszem", () => {
+    for (const id of DZIALY) {
+      for (const z of PRZYKLADY[id]) {
+        const { zrodlo, wynik } = z.dane;
+        expect(wynik.wiersze.length, `${id}/${z.etykieta}`).toBeGreaterThanOrEqual(3);
+        expect(wynik.podpis, `${id}/${z.etykieta}`).not.toBe("");
+        expect(zrodlo.zaznaczenia.length, `${id}/${z.etykieta}`).toBeGreaterThan(0);
+        // Zaznaczenie i odpowiada wierszowi i, więc zaznaczeń nie może być więcej niż wierszy.
+        expect(zrodlo.zaznaczenia.length).toBeLessThanOrEqual(wynik.wiersze.length);
+        for (const zaznaczenie of zrodlo.zaznaczenia) {
+          expect(zrodlo.linie.some((l) => l.includes(zaznaczenie)), `${id}/${z.etykieta}: ${zaznaczenie}`).toBe(true);
+        }
+      }
+    }
+  });
+
+  it("nowe zestawy Telefonów i Marketingu nie mają kwot", () => {
+    expect(JSON.stringify([PRZYKLADY.telefony[0], PRZYKLADY.marketing[2]])).not.toMatch(/\d\s?(zł|PLN|EUR|€)/);
+  });
+
+  it("nowe zestawy mają wygląd i podpis wyniku ze specyfikacji", () => {
+    expect(PRZYKLADY.telefony[0].dane.wyglad).toBe("rozmowa");
+    expect(PRZYKLADY.telefony[0].dane.wynik.podpis).toBe("Zgłoszenie dla zespołu");
+    expect(PRZYKLADY.marketing[2].dane.wyglad).toBe("dokument");
+    expect(PRZYKLADY.marketing[2].dane.wynik.podpis).toBe("Plan do zatwierdzenia");
+  });
+
+  it("żaden przykład nie ma kwoty, bo jedyna kwota na stronie to cena Mapy AI firmy", () => {
+    expect(JSON.stringify(PRZYKLADY)).not.toMatch(/\d\s?(zł|PLN|EUR|€)/);
   });
 });

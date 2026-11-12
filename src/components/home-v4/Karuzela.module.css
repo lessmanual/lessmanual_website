@@ -1,6 +1,9 @@
 /* Karuzela działu: 390 karta 88% toru (widać brzeg następnej), 1440 karta 920 px. Wysokość zarezerwowana (CLS 0). */
+/* --karta-wys: najwyższa karta ze wszystkich działów i zakładek przykładu (pomiar 12.11: 390 → 1056 px,
+   360 → 1100, 768 → 805, 1024 → 695, 1440 → 623). Jedna wysokość dla wszystkich działów, więc zmiana działu
+   ani zakładki przykładu nie zmienia wysokości toru (CLS 0). Po zmianie tekstów kart zmierz ponownie. */
 .karuzela {
-  --karta-wys: 560px;
+  --karta-wys: 1060px;
   --odstep: 12px;
   overflow-anchor: none;
   animation: pojaw 150ms var(--ease-out);
@@ -99,7 +102,7 @@
 
 @media (min-width: 768px) {
   .karuzela {
-    --karta-wys: 480px;
+    --karta-wys: 810px;
     --odstep: 24px;
   }
 
@@ -109,6 +112,18 @@
 
   .nawigacja {
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .karuzela {
+    --karta-wys: 700px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .karuzela {
+    --karta-wys: 630px;
   }
 }
 

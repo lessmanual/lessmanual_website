@@ -4,11 +4,15 @@ import { HOME_V4 } from "../../../content/home-v4";
 const KARUZELA = '[data-qa="karuzela"]:visible';
 const KARTA = `${KARUZELA} [data-qa="karta"]`;
 const NASTEPNA = `${KARUZELA} [data-karuzela-next]`;
+// Zawężone do paska działów: karty przykładów mają własne zakładki role="tab".
+const ZAKLADKA_AKTYWNA = '#dzialy-zakladki [role="tab"][aria-selected="true"]';
 
 // html ma scroll-behavior: smooth, więc przewijamy „instant”. Po minięciu przejścia (Task 5) sekcja nad działami
 // skraca się do pasa i kompensuje przewinięcie; czekamy na ten stan i przewijamy drugi raz, żeby pomiar był stabilny.
 async function doDzialow(page: Page) {
   await page.goto("/");
+  // Klik przed hydratacją przepada; data-gotowe pojawia się po niej.
+  await expect(page.locator('#dzialy-zakladki[data-gotowe="true"]')).toBeAttached();
   const naSekcje = () =>
     page.locator("#dzialy").evaluate((el) => el.scrollIntoView({ block: "start", behavior: "instant" }));
   await naSekcje();
@@ -116,7 +120,7 @@ for (const vp of [
         const karta = await page.locator(KARTA).first().evaluate((el) => el.getBoundingClientRect().width);
         expect(Math.abs(karta - 920)).toBeLessThanOrEqual(2);
         await page.locator('[data-qa="pokoj"][data-dzial="sprzedaz"]:visible').click();
-        await expect(page.locator('[role="tab"][aria-selected="true"]')).toHaveAttribute("data-dzial", "sprzedaz");
+        await expect(page.locator(ZAKLADKA_AKTYWNA)).toHaveAttribute("data-dzial", "sprzedaz");
         await expect(page.locator(KARUZELA)).toHaveAttribute("data-dzial", "sprzedaz");
         const [szer, okno] = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
         expect(szer).toBeLessThanOrEqual(okno);
@@ -135,15 +139,15 @@ for (const vp of [
       await doDzialow(page);
       await page.locator('[data-qa="zakladka-dzialu"][data-dzial="telefony"]').focus();
       await page.keyboard.press("ArrowRight");
-      await expect(page.locator('[role="tab"][aria-selected="true"]')).toHaveAttribute("data-dzial", "marketing");
+      await expect(page.locator(ZAKLADKA_AKTYWNA)).toHaveAttribute("data-dzial", "marketing");
       await expect(page.locator('[data-qa="zakladka-dzialu"][data-dzial="marketing"]')).toBeFocused();
       // Poll: wypełnienie zakładki dochodzi przejściem 0,15 s.
       await expect
-        .poll(() => page.locator('[role="tab"][aria-selected="true"]').evaluate((el) => getComputedStyle(el).backgroundColor))
+        .poll(() => page.locator(ZAKLADKA_AKTYWNA).evaluate((el) => getComputedStyle(el).backgroundColor))
         .toBe("rgb(63, 208, 194)");
       // Alt+strzałka to „wstecz” w przeglądarce; zakładki nie mogą jej przejąć.
       await page.keyboard.press("Alt+ArrowRight");
-      await expect(page.locator('[role="tab"][aria-selected="true"]')).toHaveAttribute("data-dzial", "marketing");
+      await expect(page.locator(ZAKLADKA_AKTYWNA)).toHaveAttribute("data-dzial", "marketing");
     });
 
     test("klawiatura: strzałka do ostatniej karty zostaje w fokusie", async ({ page }) => {

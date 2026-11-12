@@ -90,18 +90,6 @@
   margin-top: 12px;
 }
 
-.zaslepka {
-  height: 100%;
-  padding: 24px;
-}
-
-.zaslepkaTytul {
-  font-size: var(--fs-h3);
-  line-height: 1.25;
-  font-weight: 600;
-  color: var(--ink);
-}
-
 @media (min-width: 768px) {
   .sekcja {
     padding-block: 96px;

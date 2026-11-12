@@ -148,13 +148,14 @@ export function kameraSpoczynku(szer: number, wys: number): Kamera {
   };
 }
 
-/** roomCam z s4.js bez zmiany kątów (etykiety pokoi zostają zwrócone do patrzącego w czasie przybliżenia). */
+/** roomCam z s4.js bez zmiany kątów (etykiety pokoi zostają zwrócone do patrzącego w czasie przybliżenia).
+ *  Pokój stoi na środku sceny: przesunięcie w lewo i w dół w szkicu robiło miejsce na panel boczny, którego v4 nie ma. */
 export function kameraPokoju(szer: number, wys: number, pokoj: Pokoj): Kamera {
   const baza = kameraSpoczynku(szer, wys);
   const k = Math.max(1.18, Math.min(1.5, 470 / Math.max(pokoj.w, pokoj.d * 0.8)));
   return {
-    tx: Math.round(-szer * 0.04),
-    ty: Math.round(wys * 0.1),
+    tx: 0,
+    ty: 0,
     s: Number((baza.s * k).toFixed(3)),
     cx: -(pokoj.x + pokoj.w / 2 - SZEROKOSC_PLANU / 2),
     cy: -(pokoj.y + pokoj.d / 2 - GLEBOKOSC_PLANU / 2),

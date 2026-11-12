@@ -23,14 +23,15 @@ describe("rzut firmy", () => {
     }
   });
 
-  it("przybliżenie powiększa i stawia wybrany pokój blisko środka sceny", () => {
+  // Wcześniej pokój siedział nisko (ty = +10% wysokości ze szkicu, gdzie robiło to miejsce na panel boczny).
+  it("przybliżenie powiększa i stawia wybrany pokój na środku sceny", () => {
     const spoczynek = kameraSpoczynku(1120, 420);
     for (const pokoj of PLAN) {
       const k = kameraPokoju(1120, 420, pokoj);
       expect(k.s).toBeGreaterThan(spoczynek.s);
       const { X, Y } = srodekPokojuNaEkranie(k, pokoj);
-      expect(Math.abs(X)).toBeLessThan(1120 * 0.1);
-      expect(Math.abs(Y)).toBeLessThan(420 * 0.15);
+      expect(Math.abs(X)).toBeLessThan(1);
+      expect(Math.abs(Y)).toBeLessThan(1);
     }
   });
 

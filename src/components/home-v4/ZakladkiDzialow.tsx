@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
 import { Bzyk } from "@/components/site/Bzyk";
 import { useDzial } from "@/components/home-v4/DzialProvider";
 import { DZIALY, HOME_V4, type DzialId } from "@/content/home-v4";
@@ -15,11 +15,20 @@ function sasiad(id: DzialId, klawisz: string): DzialId | null {
   return null;
 }
 
+const bezSubskrypcji = () => () => {};
+
+/** false w SSR i w czasie hydratacji, true po niej. Testy i skrypt QA czekają na data-gotowe, bo klik przed
+ *  hydratacją przepada (React nie ma jeszcze podpiętych zdarzeń). */
+function useZhydratowane(): boolean {
+  return useSyncExternalStore(bezSubskrypcji, () => true, () => false);
+}
+
 // Zakładki działów (role="tablist", aktywacja automatyczna). Na 390 pasek przewija się w bok we własnym kontenerze:
 // aktywną zakładkę dosuwamy przewinięciem paska, nigdy scrollIntoView, bo to ruszyłoby stronę.
 export function ZakladkiDzialow() {
   const { stan, wybierz } = useDzial();
   const pasekRef = useRef<HTMLDivElement>(null);
+  const gotowe = useZhydratowane();
 
   useEffect(() => {
     const pasek = pasekRef.current;
@@ -50,6 +59,7 @@ export function ZakladkiDzialow() {
       className={styles.zakladki}
       role="tablist"
       aria-labelledby="dzialy-title"
+      data-gotowe={gotowe ? "true" : undefined}
     >
       {DZIALY.map((id) => {
         const aktywna = stan.aktywny === id;

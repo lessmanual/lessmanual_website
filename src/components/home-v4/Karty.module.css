@@ -1,0 +1,593 @@
+/* Karty działu (Task 7), telefon najpierw. Na 390 cały tekst ≥ 16 px; patyna tylko jako wypełnienie z ciemnym znakiem,
+   morska jako tekst (plakietki, etykiety, linki, cudzysłów), miedź na liczbie i odtwarzaczu (spec 5.3, CMO C1-C5). */
+
+.system,
+.przyklad,
+.opinia,
+.pomysly {
+  height: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tytul {
+  font-size: var(--fs-h3);
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.plakietka {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--sea);
+}
+
+/* ---------- Karta 1: system ---------- */
+.system {
+  display: grid;
+  grid-template-areas: "glowa" "film" "wiersze";
+  align-content: start;
+  padding-bottom: 24px;
+}
+
+.glowa {
+  grid-area: glowa;
+  display: grid;
+  gap: 6px;
+  padding: 20px 20px 14px;
+}
+
+/* 16 px od krawędzi karty z obu stron; zaokrąglenie wewnętrzne mniejsze o te 16 px (24 − 16). */
+.film {
+  grid-area: film;
+  position: relative;
+  margin-inline: 16px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1410;
+}
+
+.poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  background:
+    radial-gradient(70% 90% at 85% 10%, rgb(184 115 51 / 0.55), transparent 70%),
+    radial-gradient(60% 60% at 10% 100%, rgb(0 117 111 / 0.35), transparent 70%), #1a1410;
+  color: #f4efe8;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.wideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.odtworz {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--copper);
+  color: #fff;
+  cursor: pointer;
+}
+
+.odtworz:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.wiersze {
+  grid-area: wiersze;
+  display: grid;
+  gap: 14px;
+  padding: 18px 20px 0;
+}
+
+.wiersz {
+  display: grid;
+  gap: 2px;
+}
+
+.wiersz dt {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--sea);
+}
+
+.wiersz dd {
+  font-size: 17px;
+  line-height: 1.45;
+  color: #1a1410;
+}
+
+.liczba {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--copper);
+  margin-block: 4px 6px;
+}
+
+.wyrozWiersz {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.sluchawka {
+  flex: none;
+  color: var(--copper);
+}
+
+.efekt {
+  display: block;
+}
+
+/* Film obok tekstu dopiero od 1024: przy 768 karta ma ok. 600 px i dwie kolumny robiły z tekstu wąski słupek. */
+@media (min-width: 1024px) {
+  .system {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "film glowa" "film wiersze";
+    grid-template-rows: auto 1fr;
+    padding-bottom: 16px;
+  }
+
+  .film {
+    align-self: start;
+    margin: 16px 0 0 16px;
+  }
+
+  .glowa {
+    padding: 24px 28px 8px 24px;
+  }
+
+  .wiersze {
+    padding: 8px 28px 8px 24px;
+  }
+
+  .wiersz {
+    grid-template-columns: 8.5em minmax(0, 1fr);
+    gap: 12px;
+  }
+}
+
+/* ---------- Karta 2: przykład działania (demo z S4) ---------- */
+.przyklad {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 16px;
+}
+
+.opis {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.zakladkiPrzykladu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.zakladkaPrzykladu {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 2px solid var(--line-control);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 16px/1.2 var(--font-sans);
+  cursor: pointer;
+}
+
+.zakladkaPrzykladu:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.zakladkaPrzykladu[aria-selected="true"] {
+  background: #1a1410;
+  border-color: #1a1410;
+  color: #fbf5ec;
+}
+
+/* Na 390 krótka etykieta (np. „PZ”), od 768 pełna; dwa spany, bez JS. */
+.pelna {
+  display: none;
+}
+
+.demo {
+  display: grid;
+  gap: 12px;
+}
+
+.zrodlo {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #1a1410;
+}
+
+.zrodloNaglowek {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.zrodloLinia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  margin-bottom: 6px;
+}
+
+.zrodloLinia > span {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.zrodloLinia > .zrodloEtykieta {
+  flex: 0 0 auto;
+}
+
+.wyglad_dokument .zrodloLinia > span:last-child {
+  text-align: right;
+}
+
+.zrodloEtykieta {
+  color: var(--ink-3);
+}
+
+.wyglad_dokument {
+  background: #fffdf8;
+  box-shadow: inset 0 0 0 1px #e4d9c8, 0 6px 14px -10px rgb(70 40 15 / 0.45);
+}
+
+.wyglad_dokument .zrodloLinia {
+  justify-content: space-between;
+}
+
+.wyglad_sms {
+  background: #ede6dc;
+}
+
+.wyglad_sms .zrodloNaglowek {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.wyglad_sms .zrodloLinia {
+  padding: 10px 12px;
+  border-radius: 14px 14px 14px 4px;
+  background: #fff;
+}
+
+.wyglad_mail {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e4d9c8;
+}
+
+.wyglad_rozmowa {
+  background: #f4efe8;
+}
+
+.wyglad_rozmowa .zrodloLinia > .zrodloEtykieta {
+  flex-basis: 100%;
+  color: var(--sea);
+  font-weight: 600;
+}
+
+.wyglad_wycinek {
+  background: #fbf7f0;
+  box-shadow: inset 0 0 0 1px #e4d9c8;
+}
+
+.wyglad_wycinek .zrodloNaglowek {
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.wyglad_wycinek .zrodloLinia:first-of-type {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.zaznaczenie {
+  padding: 0 2px;
+  border-radius: 4px;
+  background: rgb(184 115 51 / 0.14);
+  color: inherit;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.zaznaczenie[data-swieci="true"] {
+  background: rgb(63 208 194 / 0.55);
+}
+
+/* Pas skanu przechodzi przez źródło raz po wyborze zakładki (scan z s4.css). */
+.skan {
+  position: absolute;
+  inset-inline: 0;
+  top: -40%;
+  height: 40%;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(180deg, transparent, rgb(63 208 194 / 0.28), transparent);
+}
+
+.demo[data-skanuje="true"] .skan {
+  animation: skan 1s linear;
+}
+
+@keyframes skan {
+  from { top: -40%; opacity: 1; }
+  to { top: 100%; opacity: 1; }
+}
+
+.wynik {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.wynik caption {
+  margin-bottom: 6px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.wynik tr {
+  border-bottom: 1px solid #e4d9c8;
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out), background-color 0.3s var(--ease-out);
+}
+
+.wynik[data-prep="true"] tr {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.wynik tr[data-swieci="true"] {
+  background: rgb(63 208 194 / 0.18);
+}
+
+.wynik th {
+  width: 36%;
+  padding: 8px 10px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.wynik td {
+  padding: 8px 0;
+  color: #1a1410;
+}
+
+.plakietkaWspolna {
+  font-size: 16px;
+  color: var(--ink-3);
+}
+
+.drugiDowod {
+  font-size: 17px;
+  line-height: 1.45;
+  color: #1a1410;
+}
+
+@media (min-width: 768px) {
+  .przyklad {
+    padding: 24px 28px;
+  }
+
+  .pelna {
+    display: inline;
+  }
+
+  .krotka {
+    display: none;
+  }
+
+  .demo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+  }
+}
+
+/* ---------- Karta 3: opinia w wyglądzie źródła ---------- */
+.opinia {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 24px 20px;
+}
+
+.opiniaGlowa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inicjal {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sea);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.podpis {
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.gwiazdki {
+  display: flex;
+  gap: 2px;
+  color: var(--copper);
+}
+
+.cytat {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.3;
+  color: #1a1410;
+}
+
+.cytat::before {
+  content: "„";
+  color: var(--sea);
+}
+
+.cytat::after {
+  content: "”";
+  color: var(--sea);
+}
+
+.opiniaReferencja {
+  background:
+    linear-gradient(180deg, rgb(255 253 248 / 0.9), rgb(249 243 234 / 0.9)),
+    #fbf7ef;
+  box-shadow: inset 0 0 0 1px #e4d9c8;
+}
+
+.podpisPapier {
+  padding-top: 12px;
+  border-top: 1px solid #e4d9c8;
+  font-size: 16px;
+  color: var(--ink-2);
+}
+
+.tlumaczenie {
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.tlumaczenieEtykieta {
+  font-weight: 600;
+  color: var(--sea);
+}
+
+.linkOpinii {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 44px;
+  margin-top: auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--sea);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Karta 4: pomysły ---------- */
+.pomysly {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 20px;
+}
+
+.listaPomyslow {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listaPomyslow li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #1a1410;
+}
+
+.listaPomyslow li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sea);
+}
+
+.liniaPomyslow {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.dymekPomyslow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+@media (min-width: 768px) {
+  .opinia,
+  .pomysly {
+    padding: 32px 40px;
+  }
+
+  .cytat {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wynik tr,
+  .zaznaczenie {
+    transition: none;
+  }
+
+  .demo[data-skanuje="true"] .skan {
+    animation: none;
+  }
+}

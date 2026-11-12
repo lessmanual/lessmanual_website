@@ -43,7 +43,8 @@ for (const vp of [
       await page.goto("/");
       await page.locator('[data-qa="hero-pokaz"]').click();
       await expect(page.locator("#dzialy-zakladki")).toBeInViewport();
-      await expect(page.locator('[role="tab"][aria-selected="true"]')).toContainText("Telefony");
+      // Zawężone do paska działów: karty przykładów mają własne zakładki role="tab".
+      await expect(page.locator('#dzialy-zakladki [role="tab"][aria-selected="true"]')).toContainText("Telefony");
     });
 
     test(`cytat: ${telefon ? 22 : 26} px, bez kursywy`, async ({ page }) => {

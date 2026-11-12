@@ -1,29 +1,12 @@
-import { DZIALY, HOME_V4, type Karta } from "@/content/home-v4";
+import { DZIALY, HOME_V4 } from "@/content/home-v4";
+import { KartaOpinia } from "./KartaOpinia";
+import { KartaPomysly } from "./KartaPomysly";
+import { KartaPrzyklad } from "./KartaPrzyklad";
+import { KartaSystem } from "./KartaSystem";
 import { Karuzela } from "./Karuzela";
 import { RzutFirmy } from "./RzutFirmy";
 import { DymekDzialow, ZakladkiDzialow } from "./ZakladkiDzialow";
 import styles from "./ModulDzialow.module.css";
-
-// Tytuł karty-zaślepki; pełną treść kart dostarcza kolejny etap (film, przykład, opinia, pomysły).
-function tytulKarty(karta: Karta): string {
-  switch (karta.rodzaj) {
-    case "film":
-    case "przyklad":
-      return karta.tytul;
-    case "opinia":
-      return karta.opinia.podpis;
-    case "pomysly":
-      return HOME_V4.dzialy.naglowekPomyslow;
-  }
-}
-
-function Zaslepka({ karta }: { karta: Karta }) {
-  return (
-    <div className={styles.zaslepka} data-rodzaj={karta.rodzaj}>
-      <h3 className={styles.zaslepkaTytul}>{tytulKarty(karta)}</h3>
-    </div>
-  );
-}
 
 // Sekcja Działy: H2, lead, rzut firmy, zakładki, dymek i pięć karuzel. Wszystkie 5 × 4 kart są w HTML po SSR;
 // karuzele nieaktywnych działów mają `hidden` (indeksowanie, CLS 0).
@@ -45,10 +28,10 @@ export function ModulDzialow() {
             return (
               <Karuzela key={id} dzial={id}>
                 {[
-                  <Zaslepka key="film" karta={film} />,
-                  <Zaslepka key="przyklad" karta={przyklad} />,
-                  <Zaslepka key="opinia" karta={opinia} />,
-                  <Zaslepka key="pomysly" karta={pomysly} />,
+                  <KartaSystem key="film" karta={film} etykiety={dzialy.etykiety} />,
+                  <KartaPrzyklad key="przyklad" karta={przyklad} dzial={id} />,
+                  <KartaOpinia key="opinia" opinia={opinia.opinia} dzial={id} />,
+                  <KartaPomysly key="pomysly" karta={pomysly} />,
                 ]}
               </Karuzela>
             );
