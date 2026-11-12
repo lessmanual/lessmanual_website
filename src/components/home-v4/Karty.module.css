@@ -186,28 +186,22 @@
   color: var(--ink-2);
 }
 
-/* Na 390 zakładki stoją w jednej linii; gdy się nie mieszczą, pasek przewija się w bok we własnym kontenerze
-   (strona nie przewija się w bok). Krótkie etykiety tam, gdzie teksty je mają. */
+/* Zakładki łamią się do drugiej linii, gdy nie mieszczą się w jednej (telefony: 3 etykiety do 18 znaków nie
+   mają krótkich wersji). Wcześniej pasek przewijał się w bok i trzecia zakładka była ucięta przez kartę, bez
+   żadnej wskazówki (QA 390 px, nachodzenie z sąsiednią kartą). Wysokość jest stała dla wszystkich zakładek. */
 .zakladkiPrzykladu {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
   padding: 2px;
   margin: -2px;
 }
 
-.zakladkiPrzykladu::-webkit-scrollbar {
-  display: none;
-}
 
 .zakladkaPrzykladu {
   flex: none;
   white-space: nowrap;
-  scroll-snap-align: start;
   min-height: 44px;
   padding: 0 14px;
   border: 2px solid var(--line-control);

@@ -118,15 +118,24 @@ for (const vp of [
       expect(szer).toBeLessThanOrEqual(okno);
     });
 
-    test("zakładki przykładu: jedna linia, ≥ 44 px, Home/End, aria-controls wskazuje istniejący panel", async ({ page }) => {
+    test("zakładki przykładu: wszystkie w całości w pasku (łamią się, bez przewijania), ≥ 44 px, Home/End, aria-controls wskazuje istniejący panel", async ({ page }) => {
       await doDzialow(page);
       for (const dzial of DZIALY) {
         const karta = await pokazKarte(page, dzial, 2);
         const boxy = await karta
           .locator('[data-qa="zakladka-przykladu"]')
-          .evaluateAll((els) => els.map((el) => ({ y: Math.round(el.getBoundingClientRect().top), h: el.getBoundingClientRect().height })));
-        expect(new Set(boxy.map((b) => b.y)).size, dzial).toBe(1);
-        for (const b of boxy) expect(b.h).toBeGreaterThanOrEqual(44);
+          .evaluateAll((els) =>
+            els.map((el) => {
+              const z = el.getBoundingClientRect();
+              const p = el.parentElement?.getBoundingClientRect();
+              // Zakładka w całości w pasku: wcześniej pasek przewijał się i trzecia zakładka była ucięta (QA 390 px).
+              return { h: z.height, wPasku: p !== undefined && z.left >= p.left - 1 && z.right <= p.right + 1 };
+            }),
+          );
+        for (const b of boxy) {
+          expect(b.h).toBeGreaterThanOrEqual(44);
+          expect(b.wPasku, dzial).toBe(true);
+        }
         const kontrolowane = await karta
           .locator('[data-qa="zakladka-przykladu"]')
           .evaluateAll((els) => els.map((el) => document.getElementById(el.getAttribute("aria-controls") ?? "") !== null));
@@ -137,18 +146,6 @@ for (const vp of [
       await page.keyboard.press("End");
       await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]')).toHaveAttribute("aria-selected", "true");
       await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]')).toBeFocused();
-      // Na 390 „Status zamówienia” jest poza paskiem; po End pasek sam go pokazuje (strona się nie przewija).
-      await expect
-        .poll(() =>
-          karta.locator('[data-qa="zakladka-przykladu"][data-nr="2"]').evaluate((el) => {
-            const pasek = el.parentElement;
-            if (!pasek) return false;
-            const z = el.getBoundingClientRect();
-            const p = pasek.getBoundingClientRect();
-            return z.left >= p.left - 1 && z.right <= p.right + 1;
-          }),
-        )
-        .toBe(true);
       await page.keyboard.press("Home");
       await expect(karta.locator('[data-qa="zakladka-przykladu"][data-nr="0"]')).toHaveAttribute("aria-selected", "true");
       const [szer, okno] = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
