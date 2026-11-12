@@ -52,6 +52,16 @@ test.describe("nagłówek 360", () => {
     if (!menu) throw new Error("brak boundingBox");
     expect(menu.right ?? menu.x + menu.width).toBeLessThanOrEqual(340);
     expect(menu.width).toBeGreaterThanOrEqual(44);
+    const cta = page.locator('[data-qa="naglowek-umow"]');
+    const ctaBox = await cta.boundingBox();
+    if (!ctaBox) throw new Error("brak boundingBox CTA");
+    expect(ctaBox.height).toBeGreaterThanOrEqual(44);
+    const [lewy, prawy] = await cta.evaluate((el) => {
+      const s = getComputedStyle(el);
+      return [parseFloat(s.paddingLeft), parseFloat(s.paddingRight)];
+    });
+    expect(lewy).toBeGreaterThanOrEqual(8);
+    expect(prawy).toBeGreaterThanOrEqual(8);
     const szerokosc = await page.evaluate(() => document.documentElement.scrollWidth);
     expect(szerokosc).toBeLessThanOrEqual(360);
   });
