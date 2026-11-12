@@ -67,6 +67,19 @@ test.describe("pasek 390", () => {
     await expect.poll(odstepOdPaska, { timeout: 5000 }).toBeGreaterThanOrEqual(0);
   });
 
+  test("odstęp przewijania znika po przejściu przez 1024 px i wraca po powrocie", async ({ page }) => {
+    await zDecyzjaOCookies(page);
+    await page.goto("/");
+    await przewinDo(page, "#pytania");
+    await expect(page.locator(PASEK)).toHaveAttribute("data-widoczny", "true");
+    const odstep = () => page.evaluate(() => document.documentElement.style.scrollPaddingBottom);
+    await expect.poll(odstep).toContain("72px");
+    await page.setViewportSize({ width: 1200, height: 844 });
+    await expect.poll(odstep).toBe("");
+    await page.setViewportSize({ width: 390, height: 844 });
+    await expect.poll(odstep).toContain("72px");
+  });
+
   test("ponownie otwarty baner zgody chowa pasek, po zamknięciu pasek wraca", async ({ page }) => {
     await zDecyzjaOCookies(page);
     await page.goto("/");

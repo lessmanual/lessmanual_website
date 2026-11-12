@@ -13,6 +13,7 @@ export function PasekMobilny() {
   const [heroWidoczne, setHeroWidoczne] = useState(true);
   const [formularzWidoczny, setFormularzWidoczny] = useState(false);
   const [banerOtwarty, setBanerOtwarty] = useState(false);
+  const [waskiEkran, setWaskiEkran] = useState(false);
 
   useEffect(() => {
     const odczytaj = () => setDecyzja(czytajZapisZgodyCookies() !== null);
@@ -43,14 +44,25 @@ export function PasekMobilny() {
       setBanerOtwarty(baner instanceof HTMLElement && baner.getClientRects().length > 0);
     };
     sprawdz();
-    const obserwator = new MutationObserver(sprawdz);
-    obserwator.observe(document.documentElement, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ["data-zgoda-cookies"],
-    });
-    return () => obserwator.disconnect();
+    // Baner jest bezpośrednim dzieckiem <body> (layout), więc wystarczy childList bez subtree;
+    // atrybut z <head> chowa go bez zmiany drzewa, stąd drugi, wąski obserwator.
+    const drzewo = new MutationObserver(sprawdz);
+    drzewo.observe(document.body, { childList: true });
+    const atrybut = new MutationObserver(sprawdz);
+    atrybut.observe(document.documentElement, { attributes: true, attributeFilter: ["data-zgoda-cookies"] });
+    return () => {
+      drzewo.disconnect();
+      atrybut.disconnect();
+    };
+  }, []);
+
+  // Pasek istnieje tylko poniżej 1024 px; przejście szerokości przez tę granicę przelicza odstęp przewijania.
+  useEffect(() => {
+    const zapytanie = window.matchMedia("(max-width: 1023px)");
+    const odczytaj = () => setWaskiEkran(zapytanie.matches);
+    odczytaj();
+    zapytanie.addEventListener("change", odczytaj);
+    return () => zapytanie.removeEventListener("change", odczytaj);
   }, []);
 
   const widoczny = decyzja && !heroWidoczne && !formularzWidoczny && !banerOtwarty;
@@ -59,13 +71,13 @@ export function PasekMobilny() {
   // przewijanie do fokusu zostawia mu miejsce równe wysokości paska (12 + 48 + 12 + strefa bezpieczna).
   useEffect(() => {
     // Od 1024 px pasek jest ukryty w CSS, więc odstęp byłby pusty.
-    if (!widoczny || !window.matchMedia("(max-width: 1023px)").matches) return;
+    if (!widoczny || !waskiEkran) return;
     const html = document.documentElement;
     html.style.scrollPaddingBottom = "calc(72px + env(safe-area-inset-bottom, 0px))";
     return () => {
       html.style.removeProperty("scroll-padding-bottom");
     };
-  }, [widoczny]);
+  }, [widoczny, waskiEkran]);
 
   return (
     <>
