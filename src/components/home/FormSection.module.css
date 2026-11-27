@@ -27,6 +27,16 @@
   margin-top: 12px;
 }
 
+/* Zdjęcie z projektu (sekcja 5.7): kadr na twarz z portretu 2:3. */
+.zdjecie {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 6%;
+}
+
 .imie {
   margin: 0;
   font-weight: 600;

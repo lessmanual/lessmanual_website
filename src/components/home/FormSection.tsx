@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HOME_V4 } from "@/content/home-v4";
 import { LeadFormLazy } from "./LeadFormLazy";
 import styles from "./FormSection.module.css";
@@ -13,6 +14,14 @@ export function FormSection() {
           <h2 id="formularz-title" tabIndex={-1}>{h2}</h2>
           <p className="lm-lead">{linia}</p>
           <div className={styles.osoba} data-qa="formularz-osoba">
+            <Image
+              className={styles.zdjecie}
+              src="/bartek.jpg"
+              alt="Bartłomiej Chudzik, założyciel LessManual"
+              width={80}
+              height={80}
+              sizes="80px"
+            />
             <p className={styles.imie}>{imie}</p>
             <p className={`lm-small ${styles.rola}`}>{rola}</p>
             <p className={styles.opis}>{opis}</p>

@@ -476,6 +476,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  /* Podpisy Google mają 2-3 linie; stała wysokość wyrównuje gwiazdki i cytaty w rzędzie kart. */
+  min-height: 64px;
 }
 
 .inicjal {
