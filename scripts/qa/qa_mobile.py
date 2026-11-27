@@ -631,7 +631,7 @@ def main() -> int:
     console: list[dict] = []
     naglowki = json.loads(a.naglowki_plik.expanduser().read_text(encoding="utf-8")) if a.naglowki_plik else None
     with sync_playwright() as pw:
-        br = pw.chromium.launch()
+        br = pw.chromium.launch(args=["--mute-audio"])
         for vp in a.vp:
             ctx = br.new_context(viewport=VIEWPORTS[vp], device_scale_factor=2 if vp == "390" else 1,
                                  is_mobile=int(vp) < 600, has_touch=int(vp) < 600,

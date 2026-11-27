@@ -126,7 +126,7 @@ class Strona:
 
 def tekst_strony_po_ssr(base: str, naglowki: dict[str, str] | None) -> Strona:
     with sync_playwright() as pw:
-        br = pw.chromium.launch()
+        br = pw.chromium.launch(args=["--mute-audio"])
         ctx = br.new_context(java_script_enabled=False, locale="pl-PL", extra_http_headers=naglowki)
         page = ctx.new_page()
         odpowiedz = page.goto(base.rstrip("/") + "/", wait_until="load")
