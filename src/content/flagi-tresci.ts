@@ -12,8 +12,9 @@ export const FLAGI_TRESCI: Readonly<Record<NazwaFlagiTresci, boolean>> = {
   POKAZ_REFERENCJE_BARTOSZA: true,
   // Zdanie o alarmach w akapicie Bezpieczeństwa i wiersz „Kopie zapasowe i alarmy”.
   POKAZ_ZDANIE_O_ALARMACH: false,
-  // Zdanie o modelach AI w strefie danych UE (akapit i nagłówek sekcji Bezpieczeństwo).
-  POKAZ_MODELE_AI_W_UE: false,
+  // Zdanie o modelach AI w regionach UE, zawężone do systemów na AWS i Azure (decyzja Bartka 27.11): bezpośrednie
+  // API modeli spoza UE w części systemów klientów wyklucza zdanie o wszystkich systemach. Nagłówek zostaje bez modeli.
+  POKAZ_MODELE_AI_W_UE: true,
 };
 
 export type UkrywanieTekstow = { pomijajLinie: readonly string[]; usunZdania: readonly string[] };

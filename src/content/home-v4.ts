@@ -490,15 +490,15 @@ const WSPOLPRACA = {
   film: null,
 } as const;
 
-// Flagi z flagi-tresci.ts ukrywają twierdzenia niezweryfikowane: modele AI w strefie UE (nagłówek i akapit)
+// Flagi z flagi-tresci.ts ukrywają twierdzenia niezweryfikowane: modele AI w regionach UE (akapit)
 // oraz alarmy (zdanie i ostatni wiersz, więc ikony w komponencie zostają w kolejności).
 const BEZPIECZENSTWO = {
-  h2: FLAGI_TRESCI.POKAZ_MODELE_AI_W_UE ? "Serwery i modele AI w Unii Europejskiej" : "Serwery w Unii Europejskiej",
+  h2: "Serwery w Unii Europejskiej",
   akapit1:
     "Systemy stawiamy w centrach danych w Unii Europejskiej, zwykle we Frankfurcie, w chmurze Amazon Web Services albo Microsoft Azure. Jeśli pracujesz na Microsoft 365, system łączy się z Outlookiem i SharePointem i widzi tylko to, czego potrzebuje.",
   // Decyzja Bartka 12.11: warunek startu każdego nowego systemu z danymi klientów. null = flaga wyłączona.
   modeleUE: FLAGI_TRESCI.POKAZ_MODELE_AI_W_UE
-    ? "Modele AI w nowych systemach z danymi klientów działają w strefie danych Unii Europejskiej. Jeśli system korzysta z usługi spoza UE, na przykład telefonii, wskazujemy ją w umowie przed startem."
+    ? "W systemach na AWS i Azure używamy modeli AI w regionach Unii Europejskiej. Jeśli system korzysta z usługi spoza UE, na przykład modelu AI albo telefonii, wskazujemy ją w umowie przed startem."
     : null,
   akapit2: `Gdy system przetwarza dane osobowe, przed startem podpisujemy umowę powierzenia danych. Hasła trzymamy w sejfie haseł. Bazy danych mają kopie zapasowe.${
     FLAGI_TRESCI.POKAZ_ZDANIE_O_ALARMACH ? " Gdy system przestaje działać, dostajemy alarm i zaczynamy naprawę." : ""

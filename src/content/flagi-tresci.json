@@ -8,7 +8,7 @@
     "usunZdania": ["Gdy system przestaje działać, dostajemy alarm i zaczynamy naprawę."]
   },
   "POKAZ_MODELE_AI_W_UE": {
-    "pomijajLinie": ["Modele AI w nowych systemach z danymi klientów", "Serwery i modele AI w Unii Europejskiej"],
+    "pomijajLinie": ["W systemach na AWS i Azure używamy modeli AI"],
     "usunZdania": []
   }
 }

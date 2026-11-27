@@ -749,9 +749,9 @@ Notatka: linia CSO o chmurze przechodzi do sekcji 6, żeby nie stała dwa razy. 
 
 ## 6. Bezpieczeństwo i technologia
 
-Miejsce: Bezpieczeństwo → H2 · limit 45 zn. · długość 39 zn.
+Miejsce: Bezpieczeństwo → H2 · limit 45 zn. · długość 27 zn. · bez modeli AI od 27.11 (zdanie o modelach zawężone)
 
-Serwery i modele AI w Unii Europejskiej
+Serwery w Unii Europejskiej
 
 Notatka: Bartek 12.11 zgodził się na „Twoje dane zostają w Unii Europejskiej”. Przegląd faktów: to zdanie obiecuje wszystkie dane, a agent głosowy korzysta z zewnętrznej platformy, której lokalizacji nie potwierdziliśmy, i część systemów stoi u klientów. Na start idzie wersja prawdziwa dziś. Na „Twoje dane zostają w Unii Europejskiej” zmieniamy, gdy CTO potwierdzi wszystkich dostawców nowych systemów w UE (jedna zmiana w treści).
 
@@ -763,9 +763,9 @@ Miejsce: Bezpieczeństwo → akapit 2 · limit 260 zn. · długość 218 zn.
 
 Gdy system przetwarza dane osobowe, przed startem podpisujemy umowę powierzenia danych. Hasła trzymamy w sejfie haseł. Bazy danych mają kopie zapasowe. Gdy system przestaje działać, dostajemy alarm i zaczynamy naprawę.
 
-Miejsce: Bezpieczeństwo → dwa zdania po akapicie 1 · limit 200 zn. · długość 193 zn. · decyzja Bartka 12.11
+Miejsce: Bezpieczeństwo → dwa zdania po akapicie 1 · limit 200 zn. · długość 192 zn. · decyzja Bartka 12.11, zawężenie do AWS i Azure 27.11
 
-Modele AI w nowych systemach z danymi klientów działają w strefie danych Unii Europejskiej. Jeśli system korzysta z usługi spoza UE, na przykład telefonii, wskazujemy ją w umowie przed startem.
+W systemach na AWS i Azure używamy modeli AI w regionach Unii Europejskiej. Jeśli system korzysta z usługi spoza UE, na przykład modelu AI albo telefonii, wskazujemy ją w umowie przed startem.
 
 Miejsce: Bezpieczeństwo → cztery wiersze z ikoną · limit 32 zn. na wiersz · najdłuższy punkt 24 zn.
 
