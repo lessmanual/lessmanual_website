@@ -445,21 +445,13 @@ html[data-zgoda-cookies="ok"] .lm-cookie-banner {
   }
 }
 
-/* Tabele w dokumentach prawnych: własny poziomy scroll i wskazówka dla telefonu.
-   Wskazówka bez JS: widoczna tylko poniżej 768 px. W przeglądarkach ze scroll-state (Chrome 133+)
-   pokazuje się tylko wtedy, gdy tabela jest szersza niż kontener. Wskazówka stoi w kontenerze
-   (sticky, szerokość kontenera), więc nie ucieka przy przewijaniu w bok. */
-.legal-tabela { margin-block: 1.25rem; max-width: 100%; overflow-x: auto; container-type: inline-size scroll-state; }
-.legal-tabela > table { margin-block: 0; }
-.legal-tabela__hint { display: none; position: sticky; left: 0; width: 100cqi; margin: 0 0 0.375rem; font-size: 0.8125rem; color: var(--ink-2); }
+/* Tabele w dokumentach prawnych: własny poziomy scroll i wskazówka dla telefonu. Wskazówka pokazuje się
+   tylko poniżej 768 px i tylko wtedy, gdy tabela jest szersza niż kontener (data-przewija ustawia
+   LegalMarkdown). Czyste CSS-owe @container scroll-state wycina minifikator, więc znacznik daje skrypt. */
+.legal-tabela { margin-block: 1.25rem; }
+.legal-tabela__scroll { max-width: 100%; overflow-x: auto; }
+.legal-tabela__scroll > table { margin-block: 0; }
+.legal-tabela__hint { display: none; margin: 0 0 0.375rem; font-size: 0.8125rem; color: var(--ink-2); }
 @media (max-width: 767px) {
-  .legal-tabela__hint { display: block; }
-}
-@supports (container-type: scroll-state) {
-  @media (max-width: 767px) {
-    .legal-tabela__hint { display: none; }
-    @container scroll-state(scrollable: x) {
-      .legal-tabela__hint { display: block; }
-    }
-  }
+  .legal-tabela[data-przewija="true"] .legal-tabela__hint { display: block; }
 }
