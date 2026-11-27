@@ -5,7 +5,7 @@ Ta strona jest dla osób, do których piszemy pierwsi, a których danych nie mam
 ## W skrócie
 
 - Twoje służbowe dane znaleźliśmy w publicznych źródłach: na stronie Twojej firmy, w Krajowym Rejestrze Sądowym, w ogłoszeniu o pracę albo w publicznym wpisie.
-- Wysyłamy jedną wiadomość w sprawie współpracy B2B związanej z publicznym zdarzeniem w Twojej firmie (na LinkedIn zaproszenie z krótką notką i jedną wiadomość). Pierwsza wiadomość nie zawiera oferty ani ceny.
+- Wysyłamy jedną wiadomość w sprawie współpracy B2B związanej z publicznym zdarzeniem w Twojej firmie (na LinkedIn zaproszenie z krótką notką i jedną wiadomość). Pierwsza wiadomość nie zawiera oferty ani ceny. Jeśli nie odpowiesz, w tej sprawie nie piszemy ponownie.
 - Każdą wiadomość czyta i wysyła człowiek.
 - Jeśli nie chcesz kontaktu, odpisz „nie”. Usuniemy Twoje dane w ciągu 7 dni i nie napiszemy ponownie.
 
@@ -42,7 +42,7 @@ W wiadomości piszemy, z którego źródła pochodzi Twój adres.
 
 ## 4. Cel i podstawa prawna
 
-1. Cel: jednorazowe nawiązanie kontaktu biznesowego (B2B) z Twoją firmą w związku z publicznym zdarzeniem, które pokazuje, że nasze usługi mogą być dla niej przydatne. Jeśli odpowiesz, prowadzimy z Tobą korespondencję.
+1. Cel: nawiązanie kontaktu biznesowego (B2B) z Twoją firmą w związku z publicznym zdarzeniem, które pokazuje, że nasze usługi mogą być dla niej przydatne. Jeśli odpowiesz, prowadzimy z Tobą korespondencję. Przy nowym publicznym zdarzeniu w Twojej firmie możemy napisać jeszcze raz, najwcześniej po 30 dniach od poprzedniej wiadomości. Po odpowiedzi „nie” nie piszemy już nigdy.
 2. Podstawa: nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO).
 3. Nasz interes to nawiązanie kontaktu z firmą w sprawie współpracy. Ograniczamy przetwarzanie do danych służbowych, piszemy tylko do osób, których rola wiąże się z tematem wiadomości, i dajemy prosty sposób na zakończenie kontaktu.
 4. Pierwsza wiadomość jest pytaniem, czy możemy przesłać informację. Nie zawiera oferty ani ceny. Informację handlową wysyłamy dopiero po Twojej zgodzie (art. 398 ustawy Prawo komunikacji elektronicznej).
@@ -64,7 +64,7 @@ W wiadomości piszemy, z którego źródła pochodzi Twój adres.
 | Apify Technologies s.r.o. (Czechy) | pobieranie publicznych ogłoszeń o pracę | dane kontaktowe osoby wskazanej w ogłoszeniu, jeśli ogłoszenie je zawiera |
 | Exa Labs, Inc. (USA) | wyszukiwanie publicznych wpisów i profili zawodowych | imię, nazwisko, firma |
 | Anthropic (Anthropic Ireland, Limited i Anthropic PBC, USA) | model sztucznej inteligencji, który pomaga ocenić publiczne informacje i przygotować szkic wiadomości (pkt 5) | dane z pkt 2 |
-| Amazon Web Services | serwery w Unii Europejskiej, na których działają nasze programy (obsługa poczty przychodzącej, program wyszukujący), oraz modele sztucznej inteligencji w usłudze Amazon Bedrock | dane z pkt 2 i treść Twojej odpowiedzi |
+| Amazon Web Services | serwery w Unii Europejskiej, na których działa obsługa naszej poczty przychodzącej i jej archiwum, oraz modele sztucznej inteligencji w usłudze Amazon Bedrock | dane z pkt 2 i treść Twojej odpowiedzi |
 | Supabase Pte. Ltd. (Singapur) | baza kontaktów (CRM), tylko gdy odpowiesz na wiadomość | dane z pkt 2 i historia korespondencji |
 
 2. Jeśli piszemy do Ciebie przez LinkedIn, wiadomość przechodzi przez serwis LinkedIn. LinkedIn Ireland Unlimited Company przetwarza ją jako osobny administrator, na zasadach swojej polityki prywatności.
@@ -94,8 +94,10 @@ W wiadomości piszemy, z którego źródła pochodzi Twój adres.
 |---|---|
 | Znaleźliśmy Twoje dane, ale do Ciebie nie napisaliśmy | najdłużej 30 dni |
 | Napisaliśmy, ale nie ma odpowiedzi | 12 miesięcy od ostatniej wiadomości |
-| Odpowiedź „nie” albo sprzeciw | usuwamy dane w ciągu 7 dni, także naszą korespondencję z Tobą; zostaje tylko wpis, że Twoja firma nie chce kontaktu, żeby nie napisać ponownie |
+| Odpowiedź „nie” albo sprzeciw | w ciągu 7 dni usuwamy dane z narzędzi, w których pracujemy, także naszą korespondencję z Tobą; zostaje tylko wpis, że Twoja firma nie chce kontaktu, żeby nie napisać ponownie |
 | Po Twojej odpowiedzi prowadzimy rozmowę | 12 miesięcy od zakończenia sprawy; jeśli zawrzemy umowę, okresy z Polityki prywatności |
+
+Kopie zapasowe i archiwum poczty usuwają te dane automatycznie, najpóźniej po 90 dniach od usunięcia z naszych narzędzi. Z kopii nie korzystamy do kontaktu z Tobą.
 
 ## 9. Twoje prawa
 
