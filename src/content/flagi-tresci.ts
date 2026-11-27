@@ -9,7 +9,7 @@ export type NazwaFlagiTresci = keyof typeof fragmenty;
 
 export const FLAGI_TRESCI: Readonly<Record<NazwaFlagiTresci, boolean>> = {
   // Referencja Bartosza Łaskawca (Eighteen Studio): karta 3 w Telefonach i karta w rzędzie Opinie.
-  POKAZ_REFERENCJE_BARTOSZA: false,
+  POKAZ_REFERENCJE_BARTOSZA: true,
   // Zdanie o alarmach w akapicie Bezpieczeństwa i wiersz „Kopie zapasowe i alarmy”.
   POKAZ_ZDANIE_O_ALARMACH: false,
   // Zdanie o modelach AI w strefie danych UE (akapit i nagłówek sekcji Bezpieczeństwo).
