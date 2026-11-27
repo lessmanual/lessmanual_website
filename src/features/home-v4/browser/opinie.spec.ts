@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 import { HOME_V4 } from "../../../content/home-v4";
+import { FLAGI_TRESCI } from "../../../content/flagi-tresci";
 
 const SEKCJA = "section#opinie";
 const RZAD = `${SEKCJA} [data-qa="opinie-rzad"]`;
@@ -19,12 +20,16 @@ for (const vp of [
   test.describe(`opinie ${vp.width}`, () => {
     test.use({ viewport: vp, hasTouch: telefon });
 
-    test("7 kart w kolejności z tekstów, każda w wyglądzie swojego źródła", async ({ page }) => {
+    test("karty w kolejności z tekstów (7, a bez referencji 6), każda w wyglądzie swojego źródła", async ({ page }) => {
       await doRzedu(page);
       await expect(page.locator(`${SEKCJA} h2`)).toHaveText(HOME_V4.opinie.h2);
       await expect(page.locator(SEKCJA)).toContainText(HOME_V4.opinie.tabliczka);
       const zrodla = await page.locator(KARTA).evaluateAll((els) => els.map((el) => el.getAttribute("data-zrodlo")));
-      expect(zrodla).toEqual(["google", "google", "google", "referencja", "google", "google", "linkedin"]);
+      expect(zrodla).toEqual(
+        FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA
+          ? ["google", "google", "google", "referencja", "google", "google", "linkedin"]
+          : ["google", "google", "google", "google", "google", "linkedin"],
+      );
       expect(zrodla).toEqual(HOME_V4.opinie.karty.map((k) => k.zrodlo));
       // Kolejność z tekstów: pierwsza karta zaczyna się od tekstu pierwszej opinii.
       const pierwsza = HOME_V4.opinie.karty[0];
@@ -50,7 +55,7 @@ for (const vp of [
           };
         }),
       );
-      expect(wynik).toHaveLength(7);
+      expect(wynik).toHaveLength(HOME_V4.opinie.karty.length);
       for (const w of wynik) {
         expect(w.kartaUcieta).toBe(false);
         expect(w.tekstUciety).toBe(false);

@@ -2,6 +2,7 @@
 // (sekcje 1-11). Komponenty nie mają wpisanego tekstu; zmiana tekstu: najpierw ten plik, potem kod.
 // Pilnuje tego home-v4.test.ts (porównuje moduł z plikiem tekstów).
 import { PRZYKLADY, type DzialId, type ZakladkaPrzykladu } from "./home-v4-przyklady";
+import { FLAGI_TRESCI } from "./flagi-tresci";
 
 export type { DzialId } from "./home-v4-przyklady";
 
@@ -165,7 +166,8 @@ const TELEFONY = {
       plakietkaWspolna: "Rozmowy w przykładzie są wymyślone",
       drugiDowod: null,
     },
-    {
+    FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA
+      ? {
       rodzaj: "opinia",
       opinia: {
         zrodlo: "referencja",
@@ -173,7 +175,17 @@ const TELEFONY = {
           "Asystentka odbiera telefon, odpowiada na pytania pacjentów i umawia wizyty od razu w Medfile, a prośby o odwołanie lub przełożenie wizyty przekazuje mailem do recepcji. (…) Zawsze jasno mówił, co da się zrobić w obecnym systemie, a co wymaga dodatkowej integracji, i to bardzo ułatwiało nam decyzje.",
         podpis: "Bartosz Łaskawiec, CEO Eighteen Studio · referencja",
       },
-    },
+    }
+      : {
+          // Zamiennik przy wyłączonej referencji: ta sama opinia Google co w rzędzie Opinie, żeby dział miał cztery karty.
+          rodzaj: "opinia",
+          opinia: {
+            zrodlo: "google",
+            tekst:
+              "Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę\" i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.",
+            podpis: "CreativeDanceRumia · 15 opinii · ★★★★★ · opinia w Google",
+          },
+        },
     {
       rodzaj: "pomysly",
       pomysly: [
@@ -477,20 +489,26 @@ const WSPOLPRACA = {
   film: null,
 } as const;
 
+// Flagi z flagi-tresci.ts ukrywają twierdzenia niezweryfikowane: modele AI w strefie UE (nagłówek i akapit)
+// oraz alarmy (zdanie i ostatni wiersz, więc ikony w komponencie zostają w kolejności).
 const BEZPIECZENSTWO = {
-  h2: "Serwery i modele AI w Unii Europejskiej",
+  h2: FLAGI_TRESCI.POKAZ_MODELE_AI_W_UE ? "Serwery i modele AI w Unii Europejskiej" : "Serwery w Unii Europejskiej",
   akapit1:
     "Systemy stawiamy w centrach danych w Unii Europejskiej, zwykle we Frankfurcie, w chmurze Amazon Web Services albo Microsoft Azure. Jeśli pracujesz na Microsoft 365, system łączy się z Outlookiem i SharePointem i widzi tylko to, czego potrzebuje.",
-  // Decyzja Bartka 12.11: warunek startu każdego nowego systemu z danymi klientów.
-  modeleUE:
-    "Modele AI w nowych systemach z danymi klientów działają w strefie danych Unii Europejskiej. Jeśli system korzysta z usługi spoza UE, na przykład telefonii, wskazujemy ją w umowie przed startem.",
-  akapit2:
-    "Gdy system przetwarza dane osobowe, przed startem podpisujemy umowę powierzenia danych. Hasła trzymamy w sejfie haseł. Bazy danych mają kopie zapasowe. Gdy system przestaje działać, dostajemy alarm i zaczynamy naprawę.",
-  wiersze: ["Centra danych w UE", "Umowa powierzenia danych", "Hasła w sejfie haseł", "Kopie zapasowe i alarmy"],
+  // Decyzja Bartka 12.11: warunek startu każdego nowego systemu z danymi klientów. null = flaga wyłączona.
+  modeleUE: FLAGI_TRESCI.POKAZ_MODELE_AI_W_UE
+    ? "Modele AI w nowych systemach z danymi klientów działają w strefie danych Unii Europejskiej. Jeśli system korzysta z usługi spoza UE, na przykład telefonii, wskazujemy ją w umowie przed startem."
+    : null,
+  akapit2: `Gdy system przetwarza dane osobowe, przed startem podpisujemy umowę powierzenia danych. Hasła trzymamy w sejfie haseł. Bazy danych mają kopie zapasowe.${
+    FLAGI_TRESCI.POKAZ_ZDANIE_O_ALARMACH ? " Gdy system przestaje działać, dostajemy alarm i zaczynamy naprawę." : ""
+  }`,
+  wiersze: FLAGI_TRESCI.POKAZ_ZDANIE_O_ALARMACH
+    ? ["Centra danych w UE", "Umowa powierzenia danych", "Hasła w sejfie haseł", "Kopie zapasowe i alarmy"]
+    : ["Centra danych w UE", "Umowa powierzenia danych", "Hasła w sejfie haseł"],
 } as const;
 
 // Kolejność kart w rzędzie z tekstów: Paweł i CreativeDanceRumia nie stoją obok siebie.
-const OPINIE_KARTY = [
+const OPINIE_KARTY_PELNE = [
   {
     zrodlo: "google",
     tekst:
@@ -536,6 +554,15 @@ const OPINIE_KARTY = [
     podpis: "Arek Skuza, CEO and boards advisor on AI Powered Growth · rekomendacja na LinkedIn",
   },
 ] as const satisfies readonly Opinia[];
+
+// Bez referencji (flaga false) Paweł i CreativeDanceRumia stanęliby obok siebie, więc Maciej wchodzi między nich.
+const KOLEJNOSC_BEZ_REFERENCJI = ["Marcin", "Dawid", "Paweł", "Maciej", "CreativeDanceRumia", "Arek"];
+const imiePodpisu = (o: Opinia): string => o.podpis.split(/[ ,·]/)[0] ?? "";
+const OPINIE_KARTY: readonly Opinia[] = FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA
+  ? OPINIE_KARTY_PELNE
+  : OPINIE_KARTY_PELNE.filter((o) => o.zrodlo !== "referencja").sort(
+      (a, b) => KOLEJNOSC_BEZ_REFERENCJI.indexOf(imiePodpisu(a)) - KOLEJNOSC_BEZ_REFERENCJI.indexOf(imiePodpisu(b)),
+    );
 
 const OPINIE = {
   h2: "Co mówią firmy, dla których budujemy systemy",

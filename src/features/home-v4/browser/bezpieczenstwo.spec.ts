@@ -11,16 +11,17 @@ for (const vp of [
   test.describe(`bezpieczeństwo ${vp.width}`, () => {
     test.use({ viewport: vp, hasTouch: telefon });
 
-    test("sekcja ma H2, oba akapity, zdania o modelach w UE i cztery wiersze", async ({ page }) => {
+    test("sekcja ma H2, oba akapity, zdanie o modelach w UE (gdy flaga włączona) i wiersze (cztery, a bez zdania o alarmach trzy)", async ({ page }) => {
       await page.goto("/");
       const b = HOME_V4.bezpieczenstwo;
       await expect(page.locator("section#bezpieczenstwo")).toHaveAttribute("data-qa", "bezpieczenstwo");
       await expect(page.locator(`${SEKCJA} h2`)).toHaveText(b.h2);
       await expect(page.locator(SEKCJA)).toContainText(b.akapit1);
-      await expect(page.locator(SEKCJA)).toContainText(b.modeleUE);
+      if (b.modeleUE) await expect(page.locator(SEKCJA)).toContainText(b.modeleUE);
+      else await expect(page.locator(SEKCJA)).not.toContainText("modele AI");
       await expect(page.locator(SEKCJA)).toContainText(b.akapit2);
       for (const wiersz of b.wiersze) await expect(page.locator(SEKCJA)).toContainText(wiersz);
-      await expect(page.locator(`${SEKCJA} [data-qa="wiersz-bezpieczenstwa"]`)).toHaveCount(4);
+      await expect(page.locator(`${SEKCJA} [data-qa="wiersz-bezpieczenstwa"]`)).toHaveCount(b.wiersze.length);
     });
 
     test("stoi zaraz po Współpracy, bez obrazów i logo, strona nie przewija się w bok", async ({ page }) => {

@@ -38,11 +38,14 @@ export function KartaOpinia({ opinia, dzial }: { opinia: Opinia; dzial: Miejsce 
             </span>
             <span className={styles.podpis}>{opinia.podpis}</span>
           </figcaption>
-          <span className={styles.gwiazdki} role="img" aria-label={hero.cytat.etykietaOceny}>
-            {[0, 1, 2, 3, 4].map((i) => (
-              <Star key={i} size={18} />
-            ))}
-          </span>
+          {/* Gdy podpis ma już gwiazdki (★★★★★), drugiego rzędu ikon nie rysujemy. */}
+          {opinia.podpis.includes("★") ? null : (
+            <span className={styles.gwiazdki} role="img" aria-label={hero.cytat.etykietaOceny}>
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} size={18} />
+              ))}
+            </span>
+          )}
           <blockquote className={styles.cytat}>{opinia.tekst}</blockquote>
           <LinkOpinii href={LINKS.googleProfile} tekst={opinie.linkGoogle} dzial={dzial} />
         </figure>

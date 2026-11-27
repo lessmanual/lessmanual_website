@@ -72,6 +72,37 @@ def wyciagnij_teksty(deck: str) -> list[tuple[str, str]]:
     return wynik
 
 
+# Flagi twierdzeń niezweryfikowanych (src/content/flagi-tresci.ts, fragmenty w flagi-tresci.json). Przy fladze
+# false plik tekstów ma tekst, którego strona celowo nie pokazuje: pomijamy całe linie z `pomijajLinie`
+# i wycinamy zdania z `usunZdania`, tak samo jak bezUkrytych w src/content/home-v4.test.ts.
+PLIK_FLAG = REPO / "src/content/flagi-tresci.ts"
+PLIK_FRAGMENTOW_FLAG = REPO / "src/content/flagi-tresci.json"
+
+
+def ukrywane_teksty() -> tuple[list[str], list[str], list[str]]:
+    """Zwraca (pomijaj_linie, usun_zdania, wylaczone_flagi) dla flag ustawionych na false w flagi-tresci.ts."""
+    wartosci = dict(re.findall(r"^\s*(POKAZ_[A-Z0-9_]+):\s*(true|false),", PLIK_FLAG.read_text(encoding="utf-8"), re.M))
+    fragmenty = json.loads(PLIK_FRAGMENTOW_FLAG.read_text(encoding="utf-8"))
+    if set(wartosci) != set(fragmenty):
+        raise RuntimeError(f"flagi w .ts ({sorted(wartosci)}) i w .json ({sorted(fragmenty)}) się rozjechały")
+    wylaczone = [n for n, v in wartosci.items() if v == "false"]
+    pomijaj = [f for n in wylaczone for f in fragmenty[n]["pomijajLinie"]]
+    usun = [z for n in wylaczone for z in fragmenty[n]["usunZdania"]]
+    return pomijaj, usun, wylaczone
+
+
+def bez_ukrytych(teksty: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    pomijaj, usun, _ = ukrywane_teksty()
+    wynik: list[tuple[str, str]] = []
+    for miejsce, tekst in teksty:
+        if any(f in tekst for f in pomijaj):
+            continue
+        for zdanie in usun:
+            tekst = tekst.replace(zdanie, "")
+        if tekst.strip():
+            wynik.append((miejsce, tekst.strip()))
+    return wynik
+
 def powod_wylaczenia(miejsce: str) -> str | None:
     for fragment, powod in WYLACZONE.items():
         if fragment in miejsce:
@@ -156,7 +187,7 @@ def main() -> int:
     a = ap.parse_args()
     naglowki = json.loads(a.naglowki_plik.expanduser().read_text(encoding="utf-8")) if a.naglowki_plik else None
 
-    teksty = wyciagnij_teksty(PLIK_TEKSTOW.read_text(encoding="utf-8"))
+    teksty = bez_ukrytych(wyciagnij_teksty(PLIK_TEKSTOW.read_text(encoding="utf-8")))
     if len(teksty) <= MINIMUM_TEKSTOW:
         print(f"BŁĄD: z pliku tekstów wyciągnięto tylko {len(teksty)} tekstów (minimum {MINIMUM_TEKSTOW})")
         return 1
@@ -170,6 +201,8 @@ def main() -> int:
           f"wyłączone (tylko po interakcji): {len(wylaczone)}")
     for powod in sorted({p for _, _, p in wylaczone}):
         print(f"  wyłączone: {sum(1 for _, _, p in wylaczone if p == powod)} x {powod}")
+    wylaczone_flagi = ", ".join(ukrywane_teksty()[2]) or "brak"
+    print(f"Flagi wyłączone (ich teksty pominięte): {wylaczone_flagi}")
     print(f"Brakujące na stronie: {len(brakujace)}")
     for m, t in brakujace:
         print(f"  [{m[:70]}] „{t[:90]}”")

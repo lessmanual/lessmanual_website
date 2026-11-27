@@ -17,6 +17,7 @@ export default defineConfig({
   use: {
     baseURL: "http://127.0.0.1:3010",
     trace: "retain-on-failure",
+    launchOptions: { args: ["--mute-audio"] },
   },
   webServer: {
     command: "npm run dev -- --webpack --hostname 127.0.0.1 --port 3010",

@@ -1,0 +1,14 @@
+{
+  "POKAZ_REFERENCJE_BARTOSZA": {
+    "pomijajLinie": ["Asystentka odbiera telefon", "Bartosz Łaskawiec, CEO Eighteen Studio"],
+    "usunZdania": []
+  },
+  "POKAZ_ZDANIE_O_ALARMACH": {
+    "pomijajLinie": ["Kopie zapasowe i alarmy"],
+    "usunZdania": ["Gdy system przestaje działać, dostajemy alarm i zaczynamy naprawę."]
+  },
+  "POKAZ_MODELE_AI_W_UE": {
+    "pomijajLinie": ["Modele AI w nowych systemach z danymi klientów", "Serwery i modele AI w Unii Europejskiej"],
+    "usunZdania": []
+  }
+}

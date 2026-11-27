@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { REVIEWS } from "@/lib/constants";
 import { DZIALY, HOME_V4, bzykPoWyborze, etykietaKarty, inicjal, type DzialId } from "./home-v4";
 import { PRZYKLADY } from "./home-v4-przyklady";
+import { FLAGI_TRESCI, ukrywaneTeksty } from "./flagi-tresci";
 import { EKRAN_PROBA_NIEUDANA, PYTANIA } from "./formularz";
 
 const DECK = resolve(process.cwd(), "docs/superpowers/specs/2026-11-12-strona-v4-teksty.md");
@@ -38,6 +39,16 @@ function wyciagnijTeksty(deck: string): string[] {
   return wynik;
 }
 
+// Flagi z flagi-tresci.ts: przy fladze false plik tekstów może mieć tekst, którego moduł celowo nie pokazuje.
+// Cała linia znika, gdy zawiera fragment z `pomijajLinie`; z linii wycinamy zdania z `usunZdania`.
+function bezUkrytych(teksty: string[]): string[] {
+  const ukryte = ukrywaneTeksty();
+  return teksty
+    .filter((t) => !ukryte.pomijajLinie.some((f) => t.includes(f)))
+    .map((t) => ukryte.usunZdania.reduce((reszta, zdanie) => reszta.replace(zdanie, ""), t).trim())
+    .filter((t) => t !== "");
+}
+
 function wszystkieNapisy(wartosc: unknown): string[] {
   if (typeof wartosc === "string") return [wartosc];
   if (Array.isArray(wartosc)) return wartosc.flatMap(wszystkieNapisy);
@@ -66,7 +77,7 @@ describe("teksty v4 1:1", () => {
   it("każdy tekst z „Miejsce:” w sekcjach 1-11 jest w module treści, bo tekst zmieniamy tylko przez plik tekstów", () => {
     const pomijane = new Set([DYMEK_Z_NAZWA].map(norm));
     const k = korpus();
-    const brakujace = wyciagnijTeksty(readFileSync(DECK, "utf8"))
+    const brakujace = bezUkrytych(wyciagnijTeksty(readFileSync(DECK, "utf8")))
       .filter((t) => !pomijane.has(norm(t)))
       .filter((t) => !k.has(norm(t)));
     expect(brakujace).toEqual([]);
@@ -97,9 +108,7 @@ describe("teksty v4 1:1", () => {
       "Marcin",
       "Dawid",
       "Paweł",
-      "Bartosz",
-      "CreativeDanceRumia",
-      "Maciej",
+      ...(FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA ? ["Bartosz", "CreativeDanceRumia", "Maciej"] : ["Maciej", "CreativeDanceRumia"]),
       "Arek",
     ]);
   });

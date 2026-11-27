@@ -21,7 +21,7 @@ export function Bezpieczenstwo() {
             {b.h2}
           </h2>
           <p className={styles.akapit}>{b.akapit1}</p>
-          <p className={styles.akapit}>{b.modeleUE}</p>
+          {b.modeleUE ? <p className={styles.akapit}>{b.modeleUE}</p> : null}
           <p className={styles.akapit}>{b.akapit2}</p>
         </div>
         <ul className={styles.wiersze} data-qa="bezpieczenstwo-wiersze">

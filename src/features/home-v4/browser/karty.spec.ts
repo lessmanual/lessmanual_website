@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 import { DZIALY, HOME_V4, type DzialId } from "../../../content/home-v4";
+import { FLAGI_TRESCI } from "../../../content/flagi-tresci";
 import { LINKS } from "../../../content/site";
 
 const KARUZELA = '[data-qa="karuzela"]:visible';
@@ -77,11 +78,15 @@ for (const vp of [
       await expect(karta.locator("img, svg[data-logo]")).toHaveCount(0);
     });
 
-    test("Telefony karta 3 to referencja bez linku, Sprzedaż karta 3 to LinkedIn z tłumaczeniem", async ({ page }) => {
+    test("Telefony karta 3 to referencja bez linku (albo opinia Google, gdy referencja wyłączona), Sprzedaż karta 3 to LinkedIn z tłumaczeniem", async ({ page }) => {
       await doDzialow(page);
       const telefony = await pokazKarte(page, "telefony", 3);
-      await expect(telefony.locator('[data-qa="opinia"]')).toHaveAttribute("data-zrodlo", "referencja");
-      await expect(telefony.locator('[data-qa="link-opinii"]')).toHaveCount(0);
+      if (FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA) {
+        await expect(telefony.locator('[data-qa="opinia"]')).toHaveAttribute("data-zrodlo", "referencja");
+        await expect(telefony.locator('[data-qa="link-opinii"]')).toHaveCount(0);
+      } else {
+        await expect(telefony.locator('[data-qa="opinia"]')).toHaveAttribute("data-zrodlo", "google");
+      }
       const sprzedaz = await pokazKarte(page, "sprzedaz", 3);
       const opinia = HOME_V4.dzialy.lista.sprzedaz.karty[2].opinia;
       await expect(sprzedaz.locator('[data-qa="opinia"]')).toHaveAttribute("data-zrodlo", "linkedin");
