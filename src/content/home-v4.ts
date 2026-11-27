@@ -634,7 +634,7 @@ const STOPKA = {
     { label: "LinkedIn", cel: "linkedin" },
     { label: "Wizytówka w Google", cel: "google" },
   ] as const satisfies readonly { label: string; cel: "formularz" | "email" | "linkedin" | "google" }[],
-  dane: "© 2026 LessManual.ai · LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909",
+  dane: "© 2026 LessManual.ai · LessManual Bartłomiej Chudzik, ul. Długa 33, Cendrowice, 05-530 Góra Kalwaria, NIP 1231589909",
   prawne: ["Polityka prywatności", "Polityka cookies", "Regulamin", "Ustawienia cookies"],
   znakiTowarowe: "Microsoft, Azure i AWS są znakami towarowymi ich właścicieli.",
 } as const;

@@ -1,6 +1,6 @@
 # Polityka prywatności serwisu lessmanual.ai
 
-Wersja 1.0 z 11.11.2026. Obowiązuje od [DO UZUPEŁNIENIA: data publikacji na stronie].
+Wersja 1.0 z 11.11.2026. Obowiązuje od 30.11.2026.
 
 Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po co, jak długo je trzymamy, komu je przekazujemy i jakie masz prawa. Spełnia obowiązek informacyjny z art. 13 i 14 RODO. Piszemy „my”, mając na myśli administratora wskazanego w § 1.
 
@@ -16,7 +16,7 @@ Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po
 
 ## § 1. Administrator danych
 
-1. Administratorem Twoich danych osobowych jest Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909, REGON 542947850.
+1. Administratorem Twoich danych osobowych jest Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, Cendrowice, 05-530 Góra Kalwaria, NIP 1231589909, REGON 542947850.
 2. W sprawach danych osobowych napisz na kontakt@lessmanual.ai albo listownie na adres z ust. 1.
 3. Nie wyznaczyliśmy inspektora ochrony danych. Nie mamy takiego obowiązku według art. 37 RODO. Wszystkie sprawy prowadzi bezpośrednio administrator.
 
@@ -29,7 +29,7 @@ Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po
    4. piszą do nas e-mail albo rozmawiają z nami w sprawie współpracy,
    5. zapisały się wcześniej na newsletter AI Insider,
    6. reprezentują naszych klientów albo z nami współpracują.
-2. Polityka nie obejmuje danych, które przetwarzamy w imieniu klientów w systemach wdrażanych dla nich. Wtedy działamy jako podmiot przetwarzający i zasady określa osobna umowa powierzenia przetwarzania danych z danym klientem.
+2. Polityka nie obejmuje danych, które przetwarzamy w imieniu klientów w systemach wdrażanych dla nich. Wtedy działamy jako podmiot przetwarzający i zasady określa osobna umowa powierzenia przetwarzania danych z danym klientem.  Polityka nie obejmuje też danych osób, z którymi kontaktujemy się w sprawach B2B na podstawie danych z publicznych źródeł. Zasady opisuje osobny dokument [Informacja dla osób, z którymi kontaktujemy się w sprawach B2B](/informacja-kontakt-b2b).
 
 ## § 3. Skąd mamy Twoje dane
 
@@ -131,14 +131,14 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | Dostawca | Co robi | Jakie dane |
 |---|---|---|
 | Vercel Inc. (USA) | hosting strony i obsługa formularza | wszystkie dane przesyłane przez stronę, logi serwera |
-| Supabase, Inc. i jego spółki (USA, Singapur) | baza danych: zgłoszenia i CRM, adresy zapisane wcześniej na newsletter, treści i obrazy bloga | dane z formularza i ekranu „Nie teraz”, adresy z § 4.7; adres IP przy pobieraniu obrazów bloga |
+| Supabase Pte. Ltd. (Singapur) | baza danych: zgłoszenia i CRM, adresy zapisane wcześniej na newsletter, treści i obrazy bloga | dane z formularza i ekranu „Nie teraz”, adresy z § 4.7; adres IP przy pobieraniu obrazów bloga |
 | PLUS FIVE FIVE, Inc. (Resend, USA) | wysyłka powiadomienia o zgłoszeniu na naszą skrzynkę | dane z formularza |
 | Google Ireland Limited i Google LLC | poczta kontakt@lessmanual.ai, kalendarz i rozmowy wideo w Google Meet (Google Workspace) | korespondencja, terminy rozmów |
 | Google Ireland Limited i Google LLC | statystyki odwiedzin (Google Analytics 4), tylko po zgodzie | dane z § 4.9 |
 | Cal.com, Inc. (USA) | kalendarz rezerwacji rozmów | dane z § 4.4 |
 | inFakt spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie | wystawianie faktur | dane z § 4.10 |
 | osoba prowadząca księgowość, w systemie inFakt | księgowość | dane z § 4.10 |
-| Anthropic PBC (USA) | model AI Claude, z którego korzystają nasi agenci przy przygotowaniu rozmowy (§ 4.5) | dane ze zgłoszenia i notatki z CRM |
+| Anthropic Ireland, Limited i Anthropic PBC (USA) | model AI Claude, z którego korzystają nasi agenci przy przygotowaniu rozmowy (§ 4.5) | dane ze zgłoszenia i notatki z CRM |
 
 2. Cal.com w ramce kalendarza używa też własnych narzędzi statystycznych (Google Analytics Cal.com). W tym zakresie Cal.com działa jako osobny administrator według własnej polityki prywatności (cal.com/privacy). Ramka ładuje się dopiero po Twojej zgodzie (zobacz Politykę cookies).
 3. Jeśli po pierwszej rozmowie uznamy, że projekt najlepiej poprowadzić razem z partnerem wdrożeniowym, przekażemy mu Twoje dane dopiero po uzgodnieniu tego z Tobą.
@@ -156,8 +156,8 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | Vercel Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Vercel | DPF: aktywny (sprawdzono na dataprivacyframework.gov 11.11.2026) |
 | Cal.com, Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Cal.com | DPF: aktywny (sprawdzono na dataprivacyframework.gov 11.11.2026) |
 | PLUS FIVE FIVE, Inc. (Resend) | DPF i standardowe klauzule umowne w umowie powierzenia Resend | DPF: „Active - Re-certification under Review” (sprawdzono na dataprivacyframework.gov 11.11.2026) |
-| Anthropic PBC | standardowe klauzule umowne w umowie powierzenia włączonej do warunków komercyjnych Anthropic (Anthropic nie występuje na liście DPF) | nie występuje na liście aktywnych ani nieaktywnych uczestników DPF (sprawdzono 11.11.2026) |
-| Supabase | standardowe klauzule umowne (Supabase nie występuje na liście DPF) | baza w regionie eu-north-1 (Sztokholm, Szwecja) |
+| Anthropic Ireland, Limited i Anthropic PBC | standardowe klauzule umowne w umowie powierzenia włączonej do warunków komercyjnych Anthropic (Anthropic nie występuje na liście DPF) | nie występuje na liście aktywnych ani nieaktywnych uczestników DPF (sprawdzono 11.11.2026) |
+| Supabase Pte. Ltd. (Singapur) | standardowe klauzule umowne (Supabase nie występuje na liście DPF) | baza w regionie eu-north-1 (Sztokholm, Szwecja) |
 
 3. Standardowe klauzule umowne to wzór umowy przyjęty przez Komisję Europejską (decyzja wykonawcza (UE) 2021/914). Kopię zabezpieczeń dostaniesz na prośbę wysłaną na kontakt@lessmanual.ai.
 4. Serwer obsługujący formularz działa w regionie Vercel fra1 (Frankfurt, Niemcy).

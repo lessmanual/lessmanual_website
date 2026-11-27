@@ -1,8 +1,8 @@
 # Polityka cookies serwisu lessmanual.ai
 
-Wersja 1.0 z 11.11.2026. Obowiązuje od [DO UZUPEŁNIENIA: data publikacji na stronie].
+Wersja 1.0 z 11.11.2026. Obowiązuje od 30.11.2026.
 
-Ta polityka wyjaśnia, jakie informacje serwis lessmanual.ai zapisuje w Twoim urządzeniu, po co i jak możesz zmienić swój wybór. Administratorem serwisu jest Bartłomiej Chudzik, LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909, kontakt@lessmanual.ai.
+Ta polityka wyjaśnia, jakie informacje serwis lessmanual.ai zapisuje w Twoim urządzeniu, po co i jak możesz zmienić swój wybór. Administratorem serwisu jest Bartłomiej Chudzik, LessManual Bartłomiej Chudzik, ul. Długa 33, Cendrowice, 05-530 Góra Kalwaria, NIP 1231589909, kontakt@lessmanual.ai.
 
 ## § 1. Czym są cookies i pamięć przeglądarki
 

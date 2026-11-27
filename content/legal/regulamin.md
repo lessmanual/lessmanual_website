@@ -1,12 +1,12 @@
 # Regulamin serwisu lessmanual.ai
 
-Wersja 1.0 z 11.11.2026. Obowiązuje od [DO UZUPEŁNIENIA: data publikacji na stronie].
+Wersja 1.0 z 11.11.2026. Obowiązuje od 30.11.2026.
 
 Regulamin określa zasady korzystania z serwisu lessmanual.ai i z usług, które świadczymy w nim drogą elektroniczną. Wydajemy go na podstawie art. 8 ustawy z 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną.
 
 ## § 1. Usługodawca
 
-1. Serwis prowadzi Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909, REGON 542947850.
+1. Serwis prowadzi Bartłomiej Chudzik, prowadzący jednoosobową działalność gospodarczą pod firmą LessManual Bartłomiej Chudzik, ul. Długa 33, Cendrowice, 05-530 Góra Kalwaria, NIP 1231589909, REGON 542947850.
 2. Kontakt: kontakt@lessmanual.ai albo listownie na adres z ust. 1.
 
 ## § 2. Definicje
@@ -102,4 +102,4 @@ Zasady przetwarzania danych osobowych opisuje Polityka prywatności dostępna po
 ## § 14. Postanowienia końcowe
 
 1. Regulamin jest dostępny bezpłatnie pod adresem lessmanual.ai/legal/regulamin. Możesz go wydrukować albo zapisać jako plik.
-2. Regulamin wchodzi w życie [DO UZUPEŁNIENIA: data publikacji] i zastępuje regulamin z 30.10.2025.
+2. Regulamin wchodzi w życie 30.11.2026 i zastępuje regulamin z 30.10.2025.

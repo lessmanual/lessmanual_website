@@ -246,7 +246,7 @@ export const KONTAKT = {
     "Zgadzam się na kontakt e-mailowy i telefoniczny od LessManual w sprawie mojego zgłoszenia, w tym na przesłanie zakresu i wyceny.",
   zgodaLink: "Polityka prywatności",
   klauzula:
-    "Administratorem danych jest Bartłomiej Chudzik, LessManual, ul. Długa 33, 05-530 Cendrowice. Dane z formularza wykorzystamy, żeby odpowiedzieć na zgłoszenie, dobrać rodzaj rozmowy i ją umówić (art. 6 ust. 1 lit. b i f RODO). Rodzaj rozmowy dobierają automatycznie Twoje odpowiedzi, a każde zgłoszenie czyta człowiek. Przed rozmową zgłoszenie analizują też nasze narzędzia AI oparte na modelu Claude (Anthropic). Dane przekazujemy naszym dostawcom, w tym Vercel, Supabase, Resend, Google, Cal.com i Anthropic, także w USA. Masz prawo do dostępu, poprawienia i usunięcia danych, sprzeciwu oraz skargi do Prezesa UODO. Więcej w",
+    "Administratorem danych jest Bartłomiej Chudzik, LessManual, ul. Długa 33, Cendrowice, 05-530 Góra Kalwaria. Dane z formularza wykorzystamy, żeby odpowiedzieć na zgłoszenie, dobrać rodzaj rozmowy i ją umówić (art. 6 ust. 1 lit. b i f RODO). Rodzaj rozmowy dobierają automatycznie Twoje odpowiedzi, a każde zgłoszenie czyta człowiek. Przed rozmową zgłoszenie analizują też nasze narzędzia AI oparte na modelu Claude (Anthropic). Dane przekazujemy naszym dostawcom, w tym Vercel, Supabase, Resend, Google, Cal.com i Anthropic, także w USA. Masz prawo do dostępu, poprawienia i usunięcia danych, sprzeciwu oraz skargi do Prezesa UODO. Więcej w",
 } as const;
 
 /** Wersja treści zgód zapisywana w CRM przy każdej zgodzie (treść-zgód.md, początek). */
@@ -344,7 +344,7 @@ export const NIE_TERAZ = {
   zgoda: "Proszę o jednorazowe wysłanie przykładów systemów LessManual na ten adres e-mail.",
   pomylka: "Uważasz, że to pomyłka? Napisz na kontakt@lessmanual.ai, a przeczytamy Twoje odpowiedzi.",
   klauzula:
-    "Administratorem danych jest Bartłomiej Chudzik, LessManual, ul. Długa 33, 05-530 Cendrowice. Adres e-mail i Twoje odpowiedzi wykorzystamy, żeby raz wysłać przykłady (art. 6 ust. 1 lit. b RODO). Przechowujemy je najdłużej 12 miesięcy. Masz prawo do dostępu, poprawienia i usunięcia danych, sprzeciwu oraz skargi do Prezesa UODO. Więcej w",
+    "Administratorem danych jest Bartłomiej Chudzik, LessManual, ul. Długa 33, Cendrowice, 05-530 Góra Kalwaria. Adres e-mail i Twoje odpowiedzi wykorzystamy, żeby raz wysłać przykłady (art. 6 ust. 1 lit. b RODO). Przechowujemy je najdłużej 12 miesięcy. Masz prawo do dostępu, poprawienia i usunięcia danych, sprzeciwu oraz skargi do Prezesa UODO. Więcej w",
   przycisk: "Wyślij mi przykłady",
   potwierdzenieBzyk: "Dzięki. Przykłady wyślemy na podany adres.",
 } as const;
