@@ -6,6 +6,9 @@ const configDirectory = realpathSync(process.cwd());
 export default defineConfig({
   testDir: "./src/features",
   testMatch: "**/browser/*.spec.ts",
+  // P-2026-11-13-10: przy domyślnej liczbie workerów pełny zestaw padał losowo pod obciążeniem maszyny (2 przebiegi: 5 i 4
+  // testów, za każdym razem inne, w izolacji zielone). Dwa workery zostawiają dev serverowi (webpack) zapas CPU.
+  workers: 2,
   timeout: 30_000,
   expect: {
     timeout: 5_000,

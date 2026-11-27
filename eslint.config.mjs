@@ -18,6 +18,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Statyczne szkice i wendorowane biblioteki (zminifikowane) to nie kod aplikacji; lint ich nie dotyczy.
+    "public/**",
     "**/* 2.{js,jsx,ts,tsx,mjs,cjs}",
     "**/* 3.{js,jsx,ts,tsx,mjs,cjs}",
     "**/* 4.{js,jsx,ts,tsx,mjs,cjs}",
