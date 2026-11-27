@@ -1,6 +1,6 @@
 # Polityka prywatności serwisu lessmanual.ai
 
-Wersja 1.0 z 11.11.2026. Obowiązuje od 30.11.2026.
+Wersja 1.1 z 27.11.2026. Obowiązuje od 30.11.2026.
 
 Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po co, jak długo je trzymamy, komu je przekazujemy i jakie masz prawa. Spełnia obowiązek informacyjny z art. 13 i 14 RODO. Piszemy „my”, mając na myśli administratora wskazanego w § 1.
 
@@ -9,7 +9,7 @@ Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po
 - Administratorem jest Bartłomiej Chudzik, LessManual. Kontakt: kontakt@lessmanual.ai.
 - Dane z formularza „Umów rozmowę” wykorzystujemy, żeby odpowiedzieć na zgłoszenie, dobrać rodzaj rozmowy i ją umówić.
 - Formularz automatycznie dobiera rodzaj rozmowy na podstawie odpowiedzi. Każde zgłoszenie czyta też człowiek. Szczegóły w § 8.
-- Przy przygotowaniu rozmowy zgłoszenie analizują nasze narzędzia AI oparte na modelu Claude firmy Anthropic PBC (§ 4.5).
+- Przy przygotowaniu rozmowy zgłoszenie analizują nasze narzędzia AI oparte na modelu Claude firm Anthropic Ireland, Limited i Anthropic PBC (USA) (§ 4.5).
 - Nie sprzedajemy danych. Przekazujemy je tylko dostawcom usług, z których korzystamy (§ 6). Część z nich ma siedzibę w USA (§ 7).
 - Google Analytics włącza się tylko po Twojej zgodzie. Zgodę zmienisz w każdej chwili w ustawieniach cookies.
 - Masz prawo do dostępu do danych, ich poprawienia, usunięcia, sprzeciwu i skargi do Prezesa UODO (§ 9).
@@ -29,7 +29,7 @@ Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po
    4. piszą do nas e-mail albo rozmawiają z nami w sprawie współpracy,
    5. zapisały się wcześniej na newsletter AI Insider,
    6. reprezentują naszych klientów albo z nami współpracują.
-2. Polityka nie obejmuje danych, które przetwarzamy w imieniu klientów w systemach wdrażanych dla nich. Wtedy działamy jako podmiot przetwarzający i zasady określa osobna umowa powierzenia przetwarzania danych z danym klientem.  Polityka nie obejmuje też danych osób, z którymi kontaktujemy się w sprawach B2B na podstawie danych z publicznych źródeł. Zasady opisuje osobny dokument [Informacja dla osób, z którymi kontaktujemy się w sprawach B2B](/informacja-kontakt-b2b).
+2. Polityka nie obejmuje danych, które przetwarzamy w imieniu klientów w systemach wdrażanych dla nich. Wtedy działamy jako podmiot przetwarzający i zasady określa osobna umowa powierzenia przetwarzania danych z danym klientem. Polityka nie obejmuje też danych osób, z którymi kontaktujemy się w sprawach B2B na podstawie danych z publicznych źródeł. Zasady opisuje osobny dokument [Informacja dla osób, z którymi kontaktujemy się w sprawach B2B](/informacja-kontakt-b2b).
 
 ## § 3. Skąd mamy Twoje dane
 
@@ -75,7 +75,7 @@ Ten dokument wyjaśnia, jakie dane osobowe zbieramy w serwisie lessmanual.ai, po
 1. Dane: dane ze zgłoszenia, notatki z rozmów, historia korespondencji i publiczne dane służbowe z § 3 ust. 2 pkt 2.
 2. Cel: przygotowanie rozmowy, zapis ustaleń, prowadzenie rozmów o współpracy w naszym systemie do obsługi klientów (CRM).
 3. Podstawa: art. 6 ust. 1 lit. b RODO albo art. 6 ust. 1 lit. f RODO (§ 5 pkt 2).
-4. Zgłoszenia zapisane w CRM czytają nasze narzędzia AI (agenci) oparte na modelu Claude firmy Anthropic PBC. Przygotowują podsumowanie firmy i pytania na rozmowę. Nie podejmują decyzji o współpracy; decyduje człowiek po rozmowie.
+4. Zgłoszenia zapisane w CRM czytają nasze narzędzia AI (agenci) oparte na modelu Claude firm Anthropic Ireland, Limited i Anthropic PBC (USA). Przygotowują podsumowanie firmy i pytania na rozmowę. Nie podejmują decyzji o współpracy; decyduje człowiek po rozmowie.
 
 ### 4.6. Korespondencja e-mail i rozmowy telefoniczne
 
@@ -139,6 +139,7 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | inFakt spółka z ograniczoną odpowiedzialnością z siedzibą w Krakowie | wystawianie faktur | dane z § 4.10 |
 | osoba prowadząca księgowość, w systemie inFakt | księgowość | dane z § 4.10 |
 | Anthropic Ireland, Limited i Anthropic PBC (USA) | model AI Claude, z którego korzystają nasi agenci przy przygotowaniu rozmowy (§ 4.5) | dane ze zgłoszenia i notatki z CRM |
+| Amazon Web Services | obsługa poczty przychodzącej kontakt@lessmanual.ai i jej archiwum na serwerach w Unii Europejskiej oraz modele AI w usłudze Amazon Bedrock w regionach UE | korespondencja e-mail |
 
 2. Cal.com w ramce kalendarza używa też własnych narzędzi statystycznych (Google Analytics Cal.com). W tym zakresie Cal.com działa jako osobny administrator według własnej polityki prywatności (cal.com/privacy). Ramka ładuje się dopiero po Twojej zgodzie (zobacz Politykę cookies).
 3. Jeśli po pierwszej rozmowie uznamy, że projekt najlepiej poprowadzić razem z partnerem wdrożeniowym, przekażemy mu Twoje dane dopiero po uzgodnieniu tego z Tobą.
@@ -156,8 +157,9 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | Vercel Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Vercel | DPF: aktywny (sprawdzono na dataprivacyframework.gov 11.11.2026) |
 | Cal.com, Inc. | DPF i standardowe klauzule umowne w umowie powierzenia Cal.com | DPF: aktywny (sprawdzono na dataprivacyframework.gov 11.11.2026) |
 | PLUS FIVE FIVE, Inc. (Resend) | DPF i standardowe klauzule umowne w umowie powierzenia Resend | DPF: „Active - Re-certification under Review” (sprawdzono na dataprivacyframework.gov 11.11.2026) |
-| Anthropic Ireland, Limited i Anthropic PBC | standardowe klauzule umowne w umowie powierzenia włączonej do warunków komercyjnych Anthropic (Anthropic nie występuje na liście DPF) | nie występuje na liście aktywnych ani nieaktywnych uczestników DPF (sprawdzono 11.11.2026) |
+| Anthropic Ireland, Limited i Anthropic PBC (USA) | standardowe klauzule umowne w umowie powierzenia włączonej do warunków komercyjnych Anthropic (Anthropic nie występuje na liście DPF) | nie występuje na liście aktywnych ani nieaktywnych uczestników DPF (sprawdzono 11.11.2026) |
 | Supabase Pte. Ltd. (Singapur) | standardowe klauzule umowne (Supabase nie występuje na liście DPF) | baza w regionie eu-north-1 (Sztokholm, Szwecja) |
+| Amazon Web Services | przetwarzanie w Unii Europejskiej; dla dostępu spółek grupy z USA: EU-US DPF (Amazon.com, Inc.) | serwery w regionie eu-central-1 (Frankfurt, Niemcy), modele AI w Bedrock w regionach UE |
 
 3. Standardowe klauzule umowne to wzór umowy przyjęty przez Komisję Europejską (decyzja wykonawcza (UE) 2021/914). Kopię zabezpieczeń dostaniesz na prośbę wysłaną na kontakt@lessmanual.ai.
 4. Serwer obsługujący formularz działa w regionie Vercel fra1 (Frankfurt, Niemcy).
@@ -211,6 +213,8 @@ Masz prawo sprzeciwu wobec przetwarzania na tej podstawie (§ 9 ust. 1 pkt 6). P
 | Google Analytics | [DO UZUPEŁNIENIA: 2 albo 14 miesięcy, zgodnie z ustawieniem przechowywania danych w GA4]; pliki cookie do 2 lat |
 | Logi serwera Vercel | do 1 godziny (logi funkcji w planie Hobby, według dokumentacji Vercel) |
 | Kopie powiadomień w Resend | 30 dni (plany Free, Pro i Scale według dokumentacji Resend) |
+| Wiadomości w archiwum poczty w AWS (baza DynamoDB) | najdłużej 24 miesiące od otrzymania wiadomości (automatyczne wygaszanie); korespondencję usuwamy wcześniej według wiersza „Korespondencja e-mail” |
+| Kopie zapasowe poczty w AWS | do 35 dni (przywracanie bazy do punktu w czasie); nieaktualne wersje plików w archiwum do 90 dni |
 | Dane przekazane do Anthropic | do 30 dni od otrzymania lub wygenerowania, z wyjątkami m.in. dla wymogów prawa i egzekwowania zasad korzystania z usługi Anthropic |
 | Zapis zgód i ich cofnięcia | 3 lata od cofnięcia zgody albo od końca przetwarzania, liczone do końca roku kalendarzowego |
 
