@@ -81,7 +81,7 @@ export const HERO = {
   subtitle:
     "Systemy AI szyte na miarę firm od 10 do 100 osób. Efekt zapisujemy liczbą przed startem. Jeśli system go nie daje, poprawiamy na nasz koszt.",
   cta: "Umów rozmowę",
-  ctaNote: "Pierwszy krok to 45 minut rozmowy z Bartkiem. Przed nią 10 pytań, około 2 minut.",
+  ctaNote: "Pierwszy krok to rozmowa z Bartkiem: 45 minut, a przy Mapie AI firmy i szybkim pilocie 30 minut. Przed nią 10 pytań, około 2 minut.",
 } as const;
 
 /** Scena hero: prawdziwy system z karty 2 (215 dokumentów). Nazwy wierszy są przykładowe (notatka CSO). */
@@ -128,7 +128,7 @@ export const PROCESS = {
     {
       title: "Rozmowa i spisany zakres",
       ours: "Pytamy o Twoje programy z nazwy i o to, co boli najbardziej. Potem spisujemy zakres z efektem systemu i ceną każdego etapu.",
-      yours: "Rozmowa (45 minut) i kilka przykładowych dokumentów albo maili.",
+      yours: "Rozmowa (45 minut, a przy Mapie AI firmy i pilocie 30 minut) i kilka przykładowych dokumentów albo maili.",
     },
     {
       title: "Pierwszy etap, który realnie działa",
@@ -396,7 +396,7 @@ export const FAQ = {
     },
     {
       q: "Co, jeśli zechcę zakończyć współpracę?",
-      a: "Dane i system są Twoje. Dostajesz pełną dokumentację i wszystkie dostępy, a do tego eksport danych. System możesz przekazać własnemu informatykowi.",
+      a: "System działa na naszej infrastrukturze i to my się nim opiekujemy. Jeśli zakończysz opiekę, przekazujemy Ci całość: kod, dane, dostępy i dokumentację techniczną. Możesz go oddać własnemu informatykowi albo innej firmie.",
     },
     {
       q: "Ile trwa uruchomienie pierwszego systemu?",

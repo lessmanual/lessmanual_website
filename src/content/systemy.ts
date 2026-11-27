@@ -201,6 +201,6 @@ export const SYSTEM_PAGE_LABELS = {
   effect: "Efekt",
   faqTitle: "Pytania o ten system",
   startTitle: "Jak zaczynamy",
-  startNote: "Pierwszy krok to 45 minut rozmowy z Bartkiem. Przed nią 10 pytań, około 2 minut.",
+  startNote: "Pierwszy krok to rozmowa z Bartkiem: 45 minut, a przy Mapie AI firmy i szybkim pilocie 30 minut. Przed nią 10 pytań, około 2 minut.",
   otherTitle: "Inne systemy",
 } as const;
