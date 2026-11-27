@@ -1018,7 +1018,7 @@ Miejsce: Stopka → kolumna Kontakt · bez zmian · najdłuższy punkt 21 zn.
 
 Miejsce: Stopka → dane firmy · bez zmian (S4) · długość 101 zn.
 
-© 2026 LessManual.ai · LessManual Bartłomiej Chudzik, ul. Długa 33, 05-530 Cendrowice, NIP 1231589909
+© 2026 LessManual.ai · LessManual Bartłomiej Chudzik, ul. Długa 33, Cendrowice, 05-530 Góra Kalwaria, NIP 1231589909
 
 Miejsce: Stopka → linki prawne · bez zmian · najdłuższy punkt 20 zn.
 
