@@ -27,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/legal/regulamin`, lastModified: "2026-11-11", changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/legal/polityka-prywatnosci`, lastModified: "2026-11-11", changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/legal/polityka-cookies`, lastModified: "2026-11-11", changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/informacja-kontakt-b2b`, lastModified: "2026-11-30", changeFrequency: "yearly", priority: 0.3 },
   ];
 
   let blogPages: MetadataRoute.Sitemap = [];

@@ -8,7 +8,8 @@ import rehypeRaw from "rehype-raw";
 // 320-390 px przewijała się tabela, a nie cała strona.
 const komponenty: Components = {
   table: ({ children }) => (
-    <div style={{ overflowX: "auto", maxWidth: "100%" }}>
+    <div className="legal-tabela">
+      <p className="legal-tabela__hint">Tabelę przewiniesz w bok</p>
       <table>{children}</table>
     </div>
   ),
