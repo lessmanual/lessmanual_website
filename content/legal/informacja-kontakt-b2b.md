@@ -63,13 +63,13 @@ W wiadomości piszemy, z którego źródła pochodzi Twój adres.
 | Hunter Web Services, Inc. (USA) | wyszukanie i sprawdzenie służbowego adresu e-mail | imię, nazwisko, domena firmy; zwracany adres e-mail |
 | Apify Technologies s.r.o. (Czechy) | pobieranie publicznych ogłoszeń o pracę | dane kontaktowe osoby wskazanej w ogłoszeniu, jeśli ogłoszenie je zawiera |
 | Exa Labs, Inc. (USA) | wyszukiwanie publicznych wpisów i profili zawodowych | imię, nazwisko, firma |
-| Anthropic (Anthropic Ireland, Limited i Anthropic PBC, USA) | model sztucznej inteligencji, który pomaga ocenić publiczne informacje i przygotować szkic wiadomości (pkt 5) | dane z pkt 2 |
 | Amazon Web Services | serwery w Unii Europejskiej, na których działa obsługa naszej poczty przychodzącej i jej archiwum, oraz modele sztucznej inteligencji w usłudze Amazon Bedrock | dane z pkt 2 i treść Twojej odpowiedzi |
 | Supabase Pte. Ltd. (Singapur) | baza kontaktów (CRM), tylko gdy odpowiesz na wiadomość | dane z pkt 2 i historia korespondencji |
 
-2. Jeśli piszemy do Ciebie przez LinkedIn, wiadomość przechodzi przez serwis LinkedIn. LinkedIn Ireland Unlimited Company przetwarza ją jako osobny administrator, na zasadach swojej polityki prywatności.
-3. Dane możemy przekazać organom publicznym, gdy wymaga tego prawo.
-4. Nie sprzedajemy danych i nie udostępniamy ich innym firmom do ich własnego marketingu.
+2. Model sztucznej inteligencji, który pomaga ocenić publiczne informacje i przygotować szkic wiadomości (pkt 5), dostarcza Anthropic Ireland, Limited (Irlandia). Anthropic przetwarza przekazane mu dane z pkt 2 jako osobny administrator, na zasadach swojej polityki prywatności (anthropic.com/legal/privacy), także co do okresu przechowywania.
+3. Jeśli piszemy do Ciebie przez LinkedIn, wiadomość przechodzi przez serwis LinkedIn. LinkedIn Ireland Unlimited Company przetwarza ją jako osobny administrator, na zasadach swojej polityki prywatności.
+4. Dane możemy przekazać organom publicznym, gdy wymaga tego prawo.
+5. Nie sprzedajemy danych i nie udostępniamy ich innym firmom do ich własnego marketingu.
 
 ## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
 
@@ -81,7 +81,7 @@ W wiadomości piszemy, z którego źródła pochodzi Twój adres.
 | Google LLC | decyzja Komisji (UE) 2023/1795 w sprawie EU-US Data Privacy Framework i standardowe klauzule umowne |
 | Hunter Web Services, Inc. | standardowe klauzule umowne w umowie powierzenia |
 | Exa Labs, Inc. | standardowe klauzule umowne w umowie powierzenia |
-| Anthropic PBC | standardowe klauzule umowne w umowie powierzenia włączonej do warunków komercyjnych Anthropic |
+| Anthropic (osobny administrator, pkt 6 ust. 2) | Anthropic Ireland, Limited może przekazywać dane do Anthropic PBC w USA; zabezpieczenia opisuje polityka prywatności Anthropic (standardowe klauzule umowne) |
 | Amazon Web Services | przetwarzanie w regionach AWS w Unii Europejskiej; dla ewentualnego dostępu spółek grupy z USA EU-US Data Privacy Framework (Amazon.com, Inc.) |
 | Supabase Pte. Ltd. | standardowe klauzule umowne w umowie powierzenia; baza danych w regionie Sztokholm (Szwecja) |
 | Apify Technologies s.r.o. | siedziba w UE; podwykonawcy spoza EOG na podstawie standardowych klauzul umownych |
