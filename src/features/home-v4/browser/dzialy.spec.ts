@@ -1,6 +1,11 @@
 import { expect, test, type Page } from "@playwright/test";
 import { HOME_V4 } from "../../../content/home-v4";
 
+// Telefony bez referencji mają 3 karty, reszta działów 4; domyślny dział po wejściu to Telefony.
+const KARTY_TELEFONY = HOME_V4.dzialy.lista.telefony.karty.length;
+const ETYKIETA_TELEFONY = (nr: number) => `${nr} z ${KARTY_TELEFONY}`;
+const WSZYSTKIE_KARTY = Object.values(HOME_V4.dzialy.lista).reduce((suma, d) => suma + d.karty.length, 0);
+
 const KARUZELA = '[data-qa="karuzela"]:visible';
 const KARTA = `${KARUZELA} [data-qa="karta"]`;
 const NASTEPNA = `${KARUZELA} [data-karuzela-next]`;
@@ -54,7 +59,7 @@ for (const vp of [
       const kontekst = await browser.newContext({ javaScriptEnabled: false, viewport: vp });
       const page = await kontekst.newPage();
       await page.goto("/");
-      await expect(page.locator('[data-qa="karta"]')).toHaveCount(20);
+      await expect(page.locator('[data-qa="karta"]')).toHaveCount(WSZYSTKIE_KARTY);
       await expect(page.locator(KARUZELA)).toHaveCount(1);
       await expect(page.locator(KARUZELA)).toHaveAttribute("data-dzial", "telefony");
       await kontekst.close();
@@ -63,9 +68,9 @@ for (const vp of [
     test("zmiana działu nie przewija strony i wraca na kartę 1", async ({ page }) => {
       await doDzialow(page);
       await page.locator(NASTEPNA).click();
-      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", "2 z 4");
+      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", ETYKIETA_TELEFONY(2));
       await page.locator(NASTEPNA).click();
-      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", "3 z 4");
+      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", ETYKIETA_TELEFONY(3));
       await expect.poll(() => ruchStrony(page)).toBe(0);
       const przed = await page.evaluate(() => window.scrollY);
       // Klik przez DOM: Playwright przewinąłby stronę do zakładki, a sprawdzamy, że nie robi tego kod strony.
@@ -82,16 +87,16 @@ for (const vp of [
       await doDzialow(page);
       await page.locator(NASTEPNA).click();
       await expect(await widocznaKarta(page)).toHaveCount(1);
-      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", "2 z 4");
-      await expect(page.locator(`${KARTA}[inert]`)).toHaveCount(3);
+      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", ETYKIETA_TELEFONY(2));
+      await expect(page.locator(`${KARTA}[inert]`)).toHaveCount(KARTY_TELEFONY - 1);
       const kropki = page.locator(`${KARUZELA} [data-qa="kropka"]`);
-      await expect(kropki).toHaveCount(4);
+      await expect(kropki).toHaveCount(KARTY_TELEFONY);
       await expect(kropki.nth(1)).toHaveAttribute("data-aktywna", "true");
       await expect(page.locator(`${KARUZELA} [data-qa="kropka"][data-aktywna="true"]`)).toHaveCount(1);
       // Poll: kolor kropki dochodzi przejściem 0,2 s.
       await expect.poll(() => kropki.nth(1).evaluate((el) => getComputedStyle(el).backgroundColor)).toBe("rgb(63, 208, 194)");
       await page.locator(`${KARUZELA} [data-qa="strzalka-poprzednia"]`).click();
-      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", "1 z 4");
+      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", ETYKIETA_TELEFONY(1));
     });
 
     if (telefon) {
@@ -155,13 +160,13 @@ for (const vp of [
       await doDzialow(page);
       const nastepna = page.locator(NASTEPNA);
       await nastepna.focus();
-      for (const etykieta of ["2 z 4", "3 z 4", "4 z 4"]) {
+      for (const etykieta of Array.from({ length: KARTY_TELEFONY - 1 }, (_, i) => ETYKIETA_TELEFONY(i + 2))) {
         await page.keyboard.press("Enter");
         await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", etykieta);
       }
       await expect(nastepna).toHaveAttribute("aria-disabled", "true");
       await page.keyboard.press("Enter");
-      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", "4 z 4");
+      await expect(await widocznaKarta(page)).toHaveAttribute("aria-label", ETYKIETA_TELEFONY(KARTY_TELEFONY));
       const fokus = await page.evaluate(() => {
         const el = document.activeElement;
         return el?.closest('[data-qa="karuzela"]') !== null && el?.matches("[data-karuzela-next], [data-qa='strzalka-poprzednia']");

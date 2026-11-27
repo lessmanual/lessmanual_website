@@ -21,11 +21,12 @@ export type { SposobKarty };
 // Jeden rejestr na widok strony: karta_view leci raz dla pary dział + karta.
 const rejestrWidokow = utworzRejestrWidokow();
 
-const RODZAJE = ["film", "przyklad", "opinia", "pomysly"] as const;
+type RodzajKarty = "film" | "przyklad" | "opinia" | "pomysly";
 const NUMERY: readonly NrKarty[] = [0, 1, 2, 3];
 
-function przytnij(nr: number): NrKarty {
-  return NUMERY.find((n) => n === Math.max(0, Math.min(3, nr))) ?? 0;
+// Dział ma 3 albo 4 karty (Telefony bez referencji: 3), więc kraniec liczymy z liczby kart.
+function przytnij(nr: number, liczba: number): NrKarty {
+  return NUMERY.find((n) => n === Math.max(0, Math.min(liczba - 1, nr))) ?? 0;
 }
 
 function bezRuchu(): boolean {
@@ -43,10 +44,12 @@ function wymiaryKarty(tor: HTMLElement): { szerokosc: number; odstep: number } {
 // Bez autoprzewijania. Palec przesuwa tylko karty; dział zmieniają zakładki, rzut i hero.
 export function Karuzela(props: {
   dzial: DzialId;
-  children: readonly [ReactNode, ReactNode, ReactNode, ReactNode];
+  rodzaje: readonly RodzajKarty[];
+  children: readonly ReactNode[];
   onKartaWidoczna?: (nr: NrKarty, sposob: SposobKarty) => void;
 }): JSX.Element {
-  const { dzial, children, onKartaWidoczna } = props;
+  const { dzial, rodzaje, children, onKartaWidoczna } = props;
+  const liczba = children.length;
   const { stan, ustawKarte } = useDzial();
   const aktywny = stan.aktywny === dzial;
   const torRef = useRef<HTMLDivElement>(null);
@@ -94,7 +97,7 @@ export function Karuzela(props: {
       czasomierz = setTimeout(() => {
         czasomierz = null;
         if (!rejestrWidokow.pierwszyRaz(dzial, nr)) return;
-        trackEvent("karta_view", { dzial, karta: NAZWA_KARTY[nr], nr: nr + 1, sposob: sposobRef.current });
+        trackEvent("karta_view", { dzial, karta: rodzaje[nr] ?? NAZWA_KARTY[nr], nr: nr + 1, sposob: sposobRef.current });
       }, CZAS_WIDOCZNOSCI_MS);
     };
     const obserwator = new IntersectionObserver(
@@ -118,7 +121,7 @@ export function Karuzela(props: {
       obserwator.disconnect();
       document.removeEventListener("visibilitychange", przelicz);
     };
-  }, [aktywny, dzial, nr]);
+  }, [aktywny, dzial, nr, rodzaje]);
 
   const poPrzewinieciu = () => {
     cancelAnimationFrame(klatkaRef.current);
@@ -139,7 +142,7 @@ export function Karuzela(props: {
 
   const przewinO = (krok: -1 | 1) => (zdarzenie: MouseEvent<HTMLButtonElement>) => {
     const tor = torRef.current;
-    const cel = przytnij(celRef.current + krok);
+    const cel = przytnij(celRef.current + krok, liczba);
     // Na krańcu strzałka jest aria-disabled, a nie disabled: zostaje w fokusie, klik po prostu nic nie robi.
     if (!tor || cel === celRef.current) return;
     celRef.current = cel;
@@ -174,13 +177,13 @@ export function Karuzela(props: {
       >
         {children.map((dziecko, i) => (
           <div
-            key={RODZAJE[i]}
+            key={rodzaje[i]}
             className={styles.karta}
             role="group"
             aria-roledescription="slajd"
-            aria-label={etykietaKarty(i + 1)}
+            aria-label={etykietaKarty(i + 1, liczba)}
             data-qa="karta"
-            data-karta={RODZAJE[i]}
+            data-karta={rodzaje[i]}
             inert={i !== nr}
           >
             {dziecko}
@@ -199,7 +202,7 @@ export function Karuzela(props: {
           <ChevronLeft size={22} aria-hidden="true" />
         </button>
         <div className={styles.kropki} aria-hidden="true">
-          {NUMERY.map((n) => (
+          {NUMERY.slice(0, liczba).map((n) => (
             <span key={n} className={styles.kropka} data-qa="kropka" data-aktywna={n === nr ? "true" : "false"} />
           ))}
         </div>
@@ -209,7 +212,7 @@ export function Karuzela(props: {
           data-qa="strzalka-nastepna"
           data-karuzela-next=""
           aria-label={dostepnosc.nastepnaKarta}
-          aria-disabled={nr === 3}
+          aria-disabled={nr === liczba - 1}
           onClick={przewinO(1)}
         >
           <ChevronRight size={22} aria-hidden="true" />

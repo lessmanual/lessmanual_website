@@ -24,15 +24,21 @@ export function ModulDzialow() {
         <DymekDzialow />
         <div className={styles.karuzele}>
           {DZIALY.map((id) => {
-            const [film, przyklad, opinia, pomysly] = dzialy.lista[id].karty;
+            const karty = dzialy.lista[id].karty;
             return (
-              <Karuzela key={id} dzial={id}>
-                {[
-                  <KartaSystem key="film" karta={film} etykiety={dzialy.etykiety} />,
-                  <KartaPrzyklad key="przyklad" karta={przyklad} dzial={id} />,
-                  <KartaOpinia key="opinia" opinia={opinia.opinia} dzial={id} />,
-                  <KartaPomysly key="pomysly" karta={pomysly} />,
-                ]}
+              <Karuzela key={id} dzial={id} rodzaje={karty.map((k) => k.rodzaj)}>
+                {karty.map((k) => {
+                  switch (k.rodzaj) {
+                    case "film":
+                      return <KartaSystem key="film" karta={k} etykiety={dzialy.etykiety} />;
+                    case "przyklad":
+                      return <KartaPrzyklad key="przyklad" karta={k} dzial={id} />;
+                    case "opinia":
+                      return <KartaOpinia key="opinia" opinia={k.opinia} dzial={id} />;
+                    case "pomysly":
+                      return <KartaPomysly key="pomysly" karta={k} />;
+                  }
+                })}
               </Karuzela>
             );
           })}

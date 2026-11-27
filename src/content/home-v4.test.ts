@@ -122,11 +122,14 @@ describe("teksty v4 1:1", () => {
     }
   });
 
-  it("karty każdego działu mają rodzaje film, przyklad, opinia, pomysly, bo karuzela renderuje je w tej kolejności", () => {
+  it("karty działu mają rodzaje film, przyklad, opinia, pomysly; Telefony bez referencji nie mają opinii, bo opinia CreativeDanceRumia dotyczy innej usługi", () => {
     for (const id of DZIALY) {
       const d = HOME_V4.dzialy.lista[id];
       expect(d.id).toBe(id);
-      expect(d.karty.map((k) => k.rodzaj)).toEqual(["film", "przyklad", "opinia", "pomysly"]);
+      const bezOpinii = id === "telefony" && !FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA;
+      expect(d.karty.map((k) => k.rodzaj)).toEqual(
+        bezOpinii ? ["film", "przyklad", "pomysly"] : ["film", "przyklad", "opinia", "pomysly"],
+      );
       expect(d.karty[0].film).toBeNull();
     }
     expect(DZIALY).toEqual(["telefony", "marketing", "sprzedaz", "zamowienia", "logistyka"]);

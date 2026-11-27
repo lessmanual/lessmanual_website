@@ -13,7 +13,7 @@ async function pokazKarte(page: Page, dzial: DzialId, nr: 1 | 2 | 3 | 4) {
   await expect(page.locator(KARUZELA)).toHaveAttribute("data-dzial", dzial);
   for (let i = 1; i < nr; i++) await page.locator(`${KARUZELA} [data-karuzela-next]`).click();
   const karta = page.locator(`${KARUZELA} [data-qa="karta"]:not([inert])`);
-  await expect(karta).toHaveAttribute("aria-label", `${nr} z 4`);
+  await expect(karta).toHaveAttribute("aria-label", `${nr} z ${HOME_V4.dzialy.lista[dzial].karty.length}`);
   return karta;
 }
 
@@ -78,14 +78,18 @@ for (const vp of [
       await expect(karta.locator("img, svg[data-logo]")).toHaveCount(0);
     });
 
-    test("Telefony karta 3 to referencja bez linku (albo opinia Google, gdy referencja wyłączona), Sprzedaż karta 3 to LinkedIn z tłumaczeniem", async ({ page }) => {
+    test("Telefony karta 3 to referencja bez linku (gdy referencja wyłączona: dział ma 3 karty i bez opinii), Sprzedaż karta 3 to LinkedIn z tłumaczeniem", async ({ page }) => {
       await doDzialow(page);
       const telefony = await pokazKarte(page, "telefony", 3);
       if (FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA) {
         await expect(telefony.locator('[data-qa="opinia"]')).toHaveAttribute("data-zrodlo", "referencja");
         await expect(telefony.locator('[data-qa="link-opinii"]')).toHaveCount(0);
       } else {
-        await expect(telefony.locator('[data-qa="opinia"]')).toHaveAttribute("data-zrodlo", "google");
+        await expect(page.locator(`${KARUZELA} [data-qa="karta"]`)).toHaveCount(3);
+        await expect(page.locator(`${KARUZELA} [data-qa="opinia"]`)).toHaveCount(0);
+        await expect(page.locator(`${KARUZELA} [data-qa="kropka"]`)).toHaveCount(3);
+        await expect(telefony).toContainText(HOME_V4.dzialy.naglowekPomyslow);
+        await expect(page.locator(`${KARUZELA} [data-karuzela-next]`)).toHaveAttribute("aria-disabled", "true");
       }
       const sprzedaz = await pokazKarte(page, "sprzedaz", 3);
       const opinia = HOME_V4.dzialy.lista.sprzedaz.karty[2].opinia;

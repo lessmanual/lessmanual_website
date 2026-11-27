@@ -54,7 +54,10 @@ export type Dzial = {
   nazwa: string;
   zakladka: string;
   bzyk: string;
-  karty: readonly [KartaFilm, KartaPrzyklad, KartaOpinia, KartaPomysly];
+  // Cztery karty; dział bez własnej opinii (Telefony przy wyłączonej referencji) ma trzy, bez pustego miejsca.
+  karty:
+    | readonly [KartaFilm, KartaPrzyklad, KartaOpinia, KartaPomysly]
+    | readonly [KartaFilm, KartaPrzyklad, KartaPomysly];
 };
 
 export type KrokOsi = { nr: 0 | 1 | 2 | 3 | 4 | 5; naglowek: string; my: string; ty: string };
@@ -64,8 +67,8 @@ export function bzykPoWyborze(nazwaDzialu: string): string {
 }
 
 // Etykieta dostępności karuzeli; kod podstawia numer karty.
-export function etykietaKarty(nr: number): string {
-  return `${nr} z 4`;
+export function etykietaKarty(nr: number, liczba: number = 4): string {
+  return `${nr} z ${liczba}`;
 }
 
 export function inicjal(podpis: string): string {
@@ -124,7 +127,10 @@ const PRZEJSCIE = {
 const DZIALY_WSPOLNE = {
   h2: "Systemy, które już zbudowaliśmy, dział po dziale",
   lead: "Każdy z tych systemów zbudowaliśmy pod programy i sposób pracy jednej firmy. Niżej są przykłady z wdrożeń i pomysły na podobne systemy u Ciebie.",
-  bzykWejscie: "Każdy dział ma cztery karty. Przesuń je w bok albo kliknij strzałkę.",
+  // Bez referencji Telefony mają trzy karty, więc zdanie „cztery karty” nie może zostać (pomija je flagi-tresci.json).
+  bzykWejscie: FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA
+    ? "Każdy dział ma cztery karty. Przesuń je w bok albo kliknij strzałkę."
+    : "Przesuń karty w bok albo kliknij strzałkę.",
   etykiety: ["Problem", "Rozwiązanie", "Efekt"],
   takToUNas: "Tak, to u nas",
   naglowekPomyslow: "Co możemy zbudować u Ciebie",
@@ -140,12 +146,9 @@ const DZIALY_WSPOLNE = {
   },
 } as const;
 
-const TELEFONY = {
-  id: "telefony",
-  nazwa: NAZWY.telefony,
-  zakladka: "Telefony",
-  bzyk: "Telefony i recepcja. Zacznij od filmu albo przesuń do przykładu rozmowy.",
-  karty: [
+// Pełny komplet kart Telefonów. Karta 3 to referencja Bartosza. Bez niej (flaga false) dział ma trzy karty:
+// opinia CreativeDanceRumia dotyczy innej usługi niż telefony, więc nie zastępuje referencji.
+const TELEFONY_KARTY_PELNE = [
     {
       rodzaj: "film",
       tytul: "Agent głosowy w recepcji",
@@ -166,8 +169,7 @@ const TELEFONY = {
       plakietkaWspolna: "Rozmowy w przykładzie są wymyślone",
       drugiDowod: null,
     },
-    FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA
-      ? {
+    {
       rodzaj: "opinia",
       opinia: {
         zrodlo: "referencja",
@@ -175,17 +177,7 @@ const TELEFONY = {
           "Asystentka odbiera telefon, odpowiada na pytania pacjentów i umawia wizyty od razu w Medfile, a prośby o odwołanie lub przełożenie wizyty przekazuje mailem do recepcji. (…) Zawsze jasno mówił, co da się zrobić w obecnym systemie, a co wymaga dodatkowej integracji, i to bardzo ułatwiało nam decyzje.",
         podpis: "Bartosz Łaskawiec, CEO Eighteen Studio · referencja",
       },
-    }
-      : {
-          // Zamiennik przy wyłączonej referencji: ta sama opinia Google co w rzędzie Opinie, żeby dział miał cztery karty.
-          rodzaj: "opinia",
-          opinia: {
-            zrodlo: "google",
-            tekst:
-              "Bartek to ekspert, który nie tylko zna się na AI, ale przede wszystkim rozumie, jak to przełożyć na realne zyski w firmie. Proponowane przez LessManual.ai rozwiązania były „szyte na miarę\" i przyniosły efekty szybciej, niż zakładaliśmy. 5 gwiazdek za terminowość i merytoryczne wsparcie.",
-            podpis: "CreativeDanceRumia · 15 opinii · ★★★★★ · opinia w Google",
-          },
-        },
+    },
     {
       rodzaj: "pomysly",
       pomysly: [
@@ -196,7 +188,16 @@ const TELEFONY = {
         "podsumowanie dnia z listą rozmów i spraw do załatwienia",
       ],
     },
-  ],
+] as const;
+
+const TELEFONY = {
+  id: "telefony",
+  nazwa: NAZWY.telefony,
+  zakladka: "Telefony",
+  bzyk: "Telefony i recepcja. Zacznij od filmu albo przesuń do przykładu rozmowy.",
+  karty: FLAGI_TRESCI.POKAZ_REFERENCJE_BARTOSZA
+    ? TELEFONY_KARTY_PELNE
+    : ([TELEFONY_KARTY_PELNE[0], TELEFONY_KARTY_PELNE[1], TELEFONY_KARTY_PELNE[3]] as const),
 } as const satisfies Dzial;
 
 const MARKETING = {
